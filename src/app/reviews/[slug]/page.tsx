@@ -5,6 +5,7 @@ import QuickVerdict from '@/components/QuickVerdict';
 import MDXContent from '@/components/MDXContent';
 import ProsCons from '@/components/ProsCons';
 import VerdictBox from '@/components/VerdictBox';
+import ToolImage from '@/components/ToolImage';
 import TableOfContents from '@/components/TableOfContents';
 import { getArticle, getArticleSlugs } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
@@ -99,6 +100,17 @@ export default async function ReviewPage({ params }: PageProps) {
       backLink={{ href: '/reviews', label: 'All Reviews' }}
       sidebar={sidebar}
     >
+      {/* Hero image */}
+      {meta.toolSlug && (
+        <div className="aspect-video rounded-xl overflow-hidden border border-void-700/50 mb-8 bg-void-800">
+          <ToolImage
+            toolSlug={meta.toolSlug}
+            variant="hero"
+            alt={`${meta.tool} screenshot`}
+          />
+        </div>
+      )}
+
       {/* Quick Verdict (visible on mobile, hidden on desktop since it's in sidebar) */}
       <div className="lg:hidden mb-8">
         <QuickVerdict

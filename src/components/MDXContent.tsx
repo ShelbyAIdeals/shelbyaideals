@@ -9,6 +9,8 @@ import WinnerBox from './WinnerBox';
 import QuickVerdict from './QuickVerdict';
 import StarRating from './StarRating';
 import ToolCard from './ToolCard';
+import ToolImage from './ToolImage';
+import ScreenshotGallery from './ScreenshotGallery';
 import NewsletterSignup from './NewsletterSignup';
 
 const components = {
@@ -22,6 +24,8 @@ const components = {
   QuickVerdict,
   StarRating,
   ToolCard,
+  ToolImage,
+  ScreenshotGallery,
   NewsletterSignup,
   h2: (props: React.ComponentProps<'h2'>) => {
     const id = props.children

@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import StarRating from './StarRating';
 
 interface ReviewCardProps {
@@ -11,6 +14,7 @@ interface ReviewCardProps {
   category: string;
   bestFor: string;
   featuredImage?: string;
+  toolSlug?: string;
 }
 
 export default function ReviewCard({
@@ -19,23 +23,30 @@ export default function ReviewCard({
   tool,
   rating,
   excerpt,
-  category,
   bestFor,
   featuredImage,
+  toolSlug,
 }: ReviewCardProps) {
+  const imageSlug = toolSlug || slug.replace('-review', '');
+  const imageSrc = featuredImage || `/images/tools/${imageSlug}/thumb.webp`;
+  const fallbackSrc = '/images/placeholders/tool-thumb.svg';
+
   return (
-    <article className="card group overflow-hidden flex flex-col hover:-translate-y-1">
-      {/* Featured image */}
-      {featuredImage && (
-        <div className="aspect-video bg-void-800 overflow-hidden">
-          <img
-            src={featuredImage}
-            alt={`${tool} review`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </div>
-      )}
+    <motion.article
+      className="card group overflow-hidden flex flex-col"
+      whileHover={{ y: -4, boxShadow: '0 0 32px rgba(119,126,73,0.12)' }}
+      transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+    >
+      {/* Tool image */}
+      <div className="aspect-video bg-void-800 overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={`${tool} review`}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+          onError={(e) => { (e.target as HTMLImageElement).src = fallbackSrc; }}
+        />
+      </div>
 
       <div className="p-5 sm:p-6 flex flex-col flex-1">
         {/* Top row: tool badge + rating */}
@@ -73,6 +84,6 @@ export default function ReviewCard({
           <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-0.5" />
         </Link>
       </div>
-    </article>
+    </motion.article>
   );
 }

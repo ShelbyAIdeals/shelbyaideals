@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#777E49" stroke-width="0.3" opacity="0.25"/>
+    </pattern>
+    <!-- Diagonal accent lines -->
+    <pattern id="diagonals" width="60" height="60" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="60" x2="60" y2="0" stroke="#777E49" stroke-width="0.4" opacity="0.12"/>
+    </pattern>
+    <!-- Radial glow behind center text -->
+    <radialGradient id="glow" cx="50%" cy="45%" r="35%">
+      <stop offset="0%" stop-color="#777E49" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#171512" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Top-left corner accent gradient -->
+    <linearGradient id="cornerTL" x1="0" y1="0" x2="300" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#777E49" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#171512" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Bottom-right corner accent gradient -->
+    <linearGradient id="cornerBR" x1="1200" y1="630" x2="900" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#777E49" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#171512" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1200" height="630" fill="#171512"/>
+
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Diagonal lines overlay -->
+  <rect width="1200" height="630" fill="url(#diagonals)"/>
+
+  <!-- Radial glow -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Corner accents -->
+  <rect width="1200" height="630" fill="url(#cornerTL)"/>
+  <rect width="1200" height="630" fill="url(#cornerBR)"/>
+
+  <!-- Outer border -->
+  <rect x="1" y="1" width="1198" height="628" rx="4" ry="4" fill="none" stroke="#777E49" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Inner border frame -->
+  <rect x="20" y="20" width="1160" height="590" rx="2" ry="2" fill="none" stroke="#777E49" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Corner brackets top-left -->
+  <path d="M 40 60 L 40 40 L 60 40" fill="none" stroke="#777E49" stroke-width="2" opacity="0.6"/>
+  <!-- Corner brackets top-right -->
+  <path d="M 1140 40 L 1160 40 L 1160 60" fill="none" stroke="#777E49" stroke-width="2" opacity="0.6"/>
+  <!-- Corner brackets bottom-left -->
+  <path d="M 40 570 L 40 590 L 60 590" fill="none" stroke="#777E49" stroke-width="2" opacity="0.6"/>
+  <!-- Corner brackets bottom-right -->
+  <path d="M 1160 570 L 1160 590 L 1140 590" fill="none" stroke="#777E49" stroke-width="2" opacity="0.6"/>
+
+  <!-- Center decorative element: hexagonal frame -->
+  <polygon points="600,220 660,250 660,310 600,340 540,310 540,250"
+           fill="none" stroke="#777E49" stroke-width="1" opacity="0.35"/>
+  <polygon points="600,230 650,255 650,305 600,330 550,305 550,255"
+           fill="none" stroke="#777E49" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Camera/screenshot icon inside hexagon -->
+  <rect x="575" y="265" width="50" height="35" rx="4" fill="none" stroke="#777E49" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="600" cy="282" r="10" fill="none" stroke="#777E49" stroke-width="1.2" opacity="0.5"/>
+  <circle cx="600" cy="282" r="4" fill="#777E49" opacity="0.3"/>
+  <rect x="585" y="265" width="12" height="5" rx="2" fill="none" stroke="#777E49" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Horizontal accent lines flanking center -->
+  <line x1="200" y1="280" x2="510" y2="280" stroke="#777E49" stroke-width="0.5" opacity="0.25"/>
+  <line x1="690" y1="280" x2="1000" y2="280" stroke="#777E49" stroke-width="0.5" opacity="0.25"/>
+  <!-- Small diamond at line ends -->
+  <polygon points="200,280 205,275 210,280 205,285" fill="#777E49" opacity="0.3"/>
+  <polygon points="1000,280 995,275 990,280 995,285" fill="#777E49" opacity="0.3"/>
+
+  <!-- Main text: "Screenshot Coming Soon" -->
+  <text x="600" y="400" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="32" font-weight="500" fill="#B8BF8A" letter-spacing="3" opacity="0.9">SCREENSHOT COMING SOON</text>
+
+  <!-- Subtle underline below main text -->
+  <line x1="420" y1="418" x2="780" y2="418" stroke="#777E49" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Subtext -->
+  <text x="600" y="450" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="14" fill="#777E49" letter-spacing="1" opacity="0.5">TOOL PREVIEW IMAGE</text>
+
+  <!-- Bottom branding -->
+  <text x="600" y="580" text-anchor="middle" font-family="'Space Grotesk', 'Inter', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600" fill="#777E49" letter-spacing="4" opacity="0.45">SHELBYAIDEALS</text>
+
+  <!-- Small decorative dots near branding -->
+  <circle cx="520" cy="577" r="2" fill="#777E49" opacity="0.25"/>
+  <circle cx="680" cy="577" r="2" fill="#777E49" opacity="0.25"/>
+</svg>

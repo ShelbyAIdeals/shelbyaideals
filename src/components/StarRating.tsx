@@ -3,7 +3,7 @@
 import { Star } from 'lucide-react';
 
 interface StarRatingProps {
-  rating: number; // 0-10 scale
+  rating: number; // 0-5 scale
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -14,11 +14,10 @@ const sizeMap = {
 } as const;
 
 export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
-  const clamped = Math.max(0, Math.min(10, Number(rating) || 0));
-  const outOfFive = clamped / 2;
-  const fullStars = Math.floor(outOfFive);
-  const hasHalf = outOfFive - fullStars >= 0.25 && outOfFive - fullStars < 0.75;
-  const extraFull = outOfFive - fullStars >= 0.75 ? 1 : 0;
+  const clamped = Math.max(0, Math.min(5, Number(rating) || 0));
+  const fullStars = Math.floor(clamped);
+  const hasHalf = clamped - fullStars >= 0.25 && clamped - fullStars < 0.75;
+  const extraFull = clamped - fullStars >= 0.75 ? 1 : 0;
   const filledCount = fullStars + extraFull;
   const emptyStars = 5 - filledCount - (hasHalf ? 1 : 0);
 
@@ -26,7 +25,7 @@ export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
 
   return (
     <div className={`inline-flex items-center ${gap}`}>
-      <div className={`flex items-center ${gap}`} aria-label={`Rating: ${clamped} out of 10`}>
+      <div className={`flex items-center ${gap}`} aria-label={`Rating: ${clamped.toFixed(1)} out of 5`}>
         {/* Filled stars */}
         {Array.from({ length: filledCount }).map((_, i) => (
           <Star
@@ -56,7 +55,7 @@ export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
         ))}
       </div>
       <span className={`${text} font-semibold text-void-300 ml-1.5`}>
-        {clamped.toFixed(1)}
+        {clamped.toFixed(1)}/5
       </span>
     </div>
   );
