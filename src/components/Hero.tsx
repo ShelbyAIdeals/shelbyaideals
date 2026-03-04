@@ -22,9 +22,9 @@ export default function Hero() {
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-void-950" />
-        {/* Cyan blob top-right */}
+        {/* Olive blob top-right */}
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px] animate-mesh" />
-        {/* Cyan blob bottom-left */}
+        {/* Olive blob bottom-left */}
         <div
           className="absolute -bottom-48 -left-48 w-[500px] h-[500px] bg-accent-600/6 rounded-full blur-[100px] animate-mesh"
           style={{ animationDelay: '-4s' }}
@@ -34,7 +34,7 @@ export default function Hero() {
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
+              'linear-gradient(rgba(119,126,73,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(119,126,73,0.3) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
           }}
         />
@@ -56,7 +56,7 @@ export default function Hero() {
             style={{ animationDelay: '100ms' }}
           >
             Discover the Best AI Tools{' '}
-            <span className="text-gradient-cyan">for Your Workflow</span>
+            <span className="text-gradient-accent">for Your Workflow</span>
           </h1>
 
           {/* Subheadline */}
