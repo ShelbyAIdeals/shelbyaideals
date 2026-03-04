@@ -27,7 +27,7 @@ export default function QuickVerdict({
           {/* Rating */}
           <div className="flex items-center gap-2">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500 text-sm font-bold text-void-950">
-              {rating.toFixed(1)}
+              {(Number(rating) || 0).toFixed(1)}
             </span>
             <div className="flex flex-col">
               <span className="text-xs text-void-500">Rating</span>
@@ -37,7 +37,7 @@ export default function QuickVerdict({
                     key={i}
                     size={12}
                     className={
-                      i < Math.round(rating / 2)
+                      i < Math.round((Number(rating) || 0) / 2)
                         ? 'fill-accent-400 text-accent-400'
                         : 'fill-void-700 text-void-700'
                     }

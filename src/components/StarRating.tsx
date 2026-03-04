@@ -14,7 +14,7 @@ const sizeMap = {
 } as const;
 
 export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
-  const clamped = Math.max(0, Math.min(10, rating));
+  const clamped = Math.max(0, Math.min(10, Number(rating) || 0));
   const outOfFive = clamped / 2;
   const fullStars = Math.floor(outOfFive);
   const hasHalf = outOfFive - fullStars >= 0.25 && outOfFive - fullStars < 0.75;
