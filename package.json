@@ -1,0 +1,39 @@
+{
+  "name": "shelbyaideals",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate": "tsx scripts/generate-article.ts",
+    "generate:next": "tsx scripts/generate-article.ts --next",
+    "publish:next": "tsx scripts/publish-next.ts",
+    "publish:batch": "tsx scripts/publish-next.ts --count 3",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
+    "rss": "tsx scripts/generate-rss.ts",
+    "social": "tsx scripts/social-post.ts --latest",
+    "autopilot": "tsx scripts/publish-next.ts --count 1"
+  },
+  "dependencies": {
+    "openai": "^4.78.0",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reading-time": "^1.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0"
+  }
+}

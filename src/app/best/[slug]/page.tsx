@@ -1,0 +1,113 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import ArticleLayout from '@/components/ArticleLayout';
+import ToolCard from '@/components/ToolCard';
+import MDXContent from '@/components/MDXContent';
+import TableOfContents from '@/components/TableOfContents';
+import { getArticle, getArticleSlugs } from '@/lib/content';
+import type { BestOfMeta } from '@/lib/types';
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = getArticleSlugs('best');
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const { meta } = getArticle('best', slug);
+    const bestOf = meta as BestOfMeta;
+
+    return {
+      title: bestOf.title,
+      description: bestOf.excerpt,
+      openGraph: {
+        title: bestOf.title,
+        description: bestOf.excerpt,
+        type: 'article',
+        ...(bestOf.featuredImage && { images: [bestOf.featuredImage] }),
+      },
+    };
+  } catch {
+    return { title: 'Best-Of List Not Found' };
+  }
+}
+
+function extractHeadings(content: string) {
+  const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+  const headings: { id: string; text: string; level: number }[] = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1].length;
+    const text = match[2].trim();
+    const id = text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    headings.push({ id, text, level });
+  }
+
+  return headings;
+}
+
+export default async function BestOfArticlePage({ params }: PageProps) {
+  const { slug } = await params;
+
+  let content: string;
+  let meta: BestOfMeta;
+
+  try {
+    const article = getArticle('best', slug);
+    content = article.content;
+    meta = article.meta as BestOfMeta;
+  } catch {
+    notFound();
+  }
+
+  const headings = extractHeadings(content);
+
+  const sidebar = (
+    <div className="space-y-8">
+      <TableOfContents headings={headings} />
+    </div>
+  );
+
+  return (
+    <ArticleLayout
+      meta={meta}
+      backLink={{ href: '/best', label: 'All Best-Of Lists' }}
+      sidebar={sidebar}
+    >
+      {/* Ranked Tools */}
+      {meta.tools.length > 0 && (
+        <div className="mb-10 space-y-4">
+          <h2 className="text-xl font-bold text-void-950 mb-4">
+            Our Top Picks
+          </h2>
+          {meta.tools.map((tool) => (
+            <ToolCard
+              key={tool.name}
+              rank={tool.rank}
+              name={tool.name}
+              tagline={tool.tagline}
+              rating={tool.rating}
+              pricing={tool.pricing}
+              bestFor={tool.bestFor}
+              affiliateUrl={tool.affiliateUrl}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* MDX Body */}
+      <MDXContent source={content} />
+    </ArticleLayout>
+  );
+}
