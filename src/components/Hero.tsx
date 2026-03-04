@@ -1,0 +1,146 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { Search, ArrowRight, TrendingUp, Star, BookOpen } from 'lucide-react';
+
+const stats = [
+  { icon: BookOpen, value: '50+', label: 'Tools Reviewed' },
+  { icon: Star, value: '4.8', label: 'Avg Rating' },
+  { icon: TrendingUp, value: '10K+', label: 'Monthly Readers' },
+];
+
+const trendingTools = [
+  'Jasper AI', 'Copy.ai', 'Midjourney', 'Cursor', 'Surfer SEO', 'Descript',
+];
+
+export default function Hero() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  return (
+    <section className="relative overflow-hidden">
+      {/* Animated gradient mesh background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-void-950" />
+        {/* Cyan blob top-right */}
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px] animate-mesh" />
+        {/* Cyan blob bottom-left */}
+        <div
+          className="absolute -bottom-48 -left-48 w-[500px] h-[500px] bg-accent-600/6 rounded-full blur-[100px] animate-mesh"
+          style={{ animationDelay: '-4s' }}
+        />
+        {/* Subtle grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(6,182,212,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.3) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }}
+        />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-void-950 to-transparent" />
+      </div>
+
+      <div className="container-main pt-20 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Eyebrow */}
+          <div className="animate-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-glow" />
+            Trusted by 10,000+ creators
+          </div>
+
+          {/* Headline */}
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-void-50 leading-[1.1] animate-reveal"
+            style={{ animationDelay: '100ms' }}
+          >
+            Discover the Best AI Tools{' '}
+            <span className="text-gradient-cyan">for Your Workflow</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p
+            className="mt-6 text-lg sm:text-xl text-void-400 leading-relaxed max-w-2xl mx-auto animate-reveal"
+            style={{ animationDelay: '200ms' }}
+          >
+            Honest reviews, head-to-head comparisons, and workflow-first recommendations.
+            No sponsored rankings. No BS.
+          </p>
+
+          {/* Search Bar */}
+          <div
+            className="mt-10 max-w-xl mx-auto animate-reveal"
+            style={{ animationDelay: '300ms' }}
+          >
+            <div className="relative group">
+              <Search
+                size={20}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-void-500 group-focus-within:text-accent-400 transition-colors"
+              />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search tools, categories, or comparisons..."
+                className="search-input !pl-12 !pr-32"
+              />
+              <button
+                className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-accent-500 text-void-950 text-sm font-semibold rounded-lg hover:bg-accent-400 transition-colors cursor-pointer"
+              >
+                Search
+              </button>
+            </div>
+
+            {/* Trending pills */}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+              <span className="text-xs text-void-500">Trending:</span>
+              {trendingTools.map((tool) => (
+                <Link
+                  key={tool}
+                  href={`/reviews`}
+                  className="px-3 py-1 text-xs font-medium text-void-400 bg-void-800/60 border border-void-700/50 rounded-full hover:border-accent-500/30 hover:text-accent-400 no-underline transition-all"
+                >
+                  {tool}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats Row */}
+          <div
+            className="mt-14 flex flex-wrap items-center justify-center gap-8 sm:gap-12 animate-reveal"
+            style={{ animationDelay: '400ms' }}
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-accent-500/10 border border-accent-500/15 flex items-center justify-center">
+                  <stat.icon size={18} className="text-accent-400" />
+                </div>
+                <div className="text-left">
+                  <div className="text-xl font-heading font-bold text-void-50">{stat.value}</div>
+                  <div className="text-xs text-void-500">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Quick action buttons */}
+          <div
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 animate-reveal"
+            style={{ animationDelay: '500ms' }}
+          >
+            <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
+              Browse All Reviews
+              <ArrowRight size={16} />
+            </Link>
+            <Link href="/comparisons" className="btn-outline text-sm no-underline gap-2">
+              Compare Tools
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

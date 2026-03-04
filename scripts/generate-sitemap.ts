@@ -1,0 +1,100 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const SITE_URL = process.env.SITE_URL || 'https://shelby-ai.com';
+const contentDir = path.join(process.cwd(), 'src/content');
+const outDir = path.join(process.cwd(), 'public');
+
+interface SitemapEntry {
+  url: string;
+  lastmod: string;
+  changefreq: string;
+  priority: string;
+}
+
+function getContentFiles(dir: string): string[] {
+  const fullPath = path.join(contentDir, dir);
+  if (!fs.existsSync(fullPath)) return [];
+  return fs.readdirSync(fullPath).filter((f) => f.endsWith('.mdx'));
+}
+
+function buildSitemap(): string {
+  const entries: SitemapEntry[] = [];
+  const today = new Date().toISOString().split('T')[0];
+
+  // Static pages
+  const staticPages = [
+    { url: '/', priority: '1.0', changefreq: 'daily' },
+    { url: '/reviews', priority: '0.9', changefreq: 'daily' },
+    { url: '/comparisons', priority: '0.9', changefreq: 'daily' },
+    { url: '/best', priority: '0.9', changefreq: 'daily' },
+    { url: '/guides', priority: '0.9', changefreq: 'weekly' },
+    { url: '/about', priority: '0.5', changefreq: 'monthly' },
+    { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
+    { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
+  ];
+
+  for (const page of staticPages) {
+    entries.push({ url: page.url, lastmod: today, changefreq: page.changefreq, priority: page.priority });
+  }
+
+  // Category pages
+  const categories = [
+    'ai-writing-tools', 'ai-design-tools', 'ai-coding-tools',
+    'ai-automation', 'ai-seo-tools', 'ai-productivity',
+  ];
+  for (const cat of categories) {
+    entries.push({ url: `/categories/${cat}`, lastmod: today, changefreq: 'weekly', priority: '0.8' });
+  }
+
+  // Content pages
+  const contentTypes = [
+    { dir: 'reviews', urlPrefix: '/reviews', priority: '0.8', changefreq: 'monthly' },
+    { dir: 'comparisons', urlPrefix: '/comparisons', priority: '0.8', changefreq: 'monthly' },
+    { dir: 'best', urlPrefix: '/best', priority: '0.8', changefreq: 'monthly' },
+    { dir: 'guides', urlPrefix: '/guides', priority: '0.7', changefreq: 'monthly' },
+  ];
+
+  for (const type of contentTypes) {
+    const files = getContentFiles(type.dir);
+    for (const file of files) {
+      const filePath = path.join(contentDir, type.dir, file);
+      const raw = fs.readFileSync(filePath, 'utf-8');
+      const { data } = matter(raw);
+      const slug = file.replace('.mdx', '');
+      const lastmod = data.lastUpdated || data.date || today;
+
+      entries.push({
+        url: `${type.urlPrefix}/${slug}`,
+        lastmod,
+        changefreq: type.changefreq,
+        priority: type.priority,
+      });
+    }
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries
+  .map(
+    (e) => `  <url>
+    <loc>${SITE_URL}${e.url}</loc>
+    <lastmod>${e.lastmod}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`
+  )
+  .join('\n')}
+</urlset>`;
+
+  return xml;
+}
+
+// Generate and write
+const sitemap = buildSitemap();
+const outputPath = path.join(outDir, 'sitemap.xml');
+fs.writeFileSync(outputPath, sitemap, 'utf-8');
+
+const urlCount = (sitemap.match(/<url>/g) || []).length;
+console.log(`Sitemap generated: ${outputPath} (${urlCount} URLs)`);

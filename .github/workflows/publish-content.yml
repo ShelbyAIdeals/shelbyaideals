@@ -1,0 +1,103 @@
+name: Publish New Content
+
+on:
+  # Scheduled: runs Mon/Wed/Fri at 8am UTC
+  schedule:
+    - cron: '0 8 * * 1,3,5'
+
+  # Manual trigger with options
+  workflow_dispatch:
+    inputs:
+      article_count:
+        description: 'Number of articles to generate (1-5)'
+        required: false
+        default: '1'
+      article_id:
+        description: 'Specific article ID to generate (leave empty for next in queue)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate article(s)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelbyaideals.com' }}
+        run: |
+          if [ -n "${{ github.event.inputs.article_id }}" ]; then
+            echo "Generating specific article: ${{ github.event.inputs.article_id }}"
+            npx tsx scripts/generate-article.ts ${{ github.event.inputs.article_id }}
+          else
+            COUNT=${{ github.event.inputs.article_count || '1' }}
+            echo "Generating $COUNT article(s) from queue..."
+            npx tsx scripts/publish-next.ts --count $COUNT
+          fi
+
+      - name: Generate sitemap
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelbyaideals.com' }}
+        run: npx tsx scripts/generate-sitemap.ts
+
+      - name: Generate RSS feed
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelbyaideals.com' }}
+        run: npx tsx scripts/generate-rss.ts
+
+      - name: Build site
+        run: npx next build
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "ShelbyAIDeals Bot"
+          git config user.email "bot@shelbyaideals.com"
+          git add -A
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          # Build commit message from generated articles
+          ARTICLES=$(git diff --staged --name-only -- 'src/content/' | sed 's|src/content/[^/]*/||' | sed 's|\.mdx||' | tr '\n' ', ' | sed 's/,$//')
+          git commit -m "content: publish ${ARTICLES}"
+          git push
+
+      - name: Generate social media posts
+        if: success()
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelbyaideals.com' }}
+        run: npx tsx scripts/social-post.ts --latest
+        continue-on-error: true
+
+  # Notify on failure
+  notify-failure:
+    runs-on: ubuntu-latest
+    needs: generate-and-publish
+    if: failure()
+    steps:
+      - name: Log failure
+        run: echo "Content generation failed. Check the workflow logs."

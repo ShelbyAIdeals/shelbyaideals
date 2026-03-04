@@ -1,0 +1,80 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { getAllBestOf } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Best AI Tools',
+  description:
+    'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
+};
+
+export default async function BestOfPage() {
+  const bestOf = getAllBestOf();
+
+  return (
+    <main className="min-h-screen">
+      <div className="container-main py-12 sm:py-16">
+        {/* Page Header */}
+        <div className="max-w-2xl mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-4">
+            Best AI Tools
+          </h1>
+          <p className="text-lg text-void-400 leading-relaxed">
+            Curated, tested, and ranked &mdash; the best AI tools for every use
+            case and budget.
+          </p>
+        </div>
+
+        {/* Best-of Grid */}
+        {bestOf.length > 0 ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 animate-reveal-stagger">
+            {bestOf.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/best/${article.slug}`}
+                className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1"
+              >
+                {/* Tool count */}
+                <span className="badge-accent mb-3 inline-block">
+                  {article.tools.length} tools ranked
+                </span>
+
+                {/* Title */}
+                <h2 className="text-lg font-bold text-void-100 mb-2">
+                  {article.title}
+                </h2>
+
+                {/* Excerpt */}
+                <p className="text-sm text-void-400 leading-relaxed mb-4">
+                  {article.excerpt}
+                </p>
+
+                {/* Top 3 tool names */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {article.tools.slice(0, 3).map((tool) => (
+                    <span
+                      key={tool.name}
+                      className="rounded-full bg-void-700/50 px-2.5 py-0.5 text-xs font-medium text-void-300"
+                    >
+                      #{tool.rank} {tool.name}
+                    </span>
+                  ))}
+                </div>
+
+                <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                  See Full Rankings <span className="ml-1">&rarr;</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <p className="text-void-500 text-lg">
+              No best-of lists published yet. Check back soon.
+            </p>
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}
