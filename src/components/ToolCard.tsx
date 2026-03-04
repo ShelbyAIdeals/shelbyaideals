@@ -1,4 +1,7 @@
+'use client';
+
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import StarRating from './StarRating';
 import CTAButton from './CTAButton';
 
@@ -22,7 +25,11 @@ export default function ToolCard({
   affiliateUrl,
 }: ToolCardProps) {
   return (
-    <div className="card group relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center">
+    <motion.div
+      className="card group relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center"
+      whileHover={{ y: -4, boxShadow: '0 0 32px rgba(119,126,73,0.12)' }}
+      transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+    >
       {/* Rank badge */}
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-white shadow-[0_0_15px_rgba(119,126,73,0.4)]">
         {rank}
@@ -56,6 +63,6 @@ export default function ToolCard({
           icon={<ArrowRight size={14} />}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

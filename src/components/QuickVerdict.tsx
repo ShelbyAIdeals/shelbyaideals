@@ -30,14 +30,14 @@ export default function QuickVerdict({
               {(Number(rating) || 0).toFixed(1)}
             </span>
             <div className="flex flex-col">
-              <span className="text-xs text-void-500">Rating</span>
+              <span className="text-xs text-void-500">Rating /5</span>
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
                     size={12}
                     className={
-                      i < Math.round((Number(rating) || 0) / 2)
+                      i < Math.round(Number(rating) || 0)
                         ? 'fill-accent-400 text-accent-400'
                         : 'fill-void-700 text-void-700'
                     }

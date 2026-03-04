@@ -15,7 +15,8 @@ export interface ArticleMeta {
 export interface ReviewMeta extends ArticleMeta {
   type: 'review';
   tool: string;
-  rating: number;
+  rating: number; // 0-5 scale
+  toolSlug?: string;
   bestFor: string;
   pricing: PricingTier[];
   pros: string[];
@@ -61,7 +62,7 @@ export interface RankedTool {
   rank: number;
   name: string;
   tagline: string;
-  rating: number;
+  rating: number; // 0-5 scale
   pricing: string;
   bestFor: string;
   affiliateUrl: string;

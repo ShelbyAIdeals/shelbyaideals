@@ -246,21 +246,6 @@
       bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500;
   }
 
-  /* Staggered reveal animation */
-  .animate-reveal {
-    animation: fadeInUp 0.6s ease-out both;
-  }
-
-  .animate-reveal-stagger > * {
-    animation: staggerReveal 0.5s ease-out both;
-  }
-  .animate-reveal-stagger > *:nth-child(1) { animation-delay: 0ms; }
-  .animate-reveal-stagger > *:nth-child(2) { animation-delay: 80ms; }
-  .animate-reveal-stagger > *:nth-child(3) { animation-delay: 160ms; }
-  .animate-reveal-stagger > *:nth-child(4) { animation-delay: 240ms; }
-  .animate-reveal-stagger > *:nth-child(5) { animation-delay: 320ms; }
-  .animate-reveal-stagger > *:nth-child(6) { animation-delay: 400ms; }
-
   /* Glow pulse for decorative elements */
   .animate-glow {
     animation: glowPulse 4s ease-in-out infinite;

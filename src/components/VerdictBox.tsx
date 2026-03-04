@@ -28,8 +28,9 @@ export default function VerdictBox({
 
       <div className="mb-4 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-500 text-2xl font-extrabold text-void-950">
-            {(Number(rating) || 0).toFixed(1)}
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-500 text-xl font-extrabold text-void-950 flex-col leading-none">
+            <span>{(Number(rating) || 0).toFixed(1)}</span>
+            <span className="text-[10px] font-semibold opacity-70">/5</span>
           </span>
           <StarRating rating={rating} size="md" />
         </div>
