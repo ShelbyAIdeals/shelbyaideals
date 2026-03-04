@@ -33,7 +33,7 @@ export default function CategoryCard({
       className="card group p-5 flex items-start gap-4 no-underline hover:-translate-y-0.5 transition-all"
     >
       {/* Icon */}
-      <div className="w-11 h-11 rounded-lg bg-accent-500/10 border border-accent-500/15 text-accent-400 flex items-center justify-center shrink-0 group-hover:bg-accent-500/15 group-hover:shadow-[0_0_16px_rgba(6,182,212,0.15)] transition-all">
+      <div className="w-11 h-11 rounded-lg bg-accent-500/10 border border-accent-500/15 text-accent-400 flex items-center justify-center shrink-0 group-hover:bg-accent-500/15 group-hover:shadow-[0_0_16px_rgba(119,126,73,0.15)] transition-all">
         <IconComponent size={20} strokeWidth={2} />
       </div>
 

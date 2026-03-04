@@ -21,12 +21,12 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
             key={tier.plan}
             className={`relative flex flex-col rounded-xl border bg-void-900/60 backdrop-blur-md p-6 ${
               tier.highlighted
-                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
+                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(119,126,73,0.15)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-white shadow-[0_0_15px_rgba(119,126,73,0.4)]">
                 Most Popular
               </span>
             )}
@@ -81,12 +81,12 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
             key={tier.plan}
             className={`relative rounded-xl border bg-void-900/60 backdrop-blur-md p-5 ${
               tier.highlighted
-                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
+                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(119,126,73,0.15)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-4 rounded-full bg-accent-500 px-3 py-0.5 text-xs font-semibold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-4 rounded-full bg-accent-500 px-3 py-0.5 text-xs font-semibold text-white shadow-[0_0_15px_rgba(119,126,73,0.4)]">
                 Most Popular
               </span>
             )}

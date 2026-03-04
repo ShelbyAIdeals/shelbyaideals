@@ -24,7 +24,7 @@ export default function ToolCard({
   return (
     <div className="card group relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center">
       {/* Rank badge */}
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-white shadow-[0_0_15px_rgba(119,126,73,0.4)]">
         {rank}
       </div>
 

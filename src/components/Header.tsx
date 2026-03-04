@@ -22,7 +22,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline group shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-accent-500 flex items-center justify-center group-hover:shadow-[0_0_16px_rgba(6,182,212,0.4)] transition-shadow">
+            <div className="w-8 h-8 rounded-lg bg-accent-500 flex items-center justify-center group-hover:shadow-[0_0_16px_rgba(119,126,73,0.4)] transition-shadow">
               <Zap size={16} className="text-void-950" strokeWidth={2.5} />
             </div>
             <span className="text-lg font-heading font-bold text-void-50 tracking-tight">
