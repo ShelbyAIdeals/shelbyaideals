@@ -22,7 +22,10 @@ const resourceLinks = [
 
 const companyLinks = [
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'How We Review', href: '/how-we-review' },
   { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
@@ -152,7 +155,7 @@ export default function Footer() {
             </span>
           </Link>
 
-          <p className="text-xs text-void-600 text-center sm:text-right leading-relaxed">
+          <p className="text-xs text-void-300 text-center sm:text-right leading-relaxed">
             &copy; 2026 ShelbyAIDeals &mdash; Honest AI tool reviews for creators
             and small teams.
           </p>
