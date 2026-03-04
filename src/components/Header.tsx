@@ -36,7 +36,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-void-400 hover:text-accent-400 rounded-lg hover:bg-void-800/50 no-underline transition-all"
+                className="px-3 py-2 text-sm font-semibold text-void-200 hover:text-white rounded-lg hover:bg-void-700/60 no-underline transition-all"
               >
                 {link.label}
               </Link>
@@ -108,7 +108,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2.5 rounded-lg text-sm font-medium text-void-300 hover:bg-void-800 hover:text-accent-400 no-underline transition-colors"
+                    className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-void-200 hover:bg-void-700/60 hover:text-white no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
