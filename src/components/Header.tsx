@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Best Of', href: '/best' },
   { label: 'Guides', href: '/guides' },
-  { label: 'Categories', href: '#categories' },
+  { label: 'Categories', href: '/categories' },
 ];
 
 export default function Header() {
