@@ -88,7 +88,7 @@ export default async function BestOfArticlePage({ params }: PageProps) {
       {/* Ranked Tools */}
       {meta.tools.length > 0 && (
         <div className="mb-10 space-y-4">
-          <h2 className="text-xl font-bold text-void-950 mb-4">
+          <h2 className="text-xl font-bold text-void-50 mb-4">
             Our Top Picks
           </h2>
           {meta.tools.map((tool) => (

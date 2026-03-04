@@ -89,7 +89,7 @@ export default async function GuidePage({ params }: PageProps) {
       {/* Recommended Tools */}
       {meta.recommendedTools.length > 0 && (
         <div className="mb-10">
-          <h2 className="text-lg font-bold text-void-950 mb-4">
+          <h2 className="text-lg font-bold text-void-50 mb-4">
             Tools Mentioned in This Guide
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -99,26 +99,26 @@ export default async function GuidePage({ params }: PageProps) {
                 href={tool.affiliateUrl}
                 target="_blank"
                 rel="nofollow sponsored noopener"
-                className="card p-4 no-underline hover:border-accent-300 border-2 border-transparent transition-all group"
+                className="card p-4 no-underline hover:border-accent-400/50 border-2 border-transparent transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <h3 className="text-sm font-bold text-void-900 group-hover:text-accent-600 transition-colors">
+                    <h3 className="text-sm font-bold text-void-100 group-hover:text-accent-400 transition-colors">
                       {tool.name}
                     </h3>
-                    <p className="text-xs text-void-500 mt-0.5">
+                    <p className="text-xs text-void-300 mt-0.5">
                       {tool.category} &middot; {tool.pricing}
                     </p>
-                    <p className="text-xs text-void-600 mt-1.5 leading-relaxed line-clamp-2">
+                    <p className="text-xs text-void-400 mt-1.5 leading-relaxed line-clamp-2">
                       {tool.description}
                     </p>
                   </div>
                   <ArrowRight
                     size={14}
-                    className="shrink-0 text-accent-500 mt-0.5 group-hover:translate-x-0.5 transition-transform"
+                    className="shrink-0 text-accent-400 mt-0.5 group-hover:translate-x-0.5 transition-transform"
                   />
                 </div>
-                <span className="mt-2 block text-[10px] text-void-400">
+                <span className="mt-2 block text-[10px] text-void-500">
                   Affiliate link
                 </span>
               </a>
