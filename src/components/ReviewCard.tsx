@@ -67,7 +67,7 @@ export default function ReviewCard({
         {/* Read review link */}
         <Link
           href={`/reviews/${slug}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-400 hover:text-accent-300 no-underline group/link"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-100 hover:text-white no-underline group/link"
         >
           Read Review
           <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-0.5" />
