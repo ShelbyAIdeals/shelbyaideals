@@ -158,20 +158,16 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Regen: stagger respawns over ~2s, random bursts ──
-      if (lastRegenTime.current > 0 && !demisterOn.current) {
-        const elapsed = now - lastRegenTime.current;
-        const regenProgress = Math.min(1, elapsed / 2);
-
-        for (const p of particles.current) {
-          if (p.alive > 0) continue;
-
-          // Heavy randomness so particles pop in unevenly
-          const spawnThreshold = Math.random() * Math.random();
-
-          if (regenProgress > spawnThreshold) {
-            // Respawn at right edge, drift left
-            p.x = w + p.r + Math.random() * 300;
+      // ── Regen: revive 3% of dead particles per frame in random chunks ──
+      if (!demisterOn.current) {
+        const dead = particles.current.filter(p => p.alive <= 0);
+        if (dead.length > 0) {
+          const chunkSize = Math.max(1, Math.ceil(particles.current.length * 0.03));
+          // Shuffle and pick a chunk
+          for (let i = 0; i < Math.min(chunkSize, dead.length); i++) {
+            const idx = Math.floor(Math.random() * dead.length);
+            const p = dead[idx];
+            p.x = Math.random() * w;
             p.y = Math.random() * h;
             p.vx = (Math.random() - 0.5) * 0.2 - 0.104;
             p.vy = (Math.random() - 0.5) * 0.078;
