@@ -117,11 +117,14 @@ export default function MistEffect() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
 
-    // Quick click = demist whole screen
+    // Quick click on empty space = demist whole screen (skip interactive elements)
     const onClick = (e: MouseEvent) => {
       if (e.button !== 0) return;
       const holdDuration = performance.now() - mouseDownStart.current;
       if (holdDuration > 300 || mouseMoved.current) return;
+
+      const el = e.target as HTMLElement;
+      if (el.closest('a, button, input, textarea, select, label, [role="button"], [role="link"], [tabindex]')) return;
 
       for (const p of particles.current) {
         p.alive = 0;
@@ -216,7 +219,7 @@ export default function MistEffect() {
         // ── Hold left click: suck mist into cursor (no bouncing) ──
         if (mouseDown.current && dist < demistRadius * 1.8) {
           const fade = 1 - dist / (demistRadius * 1.8);
-          p.alive = Math.max(0, p.alive - fade * 0.12);
+          p.alive = Math.max(0, p.alive - fade * 0.25);
           p.o = p.maxO * p.alive;
           if (p.alive <= 0.01) {
             p.alive = 0;
@@ -227,8 +230,8 @@ export default function MistEffect() {
         // ── Hover demist: stronger in center, fades at edges ──
         const effectRadius = demistRadius + p.r;
         if (dist < effectRadius) {
-          const target = Math.pow(1 - dist / effectRadius, 1.5);
-          p.demist += (target - p.demist) * 0.15;
+          const target = Math.pow(1 - dist / effectRadius, 1.2);
+          p.demist += (target - p.demist) * 0.3;
         } else {
           // Mist slowly reappears after cursor passes
           p.demist = Math.max(0, p.demist - 0.02);
