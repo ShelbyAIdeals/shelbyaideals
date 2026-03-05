@@ -163,12 +163,17 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Shockwave: expanding ring that kills mist ──
+      // ── Shockwave: expanding ring that kills mist (constant visual speed) ──
       const sw = shockwave.current;
       if (sw.active) {
         const maxRadius = Math.sqrt(w * w + h * h);
-        sw.radius += maxRadius * 0.025; // crosses screen in ~40 frames (~0.67s)
-        const ringWidth = 300;
+        const elapsed = now - sw.startTime;
+        const duration = 1800; // ms total duration
+        const t = Math.min(1, elapsed / duration);
+        // Ease-in: starts slow, speeds up — counteracts the "fast start" feel
+        const eased = t * t;
+        sw.radius = eased * (maxRadius + 400);
+        const ringWidth = 400;
 
         for (const p of particles.current) {
           if (p.alive <= 0) continue;
@@ -181,9 +186,8 @@ export default function MistEffect() {
           }
         }
 
-        if (sw.radius > maxRadius + ringWidth) {
+        if (t >= 1) {
           sw.active = false;
-          // Start regen after 5 seconds
           lastRegenTime.current = now + 5000;
         }
       }
