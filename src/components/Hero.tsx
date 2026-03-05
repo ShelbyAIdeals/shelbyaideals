@@ -119,7 +119,7 @@ export default function Hero() {
             custom={0.3}
             className="mt-10 max-w-xl mx-auto"
           >
-            <form onSubmit={handleSearch} className="relative group">
+            <form onSubmit={handleSearch} className="relative group z-[2] rounded-xl hover:bg-void-900/90 focus-within:bg-void-900/90 transition-colors">
               <Search
                 size={20}
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-void-500 group-focus-within:text-accent-400 transition-colors"
@@ -140,13 +140,13 @@ export default function Hero() {
             </form>
 
             {/* Trending pills */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 z-[2] relative">
               <span className="text-xs text-void-500">Trending:</span>
               {trendingTools.map((tool) => (
                 <Link
                   key={tool}
                   href={`/reviews`}
-                  className="px-3 py-1 text-xs font-medium text-void-400 bg-void-800/60 border border-void-700/50 rounded-full hover:border-accent-500/30 hover:text-accent-400 no-underline transition-all"
+                  className="px-3 py-1 text-xs font-medium text-void-400 bg-void-800/60 border border-void-700/50 rounded-full hover:bg-void-900/90 hover:border-accent-500/30 hover:text-accent-400 no-underline transition-all"
                 >
                   {tool}
                 </Link>
