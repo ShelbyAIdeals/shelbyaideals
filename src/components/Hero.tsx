@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-visible">
       {/* Animated gradient mesh background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-visible">
         <div className="absolute inset-0 bg-void-950" />
         <motion.div
           className="absolute -top-40 right-0 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px]"
@@ -51,15 +51,16 @@ export default function Hero() {
           }}
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
         />
-        <motion.div
-          className="absolute -bottom-48 -left-48 w-[500px] h-[500px] bg-accent-600/6 rounded-full blur-[150px]"
-          animate={{
-            x: [0, -20, 30, 0],
-            y: [0, 15, -20, 0],
-            rotate: [0, -1, 1, 0],
-          }}
-          transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity, delay: 4 }}
-        />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] translate-x-[-30%] translate-y-[30%]">
+          <motion.div
+            className="w-full h-full bg-accent-600/6 rounded-full blur-[180px]"
+            animate={{
+              x: [0, -20, 30, 0],
+              y: [0, 15, -20, 0],
+            }}
+            transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity, delay: 4 }}
+          />
+        </div>
         {/* Subtle grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.03]"
