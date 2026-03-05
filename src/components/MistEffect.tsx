@@ -34,6 +34,9 @@ export default function MistEffect() {
   const mouseMoved = useRef(false);
   const lastRegenTime = useRef(0);
   const demisterOn = useRef(false);
+  const shockwave = useRef<{ x: number; y: number; radius: number; active: boolean; startTime: number }>({
+    x: 0, y: 0, radius: 0, active: false, startTime: 0,
+  });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -54,14 +57,14 @@ export default function MistEffect() {
     };
 
     const initParticles = () => {
-      const count = Math.floor((w * h) / 8900);
+      const count = Math.floor((w * h) / 9790);
       particles.current = Array.from({ length: count }, () => {
         const o = Math.random() * 0.06 + 0.03;
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.2 - 0.104,
-          vy: (Math.random() - 0.5) * 0.078,
+          vx: (Math.random() - 0.5) * 0.26 - 0.135,
+          vy: (Math.random() - 0.5) * 0.101,
           r: Math.random() * 180 + 80,
           o,
           alive: 1,
@@ -118,7 +121,7 @@ export default function MistEffect() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
 
-    // Quick click on empty space = demist whole screen (skip interactive elements)
+    // Quick click on empty space = shockwave demist from cursor (skip interactive elements)
     const onClick = (e: MouseEvent) => {
       if (e.button !== 0) return;
       const holdDuration = performance.now() - mouseDownStart.current;
@@ -127,11 +130,13 @@ export default function MistEffect() {
       const el = e.target as HTMLElement;
       if (el.closest('a, button, input, textarea, select, label, [role="button"], [role="link"], [tabindex]')) return;
 
-      for (const p of particles.current) {
-        p.alive = 0;
-        p.o = 0;
-      }
-      lastRegenTime.current = performance.now();
+      shockwave.current = {
+        x: e.clientX,
+        y: e.clientY,
+        radius: 0,
+        active: true,
+        startTime: performance.now(),
+      };
     };
     window.addEventListener('click', onClick);
 
@@ -158,8 +163,33 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Regen: revive 3% of dead particles per frame in random chunks ──
-      if (!demisterOn.current) {
+      // ── Shockwave: expanding ring that kills mist ──
+      const sw = shockwave.current;
+      if (sw.active) {
+        const maxRadius = Math.sqrt(w * w + h * h);
+        sw.radius += maxRadius * 0.025; // crosses screen in ~40 frames (~0.67s)
+        const ringWidth = 300;
+
+        for (const p of particles.current) {
+          if (p.alive <= 0) continue;
+          const dx = p.x - sw.x;
+          const dy = p.y - sw.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < sw.radius && dist > sw.radius - ringWidth) {
+            p.alive = 0;
+            p.o = 0;
+          }
+        }
+
+        if (sw.radius > maxRadius + ringWidth) {
+          sw.active = false;
+          // Start regen after 5 seconds
+          lastRegenTime.current = now + 5000;
+        }
+      }
+
+      // ── Regen: revive dead particles per frame in random chunks ──
+      if (!demisterOn.current && now >= lastRegenTime.current) {
         const dead = particles.current.filter(p => p.alive <= 0);
         if (dead.length > 0) {
           const chunkSize = Math.max(1, Math.ceil(particles.current.length * 0.00014));
@@ -169,8 +199,8 @@ export default function MistEffect() {
             const p = dead[idx];
             p.x = Math.random() * w;
             p.y = Math.random() * h;
-            p.vx = (Math.random() - 0.5) * 0.2 - 0.104;
-            p.vy = (Math.random() - 0.5) * 0.078;
+            p.vx = (Math.random() - 0.5) * 0.26 - 0.135;
+            p.vy = (Math.random() - 0.5) * 0.101;
             p.alive = 0.05;
             p.o = p.maxO * p.alive;
           }
@@ -240,8 +270,8 @@ export default function MistEffect() {
         // ── Hover demist: stronger in center, fades at edges ──
         const effectRadius = demistRadius + p.r;
         if (dist < effectRadius) {
-          const target = Math.pow(1 - dist / effectRadius, 1.2);
-          p.demist += (target - p.demist) * 0.3;
+          const target = Math.pow(1 - dist / effectRadius, 1.0);
+          p.demist += (target - p.demist) * 0.36;
         } else {
           // Mist slowly reappears after cursor passes
           p.demist = Math.max(0, p.demist - 0.02);

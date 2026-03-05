@@ -20,7 +20,7 @@ export default function SearchPage() {
   }));
 
   return (
-    <main className="py-12 sm:py-16">
+    <main className="pt-28 sm:pt-32 pb-12 sm:pb-16">
       <div className="container-main">
         <Suspense fallback={<p className="text-void-500">Loading search...</p>}>
           <SearchResults articles={articles} />
