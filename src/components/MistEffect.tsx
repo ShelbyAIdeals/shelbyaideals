@@ -162,7 +162,7 @@ export default function MistEffect() {
       if (!demisterOn.current) {
         const dead = particles.current.filter(p => p.alive <= 0);
         if (dead.length > 0) {
-          const chunkSize = Math.max(1, Math.ceil(particles.current.length * 0.03));
+          const chunkSize = Math.max(1, Math.ceil(particles.current.length * 0.0017));
           // Shuffle and pick a chunk
           for (let i = 0; i < Math.min(chunkSize, dead.length); i++) {
             const idx = Math.floor(Math.random() * dead.length);
