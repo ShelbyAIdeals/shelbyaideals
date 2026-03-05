@@ -279,12 +279,12 @@
   .mist-slider::-webkit-slider-runnable-track {
     height: 3px;
     border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-accent-500), var(--color-void-600));
+    background: linear-gradient(to right, var(--color-accent-500), transparent);
   }
   .mist-slider::-moz-range-track {
     height: 3px;
     border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-accent-500), var(--color-void-600));
+    background: linear-gradient(to right, var(--color-accent-500), transparent);
   }
   .mist-slider::-webkit-slider-thumb {
     appearance: none;
