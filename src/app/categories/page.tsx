@@ -23,7 +23,7 @@ const iconMap: Record<string, React.ElementType> = {
 export default function CategoriesPage() {
   return (
     <main className="min-h-screen">
-      <div className="container-main pt-44 sm:pt-48 pb-12 sm:pb-16">
+      <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         <div className="max-w-2xl mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-4">
             Categories

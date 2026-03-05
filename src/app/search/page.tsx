@@ -20,7 +20,7 @@ export default function SearchPage() {
   }));
 
   return (
-    <main className="pt-44 sm:pt-48 pb-12 sm:pb-16">
+    <main className="pt-48 sm:pt-52 pb-12 sm:pb-16">
       <div className="container-main">
         <Suspense fallback={<p className="text-void-500">Loading search...</p>}>
           <SearchResults articles={articles} />
