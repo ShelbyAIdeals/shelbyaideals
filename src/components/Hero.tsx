@@ -43,7 +43,7 @@ export default function Hero() {
       {/* Background glows — fixed to viewport so no seam lines */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <motion.div
-          className="absolute -top-40 right-0 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px]"
+          className="absolute -top-40 right-0 w-[600px] h-[600px] bg-accent-500/10 rounded-full blur-[120px]"
           animate={{
             x: [0, 30, -20, 0],
             y: [0, -20, 15, 0],
@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] -translate-x-[30%] translate-y-[30%] bg-accent-600/6 rounded-full blur-[180px]"
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] -translate-x-[30%] translate-y-[30%] bg-accent-600/8 rounded-full blur-[180px]"
           animate={{
             x: [0, -20, 30, 0],
             y: [0, 15, -20, 0],
