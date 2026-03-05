@@ -17,12 +17,12 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [demisterOn, setDemisterOn] = useState(false);
+  const [mistDensity, setMistDensity] = useState(100);
   const router = useRouter();
 
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent('demister', { detail: demisterOn }));
-  }, [demisterOn]);
+    window.dispatchEvent(new CustomEvent('mistDensity', { detail: mistDensity }));
+  }, [mistDensity]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,18 +86,19 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Right side: Demister + About */}
+          {/* Right side: Mist density slider + About */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Demister toggle */}
-            <button
-              onClick={() => setDemisterOn(!demisterOn)}
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-lg transition-all cursor-pointer"
-            >
-              <span className="text-[0.938rem] font-semibold text-white">Demister</span>
-              <div className={`relative w-10 h-[22px] rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
-                <div className={`absolute top-[3px] w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-[22px]' : 'translate-x-[3px]'}`} />
-              </div>
-            </button>
+            <div className="flex items-center gap-2.5 px-3.5 py-2">
+              <span className="text-[0.938rem] font-semibold text-white whitespace-nowrap">Mist density</span>
+              <input
+                type="range"
+                min={0}
+                max={100}
+                value={mistDensity}
+                onChange={(e) => setMistDensity(Number(e.target.value))}
+                className="w-24 h-1.5 rounded-full appearance-none bg-void-600 cursor-pointer accent-accent-500"
+              />
+            </div>
 
             <Link
               href="/about"
@@ -147,17 +148,17 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            {/* Mobile demister toggle */}
-            <div className="px-3 mt-3">
-              <button
-                onClick={() => setDemisterOn(!demisterOn)}
-                className="flex items-center gap-2 cursor-pointer"
-              >
-                <span className="text-sm font-semibold text-white">Demister</span>
-                <div className={`relative w-9 h-5 rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
-                  <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-4' : 'translate-x-0.5'}`} />
-                </div>
-              </button>
+            {/* Mobile mist density slider */}
+            <div className="px-3 mt-3 flex items-center gap-2">
+              <span className="text-sm font-semibold text-white whitespace-nowrap">Mist density</span>
+              <input
+                type="range"
+                min={0}
+                max={100}
+                value={mistDensity}
+                onChange={(e) => setMistDensity(Number(e.target.value))}
+                className="w-28 h-1.5 rounded-full appearance-none bg-void-600 cursor-pointer accent-accent-500"
+              />
             </div>
           </nav>
         )}
