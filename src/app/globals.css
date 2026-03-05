@@ -270,4 +270,37 @@
   .section-divider {
     @apply border-t border-void-800/80;
   }
+
+  /* Mist density slider */
+  .mist-slider {
+    @apply appearance-none bg-transparent cursor-pointer;
+    height: 20px;
+  }
+  .mist-slider::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, var(--color-accent-500), var(--color-void-600));
+  }
+  .mist-slider::-moz-range-track {
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, var(--color-accent-500), var(--color-void-600));
+  }
+  .mist-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -4.5px;
+    box-shadow: 0 0 6px rgba(5, 160, 186, 0.4);
+  }
+  .mist-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 0 6px rgba(5, 160, 186, 0.4);
+  }
 }
