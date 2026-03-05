@@ -33,7 +33,7 @@ export default function MistEffect() {
   const mouseDownStart = useRef(0);
   const mouseMoved = useRef(false);
   const lastRegenTime = useRef(0);
-  const mistDensity = useRef(100);
+  const mistDensity = useRef(50);
   const shockwave = useRef<{ x: number; y: number; radius: number; active: boolean; startTime: number }>({
     x: 0, y: 0, radius: 0, active: false, startTime: 0,
   });
@@ -121,24 +121,6 @@ export default function MistEffect() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
 
-    // Quick click on empty space = shockwave demist from cursor (skip interactive elements)
-    const onClick = (e: MouseEvent) => {
-      if (e.button !== 0) return;
-      const holdDuration = performance.now() - mouseDownStart.current;
-      if (holdDuration > 300 || mouseMoved.current) return;
-
-      const el = e.target as HTMLElement;
-      if (el.closest('a, button, input, textarea, select, label, [role="button"], [role="link"], [tabindex]')) return;
-
-      shockwave.current = {
-        x: e.clientX,
-        y: e.clientY,
-        radius: 0,
-        active: true,
-        startTime: performance.now(),
-      };
-    };
-    window.addEventListener('click', onClick);
 
     const onMistDensity = (e: Event) => {
       mistDensity.current = (e as CustomEvent).detail;
@@ -297,7 +279,6 @@ export default function MistEffect() {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
-      window.removeEventListener('click', onClick);
       window.removeEventListener('mistDensity', onMistDensity);
     };
   }, []);

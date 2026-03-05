@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [mistDensity, setMistDensity] = useState(100);
+  const [mistDensity, setMistDensity] = useState(50);
   const router = useRouter();
 
   useEffect(() => {
