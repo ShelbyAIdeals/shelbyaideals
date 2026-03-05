@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-void-950/90 backdrop-blur-xl border-b border-void-800/80">
+    <header className="sticky top-0 z-50">
       <div className="container-main">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

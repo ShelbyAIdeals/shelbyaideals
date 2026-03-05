@@ -217,9 +217,9 @@ export default function MistEffect() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         // ── Hold left click: suck mist into cursor (no bouncing) ──
-        if (mouseDown.current && dist < demistRadius * 1.8) {
-          const fade = 1 - dist / (demistRadius * 1.8);
-          p.alive = Math.max(0, p.alive - fade * 0.25);
+        if (mouseDown.current && dist < demistRadius * 2.2) {
+          const fade = 1 - dist / (demistRadius * 2.2);
+          p.alive = Math.max(0, p.alive - fade * 0.45);
           p.o = p.maxO * p.alive;
           if (p.alive <= 0.01) {
             p.alive = 0;
