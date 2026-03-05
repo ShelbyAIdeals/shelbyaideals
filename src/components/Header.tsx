@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1940px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3.5 no-underline group shrink-0">
@@ -55,7 +55,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav + Search */}
-          <nav className="hidden lg:flex items-center gap-2">
+          <nav className="hidden lg:flex items-center gap-2 relative">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -65,8 +65,15 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            {searchOpen ? (
-              <form onSubmit={handleSearch} className="flex items-center gap-2 ml-1">
+            <button
+              onClick={() => setSearchOpen(!searchOpen)}
+              className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer ml-1"
+              aria-label="Search"
+            >
+              {searchOpen ? <X size={22} /> : <Search size={22} />}
+            </button>
+            {searchOpen && (
+              <form onSubmit={handleSearch} className="absolute left-full ml-2 top-1/2 -translate-y-1/2 flex items-center">
                 <input
                   type="text"
                   value={searchQuery}
@@ -75,22 +82,7 @@ export default function Header() {
                   autoFocus
                   className="w-64 px-4 py-2.5 text-base rounded-lg bg-void-800 border border-void-700 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
                 />
-                <button
-                  type="button"
-                  onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                  className="p-2 text-void-400 hover:text-void-200 cursor-pointer"
-                >
-                  <X size={20} />
-                </button>
               </form>
-            ) : (
-              <button
-                onClick={() => setSearchOpen(true)}
-                className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer ml-1"
-                aria-label="Search"
-              >
-                <Search size={22} />
-              </button>
             )}
           </nav>
 
