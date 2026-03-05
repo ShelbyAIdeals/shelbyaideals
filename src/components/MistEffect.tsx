@@ -272,21 +272,6 @@ export default function MistEffect() {
         ctx.fill();
       }
 
-      // ── Side glow ──
-      const gl = ctx.createLinearGradient(0, 0, 300, 0);
-      gl.addColorStop(0, 'rgba(185,190,200,0.07)');
-      gl.addColorStop(0.4, 'rgba(185,190,200,0.02)');
-      gl.addColorStop(1, 'rgba(185,190,200,0)');
-      ctx.fillStyle = gl;
-      ctx.fillRect(0, 0, 300, h);
-
-      const gr = ctx.createLinearGradient(w, 0, w - 300, 0);
-      gr.addColorStop(0, 'rgba(185,190,200,0.07)');
-      gr.addColorStop(0.4, 'rgba(185,190,200,0.02)');
-      gr.addColorStop(1, 'rgba(185,190,200,0)');
-      ctx.fillStyle = gr;
-      ctx.fillRect(w - 300, 0, 300, h);
-
       raf.current = requestAnimationFrame(draw);
     };
 
