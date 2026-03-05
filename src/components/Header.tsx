@@ -21,7 +21,11 @@ export default function Header() {
   const router = useRouter();
 
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent('mistDensity', { detail: mistDensity }));
+    // Small delay on mount to ensure MistEffect listener is attached
+    const t = setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('mistDensity', { detail: mistDensity }));
+    }, 50);
+    return () => clearTimeout(t);
   }, [mistDensity]);
 
   const handleSearch = (e: React.FormEvent) => {
