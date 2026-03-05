@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
         />
         <motion.div
-          className="absolute -bottom-48 -left-48 w-[500px] h-[500px] bg-accent-600/6 rounded-full blur-[100px]"
+          className="absolute -bottom-48 -left-48 w-[500px] h-[500px] bg-accent-600/6 rounded-full blur-[150px]"
           animate={{
             x: [0, -20, 30, 0],
             y: [0, 15, -20, 0],

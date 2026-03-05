@@ -41,7 +41,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative z-50 bg-transparent">
+    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container-main">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -106,11 +106,11 @@ export default function Header() {
             {/* Demister toggle */}
             <button
               onClick={() => setDemisterOn(!demisterOn)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+              className="flex items-center gap-2.5 px-3.5 py-2 rounded-lg transition-all cursor-pointer ml-2"
             >
-              <span className="text-sm font-semibold text-white">Demister</span>
-              <div className={`relative w-9 h-5 rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
-                <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-4' : 'translate-x-0.5'}`} />
+              <span className="text-[0.938rem] font-semibold text-white">Demister</span>
+              <div className={`relative w-10 h-[22px] rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
+                <div className={`absolute top-[3px] w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-[22px]' : 'translate-x-[3px]'}`} />
               </div>
             </button>
           </div>
