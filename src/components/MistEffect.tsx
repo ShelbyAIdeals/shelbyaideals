@@ -141,7 +141,7 @@ export default function MistEffect() {
       ctx.clearRect(0, 0, w, h);
       const mx = mouse.current.x;
       const my = mouse.current.y;
-      const demistRadius = 120;
+      const demistRadius = 180;
       const now = performance.now();
 
       // ── Regen: bring back dead particles in small random chunks every 5s ──
