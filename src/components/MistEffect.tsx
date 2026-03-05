@@ -144,16 +144,34 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Regen: dead particles respawn at right edge and drift in like clouds ──
-      for (const p of particles.current) {
-        if (p.alive > 0) continue;
-        // Respawn at right edge with random y, drift left
-        p.x = w + p.r + Math.random() * 200;
-        p.y = Math.random() * h;
-        p.vx = (Math.random() - 0.5) * 0.2 - 0.104;
-        p.vy = (Math.random() - 0.5) * 0.078;
-        p.alive = 0.05;
-        p.o = p.maxO * p.alive;
+      // ── Regen: stagger respawns over ~20s, bottom first then random ──
+      if (lastRegenTime.current > 0) {
+        const elapsed = now - lastRegenTime.current;
+        // Progress 0→1 over 20 seconds
+        const regenProgress = Math.min(1, elapsed / 20000);
+
+        for (const p of particles.current) {
+          if (p.alive > 0) continue;
+
+          // Each particle gets a spawn threshold based on vertical position + randomness
+          // Bottom particles (y near h) have low threshold → spawn early
+          // Top/middle particles have higher threshold → spawn later
+          const yNorm = p.y / h; // 0=top, 1=bottom
+          const bottomBias = 1 - yNorm; // 0=bottom, 1=top
+          // Random offset so it's not a clean wave
+          const randOffset = Math.random() * 0.4;
+          const spawnThreshold = bottomBias * 0.6 + randOffset * 0.4;
+
+          if (regenProgress > spawnThreshold) {
+            // Respawn at right edge, drift left
+            p.x = w + p.r + Math.random() * 300;
+            p.y = Math.random() * h;
+            p.vx = (Math.random() - 0.5) * 0.2 - 0.104;
+            p.vy = (Math.random() - 0.5) * 0.078;
+            p.alive = 0.05;
+            p.o = p.maxO * p.alive;
+          }
+        }
       }
 
       // ── Stars ──
