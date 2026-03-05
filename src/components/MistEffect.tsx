@@ -30,13 +30,8 @@ export default function MistEffect() {
   const particles = useRef<MistParticle[]>([]);
   const stars = useRef<Star[]>([]);
   const mouseDown = useRef(false);
-  const mouseDownStart = useRef(0);
-  const mouseMoved = useRef(false);
   const lastRegenTime = useRef(0);
   const mistDensity = useRef(50);
-  const shockwave = useRef<{ x: number; y: number; radius: number; active: boolean; startTime: number }>({
-    x: 0, y: 0, radius: 0, active: false, startTime: 0,
-  });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -99,21 +94,12 @@ export default function MistEffect() {
     window.addEventListener('resize', resize);
 
     const onMouse = (e: MouseEvent) => {
-      if (mouseDown.current) {
-        const dx = e.clientX - mouse.current.x;
-        const dy = e.clientY - mouse.current.y;
-        if (Math.abs(dx) + Math.abs(dy) > 5) mouseMoved.current = true;
-      }
       mouse.current = { x: e.clientX, y: e.clientY };
     };
     window.addEventListener('mousemove', onMouse);
 
     const onMouseDown = (e: MouseEvent) => {
-      if (e.button === 0) {
-        mouseDown.current = true;
-        mouseDownStart.current = performance.now();
-        mouseMoved.current = false;
-      }
+      if (e.button === 0) mouseDown.current = true;
     };
     const onMouseUp = (e: MouseEvent) => {
       if (e.button === 0) mouseDown.current = false;
@@ -136,35 +122,6 @@ export default function MistEffect() {
       const my = mouse.current.y;
       const demistRadius = 180;
       const now = performance.now();
-
-      // ── Shockwave: expanding ring that kills mist (constant visual speed) ──
-      const sw = shockwave.current;
-      if (sw.active) {
-        const maxRadius = Math.sqrt(w * w + h * h);
-        const elapsed = now - sw.startTime;
-        const duration = 1800; // ms total duration
-        const t = Math.min(1, elapsed / duration);
-        // Ease-in: starts slow, speeds up — counteracts the "fast start" feel
-        const eased = t * t;
-        sw.radius = eased * (maxRadius + 400);
-        const ringWidth = 400;
-
-        for (const p of particles.current) {
-          if (p.alive <= 0) continue;
-          const dx = p.x - sw.x;
-          const dy = p.y - sw.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < sw.radius && dist > sw.radius - ringWidth) {
-            p.alive = 0;
-            p.o = 0;
-          }
-        }
-
-        if (t >= 1) {
-          sw.active = false;
-          lastRegenTime.current = now + 5000;
-        }
-      }
 
       // ── Regen: revive dead particles per frame in random chunks ──
       if (mistDensity.current > 0 && now >= lastRegenTime.current) {
