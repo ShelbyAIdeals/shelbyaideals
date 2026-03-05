@@ -158,23 +158,16 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Regen: stagger respawns over ~20s, bottom first then random ──
+      // ── Regen: stagger respawns over ~2s, random bursts ──
       if (lastRegenTime.current > 0 && !demisterOn.current) {
         const elapsed = now - lastRegenTime.current;
-        // Progress 0→1 over 20 seconds
-        const regenProgress = Math.min(1, elapsed / 20000);
+        const regenProgress = Math.min(1, elapsed / 2000);
 
         for (const p of particles.current) {
           if (p.alive > 0) continue;
 
-          // Each particle gets a spawn threshold based on vertical position + randomness
-          // Bottom particles (y near h) have low threshold → spawn early
-          // Top/middle particles have higher threshold → spawn later
-          const yNorm = p.y / h; // 0=top, 1=bottom
-          const bottomBias = 1 - yNorm; // 0=bottom, 1=top
-          // Random offset so it's not a clean wave
-          const randOffset = Math.random() * 0.4;
-          const spawnThreshold = bottomBias * 0.6 + randOffset * 0.4;
+          // Heavy randomness so particles pop in unevenly
+          const spawnThreshold = Math.random() * Math.random();
 
           if (regenProgress > spawnThreshold) {
             // Respawn at right edge, drift left
