@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Menu, X, Search, Zap } from 'lucide-react';
 
 const navLinks = [
@@ -15,6 +16,24 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    setSearchOpen(false);
+    setSearchQuery('');
+  };
+
+  const handleMobileSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    setMobileOpen(false);
+    setSearchQuery('');
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-void-950/90 backdrop-blur-xl border-b border-void-800/80">
@@ -46,20 +65,23 @@ export default function Header() {
           {/* Right side: Search + About */}
           <div className="hidden lg:flex items-center gap-3">
             {searchOpen ? (
-              <div className="flex items-center gap-2">
+              <form onSubmit={handleSearch} className="flex items-center gap-2">
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search AI tools..."
                   autoFocus
                   className="w-56 px-3 py-1.5 text-sm rounded-lg bg-void-800 border border-void-700 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
                 />
                 <button
-                  onClick={() => setSearchOpen(false)}
+                  type="button"
+                  onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
                   className="p-1.5 text-void-400 hover:text-void-200 cursor-pointer"
                 >
                   <X size={16} />
                 </button>
-              </div>
+              </form>
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
@@ -93,14 +115,16 @@ export default function Header() {
           <nav className="lg:hidden pb-4 border-t border-void-800 mt-1 pt-3">
             {/* Mobile search */}
             <div className="px-3 mb-3">
-              <div className="relative">
+              <form onSubmit={handleMobileSearch} className="relative">
                 <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-void-500" />
                 <input
                   type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search AI tools..."
                   className="w-full pl-10 pr-4 py-2.5 text-sm rounded-lg bg-void-800 border border-void-700 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-accent-500/40"
                 />
-              </div>
+              </form>
             </div>
             <ul className="flex flex-col gap-1">
               {[...navLinks, { label: 'About', href: '/about' }].map((link) => (

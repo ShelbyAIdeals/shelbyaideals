@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, TrendingUp, Star, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import HeroTextRotator from './motion/HeroTextRotator';
@@ -28,6 +29,13 @@ const fadeUp = {
 
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+  };
 
   return (
     <section className="relative overflow-hidden">
@@ -111,7 +119,7 @@ export default function Hero() {
             custom={0.3}
             className="mt-10 max-w-xl mx-auto"
           >
-            <div className="relative group">
+            <form onSubmit={handleSearch} className="relative group">
               <Search
                 size={20}
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-void-500 group-focus-within:text-accent-400 transition-colors"
@@ -124,11 +132,12 @@ export default function Hero() {
                 className="search-input !pl-12 !pr-32"
               />
               <button
+                type="submit"
                 className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-accent-500 text-void-950 text-sm font-semibold rounded-lg hover:bg-accent-400 transition-colors cursor-pointer"
               >
                 Search
               </button>
-            </div>
+            </form>
 
             {/* Trending pills */}
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2">

@@ -138,10 +138,10 @@ export default function AffiliateDisclosurePage() {
                 If you have any questions about our affiliate relationships or
                 editorial process, please reach out to us at{' '}
                 <a
-                  href="mailto:hello@shelby-ai.com"
+                  href="mailto:support@shelby-ai.com"
                   className="text-accent-400 hover:text-accent-300 underline"
                 >
-                  hello@shelby-ai.com
+                  support@shelby-ai.com
                 </a>
                 .
               </p>
