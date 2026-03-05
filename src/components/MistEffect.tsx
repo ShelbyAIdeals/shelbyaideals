@@ -63,8 +63,8 @@ export default function MistEffect() {
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.52 - 0.27,
-          vy: (Math.random() - 0.5) * 0.202,
+          vx: (Math.random() - 0.5) * 0.624 - 0.324,
+          vy: (Math.random() - 0.5) * 0.242,
           r: Math.random() * 180 + 80,
           o,
           alive: 1,
@@ -199,8 +199,8 @@ export default function MistEffect() {
             const p = dead[idx];
             p.x = Math.random() * w;
             p.y = Math.random() * h;
-            p.vx = (Math.random() - 0.5) * 0.52 - 0.27;
-            p.vy = (Math.random() - 0.5) * 0.202;
+            p.vx = (Math.random() - 0.5) * 0.624 - 0.324;
+            p.vy = (Math.random() - 0.5) * 0.242;
             p.alive = 0.05;
             p.o = p.maxO * p.alive;
           }
