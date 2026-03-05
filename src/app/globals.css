@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Void palette — warm dark backgrounds */
-  --color-void-50: #E7DCC9;
-  --color-void-100: #d8cdb8;
-  --color-void-200: #c4b8a4;
-  --color-void-300: #a89a84;
-  --color-void-400: #8C7C63;
-  --color-void-500: #6b5e4a;
-  --color-void-600: #4a4236;
-  --color-void-700: #342f27;
-  --color-void-800: #221f1a;
-  --color-void-900: #171512;
-  --color-void-950: #0d0c0a;
+  /* Void palette — warm dark backgrounds (brightened) */
+  --color-void-50: #f0e8dc;
+  --color-void-100: #e2dacf;
+  --color-void-200: #cfc5b6;
+  --color-void-300: #b3a794;
+  --color-void-400: #968872;
+  --color-void-500: #776b56;
+  --color-void-600: #584f3e;
+  --color-void-700: #4a4438;
+  --color-void-800: #38342e;
+  --color-void-900: #2a2724;
+  --color-void-950: #1e1c19;
 
   /* Olive palette — earthy accent */
   --color-accent-50: #f5f6ee;
