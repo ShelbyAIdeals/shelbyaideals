@@ -22,3 +22,4 @@ scripts/social-drafts/
 
 # debug
 npm-debug.log*
+.vercel
