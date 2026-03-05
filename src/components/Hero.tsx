@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-void-950" />
         <motion.div
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px]"
+          className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-500/8 rounded-full blur-[120px]"
           animate={{
             x: [0, 30, -20, 0],
             y: [0, -20, 15, 0],
