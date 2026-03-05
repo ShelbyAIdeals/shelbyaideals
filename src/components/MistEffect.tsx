@@ -33,6 +33,7 @@ export default function MistEffect() {
   const mouseDownStart = useRef(0);
   const mouseMoved = useRef(false);
   const lastRegenTime = useRef(0);
+  const demisterOn = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -134,6 +135,19 @@ export default function MistEffect() {
     };
     window.addEventListener('click', onClick);
 
+    const onDemister = (e: Event) => {
+      demisterOn.current = (e as CustomEvent).detail;
+      if (demisterOn.current) {
+        for (const p of particles.current) {
+          p.alive = 0;
+          p.o = 0;
+        }
+      } else {
+        lastRegenTime.current = performance.now();
+      }
+    };
+    window.addEventListener('demister', onDemister);
+
     let frame = 0;
 
     const draw = () => {
@@ -145,7 +159,7 @@ export default function MistEffect() {
       const now = performance.now();
 
       // ── Regen: stagger respawns over ~20s, bottom first then random ──
-      if (lastRegenTime.current > 0) {
+      if (lastRegenTime.current > 0 && !demisterOn.current) {
         const elapsed = now - lastRegenTime.current;
         // Progress 0→1 over 20 seconds
         const regenProgress = Math.min(1, elapsed / 20000);
@@ -285,6 +299,7 @@ export default function MistEffect() {
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
       window.removeEventListener('click', onClick);
+      window.removeEventListener('demister', onDemister);
     };
   }, []);
 
