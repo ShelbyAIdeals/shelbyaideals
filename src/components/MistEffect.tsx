@@ -202,9 +202,9 @@ export default function MistEffect() {
 
       // ── Mist particles ──
       for (const p of particles.current) {
-        // Fade revived particles back in (fast)
+        // Fade revived particles back in slowly
         if (p.alive > 0 && p.alive < 1) {
-          p.alive = Math.min(1, p.alive + 0.09);
+          p.alive = Math.min(1, p.alive + 0.005);
           p.o = p.maxO * p.alive;
         }
 
