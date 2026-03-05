@@ -68,7 +68,7 @@ export default function Header() {
           </nav>
 
           {/* Right side: Search + About + Demister */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 mr-[-3.5rem]">
             {searchOpen ? (
               <form onSubmit={handleSearch} className="flex items-center gap-2">
                 <input
