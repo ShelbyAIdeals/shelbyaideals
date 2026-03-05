@@ -54,7 +54,7 @@ export default function MistEffect() {
     };
 
     const initParticles = () => {
-      const count = Math.floor((w * h) / 8000);
+      const count = Math.floor((w * h) / 8900);
       particles.current = Array.from({ length: count }, () => {
         const o = Math.random() * 0.06 + 0.03;
         return {
