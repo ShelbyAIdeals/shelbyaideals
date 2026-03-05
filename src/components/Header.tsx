@@ -96,23 +96,23 @@ export default function Header() {
                 <Search size={22} />
               </button>
             )}
-            <Link
-              href="/about"
-              className="px-5 py-2.5 text-base font-semibold text-white border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
-            >
-              About
-            </Link>
-
             {/* Demister toggle */}
             <button
               onClick={() => setDemisterOn(!demisterOn)}
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-lg transition-all cursor-pointer ml-2"
+              className="flex items-center gap-2.5 px-3.5 py-2 rounded-lg transition-all cursor-pointer"
             >
               <span className="text-[0.938rem] font-semibold text-white">Demister</span>
               <div className={`relative w-10 h-[22px] rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
                 <div className={`absolute top-[3px] w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-[22px]' : 'translate-x-[3px]'}`} />
               </div>
             </button>
+
+            <Link
+              href="/about"
+              className="px-5 py-2.5 text-base font-semibold text-white border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
+            >
+              About
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
