@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Menu, X, Search, Zap } from 'lucide-react';
@@ -17,7 +17,12 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [demisterOn, setDemisterOn] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('demister', { detail: demisterOn }));
+  }, [demisterOn]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,14 +60,14 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2.5 text-base font-semibold text-void-100 hover:text-white rounded-lg hover:bg-void-700/60 no-underline transition-all"
+                className="px-4 py-2.5 text-base font-semibold text-white hover:text-accent-300 rounded-lg hover:bg-void-700/60 no-underline transition-all"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right side: Search + About */}
+          {/* Right side: Search + About + Demister */}
           <div className="hidden lg:flex items-center gap-4">
             {searchOpen ? (
               <form onSubmit={handleSearch} className="flex items-center gap-2">
@@ -85,7 +90,7 @@ export default function Header() {
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2.5 rounded-lg text-void-100 hover:text-white hover:bg-void-700/50 transition-all cursor-pointer"
+                className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer"
                 aria-label="Search"
               >
                 <Search size={22} />
@@ -93,17 +98,28 @@ export default function Header() {
             )}
             <Link
               href="/about"
-              className="px-5 py-2.5 text-base font-semibold text-void-100 border border-void-500/40 rounded-lg hover:text-white hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
+              className="px-5 py-2.5 text-base font-semibold text-white border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
             >
               About
             </Link>
+
+            {/* Demister toggle */}
+            <button
+              onClick={() => setDemisterOn(!demisterOn)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+            >
+              <span className="text-sm font-semibold text-white">Demister</span>
+              <div className={`relative w-9 h-5 rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
+                <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-4' : 'translate-x-0.5'}`} />
+              </div>
+            </button>
           </div>
 
           {/* Mobile hamburger */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-void-100 hover:bg-void-800 transition-colors cursor-pointer"
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-void-800 transition-colors cursor-pointer"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -132,13 +148,25 @@ export default function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/60 hover:text-white no-underline transition-colors"
+                    className="block px-3 py-2.5 rounded-lg text-base font-semibold text-white hover:bg-void-700/60 hover:text-accent-300 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
+            {/* Mobile demister toggle */}
+            <div className="px-3 mt-3">
+              <button
+                onClick={() => setDemisterOn(!demisterOn)}
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <span className="text-sm font-semibold text-white">Demister</span>
+                <div className={`relative w-9 h-5 rounded-full transition-colors ${demisterOn ? 'bg-accent-500' : 'bg-void-600'}`}>
+                  <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-transform ${demisterOn ? 'translate-x-4' : 'translate-x-0.5'}`} />
+                </div>
+              </button>
+            </div>
           </nav>
         )}
       </div>
