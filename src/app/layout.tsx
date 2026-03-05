@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Header from '@/components/Header';
+
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
 import MistEffect from '@/components/MistEffect';
@@ -61,7 +61,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <MistEffect />
         <ScrollProgress />
-        <Header />
+
         <PageScaler>{children}</PageScaler>
         <Footer />
       </body>
