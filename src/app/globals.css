@@ -95,6 +95,16 @@
     @apply text-accent-400 hover:text-accent-300 transition-colors;
   }
 
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  a, button, input, textarea, [role="link"] {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+
   ::selection {
     @apply bg-accent-500/30 text-white;
   }
