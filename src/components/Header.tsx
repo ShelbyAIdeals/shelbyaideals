@@ -96,7 +96,7 @@ export default function Header() {
                 max={100}
                 value={mistDensity}
                 onChange={(e) => setMistDensity(Number(e.target.value))}
-                className="w-24 h-1.5 rounded-full appearance-none bg-void-600 cursor-pointer accent-accent-500"
+                className="w-24 mist-slider"
               />
             </div>
 
@@ -157,7 +157,7 @@ export default function Header() {
                 max={100}
                 value={mistDensity}
                 onChange={(e) => setMistDensity(Number(e.target.value))}
-                className="w-28 h-1.5 rounded-full appearance-none bg-void-600 cursor-pointer accent-accent-500"
+                className="w-28 mist-slider"
               />
             </div>
           </nav>
