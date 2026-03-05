@@ -35,7 +35,7 @@ export default function ReviewCard({
     <Link href={`/reviews/${slug}`} className="no-underline block">
       <motion.article
         className="card group overflow-hidden flex flex-col cursor-pointer h-full"
-        whileHover={{ y: -4, boxShadow: '0 0 32px rgba(119,126,73,0.12)' }}
+        whileHover={{ y: -4, boxShadow: '0 0 32px rgba(6,182,212,0.12)' }}
         transition={{ type: 'spring', stiffness: 300, damping: 24 }}
       >
         {/* Tool image */}
