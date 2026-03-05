@@ -67,7 +67,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-void-950 text-void-400 overflow-hidden border-t border-void-800/80">
+    <footer className="relative z-[2] bg-void-950 text-void-300 overflow-hidden border-t border-void-700/80">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-accent-500/4 rounded-full blur-3xl pointer-events-none" />
 
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-500 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-500 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-500 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
               Newsletter
             </h4>
-            <p className="text-sm text-void-500 mb-4 leading-relaxed">
+            <p className="text-sm text-void-300 mb-4 leading-relaxed">
               Weekly AI tool tips and exclusive deals.
             </p>
 

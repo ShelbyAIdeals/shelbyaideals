@@ -41,7 +41,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-transparent">
+    <header className="relative z-50 bg-transparent">
       <div className="container-main">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
