@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-[1640px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3.5 no-underline group shrink-0">
@@ -54,7 +54,7 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop nav + Search */}
           <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
@@ -65,12 +65,8 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-          </nav>
-
-          {/* Right side: Search + About + Demister */}
-          <div className="hidden lg:flex items-center gap-4">
             {searchOpen ? (
-              <form onSubmit={handleSearch} className="flex items-center gap-2">
+              <form onSubmit={handleSearch} className="flex items-center gap-2 ml-1">
                 <input
                   type="text"
                   value={searchQuery}
@@ -90,12 +86,16 @@ export default function Header() {
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer"
+                className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer ml-1"
                 aria-label="Search"
               >
                 <Search size={22} />
               </button>
             )}
+          </nav>
+
+          {/* Right side: Demister + About */}
+          <div className="hidden lg:flex items-center gap-4">
             {/* Demister toggle */}
             <button
               onClick={() => setDemisterOn(!demisterOn)}
