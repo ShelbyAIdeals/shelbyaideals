@@ -32,7 +32,7 @@ export default function CategoryCard({
 
   return (
     <motion.div
-      whileHover={{ y: -2, boxShadow: '0 0 24px rgba(119,126,73,0.1)' }}
+      whileHover={{ y: -2, boxShadow: '0 0 24px rgba(6,182,212,0.1)' }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
     >
       <Link
@@ -40,7 +40,7 @@ export default function CategoryCard({
         className="card group p-5 flex items-start gap-4 no-underline transition-all block"
       >
         {/* Icon */}
-        <div className="w-11 h-11 rounded-lg bg-accent-500/10 border border-accent-500/15 text-accent-400 flex items-center justify-center shrink-0 group-hover:bg-accent-500/15 group-hover:shadow-[0_0_16px_rgba(119,126,73,0.15)] transition-all">
+        <div className="w-11 h-11 rounded-lg bg-accent-500/10 border border-accent-500/15 text-accent-400 flex items-center justify-center shrink-0 group-hover:bg-accent-500/15 group-hover:shadow-[0_0_16px_rgba(6,182,212,0.15)] transition-all">
           <IconComponent size={20} strokeWidth={2} />
         </div>
 

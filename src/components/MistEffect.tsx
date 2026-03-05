@@ -147,7 +147,7 @@ export default function MistEffect() {
       // ── Regen: bring back dead particles in small random chunks every 5s ──
       const anyDead = particles.current.some(p => p.alive < 1);
       if (anyDead && lastRegenTime.current > 0) {
-        if (now - lastRegenTime.current > 5000) {
+        if (now - lastRegenTime.current > 2000) {
           lastRegenTime.current = now;
 
           // Pick random spot, ~10cm² ≈ ~55px radius at 96dpi
@@ -194,7 +194,7 @@ export default function MistEffect() {
       for (const p of particles.current) {
         // Fade revived particles back in (fast)
         if (p.alive > 0 && p.alive < 1) {
-          p.alive = Math.min(1, p.alive + 0.036);
+          p.alive = Math.min(1, p.alive + 0.09);
           p.o = p.maxO * p.alive;
         }
 

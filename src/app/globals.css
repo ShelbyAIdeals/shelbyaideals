@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* Void palette — warm dark backgrounds (brightened) */
-  --color-void-50: #f0e8dc;
-  --color-void-100: #e2dacf;
-  --color-void-200: #cfc5b6;
-  --color-void-300: #b3a794;
-  --color-void-400: #968872;
-  --color-void-500: #776b56;
-  --color-void-600: #584f3e;
-  --color-void-700: #4a4438;
-  --color-void-800: #38342e;
-  --color-void-900: #2a2724;
-  --color-void-950: #111318;
+  /* Void palette — cool space grays */
+  --color-void-50: #eef1f5;
+  --color-void-100: #dce1e9;
+  --color-void-200: #b8c1d0;
+  --color-void-300: #94a1b5;
+  --color-void-400: #6e7d94;
+  --color-void-500: #556275;
+  --color-void-600: #3f4a5c;
+  --color-void-700: #2d3548;
+  --color-void-800: #1e2435;
+  --color-void-900: #151a28;
+  --color-void-950: #0b0e17;
 
-  /* Olive palette — earthy accent */
-  --color-accent-50: #f5f6ee;
-  --color-accent-100: #e6e8d4;
-  --color-accent-200: #ced2ab;
-  --color-accent-300: #aeb47e;
-  --color-accent-400: #939a5c;
-  --color-accent-500: #777E49;
-  --color-accent-600: #5f6639;
-  --color-accent-700: #484d2c;
-  --color-accent-800: #343820;
-  --color-accent-900: #222516;
-  --color-accent-950: #13140c;
+  /* Cyan palette — space accent */
+  --color-accent-50: #ecfeff;
+  --color-accent-100: #cffafe;
+  --color-accent-200: #a5f3fc;
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
+  --color-accent-800: #155e75;
+  --color-accent-900: #164e63;
+  --color-accent-950: #083344;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -122,10 +122,10 @@
     @apply inline-flex items-center justify-center px-6 py-3
       bg-accent-500 text-void-950 font-sans font-semibold rounded-lg
       hover:bg-accent-400 transition-all duration-200 cursor-pointer;
-    box-shadow: 0 0 20px rgba(119,126,73,0.25);
+    box-shadow: 0 0 20px rgba(6,182,212,0.25);
   }
   .btn-primary:hover {
-    box-shadow: 0 0 32px rgba(119,126,73,0.4);
+    box-shadow: 0 0 32px rgba(6,182,212,0.4);
   }
 
   .btn-secondary {
@@ -149,8 +149,8 @@
       transition-all duration-200;
   }
   .card:hover {
-    border-color: rgba(119,126,73,0.25);
-    box-shadow: 0 0 24px rgba(119,126,73,0.06);
+    border-color: rgba(6,182,212,0.25);
+    box-shadow: 0 0 24px rgba(6,182,212,0.06);
   }
 
   /* Badges */
@@ -241,7 +241,7 @@
 
   .verdict-box {
     @apply bg-void-900/60 border border-accent-500/20 rounded-xl p-6 my-8 backdrop-blur-sm;
-    box-shadow: 0 0 30px rgba(119,126,73,0.05);
+    box-shadow: 0 0 30px rgba(6,182,212,0.05);
   }
 
   .pros-cons-grid {
