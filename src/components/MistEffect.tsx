@@ -59,8 +59,8 @@ export default function MistEffect() {
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.15 + 0.08,
-          vy: (Math.random() - 0.5) * 0.06,
+          vx: (Math.random() - 0.5) * 0.2 + 0.104,
+          vy: (Math.random() - 0.5) * 0.078,
           r: Math.random() * 180 + 80,
           o,
           alive: 1,
