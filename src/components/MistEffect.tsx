@@ -33,7 +33,7 @@ export default function MistEffect() {
   const mouseDownStart = useRef(0);
   const mouseMoved = useRef(false);
   const lastRegenTime = useRef(0);
-  const demisterOn = useRef(false);
+  const mistDensity = useRef(100);
   const shockwave = useRef<{ x: number; y: number; radius: number; active: boolean; startTime: number }>({
     x: 0, y: 0, radius: 0, active: false, startTime: 0,
   });
@@ -140,18 +140,10 @@ export default function MistEffect() {
     };
     window.addEventListener('click', onClick);
 
-    const onDemister = (e: Event) => {
-      demisterOn.current = (e as CustomEvent).detail;
-      if (demisterOn.current) {
-        for (const p of particles.current) {
-          p.alive = 0;
-          p.o = 0;
-        }
-      } else {
-        lastRegenTime.current = performance.now();
-      }
+    const onMistDensity = (e: Event) => {
+      mistDensity.current = (e as CustomEvent).detail;
     };
-    window.addEventListener('demister', onDemister);
+    window.addEventListener('mistDensity', onMistDensity);
 
     let frame = 0;
 
@@ -193,7 +185,7 @@ export default function MistEffect() {
       }
 
       // ── Regen: revive dead particles per frame in random chunks ──
-      if (!demisterOn.current && now >= lastRegenTime.current) {
+      if (mistDensity.current > 0 && now >= lastRegenTime.current) {
         const dead = particles.current.filter(p => p.alive <= 0);
         if (dead.length > 0) {
           const chunkSize = Math.max(1, Math.ceil(particles.current.length * 0.00007));
@@ -280,7 +272,7 @@ export default function MistEffect() {
           p.demist = Math.max(0, p.demist - 0.02);
         }
 
-        let alpha = p.o * p.alive * vignette(p.x, p.y) * (1 - p.demist);
+        let alpha = p.o * p.alive * vignette(p.x, p.y) * (1 - p.demist) * (mistDensity.current / 100);
 
         if (alpha < 0.002) continue;
 
@@ -306,7 +298,7 @@ export default function MistEffect() {
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
       window.removeEventListener('click', onClick);
-      window.removeEventListener('demister', onDemister);
+      window.removeEventListener('mistDensity', onMistDensity);
     };
   }, []);
 
