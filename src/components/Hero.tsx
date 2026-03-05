@@ -52,10 +52,11 @@ export default function Hero() {
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] -translate-x-[30%] translate-y-[30%] bg-accent-600/8 rounded-full blur-[180px]"
+          className="absolute -top-40 left-0 w-[600px] h-[600px] bg-accent-500/10 rounded-full blur-[120px]"
           animate={{
-            x: [0, -20, 30, 0],
-            y: [0, 15, -20, 0],
+            x: [0, -30, 20, 0],
+            y: [0, -20, 15, 0],
+            rotate: [0, -1, 1, 0],
           }}
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity, delay: 4 }}
         />

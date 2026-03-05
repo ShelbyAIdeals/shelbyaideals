@@ -161,7 +161,7 @@ export default function MistEffect() {
       // ── Regen: stagger respawns over ~2s, random bursts ──
       if (lastRegenTime.current > 0 && !demisterOn.current) {
         const elapsed = now - lastRegenTime.current;
-        const regenProgress = Math.min(1, elapsed / 200);
+        const regenProgress = Math.min(1, elapsed / 2);
 
         for (const p of particles.current) {
           if (p.alive > 0) continue;
