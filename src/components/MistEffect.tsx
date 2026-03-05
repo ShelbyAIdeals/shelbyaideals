@@ -59,8 +59,8 @@ export default function MistEffect() {
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: (Math.random() - 0.5) * 0.6,
+          vx: (Math.random() - 0.5) * 0.15 + 0.08,
+          vy: (Math.random() - 0.5) * 0.06,
           r: Math.random() * 180 + 80,
           o,
           alive: 1,
@@ -189,9 +189,9 @@ export default function MistEffect() {
 
       // ── Mist particles ──
       for (const p of particles.current) {
-        // Fade revived particles back in (3x faster)
+        // Fade revived particles back in (fast)
         if (p.alive > 0 && p.alive < 1) {
-          p.alive = Math.min(1, p.alive + 0.012);
+          p.alive = Math.min(1, p.alive + 0.036);
           p.o = p.maxO * p.alive;
         }
 
@@ -199,10 +199,10 @@ export default function MistEffect() {
 
         p.x += p.vx;
         p.y += p.vy;
-        p.vx *= 0.995;
-        p.vy *= 0.995;
-        p.vx += (Math.random() - 0.5) * 0.02;
-        p.vy += (Math.random() - 0.5) * 0.01;
+        p.vx *= 0.999;
+        p.vy *= 0.999;
+        p.vx += (Math.random() - 0.5) * 0.003;
+        p.vy += (Math.random() - 0.5) * 0.002;
 
         if (p.x < -p.r) p.x = w + p.r;
         if (p.x > w + p.r) p.x = -p.r;
