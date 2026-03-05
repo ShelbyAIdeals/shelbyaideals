@@ -242,10 +242,10 @@ export default function PrivacyPolicyPage() {
                 If you have any questions about this Privacy Policy or your
                 personal data, please contact us at{' '}
                 <a
-                  href="mailto:hello@shelby-ai.com"
+                  href="mailto:support@shelby-ai.com"
                   className="text-accent-400 hover:text-accent-300 underline"
                 >
-                  hello@shelby-ai.com
+                  support@shelby-ai.com
                 </a>
                 .
               </p>

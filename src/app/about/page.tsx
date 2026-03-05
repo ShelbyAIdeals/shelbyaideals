@@ -260,7 +260,7 @@ export default function AboutPage() {
               <ul className="space-y-2 text-void-300 text-sm">
                 <li>
                   <span className="font-semibold text-void-100">General inquiries: </span>
-                  <span className="text-accent-400">hello@shelby-ai.com</span>
+                  <span className="text-accent-400">support@shelby-ai.com</span>
                 </li>
                 <li>
                   <span className="font-semibold text-void-100">Affiliate partnerships: </span>

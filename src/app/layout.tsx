@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
+import MistEffect from '@/components/MistEffect';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <MistEffect />
         <ScrollProgress />
         <Header />
         <div className="flex-1">{children}</div>

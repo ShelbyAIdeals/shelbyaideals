@@ -33,10 +33,10 @@ export default function ContactPage() {
                 For general questions, feedback, and corrections.
               </p>
               <a
-                href="mailto:hello@shelby-ai.com"
+                href="mailto:support@shelby-ai.com"
                 className="text-accent-400 hover:text-accent-300 text-sm font-semibold underline"
               >
-                hello@shelby-ai.com
+                support@shelby-ai.com
               </a>
             </div>
 
@@ -103,10 +103,10 @@ export default function ContactPage() {
                 If you run an AI tool and would like to be featured or have your
                 listing updated, email us at{' '}
                 <a
-                  href="mailto:hello@shelby-ai.com"
+                  href="mailto:support@shelby-ai.com"
                   className="text-accent-400 hover:text-accent-300 underline"
                 >
-                  hello@shelby-ai.com
+                  support@shelby-ai.com
                 </a>{' '}
                 with the subject line &ldquo;Tool Submission&rdquo;. Please note
                 that inclusion on our site does not guarantee a positive review

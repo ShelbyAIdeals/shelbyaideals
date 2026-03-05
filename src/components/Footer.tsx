@@ -29,13 +29,40 @@ const companyLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
+const BEEHIIV_PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
+
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+    setLoading(true);
+
+    if (BEEHIIV_PUBLICATION_ID) {
+      try {
+        const res = await fetch(
+          `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              utm_source: 'website',
+              utm_medium: 'footer_signup',
+            }),
+          }
+        );
+        if (!res.ok) throw new Error('Failed');
+      } catch {
+        setLoading(false);
+        return;
+      }
+    }
+
+    setLoading(false);
     setSubscribed(true);
   };
 
@@ -128,10 +155,11 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-full px-3 py-2 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  disabled={loading}
+                  className="w-full px-3 py-2 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
                 >
-                  Subscribe
-                  <ArrowRight size={14} />
+                  {loading ? 'Subscribing...' : 'Subscribe'}
+                  {!loading && <ArrowRight size={14} />}
                 </button>
               </form>
             )}
