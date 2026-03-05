@@ -59,7 +59,7 @@ export default function MistEffect() {
         return {
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.2 + 0.104,
+          vx: (Math.random() - 0.5) * 0.2 - 0.104,
           vy: (Math.random() - 0.5) * 0.078,
           r: Math.random() * 180 + 80,
           o,
@@ -144,27 +144,16 @@ export default function MistEffect() {
       const demistRadius = 180;
       const now = performance.now();
 
-      // ── Regen: bring back dead particles in small random chunks every 5s ──
-      const anyDead = particles.current.some(p => p.alive < 1);
-      if (anyDead && lastRegenTime.current > 0) {
-        if (now - lastRegenTime.current > 2000) {
-          lastRegenTime.current = now;
-
-          // Pick random spot, ~10cm² ≈ ~55px radius at 96dpi
-          const chunkX = Math.random() * w;
-          const chunkY = Math.random() * h;
-          const chunkRadius = 55;
-
-          for (const p of particles.current) {
-            if (p.alive >= 1) continue;
-            const dx = p.x - chunkX;
-            const dy = p.y - chunkY;
-            if (Math.sqrt(dx * dx + dy * dy) < chunkRadius + p.r * 0.3) {
-              p.alive = 0.1;
-              p.o = p.maxO * p.alive;
-            }
-          }
-        }
+      // ── Regen: dead particles respawn at right edge and drift in like clouds ──
+      for (const p of particles.current) {
+        if (p.alive > 0) continue;
+        // Respawn at right edge with random y, drift left
+        p.x = w + p.r + Math.random() * 200;
+        p.y = Math.random() * h;
+        p.vx = (Math.random() - 0.5) * 0.2 - 0.104;
+        p.vy = (Math.random() - 0.5) * 0.078;
+        p.alive = 0.05;
+        p.o = p.maxO * p.alive;
       }
 
       // ── Stars ──
