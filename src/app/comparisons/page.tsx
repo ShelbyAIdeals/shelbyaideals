@@ -16,7 +16,7 @@ export default async function ComparisonsPage() {
 
   return (
     <main className="min-h-screen">
-      <div className="container-main pt-28 sm:pt-32 pb-12 sm:pb-16">
+      <div className="container-main pt-44 sm:pt-48 pb-12 sm:pb-16">
         {/* Page Header */}
         <ScrollReveal>
           <div className="max-w-2xl mb-12">
