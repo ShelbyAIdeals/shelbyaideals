@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
 import MistEffect from '@/components/MistEffect';
+import PageScaler from '@/components/PageScaler';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function RootLayout({
         <MistEffect />
         <ScrollProgress />
         <Header />
-        <div className="flex-1">{children}</div>
+        <PageScaler>{children}</PageScaler>
         <Footer />
       </body>
     </html>

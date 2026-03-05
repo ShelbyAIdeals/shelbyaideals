@@ -32,8 +32,8 @@ export default function MistEffect() {
       particles.current = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.2,
+        vx: (Math.random() - 0.5) * 1.2,
+        vy: (Math.random() - 0.5) * 0.6,
         r: Math.random() * 180 + 80,
         o: Math.random() * 0.06 + 0.03,
       }));
@@ -52,7 +52,7 @@ export default function MistEffect() {
       ctx.clearRect(0, 0, w, h);
       const mx = mouse.current.x;
       const my = mouse.current.y;
-      const demistRadius = 160;
+      const demistRadius = 220;
 
       for (const p of particles.current) {
         // Drift
@@ -72,9 +72,9 @@ export default function MistEffect() {
 
         let alpha = p.o;
         if (dist < demistRadius + p.r) {
-          const edge = demistRadius * 0.4;
+          const edge = demistRadius * 0.2;
           const fade = Math.max(0, (dist - edge) / (demistRadius + p.r - edge));
-          alpha *= fade * fade; // quadratic falloff for smooth edge
+          alpha *= fade * fade * fade; // cubic falloff — sharper clear zone
         }
 
         if (alpha < 0.002) continue;
