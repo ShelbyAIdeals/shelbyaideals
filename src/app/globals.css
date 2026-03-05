@@ -14,18 +14,18 @@
   --color-void-900: #151a28;
   --color-void-950: #0b0e17;
 
-  /* Cyan palette — space accent */
-  --color-accent-50: #ecfeff;
-  --color-accent-100: #cffafe;
-  --color-accent-200: #a5f3fc;
-  --color-accent-300: #67e8f9;
-  --color-accent-400: #22d3ee;
-  --color-accent-500: #06b6d4;
-  --color-accent-600: #0891b2;
-  --color-accent-700: #0e7490;
-  --color-accent-800: #155e75;
-  --color-accent-900: #164e63;
-  --color-accent-950: #083344;
+  /* Cyan palette — space accent (10% darker) */
+  --color-accent-50: #d9f9fe;
+  --color-accent-100: #b3f0fa;
+  --color-accent-200: #85e0f2;
+  --color-accent-300: #52cde6;
+  --color-accent-400: #1ab8d4;
+  --color-accent-500: #05a0ba;
+  --color-accent-600: #077f9e;
+  --color-accent-700: #0c6680;
+  --color-accent-800: #125168;
+  --color-accent-900: #134459;
+  --color-accent-950: #072c3d;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
