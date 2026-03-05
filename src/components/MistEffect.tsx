@@ -34,7 +34,7 @@ export default function MistEffect() {
     active: false,
     x: 0,
     y: 0,
-    radius: 8,           // starts tiny
+    radius: 30,           // starts visible
     consumed: 0,          // how much mist consumed (0-1)
     suckedAll: false,     // true when all mist gone
     regenProgress: 0,     // 0-1, how much has regenerated
@@ -100,13 +100,13 @@ export default function MistEffect() {
       if (e.button !== 0) return;
       const bh = blackHole.current;
       if (bh.suckedAll) return; // wait for regen cycle
+      if (!bh.active) {
+        bh.radius = 30;
+        bh.consumed = 0;
+      }
       bh.active = true;
       bh.x = e.clientX;
       bh.y = e.clientY;
-      if (!bh.active || bh.radius < 10) {
-        bh.radius = 8;
-        bh.consumed = 0;
-      }
     };
     window.addEventListener('click', onClick);
 
@@ -147,30 +147,29 @@ export default function MistEffect() {
       // ── Black hole logic ──
       if (bh.active && !bh.suckedAll) {
         // Grow radius based on consumed mist
-        bh.radius = 8 + bh.consumed * 600;
+        bh.radius = 30 + bh.consumed * 500;
 
         // Suck in nearby particles
         let totalAlive = 0;
-        let totalDead = 0;
 
         for (const p of particles.current) {
-          if (p.alive <= 0) { totalDead++; continue; }
+          if (p.alive <= 0) continue;
           totalAlive++;
 
           const dx = p.x - bh.x;
           const dy = p.y - bh.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          const pullRange = bh.radius * 3 + 200;
+          const pullRange = bh.radius * 4 + 400;
 
           if (dist < pullRange) {
-            // Pull particle toward black hole
-            const strength = (1 - dist / pullRange) * 4;
-            p.vx -= (dx / dist) * strength;
-            p.vy -= (dy / dist) * strength;
+            // Pull particle toward black hole — stronger when closer
+            const strength = (1 - dist / pullRange) * 8;
+            p.vx -= (dx / (dist + 1)) * strength;
+            p.vy -= (dy / (dist + 1)) * strength;
 
-            // Consume if close enough
-            if (dist < bh.radius * 0.8) {
-              p.alive = Math.max(0, p.alive - 0.05);
+            // Consume if within the black hole radius
+            if (dist < bh.radius + p.r * 0.3) {
+              p.alive = Math.max(0, p.alive - 0.08);
               if (p.alive <= 0) {
                 bh.consumed = Math.min(1, bh.consumed + 1 / particles.current.length);
               }
@@ -183,39 +182,37 @@ export default function MistEffect() {
           bh.suckedAll = true;
           bh.active = false;
           bh.regenProgress = 0;
-          // Kill any stragglers
           for (const p of particles.current) p.alive = 0;
         }
 
-        // Draw black hole
-        if (bh.radius > 2) {
-          // Dark core
-          const bhGrad = ctx.createRadialGradient(bh.x, bh.y, 0, bh.x, bh.y, bh.radius);
-          bhGrad.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
-          bhGrad.addColorStop(0.6, 'rgba(0, 0, 0, 0.4)');
-          bhGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-          ctx.fillStyle = bhGrad;
-          ctx.beginPath();
-          ctx.arc(bh.x, bh.y, bh.radius, 0, Math.PI * 2);
-          ctx.fill();
+        // Draw black hole — use normal blend to show dark core on screen-blend canvas
+        ctx.globalCompositeOperation = 'destination-out';
+        const coreGrad = ctx.createRadialGradient(bh.x, bh.y, 0, bh.x, bh.y, bh.radius);
+        coreGrad.addColorStop(0, 'rgba(0, 0, 0, 0.95)');
+        coreGrad.addColorStop(0.7, 'rgba(0, 0, 0, 0.5)');
+        coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = coreGrad;
+        ctx.beginPath();
+        ctx.arc(bh.x, bh.y, bh.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalCompositeOperation = 'source-over';
 
-          // Accretion ring
-          const ringR = bh.radius * 1.4;
-          ctx.strokeStyle = `rgba(147, 154, 92, ${0.15 + bh.consumed * 0.3})`;
-          ctx.lineWidth = 1 + bh.consumed * 2;
-          ctx.beginPath();
-          ctx.arc(bh.x, bh.y, ringR, 0, Math.PI * 2);
-          ctx.stroke();
+        // Accretion ring
+        const ringR = bh.radius * 1.3;
+        ctx.strokeStyle = `rgba(147, 154, 92, ${0.3 + bh.consumed * 0.5})`;
+        ctx.lineWidth = 2 + bh.consumed * 3;
+        ctx.beginPath();
+        ctx.arc(bh.x, bh.y, ringR, 0, Math.PI * 2);
+        ctx.stroke();
 
-          // Outer glow
-          const outerGlow = ctx.createRadialGradient(bh.x, bh.y, bh.radius, bh.x, bh.y, bh.radius * 2.5);
-          outerGlow.addColorStop(0, `rgba(147, 154, 92, ${0.03 + bh.consumed * 0.06})`);
-          outerGlow.addColorStop(1, 'rgba(147, 154, 92, 0)');
-          ctx.fillStyle = outerGlow;
-          ctx.beginPath();
-          ctx.arc(bh.x, bh.y, bh.radius * 2.5, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        // Outer glow
+        const outerGlow = ctx.createRadialGradient(bh.x, bh.y, bh.radius * 0.8, bh.x, bh.y, bh.radius * 2);
+        outerGlow.addColorStop(0, `rgba(147, 154, 92, ${0.06 + bh.consumed * 0.1})`);
+        outerGlow.addColorStop(1, 'rgba(147, 154, 92, 0)');
+        ctx.fillStyle = outerGlow;
+        ctx.beginPath();
+        ctx.arc(bh.x, bh.y, bh.radius * 2, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       // ── Regeneration phase ──
@@ -229,7 +226,7 @@ export default function MistEffect() {
           // Full regen complete — reset everything
           bh.suckedAll = false;
           bh.active = false;
-          bh.radius = 8;
+          bh.radius = 30;
           bh.consumed = 0;
           bh.regenProgress = 1;
           for (const p of particles.current) {
