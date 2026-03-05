@@ -189,9 +189,9 @@ export default function MistEffect() {
 
       // ── Mist particles ──
       for (const p of particles.current) {
-        // Slowly fade revived particles back in
+        // Fade revived particles back in (3x faster)
         if (p.alive > 0 && p.alive < 1) {
-          p.alive = Math.min(1, p.alive + 0.004);
+          p.alive = Math.min(1, p.alive + 0.012);
           p.o = p.maxO * p.alive;
         }
 
@@ -213,19 +213,14 @@ export default function MistEffect() {
         const dy = p.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        // ── Hold left click: suck mist into cursor ──
-        if (mouseDown.current && dist < demistRadius * 2.5) {
-          const pull = (1 - dist / (demistRadius * 2.5)) * 4;
-          p.vx -= (dx / (dist + 1)) * pull;
-          p.vy -= (dy / (dist + 1)) * pull;
-
-          if (dist < demistRadius * 0.6) {
-            p.alive = Math.max(0, p.alive - 0.04);
-            p.o = p.maxO * p.alive;
-            if (p.alive <= 0.01) {
-              p.alive = 0;
-              lastRegenTime.current = now;
-            }
+        // ── Hold left click: suck mist into cursor (no bouncing) ──
+        if (mouseDown.current && dist < demistRadius * 1.8) {
+          const fade = 1 - dist / (demistRadius * 1.8);
+          p.alive = Math.max(0, p.alive - fade * 0.12);
+          p.o = p.maxO * p.alive;
+          if (p.alive <= 0.01) {
+            p.alive = 0;
+            lastRegenTime.current = now;
           }
         }
 
