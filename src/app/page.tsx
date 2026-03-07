@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import ReviewCard from '@/components/ReviewCard';
 import CategoryCard from '@/components/CategoryCard';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import DealOfTheWeek from '@/components/DealOfTheWeek';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
@@ -32,6 +33,20 @@ export default async function HomePage() {
     <main>
       {/* Hero */}
       <Hero />
+
+      {/* Deal of the Week */}
+      <section className="py-8 sm:py-10">
+        <div className="container-main">
+          <ScrollReveal>
+            <DealOfTheWeek
+              toolName="Jasper AI"
+              deal="7-Day Free Trial + 20% Off First 3 Months"
+              reviewSlug="jasper-ai-review"
+              affiliateUrl="#jasper-affiliate"
+            />
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* Browse by Category */}
       <section id="categories" className="py-16 sm:py-20">

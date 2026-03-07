@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
 import MistEffect from '@/components/MistEffect';
 import PageScaler from '@/components/PageScaler';
+import JsonLd from '@/components/JsonLd';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -41,6 +43,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://shelby-ai.com',
+    types: {
+      'application/rss+xml': 'https://shelby-ai.com/feed.xml',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -59,11 +67,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <JsonLd type="website" />
         <MistEffect />
         <ScrollProgress />
         <Header />
         <PageScaler>{children}</PageScaler>
         <Footer />
+        <ExitIntentPopup />
       </body>
     </html>
   );
