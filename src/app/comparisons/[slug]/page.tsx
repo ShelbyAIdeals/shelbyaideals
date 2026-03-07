@@ -4,7 +4,9 @@ import ArticleLayout from '@/components/ArticleLayout';
 import WinnerBox from '@/components/WinnerBox';
 import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
-import { getArticle, getArticleSlugs } from '@/lib/content';
+import JsonLd from '@/components/JsonLd';
+import RelatedArticles from '@/components/RelatedArticles';
+import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ComparisonMeta } from '@/lib/types';
 
 interface PageProps {
@@ -72,6 +74,13 @@ export default async function ComparisonPage({ params }: PageProps) {
   }
 
   const headings = extractHeadings(content);
+  const allArticles = getAllArticles();
+
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://shelby-ai.com' },
+    { name: 'Comparisons', url: 'https://shelby-ai.com/comparisons' },
+    { name: meta.title, url: `https://shelby-ai.com/comparisons/${slug}` },
+  ];
 
   const sidebar = (
     <div className="space-y-8">
@@ -100,8 +109,14 @@ export default async function ComparisonPage({ params }: PageProps) {
         </div>
       )}
 
+      <JsonLd type="article" data={meta} />
+      <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+
       {/* MDX Body */}
       <MDXContent source={content} />
+
+      {/* Related Articles */}
+      <RelatedArticles current={meta} articles={allArticles} />
     </ArticleLayout>
   );
 }

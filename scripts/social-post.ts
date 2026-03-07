@@ -57,7 +57,7 @@ interface SocialDrafts {
 const PROJECT_ROOT = path.resolve(path.join(__dirname, '..'));
 const QUEUE_PATH = path.join(PROJECT_ROOT, 'scripts', 'content-queue.json');
 const DRAFTS_DIR = path.join(PROJECT_ROOT, 'scripts', 'social-drafts');
-const SITE_URL = process.env.SITE_URL || 'https://shelbyaideals.com';
+const SITE_URL = process.env.SITE_URL || 'https://shelby-ai.com';
 
 // Map article type -> URL path segment
 const TYPE_URL_MAP: Record<string, string> = {

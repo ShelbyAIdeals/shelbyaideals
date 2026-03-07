@@ -7,7 +7,10 @@ import ProsCons from '@/components/ProsCons';
 import VerdictBox from '@/components/VerdictBox';
 import ToolImage from '@/components/ToolImage';
 import TableOfContents from '@/components/TableOfContents';
-import { getArticle, getArticleSlugs } from '@/lib/content';
+import JsonLd from '@/components/JsonLd';
+import RelatedArticles from '@/components/RelatedArticles';
+import StickyCTA from '@/components/StickyCTA';
+import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
 interface PageProps {
@@ -75,6 +78,7 @@ export default async function ReviewPage({ params }: PageProps) {
   }
 
   const headings = extractHeadings(content);
+  const allArticles = getAllArticles();
 
   // Build pricing summary for QuickVerdict
   const pricingSummary = meta.pricing.length > 0
@@ -94,12 +98,21 @@ export default async function ReviewPage({ params }: PageProps) {
     </div>
   );
 
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://shelby-ai.com' },
+    { name: 'Reviews', url: 'https://shelby-ai.com/reviews' },
+    { name: meta.tool, url: `https://shelby-ai.com/reviews/${slug}` },
+  ];
+
   return (
     <ArticleLayout
       meta={meta}
       backLink={{ href: '/reviews', label: 'All Reviews' }}
       sidebar={sidebar}
     >
+      <JsonLd type="review" data={meta} />
+      <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+
       {/* Hero image */}
       {meta.toolSlug && (
         <div className="aspect-video rounded-xl overflow-hidden border border-void-700/50 mb-8 bg-void-800">
@@ -141,6 +154,17 @@ export default async function ReviewPage({ params }: PageProps) {
           toolName={meta.tool}
         />
       </div>
+
+      {/* Related Articles */}
+      <RelatedArticles current={meta} articles={allArticles} />
+
+      {/* Sticky CTA Bar */}
+      <StickyCTA
+        toolName={meta.tool}
+        affiliateUrl={meta.affiliateUrl}
+        affiliateLabel={meta.affiliateLabel}
+        rating={meta.rating}
+      />
     </ArticleLayout>
   );
 }

@@ -18,6 +18,7 @@ const resourceLinks = [
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Best Of', href: '/best' },
   { label: 'Guides', href: '/guides' },
+  { label: 'Submit a Tool', href: '/submit-tool' },
 ];
 
 const companyLinks = [
@@ -72,7 +73,7 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-accent-500/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-main py-14 sm:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
             <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
