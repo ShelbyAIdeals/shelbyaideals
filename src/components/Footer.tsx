@@ -17,6 +17,7 @@ const resourceLinks = [
   { label: 'Reviews', href: '/reviews' },
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Best Of', href: '/best' },
+  { label: 'Alternatives', href: '/alternatives' },
   { label: 'Guides', href: '/guides' },
   { label: 'Submit a Tool', href: '/submit-tool' },
 ];
