@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
@@ -67,6 +68,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0KV9M45SQW"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0KV9M45SQW');`}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
