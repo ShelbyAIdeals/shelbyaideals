@@ -10,6 +10,7 @@ import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import StickyCTA from '@/components/StickyCTA';
+import InlineNewsletterCTA from '@/components/InlineNewsletterCTA';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
@@ -43,6 +44,40 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   } catch {
     return { title: 'Review Not Found' };
   }
+}
+
+/**
+ * Split MDX content at the nearest ## heading boundary around the 50% mark.
+ * Returns [firstHalf, secondHalf]. If no good split point is found, secondHalf is empty.
+ */
+function splitContentAtMidpoint(content: string): [string, string] {
+  const midpoint = Math.floor(content.length / 2);
+  const headingRegex = /^## /gm;
+  const splitPoints: number[] = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    splitPoints.push(match.index);
+  }
+
+  if (splitPoints.length < 2) return [content, ''];
+
+  // Find the heading start closest to the midpoint
+  let closestIdx = 0;
+  let closestDist = Math.abs(splitPoints[0] - midpoint);
+  for (let i = 1; i < splitPoints.length; i++) {
+    const dist = Math.abs(splitPoints[i] - midpoint);
+    if (dist < closestDist) {
+      closestDist = dist;
+      closestIdx = i;
+    }
+  }
+
+  // Don't split at the very first heading
+  if (closestIdx === 0) closestIdx = 1;
+
+  const splitAt = splitPoints[closestIdx];
+  return [content.slice(0, splitAt).trimEnd(), content.slice(splitAt)];
 }
 
 function extractHeadings(content: string) {
@@ -79,6 +114,7 @@ export default async function ReviewPage({ params }: PageProps) {
   }
 
   const headings = extractHeadings(content);
+  const [contentFirstHalf, contentSecondHalf] = splitContentAtMidpoint(content);
   const allArticles = getAllArticles();
 
   // Build pricing summary for QuickVerdict
@@ -136,8 +172,14 @@ export default async function ReviewPage({ params }: PageProps) {
         />
       </div>
 
-      {/* MDX Body */}
-      <MDXContent source={content} />
+      {/* MDX Body — first half */}
+      <MDXContent source={contentFirstHalf} />
+
+      {/* Inline Newsletter CTA — appears mid-article */}
+      {contentSecondHalf && <InlineNewsletterCTA />}
+
+      {/* MDX Body — second half */}
+      {contentSecondHalf && <MDXContent source={contentSecondHalf} />}
 
       {/* Pros & Cons */}
       <div className="mt-10">

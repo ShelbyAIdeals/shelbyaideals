@@ -8,6 +8,7 @@ export interface ArticleMeta {
   author: string;
   date: string;
   lastUpdated: string;
+  lastTested?: string;
   readingTime?: string;
   featured?: boolean;
   featuredImage?: string;

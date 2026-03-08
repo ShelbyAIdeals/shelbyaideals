@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, User, ShieldCheck } from 'lucide-react';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import NewsletterSignup from './NewsletterSignup';
 import type { ArticleMeta, Category } from '@/lib/types';
@@ -64,6 +64,12 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
               <span className="flex items-center gap-1">
                 <Clock size={14} />
                 {meta.readingTime}
+              </span>
+            )}
+            {meta.lastTested && (
+              <span className="flex items-center gap-1 text-void-400">
+                <ShieldCheck size={14} />
+                Last tested: {new Date(meta.lastTested + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </span>
             )}
           </div>
