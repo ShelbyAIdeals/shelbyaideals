@@ -1,30 +1,41 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+export const config = {
+  runtime: 'edge',
+};
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+export default async function handler(req: Request) {
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
+    });
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return Response.json({ error: 'Method not allowed' }, { status: 405 });
   }
 
   const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '';
   const PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
 
-  const { email, utm_source, utm_medium, referring_site } = req.body || {};
+  let body: Record<string, string>;
+  try {
+    body = await req.json();
+  } catch {
+    return Response.json({ error: 'Invalid JSON' }, { status: 400 });
+  }
+
+  const { email, utm_source, utm_medium, referring_site } = body;
 
   if (!email || typeof email !== 'string') {
-    return res.status(400).json({ error: 'Email is required' });
+    return Response.json({ error: 'Email is required' }, { status: 400 });
   }
 
   if (!BEEHIIV_API_KEY || !PUBLICATION_ID) {
-    return res.status(500).json({ error: 'Newsletter not configured' });
+    return Response.json({ error: 'Newsletter not configured' }, { status: 500 });
   }
 
   try {
@@ -49,12 +60,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      return res.status(response.status).json({ error: 'Subscription failed', details: data });
+      return Response.json({ error: 'Subscription failed', details: data }, { status: response.status });
     }
 
-    return res.status(200).json({ success: true, data });
+    return Response.json({ success: true, data }, {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Unknown error';
-    return res.status(500).json({ error: 'Internal server error', message });
+    return Response.json({ error: 'Internal server error', message }, { status: 500 });
   }
 }
