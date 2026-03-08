@@ -67,6 +67,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: 'window.history.scrollRestoration="manual";window.scrollTo(0,0);' }} />
         <JsonLd type="website" />
         <MistEffect />
         <ScrollProgress />
