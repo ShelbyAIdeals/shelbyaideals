@@ -27,6 +27,12 @@ npm-debug.log*
 # private business files — do NOT push to public repo
 CHECKLIST.md
 MARKETING-STRATEGY.md
+MARKET-RESEARCH.md
+MEDIA-STRATEGY.md
+TODO-FINISH-PROJECT.md
 PLAN.md
 SUMMARY.md
+research/
+scripts/content-queue.json
+scripts/prompts/
 .claude/
