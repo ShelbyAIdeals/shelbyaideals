@@ -1,12 +1,21 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '';
-const PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '';
+  const PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
 
   const { email, utm_source, utm_medium, referring_site } = req.body || {};
 
@@ -37,14 +46,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
     );
 
+    const data = await response.json().catch(() => ({}));
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      return res.status(response.status).json({ error: 'Subscription failed', details: errorData });
+      return res.status(response.status).json({ error: 'Subscription failed', details: data });
     }
 
-    const data = await response.json();
     return res.status(200).json({ success: true, data });
-  } catch {
-    return res.status(500).json({ error: 'Internal server error' });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return res.status(500).json({ error: 'Internal server error', message });
   }
 }
