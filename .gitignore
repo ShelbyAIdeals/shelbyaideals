@@ -23,3 +23,10 @@ scripts/social-drafts/
 # debug
 npm-debug.log*
 .vercel
+
+# private business files — do NOT push to public repo
+CHECKLIST.md
+MARKETING-STRATEGY.md
+PLAN.md
+SUMMARY.md
+.claude/
