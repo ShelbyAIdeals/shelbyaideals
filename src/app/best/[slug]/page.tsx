@@ -26,6 +26,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const bestOf = meta as BestOfMeta;
     const metaDescription = bestOf.description || bestOf.excerpt;
 
+    const ogImage = bestOf.featuredImage || {
+      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      width: 1200,
+      height: 630,
+    };
+
     return {
       title: bestOf.title,
       description: metaDescription,
@@ -33,7 +39,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: bestOf.title,
         description: metaDescription,
         type: 'article',
-        ...(bestOf.featuredImage && { images: [bestOf.featuredImage] }),
+        images: [ogImage],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: bestOf.title,
+        description: metaDescription,
+        images: [typeof ogImage === 'string' ? ogImage : ogImage.url],
       },
     };
   } catch {

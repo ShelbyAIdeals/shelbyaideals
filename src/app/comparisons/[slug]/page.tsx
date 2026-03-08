@@ -26,6 +26,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const comparison = meta as ComparisonMeta;
     const metaDescription = comparison.description || comparison.excerpt;
 
+    const ogImage = comparison.featuredImage || {
+      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      width: 1200,
+      height: 630,
+    };
+
     return {
       title: comparison.title,
       description: metaDescription,
@@ -33,7 +39,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: comparison.title,
         description: metaDescription,
         type: 'article',
-        ...(comparison.featuredImage && { images: [comparison.featuredImage] }),
+        images: [ogImage],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: comparison.title,
+        description: metaDescription,
+        images: [typeof ogImage === 'string' ? ogImage : ogImage.url],
       },
     };
   } catch {

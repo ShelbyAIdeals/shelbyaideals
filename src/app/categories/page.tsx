@@ -9,6 +9,25 @@ export const metadata: Metadata = {
   title: 'Categories',
   description:
     'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+  openGraph: {
+    title: 'Categories',
+    description:
+      'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Categories',
+    description:
+      'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 const iconMap: Record<string, React.ElementType> = {

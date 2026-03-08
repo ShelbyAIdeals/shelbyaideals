@@ -4,6 +4,25 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
     'Terms and conditions for using the ShelbyAIDeals website.',
+  openGraph: {
+    title: 'Terms of Service',
+    description:
+      'Terms and conditions for using the ShelbyAIDeals website.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service',
+    description:
+      'Terms and conditions for using the ShelbyAIDeals website.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 export default function TermsOfServicePage() {

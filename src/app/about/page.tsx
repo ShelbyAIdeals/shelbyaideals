@@ -7,6 +7,25 @@ export const metadata: Metadata = {
   title: 'About ShelbyAIDeals',
   description:
     'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
+  openGraph: {
+    title: 'About ShelbyAIDeals',
+    description:
+      'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About ShelbyAIDeals',
+    description:
+      'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 export default function AboutPage() {

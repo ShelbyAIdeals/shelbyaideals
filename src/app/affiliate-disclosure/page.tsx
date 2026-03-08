@@ -4,6 +4,25 @@ export const metadata: Metadata = {
   title: 'Affiliate Disclosure',
   description:
     'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+  openGraph: {
+    title: 'Affiliate Disclosure',
+    description:
+      'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affiliate Disclosure',
+    description:
+      'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 export default function AffiliateDisclosurePage() {

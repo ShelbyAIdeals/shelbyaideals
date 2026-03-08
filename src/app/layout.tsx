@@ -32,12 +32,20 @@ export const metadata: Metadata = {
     title: 'ShelbyAIDeals — Honest AI Tool Reviews for Creators & Small Teams',
     description:
       'We test AI tools the way you actually use them. Honest reviews, real comparisons, and workflow-first recommendations.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ShelbyAIDeals',
     description:
       'Honest AI tool reviews for creators, freelancers, and small teams.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
   },
   robots: {
     index: true,

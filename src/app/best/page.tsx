@@ -9,6 +9,25 @@ export const metadata: Metadata = {
   title: 'Best AI Tools',
   description:
     'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
+  openGraph: {
+    title: 'Best AI Tools',
+    description:
+      'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best AI Tools',
+    description:
+      'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 export default async function BestOfPage() {

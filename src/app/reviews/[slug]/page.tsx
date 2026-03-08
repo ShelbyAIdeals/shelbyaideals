@@ -31,6 +31,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const review = meta as ReviewMeta;
     const metaDescription = review.description || review.excerpt;
 
+    const ogImage = review.featuredImage || {
+      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      width: 1200,
+      height: 630,
+    };
+
     return {
       title: review.title,
       description: metaDescription,
@@ -38,7 +44,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: review.title,
         description: metaDescription,
         type: 'article',
-        ...(review.featuredImage && { images: [review.featuredImage] }),
+        images: [ogImage],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: review.title,
+        description: metaDescription,
+        images: [typeof ogImage === 'string' ? ogImage : ogImage.url],
       },
     };
   } catch {

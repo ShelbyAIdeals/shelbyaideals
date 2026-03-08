@@ -27,6 +27,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const guide = meta as GuideMeta;
     const metaDescription = guide.description || guide.excerpt;
 
+    const ogImage = guide.featuredImage || {
+      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      width: 1200,
+      height: 630,
+    };
+
     return {
       title: guide.title,
       description: metaDescription,
@@ -34,7 +40,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: guide.title,
         description: metaDescription,
         type: 'article',
-        ...(guide.featuredImage && { images: [guide.featuredImage] }),
+        images: [ogImage],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: guide.title,
+        description: metaDescription,
+        images: [typeof ogImage === 'string' ? ogImage : ogImage.url],
       },
     };
   } catch {

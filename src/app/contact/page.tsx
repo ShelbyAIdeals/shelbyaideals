@@ -5,6 +5,25 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+  openGraph: {
+    title: 'Contact Us',
+    description:
+      'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+    images: [
+      {
+        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us',
+    description:
+      'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+  },
 };
 
 export default function ContactPage() {
