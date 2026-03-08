@@ -25,13 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const { meta } = getArticle('guides', slug);
     const guide = meta as GuideMeta;
+    const metaDescription = guide.description || guide.excerpt;
 
     return {
       title: guide.title,
-      description: guide.excerpt,
+      description: metaDescription,
       openGraph: {
         title: guide.title,
-        description: guide.excerpt,
+        description: metaDescription,
         type: 'article',
         ...(guide.featuredImage && { images: [guide.featuredImage] }),
       },

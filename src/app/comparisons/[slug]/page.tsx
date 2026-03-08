@@ -24,13 +24,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const { meta } = getArticle('comparisons', slug);
     const comparison = meta as ComparisonMeta;
+    const metaDescription = comparison.description || comparison.excerpt;
 
     return {
       title: comparison.title,
-      description: comparison.excerpt,
+      description: metaDescription,
       openGraph: {
         title: comparison.title,
-        description: comparison.excerpt,
+        description: metaDescription,
         type: 'article',
         ...(comparison.featuredImage && { images: [comparison.featuredImage] }),
       },

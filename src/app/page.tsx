@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
@@ -11,6 +12,11 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 import { getFeaturedArticles, getAllComparisons, getAllGuides, getArticlesByCategory } from '@/lib/content';
 import { CATEGORIES } from '@/lib/types';
 import type { ReviewMeta } from '@/lib/types';
+
+export const metadata: Metadata = {
+  description:
+    'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
+};
 
 export default async function HomePage() {
   const featured = getFeaturedArticles();

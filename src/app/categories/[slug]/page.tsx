@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: category.name,
-    description: category.description,
+    description: `${category.description} Tested and reviewed with real-world workflows.`,
   };
 }
 

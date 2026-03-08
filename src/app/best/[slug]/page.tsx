@@ -24,13 +24,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const { meta } = getArticle('best', slug);
     const bestOf = meta as BestOfMeta;
+    const metaDescription = bestOf.description || bestOf.excerpt;
 
     return {
       title: bestOf.title,
-      description: bestOf.excerpt,
+      description: metaDescription,
       openGraph: {
         title: bestOf.title,
-        description: bestOf.excerpt,
+        description: metaDescription,
         type: 'article',
         ...(bestOf.featuredImage && { images: [bestOf.featuredImage] }),
       },

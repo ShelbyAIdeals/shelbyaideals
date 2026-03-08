@@ -2,6 +2,7 @@ export interface ArticleMeta {
   title: string;
   slug: string;
   excerpt: string;
+  description?: string;
   category: Category;
   type: 'review' | 'comparison' | 'best' | 'guide';
   author: string;

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419"/>
+      <stop offset="100%" style="stop-color:#1a2332"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#52cde6"/>
+      <stop offset="100%" style="stop-color:#05a0ba"/>
+    </linearGradient>
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Subtle border -->
+  <rect x="3" y="3" width="1194" height="624" fill="none" stroke="#05a0ba" stroke-opacity="0.12" stroke-width="2" rx="8"/>
+
+  <!-- Text: ShelbyAIDeals -->
+  <text x="600" y="275" text-anchor="middle"
+        font-family="'Georgia', serif"
+        font-weight="900" font-size="68" fill="white" letter-spacing="-1">
+    Shelby<tspan fill="#1ab8d4">AI</tspan>Deals
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="330" text-anchor="middle"
+        font-family="'Helvetica', sans-serif"
+        font-weight="400" font-size="26" fill="white" opacity="0.6">
+    Honest AI tool reviews, deals &amp; tips for solopreneurs
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="580" width="1000" height="2" fill="#05a0ba" opacity="0.2" rx="1"/>
+</svg>

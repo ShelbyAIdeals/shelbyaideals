@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419"/>
+      <stop offset="100%" style="stop-color:#1a2332"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#52cde6"/>
+      <stop offset="100%" style="stop-color:#05a0ba"/>
+    </linearGradient>
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" rx="120" fill="url(#bgGrad)"/>
+
+  <!-- Subtle border -->
+  <rect x="4" y="4" width="792" height="792" rx="118" fill="none" stroke="#05a0ba" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- Soft glow behind bolt (manual, no filter) -->
+  <ellipse cx="400" cy="290" rx="100" ry="120" fill="#05a0ba" opacity="0.10"/>
+  <ellipse cx="400" cy="290" rx="70" ry="90" fill="#05a0ba" opacity="0.08"/>
+
+  <!-- Icon background rounded square -->
+  <rect x="280" y="170" width="240" height="240" rx="52" fill="#05a0ba" opacity="0.15"/>
+
+  <!-- Glow layers behind bolt (manual radial glow, no filter clipping) -->
+  <ellipse cx="400" cy="290" rx="55" ry="70" fill="#52cde6" opacity="0.12"/>
+  <ellipse cx="400" cy="290" rx="35" ry="50" fill="#52cde6" opacity="0.15"/>
+
+  <!-- Lightning bolt - original thin style with stroke -->
+  <polygon transform="translate(400, 290)"
+           points="-12,-80 20,-10 -8,-10 12,80 -20,10 8,10"
+           fill="url(#iconGrad)" stroke="#52cde6" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Text: Shelby -->
+  <text x="400" y="520" text-anchor="middle"
+        font-family="'Georgia', serif"
+        font-weight="900" font-size="105" fill="white" letter-spacing="-2">
+    Shelby
+  </text>
+
+  <!-- Text: AI -->
+  <text x="400" y="615" text-anchor="middle"
+        font-family="'Georgia', serif"
+        font-weight="900" font-size="85" fill="#1ab8d4" filter="url(#textGlow)" letter-spacing="10">
+    AI
+  </text>
+
+  <!-- Text: Deals -->
+  <text x="400" y="700" text-anchor="middle"
+        font-family="'Helvetica', sans-serif"
+        font-weight="500" font-size="50" fill="white" opacity="0.65" letter-spacing="14">
+    DEALS
+  </text>
+</svg>
