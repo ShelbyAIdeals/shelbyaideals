@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, ArrowRight, Zap } from 'lucide-react';
 
-const BEEHIIV_PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
-
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState('');
@@ -43,25 +41,20 @@ export default function ExitIntentPopup() {
     if (!email.trim()) return;
     setLoading(true);
 
-    if (BEEHIIV_PUBLICATION_ID) {
-      try {
-        const res = await fetch(
-          `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              utm_source: 'website',
-              utm_medium: 'exit_intent_popup',
-            }),
-          }
-        );
-        if (!res.ok) throw new Error('Failed');
-      } catch {
-        setLoading(false);
-        return;
-      }
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          utm_source: 'website',
+          utm_medium: 'exit_intent_popup',
+        }),
+      });
+      if (!res.ok) throw new Error('Failed');
+    } catch {
+      setLoading(false);
+      return;
     }
 
     setLoading(false);

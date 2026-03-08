@@ -9,8 +9,6 @@ interface NewsletterSignupProps {
   className?: string;
 }
 
-const BEEHIIV_PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
-
 export default function NewsletterSignup({
   variant = 'section',
   className,
@@ -27,28 +25,22 @@ export default function NewsletterSignup({
     setLoading(true);
     setError('');
 
-    // If Beehiiv is configured, send to their API
-    if (BEEHIIV_PUBLICATION_ID) {
-      try {
-        const res = await fetch(
-          `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              utm_source: 'website',
-              utm_medium: 'cheatsheet_signup',
-              referring_site: window.location.href,
-            }),
-          }
-        );
-        if (!res.ok) throw new Error('Subscription failed');
-      } catch {
-        setError('Something went wrong. Please try again.');
-        setLoading(false);
-        return;
-      }
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          utm_source: 'website',
+          utm_medium: 'cheatsheet_signup',
+          referring_site: window.location.href,
+        }),
+      });
+      if (!res.ok) throw new Error('Subscription failed');
+    } catch {
+      setError('Something went wrong. Please try again.');
+      setLoading(false);
+      return;
     }
 
     setLoading(false);
@@ -78,7 +70,7 @@ export default function NewsletterSignup({
           </p>
         ) : (
           <>
-            <form onSubmit={handleSubmit} className="flex gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
