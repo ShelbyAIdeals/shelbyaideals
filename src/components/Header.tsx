@@ -6,27 +6,23 @@ import { useRouter } from 'next/navigation';
 import { Menu, X, Search, Zap } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Reviews', href: '/reviews' },
-  { label: 'Comparisons', href: '/comparisons' },
-  { label: 'Best Of', href: '/best' },
-  { label: 'Guides', href: '/guides' },
+  { label: 'Tools', href: '/reviews' },
   { label: 'Categories', href: '/categories' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [mistDensity, setMistDensity] = useState(50);
   const router = useRouter();
 
   useEffect(() => {
-    // Small delay on mount to ensure MistEffect listener is attached
     const t = setTimeout(() => {
-      window.dispatchEvent(new CustomEvent('mistDensity', { detail: mistDensity }));
+      window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
     }, 50);
     return () => clearTimeout(t);
-  }, [mistDensity]);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,20 +86,8 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Right side: Mist density slider + About */}
+          {/* Right side: About */}
           <div className="hidden lg:flex items-center gap-4">
-            <div className="flex items-center gap-2.5 px-3.5 py-2">
-              <span className="text-[0.938rem] font-semibold text-white whitespace-nowrap">Mist density</span>
-              <input
-                type="range"
-                min={0}
-                max={100}
-                value={mistDensity}
-                onChange={(e) => setMistDensity(Number(e.target.value))}
-                className="w-24 mist-slider"
-              />
-            </div>
-
             <Link
               href="/about"
               className="px-5 py-2.5 text-base font-semibold text-white border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
@@ -152,18 +136,6 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            {/* Mobile mist density slider */}
-            <div className="px-3 mt-3 flex items-center gap-2">
-              <span className="text-sm font-semibold text-white whitespace-nowrap">Mist density</span>
-              <input
-                type="range"
-                min={0}
-                max={100}
-                value={mistDensity}
-                onChange={(e) => setMistDensity(Number(e.target.value))}
-                className="w-28 mist-slider"
-              />
-            </div>
           </nav>
         )}
       </div>

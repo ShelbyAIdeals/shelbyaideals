@@ -59,7 +59,7 @@ export default function NewsletterSignup({
               Get the Free AI Tool Stack Cheatsheet
             </h4>
             <p className="text-xs text-void-500 mt-1 leading-relaxed">
-              Join 1,000+ creators and get curated AI tool recommendations weekly.
+              Get curated AI tool recommendations and exclusive deals weekly.
             </p>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function NewsletterSignup({
 
           {/* Description */}
           <p className="text-void-400 leading-relaxed mb-8 max-w-md mx-auto">
-            Join 1,000+ creators and get our curated AI tool recommendations,
+            Get our curated AI tool recommendations,
             workflow tips, and exclusive deals. Delivered weekly.
           </p>
 

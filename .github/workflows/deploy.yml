@@ -36,12 +36,12 @@ jobs:
 
       - name: Generate sitemap
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://shelbydeals.com' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelby-ai.com' }}
         run: npx tsx scripts/generate-sitemap.ts
 
       - name: Generate RSS feed
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://shelbydeals.com' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://shelby-ai.com' }}
         run: npx tsx scripts/generate-rss.ts
 
       - name: Build

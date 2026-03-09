@@ -14,16 +14,17 @@ const categoryLinks = [
 ];
 
 const resourceLinks = [
-  { label: 'Reviews', href: '/reviews' },
+  { label: 'All Tools', href: '/reviews' },
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Best Of', href: '/best' },
-  { label: 'Alternatives', href: '/alternatives' },
   { label: 'Guides', href: '/guides' },
+  { label: 'Alternatives', href: '/alternatives' },
   { label: 'Submit a Tool', href: '/submit-tool' },
 ];
 
 const companyLinks = [
   { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
   { label: 'How We Review', href: '/how-we-review' },
   { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
@@ -31,37 +32,34 @@ const companyLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
-const BEEHIIV_PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
-
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
     setLoading(true);
+    setError('');
 
-    if (BEEHIIV_PUBLICATION_ID) {
-      try {
-        const res = await fetch(
-          `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              utm_source: 'website',
-              utm_medium: 'footer_signup',
-            }),
-          }
-        );
-        if (!res.ok) throw new Error('Failed');
-      } catch {
-        setLoading(false);
-        return;
-      }
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          utm_source: 'website',
+          utm_medium: 'footer_signup',
+          referring_site: window.location.href,
+        }),
+      });
+      if (!res.ok) throw new Error('Subscription failed');
+    } catch {
+      setError('Something went wrong. Please try again.');
+      setLoading(false);
+      return;
     }
 
     setLoading(false);
@@ -163,6 +161,7 @@ export default function Footer() {
                   {loading ? 'Subscribing...' : 'Subscribe'}
                   {!loading && <ArrowRight size={14} />}
                 </button>
+                {error && <p className="text-xs text-red-400">{error}</p>}
               </form>
             )}
           </div>

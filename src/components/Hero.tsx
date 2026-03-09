@@ -9,9 +9,9 @@ import HeroTextRotator from './motion/HeroTextRotator';
 import AnimatedCounter from './motion/AnimatedCounter';
 
 const stats = [
-  { icon: BookOpen, value: '50+', label: 'Tools Reviewed' },
+  { icon: BookOpen, value: '10+', label: 'Tools Reviewed' },
   { icon: Star, value: '4.8', label: 'Avg Rating' },
-  { icon: TrendingUp, value: '10K+', label: 'Monthly Readers' },
+  { icon: TrendingUp, value: '6', label: 'Categories' },
 ];
 
 const trendingTools = [
@@ -73,7 +73,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-sm font-medium mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-glow" />
-            Trusted by 10,000+ creators
+            Honest AI Tool Reviews
           </motion.div>
 
           {/* Headline */}
@@ -134,7 +134,7 @@ export default function Hero() {
               {trendingTools.map((tool) => (
                 <Link
                   key={tool}
-                  href={`/reviews`}
+                  href={`/search?q=${encodeURIComponent(tool)}`}
                   className="px-3 py-1 text-xs font-medium text-void-400 bg-void-800/60 border border-void-700/50 rounded-full hover:bg-void-900/90 hover:border-accent-500/30 hover:text-accent-400 no-underline transition-all"
                 >
                   {tool}
@@ -176,11 +176,11 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
           >
             <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
-              Browse All Reviews
+              Browse All Tools
               <ArrowRight size={16} />
             </Link>
-            <Link href="/comparisons" className="btn-outline text-sm no-underline gap-2">
-              Compare Tools
+            <Link href="/categories" className="btn-outline text-sm no-underline gap-2">
+              Browse Categories
               <ArrowRight size={16} />
             </Link>
           </motion.div>

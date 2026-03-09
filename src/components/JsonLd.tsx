@@ -1,8 +1,13 @@
 import type { ReviewMeta, ArticleMeta } from '@/lib/types';
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface JsonLdProps {
-  type: 'review' | 'article' | 'website' | 'breadcrumb';
-  data?: ReviewMeta | ArticleMeta;
+  type: 'review' | 'article' | 'website' | 'breadcrumb' | 'faq';
+  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] };
   breadcrumbs?: { name: string; url: string }[];
 }
 
@@ -69,14 +74,15 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
         worstRating: 0,
       },
     };
-  } else if (type === 'article' && data) {
+  } else if (type === 'article' && data && 'title' in data) {
+    const article = data as ArticleMeta;
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      headline: data.title,
-      description: data.excerpt,
-      datePublished: data.date,
-      dateModified: data.lastUpdated,
+      headline: article.title,
+      description: article.excerpt,
+      datePublished: article.date,
+      dateModified: article.lastUpdated,
       author: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
@@ -87,6 +93,20 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
         name: 'ShelbyAIDeals',
         url: 'https://shelby-ai.com',
       },
+    };
+  } else if (type === 'faq' && data && 'questions' in data) {
+    const faqData = data as { questions: FAQItem[] };
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqData.questions.map((q) => ({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: q.answer,
+        },
+      })),
     };
   } else {
     return null;

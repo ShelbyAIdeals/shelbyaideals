@@ -8,6 +8,7 @@ export default function ExitIntentPopup() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const show = useCallback(() => {
     if (typeof window === 'undefined') return;
@@ -40,6 +41,7 @@ export default function ExitIntentPopup() {
     e.preventDefault();
     if (!email.trim()) return;
     setLoading(true);
+    setError('');
 
     try {
       const res = await fetch('/api/subscribe', {
@@ -49,10 +51,12 @@ export default function ExitIntentPopup() {
           email,
           utm_source: 'website',
           utm_medium: 'exit_intent_popup',
+          referring_site: window.location.href,
         }),
       });
       if (!res.ok) throw new Error('Failed');
     } catch {
+      setError('Something went wrong. Please try again.');
       setLoading(false);
       return;
     }
@@ -88,7 +92,7 @@ export default function ExitIntentPopup() {
             Wait — grab this before you go
           </h3>
           <p className="text-sm text-void-300 mb-6 leading-relaxed">
-            Get our weekly AI tool picks and exclusive deals. Join 1,000+ creators who stay ahead.
+            Get our weekly AI tool picks and exclusive deals. Stay ahead of the AI curve.
           </p>
 
           {subscribed ? (
@@ -113,6 +117,7 @@ export default function ExitIntentPopup() {
                 {loading ? 'Subscribing...' : 'Get Weekly AI Picks'}
                 {!loading && <ArrowRight size={14} />}
               </button>
+              {error && <p className="text-xs text-red-400">{error}</p>}
               <p className="text-xs text-void-600">No spam. Unsubscribe anytime.</p>
             </form>
           )}

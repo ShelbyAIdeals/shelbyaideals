@@ -101,21 +101,25 @@ function todayISO(): string {
 
 async function loadPromptBuilder(type: string): Promise<PromptBuilder> {
   const promptMap: Record<string, string> = {
-    review: './prompts/review.js',
-    comparison: './prompts/comparison.js',
-    best: './prompts/best-of.js',
-    guide: './prompts/guide.js',
+    review: './prompts/review',
+    comparison: './prompts/comparison',
+    best: './prompts/best-of',
+    guide: './prompts/guide',
   };
 
-  const modulePath = promptMap[type];
-  if (!modulePath) {
+  const basePath = promptMap[type];
+  if (!basePath) {
     console.error(`ERROR: Unknown article type "${type}". Expected: review, comparison, best, guide`);
     process.exit(1);
   }
 
-  const fullPath = path.resolve(__dirname, modulePath);
+  // Try .ts first (source), then .js (compiled)
+  const tsPath = path.resolve(__dirname, basePath + '.ts');
+  const jsPath = path.resolve(__dirname, basePath + '.js');
+  const fullPath = fs.existsSync(tsPath) ? tsPath : jsPath;
+
   if (!fs.existsSync(fullPath)) {
-    console.error(`ERROR: Prompt builder not found at ${fullPath}`);
+    console.error(`ERROR: Prompt builder not found at ${tsPath} or ${jsPath}`);
     console.error(`Make sure the prompt modules exist in scripts/prompts/`);
     process.exit(1);
   }
@@ -124,7 +128,7 @@ async function loadPromptBuilder(type: string): Promise<PromptBuilder> {
   const builder: PromptBuilder = mod.buildPrompt || mod.default;
 
   if (typeof builder !== 'function') {
-    console.error(`ERROR: Prompt module "${modulePath}" does not export a buildPrompt() or default function`);
+    console.error(`ERROR: Prompt module "${fullPath}" does not export a buildPrompt() or default function`);
     process.exit(1);
   }
 
