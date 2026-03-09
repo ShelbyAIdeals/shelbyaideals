@@ -90,11 +90,13 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID||""}")` }} />
         <JsonLd type="website" />
         <MistEffect />
-        <ScrollProgress />
-        <Header />
-        <PageScaler>{children}</PageScaler>
-        <Footer />
-        <ExitIntentPopup />
+        <div className="relative z-[2] isolate flex flex-col min-h-screen">
+          <ScrollProgress />
+          <Header />
+          <PageScaler>{children}</PageScaler>
+          <Footer />
+          <ExitIntentPopup />
+        </div>
       </body>
     </html>
   );
