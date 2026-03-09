@@ -151,7 +151,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@email.com"
                   required
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-void-900 border border-void-700/50 text-white placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
+                  className="w-full px-3 py-2 text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
                 />
                 <button
                   type="submit"
@@ -179,7 +179,7 @@ export default function Footer() {
             <div className="w-6 h-6 rounded-md bg-accent-500 flex items-center justify-center">
               <Zap size={12} className="text-void-950" strokeWidth={2.5} />
             </div>
-            <span className="text-sm font-heading font-bold text-white">
+            <span className="text-sm font-heading font-bold text-void-50">
               Shelby<span className="text-accent-400">AI</span>Deals
             </span>
           </Link>

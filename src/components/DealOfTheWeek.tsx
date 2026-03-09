@@ -23,7 +23,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
             <span className="text-xs font-semibold tracking-widest uppercase text-accent-400">
               Deal of the Week
             </span>
-            <h3 className="text-lg font-heading font-bold text-white">
+            <h3 className="text-lg font-heading font-bold text-void-50">
               {toolName} — {deal}
             </h3>
           </div>
@@ -32,7 +32,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
         <div className="flex items-center gap-3 sm:ml-auto">
           <Link
             href={`/reviews/${reviewSlug}`}
-            className="text-sm font-semibold text-void-300 hover:text-white no-underline transition-colors"
+            className="text-sm font-semibold text-void-300 hover:text-void-50 no-underline transition-colors"
           >
             Read Review
           </Link>

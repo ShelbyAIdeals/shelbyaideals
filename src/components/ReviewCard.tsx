@@ -72,7 +72,7 @@ export default function ReviewCard({
           </p>
 
           {/* Read review link */}
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-100 group-hover:text-white">
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-100 group-hover:text-void-50">
             Read Review
             <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
           </span>

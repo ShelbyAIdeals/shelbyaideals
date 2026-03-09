@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Menu, X, Search, Zap } from 'lucide-react';
+import { Menu, X, Search, Zap, Sun, Moon } from 'lucide-react';
 
 const navLinks = [
   { label: 'Tools', href: '/reviews' },
@@ -15,14 +15,34 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [lightMode, setLightMode] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+      setLightMode(true);
+      document.documentElement.dataset.theme = 'light';
+      window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
+    }
     const t = setTimeout(() => {
       window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
     }, 50);
     return () => clearTimeout(t);
   }, []);
+
+  const toggleTheme = () => {
+    const next = !lightMode;
+    setLightMode(next);
+    if (next) {
+      document.documentElement.dataset.theme = 'light';
+      localStorage.setItem('theme', 'light');
+    } else {
+      delete document.documentElement.dataset.theme;
+      localStorage.setItem('theme', 'dark');
+    }
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: next ? 'light' : 'dark' }));
+  };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,7 +69,7 @@ export default function Header() {
             <div className="w-11 h-11 rounded-xl bg-accent-500 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(5,160,186,0.4)] transition-shadow">
               <Zap size={22} className="text-void-950" strokeWidth={2.5} />
             </div>
-            <span className="text-2xl font-heading font-bold text-white tracking-tight">
+            <span className="text-2xl font-heading font-bold text-void-50 tracking-tight">
               Shelby<span className="text-accent-400">AI</span>Deals
             </span>
           </Link>
@@ -60,14 +80,14 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2.5 text-base font-semibold text-white/90 hover:text-accent-300 rounded-lg hover:bg-void-700/60 no-underline transition-all"
+                className="px-4 py-2.5 text-base font-semibold text-void-50/90 hover:text-accent-300 rounded-lg hover:bg-void-700/60 no-underline transition-all"
               >
                 {link.label}
               </Link>
             ))}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2.5 rounded-lg text-white hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer ml-1"
+              className="p-2.5 rounded-lg text-void-50 hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer ml-1"
               aria-label="Search"
             >
               {searchOpen ? <X size={22} /> : <Search size={22} />}
@@ -86,11 +106,18 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Right side: About */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Right side: Theme toggle + About */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-lg text-void-50 hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer"
+              aria-label={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
+            >
+              {lightMode ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
             <Link
               href="/about"
-              className="px-5 py-2.5 text-base font-semibold text-white border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
+              className="px-5 py-2.5 text-base font-semibold text-void-50 border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
             >
               About
             </Link>
@@ -100,7 +127,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-white hover:bg-void-800 transition-colors cursor-pointer"
+            className="lg:hidden p-2 rounded-lg text-void-50 hover:bg-void-800 transition-colors cursor-pointer"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -129,12 +156,21 @@ export default function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2.5 rounded-lg text-base font-semibold text-white hover:bg-void-700/60 hover:text-accent-300 no-underline transition-colors"
+                    className="block px-3 py-2.5 rounded-lg text-base font-semibold text-void-50 hover:bg-void-700/60 hover:text-accent-300 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center gap-2 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-50 hover:bg-void-700/60 hover:text-accent-300 transition-colors cursor-pointer"
+                >
+                  {lightMode ? <Moon size={18} /> : <Sun size={18} />}
+                  {lightMode ? 'Dark Mode' : 'White Mode'}
+                </button>
+              </li>
             </ul>
           </nav>
         )}

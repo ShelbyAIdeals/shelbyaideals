@@ -31,7 +31,7 @@ export default function ToolCard({
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
     >
       {/* Rank badge */}
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
         {rank}
       </div>
 

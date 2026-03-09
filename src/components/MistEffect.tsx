@@ -32,6 +32,7 @@ export default function MistEffect() {
   const mouseDown = useRef(false);
   const lastRegenTime = useRef(0);
   const mistDensity = useRef(50);
+  const isLight = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -113,6 +114,15 @@ export default function MistEffect() {
     };
     window.addEventListener('mistDensity', onMistDensity);
 
+    const onThemeChange = (e: Event) => {
+      const light = (e as CustomEvent).detail === 'light';
+      isLight.current = light;
+      if (canvas) canvas.style.mixBlendMode = light ? 'multiply' : 'screen';
+    };
+    window.addEventListener('themeChange', onThemeChange);
+    isLight.current = document.documentElement.dataset.theme === 'light';
+    if (isLight.current) canvas.style.mixBlendMode = 'multiply';
+
     let frame = 0;
 
     const draw = () => {
@@ -144,20 +154,24 @@ export default function MistEffect() {
 
       // ── Stars ──
       const time = frame * 0.016;
+      const light = isLight.current;
+      const starR = light ? 30 : 220;
+      const starG = light ? 30 : 225;
+      const starB = light ? 40 : 235;
       for (const s of stars.current) {
         const twinkle = Math.sin(time * s.twinkleSpeed * 60 + s.twinkleOffset);
         const alpha = s.o * (0.5 + 0.5 * twinkle) * vignette(s.x, s.y);
         if (alpha < 0.05) continue;
 
-        ctx.fillStyle = `rgba(220,225,235,${alpha})`;
+        ctx.fillStyle = `rgba(${starR},${starG},${starB},${alpha})`;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
 
         if (s.r > 1.2 && alpha > 0.5) {
           const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
-          glow.addColorStop(0, `rgba(220,225,235,${alpha * 0.2})`);
-          glow.addColorStop(1, 'rgba(220,225,235,0)');
+          glow.addColorStop(0, `rgba(${starR},${starG},${starB},${alpha * 0.2})`);
+          glow.addColorStop(1, `rgba(${starR},${starG},${starB},0)`);
           ctx.fillStyle = glow;
           ctx.beginPath();
           ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
@@ -215,10 +229,13 @@ export default function MistEffect() {
 
         if (alpha < 0.002) continue;
 
+        const mistR = light ? 0 : 185;
+        const mistG = light ? 0 : 190;
+        const mistB = light ? 0 : 200;
         const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-        grad.addColorStop(0, `rgba(185,190,200,${alpha})`);
-        grad.addColorStop(0.4, `rgba(185,190,200,${alpha * 0.5})`);
-        grad.addColorStop(1, 'rgba(185,190,200,0)');
+        grad.addColorStop(0, `rgba(${mistR},${mistG},${mistB},${alpha})`);
+        grad.addColorStop(0.4, `rgba(${mistR},${mistG},${mistB},${alpha * 0.5})`);
+        grad.addColorStop(1, `rgba(${mistR},${mistG},${mistB},0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -237,12 +254,14 @@ export default function MistEffect() {
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
       window.removeEventListener('mistDensity', onMistDensity);
+      window.removeEventListener('themeChange', onThemeChange);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
+      id="mist-canvas"
       className="pointer-events-none fixed inset-0 z-[1]"
       style={{ mixBlendMode: 'screen' }}
     />

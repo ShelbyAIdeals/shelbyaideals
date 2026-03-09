@@ -22,7 +22,7 @@ export default function ComparisonTable({ tools }: ComparisonTableProps) {
       <table className="w-full border-collapse text-sm">
         {/* Header row: tool names + CTAs */}
         <thead>
-          <tr className="bg-void-800 text-white">
+          <tr className="bg-void-800 text-void-50">
             <th className="sticky left-0 z-10 bg-void-800 px-4 py-4 text-left text-sm font-semibold min-w-[140px]">
               Feature
             </th>

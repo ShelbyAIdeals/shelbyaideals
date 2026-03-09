@@ -26,7 +26,7 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
                 Most Popular
               </span>
             )}
@@ -86,7 +86,7 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-4 rounded-full bg-accent-500 px-3 py-0.5 text-xs font-semibold text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-4 rounded-full bg-accent-500 px-3 py-0.5 text-xs font-semibold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
                 Most Popular
               </span>
             )}

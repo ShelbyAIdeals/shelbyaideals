@@ -39,7 +39,7 @@ export default function ScreenshotGallery({ images }: ScreenshotGalleryProps) {
         >
           <button
             onClick={() => setLightboxIndex(null)}
-            className="absolute top-4 right-4 text-void-300 hover:text-white cursor-pointer"
+            className="absolute top-4 right-4 text-void-300 hover:text-void-50 cursor-pointer"
           >
             <X size={28} />
           </button>
@@ -51,7 +51,7 @@ export default function ScreenshotGallery({ images }: ScreenshotGalleryProps) {
                   e.stopPropagation();
                   setLightboxIndex((lightboxIndex - 1 + images.length) % images.length);
                 }}
-                className="absolute left-4 text-void-300 hover:text-white cursor-pointer"
+                className="absolute left-4 text-void-300 hover:text-void-50 cursor-pointer"
               >
                 <ChevronLeft size={32} />
               </button>
@@ -60,7 +60,7 @@ export default function ScreenshotGallery({ images }: ScreenshotGalleryProps) {
                   e.stopPropagation();
                   setLightboxIndex((lightboxIndex + 1) % images.length);
                 }}
-                className="absolute right-4 text-void-300 hover:text-white cursor-pointer"
+                className="absolute right-4 text-void-300 hover:text-void-50 cursor-pointer"
               >
                 <ChevronRight size={32} />
               </button>

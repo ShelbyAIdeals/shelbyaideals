@@ -77,7 +77,7 @@ export default function ExitIntentPopup() {
       <div className="relative w-full max-w-md bg-void-900 border border-void-700/60 rounded-2xl p-8 shadow-2xl">
         <button
           onClick={dismiss}
-          className="absolute top-4 right-4 text-void-500 hover:text-white transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-void-500 hover:text-void-50 transition-colors cursor-pointer"
           aria-label="Close"
         >
           <X size={20} />
@@ -88,7 +88,7 @@ export default function ExitIntentPopup() {
             <Zap size={24} className="text-void-950" strokeWidth={2.5} />
           </div>
 
-          <h3 className="text-xl font-heading font-bold text-white mb-2">
+          <h3 className="text-xl font-heading font-bold text-void-50 mb-2">
             Wait — grab this before you go
           </h3>
           <p className="text-sm text-void-300 mb-6 leading-relaxed">
@@ -107,7 +107,7 @@ export default function ExitIntentPopup() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 required
-                className="w-full px-4 py-3 text-sm rounded-lg bg-void-800 border border-void-700/50 text-white placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
+                className="w-full px-4 py-3 text-sm rounded-lg bg-void-800 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
               />
               <button
                 type="submit"
