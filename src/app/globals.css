@@ -41,12 +41,13 @@
   --color-void-300: #4a4035;
   --color-void-400: #655a4c;
   --color-void-500: #a39882;
-  --color-void-600: #d4cbbf;
-  --color-void-700: #e3dace;
-  --color-void-800: #ede5d9;
-  --color-void-900: #f5efe5;
-  --color-void-950: #f7f2e9;
+  --color-void-600: #cec3af;
+  --color-void-700: #ddd1bc;
+  --color-void-800: #e8ddc8;
+  --color-void-900: #f0e7d3;
+  --color-void-950: #f5eddd;
 
+  --color-accent-300: #1f7d8e;
   --color-accent-400: #1a6b7a;
   --color-accent-500: #145862;
 }
