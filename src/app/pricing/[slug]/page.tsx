@@ -1,0 +1,239 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { ArrowRight, Check, Clock, Shield, CreditCard } from 'lucide-react';
+import { getPricingSlugs, getPricingPage } from '@/lib/pricing-data';
+import ScrollReveal from '@/components/motion/ScrollReveal';
+import StaggerContainer from '@/components/motion/StaggerContainer';
+import StaggerItem from '@/components/motion/StaggerItem';
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return getPricingSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const page = getPricingPage(slug);
+
+  if (!page) {
+    return { title: 'Pricing Not Found' };
+  }
+
+  return {
+    title: page.title,
+    description: page.description,
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      type: 'article',
+      url: `https://shelby-ai.com/pricing/${slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.title,
+      description: page.description,
+    },
+    alternates: {
+      canonical: `https://shelby-ai.com/pricing/${slug}`,
+    },
+  };
+}
+
+export default async function PricingDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const page = getPricingPage(slug);
+
+  if (!page) {
+    notFound();
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shelby-ai.com' },
+      { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://shelby-ai.com/pricing' },
+      { '@type': 'ListItem', position: 3, name: `${page.tool} Pricing`, item: `https://shelby-ai.com/pricing/${slug}` },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
+  return (
+    <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
+        {/* Breadcrumb */}
+        <ScrollReveal>
+          <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">
+            <Link href="/" className="hover:text-accent-400 no-underline transition-colors text-void-500">Home</Link>
+            <span>/</span>
+            <span className="text-void-500">Pricing</span>
+            <span>/</span>
+            <span className="text-void-300">{page.tool}</span>
+          </nav>
+        </ScrollReveal>
+
+        {/* Page Header */}
+        <ScrollReveal>
+          <div className="max-w-3xl mb-10">
+            <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-4 font-heading">
+              {page.title}
+            </h1>
+            <p className="text-lg text-void-300 leading-relaxed">
+              {page.intro}
+            </p>
+
+            {/* Trust signals */}
+            <div className="flex flex-wrap items-center gap-4 mt-6">
+              <div className="flex items-center gap-2 text-sm text-void-400">
+                <Clock size={14} className="text-accent-500" />
+                <span>Last updated: {page.lastUpdated}</span>
+              </div>
+              {page.freeTrialAvailable && (
+                <div className="flex items-center gap-2 text-sm text-accent-400">
+                  <Shield size={14} />
+                  <span>{page.freeTrialDays}-day free trial available</span>
+                </div>
+              )}
+              {page.moneyBackGuarantee && (
+                <div className="flex items-center gap-2 text-sm text-accent-400">
+                  <CreditCard size={14} />
+                  <span>{page.moneyBackGuarantee}</span>
+                </div>
+              )}
+            </div>
+
+            {page.reviewSlug && (
+              <p className="mt-4 text-sm text-void-400">
+                Want the full picture?{' '}
+                <Link
+                  href={`/reviews/${page.reviewSlug}`}
+                  className="text-accent-400 hover:text-accent-300 no-underline font-medium"
+                >
+                  Read our {page.tool} review &rarr;
+                </Link>
+              </p>
+            )}
+          </div>
+        </ScrollReveal>
+
+        {/* Pricing Cards */}
+        <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-16">
+          {page.plans.map((plan) => (
+            <StaggerItem key={plan.name}>
+              <div
+                className={`relative flex flex-col rounded-xl border p-6 h-full transition-all ${
+                  plan.highlighted
+                    ? 'border-accent-500/40 bg-void-900/80 shadow-[0_0_30px_rgba(6,182,212,0.08)]'
+                    : 'border-void-700/50 bg-void-900/40'
+                }`}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-bold text-void-950 uppercase tracking-wider">
+                    Most Popular
+                  </div>
+                )}
+
+                <div className="mb-4">
+                  <h2 className="text-lg font-bold text-void-50 font-heading">{plan.name}</h2>
+                  <p className="text-sm text-void-400 mt-1">{plan.description}</p>
+                </div>
+
+                <div className="mb-6">
+                  <span className="text-3xl font-extrabold text-void-50">{plan.price}</span>
+                  <span className="text-sm text-void-500 ml-1">{plan.period}</span>
+                </div>
+
+                <ul className="space-y-2.5 mb-6 flex-1">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
+                      <Check size={14} className="text-accent-500 mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={plan.affiliateUrl}
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                  className={`flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold no-underline transition-all ${
+                    plan.highlighted
+                      ? 'bg-accent-500 text-void-950 hover:bg-accent-400'
+                      : 'border border-void-600 text-void-200 hover:border-accent-500/40 hover:text-accent-400'
+                  }`}
+                >
+                  {plan.price === 'Custom' ? 'Contact Sales' : `Try ${plan.name}`}
+                  <ArrowRight size={14} />
+                </a>
+                <span className="mt-1.5 text-center text-xs text-void-600">Affiliate link</span>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+
+        {/* FAQs */}
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-void-50 mb-8 font-heading text-center">
+              {page.tool} Pricing FAQ
+            </h2>
+            <div className="space-y-6">
+              {page.faqs.map((faq) => (
+                <div key={faq.question} className="border-b border-void-800/60 pb-6">
+                  <h3 className="text-base font-semibold text-void-100 mb-2">{faq.question}</h3>
+                  <p className="text-sm text-void-400 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Bottom CTA */}
+        <ScrollReveal>
+          <div className="mt-14 text-center">
+            <div className="bg-void-900/60 border border-accent-500/15 rounded-xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
+              <h2 className="text-xl font-bold text-void-50 mb-3 font-heading">
+                Not sure if {page.tool} is right for you?
+              </h2>
+              <p className="text-sm text-void-400 mb-5 leading-relaxed">
+                Read our in-depth review with real test results, or compare {page.tool} with its top alternatives.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {page.reviewSlug && (
+                  <Link href={`/reviews/${page.reviewSlug}`} className="btn-primary text-sm no-underline">
+                    Read Full Review
+                  </Link>
+                )}
+                <Link href={`/alternatives/${slug}`} className="btn-outline text-sm no-underline">
+                  See Alternatives
+                </Link>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </main>
+  );
+}

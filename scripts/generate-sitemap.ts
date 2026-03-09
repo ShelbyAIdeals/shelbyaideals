@@ -48,6 +48,33 @@ function buildSitemap(): string {
     entries.push({ url: `/categories/${cat}`, lastmod: today, changefreq: 'weekly', priority: '0.8' });
   }
 
+  // Alternatives pages
+  const alternativesSlugs = [
+    'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
+  ];
+  for (const slug of alternativesSlugs) {
+    entries.push({ url: `/alternatives/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
+  }
+
+  // Pricing pages
+  const pricingSlugs = [
+    'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
+  ];
+  entries.push({ url: '/pricing', lastmod: today, changefreq: 'weekly', priority: '0.8' });
+  for (const slug of pricingSlugs) {
+    entries.push({ url: `/pricing/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
+  }
+
+  // Best-for use case pages
+  const useCaseSlugs = [
+    'content-writers', 'freelancers', 'small-business', 'marketing-teams',
+    'video-creators', 'seo', 'solopreneurs', 'startups',
+  ];
+  entries.push({ url: '/best-for', lastmod: today, changefreq: 'weekly', priority: '0.8' });
+  for (const slug of useCaseSlugs) {
+    entries.push({ url: `/best-for/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
+  }
+
   // Content pages
   const contentTypes = [
     { dir: 'reviews', urlPrefix: '/reviews', priority: '0.8', changefreq: 'monthly' },
