@@ -205,21 +205,11 @@ export default function MistEffect() {
         const dy = p.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        // ── Hold left click: suck mist into cursor at constant rate ──
-        if (mouseDown.current && dist < demistRadius * 2.2) {
-          p.alive = Math.max(0, p.alive - 0.08);
-          p.o = p.maxO * p.alive;
-          if (p.alive <= 0.01) {
-            p.alive = 0;
-            lastRegenTime.current = now;
-          }
-        }
-
         // ── Hover demist: stronger in center, fades at edges ──
         const effectRadius = demistRadius + p.r;
         if (dist < effectRadius) {
           const target = Math.pow(1 - dist / effectRadius, 1.0);
-          p.demist += (target - p.demist) * 0.36;
+          p.demist += (target - p.demist) * 0.288;
         } else {
           // Mist slowly reappears after cursor passes
           p.demist = Math.max(0, p.demist - 0.02);
