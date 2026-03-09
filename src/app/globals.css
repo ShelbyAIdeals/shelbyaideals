@@ -35,17 +35,17 @@
 /* Inverts the void scale so dark becomes light */
 
 [data-theme="light"] {
-  --color-void-50: #111827;
-  --color-void-100: #1f2937;
-  --color-void-200: #374151;
-  --color-void-300: #4b5563;
-  --color-void-400: #6b7280;
-  --color-void-500: #9ca3af;
-  --color-void-600: #d1d5db;
-  --color-void-700: #e5e7eb;
-  --color-void-800: #f3f4f6;
-  --color-void-900: #f9fafb;
-  --color-void-950: #ffffff;
+  --color-void-50: #1a1710;
+  --color-void-100: #2d2820;
+  --color-void-200: #4a4035;
+  --color-void-300: #5c5246;
+  --color-void-400: #7a6f60;
+  --color-void-500: #a39882;
+  --color-void-600: #d4cbbf;
+  --color-void-700: #e8e2da;
+  --color-void-800: #f2ede7;
+  --color-void-900: #f8f5f0;
+  --color-void-950: #faf8f4;
 
   --color-accent-400: #0891b2;
   --color-accent-500: #0e7490;
@@ -54,7 +54,7 @@
 [data-theme="light"] ::selection {
   --tw-bg-opacity: 0.3;
   background-color: rgba(14, 116, 144, 0.3);
-  color: #111827;
+  color: #1a1710;
 }
 
 /* ── Keyframe Animations ──────────────────────────────── */

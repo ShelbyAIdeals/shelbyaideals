@@ -155,9 +155,9 @@ export default function MistEffect() {
       // ── Stars ──
       const time = frame * 0.016;
       const light = isLight.current;
-      const starR = light ? 30 : 220;
-      const starG = light ? 30 : 225;
-      const starB = light ? 40 : 235;
+      const starR = light ? 50 : 220;
+      const starG = light ? 40 : 225;
+      const starB = light ? 30 : 235;
       for (const s of stars.current) {
         const twinkle = Math.sin(time * s.twinkleSpeed * 60 + s.twinkleOffset);
         const alpha = s.o * (0.5 + 0.5 * twinkle) * vignette(s.x, s.y);
@@ -229,9 +229,9 @@ export default function MistEffect() {
 
         if (alpha < 0.002) continue;
 
-        const mistR = light ? 0 : 185;
-        const mistG = light ? 0 : 190;
-        const mistB = light ? 0 : 200;
+        const mistR = light ? 60 : 185;
+        const mistG = light ? 50 : 190;
+        const mistB = light ? 40 : 200;
         const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
         grad.addColorStop(0, `rgba(${mistR},${mistG},${mistB},${alpha})`);
         grad.addColorStop(0.4, `rgba(${mistR},${mistG},${mistB},${alpha * 0.5})`);
