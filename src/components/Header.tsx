@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Menu, X, Search, Zap, Sun, Moon } from 'lucide-react';
+import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff } from 'lucide-react';
 
 const navLinks = [
   { label: 'Tools', href: '/reviews' },
@@ -16,6 +16,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [lightMode, setLightMode] = useState(false);
+  const [mistOn, setMistOn] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -25,10 +26,13 @@ export default function Header() {
       document.documentElement.dataset.theme = 'light';
       window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
     }
-    const t = setTimeout(() => {
+    const savedMist = localStorage.getItem('mistOff') === 'true';
+    if (savedMist) {
+      setMistOn(false);
+      window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
+    } else {
       window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
-    }, 50);
-    return () => clearTimeout(t);
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -42,6 +46,13 @@ export default function Header() {
       localStorage.setItem('theme', 'dark');
     }
     window.dispatchEvent(new CustomEvent('themeChange', { detail: next ? 'light' : 'dark' }));
+  };
+
+  const toggleMist = () => {
+    const next = !mistOn;
+    setMistOn(next);
+    localStorage.setItem('mistOff', next ? 'false' : 'true');
+    window.dispatchEvent(new CustomEvent('mistDensity', { detail: next ? 40 : 0 }));
   };
 
   const handleSearch = (e: React.FormEvent) => {
@@ -109,6 +120,13 @@ export default function Header() {
           {/* Right side: Theme toggle + About */}
           <div className="hidden lg:flex items-center gap-3">
             <button
+              onClick={toggleMist}
+              className="p-2.5 rounded-lg text-void-50 hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer"
+              aria-label={mistOn ? 'Hide mist' : 'Show mist'}
+            >
+              {mistOn ? <CloudOff size={20} /> : <CloudFog size={20} />}
+            </button>
+            <button
               onClick={toggleTheme}
               className="p-2.5 rounded-lg text-void-50 hover:text-accent-300 hover:bg-void-700/50 transition-all cursor-pointer"
               aria-label={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
@@ -162,6 +180,15 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={toggleMist}
+                  className="flex items-center gap-2 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-50 hover:bg-void-700/60 hover:text-accent-300 transition-colors cursor-pointer"
+                >
+                  {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
+                  {mistOn ? 'Hide Mist' : 'Show Mist'}
+                </button>
+              </li>
               <li>
                 <button
                   onClick={toggleTheme}
