@@ -225,7 +225,7 @@ export default function MistEffect() {
           p.demist = Math.max(0, p.demist - 0.02);
         }
 
-        let alpha = p.o * p.alive * vignette(p.x, p.y) * (1 - p.demist) * (mistDensity.current / 100) * (light ? 3.9 : 1);
+        let alpha = p.o * p.alive * vignette(p.x, p.y) * (1 - p.demist) * (mistDensity.current / 100) * (light ? 5.5 : 1);
 
         if (alpha < 0.002) continue;
 
