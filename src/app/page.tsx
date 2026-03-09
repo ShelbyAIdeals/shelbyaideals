@@ -67,7 +67,7 @@ export default async function HomePage() {
               toolName="Jasper AI"
               deal="7-Day Free Trial + 20% Off First 3 Months"
               reviewSlug="jasper-ai-review"
-              affiliateUrl="#jasper-affiliate"
+              affiliateUrl="https://www.jasper.ai"
             />
           </ScrollReveal>
         </div>

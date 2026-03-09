@@ -41,7 +41,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Brand voice that learns your style',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Copy.ai',
@@ -50,7 +50,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Marketing workflow automation',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Writesonic',
@@ -59,7 +59,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free trial, Pro $20/mo',
         standoutFeature: 'Built-in SEO scoring',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
       {
         name: 'Surfer SEO',
@@ -68,7 +68,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $89/mo',
         standoutFeature: 'SERP-based content optimization',
         reviewSlug: 'surfer-seo-review',
-        affiliateUrl: '#surfer-affiliate',
+        affiliateUrl: 'https://surferseo.com',
       },
       {
         name: 'Grammarly',
@@ -76,7 +76,7 @@ export const useCaseData: UseCasePage[] = [
         description: 'Beyond grammar checking — Grammarly now includes AI writing suggestions, tone detection, and full paragraph rewriting.',
         pricing: 'Free plan, Premium $12/mo',
         standoutFeature: 'Real-time writing quality scoring',
-        affiliateUrl: '#grammarly-affiliate',
+        affiliateUrl: 'https://www.grammarly.com',
       },
     ],
   },
@@ -98,7 +98,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Free plan with 2,000 words/month',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Writesonic',
@@ -107,7 +107,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Pro from $20/mo',
         standoutFeature: 'Best value for solo writers',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
       {
         name: 'Make.com',
@@ -116,7 +116,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: '1,000 free operations/month',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
       {
         name: 'Descript',
@@ -125,7 +125,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $24/mo',
         standoutFeature: 'Edit video by editing text',
         reviewSlug: 'descript-review',
-        affiliateUrl: '#descript-affiliate',
+        affiliateUrl: 'https://www.descript.com',
       },
       {
         name: 'Grammarly',
@@ -133,7 +133,7 @@ export const useCaseData: UseCasePage[] = [
         description: 'Essential for any freelancer who writes. Catches errors, improves clarity, and ensures your client deliverables are polished.',
         pricing: 'Free plan, Premium $12/mo',
         standoutFeature: 'Works everywhere you write',
-        affiliateUrl: '#grammarly-affiliate',
+        affiliateUrl: 'https://www.grammarly.com',
       },
     ],
   },
@@ -155,7 +155,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Team collaboration + brand voice',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Make.com',
@@ -164,7 +164,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: 'Visual automation builder',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
       {
         name: 'Copy.ai',
@@ -173,7 +173,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Marketing workflow automation',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Pictory',
@@ -182,7 +182,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Blog-to-video in minutes',
         reviewSlug: 'pictory-review',
-        affiliateUrl: '#pictory-affiliate',
+        affiliateUrl: 'https://pictory.ai',
       },
       {
         name: 'Surfer SEO',
@@ -191,7 +191,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $89/mo',
         standoutFeature: 'Content optimization for rankings',
         reviewSlug: 'surfer-seo-review',
-        affiliateUrl: '#surfer-affiliate',
+        affiliateUrl: 'https://surferseo.com',
       },
     ],
   },
@@ -213,7 +213,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Campaign-level content management',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Surfer SEO',
@@ -222,7 +222,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $89/mo',
         standoutFeature: 'Content score for ranking potential',
         reviewSlug: 'surfer-seo-review',
-        affiliateUrl: '#surfer-affiliate',
+        affiliateUrl: 'https://surferseo.com',
       },
       {
         name: 'Copy.ai',
@@ -231,7 +231,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Workflow automation engine',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Pictory',
@@ -240,7 +240,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Bulk video creation from text',
         reviewSlug: 'pictory-review',
-        affiliateUrl: '#pictory-affiliate',
+        affiliateUrl: 'https://pictory.ai',
       },
       {
         name: 'Make.com',
@@ -249,7 +249,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: '1,800+ app integrations',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
     ],
   },
@@ -271,7 +271,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $24/mo',
         standoutFeature: 'Text-based video editing',
         reviewSlug: 'descript-review',
-        affiliateUrl: '#descript-affiliate',
+        affiliateUrl: 'https://www.descript.com',
       },
       {
         name: 'Pictory',
@@ -280,7 +280,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Text-to-video automation',
         reviewSlug: 'pictory-review',
-        affiliateUrl: '#pictory-affiliate',
+        affiliateUrl: 'https://pictory.ai',
       },
       {
         name: 'Jasper AI',
@@ -289,7 +289,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Video script templates',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Writesonic',
@@ -298,7 +298,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free trial, Pro $20/mo',
         standoutFeature: 'YouTube content templates',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
       {
         name: 'Make.com',
@@ -307,7 +307,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: 'Video distribution automation',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
     ],
   },
@@ -329,7 +329,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $89/mo',
         standoutFeature: 'SERP-based content scoring',
         reviewSlug: 'surfer-seo-review',
-        affiliateUrl: '#surfer-affiliate',
+        affiliateUrl: 'https://surferseo.com',
       },
       {
         name: 'Writesonic',
@@ -338,7 +338,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free trial, Pro $20/mo',
         standoutFeature: 'AI writing + SEO in one tool',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
       {
         name: 'Jasper AI',
@@ -347,7 +347,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Surfer SEO integration',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Copy.ai',
@@ -356,7 +356,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Bulk SEO content generation',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Make.com',
@@ -365,7 +365,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: 'SEO workflow automation',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
     ],
   },
@@ -387,7 +387,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free trial, Pro $20/mo',
         standoutFeature: 'Best price-to-value ratio',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
       {
         name: 'Make.com',
@@ -396,7 +396,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: 'Free tier for basic automations',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
       {
         name: 'Descript',
@@ -405,7 +405,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $24/mo',
         standoutFeature: 'No video editing skills needed',
         reviewSlug: 'descript-review',
-        affiliateUrl: '#descript-affiliate',
+        affiliateUrl: 'https://www.descript.com',
       },
       {
         name: 'Copy.ai',
@@ -414,7 +414,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: 'Generous free plan to start',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Surfer SEO',
@@ -423,7 +423,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $89/mo',
         standoutFeature: 'Data-driven SEO optimization',
         reviewSlug: 'surfer-seo-review',
-        affiliateUrl: '#surfer-affiliate',
+        affiliateUrl: 'https://surferseo.com',
       },
     ],
   },
@@ -445,7 +445,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Pro $49/mo',
         standoutFeature: '5 seats on Pro (team-friendly)',
         reviewSlug: 'copy-ai-review',
-        affiliateUrl: '#copyai-affiliate',
+        affiliateUrl: 'https://www.copy.ai',
       },
       {
         name: 'Make.com',
@@ -454,7 +454,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free plan, Core $10.59/mo',
         standoutFeature: 'Replace manual ops with automation',
         reviewSlug: 'make-review',
-        affiliateUrl: '#make-affiliate',
+        affiliateUrl: 'https://www.make.com',
       },
       {
         name: 'Jasper AI',
@@ -463,7 +463,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $49/mo',
         standoutFeature: 'Scale content with brand consistency',
         reviewSlug: 'jasper-ai-review',
-        affiliateUrl: '#jasper-affiliate',
+        affiliateUrl: 'https://www.jasper.ai',
       },
       {
         name: 'Pictory',
@@ -472,7 +472,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Product demo videos from text',
         reviewSlug: 'pictory-review',
-        affiliateUrl: '#pictory-affiliate',
+        affiliateUrl: 'https://pictory.ai',
       },
       {
         name: 'Writesonic',
@@ -481,7 +481,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'Free trial, Pro $20/mo',
         standoutFeature: 'Most affordable paid tier',
         reviewSlug: 'writesonic-review',
-        affiliateUrl: '#writesonic-affiliate',
+        affiliateUrl: 'https://writesonic.com',
       },
     ],
   },
