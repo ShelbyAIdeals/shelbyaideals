@@ -35,11 +35,11 @@
 /* Inverts the void scale so dark becomes light */
 
 [data-theme="light"] {
-  --color-void-50: #1a1710;
-  --color-void-100: #2d2820;
-  --color-void-200: #4a4035;
-  --color-void-300: #5c5246;
-  --color-void-400: #7a6f60;
+  --color-void-50: #141210;
+  --color-void-100: #252017;
+  --color-void-200: #3a3228;
+  --color-void-300: #4a4035;
+  --color-void-400: #655a4c;
   --color-void-500: #a39882;
   --color-void-600: #d4cbbf;
   --color-void-700: #e3dace;
@@ -47,8 +47,8 @@
   --color-void-900: #f5efe5;
   --color-void-950: #f7f2e9;
 
-  --color-accent-400: #0891b2;
-  --color-accent-500: #0e7490;
+  --color-accent-400: #0670a0;
+  --color-accent-500: #055a82;
 }
 
 [data-theme="light"] ::selection {
