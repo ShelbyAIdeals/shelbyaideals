@@ -46,7 +46,8 @@ interface ContentQueue {
   queue: QueueArticle[];
 }
 
-type PromptBuilder = (article: QueueArticle) => string;
+type PromptResult = string | { system: string; user: string };
+type PromptBuilder = (article: QueueArticle) => PromptResult;
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -100,22 +101,22 @@ function todayISO(): string {
 // ---------------------------------------------------------------------------
 
 async function loadPromptBuilder(type: string): Promise<PromptBuilder> {
-  const promptMap: Record<string, string> = {
-    review: './prompts/review',
-    comparison: './prompts/comparison',
-    best: './prompts/best-of',
-    guide: './prompts/guide',
+  const promptMap: Record<string, { path: string; exportName: string }> = {
+    review: { path: './prompts/review', exportName: 'buildReviewPrompt' },
+    comparison: { path: './prompts/comparison', exportName: 'buildComparisonPrompt' },
+    best: { path: './prompts/best-of', exportName: 'buildBestOfPrompt' },
+    guide: { path: './prompts/guide', exportName: 'buildGuidePrompt' },
   };
 
-  const basePath = promptMap[type];
-  if (!basePath) {
+  const entry = promptMap[type];
+  if (!entry) {
     console.error(`ERROR: Unknown article type "${type}". Expected: review, comparison, best, guide`);
     process.exit(1);
   }
 
   // Try .ts first (source), then .js (compiled)
-  const tsPath = path.resolve(__dirname, basePath + '.ts');
-  const jsPath = path.resolve(__dirname, basePath + '.js');
+  const tsPath = path.resolve(__dirname, entry.path + '.ts');
+  const jsPath = path.resolve(__dirname, entry.path + '.js');
   const fullPath = fs.existsSync(tsPath) ? tsPath : jsPath;
 
   if (!fs.existsSync(fullPath)) {
@@ -125,10 +126,10 @@ async function loadPromptBuilder(type: string): Promise<PromptBuilder> {
   }
 
   const mod = await import(fullPath);
-  const builder: PromptBuilder = mod.buildPrompt || mod.default;
+  const builder: PromptBuilder = mod[entry.exportName] || mod.buildPrompt || mod.default;
 
   if (typeof builder !== 'function') {
-    console.error(`ERROR: Prompt module "${fullPath}" does not export a buildPrompt() or default function`);
+    console.error(`ERROR: Prompt module "${fullPath}" does not export ${entry.exportName}, buildPrompt, or default function`);
     process.exit(1);
   }
 
@@ -182,7 +183,16 @@ export async function generateArticle(articleId?: number): Promise<QueueArticle>
   // --- Load prompt builder ---
   console.log(`Loading prompt builder for type "${article.type}"...`);
   const buildPrompt = await loadPromptBuilder(article.type);
-  const prompt = buildPrompt(article);
+  const promptResult = buildPrompt(article);
+
+  // Build messages array — prompt builders return either a string or { system, user }
+  const messages: Array<{ role: 'system' | 'user'; content: string }> = [];
+  if (typeof promptResult === 'string') {
+    messages.push({ role: 'user', content: promptResult });
+  } else {
+    messages.push({ role: 'system', content: promptResult.system });
+    messages.push({ role: 'user', content: promptResult.user });
+  }
 
   // --- Call OpenAI API ---
   console.log('Calling OpenAI API (gpt-4o)...');
@@ -194,12 +204,7 @@ export async function generateArticle(articleId?: number): Promise<QueueArticle>
       model: 'gpt-4o',
       max_tokens: 8000,
       temperature: 0.7,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
+      messages,
     });
 
     const choice = completion.choices[0];
