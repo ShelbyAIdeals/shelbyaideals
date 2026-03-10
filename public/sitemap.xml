@@ -241,6 +241,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelby-ai.com/reviews/grammarly-review</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shelby-ai.com/reviews/jasper-ai-review</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -253,8 +259,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelby-ai.com/reviews/otter-ai-review</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shelby-ai.com/reviews/pictory-review</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/reviews/runway-ml-review</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/reviews/semrush-review</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -265,8 +289,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelby-ai.com/reviews/synthesia-review</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shelby-ai.com/reviews/writesonic-review</loc>
     <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -277,7 +325,73 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shelby-ai.com/comparisons/zapier-vs-make</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-automation-tools</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-design-tools-non-designers</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-seo-tools</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-tools-marketing-teams</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-tools-real-estate</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/best/best-ai-video-tools-creators</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -289,8 +403,68 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelby-ai.com/best/best-free-ai-tools-solopreneurs</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/ai-client-onboarding</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/ai-content-workflow</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/ai-tools-ecommerce</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/ai-tools-for-copywriters</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/ai-tools-for-podcasters</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/automate-marketing-ai-zapier</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/how-to-use-ai-for-seo</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/repurpose-content-with-ai</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shelby-ai.com/guides/solopreneur-ai-stack</loc>
     <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelby-ai.com/guides/write-blog-post-with-ai</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

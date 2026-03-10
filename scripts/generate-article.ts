@@ -5,6 +5,24 @@ import OpenAI from 'openai';
 import fs from 'fs';
 import path from 'path';
 
+// Load .env.local if OPENAI_API_KEY not already set
+function loadEnvLocal(): void {
+  if (process.env.OPENAI_API_KEY) return;
+  const envPath = path.resolve(path.join(__dirname, '..', '.env.local'));
+  if (!fs.existsSync(envPath)) return;
+  const lines = fs.readFileSync(envPath, 'utf-8').split('\n');
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eqIndex = trimmed.indexOf('=');
+    if (eqIndex === -1) continue;
+    const key = trimmed.slice(0, eqIndex).trim();
+    const val = trimmed.slice(eqIndex + 1).trim();
+    if (!process.env[key]) process.env[key] = val;
+  }
+}
+loadEnvLocal();
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -84,12 +102,11 @@ function writeQueue(queue: ContentQueue): void {
 
 function stripCodeFences(content: string): string {
   let cleaned = content.trim();
-  const fencePattern = /^```(?:\w+)?\s*\n([\s\S]*?)\n```\s*$/;
-  const match = cleaned.match(fencePattern);
-  if (match) {
-    cleaned = match[1];
-  }
-  return cleaned;
+  // Strip opening code fence (```yaml, ```mdx, ```, etc.)
+  cleaned = cleaned.replace(/^```\w*\s*\n/, '');
+  // Strip closing code fence
+  cleaned = cleaned.replace(/\n```\s*$/, '');
+  return cleaned.trim();
 }
 
 function todayISO(): string {

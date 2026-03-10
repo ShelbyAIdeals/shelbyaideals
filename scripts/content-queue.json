@@ -433,7 +433,7 @@
     {
       "id": 12,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-11",
       "title": "Surfer SEO vs Clearscope vs Frase: Best Content Optimizer for Small Teams",
       "slug": "surfer-vs-clearscope-vs-frase",
@@ -448,12 +448,14 @@
         "Surfer SEO",
         "Clearscope",
         "Frase"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 13,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-13",
       "title": "Descript vs Riverside vs CapCut: Best AI Video Editor for Creators",
       "slug": "descript-vs-riverside-vs-capcut",
@@ -468,12 +470,14 @@
         "Descript",
         "Riverside",
         "CapCut"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 14,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-16",
       "title": "ChatGPT vs Jasper vs Claude for Content Writing: Honest Comparison",
       "slug": "chatgpt-vs-jasper-vs-claude",
@@ -488,12 +492,14 @@
         "ChatGPT",
         "Jasper AI",
         "Claude"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 15,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-18",
       "title": "Grammarly vs ProWritingAid vs Hemingway: Best AI Editor for Freelance Writers",
       "slug": "grammarly-vs-prowritingaid-vs-hemingway",
@@ -508,12 +514,14 @@
         "Grammarly",
         "ProWritingAid",
         "Hemingway"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 16,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-20",
       "title": "Midjourney vs DALL-E vs Leonardo AI: Best AI Image Generator for Marketers",
       "slug": "midjourney-vs-dalle-vs-leonardo",
@@ -528,12 +536,14 @@
         "Midjourney",
         "DALL-E",
         "Leonardo AI"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 36,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-23",
       "title": "Otter.ai vs Fireflies vs Fathom: Best AI Meeting Assistant",
       "slug": "otter-vs-fireflies-vs-fathom",
@@ -547,12 +557,14 @@
         "Otter.ai",
         "Fireflies",
         "Fathom"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 37,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-25",
       "title": "Notion AI vs ClickUp AI vs Monday AI: Best AI Project Management for Small Teams",
       "slug": "notion-ai-vs-clickup-vs-monday",
@@ -566,12 +578,14 @@
         "Notion AI",
         "ClickUp AI",
         "Monday AI"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 38,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-27",
       "title": "Writesonic vs Rytr vs Koala: Best Budget AI Writer Under $20/mo",
       "slug": "writesonic-vs-rytr-vs-koala",
@@ -586,12 +600,14 @@
         "Writesonic",
         "Rytr",
         "Koala"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 17,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-30",
       "title": "5 Best AI Tools for Small Marketing Teams in 2026",
       "slug": "best-ai-tools-marketing-teams",
@@ -600,12 +616,14 @@
       "keywords": [
         "ai tools small marketing team",
         "ai for marketing teams 2026"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 18,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-01",
       "title": "Best Free AI Tools for Solopreneurs (That Are Actually Useful)",
       "slug": "best-free-ai-tools-solopreneurs",
@@ -614,12 +632,14 @@
       "keywords": [
         "free ai tools for small business",
         "free ai tools 2026"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 19,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-03",
       "title": "Best AI Video Tools for Content Creators (No Editing Skills Needed)",
       "slug": "best-ai-video-tools-creators",
@@ -628,12 +648,14 @@
       "keywords": [
         "ai video creation tools 2026",
         "easy ai video maker"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 20,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-06",
       "title": "Best AI SEO Tools in 2026: Tested for Small Sites",
       "slug": "best-ai-seo-tools",
@@ -642,12 +664,14 @@
       "keywords": [
         "ai seo tools 2026",
         "best ai tools for seo"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 21,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-08",
       "title": "Best AI Automation Tools for Non-Technical Founders",
       "slug": "best-ai-automation-tools",
@@ -656,12 +680,14 @@
       "keywords": [
         "ai automation tools no-code",
         "best automation tools 2026"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 32,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-10",
       "title": "Best AI Tools for Real Estate Agents: Content, Listings & Follow-Up",
       "slug": "best-ai-tools-real-estate",
@@ -670,12 +696,14 @@
       "keywords": [
         "ai for real estate 2026",
         "ai tools realtors"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 33,
       "type": "best",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-13",
       "title": "Best AI Design Tools for Non-Designers (Social Media, Ads, Decks)",
       "slug": "best-ai-design-tools-non-designers",
@@ -684,12 +712,14 @@
       "keywords": [
         "ai graphic design tools easy",
         "ai design tools beginners"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 27,
       "type": "review",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-15",
       "title": "Synthesia Review 2026: AI Video Without a Camera (Is It Actually Good?)",
       "slug": "synthesia-review",
@@ -699,12 +729,72 @@
         "synthesia ai review 2026",
         "ai video generator review"
       ],
-      "tool": "Synthesia"
+      "tool": "Synthesia",
+      "toolData": {
+        "name": "Synthesia",
+        "website": "https://www.synthesia.io",
+        "pricing": [
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "3 min video/month",
+              "1 AI avatar",
+              "Basic templates",
+              "720p export"
+            ]
+          },
+          {
+            "plan": "Starter",
+            "price": "$29",
+            "period": "/month",
+            "features": [
+              "10 min video/month",
+              "70+ AI avatars",
+              "Brand kit",
+              "1080p export"
+            ]
+          },
+          {
+            "plan": "Creator",
+            "price": "$89",
+            "period": "/month",
+            "features": [
+              "30 min video/month",
+              "90+ avatars",
+              "Custom avatars",
+              "API access"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Enterprise",
+            "price": "Custom",
+            "period": "",
+            "features": [
+              "Unlimited videos",
+              "Custom AI avatars",
+              "SSO & security",
+              "Dedicated support"
+            ]
+          }
+        ],
+        "category": "AI Video",
+        "bestFor": "Training videos and marketing content without cameras or actors",
+        "competitors": [
+          "HeyGen",
+          "Colossyan",
+          "D-ID"
+        ]
+      },
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 28,
       "type": "review",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-17",
       "title": "SEMrush Review 2026: Is the Price Tag Justified for Small Teams?",
       "slug": "semrush-review",
@@ -714,12 +804,63 @@
         "semrush review 2026",
         "semrush for freelancers"
       ],
-      "tool": "SEMrush"
+      "tool": "SEMrush",
+      "toolData": {
+        "name": "SEMrush",
+        "website": "https://www.semrush.com",
+        "pricing": [
+          {
+            "plan": "Pro",
+            "price": "$139.95",
+            "period": "/month",
+            "features": [
+              "5 projects",
+              "500 keywords to track",
+              "10,000 results per report",
+              "SEO + PPC + content tools"
+            ]
+          },
+          {
+            "plan": "Guru",
+            "price": "$249.95",
+            "period": "/month",
+            "features": [
+              "15 projects",
+              "1,500 keywords",
+              "30,000 results per report",
+              "Content marketing toolkit",
+              "Historical data"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Business",
+            "price": "$499.95",
+            "period": "/month",
+            "features": [
+              "40 projects",
+              "5,000 keywords",
+              "50,000 results per report",
+              "API access",
+              "Share of voice"
+            ]
+          }
+        ],
+        "category": "AI SEO",
+        "bestFor": "SEO professionals and agencies who need an all-in-one marketing toolkit",
+        "competitors": [
+          "Ahrefs",
+          "Moz Pro",
+          "SE Ranking"
+        ]
+      },
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 29,
       "type": "review",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-20",
       "title": "Grammarly Review 2026: More Than a Spell Checker for Professional Writers",
       "slug": "grammarly-review",
@@ -729,12 +870,61 @@
         "grammarly review 2026",
         "grammarly for writers"
       ],
-      "tool": "Grammarly"
+      "tool": "Grammarly",
+      "toolData": {
+        "name": "Grammarly",
+        "website": "https://www.grammarly.com",
+        "pricing": [
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "Basic grammar & spelling",
+              "Tone detection",
+              "Browser extension",
+              "100 AI prompts/month"
+            ]
+          },
+          {
+            "plan": "Premium",
+            "price": "$12",
+            "period": "/month (annual)",
+            "features": [
+              "Full writing suggestions",
+              "Clarity & tone rewrites",
+              "Plagiarism detection",
+              "1,000 AI prompts/month"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Business",
+            "price": "Custom",
+            "period": "",
+            "features": [
+              "Everything in Premium",
+              "Brand tones & style guides",
+              "Admin panel & analytics",
+              "SAML SSO"
+            ]
+          }
+        ],
+        "category": "AI Writing",
+        "bestFor": "Professional writers who need grammar, clarity, and tone assistance across platforms",
+        "competitors": [
+          "ProWritingAid",
+          "QuillBot",
+          "Wordtune"
+        ]
+      },
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 30,
       "type": "review",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-22",
       "title": "Otter.ai Review 2026: Best AI Meeting Notes for Freelancers & Small Teams",
       "slug": "otter-ai-review",
@@ -745,12 +935,72 @@
         "otter for freelancers",
         "ai meeting notes"
       ],
-      "tool": "Otter.ai"
+      "tool": "Otter.ai",
+      "toolData": {
+        "name": "Otter.ai",
+        "website": "https://otter.ai",
+        "pricing": [
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "300 min/month transcription",
+              "30 min per conversation",
+              "AI chat",
+              "Otter AI Meeting Assistant"
+            ]
+          },
+          {
+            "plan": "Pro",
+            "price": "$8.33",
+            "period": "/month (annual)",
+            "features": [
+              "1,200 min/month",
+              "90 min per conversation",
+              "Custom vocabulary",
+              "Advanced search"
+            ]
+          },
+          {
+            "plan": "Business",
+            "price": "$20",
+            "period": "/month/user (annual)",
+            "features": [
+              "6,000 min/month",
+              "4 hours per conversation",
+              "Admin controls",
+              "Salesforce/HubSpot integrations"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Enterprise",
+            "price": "Custom",
+            "period": "",
+            "features": [
+              "Unlimited minutes",
+              "SSO",
+              "Compliance features",
+              "Dedicated support"
+            ]
+          }
+        ],
+        "category": "AI Productivity",
+        "bestFor": "Freelancers and teams who need automated meeting notes and transcriptions",
+        "competitors": [
+          "Fireflies.ai",
+          "Fathom",
+          "tl;dv"
+        ]
+      },
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 31,
       "type": "review",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-24",
       "title": "Runway ML Review 2026: AI Video Editing for Creators Who Aren't Editors",
       "slug": "runway-ml-review",
@@ -760,12 +1010,83 @@
         "runway review 2026",
         "runway for creators"
       ],
-      "tool": "Runway ML"
+      "tool": "Runway ML",
+      "toolData": {
+        "name": "Runway ML",
+        "website": "https://runwayml.com",
+        "pricing": [
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "125 credits",
+              "3 projects",
+              "720p exports",
+              "Basic Gen-3 access"
+            ]
+          },
+          {
+            "plan": "Standard",
+            "price": "$12",
+            "period": "/month",
+            "features": [
+              "625 credits/month",
+              "Unlimited projects",
+              "1080p exports",
+              "Gen-3 Alpha"
+            ]
+          },
+          {
+            "plan": "Pro",
+            "price": "$28",
+            "period": "/month",
+            "features": [
+              "2,250 credits/month",
+              "4K upscaling",
+              "Custom model training",
+              "Priority generation"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Unlimited",
+            "price": "$76",
+            "period": "/month",
+            "features": [
+              "Unlimited generations",
+              "All Pro features",
+              "No watermarks",
+              "Team collaboration"
+            ]
+          },
+          {
+            "plan": "Enterprise",
+            "price": "Custom",
+            "period": "",
+            "features": [
+              "Custom deployment",
+              "API access",
+              "SSO & security",
+              "Dedicated support"
+            ]
+          }
+        ],
+        "category": "AI Video",
+        "bestFor": "Creators who want cutting-edge AI video generation and editing without being video pros",
+        "competitors": [
+          "Pika",
+          "Kling AI",
+          "Luma Dream Machine"
+        ]
+      },
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 22,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-27",
       "title": "How to Build a Complete AI Content Workflow (From Idea to Publish)",
       "slug": "ai-content-workflow",
@@ -775,12 +1096,14 @@
         "ai writing workflow",
         "content creation with ai",
         "ai publishing workflow"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 23,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-04-29",
       "title": "How to Use AI for SEO: A Practical Guide for Beginners",
       "slug": "how-to-use-ai-for-seo",
@@ -789,12 +1112,14 @@
       "keywords": [
         "ai seo beginner guide",
         "ai for seo 2026"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 24,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-01",
       "title": "How to Automate Your Marketing with Zapier + AI (Step-by-Step)",
       "slug": "automate-marketing-ai-zapier",
@@ -803,12 +1128,14 @@
       "keywords": [
         "zapier ai automation",
         "marketing automation ai"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 25,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-04",
       "title": "How to Repurpose One Blog Post Into 10 Pieces of Content Using AI",
       "slug": "repurpose-content-with-ai",
@@ -817,12 +1144,14 @@
       "keywords": [
         "content repurposing ai",
         "multiply content with ai"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 26,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-06",
       "title": "How to Write a Blog Post With AI (Without It Reading Like AI)",
       "slug": "write-blog-post-with-ai",
@@ -831,12 +1160,14 @@
       "keywords": [
         "ai blog writing guide",
         "make ai content sound human"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 34,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-08",
       "title": "AI Tools for Freelance Copywriters: Stay Competitive Without Selling Out",
       "slug": "ai-tools-for-copywriters",
@@ -845,12 +1176,14 @@
       "keywords": [
         "ai for freelance copywriters",
         "copywriter ai tools 2026"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 35,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-11",
       "title": "AI Tools for eCommerce Store Owners: Product Descriptions to Customer Service",
       "slug": "ai-tools-ecommerce",
@@ -859,12 +1192,14 @@
       "keywords": [
         "ai for ecommerce 2026",
         "ai product descriptions"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 39,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-13",
       "title": "How to Create an AI-Powered Client Onboarding System (For Freelancers)",
       "slug": "ai-client-onboarding",
@@ -873,12 +1208,14 @@
       "keywords": [
         "automate client onboarding",
         "freelancer onboarding ai"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 40,
       "type": "guide",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-05-15",
       "title": "AI Tools for Podcasters: Record, Edit, Transcribe & Repurpose",
       "slug": "ai-tools-for-podcasters",
@@ -887,7 +1224,9 @@
       "keywords": [
         "podcast ai tools 2026",
         "ai podcast editing"
-      ]
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     }
   ]
 }
