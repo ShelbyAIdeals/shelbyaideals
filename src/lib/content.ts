@@ -18,6 +18,24 @@ function parseArticle(dir: string, filename: string) {
   const { data, content } = matter(raw);
   const stats = readingTime(content);
 
+  // Sanitize array fields — GPT-generated frontmatter may omit or malform these
+  if (data.type === 'comparison') {
+    data.tools = Array.isArray(data.tools) ? data.tools : [];
+    data.winners = Array.isArray(data.winners) ? data.winners : [];
+    data.affiliateUrls = data.affiliateUrls ?? {};
+  }
+  if (data.type === 'review') {
+    data.pricing = Array.isArray(data.pricing) ? data.pricing : [];
+    data.pros = Array.isArray(data.pros) ? data.pros : [];
+    data.cons = Array.isArray(data.cons) ? data.cons : [];
+  }
+  if (data.type === 'best') {
+    data.tools = Array.isArray(data.tools) ? data.tools : [];
+  }
+  if (data.type === 'guide') {
+    data.recommendedTools = Array.isArray(data.recommendedTools) ? data.recommendedTools : [];
+  }
+
   return {
     meta: {
       ...data,

@@ -204,7 +204,7 @@ export default async function HomePage() {
                   >
                     {/* Tool badges */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {(comp.tools ?? []).map((tool) => (
+                      {comp.tools.map((tool) => (
                         <span key={tool} className="badge-accent">
                           {tool}
                         </span>
