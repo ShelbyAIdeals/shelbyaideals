@@ -143,7 +143,7 @@ export default function Header() {
             </button>
             <Link
               href="/about"
-              className="px-5 py-2.5 text-base font-semibold text-void-50 border border-void-500/40 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
+              className="px-5 py-2.5 text-base font-semibold text-void-50 border border-void-300/70 rounded-lg hover:text-accent-300 hover:bg-void-700/40 hover:border-void-400/50 no-underline transition-all"
             >
               About
             </Link>
