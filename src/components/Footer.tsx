@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Zap, ArrowRight } from 'lucide-react';
+import { Zap, ArrowRight, Twitter, Linkedin } from 'lucide-react';
 
 const categoryLinks = [
   { label: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
@@ -185,6 +185,27 @@ export default function Footer() {
               Shelby<span className="text-accent-400">AI</span>Deals
             </span>
           </Link>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://x.com/shelbyaideals"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-void-400 hover:text-accent-400 transition-colors"
+              aria-label="Follow us on X (Twitter)"
+            >
+              <Twitter size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shelby-ai-1bb38a3b6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-void-400 hover:text-accent-400 transition-colors"
+              aria-label="Follow us on LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
 
           <p className="text-xs text-void-300 text-center sm:text-right leading-relaxed">
             &copy; 2026 ShelbyAIDeals &mdash; Honest AI tool reviews for creators

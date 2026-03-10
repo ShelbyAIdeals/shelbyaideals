@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FlaskConical, Target, Users, DollarSign, ClipboardCheck } from 'lucide-react';
+import { FlaskConical, Target, Users, DollarSign, ClipboardCheck, Twitter, Linkedin } from 'lucide-react';
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export const metadata: Metadata = {
@@ -290,6 +290,26 @@ export default function AboutPage() {
                   <span className="text-accent-400">press@shelby-ai.com</span>
                 </li>
               </ul>
+              <div className="flex items-center gap-4 mt-4 pt-4 border-t border-void-700/50">
+                <a
+                  href="https://x.com/shelbyaideals"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-void-400 hover:text-accent-400 transition-colors no-underline"
+                >
+                  <Twitter size={16} />
+                  @shelbyaideals
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shelby-ai-1bb38a3b6/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-void-400 hover:text-accent-400 transition-colors no-underline"
+                >
+                  <Linkedin size={16} />
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </section>
 
