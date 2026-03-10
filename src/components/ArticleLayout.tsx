@@ -27,7 +27,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
         {/* Breadcrumb */}
         <Link
           href={backLink.href}
-          className="inline-flex items-center gap-2 text-sm text-void-500 hover:text-accent-400 mb-6"
+          className="inline-flex items-center gap-2 text-sm text-void-300 hover:text-accent-400 mb-6"
         >
           <ArrowLeft size={16} />
           {backLink.label}
@@ -51,7 +51,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
 
           <p className="text-lg text-void-400 mb-4">{meta.excerpt}</p>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-void-500">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-void-400">
             <span className="flex items-center gap-1">
               <User size={14} />
               {meta.author}

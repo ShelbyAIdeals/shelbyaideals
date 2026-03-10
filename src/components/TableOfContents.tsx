@@ -65,7 +65,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                 } ${
                   isActive
                     ? 'border-accent-500 font-medium text-accent-400'
-                    : 'border-transparent text-void-500 hover:border-void-600 hover:text-void-300'
+                    : 'border-transparent text-void-400 hover:border-void-600 hover:text-void-200'
                 }`}
               >
                 {heading.text}
