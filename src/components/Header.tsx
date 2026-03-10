@@ -20,6 +20,14 @@ export default function Header() {
   const router = useRouter();
 
   useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
     const saved = localStorage.getItem('theme');
     if (saved === 'light') {
       setLightMode(true);
@@ -180,6 +188,7 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
+              <li><hr className="border-void-700/50 my-1 mx-3" /></li>
               <li>
                 <button
                   onClick={toggleMist}
