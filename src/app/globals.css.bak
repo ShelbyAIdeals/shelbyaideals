@@ -40,12 +40,12 @@
   --color-void-200: #3a3228;
   --color-void-300: #4a4035;
   --color-void-400: #655a4c;
-  --color-void-500: #8a8a8a;
-  --color-void-600: #c0c0c0;
-  --color-void-700: #e0e0e0;
-  --color-void-800: #f8f8f8;
-  --color-void-900: #ffffff;
-  --color-void-950: #f5eddd;
+  --color-void-500: #a39279;
+  --color-void-600: #d0bea4;
+  --color-void-700: #dfccae;
+  --color-void-800: #ead7ba;
+  --color-void-900: #f2e2c6;
+  --color-void-950: #f7e8d0;
 
   --color-accent-300: #1f7d8e;
   --color-accent-400: #1a6b7a;
@@ -123,6 +123,11 @@
   }
 
   * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  a, button, input, textarea, [role="link"] {
     -webkit-user-select: auto;
     user-select: auto;
   }
@@ -167,7 +172,7 @@
   /* Card */
   .card {
     @apply rounded-xl border border-void-700/60
-      bg-void-900
+      bg-void-900/70 backdrop-blur-sm
       transition-all duration-200;
   }
   .card:hover {
@@ -193,7 +198,7 @@
   /* Search Input */
   .search-input {
     @apply w-full px-5 py-3.5 text-base rounded-xl
-      bg-void-900 border border-void-700/60 text-void-100
+      bg-void-900/80 border border-void-700/60 text-void-100
       placeholder:text-void-500
       focus:outline-none focus:ring-2 focus:ring-accent-500/40
       focus:border-accent-500/50 transition-all duration-200;
@@ -234,7 +239,7 @@
   }
 
   .prose-article blockquote {
-    @apply border-l-4 border-accent-500/40 bg-void-900 pl-4 py-3 my-6
+    @apply border-l-4 border-accent-500/40 bg-void-900/50 pl-4 py-3 my-6
       italic text-void-400;
   }
 
@@ -257,12 +262,12 @@
 
   /* Component boxes */
   .disclosure-box {
-    @apply bg-void-900 border border-void-700/50 rounded-lg p-4
-      text-sm text-void-400 mb-8;
+    @apply bg-void-900/50 border border-void-700/50 rounded-lg p-4
+      text-sm text-void-400 mb-8 backdrop-blur-sm;
   }
 
   .verdict-box {
-    @apply bg-void-900 border border-accent-500/20 rounded-xl p-6 my-8;
+    @apply bg-void-900/60 border border-accent-500/20 rounded-xl p-6 my-8 backdrop-blur-sm;
     box-shadow: 0 0 30px rgba(6,182,212,0.05);
   }
 

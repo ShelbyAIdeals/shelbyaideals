@@ -94,7 +94,7 @@ export default function NewsletterSignup({
   return (
     <section
       className={clsx(
-        'relative overflow-hidden rounded-2xl bg-void-900/70 backdrop-blur-sm border border-void-700/60',
+        'relative overflow-hidden rounded-2xl bg-void-900 border border-void-700/60',
         className,
       )}
     >
@@ -118,7 +118,7 @@ export default function NewsletterSignup({
 
           {/* Form */}
           {submitted ? (
-            <div className="bg-void-800/50 border border-accent-500/20 rounded-xl p-6 max-w-md mx-auto">
+            <div className="bg-void-800 border border-accent-500/20 rounded-xl p-6 max-w-md mx-auto">
               <p className="text-base font-semibold text-accent-400">
                 You are in! Check your inbox for the cheatsheet.
               </p>
@@ -127,7 +127,7 @@ export default function NewsletterSignup({
             <>
               <form
                 onSubmit={handleSubmit}
-                className="bg-void-800/50 border border-void-700/50 rounded-xl p-2 flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
+                className="bg-void-800 border border-void-700/50 rounded-xl p-2 flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
               >
                 <input
                   type="email"

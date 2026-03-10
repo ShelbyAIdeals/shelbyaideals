@@ -18,7 +18,7 @@ export default function QuickVerdict({
 }: QuickVerdictProps) {
   return (
     <div
-      className="my-6 rounded-xl border border-accent-500/15 bg-void-900/60 backdrop-blur-sm p-5"
+      className="my-6 rounded-xl border border-accent-500/15 bg-void-900 p-5"
       style={{ boxShadow: '0 0 20px rgba(6,182,212,0.05)' }}
     >
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

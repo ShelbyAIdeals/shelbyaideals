@@ -41,11 +41,11 @@ export default function ComparisonTable({ tools }: ComparisonTableProps) {
           {featureNames.map((feature, idx) => (
             <tr
               key={feature}
-              className={idx % 2 === 0 ? 'bg-void-950' : 'bg-void-900/50'}
+              className={idx % 2 === 0 ? 'bg-void-950' : 'bg-void-900'}
             >
               <td
                 className={`sticky left-0 z-10 px-4 py-3 font-medium text-void-200 border-b border-void-700/50 ${
-                  idx % 2 === 0 ? 'bg-void-950' : 'bg-void-900/50'
+                  idx % 2 === 0 ? 'bg-void-950' : 'bg-void-900'
                 }`}
               >
                 {feature}

@@ -16,7 +16,7 @@ export default function WinnerBox({
 }: WinnerBoxProps) {
   return (
     <div
-      className="my-8 rounded-xl border border-void-700/50 border-l-4 border-l-accent-500 bg-void-900/60 backdrop-blur-md p-6"
+      className="my-8 rounded-xl border border-void-700/50 border-l-4 border-l-accent-500 bg-void-900 p-6"
       style={{ boxShadow: '0 0 20px rgba(6,182,212,0.1)' }}
     >
       <div className="mb-3 flex items-center gap-2">

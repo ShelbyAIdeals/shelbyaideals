@@ -46,7 +46,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
   return (
     <div
       className={clsx(
-        'relative my-10 rounded-xl border border-accent-500/20 bg-void-900/80 backdrop-blur-sm p-6 sm:p-8 overflow-hidden',
+        'relative my-10 rounded-xl border border-accent-500/20 bg-void-900 p-6 sm:p-8 overflow-hidden',
         className,
       )}
     >
@@ -69,7 +69,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
         </div>
 
         {submitted ? (
-          <div className="mt-4 bg-void-800/50 border border-accent-500/20 rounded-lg p-4">
+          <div className="mt-4 bg-void-800 border border-accent-500/20 rounded-lg p-4">
             <p className="text-sm font-semibold text-accent-400">
               You are in! Check your inbox for this week's picks.
             </p>

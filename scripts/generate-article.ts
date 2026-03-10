@@ -84,7 +84,7 @@ function writeQueue(queue: ContentQueue): void {
 
 function stripCodeFences(content: string): string {
   let cleaned = content.trim();
-  const fencePattern = /^```(?:mdx|markdown|md)?\s*\n([\s\S]*?)\n```\s*$/;
+  const fencePattern = /^```(?:\w+)?\s*\n([\s\S]*?)\n```\s*$/;
   const match = cleaned.match(fencePattern);
   if (match) {
     cleaned = match[1];

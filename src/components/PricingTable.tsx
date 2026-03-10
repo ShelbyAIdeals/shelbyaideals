@@ -20,7 +20,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
         {plans.map((tier) => (
           <div
             key={tier.plan}
-            className={`relative flex flex-col rounded-xl border bg-void-900/60 backdrop-blur-md p-6 ${
+            className={`relative flex flex-col rounded-xl border bg-void-900 p-6 ${
               tier.highlighted
                 ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
                 : 'border-void-700/50'
@@ -76,7 +76,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
         {plans.map((tier) => (
           <div
             key={tier.plan}
-            className={`relative rounded-xl border bg-void-900/60 backdrop-blur-md p-5 ${
+            className={`relative rounded-xl border bg-void-900 p-5 ${
               tier.highlighted
                 ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
                 : 'border-void-700/50'
