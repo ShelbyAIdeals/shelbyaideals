@@ -18,8 +18,7 @@ function parseArticle(dir: string, filename: string) {
   const { data, content } = matter(raw);
   const stats = readingTime(content);
 
-  // Sanitize array fields — GPT-generated frontmatter may omit or malform these
-  // Use directory name (always reliable) instead of data.type (may be missing)
+  // Infer type from directory (always reliable, GPT may omit type field)
   const dirToType: Record<string, string> = {
     comparisons: 'comparison',
     reviews: 'review',
@@ -30,15 +29,35 @@ function parseArticle(dir: string, filename: string) {
     data.type = dirToType[dir];
   }
 
+  // Ensure all required base fields have safe defaults
+  data.title = data.title ?? filename.replace('.mdx', '');
+  data.excerpt = data.excerpt ?? '';
+  data.category = data.category ?? 'ai-productivity';
+  data.author = data.author ?? 'Shelby AI Deals Team';
+  data.date = data.date ?? new Date().toISOString().split('T')[0];
+  data.lastUpdated = data.lastUpdated ?? data.date;
+
+  // Sanitize type-specific array/object fields
   if (dir === 'comparisons') {
     data.tools = Array.isArray(data.tools) ? data.tools : [];
     data.winners = Array.isArray(data.winners) ? data.winners : [];
     data.affiliateUrls = data.affiliateUrls ?? {};
   }
   if (dir === 'reviews') {
+    data.tool = data.tool ?? '';
+    data.rating = typeof data.rating === 'number' ? data.rating : 0;
+    data.bestFor = data.bestFor ?? '';
+    data.verdict = data.verdict ?? '';
+    data.affiliateUrl = data.affiliateUrl ?? '#';
+    data.affiliateLabel = data.affiliateLabel ?? 'Visit Site';
     data.pricing = Array.isArray(data.pricing) ? data.pricing : [];
     data.pros = Array.isArray(data.pros) ? data.pros : [];
     data.cons = Array.isArray(data.cons) ? data.cons : [];
+    // Ensure each pricing tier has a features array
+    data.pricing = data.pricing.map((tier: Record<string, unknown>) => ({
+      ...tier,
+      features: Array.isArray(tier.features) ? tier.features : [],
+    }));
   }
   if (dir === 'best') {
     data.tools = Array.isArray(data.tools) ? data.tools : [];
@@ -57,20 +76,41 @@ function parseArticle(dir: string, filename: string) {
   };
 }
 
+function safeParseArticle(dir: string, filename: string) {
+  try {
+    return parseArticle(dir, filename);
+  } catch (err) {
+    console.warn(`Warning: Failed to parse ${dir}/${filename}, skipping:`, (err as Error).message);
+    return null;
+  }
+}
+
 export function getAllReviews(): ReviewMeta[] {
-  return getFilesFromDir('reviews').map((f) => parseArticle('reviews', f).meta as ReviewMeta);
+  return getFilesFromDir('reviews')
+    .map((f) => safeParseArticle('reviews', f))
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+    .map((r) => r.meta as ReviewMeta);
 }
 
 export function getAllComparisons(): ComparisonMeta[] {
-  return getFilesFromDir('comparisons').map((f) => parseArticle('comparisons', f).meta as ComparisonMeta);
+  return getFilesFromDir('comparisons')
+    .map((f) => safeParseArticle('comparisons', f))
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+    .map((r) => r.meta as ComparisonMeta);
 }
 
 export function getAllBestOf(): BestOfMeta[] {
-  return getFilesFromDir('best').map((f) => parseArticle('best', f).meta as BestOfMeta);
+  return getFilesFromDir('best')
+    .map((f) => safeParseArticle('best', f))
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+    .map((r) => r.meta as BestOfMeta);
 }
 
 export function getAllGuides(): GuideMeta[] {
-  return getFilesFromDir('guides').map((f) => parseArticle('guides', f).meta as GuideMeta);
+  return getFilesFromDir('guides')
+    .map((f) => safeParseArticle('guides', f))
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+    .map((r) => r.meta as GuideMeta);
 }
 
 export function getAllArticles(): ArticleMeta[] {
