@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      return res.status(response.status).json({ error: 'Subscription failed' });
+      return res.status(response.status).json({ error: 'Subscription failed', status: response.status, details: data });
     }
 
     return res.status(200).json({ success: true });
