@@ -21,7 +21,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
     name: 'Copy.ai',
     url: 'https://www.copy.ai',
     commission: '20-45% recurring',
-    status: 'pending',
+    status: 'unavailable',
   },
   writesonic: {
     name: 'Writesonic',
@@ -74,8 +74,14 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   zapier: {
     name: 'Zapier',
     url: 'https://zapier.com',
-    commission: 'CPA via Impact',
-    status: 'pending',
+    commission: 'N/A',
+    status: 'unavailable',
+  },
+  mangools: {
+    name: 'Mangools',
+    url: 'https://mangools.com/a/a69b085f86aee0888864a82a9',
+    commission: '30% recurring',
+    status: 'active',
   },
   make: {
     name: 'Make.com',
