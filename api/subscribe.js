@@ -27,7 +27,7 @@ module.exports = async function handler(req, res) {
   }
 
   if (!BEEHIIV_API_KEY || !PUBLICATION_ID) {
-    return res.status(500).json({ error: 'Service temporarily unavailable', missing: { key: !BEEHIIV_API_KEY, pub: !PUBLICATION_ID } });
+    return res.status(500).json({ error: 'Service temporarily unavailable' });
   }
 
   try {
@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      return res.status(response.status).json({ error: 'Subscription failed', status: response.status, details: data });
+      return res.status(response.status).json({ error: 'Subscription failed' });
     }
 
     return res.status(200).json({ success: true });
