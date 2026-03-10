@@ -7,7 +7,8 @@ interface PricingTableProps {
   toolName: string;
 }
 
-export default function PricingTable({ plans, toolName }: PricingTableProps) {
+export default function PricingTable({ plans = [], toolName }: PricingTableProps) {
+  if (!plans || plans.length === 0) return null;
   return (
     <section className="my-10">
       <h3 className="text-xl font-bold text-void-50 mb-6">

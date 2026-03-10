@@ -130,7 +130,7 @@ export default async function ReviewPage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   // Build pricing summary for QuickVerdict
-  const pricingSummary = meta.pricing.length > 0
+  const pricingSummary = meta.pricing?.length > 0
     ? `From ${meta.pricing[0].price}/${meta.pricing[0].period}`
     : 'See pricing';
 

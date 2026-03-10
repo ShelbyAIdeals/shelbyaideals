@@ -73,7 +73,7 @@ interface MDXContentProps {
 export default function MDXContent({ source }: MDXContentProps) {
   return (
     <div className="prose-article">
-      <MDXRemote source={source} components={components} options={{ mdxOptions: { development: false } }} />
+      <MDXRemote source={source} components={components} options={{ mdxOptions: { development: false }, blockJS: false }} />
     </div>
   );
 }

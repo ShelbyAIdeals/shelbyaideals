@@ -61,7 +61,7 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
         '@type': 'SoftwareApplication',
         name: review.tool,
         applicationCategory: 'AI Tool',
-        offers: review.pricing.length > 0 ? {
+        offers: review.pricing?.length > 0 ? {
           '@type': 'Offer',
           price: review.pricing[0].price.replace(/[^0-9.]/g, '') || '0',
           priceCurrency: 'USD',
