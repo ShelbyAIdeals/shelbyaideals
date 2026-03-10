@@ -57,13 +57,19 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
     name: 'Pictory',
     url: 'https://pictory.ai?ref=fran26',
     commission: '30% recurring',
-    status: 'pending',
+    status: 'active',
   },
   synthesia: {
     name: 'Synthesia',
-    url: 'https://www.synthesia.io',
+    url: 'https://www.synthesia.io/?via=shelbyai',
     commission: 'CPA/rev share',
-    status: 'pending',
+    status: 'active',
+  },
+  elevenlabs: {
+    name: 'ElevenLabs',
+    url: 'https://try.elevenlabs.io/3vu715wo9f9y',
+    commission: 'CPA/rev share',
+    status: 'active',
   },
   zapier: {
     name: 'Zapier',

@@ -438,7 +438,7 @@ export const alternativesData: AlternativesPage[] = [
           'Synthesia creates professional videos with AI avatars and text-to-speech in 140+ languages. It is ideal for training, explainer, and corporate videos where a human presenter is needed.',
         pricing: 'Starter from $22/mo',
         bestFor: 'AI avatar & training videos',
-        url: 'https://synthesia.io',
+        url: 'https://www.synthesia.io/?via=shelbyai',
       },
       {
         name: 'Descript',
