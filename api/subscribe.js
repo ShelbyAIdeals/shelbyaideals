@@ -18,7 +18,7 @@ module.exports = async function handler(req, res) {
   }
 
   const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '';
-  const PUBLICATION_ID = process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || '';
+  const PUBLICATION_ID = process.env.BEEHIIV_PUBLICATION_ID || '';
 
   const { email, utm_source, utm_medium, referring_site } = req.body || {};
 
