@@ -8,7 +8,11 @@
       "slug": "solopreneur-ai-stack",
       "category": "ai-productivity",
       "primaryKeyword": "solopreneur ai tool stack",
-      "keywords": ["ai tools solopreneurs", "ai stack under 100", "best ai tools freelancers budget"],
+      "keywords": [
+        "ai tools solopreneurs",
+        "ai stack under 100",
+        "best ai tools freelancers budget"
+      ],
       "publishedDate": "2026-03-01"
     },
     {
@@ -19,7 +23,11 @@
       "slug": "jasper-ai-review",
       "category": "ai-writing-tools",
       "primaryKeyword": "jasper ai review",
-      "keywords": ["jasper review 2026", "jasper ai worth it", "jasper for bloggers"],
+      "keywords": [
+        "jasper review 2026",
+        "jasper ai worth it",
+        "jasper for bloggers"
+      ],
       "tool": "Jasper AI",
       "publishedDate": "2026-03-01"
     },
@@ -31,7 +39,10 @@
       "slug": "copy-ai-review",
       "category": "ai-writing-tools",
       "primaryKeyword": "copy.ai review",
-      "keywords": ["copy ai review 2026", "copy.ai for freelancers"],
+      "keywords": [
+        "copy ai review 2026",
+        "copy.ai for freelancers"
+      ],
       "tool": "Copy.ai",
       "publishedDate": "2026-03-01"
     },
@@ -43,8 +54,14 @@
       "slug": "jasper-vs-copy-ai",
       "category": "ai-writing-tools",
       "primaryKeyword": "jasper vs copy.ai",
-      "keywords": ["jasper vs copy ai 2026", "copy.ai vs jasper"],
-      "tools": ["Jasper AI", "Copy.ai"],
+      "keywords": [
+        "jasper vs copy ai 2026",
+        "copy.ai vs jasper"
+      ],
+      "tools": [
+        "Jasper AI",
+        "Copy.ai"
+      ],
       "publishedDate": "2026-03-02"
     },
     {
@@ -55,7 +72,10 @@
       "slug": "best-ai-writing-tools-freelancers",
       "category": "ai-writing-tools",
       "primaryKeyword": "best ai writing tools for freelancers",
-      "keywords": ["ai writing tools freelancers 2026", "best ai writer freelance"],
+      "keywords": [
+        "ai writing tools freelancers 2026",
+        "best ai writer freelance"
+      ],
       "publishedDate": "2026-03-02"
     },
     {
@@ -66,20 +86,61 @@
       "slug": "writesonic-review",
       "category": "ai-writing-tools",
       "primaryKeyword": "writesonic review",
-      "keywords": ["writesonic review 2026", "writesonic vs jasper", "budget ai writer"],
+      "keywords": [
+        "writesonic review 2026",
+        "writesonic vs jasper",
+        "budget ai writer"
+      ],
       "tool": "Writesonic",
       "publishedDate": "2026-03-04",
       "toolData": {
         "name": "Writesonic",
         "website": "https://writesonic.com",
         "pricing": [
-          {"plan": "Free", "price": "$0", "period": "", "features": ["10,000 words/month", "100+ templates", "Chat assistant", "Landing page generator"]},
-          {"plan": "Individual", "price": "$16", "period": "/month", "features": ["Unlimited words", "All templates", "Brand voice", "SEO optimizer", "Article writer 6.0"]},
-          {"plan": "Team", "price": "$79", "period": "/month", "features": ["Everything in Individual", "Up to 5 seats", "Team collaboration", "Priority support", "API access"], "highlighted": true}
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "10,000 words/month",
+              "100+ templates",
+              "Chat assistant",
+              "Landing page generator"
+            ]
+          },
+          {
+            "plan": "Individual",
+            "price": "$16",
+            "period": "/month",
+            "features": [
+              "Unlimited words",
+              "All templates",
+              "Brand voice",
+              "SEO optimizer",
+              "Article writer 6.0"
+            ]
+          },
+          {
+            "plan": "Team",
+            "price": "$79",
+            "period": "/month",
+            "features": [
+              "Everything in Individual",
+              "Up to 5 seats",
+              "Team collaboration",
+              "Priority support",
+              "API access"
+            ],
+            "highlighted": true
+          }
         ],
         "category": "AI Writing",
         "bestFor": "Budget-conscious bloggers and small content teams",
-        "competitors": ["Jasper AI", "Copy.ai", "Rytr"]
+        "competitors": [
+          "Jasper AI",
+          "Copy.ai",
+          "Rytr"
+        ]
       }
     },
     {
@@ -90,20 +151,61 @@
       "slug": "surfer-seo-review",
       "category": "ai-seo-tools",
       "primaryKeyword": "surfer seo review",
-      "keywords": ["surfer seo review 2026", "surfer seo for freelancers", "best content optimization tool"],
+      "keywords": [
+        "surfer seo review 2026",
+        "surfer seo for freelancers",
+        "best content optimization tool"
+      ],
       "tool": "Surfer SEO",
       "publishedDate": "2026-03-05",
       "toolData": {
         "name": "Surfer SEO",
         "website": "https://surferseo.com",
         "pricing": [
-          {"plan": "Essential", "price": "$89", "period": "/month", "features": ["30 articles/month", "Content editor", "SERP analyzer", "Keyword research", "AI writing"]},
-          {"plan": "Scale", "price": "$129", "period": "/month", "features": ["100 articles/month", "Everything in Essential", "Audit", "API access", "White label"], "highlighted": true},
-          {"plan": "Enterprise", "price": "$219", "period": "/month", "features": ["Unlimited articles", "Custom onboarding", "Priority support", "Dedicated account manager"]}
+          {
+            "plan": "Essential",
+            "price": "$89",
+            "period": "/month",
+            "features": [
+              "30 articles/month",
+              "Content editor",
+              "SERP analyzer",
+              "Keyword research",
+              "AI writing"
+            ]
+          },
+          {
+            "plan": "Scale",
+            "price": "$129",
+            "period": "/month",
+            "features": [
+              "100 articles/month",
+              "Everything in Essential",
+              "Audit",
+              "API access",
+              "White label"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Enterprise",
+            "price": "$219",
+            "period": "/month",
+            "features": [
+              "Unlimited articles",
+              "Custom onboarding",
+              "Priority support",
+              "Dedicated account manager"
+            ]
+          }
         ],
         "category": "AI SEO",
         "bestFor": "SEO-focused freelancers and content agencies",
-        "competitors": ["Clearscope", "Frase", "MarketMuse"]
+        "competitors": [
+          "Clearscope",
+          "Frase",
+          "MarketMuse"
+        ]
       }
     },
     {
@@ -114,20 +216,60 @@
       "slug": "descript-review",
       "category": "ai-design-tools",
       "primaryKeyword": "descript review",
-      "keywords": ["descript review 2026", "descript for podcasters", "ai video editor"],
+      "keywords": [
+        "descript review 2026",
+        "descript for podcasters",
+        "ai video editor"
+      ],
       "tool": "Descript",
       "publishedDate": "2026-03-05",
       "toolData": {
         "name": "Descript",
         "website": "https://www.descript.com",
         "pricing": [
-          {"plan": "Free", "price": "$0", "period": "", "features": ["1 hour transcription/month", "Basic editing", "Screen recording", "1 watermark-free export"]},
-          {"plan": "Hobbyist", "price": "$24", "period": "/month", "features": ["10 hours transcription", "Unlimited exports", "Filler word removal", "Studio sound"]},
-          {"plan": "Pro", "price": "$33", "period": "/month", "features": ["30 hours transcription", "Everything in Hobbyist", "Green screen", "AI voices", "Team features"], "highlighted": true}
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "1 hour transcription/month",
+              "Basic editing",
+              "Screen recording",
+              "1 watermark-free export"
+            ]
+          },
+          {
+            "plan": "Hobbyist",
+            "price": "$24",
+            "period": "/month",
+            "features": [
+              "10 hours transcription",
+              "Unlimited exports",
+              "Filler word removal",
+              "Studio sound"
+            ]
+          },
+          {
+            "plan": "Pro",
+            "price": "$33",
+            "period": "/month",
+            "features": [
+              "30 hours transcription",
+              "Everything in Hobbyist",
+              "Green screen",
+              "AI voices",
+              "Team features"
+            ],
+            "highlighted": true
+          }
         ],
         "category": "AI Video/Audio",
         "bestFor": "Podcasters and video creators who edit by editing text",
-        "competitors": ["Riverside", "CapCut", "Adobe Podcast"]
+        "competitors": [
+          "Riverside",
+          "CapCut",
+          "Adobe Podcast"
+        ]
       }
     },
     {
@@ -138,21 +280,70 @@
       "slug": "make-review",
       "category": "ai-automation",
       "primaryKeyword": "make.com review",
-      "keywords": ["make review 2026", "make vs zapier", "make.com for solopreneurs"],
+      "keywords": [
+        "make review 2026",
+        "make vs zapier",
+        "make.com for solopreneurs"
+      ],
       "tool": "Make.com",
       "publishedDate": "2026-03-06",
       "toolData": {
         "name": "Make.com",
         "website": "https://www.make.com",
         "pricing": [
-          {"plan": "Free", "price": "$0", "period": "", "features": ["1,000 ops/month", "2 active scenarios", "15-min interval", "100MB data transfer"]},
-          {"plan": "Core", "price": "$9", "period": "/month", "features": ["10,000 ops/month", "Unlimited scenarios", "5-min interval", "Advanced features"]},
-          {"plan": "Pro", "price": "$16", "period": "/month", "features": ["10,000 ops/month", "Custom functions", "Full-text log search", "Operations usage flexibility"], "highlighted": true},
-          {"plan": "Teams", "price": "$29", "period": "/month", "features": ["10,000 ops/month", "Multiple teams", "Team roles", "High-priority execution"]}
+          {
+            "plan": "Free",
+            "price": "$0",
+            "period": "",
+            "features": [
+              "1,000 ops/month",
+              "2 active scenarios",
+              "15-min interval",
+              "100MB data transfer"
+            ]
+          },
+          {
+            "plan": "Core",
+            "price": "$9",
+            "period": "/month",
+            "features": [
+              "10,000 ops/month",
+              "Unlimited scenarios",
+              "5-min interval",
+              "Advanced features"
+            ]
+          },
+          {
+            "plan": "Pro",
+            "price": "$16",
+            "period": "/month",
+            "features": [
+              "10,000 ops/month",
+              "Custom functions",
+              "Full-text log search",
+              "Operations usage flexibility"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Teams",
+            "price": "$29",
+            "period": "/month",
+            "features": [
+              "10,000 ops/month",
+              "Multiple teams",
+              "Team roles",
+              "High-priority execution"
+            ]
+          }
         ],
         "category": "Automation",
         "bestFor": "Solopreneurs and small teams who want Zapier power at a fraction of the cost",
-        "competitors": ["Zapier", "n8n", "Pipedream"]
+        "competitors": [
+          "Zapier",
+          "n8n",
+          "Pipedream"
+        ]
       }
     },
     {
@@ -163,33 +354,81 @@
       "slug": "pictory-review",
       "category": "ai-design-tools",
       "primaryKeyword": "pictory review",
-      "keywords": ["pictory ai review", "pictory for content repurposing", "ai video from text"],
+      "keywords": [
+        "pictory ai review",
+        "pictory for content repurposing",
+        "ai video from text"
+      ],
       "tool": "Pictory",
       "publishedDate": "2026-03-07",
       "toolData": {
         "name": "Pictory",
         "website": "https://pictory.ai",
         "pricing": [
-          {"plan": "Starter", "price": "$19", "period": "/month", "features": ["30 videos/month", "10-min videos", "AI voiceover", "Stock media library"]},
-          {"plan": "Professional", "price": "$39", "period": "/month", "features": ["60 videos/month", "20-min videos", "Brand kits", "Hootsuite integration"], "highlighted": true},
-          {"plan": "Teams", "price": "$79", "period": "/month", "features": ["90 videos/month", "30-min videos", "Team collaboration", "Priority support"]}
+          {
+            "plan": "Starter",
+            "price": "$19",
+            "period": "/month",
+            "features": [
+              "30 videos/month",
+              "10-min videos",
+              "AI voiceover",
+              "Stock media library"
+            ]
+          },
+          {
+            "plan": "Professional",
+            "price": "$39",
+            "period": "/month",
+            "features": [
+              "60 videos/month",
+              "20-min videos",
+              "Brand kits",
+              "Hootsuite integration"
+            ],
+            "highlighted": true
+          },
+          {
+            "plan": "Teams",
+            "price": "$79",
+            "period": "/month",
+            "features": [
+              "90 videos/month",
+              "30-min videos",
+              "Team collaboration",
+              "Priority support"
+            ]
+          }
         ],
         "category": "AI Video",
         "bestFor": "Content creators who want to repurpose blog posts into video without editing skills",
-        "competitors": ["Synthesia", "Lumen5", "InVideo"]
+        "competitors": [
+          "Synthesia",
+          "Lumen5",
+          "InVideo"
+        ]
       }
     },
     {
       "id": 11,
       "type": "comparison",
-      "status": "pending",
+      "status": "published",
       "scheduledDate": "2026-03-09",
       "title": "Zapier vs Make.com: Which Automation Tool Saves More Time (and Money)?",
       "slug": "zapier-vs-make",
       "category": "ai-automation",
       "primaryKeyword": "zapier vs make",
-      "keywords": ["zapier vs make.com 2026", "make vs zapier", "best automation tool"],
-      "tools": ["Zapier", "Make.com"]
+      "keywords": [
+        "zapier vs make.com 2026",
+        "make vs zapier",
+        "best automation tool"
+      ],
+      "tools": [
+        "Zapier",
+        "Make.com"
+      ],
+      "generatedDate": "2026-03-10",
+      "publishedDate": "2026-03-10"
     },
     {
       "id": 12,
@@ -200,8 +439,16 @@
       "slug": "surfer-vs-clearscope-vs-frase",
       "category": "ai-seo-tools",
       "primaryKeyword": "surfer seo vs clearscope",
-      "keywords": ["surfer vs frase", "best content optimization tool", "clearscope vs surfer"],
-      "tools": ["Surfer SEO", "Clearscope", "Frase"]
+      "keywords": [
+        "surfer vs frase",
+        "best content optimization tool",
+        "clearscope vs surfer"
+      ],
+      "tools": [
+        "Surfer SEO",
+        "Clearscope",
+        "Frase"
+      ]
     },
     {
       "id": 13,
@@ -212,8 +459,16 @@
       "slug": "descript-vs-riverside-vs-capcut",
       "category": "ai-design-tools",
       "primaryKeyword": "descript vs riverside",
-      "keywords": ["best ai video editor creators", "descript vs capcut", "riverside vs descript"],
-      "tools": ["Descript", "Riverside", "CapCut"]
+      "keywords": [
+        "best ai video editor creators",
+        "descript vs capcut",
+        "riverside vs descript"
+      ],
+      "tools": [
+        "Descript",
+        "Riverside",
+        "CapCut"
+      ]
     },
     {
       "id": 14,
@@ -224,8 +479,16 @@
       "slug": "chatgpt-vs-jasper-vs-claude",
       "category": "ai-writing-tools",
       "primaryKeyword": "chatgpt vs jasper for writing",
-      "keywords": ["claude vs chatgpt for content", "best ai for blog writing", "jasper vs chatgpt"],
-      "tools": ["ChatGPT", "Jasper AI", "Claude"]
+      "keywords": [
+        "claude vs chatgpt for content",
+        "best ai for blog writing",
+        "jasper vs chatgpt"
+      ],
+      "tools": [
+        "ChatGPT",
+        "Jasper AI",
+        "Claude"
+      ]
     },
     {
       "id": 15,
@@ -236,8 +499,16 @@
       "slug": "grammarly-vs-prowritingaid-vs-hemingway",
       "category": "ai-writing-tools",
       "primaryKeyword": "grammarly vs prowritingaid",
-      "keywords": ["best ai writing editor 2026", "grammarly vs hemingway", "prowritingaid review"],
-      "tools": ["Grammarly", "ProWritingAid", "Hemingway"]
+      "keywords": [
+        "best ai writing editor 2026",
+        "grammarly vs hemingway",
+        "prowritingaid review"
+      ],
+      "tools": [
+        "Grammarly",
+        "ProWritingAid",
+        "Hemingway"
+      ]
     },
     {
       "id": 16,
@@ -248,8 +519,16 @@
       "slug": "midjourney-vs-dalle-vs-leonardo",
       "category": "ai-design-tools",
       "primaryKeyword": "midjourney vs dall-e",
-      "keywords": ["best ai image generator marketing", "midjourney vs leonardo", "dall-e vs midjourney"],
-      "tools": ["Midjourney", "DALL-E", "Leonardo AI"]
+      "keywords": [
+        "best ai image generator marketing",
+        "midjourney vs leonardo",
+        "dall-e vs midjourney"
+      ],
+      "tools": [
+        "Midjourney",
+        "DALL-E",
+        "Leonardo AI"
+      ]
     },
     {
       "id": 36,
@@ -260,8 +539,15 @@
       "slug": "otter-vs-fireflies-vs-fathom",
       "category": "ai-productivity",
       "primaryKeyword": "otter vs fireflies",
-      "keywords": ["best ai meeting notes tool", "fireflies vs otter"],
-      "tools": ["Otter.ai", "Fireflies", "Fathom"]
+      "keywords": [
+        "best ai meeting notes tool",
+        "fireflies vs otter"
+      ],
+      "tools": [
+        "Otter.ai",
+        "Fireflies",
+        "Fathom"
+      ]
     },
     {
       "id": 37,
@@ -272,8 +558,15 @@
       "slug": "notion-ai-vs-clickup-vs-monday",
       "category": "ai-productivity",
       "primaryKeyword": "notion ai vs clickup ai",
-      "keywords": ["best ai project management tool", "notion ai vs monday ai"],
-      "tools": ["Notion AI", "ClickUp AI", "Monday AI"]
+      "keywords": [
+        "best ai project management tool",
+        "notion ai vs monday ai"
+      ],
+      "tools": [
+        "Notion AI",
+        "ClickUp AI",
+        "Monday AI"
+      ]
     },
     {
       "id": 38,
@@ -284,8 +577,16 @@
       "slug": "writesonic-vs-rytr-vs-koala",
       "category": "ai-writing-tools",
       "primaryKeyword": "writesonic vs rytr",
-      "keywords": ["cheapest ai writer", "best cheap ai writing tool", "budget ai writer"],
-      "tools": ["Writesonic", "Rytr", "Koala"]
+      "keywords": [
+        "cheapest ai writer",
+        "best cheap ai writing tool",
+        "budget ai writer"
+      ],
+      "tools": [
+        "Writesonic",
+        "Rytr",
+        "Koala"
+      ]
     },
     {
       "id": 17,
@@ -296,7 +597,10 @@
       "slug": "best-ai-tools-marketing-teams",
       "category": "ai-productivity",
       "primaryKeyword": "best ai tools for marketing teams",
-      "keywords": ["ai tools small marketing team", "ai for marketing teams 2026"]
+      "keywords": [
+        "ai tools small marketing team",
+        "ai for marketing teams 2026"
+      ]
     },
     {
       "id": 18,
@@ -307,7 +611,10 @@
       "slug": "best-free-ai-tools-solopreneurs",
       "category": "ai-productivity",
       "primaryKeyword": "best free ai tools solopreneurs",
-      "keywords": ["free ai tools for small business", "free ai tools 2026"]
+      "keywords": [
+        "free ai tools for small business",
+        "free ai tools 2026"
+      ]
     },
     {
       "id": 19,
@@ -318,7 +625,10 @@
       "slug": "best-ai-video-tools-creators",
       "category": "ai-design-tools",
       "primaryKeyword": "best ai video tools creators",
-      "keywords": ["ai video creation tools 2026", "easy ai video maker"]
+      "keywords": [
+        "ai video creation tools 2026",
+        "easy ai video maker"
+      ]
     },
     {
       "id": 20,
@@ -329,7 +639,10 @@
       "slug": "best-ai-seo-tools",
       "category": "ai-seo-tools",
       "primaryKeyword": "best ai seo tools",
-      "keywords": ["ai seo tools 2026", "best ai tools for seo"]
+      "keywords": [
+        "ai seo tools 2026",
+        "best ai tools for seo"
+      ]
     },
     {
       "id": 21,
@@ -340,7 +653,10 @@
       "slug": "best-ai-automation-tools",
       "category": "ai-automation",
       "primaryKeyword": "best ai automation tools",
-      "keywords": ["ai automation tools no-code", "best automation tools 2026"]
+      "keywords": [
+        "ai automation tools no-code",
+        "best automation tools 2026"
+      ]
     },
     {
       "id": 32,
@@ -351,7 +667,10 @@
       "slug": "best-ai-tools-real-estate",
       "category": "ai-productivity",
       "primaryKeyword": "best ai tools real estate agents",
-      "keywords": ["ai for real estate 2026", "ai tools realtors"]
+      "keywords": [
+        "ai for real estate 2026",
+        "ai tools realtors"
+      ]
     },
     {
       "id": 33,
@@ -362,7 +681,10 @@
       "slug": "best-ai-design-tools-non-designers",
       "category": "ai-design-tools",
       "primaryKeyword": "best ai design tools non-designers",
-      "keywords": ["ai graphic design tools easy", "ai design tools beginners"]
+      "keywords": [
+        "ai graphic design tools easy",
+        "ai design tools beginners"
+      ]
     },
     {
       "id": 27,
@@ -373,7 +695,10 @@
       "slug": "synthesia-review",
       "category": "ai-design-tools",
       "primaryKeyword": "synthesia review",
-      "keywords": ["synthesia ai review 2026", "ai video generator review"],
+      "keywords": [
+        "synthesia ai review 2026",
+        "ai video generator review"
+      ],
       "tool": "Synthesia"
     },
     {
@@ -385,7 +710,10 @@
       "slug": "semrush-review",
       "category": "ai-seo-tools",
       "primaryKeyword": "semrush review small business",
-      "keywords": ["semrush review 2026", "semrush for freelancers"],
+      "keywords": [
+        "semrush review 2026",
+        "semrush for freelancers"
+      ],
       "tool": "SEMrush"
     },
     {
@@ -397,7 +725,10 @@
       "slug": "grammarly-review",
       "category": "ai-writing-tools",
       "primaryKeyword": "grammarly review",
-      "keywords": ["grammarly review 2026", "grammarly for writers"],
+      "keywords": [
+        "grammarly review 2026",
+        "grammarly for writers"
+      ],
       "tool": "Grammarly"
     },
     {
@@ -409,7 +740,11 @@
       "slug": "otter-ai-review",
       "category": "ai-productivity",
       "primaryKeyword": "otter.ai review",
-      "keywords": ["otter ai review 2026", "otter for freelancers", "ai meeting notes"],
+      "keywords": [
+        "otter ai review 2026",
+        "otter for freelancers",
+        "ai meeting notes"
+      ],
       "tool": "Otter.ai"
     },
     {
@@ -421,7 +756,10 @@
       "slug": "runway-ml-review",
       "category": "ai-design-tools",
       "primaryKeyword": "runway ml review",
-      "keywords": ["runway review 2026", "runway for creators"],
+      "keywords": [
+        "runway review 2026",
+        "runway for creators"
+      ],
       "tool": "Runway ML"
     },
     {
@@ -433,7 +771,11 @@
       "slug": "ai-content-workflow",
       "category": "ai-productivity",
       "primaryKeyword": "ai content workflow",
-      "keywords": ["ai writing workflow", "content creation with ai", "ai publishing workflow"]
+      "keywords": [
+        "ai writing workflow",
+        "content creation with ai",
+        "ai publishing workflow"
+      ]
     },
     {
       "id": 23,
@@ -444,7 +786,10 @@
       "slug": "how-to-use-ai-for-seo",
       "category": "ai-seo-tools",
       "primaryKeyword": "how to use ai for seo",
-      "keywords": ["ai seo beginner guide", "ai for seo 2026"]
+      "keywords": [
+        "ai seo beginner guide",
+        "ai for seo 2026"
+      ]
     },
     {
       "id": 24,
@@ -455,7 +800,10 @@
       "slug": "automate-marketing-ai-zapier",
       "category": "ai-automation",
       "primaryKeyword": "automate marketing with ai",
-      "keywords": ["zapier ai automation", "marketing automation ai"]
+      "keywords": [
+        "zapier ai automation",
+        "marketing automation ai"
+      ]
     },
     {
       "id": 25,
@@ -466,7 +814,10 @@
       "slug": "repurpose-content-with-ai",
       "category": "ai-productivity",
       "primaryKeyword": "repurpose content with ai",
-      "keywords": ["content repurposing ai", "multiply content with ai"]
+      "keywords": [
+        "content repurposing ai",
+        "multiply content with ai"
+      ]
     },
     {
       "id": 26,
@@ -477,7 +828,10 @@
       "slug": "write-blog-post-with-ai",
       "category": "ai-writing-tools",
       "primaryKeyword": "how to write blog post with ai",
-      "keywords": ["ai blog writing guide", "make ai content sound human"]
+      "keywords": [
+        "ai blog writing guide",
+        "make ai content sound human"
+      ]
     },
     {
       "id": 34,
@@ -488,7 +842,10 @@
       "slug": "ai-tools-for-copywriters",
       "category": "ai-writing-tools",
       "primaryKeyword": "ai tools for copywriters",
-      "keywords": ["ai for freelance copywriters", "copywriter ai tools 2026"]
+      "keywords": [
+        "ai for freelance copywriters",
+        "copywriter ai tools 2026"
+      ]
     },
     {
       "id": 35,
@@ -499,7 +856,10 @@
       "slug": "ai-tools-ecommerce",
       "category": "ai-automation",
       "primaryKeyword": "ai tools ecommerce",
-      "keywords": ["ai for ecommerce 2026", "ai product descriptions"]
+      "keywords": [
+        "ai for ecommerce 2026",
+        "ai product descriptions"
+      ]
     },
     {
       "id": 39,
@@ -510,7 +870,10 @@
       "slug": "ai-client-onboarding",
       "category": "ai-automation",
       "primaryKeyword": "ai client onboarding",
-      "keywords": ["automate client onboarding", "freelancer onboarding ai"]
+      "keywords": [
+        "automate client onboarding",
+        "freelancer onboarding ai"
+      ]
     },
     {
       "id": 40,
@@ -521,7 +884,10 @@
       "slug": "ai-tools-for-podcasters",
       "category": "ai-productivity",
       "primaryKeyword": "ai tools for podcasters",
-      "keywords": ["podcast ai tools 2026", "ai podcast editing"]
+      "keywords": [
+        "podcast ai tools 2026",
+        "ai podcast editing"
+      ]
     }
   ]
 }
