@@ -19,20 +19,31 @@ function parseArticle(dir: string, filename: string) {
   const stats = readingTime(content);
 
   // Sanitize array fields — GPT-generated frontmatter may omit or malform these
-  if (data.type === 'comparison') {
+  // Use directory name (always reliable) instead of data.type (may be missing)
+  const dirToType: Record<string, string> = {
+    comparisons: 'comparison',
+    reviews: 'review',
+    best: 'best',
+    guides: 'guide',
+  };
+  if (!data.type && dirToType[dir]) {
+    data.type = dirToType[dir];
+  }
+
+  if (dir === 'comparisons') {
     data.tools = Array.isArray(data.tools) ? data.tools : [];
     data.winners = Array.isArray(data.winners) ? data.winners : [];
     data.affiliateUrls = data.affiliateUrls ?? {};
   }
-  if (data.type === 'review') {
+  if (dir === 'reviews') {
     data.pricing = Array.isArray(data.pricing) ? data.pricing : [];
     data.pros = Array.isArray(data.pros) ? data.pros : [];
     data.cons = Array.isArray(data.cons) ? data.cons : [];
   }
-  if (data.type === 'best') {
+  if (dir === 'best') {
     data.tools = Array.isArray(data.tools) ? data.tools : [];
   }
-  if (data.type === 'guide') {
+  if (dir === 'guides') {
     data.recommendedTools = Array.isArray(data.recommendedTools) ? data.recommendedTools : [];
   }
 
