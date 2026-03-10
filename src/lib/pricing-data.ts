@@ -498,7 +498,7 @@ export const pricingData: PricingPage[] = [
           'Auto-captions',
           '15M+ stock assets',
         ],
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Professional',
@@ -515,7 +515,7 @@ export const pricingData: PricingPage[] = [
           'Bulk video creation',
         ],
         highlighted: true,
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Teams',
@@ -531,7 +531,7 @@ export const pricingData: PricingPage[] = [
           'API access',
           'Dedicated support',
         ],
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
     ],
     faqs: [

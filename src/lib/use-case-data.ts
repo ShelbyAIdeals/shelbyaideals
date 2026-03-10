@@ -182,7 +182,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Blog-to-video in minutes',
         reviewSlug: 'pictory-review',
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Surfer SEO',
@@ -240,7 +240,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Bulk video creation from text',
         reviewSlug: 'pictory-review',
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Make.com',
@@ -280,7 +280,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Text-to-video automation',
         reviewSlug: 'pictory-review',
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Jasper AI',
@@ -472,7 +472,7 @@ export const useCaseData: UseCasePage[] = [
         pricing: 'From $19/mo',
         standoutFeature: 'Product demo videos from text',
         reviewSlug: 'pictory-review',
-        affiliateUrl: 'https://pictory.ai',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
       },
       {
         name: 'Writesonic',

@@ -55,7 +55,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   pictory: {
     name: 'Pictory',
-    url: 'https://pictory.ai',
+    url: 'https://pictory.ai?ref=fran26',
     commission: '30% recurring',
     status: 'pending',
   },
