@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow-jasper-ai" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent-jasper-ai" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#glow-jasper-ai)"/>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="1198" height="628" rx="4" fill="none" stroke="#F43F5E" stroke-width="1" opacity="0.3"/>
+  <rect x="12" y="12" width="1176" height="606" rx="2" fill="none" stroke="#F43F5E" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Corner brackets -->
+  <path d="M 24 42 L 24 24 L 42 24" fill="none" stroke="#F43F5E" stroke-width="2" opacity="0.5"/>
+  <path d="M 1158 24 L 1176 24 L 1176 42" fill="none" stroke="#F43F5E" stroke-width="2" opacity="0.5"/>
+  <path d="M 24 588 L 24 606 L 42 606" fill="none" stroke="#F43F5E" stroke-width="2" opacity="0.5"/>
+  <path d="M 1158 606 L 1176 606 L 1176 588" fill="none" stroke="#F43F5E" stroke-width="2" opacity="0.5"/>
+
+  <!-- Accent line top -->
+  <rect x="560" y="227" width="80" height="3" rx="1.5" fill="#F43F5E" opacity="0.6"/>
+
+  <!-- Tool name -->
+  <text x="600" y="295" text-anchor="middle" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="48" font-weight="700" fill="white" letter-spacing="1" opacity="0.95">Jasper AI</text>
+
+  <!-- Category -->
+  <text x="600" y="353" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="24" fill="#F43F5E" letter-spacing="2" opacity="0.7">AI CONTENT PLATFORM</text>
+
+  <!-- Decorative lines -->
+  <line x1="480" y1="373" x2="720" y2="373" stroke="#F43F5E" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Branding -->
+  <text x="600" y="600" text-anchor="middle" font-family="'Space Grotesk','Inter',system-ui,sans-serif" font-size="11" font-weight="600" fill="#F43F5E" letter-spacing="3.5" opacity="0.4">SHELBYAIDEALS</text>
+</svg>

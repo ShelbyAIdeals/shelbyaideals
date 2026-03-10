@@ -28,7 +28,9 @@ export default function ReviewCard({
   toolSlug,
 }: ReviewCardProps) {
   const imageSlug = toolSlug || slug.replace('-review', '');
-  const imageSrc = featuredImage || `/images/tools/${imageSlug}/thumb.webp`;
+  const webpSrc = `/images/tools/${imageSlug}/thumb.webp`;
+  const svgSrc = `/images/tools/${imageSlug}/thumb.svg`;
+  const imageSrc = featuredImage || webpSrc;
   const fallbackSrc = '/images/placeholders/tool-thumb.svg';
 
   return (
@@ -45,7 +47,11 @@ export default function ReviewCard({
             alt={`${tool} review`}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
-            onError={(e) => { (e.target as HTMLImageElement).src = fallbackSrc; }}
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              if (img.src.endsWith('.webp')) img.src = svgSrc;
+              else if (!img.src.endsWith('tool-thumb.svg')) img.src = fallbackSrc;
+            }}
           />
         </div>
 
