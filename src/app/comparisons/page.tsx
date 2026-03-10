@@ -60,7 +60,7 @@ export default async function ComparisonsPage() {
                 >
                   {/* Tools involved */}
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {comp.tools.map((tool) => (
+                    {(comp.tools ?? []).map((tool) => (
                       <span key={tool} className="badge-accent">
                         {tool}
                       </span>

@@ -122,7 +122,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                   >
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {comp.tools.map((tool) => (
+                      {(comp.tools ?? []).map((tool) => (
                         <span key={tool} className="badge-accent">
                           {tool}
                         </span>
