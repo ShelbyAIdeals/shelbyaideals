@@ -16,6 +16,7 @@ out/
 # misc
 .DS_Store
 *.tsbuildinfo
+*.bak
 
 # social drafts (generated, not tracked)
 scripts/social-drafts/
