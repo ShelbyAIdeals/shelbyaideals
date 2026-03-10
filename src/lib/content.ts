@@ -33,7 +33,7 @@ function parseArticle(dir: string, filename: string) {
   data.title = data.title ?? filename.replace('.mdx', '');
   data.excerpt = data.excerpt ?? '';
   data.category = data.category ?? 'ai-productivity';
-  data.author = data.author ?? 'Shelby AI Deals Team';
+  data.author = data.author ?? 'ShelbyAI Team';
   data.date = data.date ?? new Date().toISOString().split('T')[0];
   data.lastUpdated = data.lastUpdated ?? data.date;
 
