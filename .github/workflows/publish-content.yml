@@ -82,6 +82,7 @@ jobs:
           # Build commit message from generated articles
           ARTICLES=$(git diff --staged --name-only -- 'src/content/' | sed 's|src/content/[^/]*/||' | sed 's|\.mdx||' | tr '\n' ', ' | sed 's/,$//')
           git commit -m "content: publish ${ARTICLES}"
+          git pull --rebase origin main
           git push
 
       - name: Generate social media posts
