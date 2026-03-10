@@ -72,7 +72,7 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header className={`absolute top-0 left-0 right-0 z-50 transition-colors ${mobileOpen ? 'bg-void-950/95 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-[1940px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -154,7 +154,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="lg:hidden pb-4 mt-1 pt-3">
+          <nav className="lg:hidden pb-4 mt-1 pt-3 bg-void-950/95 backdrop-blur-md border border-void-700/50 rounded-xl shadow-2xl">
             {/* Mobile search */}
             <div className="px-3 mb-3">
               <form onSubmit={handleMobileSearch} className="relative">
