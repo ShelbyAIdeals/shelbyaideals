@@ -43,9 +43,9 @@
   --color-void-500: #a39279;
   --color-void-600: #d0bea4;
   --color-void-700: #dfccae;
-  --color-void-800: #ead7ba;
-  --color-void-900: #f2e2c6;
-  --color-void-950: #f7e8d0;
+  --color-void-800: #f0ebe4;
+  --color-void-900: #f7f5f2;
+  --color-void-950: #ffffff;
 
   --color-accent-300: #1f7d8e;
   --color-accent-400: #1a6b7a;
@@ -123,11 +123,6 @@
   }
 
   * {
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
-  a, button, input, textarea, [role="link"] {
     -webkit-user-select: auto;
     user-select: auto;
   }
