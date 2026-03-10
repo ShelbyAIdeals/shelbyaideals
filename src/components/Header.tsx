@@ -99,7 +99,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2.5 text-[1.05rem] font-bold text-white hover:text-accent-300 rounded-lg hover:bg-void-700/60 no-underline transition-all"
+                className="px-4 py-2.5 text-[1.05rem] font-bold text-void-50 hover:text-accent-300 rounded-lg hover:bg-void-700/60 no-underline transition-all"
               >
                 {link.label}
               </Link>
