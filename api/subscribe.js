@@ -1,6 +1,22 @@
 const ALLOWED_ORIGINS = ['https://shelby-ai.com', 'https://www.shelby-ai.com'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Rate limiter: 5 requests per IP per 60 seconds
+const RATE_LIMIT = 5;
+const RATE_WINDOW = 60_000;
+const rateMap = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = rateMap.get(ip);
+  if (!entry || now - entry.start > RATE_WINDOW) {
+    rateMap.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  entry.count++;
+  return entry.count > RATE_LIMIT;
+}
+
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin;
   if (ALLOWED_ORIGINS.includes(origin)) {
@@ -15,6 +31,11 @@ module.exports = async function handler(req, res) {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: 'Too many requests. Try again later.' });
   }
 
   const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || '';
