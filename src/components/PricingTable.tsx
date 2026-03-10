@@ -61,13 +61,9 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
                   size="sm"
                 />
               ) : (
-                <CTAButton
-                  href="#"
-                  label={`Get ${tier.plan}`}
-                  variant={tier.highlighted ? 'primary' : 'outline'}
-                  size="sm"
-                  external={false}
-                />
+                <span className="inline-block rounded-lg border border-void-700/50 px-5 py-2 text-sm font-medium text-void-400 cursor-default">
+                  {tier.plan}
+                </span>
               )}
             </div>
           </div>
@@ -120,13 +116,9 @@ export default function PricingTable({ plans, toolName }: PricingTableProps) {
                 size="sm"
               />
             ) : (
-              <CTAButton
-                href="#"
-                label={`Get ${tier.plan}`}
-                variant={tier.highlighted ? 'primary' : 'outline'}
-                size="sm"
-                external={false}
-              />
+              <span className="inline-block rounded-lg border border-void-700/50 px-5 py-2 text-sm font-medium text-void-400 cursor-default">
+                {tier.plan}
+              </span>
             )}
           </div>
         ))}

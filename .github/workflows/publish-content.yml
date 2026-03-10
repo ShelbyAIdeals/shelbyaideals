@@ -44,13 +44,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SITE_URL: ${{ vars.SITE_URL || 'https://shelby-ai.com' }}
         run: |
-          if [ -n "${{ github.event.inputs.article_id }}" ]; then
-            echo "Generating specific article: ${{ github.event.inputs.article_id }}"
-            npx tsx scripts/generate-article.ts ${{ github.event.inputs.article_id }}
+          ARTICLE_ID="${{ github.event.inputs.article_id }}"
+          ARTICLE_COUNT="${{ github.event.inputs.article_count || '1' }}"
+          if [ -n "$ARTICLE_ID" ]; then
+            echo "Generating specific article: $ARTICLE_ID"
+            npx tsx scripts/generate-article.ts "$ARTICLE_ID"
           else
-            COUNT=${{ github.event.inputs.article_count || '1' }}
-            echo "Generating $COUNT article(s) from queue..."
-            npx tsx scripts/publish-next.ts --count $COUNT
+            echo "Generating $ARTICLE_COUNT article(s) from queue..."
+            npx tsx scripts/publish-next.ts --count "$ARTICLE_COUNT"
           fi
 
       - name: Generate sitemap
@@ -70,7 +71,7 @@ jobs:
         run: |
           git config user.name "ShelbyAIDeals Bot"
           git config user.email "bot@shelbyaideals.com"
-          git add -A
+          git add src/content/ scripts/content-queue.json public/sitemap.xml public/feed.xml
 
           # Check if there are changes to commit
           if git diff --staged --quiet; then

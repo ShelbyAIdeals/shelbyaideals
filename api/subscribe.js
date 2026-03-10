@@ -1,5 +1,11 @@
+const ALLOWED_ORIGINS = ['https://shelby-ai.com', 'https://www.shelby-ai.com'];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -16,12 +22,12 @@ module.exports = async function handler(req, res) {
 
   const { email, utm_source, utm_medium, referring_site } = req.body || {};
 
-  if (!email || typeof email !== 'string') {
-    return res.status(400).json({ error: 'Email is required' });
+  if (!email || typeof email !== 'string' || email.length > 254 || !EMAIL_RE.test(email)) {
+    return res.status(400).json({ error: 'A valid email is required' });
   }
 
   if (!BEEHIIV_API_KEY || !PUBLICATION_ID) {
-    return res.status(500).json({ error: 'Newsletter not configured', debug: { hasKey: !!BEEHIIV_API_KEY, hasPub: !!PUBLICATION_ID } });
+    return res.status(500).json({ error: 'Service temporarily unavailable' });
   }
 
   try {
@@ -46,11 +52,11 @@ module.exports = async function handler(req, res) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-      return res.status(response.status).json({ error: 'Subscription failed', details: data });
+      return res.status(response.status).json({ error: 'Subscription failed' });
     }
 
-    return res.status(200).json({ success: true, data });
+    return res.status(200).json({ success: true });
   } catch (err) {
-    return res.status(500).json({ error: 'Internal server error', message: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 };
