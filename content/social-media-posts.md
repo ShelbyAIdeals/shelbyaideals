@@ -10,238 +10,167 @@ All content for @selbyaideals launch. Ready to copy-paste and schedule.
 
 ### Thread 1: "I tested 40+ AI tools so you don't have to"
 
-**Tweet 1 (Hook):**
+> **How to post on X:** Post Tweet 1 first as a regular tweet. Then reply to it with Tweet 2. Reply to Tweet 2 with Tweet 3, etc. Each reply creates the thread. Keep every tweet under 280 characters.
 
-I tested 40+ AI tools over the past few months.
+**Tweet 1 (Hook):** *(194 chars)*
 
-Not just quick demos — I actually used them on real projects, compared pricing, and tracked what was worth paying for.
+I tested 40+ AI tools on real projects over the past few months.
 
-Here's the honest breakdown by category:
+Most aren't worth the money.
 
-(thread)
+Here are the only ones worth paying for in 2026, by category:
 
----
+**Tweet 2 (Writing):** *(270 chars)*
 
-**Tweet 2 (Writing):**
+WRITING:
 
-WRITING
+- ChatGPT ($20/mo) — best all-rounder for solos
+- Claude ($20/mo) — best for long-form 2000+ words
+- Jasper ($69/mo) — only if you have a team of 3+
 
-ChatGPT is still the best all-rounder if you're a solo freelancer. $20/mo and it handles blog drafts, emails, brainstorming, research — everything.
+Skip Jasper if you work alone. ChatGPT or Claude are better AND cheaper.
 
-Jasper ($69/mo) only makes sense if you're on a marketing team that needs brand voice consistency across multiple people.
+**Tweet 3 (Video):** *(262 chars)*
 
-Claude is quietly the best for long-form content. More consistent output on 2000+ word pieces than anything else I tested.
+VIDEO:
 
----
+- Pictory ($19/mo) — paste a blog post, get a video. Seriously.
+- Descript ($24/mo) — edit video by editing text. Game changer.
+- Synthesia — AI avatars, great for corporate training
 
-**Tweet 3 (Video):**
+Pictory is the best bang for buck here.
 
-VIDEO
+**Tweet 4 (SEO):** *(259 chars)*
 
-Pictory ($19/mo) is the real deal for turning blog posts into videos. I ran 20 articles through it and most came out publish-ready with zero editing skills.
+SEO:
 
-Synthesia is wild for AI avatar videos but expensive. Great for training/corporate content.
+- Mangools (~$30/mo) — 90% of Semrush at 25% of the price
+- Surfer SEO ($89/mo) — only if you publish 10+ articles/mo
 
-Descript ($24/mo) is the sleeper pick — text-based video editing feels like magic once you try it.
+Most people don't need expensive SEO tools. Mangools + free Google Search Console gets you there.
 
----
+**Tweet 5 (Design + Automation):** *(271 chars)*
 
-**Tweet 4 (SEO):**
+DESIGN:
+- Canva Pro ($13/mo) — replaced 3 design tools for me
 
-SEO
+AUTOMATION:
+- Make.com ($10/mo) — does everything Zapier does at 1/5th the price
 
-Mangools is my pick for solopreneurs who need keyword research without the $120/mo Semrush tax. Clean UI, accurate data, genuinely affordable.
+If your apps are supported on Make, there's no reason to pay Zapier's prices. Switch.
 
-Surfer SEO ($89/mo) is worth it only if you're publishing 10+ articles per month and need content optimization scoring.
+**Tweet 6 (CTA):** *(228 chars)*
 
-For everyone else: ChatGPT + free Google tools will get you 80% of the way there.
+Full stack: under $100/mo total. Replaces $500+ in software.
 
----
+I wrote the complete breakdown with pricing, tiers to buy, and what to skip:
 
-**Tweet 5 (Design):**
+shelby-ai.com/guides/solopreneur-ai-stack/
 
-DESIGN
-
-Canva Pro ($13/mo) has gotten absurdly good. AI background removal, Magic Write, image generation — it replaced 3 separate tools for me.
-
-Midjourney makes the best images but the Discord-only workflow is painful for daily use.
-
-If you don't have a designer on your team, Canva is the only tool you need.
-
----
-
-**Tweet 6 (Automation):**
-
-AUTOMATION
-
-Make.com starts at $10/mo and does everything Zapier does at roughly 1/5th the price.
-
-Not exaggerating — I ran identical automations on both. Make's visual builder is also more intuitive once you get past the initial learning curve.
-
-Zapier's only advantage is having more native integrations. If your apps are supported on Make, switch.
-
----
-
-**Tweet 7 (Productivity):**
-
-PRODUCTIVITY
-
-Grammarly free tier covers 90% of editing needs. Don't pay for Premium unless you write for a living.
-
-Otter.ai ($17/mo) for meeting transcription is a no-brainer. Auto-summaries and action items save me 30+ minutes per meeting.
-
-Notion AI is neat but not essential. The base Notion features matter more than the AI add-on.
-
----
-
-**Tweet 8 (CTA):**
-
-The full stack costs under $100/mo total and replaces what used to be $500+ in software.
-
-I wrote up the complete breakdown with pricing, alternatives, and which tiers to actually buy:
-
-https://shelby-ai.com/guides/solopreneur-ai-stack/
-
-#AItools
+#AItools #solopreneur
 
 ---
 ---
 
 ### Thread 2: "Free AI tools that replaced $500/mo in software"
 
-**Tweet 1 (Hook):**
+**Tweet 1 (Hook):** *(187 chars)*
 
-I was spending $500+/mo on software subscriptions.
+I was spending $500+/mo on software.
 
-Then I found the free tiers that actually work. Not trial periods. Not limited demos. Genuinely usable free tools.
+Then I found free tiers that actually work. Not trials. Not limited demos. Genuinely usable free tools.
 
 Here's what replaced what:
 
----
+**Tweet 2:** *(248 chars)*
 
-**Tweet 2:**
+ChatGPT free replaced my $49/mo Jasper subscription for 80% of tasks.
 
-ChatGPT (free tier) replaced my $49/mo Jasper subscription for 80% of tasks.
+Grammarly free replaced ProWritingAid ($20/mo).
 
-Yes, the paid version is better. But if you're just drafting blog posts, writing emails, and brainstorming — free ChatGPT handles it.
+Canva free replaced a $25/mo design tool.
 
-I now only use paid AI writers for specific brand voice work.
+All three free tiers are genuinely good enough for most people.
 
----
+**Tweet 3:** *(262 chars)*
 
-**Tweet 3:**
-
-Grammarly free replaced my ProWritingAid subscription ($20/mo).
-
-It catches grammar issues, tone problems, and unclear sentences. The premium features (plagiarism check, rewrites) are nice but not essential for most people.
-
-Canva free replaced a $25/mo design tool. The free tier includes thousands of templates and basic AI features. Only upgrade if you need brand kits or background removal.
-
----
-
-**Tweet 4:**
-
-Make.com free tier (1,000 operations/mo) replaced my $20/mo Zapier starter.
-
-If you run fewer than 5 simple automations, the free tier is enough. I automated my social posting and email notifications without paying a cent.
-
-Descript free gets you 1 hour of transcription and basic video editing. Enough for short podcast clips and social videos.
-
----
-
-**Tweet 5:**
+Make.com free tier (1,000 ops/mo) replaced my $20/mo Zapier.
 
 Google's free stack is underrated:
-
-- NotebookLM for research (better than paid alternatives)
+- NotebookLM for research
 - Google Docs + Gemini for drafting
-- Google Analytics for SEO tracking
-- Google Search Console for keyword data
+- Search Console for keyword data
 
 All free. All genuinely good.
 
----
+**Tweet 4 (CTA):** *(222 chars)*
 
-**Tweet 6 (CTA):**
+Total savings: ~$497/mo by switching to free tiers and only paying for 2-3 tools where premium matters.
 
-Total savings: roughly $497/mo by switching to free tiers where possible and only paying for the 2-3 tools where premium actually matters.
+Full list with what each free tier includes:
 
-Full list with links and what each free tier includes:
-
-https://shelby-ai.com/best/best-free-ai-tools-solopreneurs/
+shelby-ai.com/best/best-free-ai-tools-solopreneurs/
 
 ---
 ---
 
-### Single Tweet 1: Jasper vs ChatGPT hot take
+### Single Tweet 1: Jasper vs ChatGPT hot take *(274 chars)*
 
-Hot take: Jasper at $69/mo is only worth it if you have a team of 3+ people who all need to write in the same brand voice.
+Hot take: Jasper at $69/mo is only worth it if your team of 3+ needs brand voice consistency.
 
-For solo creators? ChatGPT ($20/mo) or Claude ($20/mo) produce better raw output for less than a third of the price.
+Solo creator? ChatGPT or Claude ($20/mo each) produce better output at 1/3 the price.
 
-We did a full side-by-side comparison with real writing samples:
-
-https://shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude/
+Full comparison: shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude/
 
 ---
 
-### Single Tweet 2: Stop paying for [tool]
+### Single Tweet 2: Stop paying for [tool] *(267 chars)*
 
-Stop paying $69/mo for Jasper when ChatGPT free does 80% of the same thing.
+Stop paying $69/mo for Jasper — ChatGPT free does 80% of it.
+Stop paying for Zapier — Make.com free gives you 1,000 automations.
+Stop paying for design tools — Canva free has 250K+ templates.
 
-Stop paying $20/mo for Zapier when Make.com free tier gives you 1,000 automations.
-
-Stop paying $25/mo for design tools when Canva free has 250K+ templates.
-
-The best AI tools in 2026 have genuinely useful free tiers. Here are the ones worth knowing about:
-
-https://shelby-ai.com/best/best-free-ai-tools-solopreneurs/
+shelby-ai.com/best/best-free-ai-tools-solopreneurs/
 
 ---
 
-### Single Tweet 3: Pictory video tip
+### Single Tweet 3: Pictory video tip *(243 chars)*
 
-Content repurposing tip that actually works:
+Content repurposing tip:
 
-Take your best-performing blog post. Paste it into Pictory. It auto-selects stock footage, adds captions, and generates a shareable video in about 3 minutes.
+Paste your best blog post into Pictory. It auto-selects footage, adds captions, generates a video in ~3 min.
 
-I ran 20 blog posts through it. Most needed zero manual editing.
+I ran 20 posts through it. Most needed zero editing. $19/mo.
 
-Starts at $19/mo. Full review with real output examples:
-
-https://shelby-ai.com/reviews/pictory-review/
+shelby-ai.com/reviews/pictory-review/
 
 ---
 
-### Single Tweet 4: SEO tip with Mangools
+### Single Tweet 4: SEO tip with Mangools *(258 chars)*
 
-SEO tip for people who can't afford Semrush ($120/mo):
+Can't afford Semrush ($120/mo)?
 
-Mangools does keyword research, SERP analysis, rank tracking, and backlink checking — all for about $30/mo.
+Mangools does keyword research, SERP analysis, rank tracking, backlink checking — all for ~$30/mo.
 
-I've used both. For solopreneurs and small teams, Mangools gives you 90% of the data at 25% of the cost.
+I've used both. For solopreneurs, Mangools gives 90% of the data at 25% of the cost.
 
-Full AI SEO workflow guide:
-
-https://shelby-ai.com/guides/how-to-use-ai-for-seo/
+shelby-ai.com/guides/how-to-use-ai-for-seo/
 
 ---
 
-### Single Tweet 5: Content workflow tip
+### Single Tweet 5: Content workflow tip *(260 chars)*
 
-My AI content workflow from idea to published article:
+My AI content workflow:
 
-1. ChatGPT for topic research + outline
-2. Claude or Copy.ai for first draft
-3. Surfer SEO to optimize for keywords
-4. Grammarly for final polish
-5. Pictory to repurpose into video
+1. ChatGPT — research + outline
+2. Claude — first draft
+3. Surfer SEO — keyword optimization
+4. Grammarly — final polish
+5. Pictory — repurpose into video
 
-Total time: ~2 hours for a 2000-word article that used to take a full day.
+~2 hours for a 2000-word article. Used to take a full day.
 
-Step-by-step breakdown:
-
-https://shelby-ai.com/guides/ai-content-workflow/
+shelby-ai.com/guides/ai-content-workflow/
 
 ---
 ---
