@@ -13,9 +13,9 @@ export interface AffiliateProgram {
 const affiliateLinks: Record<string, AffiliateProgram> = {
   jasper: {
     name: 'Jasper AI',
-    url: 'https://www.jasper.ai', // Replace with actual affiliate URL
-    commission: '30% recurring',
-    status: 'pending',
+    url: 'https://www.jasper.ai',
+    commission: 'N/A',
+    status: 'unavailable',
   },
   'copy-ai': {
     name: 'Copy.ai',
@@ -92,6 +92,12 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   canva: {
     name: 'Canva',
     url: 'https://www.canva.com',
+    commission: 'Varies',
+    status: 'pending',
+  },
+  clickup: {
+    name: 'ClickUp',
+    url: 'https://clickup.com',
     commission: 'Varies',
     status: 'pending',
   },

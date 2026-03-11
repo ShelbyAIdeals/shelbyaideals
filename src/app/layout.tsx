@@ -89,6 +89,36 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `document.addEventListener("click",function(e){var a=e.target.closest('a[rel*="sponsored"]');if(!a)return;var h=a.getAttribute("href")||"",t=a.textContent.trim()||"";if(typeof gtag==="function"){gtag("event","affiliate_click",{event_category:"affiliate",event_label:t,affiliate_url:h,page_location:window.location.href})}})` }} />
         {/* Microsoft Clarity heatmaps */}
         <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID||""}")` }} />
+        {/* Meta Pixel */}
+        {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
+          <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${process.env.NEXT_PUBLIC_META_PIXEL_ID}');fbq('track','PageView');` }} />
+        )}
+        {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
+        {/* LinkedIn Insight Tag */}
+        {process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID && (
+          <script dangerouslySetInnerHTML={{ __html: `_linkedin_partner_id="${process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID}";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";s.parentNode.insertBefore(b,s)})(window.lintrk);` }} />
+        )}
+        {process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID && (
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src={`https://px.ads.linkedin.com/collect/?pid=${process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID}&fmt=gif`}
+              alt=""
+            />
+          </noscript>
+        )}
         <JsonLd type="website" />
         <MistEffect />
         <div className="relative z-[2] isolate flex flex-col min-h-screen">

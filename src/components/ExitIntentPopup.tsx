@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { X, ArrowRight, Zap } from 'lucide-react';
+import { X, ArrowRight, Zap, Download } from 'lucide-react';
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false);
@@ -96,9 +96,20 @@ export default function ExitIntentPopup() {
           </p>
 
           {subscribed ? (
-            <p className="text-accent-400 font-semibold">
-              You're in! Check your inbox.
-            </p>
+            <div className="space-y-3">
+              <p className="text-accent-400 font-semibold">
+                You're in! Here's your cheatsheet:
+              </p>
+              <a
+                href="/ai-tool-stack-cheatsheet.html"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors"
+              >
+                <Download size={16} />
+                Download Cheatsheet
+              </a>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <input

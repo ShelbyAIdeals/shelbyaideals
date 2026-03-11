@@ -15,6 +15,7 @@ const categoryLinks = [
 
 const resourceLinks = [
   { label: 'All Tools', href: '/reviews' },
+  { label: 'Deals', href: '/deals' },
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Best Of', href: '/best' },
   { label: 'Guides', href: '/guides' },

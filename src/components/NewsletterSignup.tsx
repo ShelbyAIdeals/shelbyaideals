@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, ArrowRight, Loader2, Download } from 'lucide-react';
 import clsx from 'clsx';
 
 interface NewsletterSignupProps {
@@ -65,9 +65,20 @@ export default function NewsletterSignup({
         </div>
 
         {submitted ? (
-          <p className="text-sm font-medium text-accent-400 py-2">
-            Check your inbox -- your cheatsheet is on the way.
-          </p>
+          <div className="py-2 space-y-2">
+            <p className="text-sm font-medium text-accent-400">
+              You're in! Here's your cheatsheet:
+            </p>
+            <a
+              href="/ai-tool-stack-cheatsheet.html"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-300 hover:text-accent-200 transition-colors"
+            >
+              <Download size={14} />
+              Download Cheatsheet
+            </a>
+          </div>
         ) : (
           <>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -118,10 +129,19 @@ export default function NewsletterSignup({
 
           {/* Form */}
           {submitted ? (
-            <div className="bg-void-800 border border-accent-500/20 rounded-xl p-6 max-w-md mx-auto">
+            <div className="bg-void-800 border border-accent-500/20 rounded-xl p-6 max-w-md mx-auto space-y-3">
               <p className="text-base font-semibold text-accent-400">
-                You are in! Check your inbox for the cheatsheet.
+                You're in! Here's your cheatsheet:
               </p>
+              <a
+                href="/ai-tool-stack-cheatsheet.html"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors"
+              >
+                <Download size={16} />
+                Download Cheatsheet
+              </a>
             </div>
           ) : (
             <>

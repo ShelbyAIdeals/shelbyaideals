@@ -7,6 +7,7 @@ import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff } from 'lucide-reac
 
 const navLinks = [
   { label: 'Tools', href: '/reviews' },
+  { label: 'Deals', href: '/deals' },
   { label: 'Categories', href: '/categories' },
   { label: 'FAQ', href: '/faq' },
 ];
