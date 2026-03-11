@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
-            <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
               Categories
             </h4>
             <ul className="space-y-2.5">
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
               Resources
             </h4>
             <ul className="space-y-2.5">
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
               Company
             </h4>
             <ul className="space-y-2.5">
@@ -134,7 +134,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-xs font-semibold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
               Newsletter
             </h4>
             <p className="text-sm text-void-300 mb-4 leading-relaxed">

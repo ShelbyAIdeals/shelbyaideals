@@ -87,7 +87,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
     name: 'Make.com',
     url: 'https://www.make.com',
     commission: 'CPA + recurring',
-    status: 'pending',
+    status: 'unavailable',
   },
   canva: {
     name: 'Canva',
