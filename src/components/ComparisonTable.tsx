@@ -12,9 +12,11 @@ interface ComparisonTableProps {
 }
 
 export default function ComparisonTable({ tools }: ComparisonTableProps) {
+  if (!tools || tools.length === 0) return null;
+
   // Collect all unique feature names across tools, preserving insertion order
   const featureNames = Array.from(
-    new Set(tools.flatMap((tool) => Object.keys(tool.features)))
+    new Set(tools.flatMap((tool) => Object.keys(tool.features ?? {})))
   );
 
   return (

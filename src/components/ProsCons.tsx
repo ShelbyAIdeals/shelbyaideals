@@ -6,6 +6,10 @@ interface ProsConsProps {
 }
 
 export default function ProsCons({ pros, cons }: ProsConsProps) {
+  const safeP = pros ?? [];
+  const safeC = cons ?? [];
+  if (safeP.length === 0 && safeC.length === 0) return null;
+
   return (
     <div className="pros-cons-grid">
       {/* Pros */}
@@ -15,7 +19,7 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
           Pros
         </h4>
         <ul className="space-y-3">
-          {pros.map((pro) => (
+          {safeP.map((pro) => (
             <li key={pro} className="flex items-start gap-2 text-sm text-void-300">
               <CheckCircle
                 size={16}
@@ -34,7 +38,7 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
           Cons
         </h4>
         <ul className="space-y-3">
-          {cons.map((con) => (
+          {safeC.map((con) => (
             <li key={con} className="flex items-start gap-2 text-sm text-void-300">
               <XCircle
                 size={16}
