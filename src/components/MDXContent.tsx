@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import CTAButton from './CTAButton';
 import PricingTable from './PricingTable';
@@ -73,7 +74,7 @@ interface MDXContentProps {
 export default function MDXContent({ source }: MDXContentProps) {
   return (
     <div className="prose-article">
-      <MDXRemote source={source} components={components} options={{ mdxOptions: { development: false }, blockJS: false }} />
+      <MDXRemote source={source} components={components} options={{ mdxOptions: { development: false, remarkPlugins: [remarkGfm] }, blockJS: false }} />
     </div>
   );
 }
