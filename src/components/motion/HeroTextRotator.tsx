@@ -34,7 +34,7 @@ export default function HeroTextRotator({ className }: HeroTextRotatorProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
-          className="text-gradient-accent inline-block"
+          className="text-gradient-signal inline-block"
         >
           {phrases[index]}
         </motion.span>

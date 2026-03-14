@@ -88,10 +88,10 @@ export default function SearchResults({ articles }: { articles: SearchArticle[] 
               <div className="flex items-start gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="badge-accent text-[10px]">{TYPE_LABELS[a.type]}</span>
+                    <span className="badge-signal text-[10px]">{TYPE_LABELS[a.type]}</span>
                     <span className="text-xs text-void-600">{a.category.replace(/-/g, ' ').replace('ai ', 'AI ')}</span>
                   </div>
-                  <h3 className="text-base font-heading font-bold text-void-100 group-hover:text-accent-400 transition-colors mb-1">
+                  <h3 className="text-base font-heading font-bold text-void-100 group-hover:text-signal-400 transition-colors mb-1">
                     {a.title}
                   </h3>
                   <p className="text-sm text-void-400 leading-relaxed line-clamp-2">
@@ -102,7 +102,7 @@ export default function SearchResults({ articles }: { articles: SearchArticle[] 
                     <span>{a.date}</span>
                   </div>
                 </div>
-                <ArrowRight size={16} className="text-void-600 group-hover:text-accent-400 mt-1 shrink-0 transition-colors" />
+                <ArrowRight size={16} className="text-void-600 group-hover:text-signal-400 mt-1 shrink-0 transition-colors" />
               </div>
             </Link>
           ))}

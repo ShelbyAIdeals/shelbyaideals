@@ -84,21 +84,21 @@ export default function AffiliateDisclosurePage() {
               </p>
               <ul className="mt-3 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     Call-to-action buttons (e.g., &ldquo;Try [Tool Name]&rdquo;)
                     that link to external tool websites
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     Links marked with an &ldquo;Affiliate link&rdquo; label
                     beneath them
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     Comparison tables and best-of lists where each tool has a
                     direct link to its website
@@ -158,7 +158,7 @@ export default function AffiliateDisclosurePage() {
                 editorial process, please reach out to us at{' '}
                 <a
                   href="mailto:support@shelby-ai.com"
-                  className="text-accent-400 hover:text-accent-300 underline"
+                  className="text-signal-400 hover:text-signal-300 underline"
                 >
                   support@shelby-ai.com
                 </a>

@@ -17,6 +17,7 @@
     "autopilot": "tsx scripts/publish-next.ts --count 1"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.35.0",
     "gray-matter": "^4.0.3",

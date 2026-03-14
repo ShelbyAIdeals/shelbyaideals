@@ -30,7 +30,7 @@ export default function SubmitToolForm() {
     <>
       {submitted ? (
         <div className="card p-8 text-center">
-          <CheckCircle size={48} className="text-accent-400 mx-auto mb-4" />
+          <CheckCircle size={48} className="text-signal-400 mx-auto mb-4" />
           <h2 className="text-xl font-bold text-void-50 mb-2">Tool submitted!</h2>
           <p className="text-void-300">
             We've added it to our queue. If we review it, we'll let you know.

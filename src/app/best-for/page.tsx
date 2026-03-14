@@ -23,7 +23,7 @@ export default function BestForIndexPage() {
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         <ScrollReveal>
           <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">
-            <Link href="/" className="hover:text-accent-400 no-underline transition-colors text-void-500">Home</Link>
+            <Link href="/" className="hover:text-signal-400 no-underline transition-colors text-void-500">Home</Link>
             <span>/</span>
             <span className="text-void-300">Best For</span>
           </nav>
@@ -32,8 +32,8 @@ export default function BestForIndexPage() {
         <ScrollReveal>
           <div className="max-w-3xl mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/15 border border-accent-500/25">
-                <Users size={20} className="text-accent-400" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-signal-500/15 border border-signal-500/25">
+                <Users size={20} className="text-signal-400" />
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-void-50 font-heading">
                 Best AI Tools by Use Case
@@ -50,9 +50,9 @@ export default function BestForIndexPage() {
             <StaggerItem key={page.slug}>
               <Link
                 href={`/best-for/${page.slug}`}
-                className="group card flex flex-col p-6 border border-void-700/50 hover:border-accent-500/40 rounded-xl no-underline transition-all h-full"
+                className="group card flex flex-col p-6 border border-void-700/50 hover:border-signal-500/40 rounded-xl no-underline transition-all h-full"
               >
-                <h2 className="text-lg font-bold text-void-50 font-heading group-hover:text-accent-400 transition-colors mb-2">
+                <h2 className="text-lg font-bold text-void-50 font-heading group-hover:text-signal-400 transition-colors mb-2">
                   Best AI Tools for {page.useCase}
                 </h2>
                 <p className="text-sm text-void-400 leading-relaxed mb-4 flex-1">
@@ -71,7 +71,7 @@ export default function BestForIndexPage() {
                     <span className="text-xs text-void-500">+{page.tools.length - 3} more</span>
                   )}
                 </div>
-                <div className="flex items-center gap-1 text-sm font-semibold text-accent-400 group-hover:text-accent-300 transition-colors pt-3 border-t border-void-800/60">
+                <div className="flex items-center gap-1 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors pt-3 border-t border-void-800/60">
                   View {page.tools.length} Picks <ArrowRight size={14} />
                 </div>
               </Link>

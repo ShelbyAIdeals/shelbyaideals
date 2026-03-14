@@ -56,10 +56,10 @@ export default async function BestOfPage() {
               <StaggerItem key={article.slug}>
                 <Link
                   href={`/best/${article.slug}`}
-                  className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                  className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                 >
                   {/* Tool count */}
-                  <span className="badge-accent mb-3 inline-block">
+                  <span className="badge-signal mb-3 inline-block">
                     {article.tools.length} tools ranked
                   </span>
 
@@ -85,7 +85,7 @@ export default async function BestOfPage() {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                  <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                     See Full Rankings <span className="ml-1">&rarr;</span>
                   </span>
                 </Link>

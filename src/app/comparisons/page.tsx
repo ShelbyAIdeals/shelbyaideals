@@ -56,12 +56,12 @@ export default async function ComparisonsPage() {
               <StaggerItem key={comp.slug}>
                 <Link
                   href={`/comparisons/${comp.slug}`}
-                  className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                  className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                 >
                   {/* Tools involved */}
                   <div className="flex flex-wrap gap-2 mb-3">
                     {comp.tools.map((tool) => (
-                      <span key={tool} className="badge-accent">
+                      <span key={tool} className="badge-signal">
                         {tool}
                       </span>
                     ))}
@@ -83,7 +83,7 @@ export default async function ComparisonsPage() {
                       {comp.winners.length}{' '}
                       {comp.winners.length === 1 ? 'scenario' : 'scenarios'} compared
                     </span>
-                    <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                    <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                       Read Comparison <span className="ml-1">&rarr;</span>
                     </span>
                   </div>

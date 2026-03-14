@@ -24,8 +24,8 @@ export default function ComparisonTable({ tools }: ComparisonTableProps) {
       <table className="w-full border-collapse text-sm">
         {/* Header row: tool names + CTAs */}
         <thead>
-          <tr className="bg-void-800 text-void-50">
-            <th className="sticky left-0 z-10 bg-void-800 px-4 py-4 text-left text-sm font-semibold min-w-[140px]">
+          <tr className="bg-signal-500/10 text-void-50">
+            <th className="sticky left-0 z-10 bg-signal-500/10 px-4 py-4 text-left text-sm font-semibold min-w-[140px]">
               Feature
             </th>
             {tools.map((tool) => (
@@ -63,7 +63,7 @@ export default function ComparisonTable({ tools }: ComparisonTableProps) {
                       value ? (
                         <Check
                           size={18}
-                          className="mx-auto text-accent-500"
+                          className="mx-auto text-signal-500"
                         />
                       ) : (
                         <X size={18} className="mx-auto text-void-400" />

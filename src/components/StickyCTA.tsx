@@ -34,7 +34,7 @@ export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rati
           <span className="text-sm font-semibold text-void-50 truncate">
             {toolName}
           </span>
-          <span className="text-xs text-accent-400 font-semibold shrink-0">
+          <span className="text-xs text-signal-400 font-semibold shrink-0">
             {rating}/5
           </span>
         </div>
@@ -44,7 +44,7 @@ export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rati
             href={affiliateUrl}
             target="_blank"
             rel="nofollow sponsored noopener"
-            className="btn-primary text-sm !py-2 !px-4 gap-1.5"
+            className="btn-accent text-sm !py-2 !px-4 gap-1.5"
           >
             {affiliateLabel} <ArrowRight size={14} />
           </a>

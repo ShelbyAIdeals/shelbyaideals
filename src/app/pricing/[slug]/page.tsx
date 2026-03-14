@@ -86,7 +86,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
         {/* Breadcrumb */}
         <ScrollReveal>
           <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">
-            <Link href="/" className="hover:text-accent-400 no-underline transition-colors text-void-500">Home</Link>
+            <Link href="/" className="hover:text-signal-400 no-underline transition-colors text-void-500">Home</Link>
             <span>/</span>
             <span className="text-void-500">Pricing</span>
             <span>/</span>
@@ -107,17 +107,17 @@ export default async function PricingDetailPage({ params }: PageProps) {
             {/* Trust signals */}
             <div className="flex flex-wrap items-center gap-4 mt-6">
               <div className="flex items-center gap-2 text-sm text-void-400">
-                <Clock size={14} className="text-accent-500" />
+                <Clock size={14} className="text-signal-500" />
                 <span>Last updated: {page.lastUpdated}</span>
               </div>
               {page.freeTrialAvailable && (
-                <div className="flex items-center gap-2 text-sm text-accent-400">
+                <div className="flex items-center gap-2 text-sm text-signal-400">
                   <Shield size={14} />
                   <span>{page.freeTrialDays}-day free trial available</span>
                 </div>
               )}
               {page.moneyBackGuarantee && (
-                <div className="flex items-center gap-2 text-sm text-accent-400">
+                <div className="flex items-center gap-2 text-sm text-signal-400">
                   <CreditCard size={14} />
                   <span>{page.moneyBackGuarantee}</span>
                 </div>
@@ -129,7 +129,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
                 Want the full picture?{' '}
                 <Link
                   href={`/reviews/${page.reviewSlug}`}
-                  className="text-accent-400 hover:text-accent-300 no-underline font-medium"
+                  className="text-signal-400 hover:text-signal-300 no-underline font-medium"
                 >
                   Read our {page.tool} review &rarr;
                 </Link>
@@ -145,12 +145,12 @@ export default async function PricingDetailPage({ params }: PageProps) {
               <div
                 className={`relative flex flex-col rounded-xl border p-6 h-full transition-all ${
                   plan.highlighted
-                    ? 'border-accent-500/40 bg-void-900/80 shadow-[0_0_30px_rgba(6,182,212,0.08)]'
+                    ? 'border-signal-500/40 bg-void-900/80 shadow-[0_0_30px_rgba(6,182,212,0.08)]'
                     : 'border-void-700/50 bg-void-900/40'
                 }`}
               >
                 {plan.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-bold text-void-950 uppercase tracking-wider">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-signal-500 px-4 py-1 text-xs font-bold text-void-950 uppercase tracking-wider">
                     Most Popular
                   </div>
                 )}
@@ -168,7 +168,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
                 <ul className="space-y-2.5 mb-6 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
-                      <Check size={14} className="text-accent-500 mt-0.5 shrink-0" />
+                      <Check size={14} className="text-signal-500 mt-0.5 shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -180,8 +180,8 @@ export default async function PricingDetailPage({ params }: PageProps) {
                   rel="nofollow sponsored noopener"
                   className={`flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold no-underline transition-all ${
                     plan.highlighted
-                      ? 'bg-accent-500 text-void-950 hover:bg-accent-400'
-                      : 'border border-void-600 text-void-200 hover:border-accent-500/40 hover:text-accent-400'
+                      ? 'bg-signal-500 text-void-950 hover:bg-signal-400'
+                      : 'border border-void-600 text-void-200 hover:border-signal-500/40 hover:text-signal-400'
                   }`}
                 >
                   {plan.price === 'Custom' ? 'Contact Sales' : `Try ${plan.name}`}
@@ -213,7 +213,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
         {/* Bottom CTA */}
         <ScrollReveal>
           <div className="mt-14 text-center">
-            <div className="bg-void-900/60 border border-accent-500/15 rounded-xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
+            <div className="bg-void-900/60 border border-signal-500/15 rounded-xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
               <h2 className="text-xl font-bold text-void-50 mb-3 font-heading">
                 Not sure if {page.tool} is right for you?
               </h2>

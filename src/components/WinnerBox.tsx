@@ -16,12 +16,12 @@ export default function WinnerBox({
 }: WinnerBoxProps) {
   return (
     <div
-      className="my-8 rounded-xl border border-void-700/50 border-l-4 border-l-accent-500 bg-void-900 p-6"
-      style={{ boxShadow: '0 0 20px rgba(6,182,212,0.1)' }}
+      className="my-8 rounded-xl border border-void-700/50 border-l-4 border-l-ember-500 bg-void-900 p-6"
+      style={{ boxShadow: '0 0 20px rgba(249,115,22,0.1)' }}
     >
       <div className="mb-3 flex items-center gap-2">
-        <Trophy size={20} className="text-accent-500" />
-        <span className="text-sm font-semibold uppercase tracking-wide text-accent-400">
+        <Trophy size={20} className="text-ember-400" />
+        <span className="text-sm font-semibold uppercase tracking-wide text-ember-400">
           Our Pick for {scenario}
         </span>
       </div>

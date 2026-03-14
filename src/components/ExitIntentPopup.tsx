@@ -84,7 +84,7 @@ export default function ExitIntentPopup() {
         </button>
 
         <div className="text-center">
-          <div className="w-12 h-12 rounded-xl bg-accent-500 flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 rounded-xl bg-ember-500 flex items-center justify-center mx-auto mb-4">
             <Zap size={24} className="text-void-950" strokeWidth={2.5} />
           </div>
 
@@ -97,14 +97,14 @@ export default function ExitIntentPopup() {
 
           {subscribed ? (
             <div className="space-y-3">
-              <p className="text-accent-400 font-semibold">
+              <p className="text-signal-400 font-semibold">
                 You're in! Here's your cheatsheet:
               </p>
               <a
                 href="/ai-tool-stack-cheatsheet.html"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors"
+                className="btn-accent inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg"
               >
                 <Download size={16} />
                 Download Cheatsheet
@@ -118,12 +118,12 @@ export default function ExitIntentPopup() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 required
-                className="w-full px-4 py-3 text-sm rounded-lg bg-void-800 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
+                className="w-full px-4 py-3 text-sm rounded-lg bg-void-800 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-4 py-3 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="btn-accent w-full px-4 py-3 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {loading ? 'Subscribing...' : 'Get Weekly AI Picks'}
                 {!loading && <ArrowRight size={14} />}

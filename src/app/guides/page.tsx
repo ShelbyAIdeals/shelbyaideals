@@ -56,7 +56,7 @@ export default async function GuidesPage() {
               <StaggerItem key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                  className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                 >
                   <span className="badge-void mb-3 inline-block">Guide</span>
 
@@ -74,7 +74,7 @@ export default async function GuidesPage() {
                       {guide.recommendedTools.slice(0, 3).map((tool) => (
                         <span
                           key={tool.name}
-                          className="rounded-full bg-accent-500/15 px-2.5 py-0.5 text-xs font-medium text-accent-300"
+                          className="rounded-full bg-signal-500/15 px-2.5 py-0.5 text-xs font-medium text-signal-300"
                         >
                           {tool.name}
                         </span>
@@ -93,7 +93,7 @@ export default async function GuidesPage() {
                         {guide.readingTime}
                       </span>
                     )}
-                    <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                    <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                       Read Guide <span className="ml-1">&rarr;</span>
                     </span>
                   </div>

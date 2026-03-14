@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import StarRating from './StarRating';
 
 interface ReviewCardProps {
   title: string;
@@ -23,6 +22,7 @@ export default function ReviewCard({
   tool,
   rating,
   excerpt,
+  category,
   bestFor,
   featuredImage,
   toolSlug,
@@ -33,19 +33,21 @@ export default function ReviewCard({
   const imageSrc = featuredImage || webpSrc;
   const fallbackSrc = '/images/placeholders/tool-thumb.svg';
 
+  const clampedRating = Math.max(0, Math.min(5, Number(rating) || 0));
+
   return (
-    <Link href={`/reviews/${slug}`} className="no-underline block">
+    <Link href={`/reviews/${slug}`} className="no-underline block h-full">
       <motion.article
-        className="card group overflow-hidden flex flex-col cursor-pointer h-full"
-        whileHover={{ y: -4, boxShadow: '0 0 32px rgba(6,182,212,0.12)' }}
+        className="card-elevated group overflow-hidden flex flex-col cursor-pointer h-full"
+        whileHover={{ y: -4 }}
         transition={{ type: 'spring', stiffness: 300, damping: 24 }}
       >
-        {/* Tool image */}
-        <div className="aspect-video bg-void-800 overflow-hidden">
+        {/* Image area with gradient overlay + rating circle */}
+        <div className="relative aspect-video bg-void-800 overflow-hidden">
           <img
             src={imageSrc}
             alt={`${tool} review`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
@@ -53,34 +55,59 @@ export default function ReviewCard({
               else if (!img.src.endsWith('tool-thumb.svg')) img.src = fallbackSrc;
             }}
           />
+
+          {/* Gradient overlay: transparent top → void-900 bottom */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                'linear-gradient(to bottom, transparent 30%, var(--color-void-900) 100%)',
+            }}
+          />
+
+          {/* Rating score circle — overlapping bottom-right of image */}
+          <motion.div
+            className="badge-score w-10 h-10 text-sm absolute bottom-0 right-4 translate-y-1/2 z-10 shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+          >
+            {clampedRating.toFixed(1)}
+          </motion.div>
         </div>
 
-        <div className="p-5 sm:p-6 flex flex-col flex-1">
-          {/* Top row: tool badge + rating */}
-          <div className="flex items-center justify-between gap-3 mb-3">
-            <span className="badge-accent">{tool}</span>
-            <StarRating rating={rating} size="sm" />
-          </div>
-
-          {/* Title */}
-          <h3 className="text-lg font-heading font-bold text-void-100 leading-snug mb-2 group-hover:text-accent-400 transition-colors">
-            {title}
+        {/* Content area */}
+        <div className="p-5 sm:p-6 flex flex-col flex-1 pt-6">
+          {/* Tool name */}
+          <h3 className="text-base font-heading font-bold text-void-50 leading-snug group-hover:text-signal-400 transition-colors">
+            {tool}
           </h3>
 
+          {/* Article title */}
+          <p className="text-sm text-void-300 leading-snug mt-1 mb-3">
+            {title}
+          </p>
+
           {/* Excerpt */}
-          <p className="text-sm text-void-400 leading-relaxed mb-4 flex-1">
+          <p className="text-sm text-void-400 leading-relaxed line-clamp-2 mb-4 flex-1">
             {excerpt}
           </p>
 
-          {/* Best for */}
-          <p className="text-xs text-void-500 mb-4">
-            <span className="font-semibold text-void-300">Best for:</span> {bestFor}
-          </p>
+          {/* Tag row */}
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="badge-signal">{category}</span>
+            <span className="text-xs text-void-500">
+              <span className="font-semibold text-void-300">Best for:</span>{' '}
+              {bestFor}
+            </span>
+          </div>
 
-          {/* Read review link */}
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-100 group-hover:text-void-50">
+          {/* Read Review link */}
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto">
             Read Review
-            <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight
+              size={14}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
           </span>
         </div>
       </motion.article>

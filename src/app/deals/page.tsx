@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 function DealBadge({ deal }: { deal: Deal }) {
   const colors = {
-    'free-trial': 'bg-accent-500/15 text-accent-300 border-accent-500/25',
+    'free-trial': 'bg-signal-500/15 text-signal-300 border-signal-500/25',
     discount: 'bg-green-500/15 text-green-300 border-green-500/25',
     'free-tier': 'bg-violet-500/15 text-violet-300 border-violet-500/25',
   };
@@ -54,13 +54,13 @@ function DealCard({ deal, featured = false }: { deal: Deal; featured?: boolean }
     <div
       className={`relative flex flex-col h-full rounded-2xl border p-6 transition-all hover:-translate-y-1 hover:shadow-xl ${
         featured
-          ? 'bg-void-900 border-accent-500/30 shadow-[0_0_30px_rgba(5,160,186,0.08)]'
+          ? 'bg-void-900 border-signal-500/30 shadow-[0_0_30px_rgba(5,160,186,0.08)]'
           : 'bg-void-900 border-void-700/60 hover:border-void-600/80'
       }`}
     >
       {featured && (
         <div className="absolute -top-3 left-6">
-          <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold rounded-full bg-accent-500 text-void-950">
+          <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-bold rounded-full bg-signal-500 text-void-950">
             <Star size={12} fill="currentColor" />
             Featured Deal
           </span>
@@ -82,7 +82,7 @@ function DealCard({ deal, featured = false }: { deal: Deal; featured?: boolean }
       {/* Pricing */}
       {deal.dealPrice && (
         <div className="flex items-baseline gap-2 mb-4">
-          <span className="text-xl font-bold text-accent-400">{deal.dealPrice}</span>
+          <span className="text-xl font-bold text-signal-400">{deal.dealPrice}</span>
           {deal.regularPrice && (
             <span className="text-sm text-void-500 line-through">{deal.regularPrice}</span>
           )}
@@ -93,7 +93,7 @@ function DealCard({ deal, featured = false }: { deal: Deal; featured?: boolean }
       <ul className="space-y-2 mb-6">
         {deal.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
-            <Zap size={14} className="text-accent-500 mt-0.5 shrink-0" />
+            <Zap size={14} className="text-signal-500 mt-0.5 shrink-0" />
             {feature}
           </li>
         ))}
@@ -107,7 +107,7 @@ function DealCard({ deal, featured = false }: { deal: Deal; featured?: boolean }
           rel="nofollow sponsored noopener"
           className={`inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold rounded-lg transition-colors ${
             featured
-              ? 'bg-accent-500 text-void-950 hover:bg-accent-400'
+              ? 'bg-signal-500 text-void-950 hover:bg-signal-400'
               : 'bg-void-800 text-void-50 border border-void-700/50 hover:bg-void-700 hover:border-void-600'
           }`}
         >
@@ -117,7 +117,7 @@ function DealCard({ deal, featured = false }: { deal: Deal; featured?: boolean }
         {deal.reviewSlug && (
           <Link
             href={`/reviews/${deal.reviewSlug}`}
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-medium text-void-400 hover:text-accent-400 transition-colors no-underline"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-medium text-void-400 hover:text-signal-400 transition-colors no-underline"
           >
             Read Full Review
             <ArrowRight size={12} />
@@ -140,7 +140,7 @@ export default function DealsPage() {
         {/* Hero */}
         <ScrollReveal>
           <div className="max-w-2xl mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-500/10 border border-accent-500/15 text-accent-400 text-xs font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/15 text-signal-400 text-xs font-semibold mb-4">
               <Tag size={14} />
               Updated March 2026
             </div>

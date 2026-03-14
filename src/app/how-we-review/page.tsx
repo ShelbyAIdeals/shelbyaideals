@@ -49,8 +49,8 @@ export default function HowWeReviewPage() {
               <div className="space-y-6">
                 {/* Step 1 */}
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center shrink-0">
-                    <Search size={20} className="text-accent-400" />
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center shrink-0">
+                    <Search size={20} className="text-signal-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-void-100 mb-1">
@@ -67,8 +67,8 @@ export default function HowWeReviewPage() {
 
                 {/* Step 2 */}
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center shrink-0">
-                    <TestTube size={20} className="text-accent-400" />
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center shrink-0">
+                    <TestTube size={20} className="text-signal-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-void-100 mb-1">
@@ -85,8 +85,8 @@ export default function HowWeReviewPage() {
 
                 {/* Step 3 */}
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center shrink-0">
-                    <Scale size={20} className="text-accent-400" />
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center shrink-0">
+                    <Scale size={20} className="text-signal-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-void-100 mb-1">
@@ -102,8 +102,8 @@ export default function HowWeReviewPage() {
 
                 {/* Step 4 */}
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center shrink-0">
-                    <Star size={20} className="text-accent-400" />
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center shrink-0">
+                    <Star size={20} className="text-signal-400" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-void-100 mb-1">
@@ -141,27 +141,27 @@ export default function HowWeReviewPage() {
                   <tbody className="divide-y divide-void-700/50">
                     <tr className="bg-void-950">
                       <td className="px-4 py-3 font-medium text-void-200">Output Quality</td>
-                      <td className="px-4 py-3 text-accent-400">30%</td>
+                      <td className="px-4 py-3 text-signal-400">30%</td>
                       <td className="px-4 py-3">Accuracy, usefulness, and readiness of the AI output</td>
                     </tr>
                     <tr className="bg-void-900/50">
                       <td className="px-4 py-3 font-medium text-void-200">Ease of Use</td>
-                      <td className="px-4 py-3 text-accent-400">20%</td>
+                      <td className="px-4 py-3 text-signal-400">20%</td>
                       <td className="px-4 py-3">Interface design, learning curve, and onboarding experience</td>
                     </tr>
                     <tr className="bg-void-950">
                       <td className="px-4 py-3 font-medium text-void-200">Value for Money</td>
-                      <td className="px-4 py-3 text-accent-400">25%</td>
+                      <td className="px-4 py-3 text-signal-400">25%</td>
                       <td className="px-4 py-3">Pricing, free tiers, and ROI compared to alternatives</td>
                     </tr>
                     <tr className="bg-void-900/50">
                       <td className="px-4 py-3 font-medium text-void-200">Features</td>
-                      <td className="px-4 py-3 text-accent-400">15%</td>
+                      <td className="px-4 py-3 text-signal-400">15%</td>
                       <td className="px-4 py-3">Breadth and depth of features, integrations, and flexibility</td>
                     </tr>
                     <tr className="bg-void-950">
                       <td className="px-4 py-3 font-medium text-void-200">Support &amp; Docs</td>
-                      <td className="px-4 py-3 text-accent-400">10%</td>
+                      <td className="px-4 py-3 text-signal-400">10%</td>
                       <td className="px-4 py-3">Documentation quality, customer support, and community</td>
                     </tr>
                   </tbody>
@@ -172,7 +172,7 @@ export default function HowWeReviewPage() {
             {/* Editorial independence */}
             <section>
               <h2 className="text-xl font-bold text-void-100 mb-3 flex items-center gap-2">
-                <ShieldCheck size={22} className="text-accent-400" />
+                <ShieldCheck size={22} className="text-signal-400" />
                 Editorial Independence
               </h2>
               <p className="mb-3">
@@ -182,19 +182,19 @@ export default function HowWeReviewPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>We give low scores to tools with affiliate programs if they deserve it.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>We recommend free tools over paid ones when they&apos;re genuinely better.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>We clearly disclose affiliate relationships on every review page.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>No tool company has editorial input or approval over our content.</span>
                 </li>
               </ul>
@@ -211,7 +211,7 @@ export default function HowWeReviewPage() {
                 new features. Every review shows a &ldquo;Last updated&rdquo;
                 date so you know how current the information is. If you spot
                 something outdated, please{' '}
-                <a href="/contact" className="text-accent-400 hover:text-accent-300 underline">
+                <a href="/contact" className="text-signal-400 hover:text-signal-300 underline">
                   let us know
                 </a>
                 .

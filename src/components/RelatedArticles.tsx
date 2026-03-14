@@ -48,10 +48,10 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
               className="card group p-5 no-underline hover:-translate-y-1 transition-all block"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="badge-accent text-[0.65rem]">{article.category.replace(/-/g, ' ')}</span>
+                <span className="badge-signal text-[0.65rem]">{article.category.replace(/-/g, ' ')}</span>
                 <span className="badge-void text-[0.65rem] capitalize">{article.type}</span>
               </div>
-              <h3 className="text-sm font-heading font-bold text-void-100 leading-snug mb-2 group-hover:text-accent-400 transition-colors line-clamp-2">
+              <h3 className="text-sm font-heading font-bold text-void-100 leading-snug mb-2 group-hover:text-signal-400 transition-colors line-clamp-2">
                 {article.title}
               </h3>
               {review && (
@@ -59,7 +59,7 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
                   <StarRating rating={review.rating} size="sm" />
                 </div>
               )}
-              <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent-400 group-hover:text-accent-300">
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
                 Read More <ArrowRight size={12} />
               </span>
             </Link>

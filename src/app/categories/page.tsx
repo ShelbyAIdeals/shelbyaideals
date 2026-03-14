@@ -62,18 +62,18 @@ export default function CategoriesPage() {
               <Link
                 key={cat.slug}
                 href={`/categories/${cat.slug}`}
-                className="group card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1"
+                className="group card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center group-hover:bg-accent-500/20 transition-colors">
-                    <Icon size={20} className="text-accent-400" />
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center group-hover:bg-signal-500/20 transition-colors">
+                    <Icon size={20} className="text-signal-400" />
                   </div>
                   <span className="text-xs font-medium text-void-400">
                     {articles.length} {articles.length === 1 ? 'article' : 'articles'}
                   </span>
                 </div>
 
-                <h2 className="text-lg font-bold text-void-100 mb-2 group-hover:text-accent-400 transition-colors">
+                <h2 className="text-lg font-bold text-void-100 mb-2 group-hover:text-signal-400 transition-colors">
                   {cat.name}
                 </h2>
                 <p className="text-sm text-void-400 leading-relaxed">

@@ -121,11 +121,11 @@ export default async function GuidePage({ params }: PageProps) {
                 href={tool.affiliateUrl}
                 target="_blank"
                 rel="nofollow sponsored noopener"
-                className="card p-4 no-underline hover:border-accent-400/50 border-2 border-transparent transition-all group"
+                className="card p-4 no-underline hover:border-signal-400/50 border-2 border-transparent transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <h3 className="text-sm font-bold text-void-100 group-hover:text-accent-400 transition-colors">
+                    <h3 className="text-sm font-bold text-void-100 group-hover:text-signal-400 transition-colors">
                       {tool.name}
                     </h3>
                     <p className="text-xs text-void-300 mt-0.5">
@@ -137,7 +137,7 @@ export default async function GuidePage({ params }: PageProps) {
                   </div>
                   <ArrowRight
                     size={14}
-                    className="shrink-0 text-accent-400 mt-0.5 group-hover:translate-x-0.5 transition-transform"
+                    className="shrink-0 text-signal-400 mt-0.5 group-hover:translate-x-0.5 transition-transform"
                   />
                 </div>
                 <span className="mt-2 block text-[10px] text-void-500">

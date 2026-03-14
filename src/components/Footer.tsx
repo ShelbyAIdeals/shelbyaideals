@@ -2,7 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Zap, ArrowRight, Twitter, Linkedin } from 'lucide-react';
+import { Zap, ArrowRight, Twitter, Linkedin, Check, Send } from 'lucide-react';
+
+/* ------------------------------------------------------------------ */
+/*  Link data                                                          */
+/* ------------------------------------------------------------------ */
 
 const categoryLinks = [
   { label: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
@@ -22,7 +26,6 @@ const resourceLinks = [
   { label: 'Alternatives', href: '/alternatives' },
   { label: 'Pricing Guides', href: '/pricing' },
   { label: 'Best For You', href: '/best-for' },
-  { label: 'Submit a Tool', href: '/submit-tool' },
 ];
 
 const companyLinks = [
@@ -31,9 +34,38 @@ const companyLinks = [
   { label: 'Contact', href: '/contact' },
   { label: 'How We Review', href: '/how-we-review' },
   { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
-  { label: 'Terms of Service', href: '/terms-of-service' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
+
+const connectLinks = [
+  {
+    label: 'X / Twitter',
+    href: 'https://x.com/shelbyaideals',
+    external: true,
+    icon: Twitter,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/shelby-ai-1bb38a3b6/',
+    external: true,
+    icon: Linkedin,
+  },
+  {
+    label: 'Submit a Tool',
+    href: '/submit-tool',
+    external: false,
+    icon: Send,
+  },
+];
+
+const benefits = [
+  'Weekly curated AI tool picks',
+  'Exclusive deals and discounts',
+  'Workflow tips from real users',
+];
+
+/* ------------------------------------------------------------------ */
+/*  Component                                                          */
+/* ------------------------------------------------------------------ */
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -70,15 +102,95 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-[2] bg-void-950 text-void-300 overflow-hidden border-t border-void-700/80">
-      {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-accent-500/4 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative z-[2] bg-void-950 text-void-300 overflow-hidden">
+      {/* ── Background glow blob ── */}
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[200px] bg-signal-500/4 rounded-full blur-3xl pointer-events-none" />
 
+      {/* ══════════════════════════════════════════════════════════════
+          TOP BANNER — Newsletter CTA
+      ══════════════════════════════════════════════════════════════ */}
+      <div className="relative border-b border-void-800/60 bg-gradient-to-b from-void-900 via-void-950 to-void-950">
+        {/* Dot grid overlay */}
+        <div className="pattern-dots absolute inset-0 opacity-40 pointer-events-none" />
+
+        <div className="container-main relative py-14 sm:py-16">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-16">
+            {/* Left — headline + benefits */}
+            <div className="flex-1 min-w-0">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
+                Stay ahead of the AI curve
+              </h3>
+              <ul className="space-y-3">
+                {benefits.map((b) => (
+                  <li key={b} className="flex items-center gap-2.5 text-sm text-void-300">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-signal-500/15 flex items-center justify-center">
+                      <Check size={12} className="text-signal-400" strokeWidth={3} />
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right — form */}
+            <div className="w-full lg:w-[380px] flex-shrink-0">
+              {subscribed ? (
+                <div className="rounded-xl border border-signal-500/20 bg-signal-500/5 p-6 text-center">
+                  <div className="mx-auto mb-3 w-10 h-10 rounded-full bg-signal-500/15 flex items-center justify-center">
+                    <Check size={20} className="text-signal-400" strokeWidth={2.5} />
+                  </div>
+                  <p className="text-base font-semibold text-signal-400 mb-1">
+                    You&rsquo;re in!
+                  </p>
+                  <p className="text-sm text-void-400">
+                    Check your inbox for the first edition.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@email.com"
+                      required
+                      className="flex-1 min-w-0 px-4 py-3 text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent transition-shadow"
+                    />
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="px-5 py-3 text-sm font-semibold rounded-lg bg-gradient-to-r from-signal-500 to-signal-400 text-void-950 hover:brightness-110 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    >
+                      {loading ? (
+                        'Sending...'
+                      ) : (
+                        <>
+                          Get Free Picks
+                          <ArrowRight size={14} />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  {error && <p className="text-xs text-red-400">{error}</p>}
+                  <p className="text-xs text-void-500">
+                    Free forever. Unsubscribe anytime. No spam.
+                  </p>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════════
+          MIDDLE — Link Grid
+      ══════════════════════════════════════════════════════════════ */}
       <div className="container-main py-14 sm:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 lg:gap-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
-            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               Categories
             </h4>
             <ul className="space-y-2.5">
@@ -86,7 +198,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -97,7 +209,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               Resources
             </h4>
             <ul className="space-y-2.5">
@@ -105,7 +217,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -116,7 +228,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               Company
             </h4>
             <ul className="space-y-2.5">
@@ -124,7 +236,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-300 hover:text-accent-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -133,85 +245,89 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Connect */}
           <div>
-            <h4 className="text-xs font-bold text-accent-400 font-heading uppercase tracking-widest mb-4">
-              Newsletter
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
+              Connect
             </h4>
-            <p className="text-sm text-void-300 mb-4 leading-relaxed">
-              Weekly AI tool tips and exclusive deals.
-            </p>
+            <ul className="space-y-2.5">
+              {connectLinks.map((link) => {
+                const Icon = link.icon;
+                const inner = (
+                  <span className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors">
+                    <Icon size={14} className="flex-shrink-0" />
+                    {link.label}
+                  </span>
+                );
 
-            {subscribed ? (
-              <p className="text-sm font-medium text-accent-400">
-                Subscribed -- welcome aboard!
-              </p>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@email.com"
-                  required
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full px-3 py-2 text-sm font-semibold rounded-lg bg-accent-500 text-void-950 hover:bg-accent-400 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
-                >
-                  {loading ? 'Subscribing...' : 'Subscribe'}
-                  {!loading && <ArrowRight size={14} />}
-                </button>
-                {error && <p className="text-xs text-red-400">{error}</p>}
-              </form>
-            )}
+                return (
+                  <li key={link.href}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                        aria-label={link.label}
+                      >
+                        <Icon size={14} className="flex-shrink-0" />
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                      >
+                        <Icon size={14} className="flex-shrink-0" />
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-void-800/80">
-        <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      {/* ══════════════════════════════════════════════════════════════
+          BOTTOM BAR
+      ══════════════════════════════════════════════════════════════ */}
+      <div className="border-t border-void-800/60">
+        <div className="container-main py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 no-underline group"
-          >
-            <div className="w-6 h-6 rounded-md bg-accent-500 flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-2 no-underline group flex-shrink-0">
+            <div className="w-6 h-6 rounded-md bg-signal-500 flex items-center justify-center">
               <Zap size={12} className="text-void-950" strokeWidth={2.5} />
             </div>
             <span className="text-sm font-heading font-bold text-void-50">
-              Shelby<span className="text-accent-400">AI</span>Deals
+              Shelby<span className="text-signal-400">AI</span>Deals
             </span>
           </Link>
 
-          <div className="flex items-center gap-3">
-            <a
-              href="https://x.com/shelbyaideals"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-void-400 hover:text-accent-400 transition-colors"
-              aria-label="Follow us on X (Twitter)"
+          {/* Copyright + legal links */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-1 text-xs text-void-500">
+            <span>&copy; {new Date().getFullYear()} ShelbyAIDeals</span>
+            <span className="hidden sm:inline text-void-700">|</span>
+            <Link
+              href="/terms-of-service"
+              className="hover:text-void-300 no-underline transition-colors"
             >
-              <Twitter size={18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shelby-ai-1bb38a3b6/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-void-400 hover:text-accent-400 transition-colors"
-              aria-label="Follow us on LinkedIn"
+              Terms
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className="hover:text-void-300 no-underline transition-colors"
             >
-              <Linkedin size={18} />
-            </a>
+              Privacy
+            </Link>
+            <Link
+              href="/affiliate-disclosure"
+              className="hover:text-void-300 no-underline transition-colors"
+            >
+              Affiliate Disclosure
+            </Link>
           </div>
-
-          <p className="text-xs text-void-300 text-center sm:text-right leading-relaxed">
-            &copy; 2026 ShelbyAIDeals &mdash; Honest AI tool reviews for creators
-            and small teams.
-          </p>
         </div>
       </div>
     </footer>

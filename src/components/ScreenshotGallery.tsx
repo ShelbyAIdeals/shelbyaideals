@@ -19,7 +19,7 @@ export default function ScreenshotGallery({ images }: ScreenshotGalleryProps) {
           <button
             key={i}
             onClick={() => setLightboxIndex(i)}
-            className="aspect-video rounded-lg overflow-hidden border border-void-700/50 bg-void-800 hover:border-accent-500/30 transition-colors cursor-pointer"
+            className="aspect-video rounded-lg overflow-hidden border border-void-700/50 bg-void-800 hover:border-signal-500/30 transition-colors cursor-pointer"
           >
             <img
               src={img.src}

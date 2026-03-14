@@ -43,8 +43,8 @@ export default function ContactPage() {
             {/* Email card */}
             <div className="rounded-xl border border-void-700/50 bg-void-900/60 p-6">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center">
-                  <Mail size={20} className="text-accent-400" />
+                <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center">
+                  <Mail size={20} className="text-signal-400" />
                 </div>
                 <h2 className="text-lg font-bold text-void-100">Email</h2>
               </div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
               </p>
               <a
                 href="mailto:support@shelby-ai.com"
-                className="text-accent-400 hover:text-accent-300 text-sm font-semibold underline"
+                className="text-signal-400 hover:text-signal-300 text-sm font-semibold underline"
               >
                 support@shelby-ai.com
               </a>
@@ -62,8 +62,8 @@ export default function ContactPage() {
             {/* Response time card */}
             <div className="rounded-xl border border-void-700/50 bg-void-900/60 p-6">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center">
-                  <Clock size={20} className="text-accent-400" />
+                <div className="w-10 h-10 rounded-lg bg-signal-500/10 flex items-center justify-center">
+                  <Clock size={20} className="text-signal-400" />
                 </div>
                 <h2 className="text-lg font-bold text-void-100">Response Time</h2>
               </div>
@@ -76,19 +76,19 @@ export default function ContactPage() {
           <div className="space-y-8 text-void-300 leading-relaxed">
             <section>
               <h2 className="text-xl font-bold text-void-100 mb-3 flex items-center gap-2">
-                <MessageSquare size={20} className="text-accent-400" />
+                <MessageSquare size={20} className="text-signal-400" />
                 What You Can Reach Out About
               </h2>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Tool review requests</span>{' '}
                     &mdash; want us to review a specific AI tool? Let us know.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Corrections &amp; updates</span>{' '}
                     &mdash; spotted outdated pricing, a broken link, or incorrect
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Partnership &amp; advertising</span>{' '}
                     &mdash; interested in working with us? We&apos;re open to
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">General feedback</span>{' '}
                     &mdash; suggestions on how we can improve the site, content
@@ -123,7 +123,7 @@ export default function ContactPage() {
                 listing updated, email us at{' '}
                 <a
                   href="mailto:support@shelby-ai.com"
-                  className="text-accent-400 hover:text-accent-300 underline"
+                  className="text-signal-400 hover:text-signal-300 underline"
                 >
                   support@shelby-ai.com
                 </a>{' '}

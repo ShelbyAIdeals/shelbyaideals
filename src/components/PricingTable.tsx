@@ -22,12 +22,12 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             key={tier.plan}
             className={`relative flex flex-col rounded-xl border bg-void-900 p-6 ${
               tier.highlighted
-                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
+                ? 'border-ember-500/50 shadow-[0_0_30px_rgba(249,115,22,0.15)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full badge-ember px-4 py-1 text-xs font-semibold shadow-[0_0_15px_rgba(249,115,22,0.4)]">
                 Most Popular
               </span>
             )}
@@ -47,7 +47,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             <ul className="mb-8 flex-1 space-y-3">
               {tier.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
-                  <Check size={16} className="mt-0.5 shrink-0 text-accent-500" />
+                  <Check size={16} className="mt-0.5 shrink-0 text-signal-500" />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -62,7 +62,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
                   size="sm"
                 />
               ) : (
-                <span className="inline-block rounded-lg border border-void-700/50 px-5 py-2 text-sm font-medium text-void-400 cursor-default">
+                <span className="btn-ghost inline-block rounded-lg px-5 py-2 text-sm font-medium cursor-default">
                   {tier.plan}
                 </span>
               )}
@@ -78,12 +78,12 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             key={tier.plan}
             className={`relative rounded-xl border bg-void-900 p-5 ${
               tier.highlighted
-                ? 'border-accent-500/50 shadow-[0_0_30px_rgba(6,182,212,0.15)]'
+                ? 'border-ember-500/50 shadow-[0_0_30px_rgba(249,115,22,0.15)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-4 rounded-full bg-accent-500 px-3 py-0.5 text-xs font-semibold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+              <span className="absolute -top-3 left-4 rounded-full badge-ember px-3 py-0.5 text-xs font-semibold shadow-[0_0_15px_rgba(249,115,22,0.4)]">
                 Most Popular
               </span>
             )}
@@ -103,7 +103,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             <ul className="mb-5 space-y-2">
               {tier.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
-                  <Check size={14} className="mt-0.5 shrink-0 text-accent-500" />
+                  <Check size={14} className="mt-0.5 shrink-0 text-signal-500" />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -117,7 +117,7 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
                 size="sm"
               />
             ) : (
-              <span className="inline-block rounded-lg border border-void-700/50 px-5 py-2 text-sm font-medium text-void-400 cursor-default">
+              <span className="btn-ghost inline-block rounded-lg px-5 py-2 text-sm font-medium cursor-default">
                 {tier.plan}
               </span>
             )}

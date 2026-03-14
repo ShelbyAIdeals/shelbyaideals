@@ -119,11 +119,11 @@ export default async function CategoryPage({ params }: PageProps) {
                 <StaggerItem key={comp.slug}>
                   <Link
                     href={`/comparisons/${comp.slug}`}
-                    className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                    className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                   >
                     <div className="flex flex-wrap gap-2 mb-3">
                       {comp.tools.map((tool) => (
-                        <span key={tool} className="badge-accent">
+                        <span key={tool} className="badge-signal">
                           {tool}
                         </span>
                       ))}
@@ -134,7 +134,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <p className="text-sm text-void-400 leading-relaxed mb-4">
                       {comp.excerpt}
                     </p>
-                    <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                    <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                       Read Comparison <span className="ml-1">&rarr;</span>
                     </span>
                   </Link>
@@ -153,9 +153,9 @@ export default async function CategoryPage({ params }: PageProps) {
                 <StaggerItem key={article.slug}>
                   <Link
                     href={`/best/${article.slug}`}
-                    className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                    className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                   >
-                    <span className="badge-accent mb-3 inline-block">
+                    <span className="badge-signal mb-3 inline-block">
                       {article.tools.length} tools ranked
                     </span>
                     <h3 className="text-lg font-bold text-void-100 mb-2">
@@ -164,7 +164,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <p className="text-sm text-void-400 leading-relaxed mb-4">
                       {article.excerpt}
                     </p>
-                    <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                    <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                       See Rankings <span className="ml-1">&rarr;</span>
                     </span>
                   </Link>
@@ -183,7 +183,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 <StaggerItem key={guide.slug}>
                   <Link
                     href={`/guides/${guide.slug}`}
-                    className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                    className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
                   >
                     <span className="badge-void mb-3 inline-block">Guide</span>
                     <h3 className="text-lg font-bold text-void-100 mb-2">
@@ -192,7 +192,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <p className="text-sm text-void-400 leading-relaxed mb-4">
                       {guide.excerpt}
                     </p>
-                    <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                    <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                       Read Guide <span className="ml-1">&rarr;</span>
                     </span>
                   </Link>

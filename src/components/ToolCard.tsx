@@ -27,11 +27,16 @@ export default function ToolCard({
   return (
     <motion.div
       className="card group relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center"
-      whileHover={{ y: -4, boxShadow: '0 0 32px rgba(6,182,212,0.12)' }}
+      whileHover={{ y: -4, boxShadow: '0 0 32px rgba(var(--color-signal-500), 0.12)' }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
     >
       {/* Rank badge */}
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500 text-lg font-extrabold text-void-50 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-extrabold text-void-50 ${
+        rank === 1 ? 'bg-ember-400 shadow-[0_0_15px_rgba(251,146,60,0.4)]' :
+        rank === 2 ? 'bg-void-300 text-void-900 shadow-[0_0_15px_rgba(209,213,219,0.3)]' :
+        rank === 3 ? 'bg-ember-700 shadow-[0_0_15px_rgba(194,65,12,0.3)]' :
+        'bg-signal-500 shadow-[0_0_15px_rgba(var(--color-signal-500),0.4)]'
+      }`}>
         {rank}
       </div>
 
@@ -47,7 +52,7 @@ export default function ToolCard({
             {pricing}
           </span>
 
-          <span className="rounded-full bg-accent-500/15 border border-accent-500/20 px-3 py-0.5 text-xs font-medium text-accent-400">
+          <span className="rounded-full bg-signal-500/15 border border-signal-500/20 px-3 py-0.5 text-xs font-medium text-signal-400">
             Best for: {bestFor}
           </span>
         </div>

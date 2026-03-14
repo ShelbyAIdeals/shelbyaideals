@@ -99,7 +99,7 @@ export default function FAQPage() {
         <div className="max-w-3xl mx-auto">
           {/* Page Header */}
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
               <HelpCircle size={20} />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-void-50">

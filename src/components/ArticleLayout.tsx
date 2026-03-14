@@ -27,7 +27,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
         {/* Breadcrumb */}
         <Link
           href={backLink.href}
-          className="inline-flex items-center gap-2 text-sm text-void-300 hover:text-accent-400 mb-6"
+          className="inline-flex items-center gap-2 text-sm text-void-300 hover:text-signal-400 mb-6"
         >
           <ArrowLeft size={16} />
           {backLink.label}
@@ -38,7 +38,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
           <div className="flex items-center gap-3 mb-4">
             <Link
               href={`/categories/${meta.category}`}
-              className="badge-accent"
+              className="badge-signal"
             >
               {categoryLabels[meta.category]}
             </Link>

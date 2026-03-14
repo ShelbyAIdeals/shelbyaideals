@@ -31,7 +31,7 @@ export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
           <Star
             key={`filled-${i}`}
             size={icon}
-            className="text-accent-400 fill-accent-400"
+            className="text-ember-400 fill-ember-400"
           />
         ))}
 
@@ -40,7 +40,7 @@ export default function StarRating({ rating, size = 'md' }: StarRatingProps) {
           <span className="relative inline-flex" key="half">
             <Star size={icon} className="text-void-700 fill-void-700" />
             <span className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
-              <Star size={icon} className="text-accent-400 fill-accent-400" />
+              <Star size={icon} className="text-ember-400 fill-ember-400" />
             </span>
           </span>
         )}

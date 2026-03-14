@@ -55,7 +55,7 @@ export default function AboutPage() {
           {/* Our Approach */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
                 <Target size={20} />
               </div>
               <h2 className="text-2xl font-bold text-void-50">Our Approach</h2>
@@ -85,7 +85,7 @@ export default function AboutPage() {
           {/* Who We Help */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
                 <Users size={20} />
               </div>
               <h2 className="text-2xl font-bold text-void-50">Who We Help</h2>
@@ -124,7 +124,7 @@ export default function AboutPage() {
           {/* How We Make Money */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
                 <DollarSign size={20} />
               </div>
               <h2 className="text-2xl font-bold text-void-50">How We Make Money</h2>
@@ -144,7 +144,7 @@ export default function AboutPage() {
               For full details, read our{' '}
               <Link
                 href="/affiliate-disclosure"
-                className="text-accent-400 hover:text-accent-300 underline"
+                className="text-signal-400 hover:text-signal-300 underline"
               >
                 Affiliate Disclosure
               </Link>
@@ -155,7 +155,7 @@ export default function AboutPage() {
           {/* Testing Methodology */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
                 <FlaskConical size={20} />
               </div>
               <h2 className="text-2xl font-bold text-void-50">
@@ -167,7 +167,7 @@ export default function AboutPage() {
             </p>
             <ol className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
                   1
                 </span>
                 <div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
                   2
                 </span>
                 <div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
                   3
                 </span>
                 <div>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
                   4
                 </span>
                 <div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
           {/* By the Numbers */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent-500/15 text-accent-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-signal-500/15 text-signal-400 flex items-center justify-center">
                 <ClipboardCheck size={20} />
               </div>
               <h2 className="text-2xl font-bold text-void-50">By the Numbers</h2>
@@ -259,7 +259,7 @@ export default function AboutPage() {
                 <Link
                   key={cat.href}
                   href={cat.href}
-                  className="flex items-center gap-2 bg-void-900/60 border border-void-700/50 rounded-lg px-4 py-3 text-sm font-medium text-void-200 hover:border-accent-500/40 hover:text-accent-400 transition-colors no-underline"
+                  className="flex items-center gap-2 bg-void-900/60 border border-void-700/50 rounded-lg px-4 py-3 text-sm font-medium text-void-200 hover:border-signal-500/40 hover:text-signal-400 transition-colors no-underline"
                 >
                   <span className="w-2 h-2 rounded-full bg-void-50" />
                   {cat.name}
@@ -279,15 +279,15 @@ export default function AboutPage() {
               <ul className="space-y-2 text-void-50 text-sm">
                 <li>
                   <span className="font-semibold text-void-50">General inquiries: </span>
-                  <span className="text-accent-400">support@shelby-ai.com</span>
+                  <span className="text-signal-400">support@shelby-ai.com</span>
                 </li>
                 <li>
                   <span className="font-semibold text-void-50">Affiliate partnerships: </span>
-                  <span className="text-accent-400">partners@shelby-ai.com</span>
+                  <span className="text-signal-400">partners@shelby-ai.com</span>
                 </li>
                 <li>
                   <span className="font-semibold text-void-50">Press & media: </span>
-                  <span className="text-accent-400">press@shelby-ai.com</span>
+                  <span className="text-signal-400">press@shelby-ai.com</span>
                 </li>
               </ul>
               <div className="flex items-center gap-4 mt-4 pt-4 border-t border-void-700/50">
@@ -295,7 +295,7 @@ export default function AboutPage() {
                   href="https://x.com/shelbyaideals"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-void-400 hover:text-accent-400 transition-colors no-underline"
+                  className="flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors no-underline"
                 >
                   <Twitter size={16} />
                   @shelbyaideals
@@ -304,7 +304,7 @@ export default function AboutPage() {
                   href="https://www.linkedin.com/in/shelby-ai-1bb38a3b6/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-void-400 hover:text-accent-400 transition-colors no-underline"
+                  className="flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors no-underline"
                 >
                   <Linkedin size={16} />
                   LinkedIn

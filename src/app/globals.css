@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Void palette — cool space grays */
+  /* ── Void palette — cool space grays (backbone) ──────────── */
   --color-void-50: #eef1f5;
   --color-void-100: #dce1e9;
-  --color-void-200: #b8c1d0;
-  --color-void-300: #94a1b5;
+  --color-void-200: #c0c8d6;
+  --color-void-300: #9ca8bc;
   --color-void-400: #6e7d94;
   --color-void-500: #556275;
   --color-void-600: #3f4a5c;
@@ -14,25 +14,86 @@
   --color-void-900: #151a28;
   --color-void-950: #0b0e17;
 
-  /* Cyan palette — space accent (10% darker) */
-  --color-accent-50: #d9f9fe;
-  --color-accent-100: #b3f0fa;
-  --color-accent-200: #85e0f2;
-  --color-accent-300: #52cde6;
-  --color-accent-400: #1ab8d4;
-  --color-accent-500: #05a0ba;
-  --color-accent-600: #077f9e;
-  --color-accent-700: #0c6680;
-  --color-accent-800: #125168;
-  --color-accent-900: #134459;
-  --color-accent-950: #072c3d;
+  /* ── Signal Teal — primary accent (trust, tech, CTAs) ────── */
+  --color-signal-50: #ecfffe;
+  --color-signal-100: #cffffe;
+  --color-signal-200: #a5fefb;
+  --color-signal-300: #67f5ef;
+  --color-signal-400: #22e2d8;
+  --color-signal-500: #0ad1c8;
+  --color-signal-600: #06a8a2;
+  --color-signal-700: #0a8682;
+  --color-signal-800: #0e6a69;
+  --color-signal-900: #115756;
+  --color-signal-950: #033434;
 
+  /* ── Ember Amber — secondary accent (deals, urgency, featured) */
+  --color-ember-50: #fefbe8;
+  --color-ember-100: #fef3c7;
+  --color-ember-200: #fde68a;
+  --color-ember-300: #fcd34d;
+  --color-ember-400: #fbbf24;
+  --color-ember-500: #f59e0b;
+  --color-ember-600: #d97706;
+  --color-ember-700: #b45309;
+  --color-ember-800: #92400e;
+  --color-ember-900: #78350f;
+  --color-ember-950: #451a03;
+
+  /* ── Iris Violet — tertiary accent (editorial, guides, premium) */
+  --color-iris-50: #f5f3ff;
+  --color-iris-100: #ede9fe;
+  --color-iris-200: #ddd6fe;
+  --color-iris-300: #c4b5fd;
+  --color-iris-400: #a78bfa;
+  --color-iris-500: #8b5cf6;
+  --color-iris-600: #7c3aed;
+  --color-iris-700: #6d28d9;
+  --color-iris-800: #5b21b6;
+  --color-iris-900: #4c1d95;
+  --color-iris-950: #2e1065;
+
+  /* ── Semantic tokens ─────────────────────────────────────── */
+  --color-success-50: #ecfdf5;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+
+  --color-danger-50: #fff1f2;
+  --color-danger-400: #fb7185;
+  --color-danger-500: #f43f5e;
+  --color-danger-600: #e11d48;
+
+  --color-warning-50: #fefbe8;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+
+  --color-info-50: #ecfffe;
+  --color-info-400: #22e2d8;
+  --color-info-500: #0ad1c8;
+  --color-info-600: #06a8a2;
+
+  /* ── Legacy accent aliases (backwards compat during migration) */
+  --color-accent-50: var(--color-signal-50);
+  --color-accent-100: var(--color-signal-100);
+  --color-accent-200: var(--color-signal-200);
+  --color-accent-300: var(--color-signal-300);
+  --color-accent-400: var(--color-signal-400);
+  --color-accent-500: var(--color-signal-500);
+  --color-accent-600: var(--color-signal-600);
+  --color-accent-700: var(--color-signal-700);
+  --color-accent-800: var(--color-signal-800);
+  --color-accent-900: var(--color-signal-900);
+  --color-accent-950: var(--color-signal-950);
+
+  /* ── Typography ──────────────────────────────────────────── */
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'Cascadia Code', monospace;
 }
 
 /* ── White Mode Overrides ────────────────────────────── */
-/* Inverts the void scale so dark becomes light */
 
 [data-theme="light"] {
   --color-void-50: #141210;
@@ -47,14 +108,25 @@
   --color-void-900: #ffffff;
   --color-void-950: #f5eddd;
 
-  --color-accent-300: #1f7d8e;
-  --color-accent-400: #1a6b7a;
-  --color-accent-500: #145862;
+  --color-signal-300: #0a8682;
+  --color-signal-400: #06a8a2;
+  --color-signal-500: #088680;
+
+  --color-ember-400: #d97706;
+  --color-ember-500: #b45309;
+
+  --color-iris-400: #7c3aed;
+  --color-iris-500: #6d28d9;
+
+  /* Legacy accent overrides */
+  --color-accent-300: var(--color-signal-300);
+  --color-accent-400: var(--color-signal-400);
+  --color-accent-500: var(--color-signal-500);
 }
 
 [data-theme="light"] ::selection {
   --tw-bg-opacity: 0.3;
-  background-color: rgba(14, 116, 144, 0.3);
+  background-color: rgba(10, 134, 130, 0.3);
   color: #1a1710;
 }
 
@@ -91,6 +163,22 @@
   50% { opacity: 1; }
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideUnderline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes scorePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 /* ── Base Layer ───────────────────────────────────────── */
 
 @layer base {
@@ -107,11 +195,11 @@
   }
 
   h1 {
-    @apply font-bold;
+    @apply font-bold tracking-[-0.02em];
   }
 
   h2 {
-    @apply font-bold;
+    @apply font-bold tracking-[-0.01em];
   }
 
   h3, h4, h5, h6 {
@@ -119,7 +207,7 @@
   }
 
   a {
-    @apply text-accent-400 hover:text-accent-300 transition-colors;
+    @apply text-signal-400 hover:text-signal-300 transition-colors;
   }
 
   * {
@@ -128,7 +216,7 @@
   }
 
   ::selection {
-    @apply bg-accent-500/30 text-void-50;
+    @apply bg-signal-500/30 text-void-50;
   }
 }
 
@@ -139,15 +227,38 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Buttons */
+  /* ── Buttons ────────────────────────────────────────── */
+
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3
-      bg-accent-500 text-void-950 font-sans font-semibold rounded-lg
-      hover:bg-accent-400 transition-all duration-200 cursor-pointer;
-    box-shadow: 0 0 20px rgba(6,182,212,0.25);
+      text-void-950 font-sans font-semibold rounded-lg
+      transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, var(--color-signal-500), var(--color-signal-400));
+    box-shadow: 0 0 20px rgba(10, 209, 200, 0.25), inset 0 1px 0 rgba(255,255,255,0.1);
   }
   .btn-primary:hover {
-    box-shadow: 0 0 32px rgba(6,182,212,0.4);
+    background: linear-gradient(135deg, var(--color-signal-400), var(--color-signal-300));
+    box-shadow: 0 0 32px rgba(10, 209, 200, 0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3
+      text-void-950 font-sans font-semibold rounded-lg
+      transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, var(--color-ember-500), var(--color-ember-400));
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .btn-accent:hover {
+    background: linear-gradient(135deg, var(--color-ember-400), var(--color-ember-300));
+    box-shadow: 0 0 32px rgba(245, 158, 11, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+  }
+  .btn-accent:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
@@ -159,30 +270,87 @@
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-6 py-3
-      border border-accent-500/40 text-accent-400 font-sans font-semibold
-      rounded-lg hover:bg-accent-500/10 hover:border-accent-400
+      border border-signal-500/40 text-signal-400 font-sans font-semibold
+      rounded-lg hover:bg-signal-500/10 hover:border-signal-400
       transition-all duration-200 cursor-pointer;
   }
 
-  /* Card */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3
+      text-void-200 font-sans font-semibold rounded-lg
+      border border-void-700/50 bg-transparent
+      hover:bg-void-800/60 hover:text-void-50 hover:border-void-600
+      transition-all duration-200 cursor-pointer;
+  }
+
+  /* ── Cards ──────────────────────────────────────────── */
+
   .card {
     @apply rounded-xl border border-void-700/60
       bg-void-900
       transition-all duration-200;
   }
   .card:hover {
-    border-color: rgba(6,182,212,0.25);
-    box-shadow: 0 0 24px rgba(6,182,212,0.06);
+    border-color: rgba(10, 209, 200, 0.2);
+    box-shadow: 0 0 24px rgba(10, 209, 200, 0.06);
   }
 
-  /* Badges */
+  .card-elevated {
+    @apply rounded-xl border border-void-700/40
+      bg-void-900
+      transition-all duration-200;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  .card-elevated:hover {
+    border-color: rgba(10, 209, 200, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 24px rgba(10, 209, 200, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-featured {
+    @apply rounded-xl
+      bg-void-900
+      transition-all duration-200;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.06);
+  }
+  .card-featured:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 32px rgba(245, 158, 11, 0.12), 0 4px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .card-glass {
+    @apply rounded-xl border border-void-700/30
+      transition-all duration-200;
+    background: rgba(21, 26, 40, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .card-glass:hover {
+    border-color: rgba(10, 209, 200, 0.2);
+    background: rgba(21, 26, 40, 0.75);
+  }
+
+  /* ── Badges ─────────────────────────────────────────── */
+
   .badge {
     @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium rounded-full;
   }
 
-  .badge-accent {
+  .badge-signal {
     @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium
-      rounded-full bg-accent-500/10 text-accent-400 border border-accent-500/20;
+      rounded-full bg-signal-500/10 text-signal-400 border border-signal-500/20;
+  }
+
+  .badge-ember {
+    @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium
+      rounded-full bg-ember-500/10 text-ember-400 border border-ember-500/20;
+  }
+
+  .badge-iris {
+    @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium
+      rounded-full bg-iris-500/10 text-iris-400 border border-iris-500/20;
   }
 
   .badge-void {
@@ -190,19 +358,51 @@
       rounded-full bg-void-800 text-void-300 border border-void-700;
   }
 
-  /* Search Input */
+  .badge-score {
+    @apply inline-flex items-center justify-center font-mono font-bold
+      rounded-full bg-signal-500 text-void-950;
+  }
+
+  /* Legacy aliases */
+  .badge-accent {
+    @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium
+      rounded-full bg-signal-500/10 text-signal-400 border border-signal-500/20;
+  }
+
+  /* ── Section Backgrounds ────────────────────────────── */
+
+  .section-alt {
+    @apply bg-void-900/50;
+  }
+
+  .section-divider {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-void-700) 20%,
+      var(--color-signal-500) 50%,
+      var(--color-void-700) 80%,
+      transparent 100%
+    );
+    height: 1px;
+    opacity: 0.3;
+  }
+
+  /* ── Search Input ───────────────────────────────────── */
+
   .search-input {
     @apply w-full px-5 py-3.5 text-base rounded-xl
       bg-void-900 border border-void-700/60 text-void-100
       placeholder:text-void-500
-      focus:outline-none focus:ring-2 focus:ring-accent-500/40
-      focus:border-accent-500/50 transition-all duration-200;
+      focus:outline-none focus:ring-2 focus:ring-signal-500/40
+      focus:border-signal-500/50 transition-all duration-200;
   }
 
-  /* ── Dark Editorial Prose ─────────────────────────── */
+  /* ── Dark Editorial Prose ───────────────────────────── */
+
   .prose-article h2 {
     @apply text-2xl font-heading font-bold text-void-50 mt-10 mb-4 pb-2
-      border-b border-accent-500/15;
+      border-b border-signal-500/15 tracking-[-0.01em];
   }
 
   .prose-article h3 {
@@ -210,7 +410,8 @@
   }
 
   .prose-article p {
-    @apply text-void-300 leading-relaxed mb-4;
+    @apply text-void-300 mb-4;
+    line-height: 1.75;
   }
 
   .prose-article ul, .prose-article ol {
@@ -218,7 +419,8 @@
   }
 
   .prose-article li {
-    @apply mb-2 leading-relaxed;
+    @apply mb-2;
+    line-height: 1.75;
   }
 
   .prose-article ul li {
@@ -234,7 +436,7 @@
   }
 
   .prose-article blockquote {
-    @apply border-l-4 border-accent-500/40 bg-void-900 pl-4 py-3 my-6
+    @apply border-l-4 border-iris-500/40 bg-iris-950/20 pl-4 py-3 my-6
       italic text-void-400;
   }
 
@@ -255,45 +457,91 @@
     @apply bg-void-800/50;
   }
 
-  /* Component boxes */
+  .prose-article code {
+    @apply font-mono text-signal-400 bg-void-800/60 px-1.5 py-0.5 rounded text-[0.9em];
+  }
+
+  .prose-article pre {
+    @apply bg-void-800/80 border border-void-700/50 rounded-lg p-4 overflow-x-auto my-6;
+  }
+
+  .prose-article pre code {
+    @apply bg-transparent p-0;
+  }
+
+  /* ── Component Boxes ────────────────────────────────── */
+
   .disclosure-box {
     @apply bg-void-900 border border-void-700/50 rounded-lg p-4
       text-sm text-void-400 mb-8;
   }
 
   .verdict-box {
-    @apply bg-void-900 border border-accent-500/20 rounded-xl p-6 my-8;
-    box-shadow: 0 0 30px rgba(6,182,212,0.05);
+    @apply bg-void-900 border rounded-xl p-6 my-8;
+    border-color: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.05);
   }
 
   .pros-cons-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6 my-8;
   }
 
-  /* ── Utility Classes ──────────────────────────────── */
+  /* ── Gradient Text ──────────────────────────────────── */
 
-  /* Gradient text */
-  .text-gradient-accent {
+  .text-gradient-signal {
     @apply bg-clip-text text-transparent
-      bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500;
+      bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500;
   }
 
-  /* Glow pulse for decorative elements */
+  .text-gradient-ember {
+    @apply bg-clip-text text-transparent
+      bg-gradient-to-r from-ember-300 via-ember-400 to-ember-500;
+  }
+
+  .text-gradient-iris {
+    @apply bg-clip-text text-transparent
+      bg-gradient-to-r from-iris-300 via-iris-400 to-iris-500;
+  }
+
+  /* Legacy alias */
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent
+      bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500;
+  }
+
+  /* ── Animation Utilities ────────────────────────────── */
+
   .animate-glow {
     animation: glowPulse 4s ease-in-out infinite;
   }
 
-  /* Mesh float for hero blobs */
   .animate-mesh {
     animation: meshFloat 12s ease-in-out infinite;
   }
 
-  /* Section divider */
-  .section-divider {
-    @apply border-t border-void-800/80;
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
   }
 
-  /* Mist density slider */
+  .animate-score-pulse {
+    animation: scorePulse 2s ease-in-out infinite;
+  }
+
+  /* ── Dot Grid Pattern ───────────────────────────────── */
+
+  .pattern-dots {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      var(--color-void-700) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+    opacity: 0.3;
+  }
+
+  /* ── Mist Slider ────────────────────────────────────── */
+
   .mist-slider {
     @apply appearance-none bg-transparent cursor-pointer;
     height: 20px;
@@ -301,12 +549,12 @@
   .mist-slider::-webkit-slider-runnable-track {
     height: 3px;
     border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-accent-500), transparent);
+    background: linear-gradient(to right, var(--color-signal-500), transparent);
   }
   .mist-slider::-moz-range-track {
     height: 3px;
     border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-accent-500), transparent);
+    background: linear-gradient(to right, var(--color-signal-500), transparent);
   }
   .mist-slider::-webkit-slider-thumb {
     appearance: none;
@@ -315,7 +563,7 @@
     border-radius: 50%;
     background: white;
     margin-top: -4.5px;
-    box-shadow: 0 0 6px rgba(5, 160, 186, 0.4);
+    box-shadow: 0 0 6px rgba(10, 209, 200, 0.4);
   }
   .mist-slider::-moz-range-thumb {
     width: 12px;
@@ -323,6 +571,21 @@
     border-radius: 50%;
     background: white;
     border: none;
-    box-shadow: 0 0 6px rgba(5, 160, 186, 0.4);
+    box-shadow: 0 0 6px rgba(10, 209, 200, 0.4);
+  }
+
+  /* ── Glassmorphic Header ────────────────────────────── */
+
+  .header-glass {
+    background: rgba(11, 14, 23, 0.7);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border-bottom: 1px solid rgba(45, 53, 72, 0.4);
+  }
+  .header-glass-solid {
+    background: rgba(11, 14, 23, 0.95);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border-bottom: 1px solid rgba(45, 53, 72, 0.6);
   }
 }

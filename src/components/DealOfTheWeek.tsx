@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
@@ -10,40 +12,61 @@ interface DealOfTheWeekProps {
 
 export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl }: DealOfTheWeekProps) {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-accent-500/30 bg-gradient-to-r from-void-900 via-void-900 to-accent-950/30 p-6 sm:p-8">
-      {/* Glow */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-accent-500/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="relative overflow-hidden card-featured p-[1px] rounded-xl">
+      {/* Animated shimmer border overlay */}
+      <div
+        className="absolute inset-0 rounded-xl pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.3) 25%, rgba(251,191,36,0.5) 50%, rgba(245,158,11,0.3) 75%, transparent 100%)',
+          backgroundSize: '200% 100%',
+          animation: 'shimmer 3s ease-in-out infinite',
+          maskImage: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          maskComposite: 'exclude',
+          WebkitMaskComposite: 'xor',
+          padding: '1px',
+          borderRadius: 'inherit',
+        }}
+      />
 
-      <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-accent-500 flex items-center justify-center shrink-0">
-            <Sparkles size={20} className="text-void-950" />
-          </div>
-          <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-accent-400">
+      {/* Inner content */}
+      <div className="relative bg-void-900 rounded-xl px-6 py-5 sm:px-8 sm:py-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          {/* Left: badge */}
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="badge-ember gap-1.5">
+              <Sparkles size={13} />
               Deal of the Week
             </span>
-            <h3 className="text-lg font-heading font-bold text-void-50">
-              {toolName} — {deal}
-            </h3>
           </div>
-        </div>
 
-        <div className="flex items-center gap-3 sm:ml-auto">
-          <Link
-            href={`/reviews/${reviewSlug}`}
-            className="text-sm font-semibold text-void-300 hover:text-void-50 no-underline transition-colors"
-          >
-            Read Review
-          </Link>
-          <a
-            href={affiliateUrl}
-            target="_blank"
-            rel="nofollow sponsored noopener"
-            className="btn-primary text-sm py-2.5 px-5 gap-1.5"
-          >
-            Claim Deal <ArrowRight size={14} />
-          </a>
+          {/* Center: tool name + deal text */}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-heading font-bold text-void-50 truncate">
+              {toolName}
+            </h3>
+            <p className="text-sm text-void-300 truncate">
+              {deal}
+            </p>
+          </div>
+
+          {/* Right: actions */}
+          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+            <Link
+              href={`/reviews/${reviewSlug}`}
+              className="btn-ghost text-sm !px-4 !py-2 no-underline"
+            >
+              Read Review
+            </Link>
+            <a
+              href={affiliateUrl}
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              className="btn-accent text-sm !py-2.5 !px-5 gap-1.5"
+            >
+              Claim Deal <ArrowRight size={14} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -59,11 +59,11 @@ const components = {
           {...props}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="text-accent-400 hover:text-accent-300 underline underline-offset-2"
+          className="text-signal-400 hover:text-signal-300 underline underline-offset-2"
         />
       );
     }
-    return <a {...props} className="text-accent-400 hover:text-accent-300 underline underline-offset-2" />;
+    return <a {...props} className="text-signal-400 hover:text-signal-300 underline underline-offset-2" />;
   },
 };
 

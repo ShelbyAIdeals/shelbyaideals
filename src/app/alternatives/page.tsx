@@ -46,10 +46,10 @@ export default function AlternativesPage() {
             <StaggerItem key={page.slug}>
               <Link
                 href={`/alternatives/${page.slug}`}
-                className="card p-6 no-underline hover:border-accent-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block h-full"
+                className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block h-full"
               >
                 {/* Tool badge */}
-                <span className="badge-accent mb-3 inline-block">
+                <span className="badge-signal mb-3 inline-block">
                   {page.tool}
                 </span>
 
@@ -68,7 +68,7 @@ export default function AlternativesPage() {
                   <span className="text-xs text-void-500">
                     {page.alternatives.length} alternatives compared
                   </span>
-                  <span className="inline-flex items-center text-sm font-semibold text-accent-400">
+                  <span className="inline-flex items-center text-sm font-semibold text-signal-400">
                     View Alternatives <span className="ml-1">&rarr;</span>
                   </span>
                 </div>
@@ -85,7 +85,7 @@ export default function AlternativesPage() {
               suggestion?{' '}
               <Link
                 href="/contact"
-                className="text-accent-400 hover:text-accent-300 no-underline"
+                className="text-signal-400 hover:text-signal-300 no-underline"
               >
                 Let us know
               </Link>

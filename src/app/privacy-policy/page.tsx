@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
               </h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Email address</span>{' '}
                     &mdash; when you sign up for our newsletter or download a
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Contact information</span>{' '}
                     &mdash; if you reach out to us via email.
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
               </h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Analytics data</span>{' '}
                     &mdash; page views, session duration, referral sources, and
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Cookies and similar technologies</span>{' '}
                     &mdash; to understand how visitors interact with our site and
@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
               </h2>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Improve our content</span>{' '}
                     &mdash; analytics help us understand which topics, tools, and
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Deliver our newsletter</span>{' '}
                     &mdash; if you subscribe, we use your email to send weekly AI
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Respond to inquiries</span>{' '}
                     &mdash; if you email us, we use your contact information to
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Google Analytics (GA4)</span>{' '}
                     &mdash; for website traffic analysis and audience insights.
@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Affiliate networks</span>{' '}
                     &mdash; when you click an affiliate link, the affiliate
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Email service provider</span>{' '}
                     &mdash; we use a third-party email platform to manage our
@@ -194,7 +194,7 @@ export default function PrivacyPolicyPage() {
               <p>You have the right to:</p>
               <ul className="mt-3 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Unsubscribe</span>{' '}
                     from our newsletter at any time using the unsubscribe link in
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Request data deletion</span>{' '}
                     &mdash; you can contact us to have your personal data removed
@@ -210,7 +210,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Access your data</span>{' '}
                     &mdash; you can request a copy of the personal information we
@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>
                     <span className="font-semibold text-void-100">Opt out of analytics</span>{' '}
                     &mdash; you can use browser extensions like Google Analytics
@@ -262,7 +262,7 @@ export default function PrivacyPolicyPage() {
                 personal data, please contact us at{' '}
                 <a
                   href="mailto:support@shelby-ai.com"
-                  className="text-accent-400 hover:text-accent-300 underline"
+                  className="text-signal-400 hover:text-signal-300 underline"
                 >
                   support@shelby-ai.com
                 </a>

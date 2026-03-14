@@ -56,19 +56,19 @@ export default function TermsOfServicePage() {
               </p>
               <ul className="mt-3 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>Copy, reproduce, or redistribute our content without written permission.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>Use automated tools to scrape or harvest content from the Site.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>Attempt to interfere with the Site&apos;s functionality or security.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-400 mt-2.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-400 mt-2.5 shrink-0" />
                   <span>Use the Site in any way that violates applicable laws or regulations.</span>
                 </li>
               </ul>
@@ -96,7 +96,7 @@ export default function TermsOfServicePage() {
                 affiliate link and make a purchase, we may earn a commission at
                 no additional cost to you. This does not influence our reviews
                 or ratings. See our{' '}
-                <a href="/affiliate-disclosure" className="text-accent-400 hover:text-accent-300 underline">
+                <a href="/affiliate-disclosure" className="text-signal-400 hover:text-signal-300 underline">
                   Affiliate Disclosure
                 </a>{' '}
                 for full details.
@@ -175,7 +175,7 @@ export default function TermsOfServicePage() {
                 If you have questions about these terms, contact us at{' '}
                 <a
                   href="mailto:support@shelby-ai.com"
-                  className="text-accent-400 hover:text-accent-300 underline"
+                  className="text-signal-400 hover:text-signal-300 underline"
                 >
                   support@shelby-ai.com
                 </a>

@@ -47,7 +47,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   return (
     <nav className="sticky top-24" aria-label="Table of contents">
       <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-void-200 font-heading">
-        <List size={16} className="text-accent-500" />
+        <List size={16} className="text-signal-500" />
         <span>On This Page</span>
       </div>
 
@@ -64,7 +64,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                   isH3 ? 'pl-6' : 'pl-4'
                 } ${
                   isActive
-                    ? 'border-accent-500 font-medium text-accent-400'
+                    ? 'border-signal-500 font-medium text-signal-400'
                     : 'border-transparent text-void-400 hover:border-void-600 hover:text-void-200'
                 }`}
               >

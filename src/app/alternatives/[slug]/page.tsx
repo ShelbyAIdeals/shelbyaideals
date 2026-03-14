@@ -48,17 +48,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number }) {
   return (
-    <div className="card group relative flex flex-col p-6 hover:border-accent-500/40 border border-void-700/50 transition-all">
+    <div className="card group relative flex flex-col p-6 hover:border-signal-500/40 border border-void-700/50 transition-all">
       {/* Rank number */}
       <div className="flex items-start gap-4 mb-4">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-500/15 border border-accent-500/25 text-sm font-bold text-accent-400">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-signal-500/15 border border-signal-500/25 text-sm font-bold text-signal-400">
           {index + 1}
         </div>
         <div className="flex-1 min-w-0">
           <h2 className="text-lg font-bold text-void-50 mb-1 font-heading">
             {tool.name}
           </h2>
-          <span className="inline-flex items-center rounded-full bg-accent-500/10 border border-accent-500/20 px-3 py-0.5 text-xs font-medium text-accent-400">
+          <span className="inline-flex items-center rounded-full bg-signal-500/10 border border-signal-500/20 px-3 py-0.5 text-xs font-medium text-signal-400">
             Best for: {tool.bestFor}
           </span>
         </div>
@@ -82,7 +82,7 @@ function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number
         {tool.reviewSlug ? (
           <Link
             href={`/reviews/${tool.reviewSlug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-400 hover:text-accent-300 no-underline transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline transition-colors"
           >
             Read Our Review <span>&rarr;</span>
           </Link>
@@ -91,7 +91,7 @@ function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number
             href={tool.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-300 hover:text-accent-400 no-underline transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-300 hover:text-signal-400 no-underline transition-colors"
           >
             Visit Website <span>&rarr;</span>
           </a>
@@ -168,14 +168,14 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
           <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">
             <Link
               href="/"
-              className="hover:text-accent-400 no-underline transition-colors text-void-500"
+              className="hover:text-signal-400 no-underline transition-colors text-void-500"
             >
               Home
             </Link>
             <span>/</span>
             <Link
               href="/alternatives"
-              className="hover:text-accent-400 no-underline transition-colors text-void-500"
+              className="hover:text-signal-400 no-underline transition-colors text-void-500"
             >
               Alternatives
             </Link>
@@ -198,7 +198,7 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
                 Want our full take?{' '}
                 <Link
                   href={`/reviews/${page.reviewSlug}`}
-                  className="text-accent-400 hover:text-accent-300 no-underline font-medium"
+                  className="text-signal-400 hover:text-signal-300 no-underline font-medium"
                 >
                   Read our {page.tool} review
                 </Link>
@@ -210,13 +210,13 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
         {/* Quick jump */}
         <ScrollReveal>
           <div className="bg-void-900/60 border border-void-700/50 rounded-xl p-5 mb-10 backdrop-blur-sm">
-            <h2 className="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-3 font-heading">
+            <h2 className="text-sm font-semibold text-signal-400 uppercase tracking-wider mb-3 font-heading">
               Quick Overview
             </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {page.alternatives.map((alt, i) => (
                 <div key={alt.slug} className="flex items-center gap-2 text-sm">
-                  <span className="text-accent-500 font-bold">{i + 1}.</span>
+                  <span className="text-signal-500 font-bold">{i + 1}.</span>
                   <span className="text-void-200 font-medium">{alt.name}</span>
                   <span className="text-void-600">&mdash;</span>
                   <span className="text-void-400 text-xs">{alt.bestFor}</span>
@@ -238,7 +238,7 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
         {/* Bottom CTA */}
         <ScrollReveal>
           <div className="mt-14 text-center">
-            <div className="bg-void-900/60 border border-accent-500/15 rounded-xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
+            <div className="bg-void-900/60 border border-signal-500/15 rounded-xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
               <h2 className="text-xl font-bold text-void-50 mb-3 font-heading">
                 Not sure which to pick?
               </h2>
