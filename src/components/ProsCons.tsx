@@ -1,4 +1,4 @@
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, CheckCircle2, XCircle } from 'lucide-react';
 
 interface ProsConsProps {
   pros: string[];
@@ -13,17 +13,26 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
   return (
     <div className="pros-cons-grid">
       {/* Pros */}
-      <div className="rounded-xl bg-accent-500/5 border border-accent-500/15 p-6">
-        <h4 className="mb-4 flex items-center gap-2 text-lg font-bold text-accent-400 font-heading">
-          <CheckCircle size={20} className="text-accent-500" />
-          Pros
-        </h4>
-        <ul className="space-y-3">
-          {safeP.map((pro) => (
-            <li key={pro} className="flex items-start gap-2 text-sm text-void-300">
-              <CheckCircle
+      <div className="rounded-xl border border-void-800 overflow-hidden"
+        style={{ background: 'rgba(16,185,129,0.03)' }}
+      >
+        <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-success-500/20">
+          <CheckCircle size={20} className="text-success-500" />
+          <h4 className="text-lg font-heading font-bold text-success-400">
+            Pros
+          </h4>
+        </div>
+        <ul className="divide-y divide-void-800/50">
+          {safeP.map((pro, i) => (
+            <li
+              key={pro}
+              className={`flex items-start gap-3 px-6 py-3 text-sm text-void-300 ${
+                i % 2 === 1 ? 'bg-void-800/20' : ''
+              }`}
+            >
+              <CheckCircle2
                 size={16}
-                className="mt-0.5 shrink-0 text-accent-500"
+                className="mt-0.5 shrink-0 text-success-400 fill-success-400/20"
               />
               <span>{pro}</span>
             </li>
@@ -32,17 +41,26 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
       </div>
 
       {/* Cons */}
-      <div className="rounded-xl bg-red-500/5 border border-red-500/15 p-6">
-        <h4 className="mb-4 flex items-center gap-2 text-lg font-bold text-red-400 font-heading">
-          <XCircle size={20} className="text-red-400" />
-          Cons
-        </h4>
-        <ul className="space-y-3">
-          {safeC.map((con) => (
-            <li key={con} className="flex items-start gap-2 text-sm text-void-300">
+      <div className="rounded-xl border border-void-800 overflow-hidden"
+        style={{ background: 'rgba(244,63,94,0.03)' }}
+      >
+        <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-danger-500/20">
+          <XCircle size={20} className="text-danger-500" />
+          <h4 className="text-lg font-heading font-bold text-danger-400">
+            Cons
+          </h4>
+        </div>
+        <ul className="divide-y divide-void-800/50">
+          {safeC.map((con, i) => (
+            <li
+              key={con}
+              className={`flex items-start gap-3 px-6 py-3 text-sm text-void-300 ${
+                i % 2 === 1 ? 'bg-void-800/20' : ''
+              }`}
+            >
               <XCircle
                 size={16}
-                className="mt-0.5 shrink-0 text-red-400"
+                className="mt-0.5 shrink-0 text-danger-400 fill-danger-400/20"
               />
               <span>{con}</span>
             </li>
