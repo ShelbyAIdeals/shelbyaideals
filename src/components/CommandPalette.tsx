@@ -146,13 +146,10 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
             role="dialog"
             aria-modal="true"
             aria-label="Command palette"
-            className="relative w-full max-w-xl rounded-2xl border border-void-700/30 overflow-hidden"
+            className="relative w-full max-w-xl rounded-2xl border border-void-700/30 overflow-hidden bg-void-900 shadow-2xl"
             style={{
-              background: 'rgba(21, 26, 40, 0.85)',
               backdropFilter: 'blur(24px) saturate(1.3)',
               WebkitBackdropFilter: 'blur(24px) saturate(1.3)',
-              boxShadow:
-                '0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(10,209,200,0.06), inset 0 1px 0 rgba(255,255,255,0.04)',
             }}
             variants={panelVariants}
             initial="hidden"
