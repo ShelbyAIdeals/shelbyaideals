@@ -9,7 +9,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
 const publicImages = resolve(projectRoot, 'public/images');
 
-const API_KEY = process.env.GEMINI_API_KEY || 'REDACTED_KEY';
+const API_KEY = process.env.GEMINI_API_KEY;
+if (!API_KEY) {
+  console.error('Error: GEMINI_API_KEY not set. Add it to .env.local');
+  process.exit(1);
+}
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
