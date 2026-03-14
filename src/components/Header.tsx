@@ -41,17 +41,21 @@ export default function Header() {
   /* ── Restore theme & mist from localStorage ──────────────── */
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    if (saved === 'light') {
+    const isLight = saved === 'light';
+    if (isLight) {
       setLightMode(true);
       document.documentElement.dataset.theme = 'light';
       window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
-    }
-    const savedMist = localStorage.getItem('mistOff') === 'true';
-    if (savedMist) {
-      setMistOn(false);
+      // No mist in light mode
       window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
     } else {
-      window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
+      const savedMist = localStorage.getItem('mistOff') === 'true';
+      if (savedMist) {
+        setMistOn(false);
+        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
+      } else {
+        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
+      }
     }
   }, []);
 
@@ -73,9 +77,17 @@ export default function Header() {
       if (next) {
         document.documentElement.dataset.theme = 'light';
         localStorage.setItem('theme', 'light');
+        // Disable mist in light mode
+        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
       } else {
         delete document.documentElement.dataset.theme;
         localStorage.setItem('theme', 'dark');
+        // Restore mist when switching back to dark (respect user's mist preference)
+        const mistWasOff = localStorage.getItem('mistOff') === 'true';
+        if (!mistWasOff) {
+          setMistOn(true);
+          window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
+        }
       }
       window.dispatchEvent(new CustomEvent('themeChange', { detail: next ? 'light' : 'dark' }));
       return next;
@@ -162,15 +174,17 @@ export default function Header() {
               {/* Divider */}
               <div className="w-px h-5 bg-void-700/50 mx-1" />
 
-              {/* Mist toggle */}
-              <button
-                onClick={toggleMist}
-                className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                aria-label={mistOn ? 'Hide mist' : 'Show mist'}
-                title={mistOn ? 'Hide mist' : 'Show mist'}
-              >
-                {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-              </button>
+              {/* Mist toggle — hidden in light mode */}
+              {!lightMode && (
+                <button
+                  onClick={toggleMist}
+                  className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
+                  aria-label={mistOn ? 'Hide mist' : 'Show mist'}
+                  title={mistOn ? 'Hide mist' : 'Show mist'}
+                >
+                  {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
+                </button>
+              )}
 
               {/* Theme toggle */}
               <button
@@ -261,15 +275,18 @@ export default function Header() {
                   <hr className="border-void-700/50 my-2 mx-3" />
                 </li>
 
-                <li>
-                  <button
-                    onClick={toggleMist}
-                    className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
-                  >
-                    {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-                    {mistOn ? 'Hide Mist' : 'Show Mist'}
-                  </button>
-                </li>
+                {/* Mist toggle — hidden in light mode */}
+                {!lightMode && (
+                  <li>
+                    <button
+                      onClick={toggleMist}
+                      className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
+                    >
+                      {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
+                      {mistOn ? 'Hide Mist' : 'Show Mist'}
+                    </button>
+                  </li>
+                )}
 
                 <li>
                   <button
