@@ -54,7 +54,7 @@ export default function Header() {
         setMistOn(false);
         window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
       } else {
-        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
+        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 100 }));
       }
     }
   }, []);
@@ -86,7 +86,7 @@ export default function Header() {
         const mistWasOff = localStorage.getItem('mistOff') === 'true';
         if (!mistWasOff) {
           setMistOn(true);
-          window.dispatchEvent(new CustomEvent('mistDensity', { detail: 40 }));
+          window.dispatchEvent(new CustomEvent('mistDensity', { detail: 100 }));
         }
       }
       window.dispatchEvent(new CustomEvent('themeChange', { detail: next ? 'light' : 'dark' }));
@@ -123,8 +123,7 @@ export default function Header() {
                 <Zap size={20} className="text-void-950" strokeWidth={2.5} />
               </div>
               <span className="text-xl font-heading font-bold text-void-50 tracking-tight">
-                Shelby<span className="text-signal-400">AI</span>
-                <span className="text-void-300 font-medium">Deals</span>
+                Shelby<span className="text-signal-400">AI</span>Deals
               </span>
             </Link>
 
