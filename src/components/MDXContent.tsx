@@ -14,6 +14,7 @@ import ToolImage from './ToolImage';
 import ScreenshotGallery from './ScreenshotGallery';
 import NewsletterSignup from './NewsletterSignup';
 import InlineNewsletterCTA from './InlineNewsletterCTA';
+import VideoPlayer from './VideoPlayer';
 
 const components = {
   AffiliateDisclosure,
@@ -30,6 +31,7 @@ const components = {
   ScreenshotGallery,
   NewsletterSignup,
   InlineNewsletterCTA,
+  VideoPlayer,
   h2: (props: React.ComponentProps<'h2'>) => {
     const id = props.children
       ?.toString()

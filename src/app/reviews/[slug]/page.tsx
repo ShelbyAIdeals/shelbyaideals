@@ -11,6 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import StickyCTA from '@/components/StickyCTA';
 import InlineNewsletterCTA from '@/components/InlineNewsletterCTA';
+import VideoPlayer from '@/components/VideoPlayer';
+import PinButton from '@/components/PinButton';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
@@ -37,15 +39,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       height: 630,
     };
 
+    const openGraph: Record<string, unknown> = {
+      title: review.title,
+      description: metaDescription,
+      type: 'article',
+      images: [ogImage],
+    };
+
+    if (review.videoUrl) {
+      openGraph.videos = [{
+        url: review.videoUrl,
+        type: 'video/mp4',
+        width: 1920,
+        height: 1080,
+      }];
+    }
+
     return {
       title: review.title,
       description: metaDescription,
-      openGraph: {
-        title: review.title,
-        description: metaDescription,
-        type: 'article',
-        images: [ogImage],
-      },
+      openGraph,
       twitter: {
         card: 'summary_large_image',
         title: review.title,
@@ -161,6 +174,19 @@ export default async function ReviewPage({ params }: PageProps) {
     >
       <JsonLd type="review" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      {meta.videoUrl && (
+        <JsonLd
+          type="video"
+          data={{
+            name: meta.videoTitle || `${meta.tool} Review`,
+            description: meta.videoDescription || meta.excerpt,
+            thumbnailUrl: meta.videoPosterUrl || `https://shelby-ai.com/images/og-thumbnail.png`,
+            contentUrl: meta.videoUrl,
+            uploadDate: meta.videoUploadDate || meta.date,
+            duration: meta.videoDuration,
+          }}
+        />
+      )}
 
       {/* Hero image */}
       {meta.toolSlug && (
@@ -169,6 +195,39 @@ export default async function ReviewPage({ params }: PageProps) {
             toolSlug={meta.toolSlug}
             variant="hero"
             alt={`${meta.tool} screenshot`}
+          />
+        </div>
+      )}
+
+      {/* Video review */}
+      {meta.videoUrl && (
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-semibold text-void-50 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-signal-400"><path d="M8 5v14l11-7z" /></svg>
+              Video Review
+            </h2>
+            <PinButton
+              url={`https://shelby-ai.com/reviews/${slug}/`}
+              imageUrl={meta.featuredImage || 'https://shelby-ai.com/images/og-thumbnail.png'}
+              description={`${meta.tool} Review: ${meta.excerpt}`}
+            />
+          </div>
+          <VideoPlayer
+            src={meta.videoUrl}
+            poster={meta.videoPosterUrl}
+            title={`${meta.tool} Video Review`}
+          />
+        </div>
+      )}
+
+      {/* Pin button (when no video, still allow pinning the article) */}
+      {!meta.videoUrl && (
+        <div className="flex justify-end mb-4">
+          <PinButton
+            url={`https://shelby-ai.com/reviews/${slug}/`}
+            imageUrl={meta.featuredImage || 'https://shelby-ai.com/images/og-thumbnail.png'}
+            description={`${meta.tool} Review: ${meta.excerpt}`}
           />
         </div>
       )}

@@ -5,9 +5,18 @@ interface FAQItem {
   answer: string;
 }
 
+interface VideoData {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  contentUrl: string;
+  uploadDate: string;
+  duration?: string;
+}
+
 interface JsonLdProps {
-  type: 'review' | 'article' | 'website' | 'breadcrumb' | 'faq';
-  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] };
+  type: 'review' | 'article' | 'website' | 'breadcrumb' | 'faq' | 'video';
+  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData;
   breadcrumbs?: { name: string; url: string }[];
 }
 
@@ -107,6 +116,27 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
           text: q.answer,
         },
       })),
+    };
+  } else if (type === 'video' && data && 'contentUrl' in data) {
+    const video = data as VideoData;
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: video.name,
+      description: video.description,
+      thumbnailUrl: video.thumbnailUrl,
+      contentUrl: video.contentUrl,
+      uploadDate: video.uploadDate,
+      duration: video.duration,
+      publisher: {
+        '@type': 'Organization',
+        name: 'ShelbyAIDeals',
+        url: 'https://shelby-ai.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://shelby-ai.com/images/logo.png',
+        },
+      },
     };
   } else {
     return null;

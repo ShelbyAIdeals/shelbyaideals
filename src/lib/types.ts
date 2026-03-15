@@ -26,6 +26,14 @@ export interface ReviewMeta extends ArticleMeta {
   verdict: string;
   affiliateUrl: string;
   affiliateLabel: string;
+  // Video review fields (optional — only present when video exists)
+  videoUrl?: string;
+  videoPosterUrl?: string;
+  videoDuration?: string; // ISO 8601 (e.g. "PT2M30S")
+  videoTitle?: string;
+  videoDescription?: string;
+  videoUploadDate?: string;
+  videoPinterestUrl?: string;
 }
 
 export interface ComparisonMeta extends ArticleMeta {
