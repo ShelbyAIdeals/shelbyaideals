@@ -14,7 +14,9 @@
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "rss": "tsx scripts/generate-rss.ts",
     "social": "tsx scripts/social-post.ts --latest",
-    "autopilot": "tsx scripts/publish-next.ts --count 1"
+    "autopilot": "tsx scripts/publish-next.ts --count 1",
+    "video": "tsx scripts/generate-video.ts",
+    "video:preview": "npx remotion studio remotion/Root.tsx"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -32,11 +34,15 @@
     "twitter-api-v2": "^1.29.0"
   },
   "devDependencies": {
+    "@remotion/bundler": "^4.0.435",
+    "@remotion/cli": "^4.0.435",
+    "@remotion/renderer": "^4.0.435",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vercel/node": "^4.0.0",
+    "remotion": "^4.0.435",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.7.0"
