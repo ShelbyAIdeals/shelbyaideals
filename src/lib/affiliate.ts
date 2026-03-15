@@ -23,6 +23,12 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
     commission: '20-45% recurring',
     status: 'unavailable',
   },
+  frase: {
+    name: 'Frase',
+    url: 'https://www.frase.io/?via=shelby-ai',
+    commission: 'Recurring',
+    status: 'active',
+  },
   writesonic: {
     name: 'Writesonic',
     url: 'https://writesonic.com',

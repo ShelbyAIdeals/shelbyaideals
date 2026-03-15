@@ -252,7 +252,7 @@ export const alternativesData: AlternativesPage[] = [
           'Frase combines content research, outlining, and optimization in one workflow. It is faster for creating briefs and outlines than Surfer and more affordable for small teams.',
         pricing: 'From $15/mo',
         bestFor: 'Content research & briefs',
-        url: 'https://frase.io',
+        url: 'https://www.frase.io/?via=shelby-ai',
       },
       {
         name: 'MarketMuse',
