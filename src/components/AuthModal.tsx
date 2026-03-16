@@ -99,7 +99,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     setError('');
     try {
       await signInWithGoogle();
-      // Google OAuth redirects — modal will close automatically on redirect
+      // signInWithOAuth triggers browser redirect to Google automatically
     } catch (err) {
       setError(err instanceof Error ? err.message : t('auth.error.generic'));
       setLoading(false);

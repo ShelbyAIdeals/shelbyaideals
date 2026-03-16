@@ -65,6 +65,10 @@ export async function signUpWithEmail(
 }
 
 export async function signInWithGoogle() {
+  // Check if Supabase is actually configured (these are inlined at build time)
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Supabase is not configured. Env vars were empty at build time. Redeploy after adding NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to Vercel.');
+  }
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
