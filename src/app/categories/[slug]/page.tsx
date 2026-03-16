@@ -103,6 +103,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     category={review.category}
                     bestFor={review.bestFor}
                     featuredImage={review.featuredImage}
+                    toolLogo={review.toolLogo}
                   />
                 </StaggerItem>
               ))}

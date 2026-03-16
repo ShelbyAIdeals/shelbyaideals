@@ -98,6 +98,7 @@ export default async function HomePage() {
                     category={review.category}
                     bestFor={review.bestFor}
                     featuredImage={review.featuredImage}
+                    toolLogo={review.toolLogo}
                   />
                 </StaggerItem>
               ))}

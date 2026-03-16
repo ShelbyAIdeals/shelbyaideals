@@ -14,6 +14,16 @@ export interface ArticleMeta {
   featuredImage?: string;
 }
 
+export interface SocialLinks {
+  twitter?: string;
+  youtube?: string;
+  linkedin?: string;
+  instagram?: string;
+  github?: string;
+  tiktok?: string;
+  discord?: string;
+}
+
 export interface ReviewMeta extends ArticleMeta {
   type: 'review';
   tool: string;
@@ -26,6 +36,10 @@ export interface ReviewMeta extends ArticleMeta {
   verdict: string;
   affiliateUrl: string;
   affiliateLabel: string;
+  // Tool profile fields
+  toolLogo?: string;           // e.g. "/logos/pictory.svg"
+  socialLinks?: SocialLinks;
+  youtubeUrl?: string;         // YouTube embed URL for quick review
   // Video review fields (optional — only present when video exists)
   videoUrl?: string;
   videoPosterUrl?: string;

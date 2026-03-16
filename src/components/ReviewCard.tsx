@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ReviewCardProps {
@@ -14,6 +14,7 @@ interface ReviewCardProps {
   bestFor: string;
   featuredImage?: string;
   toolSlug?: string;
+  toolLogo?: string;
 }
 
 export default function ReviewCard({
@@ -26,6 +27,7 @@ export default function ReviewCard({
   bestFor,
   featuredImage,
   toolSlug,
+  toolLogo,
 }: ReviewCardProps) {
   const imageSlug = toolSlug || slug.replace('-review', '');
   const webpSrc = `/images/tools/${imageSlug}/thumb.webp`;
@@ -34,6 +36,7 @@ export default function ReviewCard({
   const fallbackSrc = '/images/placeholders/tool-thumb.svg';
 
   const clampedRating = Math.max(0, Math.min(5, Number(rating) || 0));
+  const isVerified = clampedRating >= 4.0;
 
   return (
     <Link href={`/reviews/${slug}`} className="no-underline block h-full">
@@ -56,7 +59,7 @@ export default function ReviewCard({
             }}
           />
 
-          {/* Gradient overlay: transparent top → void-900 bottom */}
+          {/* Gradient overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -65,7 +68,19 @@ export default function ReviewCard({
             }}
           />
 
-          {/* Rating score circle — overlapping bottom-right of image */}
+          {/* Tool logo (overlapping top-left of image area) */}
+          {toolLogo && (
+            <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-void-900/80 border border-void-700/50 backdrop-blur-sm flex items-center justify-center overflow-hidden shadow-lg">
+              <img
+                src={toolLogo}
+                alt={`${tool} logo`}
+                className="w-7 h-7 object-contain"
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          {/* Rating score circle */}
           <motion.div
             className="badge-score w-10 h-10 text-sm absolute bottom-0 right-4 translate-y-1/2 z-10 shadow-lg"
             whileHover={{ scale: 1.1 }}
@@ -77,13 +92,18 @@ export default function ReviewCard({
 
         {/* Content area */}
         <div className="p-5 sm:p-6 flex flex-col flex-1 pt-6">
-          {/* Tool name */}
-          <h3 className="text-base font-heading font-bold text-void-50 leading-snug group-hover:text-signal-400 transition-colors">
-            {tool}
-          </h3>
+          {/* Tool name + verified badge */}
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="text-base font-heading font-bold text-void-50 leading-snug group-hover:text-signal-400 transition-colors">
+              {tool}
+            </h3>
+            {isVerified && (
+              <BadgeCheck size={16} className="text-signal-400 shrink-0" />
+            )}
+          </div>
 
           {/* Article title */}
-          <p className="text-sm text-void-300 leading-snug mt-1 mb-3">
+          <p className="text-sm text-void-300 leading-snug mb-3">
             {title}
           </p>
 

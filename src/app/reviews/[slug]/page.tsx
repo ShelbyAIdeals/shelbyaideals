@@ -13,6 +13,9 @@ import StickyCTA from '@/components/StickyCTA';
 import InlineNewsletterCTA from '@/components/InlineNewsletterCTA';
 import VideoPlayer from '@/components/VideoPlayer';
 import PinButton from '@/components/PinButton';
+import SocialLinksRow from '@/components/SocialLinksRow';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
+import UserReviewsSection from '@/components/UserReviewsSection';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
@@ -199,6 +202,14 @@ export default async function ReviewPage({ params }: PageProps) {
         </div>
       )}
 
+      {/* Social links */}
+      {meta.socialLinks && Object.values(meta.socialLinks).some(Boolean) && (
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-medium text-void-500 uppercase tracking-wide">Follow</span>
+          <SocialLinksRow links={meta.socialLinks} toolName={meta.tool} />
+        </div>
+      )}
+
       {/* Video review */}
       {meta.videoUrl && (
         <div className="mb-8">
@@ -218,6 +229,17 @@ export default async function ReviewPage({ params }: PageProps) {
             poster={meta.videoPosterUrl}
             title={`${meta.tool} Video Review`}
           />
+        </div>
+      )}
+
+      {/* YouTube embed (quick review) */}
+      {meta.youtubeUrl && (
+        <div className="mb-8">
+          <h2 className="text-lg font-semibold text-void-50 flex items-center gap-2 mb-3">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-red-500"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
+            Watch on YouTube
+          </h2>
+          <YouTubeEmbed url={meta.youtubeUrl} title={`${meta.tool} Review`} />
         </div>
       )}
 
@@ -268,6 +290,9 @@ export default async function ReviewPage({ params }: PageProps) {
           toolName={meta.tool}
         />
       </div>
+
+      {/* User Reviews */}
+      <UserReviewsSection toolSlug={meta.toolSlug || slug} toolName={meta.tool} />
 
       {/* Related Articles */}
       <RelatedArticles current={meta} articles={allArticles} />

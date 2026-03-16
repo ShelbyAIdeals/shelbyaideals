@@ -6,7 +6,7 @@ import ScrollProgress from '@/components/motion/ScrollProgress';
 import MistEffect from '@/components/MistEffect';
 import PageScaler from '@/components/PageScaler';
 import JsonLd from '@/components/JsonLd';
-import ExitIntentPopup from '@/components/ExitIntentPopup';
+import Providers from '@/components/Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -121,13 +121,14 @@ export default function RootLayout({
         )}
         <JsonLd type="website" />
         <MistEffect />
-        <div className="relative z-[2] isolate flex flex-col min-h-screen">
-          <ScrollProgress />
-          <Header />
-          <PageScaler>{children}</PageScaler>
-          <Footer />
-          <ExitIntentPopup />
-        </div>
+        <Providers>
+          <div className="relative z-[2] isolate flex flex-col min-h-screen">
+            <ScrollProgress />
+            <Header />
+            <PageScaler>{children}</PageScaler>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );

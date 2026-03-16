@@ -3,28 +3,40 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, Command } from 'lucide-react';
+import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, Command, LogIn } from 'lucide-react';
 import CommandPalette from './CommandPalette';
+import LanguageDropdown from './LanguageDropdown';
+import AuthModal from './AuthModal';
+import UserMenu from './UserMenu';
+import { useAuth } from '@/lib/auth-context';
+import { useTranslation } from '@/i18n/context';
 
 const navLinks = [
-  { label: 'Tools', href: '/reviews' },
-  { label: 'Comparisons', href: '/comparisons' },
-  { label: 'Deals', href: '/deals', hasBadge: true },
-  { label: 'Guides', href: '/guides' },
+  { labelKey: 'nav.tools', href: '/reviews' },
+  { labelKey: 'nav.comparisons', href: '/comparisons' },
+  { labelKey: 'nav.deals', href: '/deals', hasBadge: true },
+  { labelKey: 'nav.guides', href: '/guides' },
+  { labelKey: 'nav.newsletter', href: '/newsletter' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
+  const { user, loading: authLoading } = useAuth();
+  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lightMode, setLightMode] = useState(false);
   const [mistOn, setMistOn] = useState(true);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [authModal, setAuthModal] = useState<{ open: boolean; mode: 'login' | 'signup' }>({
+    open: false,
+    mode: 'login',
+  });
 
   /* ── Scroll listener for glassmorphic transition ─────────── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll(); // set initial state
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -46,7 +58,6 @@ export default function Header() {
       setLightMode(true);
       document.documentElement.dataset.theme = 'light';
       window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
-      // No mist in light mode
       window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
     } else {
       const savedMist = localStorage.getItem('mistOff') === 'true';
@@ -77,12 +88,10 @@ export default function Header() {
       if (next) {
         document.documentElement.dataset.theme = 'light';
         localStorage.setItem('theme', 'light');
-        // Disable mist in light mode
         window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
       } else {
         delete document.documentElement.dataset.theme;
         localStorage.setItem('theme', 'dark');
-        // Restore mist when switching back to dark (respect user's mist preference)
         const mistWasOff = localStorage.getItem('mistOff') === 'true';
         if (!mistWasOff) {
           setMistOn(true);
@@ -106,6 +115,11 @@ export default function Header() {
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
+  };
+
+  const openAuth = (mode: 'login' | 'signup') => {
+    setAuthModal({ open: true, mode });
+    setMobileOpen(false);
   };
 
   return (
@@ -141,12 +155,10 @@ export default function Header() {
                         : 'text-void-200 hover:text-void-50 hover:bg-void-700/40'
                     }`}
                   >
-                    {link.label}
-                    {/* Ember badge dot for Deals */}
+                    {t(link.labelKey)}
                     {link.hasBadge && (
                       <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-ember-400 ring-2 ring-void-950" />
                     )}
-                    {/* Active underline indicator */}
                     {active && (
                       <span className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-signal-400" />
                     )}
@@ -157,18 +169,21 @@ export default function Header() {
 
             {/* ── Right side controls ──────────────────────────── */}
             <div className="hidden lg:flex items-center gap-2">
-              {/* Search / Cmd+K button */}
+              {/* Search / Cmd+K */}
               <button
                 onClick={() => setPaletteOpen(true)}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-void-700/50 bg-void-800/40 text-void-400 hover:text-void-200 hover:border-void-600 hover:bg-void-800/70 transition-all cursor-pointer"
-                aria-label="Search (Cmd+K)"
+                aria-label={t('nav.search')}
               >
                 <Search size={15} />
-                <span className="text-sm">Search</span>
+                <span className="text-sm">{t('nav.search')}</span>
                 <kbd className="hidden xl:inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 text-[10px] font-mono font-medium text-void-500 bg-void-900/80 border border-void-700/60 rounded">
                   <Command size={10} />K
                 </kbd>
               </button>
+
+              {/* Language dropdown */}
+              <LanguageDropdown />
 
               {/* Divider */}
               <div className="w-px h-5 bg-void-700/50 mx-1" />
@@ -178,8 +193,8 @@ export default function Header() {
                 <button
                   onClick={toggleMist}
                   className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                  aria-label={mistOn ? 'Hide mist' : 'Show mist'}
-                  title={mistOn ? 'Hide mist' : 'Show mist'}
+                  aria-label={mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
+                  title={mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
                 >
                   {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
                 </button>
@@ -189,32 +204,45 @@ export default function Header() {
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                aria-label={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
-                title={lightMode ? 'Dark mode' : 'Light mode'}
+                aria-label={lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
+                title={lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
               >
                 {lightMode ? <Moon size={18} /> : <Sun size={18} />}
               </button>
 
-              {/* About */}
-              <Link
-                href="/about"
-                className={`ml-1 px-4 py-2 text-sm font-semibold rounded-lg no-underline transition-all duration-200 ${
-                  isActive('/about')
-                    ? 'text-signal-300 bg-signal-500/10 border border-signal-500/30'
-                    : 'text-void-200 border border-void-600/50 hover:text-signal-300 hover:bg-void-700/40 hover:border-void-500/50'
-                }`}
-              >
-                About
-              </Link>
+              {/* Divider */}
+              <div className="w-px h-5 bg-void-700/50 mx-1" />
+
+              {/* Auth buttons / User menu */}
+              {!authLoading && (
+                user ? (
+                  <UserMenu />
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => openAuth('login')}
+                      className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-void-200 hover:text-void-50 rounded-lg hover:bg-void-700/40 transition-all cursor-pointer"
+                    >
+                      <LogIn size={16} />
+                      {t('auth.login')}
+                    </button>
+                    <button
+                      onClick={() => openAuth('signup')}
+                      className="px-4 py-2 text-sm font-bold rounded-lg bg-signal-500 text-void-950 hover:bg-signal-400 transition-all cursor-pointer"
+                    >
+                      {t('auth.join_free')}
+                    </button>
+                  </div>
+                )
+              )}
             </div>
 
             {/* ── Mobile hamburger ─────────────────────────────── */}
             <div className="flex lg:hidden items-center gap-2">
-              {/* Mobile search button */}
               <button
                 onClick={() => setPaletteOpen(true)}
                 className="p-2 rounded-lg text-void-200 hover:text-signal-300 hover:bg-void-700/40 transition-colors cursor-pointer"
-                aria-label="Search"
+                aria-label={t('nav.search')}
               >
                 <Search size={22} />
               </button>
@@ -247,7 +275,7 @@ export default function Header() {
                             : 'text-void-100 hover:bg-void-700/40 hover:text-signal-300'
                         }`}
                       >
-                        {link.label}
+                        {t(link.labelKey)}
                         {link.hasBadge && (
                           <span className="w-2 h-2 rounded-full bg-ember-400" />
                         )}
@@ -266,12 +294,17 @@ export default function Header() {
                         : 'text-void-100 hover:bg-void-700/40 hover:text-signal-300'
                     }`}
                   >
-                    About
+                    {t('nav.about')}
                   </Link>
                 </li>
 
                 <li>
                   <hr className="border-void-700/50 my-2 mx-3" />
+                </li>
+
+                {/* Language selector (mobile) */}
+                <li className="px-3 py-2">
+                  <LanguageDropdown />
                 </li>
 
                 {/* Mist toggle — hidden in light mode */}
@@ -282,7 +315,7 @@ export default function Header() {
                       className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
                     >
                       {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-                      {mistOn ? 'Hide Mist' : 'Show Mist'}
+                      {mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
                     </button>
                   </li>
                 )}
@@ -293,17 +326,47 @@ export default function Header() {
                     className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
                   >
                     {lightMode ? <Moon size={18} /> : <Sun size={18} />}
-                    {lightMode ? 'Dark Mode' : 'White Mode'}
+                    {lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
                   </button>
                 </li>
+
+                {/* Auth buttons (mobile) */}
+                {!authLoading && !user && (
+                  <>
+                    <li>
+                      <hr className="border-void-700/50 my-2 mx-3" />
+                    </li>
+                    <li className="px-3 flex gap-2">
+                      <button
+                        onClick={() => openAuth('login')}
+                        className="flex-1 py-2.5 text-sm font-semibold text-void-200 border border-void-600/50 rounded-lg hover:bg-void-700/40 transition-colors cursor-pointer"
+                      >
+                        {t('auth.login')}
+                      </button>
+                      <button
+                        onClick={() => openAuth('signup')}
+                        className="flex-1 py-2.5 text-sm font-bold bg-signal-500 text-void-950 rounded-lg hover:bg-signal-400 transition-colors cursor-pointer"
+                      >
+                        {t('auth.join_free')}
+                      </button>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
           )}
         </div>
       </header>
 
-      {/* Command Palette (rendered outside header for proper z-index stacking) */}
+      {/* Command Palette */}
       <CommandPalette isOpen={paletteOpen} onClose={() => setPaletteOpen(false)} />
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModal.open}
+        onClose={() => setAuthModal({ ...authModal, open: false })}
+        initialMode={authModal.mode}
+      />
     </>
   );
 }

@@ -58,6 +58,10 @@ function parseArticle(dir: string, filename: string) {
       ...tier,
       features: Array.isArray(tier.features) ? tier.features : [],
     }));
+    // Tool profile fields (new — safe defaults for backward compat)
+    data.toolLogo = data.toolLogo ?? null;
+    data.socialLinks = data.socialLinks ?? {};
+    data.youtubeUrl = data.youtubeUrl ?? null;
   }
   if (dir === 'best') {
     data.tools = Array.isArray(data.tools) ? data.tools : [];
