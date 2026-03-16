@@ -64,26 +64,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   /* ── Listen for auth state changes ─────────────────────── */
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        const user = session?.user ?? null;
-        setState((prev) => ({ ...prev, user, session, loading: false }));
-        if (user) {
-          await ensureProfile(user);
-        } else {
-          setState((prev) => ({ ...prev, profile: null }));
+    let subscription: { unsubscribe: () => void } | null = null;
+
+    try {
+      const result = supabase.auth.onAuthStateChange(
+        async (_event, session) => {
+          const user = session?.user ?? null;
+          setState((prev) => ({ ...prev, user, session, loading: false }));
+          if (user) {
+            await ensureProfile(user);
+          } else {
+            setState((prev) => ({ ...prev, profile: null }));
+          }
         }
-      }
-    );
+      );
+      subscription = result.data.subscription;
+    } catch {
+      // Supabase not configured or key format incompatible — degrade gracefully
+      setState((prev) => ({ ...prev, loading: false }));
+    }
 
     // Initial session check
     supabase.auth.getSession().then(({ data: { session } }) => {
       const user = session?.user ?? null;
       setState((prev) => ({ ...prev, user, session, loading: false }));
       if (user) ensureProfile(user);
+    }).catch(() => {
+      setState((prev) => ({ ...prev, loading: false }));
     });
 
-    return () => subscription.unsubscribe();
+    return () => subscription?.unsubscribe();
   }, [ensureProfile]);
 
   /* ── Auth actions ───────────────────────────────────────── */
