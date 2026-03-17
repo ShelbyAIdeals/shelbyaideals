@@ -14,6 +14,7 @@ export default function OnboardingPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState('');
 
   // Auth guard
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function OnboardingPage() {
   const handleFinish = async () => {
     if (!user) return;
     setSaving(true);
+    setError('');
     try {
       await upsertUserPreferences({
         user_id: user.id,
@@ -70,8 +72,8 @@ export default function OnboardingPage() {
       await upsertProfile({ id: user.id, onboarding_completed: true });
       await refreshProfile();
       router.push('/');
-    } catch {
-      // Allow retry
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     }
     setSaving(false);
   };
@@ -156,6 +158,10 @@ export default function OnboardingPage() {
           )}
         </button>
       </div>
+
+      {error && (
+        <p className="text-sm text-red-400 mt-6 max-w-md text-center">{error}</p>
+      )}
     </div>
   );
 }
