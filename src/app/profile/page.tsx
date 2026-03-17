@@ -58,7 +58,7 @@ export default function ProfilePage() {
       Promise.race([p, new Promise<never>((_, rej) => setTimeout(() => rej(new Error('Request timed out')), ms))]);
 
     try {
-      const { error } = await timeout(
+      const result = await timeout(
         supabase
           .from('profiles')
           .upsert({
@@ -68,10 +68,10 @@ export default function ProfilePage() {
             last_name: formData.lastName.trim(),
           }, { onConflict: 'id' }),
         8000
-      );
+      ) as { error: { message: string } | null };
 
-      if (error) {
-        setSaveError(error.message);
+      if (result.error) {
+        setSaveError(result.error.message);
         setSaving(false);
         return;
       }
