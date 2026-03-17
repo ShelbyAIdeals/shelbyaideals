@@ -98,7 +98,21 @@ export interface UserProfile {
   first_name: string | null;
   last_name: string | null;
   avatar_url: string | null;
+  onboarding_completed: boolean;
   created_at: string;
+}
+
+export interface UserPreferences {
+  id: string;
+  user_id: string;
+  business_type: string | null;
+  role: string | null;
+  industry: string | null;
+  interests: string[];
+  goals: string[];
+  recommendations_seen_at: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export async function getProfile(userId: string): Promise<UserProfile | null> {
@@ -189,4 +203,70 @@ export async function getVotesForReview(reviewId: string) {
   if (error) return { helpful: 0, unhelpful: 0 };
   const helpful = data.filter((v) => v.helpful).length;
   return { helpful, unhelpful: data.length - helpful };
+}
+
+/* ── Preferences helpers ─────────────────────────────────── */
+
+export async function getUserPreferences(userId: string): Promise<UserPreferences | null> {
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .select('*')
+    .eq('user_id', userId)
+    .single();
+  if (error) return null;
+  return data;
+}
+
+export async function upsertUserPreferences(
+  prefs: Partial<UserPreferences> & { user_id: string }
+): Promise<UserPreferences | null> {
+  const { data, error } = await supabase
+    .from('user_preferences')
+    .upsert({ ...prefs, updated_at: new Date().toISOString() }, { onConflict: 'user_id' })
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+export async function markRecommendationsSeen(userId: string): Promise<void> {
+  await supabase
+    .from('user_preferences')
+    .update({ recommendations_seen_at: new Date().toISOString() })
+    .eq('user_id', userId);
+}
+
+/* ── Avatar upload ───────────────────────────────────────── */
+
+export async function uploadAvatar(userId: string, file: File): Promise<string> {
+  const fileExt = file.name.split('.').pop() || 'jpg';
+  const filePath = `${userId}/avatar.${fileExt}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from('avatars')
+    .upload(filePath, file, { upsert: true });
+  if (uploadError) throw uploadError;
+
+  const { data } = supabase.storage.from('avatars').getPublicUrl(filePath);
+  const publicUrl = `${data.publicUrl}?t=${Date.now()}`;
+
+  await upsertProfile({ id: userId, avatar_url: publicUrl });
+  return publicUrl;
+}
+
+/* ── Delete account ──────────────────────────────────────── */
+
+export async function deleteAccount(): Promise<void> {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session?.access_token) throw new Error('Not authenticated');
+
+  const response = await fetch('/api/delete-account', {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${session.access_token}` },
+  });
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    throw new Error(body.error || 'Failed to delete account');
+  }
+  await supabase.auth.signOut();
 }

@@ -1,0 +1,2439 @@
+[
+  {
+    "title": "Chatbase Review 2026: Build Custom AI Chatbots for Your Website",
+    "slug": "chatbase-review",
+    "excerpt": "This Chatbase review evaluates the platform's ability to create custom AI chatbots tailored to your business needs, providing a detailed look at its features, pricing, and competition.",
+    "category": "ai-automation",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Chatbase",
+    "toolSlug": "chatbase",
+    "toolLogo": "/logos/chatbase.svg",
+    "rating": 3.9,
+    "bestFor": "Businesses seeking to leverage AI chatbots trained on their specific data for enhanced customer interaction.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 chatbot",
+          "20 messages/month",
+          "400K character training"
+        ],
+        "affiliateUrl": "https://link.chatbase.co/shelby-ai"
+      },
+      {
+        "plan": "Hobby",
+        "price": "$19",
+        "period": "/month",
+        "features": [
+          "2 chatbots",
+          "2,000 messages/month",
+          "11M characters"
+        ],
+        "affiliateUrl": "https://link.chatbase.co/shelby-ai"
+      },
+      {
+        "plan": "Standard",
+        "price": "$99",
+        "period": "/month",
+        "features": [
+          "5 chatbots",
+          "10,000 messages/month",
+          "Remove branding",
+          "API access"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://link.chatbase.co/shelby-ai"
+      },
+      {
+        "plan": "Unlimited",
+        "price": "$399",
+        "period": "/month",
+        "features": [
+          "10 chatbots",
+          "40,000 messages/month",
+          "Custom domains"
+        ],
+        "affiliateUrl": "https://link.chatbase.co/shelby-ai"
+      }
+    ],
+    "pros": [
+      "Allows businesses to train chatbots using their own data for more personalized interactions.",
+      "Offers a user-friendly interface that simplifies the chatbot creation process.",
+      "Provides a free tier, making it accessible for small-scale trials and projects.",
+      "Integrates smoothly with existing website infrastructure, minimizing setup hassles."
+    ],
+    "cons": [
+      "Higher-tier plans can be costly for small businesses or startups.",
+      "Limited message caps might restrict heavy-duty applications.",
+      "Customization options are less flexible compared to some competitors."
+    ],
+    "verdict": "Chatbase is ideal for businesses wanting to create custom AI chatbots without extensive technical expertise. However, those needing extensive customization or operating on a tight budget might consider alternatives like Botpress. Overall, Chatbase offers a solid balance of features and usability, though its pricing could be a barrier for some.",
+    "affiliateUrl": "https://link.chatbase.co/shelby-ai",
+    "affiliateLabel": "Try Chatbase Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "ChatGPT Review 2026: The AI That Started It All — Still the Best?",
+    "slug": "chatgpt-review",
+    "excerpt": "This ChatGPT review explores whether the AI tool that started it all remains the best choice in 2026 for versatile writing and creative tasks.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "ChatGPT",
+    "toolSlug": "chatgpt",
+    "toolLogo": "/logos/chatgpt.svg",
+    "rating": 4.2,
+    "bestFor": "Versatile creators needing a reliable AI assistant for writing, coding, and analysis.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "GPT-4o mini",
+          "Limited GPT-4o",
+          "Basic features"
+        ],
+        "affiliateUrl": "https://chat.openai.com"
+      },
+      {
+        "plan": "Plus",
+        "price": "$20",
+        "period": "/month",
+        "features": [
+          "Full GPT-4o access",
+          "DALL-E 3",
+          "Advanced Data Analysis",
+          "Custom GPTs"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://chat.openai.com"
+      },
+      {
+        "plan": "Pro",
+        "price": "$200",
+        "period": "/month",
+        "features": [
+          "Unlimited GPT-4o",
+          "o1 pro mode",
+          "Research tools",
+          "Priority access"
+        ],
+        "affiliateUrl": "https://chat.openai.com"
+      },
+      {
+        "plan": "Team",
+        "price": "$30",
+        "period": "/user/month",
+        "features": [
+          "Everything in Plus",
+          "Workspace admin",
+          "Data excluded from training"
+        ],
+        "affiliateUrl": "https://chat.openai.com"
+      }
+    ],
+    "pros": [
+      "Consistently produces high-quality, human-like text outputs.",
+      "Offers a robust range of features including coding assistance and data analysis.",
+      "Integrates custom GPTs for tailored outputs.",
+      "Responsive and quick to generate results, improving workflow efficiency."
+    ],
+    "cons": [
+      "Higher-tier pricing can be prohibitive for individual users.",
+      "Occasional inaccuracies in factual content generation.",
+      "Interface lacks some customization features that competitors offer."
+    ],
+    "verdict": "ChatGPT remains a powerful tool for those requiring a versatile AI assistant. While not ideal for users on a strict budget, its feature set justifies the cost for many creators and teams.",
+    "affiliateUrl": "https://chat.openai.com",
+    "affiliateLabel": "Try ChatGPT Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Claude AI Review 2026: The Thoughtful Alternative to ChatGPT",
+    "slug": "claude-ai-review",
+    "excerpt": "In this Claude AI review, we delve into its thoughtful approach to AI writing, offering nuanced responses for writers, researchers, and developers.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Claude AI",
+    "toolSlug": "claude-ai",
+    "toolLogo": "/logos/claude-ai.svg",
+    "rating": 4,
+    "bestFor": "Writers and researchers seeking nuanced, thoughtful AI-generated content.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Claude Sonnet",
+          "Basic features",
+          "Limited messages"
+        ],
+        "affiliateUrl": "https://claude.ai"
+      },
+      {
+        "plan": "Pro",
+        "price": "$20",
+        "period": "/month",
+        "features": [
+          "Claude Opus 4",
+          "Extended thinking",
+          "Projects",
+          "Priority access"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://claude.ai"
+      },
+      {
+        "plan": "Team",
+        "price": "$30",
+        "period": "/user/month",
+        "features": [
+          "Everything in Pro",
+          "Team admin",
+          "Higher limits"
+        ],
+        "affiliateUrl": "https://claude.ai"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "SSO/SCIM",
+          "Audit logs",
+          "Custom retention"
+        ],
+        "affiliateUrl": "https://claude.ai"
+      }
+    ],
+    "pros": [
+      "Delivers nuanced and contextually aware responses, enhancing the quality of creative writing.",
+      "Supports complex project management, beneficial for developers and researchers.",
+      "Offers a competitive Pro plan at $20/month with priority access and extended features.",
+      "Integrates seamlessly with team environments, facilitating collaboration on the Team plan."
+    ],
+    "cons": [
+      "Limited free tier may not suffice for heavy users requiring extensive interaction.",
+      "Learning curve can be steep for users unfamiliar with AI tools.",
+      "Enterprise pricing is opaque, potentially complicating budgeting for large organizations."
+    ],
+    "verdict": "Claude AI is ideal for writers and researchers who prioritize thoughtful, nuanced AI outputs. However, those needing extensive free features might find ChatGPT a better fit. Overall, it provides robust capabilities for its price, especially in collaborative environments.",
+    "affiliateUrl": "https://claude.ai",
+    "affiliateLabel": "Try Claude AI Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Copy.ai Review 2026: Can It Replace a Freelance Copywriter?",
+    "slug": "copy-ai-review",
+    "excerpt": "We tested Copy.ai on real client work — ads, emails, blog posts, and sales pages. Here is whether it can actually replace hiring a freelance copywriter.",
+    "description": "Copy.ai review 2026: hands-on testing on real client work. See pricing, free tier details, output quality, and our honest verdict for freelancers.",
+    "keywords": [
+      "copy ai review",
+      "copy.ai",
+      "ai copywriting tool",
+      "copy ai pricing",
+      "copy ai free tier",
+      "best ai writer for freelancers"
+    ],
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-01",
+    "lastUpdated": "2026-03-01",
+    "featured": true,
+    "tool": "Copy.ai",
+    "toolSlug": "copy-ai",
+    "toolLogo": "/logos/copy-ai.svg",
+    "rating": 3.9,
+    "bestFor": "Freelancers and solopreneurs who need fast marketing copy on a budget",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 user seat",
+          "2,000 words/month",
+          "90+ copywriting tools",
+          "Chat assistant",
+          "Limited templates"
+        ],
+        "affiliateUrl": "https://www.copy.ai"
+      },
+      {
+        "plan": "Starter",
+        "price": "$36",
+        "period": "/month",
+        "features": [
+          "1 user seat",
+          "Unlimited words",
+          "All templates",
+          "Brand voices",
+          "25+ languages"
+        ],
+        "affiliateUrl": "https://www.copy.ai"
+      },
+      {
+        "plan": "Advanced",
+        "price": "$186",
+        "period": "/month",
+        "features": [
+          "Up to 5 seats",
+          "Workflow automation",
+          "API access",
+          "Priority support",
+          "Custom workflows"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.copy.ai"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Unlimited seats",
+          "Dedicated account manager",
+          "SSO",
+          "Custom integrations",
+          "SLA"
+        ],
+        "affiliateUrl": "https://www.copy.ai"
+      }
+    ],
+    "pros": [
+      "Generous free tier — 2,000 words/month lets you actually evaluate the tool",
+      "Workflow automation turns multi-step content creation into one-click processes",
+      "90+ specialized copywriting templates cover nearly every marketing format",
+      "Clean, intuitive interface — zero learning curve",
+      "Strong at short-form copy: ads, emails, product descriptions, social posts"
+    ],
+    "cons": [
+      "Long-form blog content quality is inconsistent — needs heavy editing",
+      "Brand voice feature is less refined than Jasper's implementation",
+      "Advanced plan is expensive ($186/mo) for the team features you get",
+      "Workflow automation can feel rigid — limited customization for edge cases"
+    ],
+    "verdict": "Copy.ai is the best entry point into AI writing tools. The free tier is actually usable, the interface is dead simple, and the short-form copy quality is genuinely impressive. For freelancers and solopreneurs, the Starter plan at $36/mo is a no-brainer. But for teams that need polished long-form content, Jasper still has the edge.",
+    "affiliateUrl": "https://www.copy.ai",
+    "affiliateLabel": "Try Copy.ai Free",
+    "lastTested": "2026-02-28",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "21 min read"
+  },
+  {
+    "title": "Decktopus AI Review 2026: AI Presentations in Minutes",
+    "slug": "decktopus-ai-review",
+    "excerpt": "Our Decktopus AI review reveals how this AI presentation maker allows professionals to create polished slides in minutes, offering a competitive edge in the rapidly evolving market of AI productivity tools.",
+    "category": "ai-productivity",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Decktopus AI",
+    "toolSlug": "decktopus-ai",
+    "toolLogo": "/logos/decktopus-ai.svg",
+    "rating": 3.9,
+    "bestFor": "Professionals who need to generate polished presentations quickly without investing time in design.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Limited decks",
+          "AI generation",
+          "Basic templates"
+        ],
+        "affiliateUrl": "https://www.decktopus.com/?via=Shelby-ai"
+      },
+      {
+        "plan": "Pro AI",
+        "price": "$9.99",
+        "period": "/month",
+        "features": [
+          "Unlimited decks",
+          "Custom branding",
+          "Export to PDF/PPTX",
+          "AI content generation"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.decktopus.com/?via=Shelby-ai"
+      },
+      {
+        "plan": "Business",
+        "price": "$36",
+        "period": "/month",
+        "features": [
+          "Team collaboration",
+          "Analytics",
+          "Custom domains"
+        ],
+        "affiliateUrl": "https://www.decktopus.com/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Quickly generates polished presentations in minutes.",
+      "User-friendly interface with minimal learning curve.",
+      "Offers robust template customization and branding options.",
+      "Integrates seamlessly with popular productivity tools.",
+      "Pro AI plan offers good value for individual users."
+    ],
+    "cons": [
+      "Limited design flexibility compared to traditional tools.",
+      "The free version is too basic for professional needs.",
+      "Team features are lacking in the Pro AI tier.",
+      "High pricing for business plans with similar alternatives available."
+    ],
+    "verdict": "Decktopus AI is ideal for individual professionals who need fast, polished presentations without design hassles. However, teams may find better value elsewhere due to limited collaboration features. Overall, it offers competitive features for solo users at a fair price point.",
+    "affiliateUrl": "https://www.decktopus.com/?via=Shelby-ai",
+    "affiliateLabel": "Try Decktopus AI Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Descript Review 2026: Can It Replace Your Entire Video Editing Suite?",
+    "slug": "descript-review",
+    "excerpt": "Descript promises text-based video editing that anyone can use. We spent 45 days editing real client projects to find out if it truly delivers.",
+    "description": "Descript review 2026: 45 days of real video editing. Text-based editing tested on client work, with pricing, pros, cons, and honest verdict.",
+    "keywords": [
+      "descript review",
+      "descript",
+      "ai video editing",
+      "text based video editor",
+      "descript pricing",
+      "best podcast editor"
+    ],
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-05",
+    "lastUpdated": "2026-03-05",
+    "featured": false,
+    "tool": "Descript",
+    "toolSlug": "descript",
+    "toolLogo": "/logos/descript.svg",
+    "rating": 4,
+    "bestFor": "Podcasters, YouTubers, and small teams who need fast video editing",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 watermark-free video export",
+          "10 min transcription/month",
+          "Basic editing",
+          "Screen recording"
+        ],
+        "affiliateUrl": "https://www.descript.com"
+      },
+      {
+        "plan": "Hobbyist",
+        "price": "$24",
+        "period": "/month",
+        "features": [
+          "Unlimited exports",
+          "10 hours transcription",
+          "Filler word removal",
+          "Stock library"
+        ],
+        "affiliateUrl": "https://www.descript.com"
+      },
+      {
+        "plan": "Business",
+        "price": "$33",
+        "period": "/month",
+        "features": [
+          "Everything in Hobbyist",
+          "30 hours transcription",
+          "Green screen",
+          "AI voices",
+          "Team features"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.descript.com"
+      }
+    ],
+    "pros": [
+      "Text-based editing is genuinely revolutionary",
+      "Transcription accuracy is best-in-class (96%+)",
+      "Filler word removal saves hours",
+      "All-in-one: record, edit, publish",
+      "Green screen without a green screen"
+    ],
+    "cons": [
+      "Performance struggles with 1hr+ projects",
+      "AI voice cloning still sounds robotic",
+      "Limited color grading tools",
+      "Export quality capped at 4K",
+      "Learning curve steeper than advertised"
+    ],
+    "verdict": "Descript earns its hype for podcasters and talking-head video creators. The text-based editing paradigm genuinely saves time. But don't expect it to replace Premiere or DaVinci for complex editing.",
+    "affiliateUrl": "https://www.descript.com",
+    "affiliateLabel": "Try Descript Free",
+    "lastTested": "2026-03-04",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "19 min read"
+  },
+  {
+    "title": "Easy Peasy AI Review 2026: All-in-One AI Writing Assistant",
+    "slug": "easy-peasy-ai-review",
+    "excerpt": "Our Easy Peasy AI review 2026 explores this affordable all-in-one tool for content creators seeking AI-driven writing and image generation capabilities.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Easy Peasy AI",
+    "toolSlug": "easy-peasy-ai",
+    "toolLogo": "/logos/easy-peasy-ai.svg",
+    "rating": 3.8,
+    "bestFor": "Content creators needing a budget-friendly AI writing and image generation tool.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "3,000 words/month",
+          "AI images",
+          "80+ templates"
+        ],
+        "affiliateUrl": "https://easy-peasy.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "Basic",
+        "price": "$9.99",
+        "period": "/month",
+        "features": [
+          "50,000 words/month",
+          "Unlimited AI images",
+          "Brand voice"
+        ],
+        "affiliateUrl": "https://easy-peasy.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "GPT-4 Unlimited",
+        "price": "$19.99",
+        "period": "/month",
+        "features": [
+          "Unlimited GPT-4 words",
+          "AI transcription",
+          "Priority support"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://easy-peasy.ai/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Affordable entry-level pricing compared to competitors.",
+      "Includes AI image generation at no extra cost.",
+      "User-friendly interface suitable for beginners.",
+      "Offers a generous free plan for light users."
+    ],
+    "cons": [
+      "Limited advanced features for professional-grade content creation.",
+      "Output quality can be inconsistent, especially with complex topics.",
+      "Fewer customization options compared to Jasper or Copy.ai.",
+      "Customer support response times vary."
+    ],
+    "verdict": "Easy Peasy AI is a decent choice for budget-conscious creators needing basic AI writing and image capabilities. However, those requiring advanced content generation might find competitors like Jasper more suitable. Overall, it's a solid entry-level tool worth considering for lighter tasks.",
+    "affiliateUrl": "https://easy-peasy.ai/?via=Shelby-ai",
+    "affiliateLabel": "Try Easy Peasy AI Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "ElevenLabs Review 2026: The Best AI Voice Generator for Creators?",
+    "slug": "elevenlabs-review",
+    "excerpt": "This ElevenLabs review explores whether it stands as the best AI voice generator in 2026, evaluating its features, pricing, and competition.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "ElevenLabs",
+    "toolSlug": "elevenlabs",
+    "toolLogo": "/logos/elevenlabs.svg",
+    "rating": 4,
+    "bestFor": "Creators and developers seeking ultra-realistic AI voiceovers and voice cloning capabilities.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "10,000 characters/month",
+          "3 custom voices",
+          "Basic models"
+        ],
+        "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y"
+      },
+      {
+        "plan": "Starter",
+        "price": "$5",
+        "period": "/month",
+        "features": [
+          "30,000 characters/month",
+          "10 custom voices",
+          "Projects"
+        ],
+        "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y"
+      },
+      {
+        "plan": "Creator",
+        "price": "$22",
+        "period": "/month",
+        "features": [
+          "100,000 characters/month",
+          "30 custom voices",
+          "Professional voice cloning"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y"
+      },
+      {
+        "plan": "Pro",
+        "price": "$99",
+        "period": "/month",
+        "features": [
+          "500,000 characters/month",
+          "160 custom voices",
+          "44.1 kHz audio",
+          "API access"
+        ],
+        "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y"
+      }
+    ],
+    "pros": [
+      "Offers ultra-realistic voice cloning that is unmatched in the industry.",
+      "Wide range of customization options for creating unique voice profiles.",
+      "Intuitive user interface that simplifies complex voice generation processes.",
+      "Affordable entry-level pricing with a free tier that is actually usable.",
+      "Strong API support for developers looking to integrate voice capabilities."
+    ],
+    "cons": [
+      "Higher tiers are pricey compared to some competitors like Murf AI.",
+      "Limited free tier character count may not suffice for intensive users.",
+      "Voice cloning can be resource-intensive and slow on lower-end hardware.",
+      "Support options are limited outside of business hours."
+    ],
+    "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y",
+    "affiliateLabel": "Try ElevenLabs Free",
+    "verdict": "ElevenLabs offers a powerful solution for creators needing high-fidelity voice generation, but the cost might be prohibitive for casual users. Ideal for professionals who value quality over cost.",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Fliki Review 2026: Turn Text Into Videos with AI Voices",
+    "slug": "fliki-review",
+    "excerpt": "This Fliki review explores how the AI tool transforms text into video content with lifelike AI voices, making it a strong contender for content creators seeking efficiency.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Fliki",
+    "toolSlug": "fliki",
+    "toolLogo": "/logos/fliki.svg",
+    "rating": 3.9,
+    "bestFor": "Content creators looking to efficiently turn scripts and blog posts into engaging videos.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "5 min/month",
+          "720p",
+          "Watermark"
+        ],
+        "affiliateUrl": "https://fliki.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "Standard",
+        "price": "$28",
+        "period": "/month",
+        "features": [
+          "180 min/month",
+          "1080p",
+          "75 languages"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://fliki.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "Premium",
+        "price": "$88",
+        "period": "/month",
+        "features": [
+          "600 min/month",
+          "Ultra-realistic voices",
+          "No watermark"
+        ],
+        "affiliateUrl": "https://fliki.ai/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Impressive range of AI voices that sound lifelike and engaging.",
+      "User-friendly interface that simplifies the video creation process.",
+      "Supports over 75 languages, making it versatile for global creators.",
+      "Offers a free tier to test basic capabilities without commitment."
+    ],
+    "cons": [
+      "Limited free version with only 5 minutes of video content per month.",
+      "Higher tiers are relatively expensive compared to similar tools.",
+      "Output quality can be inconsistent depending on the text complexity.",
+      "Lacks advanced video editing features found in competitors."
+    ],
+    "verdict": "Fliki is ideal for creators needing quick video conversions from text with minimal effort. However, its pricing may deter budget-conscious users, and those requiring advanced editing should consider alternatives.",
+    "affiliateUrl": "https://fliki.ai/?via=Shelby-ai",
+    "affiliateLabel": "Try Fliki Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Frase Review 2026: AI Content Optimization That Actually Ranks",
+    "slug": "frase-review",
+    "excerpt": "Our Frase review reveals how this AI content optimization tool empowers content marketers with AI-driven briefs and SERP-optimized articles, standing out in a crowded field.",
+    "category": "ai-seo-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Frase",
+    "toolSlug": "frase",
+    "toolLogo": "/logos/frase.svg",
+    "rating": 4,
+    "bestFor": "Content marketers seeking AI-driven content briefs and SERP-optimized articles.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 document/day",
+          "SERP analysis",
+          "Basic AI writing"
+        ],
+        "affiliateUrl": "https://www.frase.io/?via=shelby-ai"
+      },
+      {
+        "plan": "Solo",
+        "price": "$15",
+        "period": "/month",
+        "features": [
+          "10 documents/month",
+          "AI writer",
+          "SERP analysis"
+        ],
+        "affiliateUrl": "https://www.frase.io/?via=shelby-ai"
+      },
+      {
+        "plan": "Basic",
+        "price": "$45",
+        "period": "/month",
+        "features": [
+          "30 documents/month",
+          "Full AI tools",
+          "Content briefs"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.frase.io/?via=shelby-ai"
+      },
+      {
+        "plan": "Team",
+        "price": "$115",
+        "period": "/month",
+        "features": [
+          "Unlimited documents",
+          "3 users",
+          "Custom templates"
+        ],
+        "affiliateUrl": "https://www.frase.io/?via=shelby-ai"
+      }
+    ],
+    "pros": [
+      "AI-driven briefs that significantly reduce research time.",
+      "Comprehensive SERP analysis providing actionable insights.",
+      "Flexible pricing plans catering to different needs and budgets.",
+      "Simple interface that does not overwhelm new users.",
+      "Effective integration with other marketing tools."
+    ],
+    "cons": [
+      "Limited functionality in the free plan might not satisfy all users.",
+      "The AI writing tool sometimes produces generic content.",
+      "Lacks some advanced features found in Surfer SEO.",
+      "Team plan can be expensive for small businesses."
+    ],
+    "verdict": "Frase is an excellent choice for content marketers focused on SEO optimization. While its free plan is limited, the paid options offer robust features. Those needing more advanced insights might consider Surfer SEO.",
+    "affiliateUrl": "https://www.frase.io/?via=shelby-ai",
+    "affiliateLabel": "Try Frase Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "8 min read"
+  },
+  {
+    "title": "Google Gemini Review 2026: Can Google's AI Compete with ChatGPT?",
+    "slug": "google-gemini-review",
+    "excerpt": "This Google Gemini review explores how the AI tool integrates seamlessly into Google Workspace but faces stiff competition from ChatGPT and others in the AI writing space.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Google Gemini",
+    "toolSlug": "google-gemini",
+    "toolLogo": "/logos/google-gemini.svg",
+    "rating": 3.9,
+    "bestFor": "Google Workspace users who want AI integrated into their existing workflow.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Gemini 2.0 Flash",
+          "Google integration",
+          "Basic features"
+        ],
+        "affiliateUrl": "https://gemini.google.com"
+      },
+      {
+        "plan": "Advanced",
+        "price": "$19.99",
+        "period": "/month",
+        "features": [
+          "Gemini Ultra",
+          "1TB Google storage",
+          "Gems (custom chatbots)",
+          "Deep Research"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://gemini.google.com"
+      }
+    ],
+    "pros": [
+      "Seamless integration with Google Workspace enhances productivity for existing Google users.",
+      "Advanced plan offers substantial storage and custom chatbot capabilities at a competitive price.",
+      "Strong performance in generating structured documents like reports and presentations.",
+      "Free plan allows basic usage without financial commitment, making it accessible to all Google users."
+    ],
+    "cons": [
+      "Limited functionality outside of Google Workspace, reducing its appeal for non-Google users.",
+      "Lacks the conversational finesse found in ChatGPT, especially in creative writing tasks.",
+      "Advanced features such as 'Deep Research' sometimes over-cite or return irrelevant data.",
+      "Customer support is minimal compared to competitors, leading to potential frustration during troubleshooting."
+    ],
+    "verdict": "Google Gemini is ideal for those deeply embedded in the Google ecosystem but falls short for users seeking versatile AI writing outside of it. Its competitive pricing makes it an appealing choice for small teams. However, those needing robust creative capabilities might prefer alternatives like ChatGPT.",
+    "affiliateUrl": "https://gemini.google.com",
+    "affiliateLabel": "Try Google Gemini Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Grammarly Review 2026: More Than a Spell Checker for Professional Writers",
+    "slug": "grammarly-review",
+    "excerpt": "Our Grammarly review examines its capabilities beyond basic spell checking, revealing why it's a top choice for professional writers seeking grammar, clarity, and tone assistance.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-10",
+    "lastUpdated": "2026-03-10",
+    "featured": false,
+    "tool": "Grammarly",
+    "toolSlug": "grammarly",
+    "toolLogo": "/logos/grammarly.svg",
+    "rating": 4,
+    "bestFor": "Professional writers who require advanced grammar, clarity, and tone assistance across multiple platforms.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Basic grammar & spelling",
+          "Tone detection",
+          "Browser extension",
+          "100 AI prompts/month"
+        ],
+        "affiliateUrl": "https://www.grammarly.com"
+      },
+      {
+        "plan": "Premium",
+        "price": "$12",
+        "period": "/month (annual)",
+        "features": [
+          "Full writing suggestions",
+          "Clarity & tone rewrites",
+          "Plagiarism detection",
+          "1,000 AI prompts/month"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.grammarly.com"
+      },
+      {
+        "plan": "Business",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Everything in Premium",
+          "Brand tones & style guides",
+          "Admin panel & analytics",
+          "SAML SSO"
+        ],
+        "affiliateUrl": "https://www.grammarly.com"
+      }
+    ],
+    "pros": [
+      "Comprehensive grammar and style suggestions that improve clarity and tone.",
+      "User-friendly interface that integrates seamlessly with popular platforms.",
+      "Effective plagiarism detection for academic and professional writing.",
+      "Customizable style guides and brand tones for business use."
+    ],
+    "cons": [
+      "High cost for the Premium plan compared to some competitors.",
+      "Limited functionality in the free version beyond basic corrections.",
+      "Occasional incorrect suggestions that require manual oversight."
+    ],
+    "verdict": "Grammarly is ideal for professional writers who need robust grammar and style assistance, but its premium pricing may deter casual users. While it excels in clarity and tone suggestions, those on a budget might prefer alternatives like ProWritingAid.",
+    "affiliateUrl": "https://www.grammarly.com",
+    "affiliateLabel": "Try Grammarly Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "8 min read"
+  },
+  {
+    "title": "Grok Review 2026: Elon Musk's Unfiltered AI on X",
+    "slug": "grok-review",
+    "excerpt": "Our Grok review explores Elon Musk's unfiltered AI tool, designed for X power users seeking real-time data integration and fewer content restrictions.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Grok",
+    "toolSlug": "grok",
+    "toolLogo": "/logos/grok.svg",
+    "rating": 3.9,
+    "bestFor": "X power users who require real-time social media insights with minimal content restrictions.",
+    "pricing": [
+      {
+        "plan": "Free (X users)",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Basic Grok access",
+          "Limited queries",
+          "X integration"
+        ],
+        "affiliateUrl": "https://x.com/i/grok"
+      },
+      {
+        "plan": "X Premium",
+        "price": "$8",
+        "period": "/month",
+        "features": [
+          "Full Grok 2 access",
+          "Image generation",
+          "Real-time X data"
+        ],
+        "affiliateUrl": "https://x.com/i/grok"
+      },
+      {
+        "plan": "X Premium+",
+        "price": "$16",
+        "period": "/month",
+        "features": [
+          "Grok 2 unlimited",
+          "Largest context window",
+          "Revenue sharing"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://x.com/i/grok"
+      }
+    ],
+    "pros": [
+      "Integrates seamlessly with X for real-time data retrieval and analysis.",
+      "Fewer content restrictions allow for more creative freedom.",
+      "Offers unique insights from live social media trends.",
+      "Competitive pricing for X power users with a free tier available."
+    ],
+    "cons": [
+      "Limited appeal outside of heavy X users due to niche focus.",
+      "Performance and accuracy can vary with real-time data.",
+      "Lacks comprehensive support for non-social media tasks."
+    ],
+    "verdict": "Grok is ideal for X power users seeking an AI tool with real-time data integration and minimal restrictions. Those needing broader capabilities may find better alternatives elsewhere.",
+    "affiliateUrl": "https://x.com/i/grok",
+    "affiliateLabel": "Try Grok Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Jasper AI Review 2026: Is It Still Worth It for Content Creators?",
+    "slug": "jasper-ai-review",
+    "excerpt": "We spent 30 days testing Jasper AI on real content projects. Here is our honest take on pricing, output quality, and whether it is worth it in 2026.",
+    "description": "Jasper AI review after 30 days of real testing. Honest verdict on pricing, output quality, pros, cons, and whether it's worth $49/mo in 2026.",
+    "keywords": [
+      "jasper ai review",
+      "jasper ai",
+      "ai writing tool",
+      "jasper pricing",
+      "best ai writer 2026",
+      "jasper vs copy ai"
+    ],
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-01",
+    "lastUpdated": "2026-03-01",
+    "featured": true,
+    "tool": "Jasper AI",
+    "toolSlug": "jasper-ai",
+    "toolLogo": "/logos/jasper-ai.svg",
+    "rating": 4.1,
+    "bestFor": "Marketing teams and content creators who publish frequently",
+    "pricing": [
+      {
+        "plan": "Creator",
+        "price": "$49",
+        "period": "/month",
+        "features": [
+          "1 user seat",
+          "SEO mode",
+          "Brand voice",
+          "50+ templates",
+          "Chat assistant"
+        ],
+        "affiliateUrl": "https://www.jasper.ai"
+      },
+      {
+        "plan": "Pro",
+        "price": "$69",
+        "period": "/month",
+        "features": [
+          "Up to 5 seats",
+          "Everything in Creator",
+          "Art generation",
+          "Team collaboration",
+          "Priority support"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.jasper.ai"
+      },
+      {
+        "plan": "Business",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Unlimited seats",
+          "API access",
+          "Custom workflows",
+          "Dedicated support",
+          "SSO"
+        ],
+        "affiliateUrl": "https://www.jasper.ai"
+      }
+    ],
+    "pros": [
+      "Excellent for marketing copy — ads, emails, landing pages, and social media",
+      "Brand voice feature keeps output consistent across team members",
+      "50+ templates give you a strong starting point for any content type",
+      "SEO mode with Surfer integration helps content rank",
+      "Reliable quality — output rarely needs heavy editing for marketing use cases"
+    ],
+    "cons": [
+      "Pricing is steep for solo freelancers on tight budgets ($49/mo minimum)",
+      "Long-form blog content still needs significant editing and fact-checking",
+      "Free tier is very limited — you can't truly evaluate without paying",
+      "Art generation is basic compared to dedicated tools like Midjourney"
+    ],
+    "verdict": "Jasper is the best AI writing tool for marketers and small teams who publish frequently. The brand voice feature and template library are genuinely useful, not gimmicks. But if you're a solo freelancer watching every dollar, cheaper alternatives like [Writesonic](/reviews/writesonic-review) deliver 80% of the value at half the price.",
+    "affiliateUrl": "https://www.jasper.ai",
+    "affiliateLabel": "Try Jasper AI Free",
+    "lastTested": "2026-02-28",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "21 min read"
+  },
+  {
+    "title": "Julius AI Review 2026: AI Data Analysis for Non-Technical Teams",
+    "slug": "julius-ai-review",
+    "excerpt": "In this Julius AI review, we evaluate its capabilities as a user-friendly AI data analysis tool designed for non-technical teams. Discover its strengths, weaknesses, and how it stands against competitors.",
+    "category": "ai-productivity",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Julius AI",
+    "toolSlug": "julius-ai",
+    "toolLogo": "/logos/julius-ai.svg",
+    "rating": 3.9,
+    "bestFor": "Non-technical teams wanting a straightforward approach to data analysis using natural language.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "15 messages/month",
+          "Basic analysis",
+          "CSV upload"
+        ],
+        "affiliateUrl": "https://julius.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "Essential",
+        "price": "$20",
+        "period": "/month",
+        "features": [
+          "250 messages/month",
+          "Advanced visualizations",
+          "Excel/Google Sheets"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://julius.ai/?via=Shelby-ai"
+      },
+      {
+        "plan": "Pro",
+        "price": "$50",
+        "period": "/month",
+        "features": [
+          "Unlimited messages",
+          "API access",
+          "Priority support"
+        ],
+        "affiliateUrl": "https://julius.ai/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Natural language interface simplifies data analysis.",
+      "Wide support for CSV, Excel, and Google Sheets.",
+      "Advanced visualizations available in mid-tier plans.",
+      "Responsive customer support with priority options for premium users."
+    ],
+    "cons": [
+      "Limited free tier with only 15 messages per month.",
+      "Can be expensive for small teams needing more than the Essential plan.",
+      "Lacks some advanced data manipulation features found in competitors.",
+      "Not ideal for technical users needing deep data insights."
+    ],
+    "verdict": "Julius AI is ideal for non-technical teams seeking a simple way to analyze data without complex tools. However, if your needs require more in-depth capabilities, consider alternatives like ChatGPT Code Interpreter.",
+    "affiliateUrl": "https://julius.ai/?via=Shelby-ai",
+    "affiliateLabel": "Try Julius AI Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Leonardo AI Review 2026: Free AI Image Generation That Punches Above Its Weight",
+    "slug": "leonardo-ai-review",
+    "excerpt": "In our Leonardo AI review, we explore how this free AI image generator stands out for game developers and creatives with its fine-tuning capabilities and affordable pricing.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Leonardo AI",
+    "toolSlug": "leonardo-ai",
+    "toolLogo": "/logos/leonardo-ai.svg",
+    "rating": 3.9,
+    "bestFor": "Game developers and illustrators seeking affordable, fine-tuned image generation.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "150 tokens/day",
+          "Basic models",
+          "Community gallery"
+        ],
+        "affiliateUrl": "https://leonardo.ai"
+      },
+      {
+        "plan": "Apprentice",
+        "price": "$12",
+        "period": "/month",
+        "features": [
+          "8,500 tokens/month",
+          "Private generation",
+          "Priority processing"
+        ],
+        "affiliateUrl": "https://leonardo.ai"
+      },
+      {
+        "plan": "Artisan",
+        "price": "$30",
+        "period": "/month",
+        "features": [
+          "25,000 tokens/month",
+          "Custom models",
+          "API access"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://leonardo.ai"
+      },
+      {
+        "plan": "Maestro",
+        "price": "$60",
+        "period": "/month",
+        "features": [
+          "60,000 tokens/month",
+          "Concierge support",
+          "Full API"
+        ],
+        "affiliateUrl": "https://leonardo.ai"
+      }
+    ],
+    "pros": [
+      "Generous free tier with daily tokens.",
+      "Fine-tuning capabilities for custom image generation.",
+      "Affordable pricing compared to Midjourney and DALL-E 3.",
+      "Engaged community with a vibrant gallery of shared creations."
+    ],
+    "cons": [
+      "Limited advanced features on the free plan.",
+      "Token system can be restrictive for large projects.",
+      "Image quality may lack consistency compared to premium competitors."
+    ],
+    "verdict": "Leonardo AI is ideal for creators and developers on a budget who need customizable image generation. It may not satisfy power users requiring high-end features or consistent quality.",
+    "affiliateUrl": "https://leonardo.ai",
+    "affiliateLabel": "Try Leonardo AI Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Make.com Review 2026: The Best Automation Platform for Non-Developers?",
+    "slug": "make-review",
+    "excerpt": "Make.com (formerly Integromat) lets you build complex automations visually. We automated 15 real workflows over six weeks to test its limits and value.",
+    "description": "Make.com review 2026: 15 real workflows automated over 6 weeks. Pricing from $9/mo, visual builder tested, and comparison to Zapier.",
+    "keywords": [
+      "make.com review",
+      "make automation",
+      "make vs zapier",
+      "make.com pricing",
+      "best automation platform",
+      "workflow automation tool"
+    ],
+    "category": "ai-automation",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-06",
+    "lastUpdated": "2026-03-06",
+    "featured": false,
+    "tool": "Make.com",
+    "toolSlug": "make",
+    "toolLogo": "/logos/make.svg",
+    "rating": 4.3,
+    "bestFor": "Freelancers and small teams automating repetitive workflows",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1,000 operations/month",
+          "2 active scenarios",
+          "5 min interval",
+          "Core apps"
+        ],
+        "affiliateUrl": "https://www.make.com"
+      },
+      {
+        "plan": "Core",
+        "price": "$9",
+        "period": "/month",
+        "features": [
+          "10,000 operations/month",
+          "Unlimited scenarios",
+          "1 min interval",
+          "All apps"
+        ],
+        "affiliateUrl": "https://www.make.com"
+      },
+      {
+        "plan": "Pro",
+        "price": "$16",
+        "period": "/month",
+        "features": [
+          "10,000 operations/month",
+          "Custom variables",
+          "Full-text log search",
+          "Priority execution"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.make.com"
+      },
+      {
+        "plan": "Teams",
+        "price": "$29",
+        "period": "/month",
+        "features": [
+          "10,000 operations/month",
+          "Team roles",
+          "Shared scenarios",
+          "High-priority execution"
+        ],
+        "affiliateUrl": "https://www.make.com"
+      }
+    ],
+    "pros": [
+      "Visual builder is the most intuitive we've used",
+      "1,800+ app integrations (more than Zapier)",
+      "Operations-based pricing is cheaper per action",
+      "HTTP module lets you connect anything",
+      "Built-in data transformation and routing"
+    ],
+    "cons": [
+      "Debugging complex scenarios is painful",
+      "Documentation has gaps for advanced features",
+      "Operations run out fast on data-heavy workflows",
+      "No native mobile app",
+      "Learning curve for error handling"
+    ],
+    "verdict": "Make.com is the best automation platform for price-to-power ratio. It handles complex workflows that Zapier charges 3-5x more for. The visual builder is genuinely delightful once you learn it.",
+    "affiliateUrl": "https://www.make.com",
+    "affiliateLabel": "Try Make.com Free",
+    "lastTested": "2026-03-05",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "25 min read"
+  },
+  {
+    "title": "Mangools Review 2026: Affordable SEO for Small Sites and Freelancers",
+    "slug": "mangools-review",
+    "excerpt": "In our Mangools review, we explore how this affordable SEO tool caters to freelancers and small sites with its robust keyword research and SERP analysis capabilities.",
+    "category": "ai-seo-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Mangools",
+    "toolSlug": "mangools",
+    "toolLogo": "/logos/mangools.svg",
+    "rating": 3.9,
+    "bestFor": "Freelancers and small site owners who need effective SEO tools without breaking the bank.",
+    "pricing": [
+      {
+        "plan": "Mangools Entry",
+        "price": "$29",
+        "period": "/month",
+        "features": [
+          "100 keyword lookups/day",
+          "200 SERP lookups/day",
+          "25 site lookups/day"
+        ],
+        "affiliateUrl": "https://mangools.com/a/a69b085f86aee0888864a82a9"
+      },
+      {
+        "plan": "Mangools Basic",
+        "price": "$49",
+        "period": "/month",
+        "features": [
+          "500 keyword lookups/day",
+          "700 SERP lookups/day",
+          "Unlimited site lookups"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://mangools.com/a/a69b085f86aee0888864a82a9"
+      },
+      {
+        "plan": "Mangools Premium",
+        "price": "$69",
+        "period": "/month",
+        "features": [
+          "1,200 keyword lookups/day",
+          "1,500 SERP lookups/day",
+          "Unlimited everything"
+        ],
+        "affiliateUrl": "https://mangools.com/a/a69b085f86aee0888864a82a9"
+      }
+    ],
+    "pros": [
+      "Affordable pricing for small businesses and freelancers.",
+      "User-friendly interface that is easy to navigate.",
+      "Comprehensive keyword research capabilities with KWFinder.",
+      "Accurate SERP analysis with historical data tracking.",
+      "Integration with popular tools like Google Analytics."
+    ],
+    "cons": [
+      "Limited advanced features compared to competitors like Ahrefs.",
+      "Lacks a comprehensive backlink analysis tool.",
+      "Limited site lookup on the Entry plan could hinder larger projects.",
+      "No free tier, unlike competitors like Ubersuggest."
+    ],
+    "verdict": "Mangools is an appealing choice for freelancers and small site owners who need effective SEO tools on a budget. However, those needing extensive backlink analysis might consider Ahrefs or SEMrush instead. Overall, Mangools offers great value for its price point.",
+    "affiliateUrl": "https://mangools.com/a/a69b085f86aee0888864a82a9",
+    "affiliateLabel": "Try Mangools Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Midjourney Review 2026: The Gold Standard of AI Image Generation",
+    "slug": "midjourney-review",
+    "excerpt": "Our Midjourney review 2026 evaluates why it stands as the gold standard in AI image generation, delivering unparalleled quality and functionality for designers and creators.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Midjourney",
+    "toolSlug": "midjourney",
+    "toolLogo": "/logos/midjourney.svg",
+    "rating": 4.2,
+    "bestFor": "Designers and creators who demand the highest quality AI-generated images for professional use.",
+    "pricing": [
+      {
+        "plan": "Basic",
+        "price": "$10",
+        "period": "/month",
+        "features": [
+          "3.3 hr fast GPU/month",
+          "General commercial use",
+          "Access to member gallery"
+        ],
+        "affiliateUrl": "https://www.midjourney.com"
+      },
+      {
+        "plan": "Standard",
+        "price": "$30",
+        "period": "/month",
+        "features": [
+          "15 hr fast GPU/month",
+          "Unlimited relaxed",
+          "Stealth mode"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.midjourney.com"
+      },
+      {
+        "plan": "Pro",
+        "price": "$60",
+        "period": "/month",
+        "features": [
+          "30 hr fast GPU/month",
+          "12 concurrent jobs",
+          "Stealth mode"
+        ],
+        "affiliateUrl": "https://www.midjourney.com"
+      },
+      {
+        "plan": "Mega",
+        "price": "$120",
+        "period": "/month",
+        "features": [
+          "60 hr fast GPU/month",
+          "12 concurrent jobs",
+          "Stealth mode"
+        ],
+        "affiliateUrl": "https://www.midjourney.com"
+      }
+    ],
+    "pros": [
+      "Produces high-quality, photorealistic images that surpass competitors.",
+      "Offers a versatile range of styles and customization options.",
+      "Efficient processing times even for high-resolution outputs.",
+      "Strong community support and a vibrant user gallery.",
+      "Comprehensive commercial rights included with all plans."
+    ],
+    "cons": [
+      "Higher cost compared to some competitors like Stable Diffusion.",
+      "Steep learning curve for new users unfamiliar with AI tools.",
+      "Requires a stable internet connection for optimal use.",
+      "Limited free trial options restrict initial exploration."
+    ],
+    "verdict": "Midjourney is ideal for professionals needing high-quality images, but its cost and complexity might deter casual users or those on a budget. It remains the top choice for serious creators.",
+    "affiliateUrl": "https://www.midjourney.com",
+    "affiliateLabel": "Try Midjourney Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Mixo Review 2026: Launch a Website in 30 Seconds with AI",
+    "slug": "mixo-review",
+    "excerpt": "Our Mixo review explores how this AI website builder enables entrepreneurs to create landing pages in just 30 seconds, making it a top choice for rapid idea validation.",
+    "category": "ai-coding-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Mixo",
+    "toolSlug": "mixo",
+    "toolLogo": "/logos/mixo.svg",
+    "rating": 3.9,
+    "bestFor": "Entrepreneurs who need to quickly validate ideas with a simple landing page.",
+    "pricing": [
+      {
+        "plan": "Basic",
+        "price": "$9",
+        "period": "/month",
+        "features": [
+          "1 site",
+          "Custom domain",
+          "Email collection",
+          "AI-generated content"
+        ],
+        "affiliateUrl": "https://www.mixo.io/?via=Shelby-ai"
+      },
+      {
+        "plan": "Growth",
+        "price": "$19",
+        "period": "/month",
+        "features": [
+          "5 sites",
+          "Priority support",
+          "Advanced analytics"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.mixo.io/?via=Shelby-ai"
+      },
+      {
+        "plan": "Max",
+        "price": "$39",
+        "period": "/month",
+        "features": [
+          "Unlimited sites",
+          "Remove Mixo branding",
+          "Team access"
+        ],
+        "affiliateUrl": "https://www.mixo.io/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Rapid landing page creation in under a minute.",
+      "AI-generated content tailored to the user's business niche.",
+      "Simple, beginner-friendly interface with minimal learning curve.",
+      "Affordable entry-level pricing for small entrepreneurs."
+    ],
+    "cons": [
+      "Limited design customization options compared to competitors.",
+      "Lacks advanced features needed for larger, more complex sites.",
+      "The AI occasionally generates generic or irrelevant content."
+    ],
+    "verdict": "Mixo is ideal for entrepreneurs needing quick, effective landing pages, but it's not suitable for those requiring detailed customization or advanced features. For simple, rapid deployment, it's a solid choice.",
+    "affiliateUrl": "https://www.mixo.io/?via=Shelby-ai",
+    "affiliateLabel": "Try Mixo Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Mubert Review 2026: AI-Generated Music for Creators and Developers",
+    "slug": "mubert-review",
+    "excerpt": "In this Mubert review, we explore how AI-generated music is transforming content creation for YouTubers, podcasters, and app developers with its royalty-free tracks.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Mubert",
+    "toolSlug": "mubert",
+    "toolLogo": "/logos/mubert.svg",
+    "rating": 3.9,
+    "bestFor": "Creators and developers who need a steady stream of royalty-free AI music for commercial use.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "25 tracks/month",
+          "Personal use",
+          "Mubert watermark"
+        ],
+        "affiliateUrl": "https://mubert.com/render/pricing?via=Shelby-ai"
+      },
+      {
+        "plan": "Creator",
+        "price": "$14",
+        "period": "/month",
+        "features": [
+          "500 tracks/month",
+          "Commercial license",
+          "YouTube/podcast use"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://mubert.com/render/pricing?via=Shelby-ai"
+      },
+      {
+        "plan": "Business",
+        "price": "$39",
+        "period": "/month",
+        "features": [
+          "Unlimited tracks",
+          "Full commercial rights",
+          "API access"
+        ],
+        "affiliateUrl": "https://mubert.com/render/pricing?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Generates high-quality, royalty-free music quickly and efficiently.",
+      "Offers a range of subscription plans catering to different user needs.",
+      "Includes a powerful API for developers to integrate AI music into their apps.",
+      "Comes with commercial licensing, suitable for YouTube and podcast monetization."
+    ],
+    "cons": [
+      "The free plan is limited and includes watermarked tracks.",
+      "Some genres and styles might lack depth compared to human composers.",
+      "Higher subscription tiers can become expensive for small creators.",
+      "Limited customization options for music tracks compared to competitors."
+    ],
+    "verdict": "Mubert offers a compelling AI music generation service for content creators needing royalty-free tracks. While it excels in quick production and commercial licensing, its limitations in customization and genre depth make it less suitable for those requiring highly specific music styles.",
+    "affiliateUrl": "https://mubert.com/render/pricing?via=Shelby-ai",
+    "affiliateLabel": "Try Mubert Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Otter.ai Review 2026: Best AI Meeting Notes for Freelancers & Small Teams",
+    "slug": "otter-ai-review",
+    "excerpt": "Our Otter.ai review explores how this AI-powered tool excels in creating accurate meeting notes, making it a top choice for freelancers and small teams.",
+    "category": "ai-productivity",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-10",
+    "lastUpdated": "2026-03-10",
+    "featured": false,
+    "tool": "Otter.ai",
+    "toolSlug": "otter-ai",
+    "toolLogo": "/logos/otter-ai.svg",
+    "rating": 4,
+    "bestFor": "Freelancers and small teams who need effective, automated meeting notes and transcription services.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "300 min/month transcription",
+          "30 min per conversation",
+          "AI chat",
+          "Otter AI Meeting Assistant"
+        ],
+        "affiliateUrl": "https://otter.ai"
+      },
+      {
+        "plan": "Pro",
+        "price": "$8.33",
+        "period": "/month (annual)",
+        "features": [
+          "1,200 min/month",
+          "90 min per conversation",
+          "Custom vocabulary",
+          "Advanced search"
+        ],
+        "affiliateUrl": "https://otter.ai"
+      },
+      {
+        "plan": "Business",
+        "price": "$20",
+        "period": "/month/user (annual)",
+        "features": [
+          "6,000 min/month",
+          "4 hours per conversation",
+          "Admin controls",
+          "Salesforce/HubSpot integrations"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://otter.ai"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Unlimited minutes",
+          "SSO",
+          "Compliance features",
+          "Dedicated support"
+        ],
+        "affiliateUrl": "https://otter.ai"
+      }
+    ],
+    "pros": [
+      "Highly accurate transcription capabilities with minimal errors.",
+      "Robust integration options with tools like Salesforce and HubSpot.",
+      "Flexible pricing tiers that cater to different usage needs.",
+      "Real-time collaboration features enhance team productivity."
+    ],
+    "cons": [
+      "Limited free plan that restricts transcription time and features.",
+      "Higher-tier plans are relatively expensive for solo freelancers.",
+      "Some users report occasional syncing issues with third-party apps."
+    ],
+    "verdict": "Otter.ai is ideal for teams and freelancers who prioritize accurate meeting notes and seamless integration with business tools. While its higher-tier plans could be costly for individual users, its robust features justify the investment for businesses needing comprehensive transcription solutions.",
+    "affiliateUrl": "https://otter.ai",
+    "affiliateLabel": "Try Otter.ai Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Perplexity Review 2026: AI Search Engine That Cites Its Sources",
+    "slug": "perplexity-review",
+    "excerpt": "Our Perplexity review explores how this AI search engine stands out by providing cited, trustworthy answers for researchers and professionals.",
+    "category": "ai-productivity",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Perplexity",
+    "toolSlug": "perplexity",
+    "toolLogo": "/logos/perplexity.svg",
+    "rating": 4,
+    "bestFor": "Researchers and professionals needing reliable, cited information quickly.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "Unlimited quick searches",
+          "5 Pro searches/day",
+          "Standard AI models"
+        ],
+        "affiliateUrl": "https://www.perplexity.ai"
+      },
+      {
+        "plan": "Pro",
+        "price": "$20",
+        "period": "/month",
+        "features": [
+          "600+ Pro searches/day",
+          "GPT-4o & Claude access",
+          "File upload & analysis",
+          "API access"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.perplexity.ai"
+      }
+    ],
+    "pros": [
+      "Automatically cites sources for increased trustworthiness.",
+      "Supports large-scale research with over 600 Pro searches daily.",
+      "Integrates advanced AI models like GPT-4o and Claude.",
+      "Offers file upload and analysis, expanding its utility beyond standard search."
+    ],
+    "cons": [
+      "The Pro plan is relatively expensive compared to comprehensive search options like Google.",
+      "Limited API access can be restrictive for extensive automation needs.",
+      "The free version's Pro searches are capped, which might not suffice for heavy users."
+    ],
+    "verdict": "Perplexity is ideal for users requiring cited, reliable search results, notably researchers and professionals. However, the cost may deter casual users who can find sufficient alternatives in free platforms.",
+    "affiliateUrl": "https://www.perplexity.ai",
+    "affiliateLabel": "Try Perplexity Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Pictory Review 2026: Turn Blog Posts Into Videos (Does It Actually Work?)",
+    "slug": "pictory-review",
+    "excerpt": "Pictory turns text into videos automatically using AI. We tested it with 20 real blog posts to see if the output is genuinely publish-worthy or just a gimmick.",
+    "description": "Pictory review 2026: we converted 20 blog posts to video. See if AI video generation is publish-worthy, plus pricing, pros, and cons.",
+    "keywords": [
+      "pictory review",
+      "pictory ai",
+      "ai video creator",
+      "blog to video",
+      "pictory pricing",
+      "best ai video tool 2026"
+    ],
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-07",
+    "lastUpdated": "2026-03-07",
+    "featured": false,
+    "tool": "Pictory",
+    "toolSlug": "pictory",
+    "toolLogo": "/logos/pictory.svg",
+    "rating": 3.5,
+    "bestFor": "Content repurposers and marketers who need video at scale",
+    "pricing": [
+      {
+        "plan": "Starter",
+        "price": "$19",
+        "period": "/month",
+        "features": [
+          "30 videos/month",
+          "10 min max",
+          "AI voiceover",
+          "Stock media library"
+        ],
+        "affiliateUrl": "https://pictory.ai?ref=shelby-ai"
+      },
+      {
+        "plan": "Professional",
+        "price": "$39",
+        "period": "/month",
+        "features": [
+          "60 videos/month",
+          "20 min max",
+          "Hootsuite integration",
+          "Auto-captions",
+          "Brand kits"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://pictory.ai?ref=shelby-ai"
+      },
+      {
+        "plan": "Teams",
+        "price": "$99",
+        "period": "/month",
+        "features": [
+          "90 videos/month",
+          "30 min max",
+          "Team collaboration",
+          "Priority rendering",
+          "Custom templates"
+        ],
+        "affiliateUrl": "https://pictory.ai?ref=shelby-ai"
+      }
+    ],
+    "pros": [
+      "Blog-to-video conversion genuinely works",
+      "Auto-captioning is accurate and styleable",
+      "Stock footage matching is surprisingly smart",
+      "Batch processing saves massive time",
+      "No video editing skills needed"
+    ],
+    "cons": [
+      "AI scene selection misses context sometimes",
+      "Limited customization for generated videos",
+      "AI voices sound monotone on longer content",
+      "No green screen or webcam recording",
+      "Rendering can be slow during peak hours"
+    ],
+    "verdict": "Pictory is a genuine time-saver for repurposing written content into social video. It won't win any filmmaking awards, but for content marketers who need video volume, it delivers real ROI.",
+    "affiliateUrl": "https://pictory.ai?ref=shelby-ai",
+    "affiliateLabel": "Try Pictory Free",
+    "lastTested": "2026-03-06",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "23 min read"
+  },
+  {
+    "title": "Runway ML Review 2026: AI Video Editing for Creators Who Aren't Editors",
+    "slug": "runway-ml-review",
+    "excerpt": "Our Runway ML review explores its AI video editing capabilities for creators who aren't video pros, evaluating its features, pricing, and competition in 2026.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-10",
+    "lastUpdated": "2026-03-10",
+    "featured": false,
+    "tool": "Runway ML",
+    "toolSlug": "runway-ml",
+    "toolLogo": "/logos/runway-ml.svg",
+    "rating": 3.9,
+    "bestFor": "Creators seeking innovative AI video editing without needing professional skills.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "125 credits",
+          "3 projects",
+          "720p exports",
+          "Basic Gen-3 access"
+        ],
+        "affiliateUrl": "https://runwayml.com"
+      },
+      {
+        "plan": "Standard",
+        "price": "$12",
+        "period": "/month",
+        "features": [
+          "625 credits/month",
+          "Unlimited projects",
+          "1080p exports",
+          "Gen-3 Alpha"
+        ],
+        "affiliateUrl": "https://runwayml.com"
+      },
+      {
+        "plan": "Pro",
+        "price": "$28",
+        "period": "/month",
+        "features": [
+          "2,250 credits/month",
+          "4K upscaling",
+          "Custom model training",
+          "Priority generation"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://runwayml.com"
+      },
+      {
+        "plan": "Unlimited",
+        "price": "$76",
+        "period": "/month",
+        "features": [
+          "Unlimited generations",
+          "All Pro features",
+          "No watermarks",
+          "Team collaboration"
+        ],
+        "affiliateUrl": "https://runwayml.com"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Custom deployment",
+          "API access",
+          "SSO & security",
+          "Dedicated support"
+        ],
+        "affiliateUrl": "https://runwayml.com"
+      }
+    ],
+    "pros": [
+      "Intuitive interface that simplifies complex video editing tasks.",
+      "Advanced AI features like Gen-3 that offer cutting-edge video generation.",
+      "Flexible pricing tiers accommodating both casual users and professionals.",
+      "Robust support for custom model training in the Pro plan.",
+      "Team collaboration features in the Unlimited plan enhance workflow."
+    ],
+    "cons": [
+      "Free plan limitations make it impractical for larger projects.",
+      "Higher-tier plans may still be costly for small solo creators.",
+      "Some competitors offer better performance at similar price points.",
+      "Learning curve for advanced features can be steep for beginners."
+    ],
+    "verdict": "Runway ML is ideal for creators looking to harness AI for video editing without mastering traditional editing skills. However, those with budget constraints or seeking absolute top-tier performance might explore alternatives like Pika or Kling AI. Overall, it strikes a balance between innovation and usability.",
+    "affiliateUrl": "https://runwayml.com",
+    "affiliateLabel": "Try Runway ML Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "8 min read"
+  },
+  {
+    "title": "Rytr Review 2026: Budget AI Writer for Quick Content Needs",
+    "slug": "rytr-review",
+    "excerpt": "Our Rytr review dives into its strengths as a budget AI writer for solopreneurs and freelancers needing quick content solutions without breaking the bank.",
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Rytr",
+    "toolSlug": "rytr",
+    "toolLogo": "/logos/rytr.svg",
+    "rating": 3.8,
+    "bestFor": "Solopreneurs and freelancers needing affordable, quick AI writing assistance.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "10,000 characters/month",
+          "40+ use cases",
+          "20+ tones"
+        ],
+        "affiliateUrl": "https://rytr.me/?via=Shelby-ai"
+      },
+      {
+        "plan": "Saver",
+        "price": "$9",
+        "period": "/month",
+        "features": [
+          "100,000 characters/month",
+          "Custom use cases",
+          "API access"
+        ],
+        "affiliateUrl": "https://rytr.me/?via=Shelby-ai"
+      },
+      {
+        "plan": "Unlimited",
+        "price": "$29",
+        "period": "/month",
+        "features": [
+          "Unlimited characters",
+          "Priority support",
+          "Dedicated account manager"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://rytr.me/?via=Shelby-ai"
+      }
+    ],
+    "pros": [
+      "Affordable pricing, especially for freelancers and small teams.",
+      "Easy-to-use interface that requires minimal learning curve.",
+      "Supports 30+ languages, making it versatile for international users.",
+      "Offers a free plan with no time limit, suitable for light users."
+    ],
+    "cons": [
+      "Limited customization compared to more advanced tools like Jasper.",
+      "Output quality can be inconsistent, especially with complex topics.",
+      "Lacks robust integration options that some larger teams may need."
+    ],
+    "verdict": "Rytr is well-suited for individuals and small teams seeking an affordable AI writing tool. However, those requiring advanced features and integrations might find better value elsewhere.",
+    "affiliateUrl": "https://rytr.me/?via=Shelby-ai",
+    "affiliateLabel": "Try Rytr Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "SEMrush Review 2026: Is the Price Tag Justified for Small Teams?",
+    "slug": "semrush-review",
+    "excerpt": "Our SEMrush review for small business reveals whether the premium pricing is worth it for small teams and freelancers in 2026.",
+    "category": "ai-seo-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-10",
+    "lastUpdated": "2026-03-10",
+    "featured": false,
+    "tool": "SEMrush",
+    "toolSlug": "semrush",
+    "toolLogo": "/logos/semrush.svg",
+    "rating": 3.9,
+    "bestFor": "SEO professionals and agencies needing a comprehensive marketing toolkit.",
+    "pricing": [
+      {
+        "plan": "Pro",
+        "price": "$139.95",
+        "period": "/month",
+        "features": [
+          "5 projects",
+          "500 keywords to track",
+          "10,000 results per report",
+          "SEO + PPC + content tools"
+        ],
+        "affiliateUrl": "https://www.semrush.com"
+      },
+      {
+        "plan": "Guru",
+        "price": "$249.95",
+        "period": "/month",
+        "features": [
+          "15 projects",
+          "1,500 keywords",
+          "30,000 results per report",
+          "Content marketing toolkit",
+          "Historical data"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.semrush.com"
+      },
+      {
+        "plan": "Business",
+        "price": "$499.95",
+        "period": "/month",
+        "features": [
+          "40 projects",
+          "5,000 keywords",
+          "50,000 results per report",
+          "API access",
+          "Share of voice"
+        ],
+        "affiliateUrl": "https://www.semrush.com"
+      }
+    ],
+    "pros": [
+      "Comprehensive suite covering SEO, PPC, and content marketing.",
+      "Robust keyword research tools with thousands of keyword ideas.",
+      "Competitive analysis features that offer strategic insights.",
+      "Historical data access for in-depth trend analysis.",
+      "User-friendly interface despite the breadth of features."
+    ],
+    "cons": [
+      "Pricing can be prohibitive for small businesses and freelancers.",
+      "Some features overlap and may not be necessary for all users.",
+      "The learning curve can be steep for beginners.",
+      "Limited customization in certain reporting tools."
+    ],
+    "verdict": "SEMrush offers a powerful, all-in-one marketing solution ideal for agencies and larger teams. However, small businesses and freelancers may find the cost and complexity more than they need. Consider alternatives if budget constraints are significant.",
+    "affiliateUrl": "https://www.semrush.com",
+    "affiliateLabel": "Try SEMrush Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Simplified Review 2026: Design + Write + Video in One AI Platform",
+    "slug": "simplified-review",
+    "excerpt": "Our Simplified review explores how this all-in-one AI platform effectively combines design, writing, and video creation for small teams, but falls short in some areas.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "Shelby AI Deals Team",
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-17",
+    "featured": false,
+    "tool": "Simplified",
+    "toolSlug": "simplified",
+    "toolLogo": "/logos/simplified.svg",
+    "rating": 3.8,
+    "bestFor": "Small teams needing a comprehensive design, writing, and video tool in one platform.",
+    "pricing": [
+      {
+        "plan": "Free Forever",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 workspace",
+          "AI writer",
+          "AI designer",
+          "Basic templates"
+        ],
+        "affiliateUrl": "https://simplified.com?fpr=shelby-ai"
+      },
+      {
+        "plan": "Small Team",
+        "price": "$21",
+        "period": "/month",
+        "features": [
+          "5 workspaces",
+          "AI writer pro",
+          "Brand kit",
+          "100GB storage"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://simplified.com?fpr=shelby-ai"
+      },
+      {
+        "plan": "Business",
+        "price": "$35",
+        "period": "/month",
+        "features": [
+          "Unlimited workspaces",
+          "Custom fonts",
+          "Priority support"
+        ],
+        "affiliateUrl": "https://simplified.com?fpr=shelby-ai"
+      }
+    ],
+    "pros": [
+      "Integrates design, writing, and video creation in one tool, minimizing app switching.",
+      "Offers a robust AI writer that can generate content quickly and effectively.",
+      "The interface is intuitive and reduces the learning curve for new users.",
+      "Affordable pricing plans make it accessible for small teams."
+    ],
+    "cons": [
+      "The video editing features are less advanced compared to dedicated tools like Adobe Premiere.",
+      "Some users report occasional slowdowns with large projects.",
+      "Lacks the extensive template library found in competitors like Canva.",
+      "Limited customization options in the AI design tool."
+    ],
+    "verdict": "Simplified is ideal for small teams that need a unified platform for design, writing, and video tasks. However, those requiring advanced video editing or extensive template libraries might find it lacking. Overall, it is a cost-effective solution for general creative needs.",
+    "affiliateUrl": "https://simplified.com?fpr=shelby-ai",
+    "affiliateLabel": "Try Simplified Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "6 min read"
+  },
+  {
+    "title": "Surfer SEO Review 2026: The Content Optimization Tool Freelancers Actually Need",
+    "slug": "surfer-seo-review",
+    "excerpt": "We used Surfer SEO to optimize 20 articles over 90 days. Here is whether the $89/mo price tag is justified for freelancers and small content sites.",
+    "description": "Surfer SEO review 2026: 90-day test optimizing 20 real articles. Pricing, content editor features, pros, cons, and whether it's worth $89/mo.",
+    "keywords": [
+      "surfer seo review",
+      "surfer seo",
+      "seo content optimization",
+      "surfer seo pricing",
+      "best seo tool 2026",
+      "content editor"
+    ],
+    "category": "ai-seo-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-06",
+    "lastUpdated": "2026-03-06",
+    "featured": false,
+    "tool": "Surfer SEO",
+    "toolSlug": "surfer-seo",
+    "toolLogo": "/logos/surfer-seo.svg",
+    "rating": 4,
+    "bestFor": "SEO-focused freelancers and content agencies",
+    "pricing": [
+      {
+        "plan": "Essential",
+        "price": "$89",
+        "period": "/month",
+        "features": [
+          "30 articles/month",
+          "Content editor",
+          "SERP analyzer",
+          "Keyword research",
+          "AI writing"
+        ],
+        "affiliateUrl": "https://surferseo.com"
+      },
+      {
+        "plan": "Scale",
+        "price": "$129",
+        "period": "/month",
+        "features": [
+          "100 articles/month",
+          "Everything in Essential",
+          "Content audit",
+          "API access",
+          "White label"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://surferseo.com"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "$219",
+        "period": "/month",
+        "features": [
+          "Unlimited articles",
+          "Custom onboarding",
+          "Priority support",
+          "Dedicated account manager"
+        ],
+        "affiliateUrl": "https://surferseo.com"
+      }
+    ],
+    "pros": [
+      "Content Editor is genuinely useful — real-time optimization scoring changes how you write",
+      "SERP Analyzer reveals exactly what top-ranking pages do differently",
+      "Keyword research is built in, reducing the need for separate tools",
+      "AI writing produces SEO-optimized drafts that actually rank",
+      "Jasper integration creates a powerful writing + optimization workflow"
+    ],
+    "cons": [
+      "$89/mo minimum is steep for solo freelancers on tight budgets",
+      "30 articles/month on Essential feels limiting for agencies",
+      "Learning curve is real — takes 2-3 weeks to use effectively",
+      "Keyword difficulty scores can be unreliable for very niche topics"
+    ],
+    "verdict": "Surfer SEO is the best content optimization tool for anyone serious about organic traffic. The Content Editor alone is worth the price — it turns SEO from guesswork into a systematic process. But at $89/mo, it only makes sense if SEO is a core part of your revenue strategy, not a side project.",
+    "affiliateUrl": "https://surferseo.com",
+    "affiliateLabel": "Try Surfer SEO",
+    "lastTested": "2026-03-04",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "23 min read"
+  },
+  {
+    "title": "Synthesia Review 2026: AI Video Without a Camera (Is It Actually Good?)",
+    "slug": "synthesia-review",
+    "excerpt": "In this Synthesia review, we dissect whether this AI video generator lives up to expectations for creating training and marketing content without cameras or actors.",
+    "category": "ai-design-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-10",
+    "lastUpdated": "2026-03-10",
+    "featured": false,
+    "tool": "Synthesia",
+    "toolSlug": "synthesia",
+    "toolLogo": "/logos/synthesia.svg",
+    "rating": 3.9,
+    "bestFor": "Businesses seeking efficient creation of training and marketing videos without traditional filming.",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "3 min video/month",
+          "1 AI avatar",
+          "Basic templates",
+          "720p export"
+        ],
+        "affiliateUrl": "https://www.synthesia.io/?via=shelbyai"
+      },
+      {
+        "plan": "Starter",
+        "price": "$29",
+        "period": "/month",
+        "features": [
+          "10 min video/month",
+          "70+ AI avatars",
+          "Brand kit",
+          "1080p export"
+        ],
+        "affiliateUrl": "https://www.synthesia.io/?via=shelbyai"
+      },
+      {
+        "plan": "Creator",
+        "price": "$89",
+        "period": "/month",
+        "features": [
+          "30 min video/month",
+          "90+ avatars",
+          "Custom avatars",
+          "API access"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://www.synthesia.io/?via=shelbyai"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Unlimited videos",
+          "Custom AI avatars",
+          "SSO & security",
+          "Dedicated support"
+        ],
+        "affiliateUrl": "https://www.synthesia.io/?via=shelbyai"
+      }
+    ],
+    "pros": [
+      "Allows high-quality video creation without cameras or actors.",
+      "Wide selection of AI avatars enhances personalization.",
+      "Customizable brand kits help maintain brand consistency.",
+      "API access in higher tiers enables integration with other tools."
+    ],
+    "cons": [
+      "Limited free tier could be restrictive for new users.",
+      "Pricing escalates quickly with usage needs.",
+      "Some avatars might lack natural fluidity in movements.",
+      "Competition offers more robust features at similar price points."
+    ],
+    "verdict": "Synthesia is a compelling choice for companies needing rapid video content creation without production overhead. However, budget-conscious users might find more value in alternatives like HeyGen or Colossyan.",
+    "affiliateUrl": "https://www.synthesia.io/?via=shelbyai",
+    "affiliateLabel": "Try Synthesia Free",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "7 min read"
+  },
+  {
+    "title": "Writesonic Review 2026: Best Budget AI Writer for Small Teams?",
+    "slug": "writesonic-review",
+    "excerpt": "At $16/mo, Writesonic is one of the cheapest serious AI writers. We tested it for 30 days on real content to find out if budget pricing means budget quality.",
+    "description": "Writesonic review 2026: is the $16/mo AI writer any good? 30-day test results, pricing breakdown, pros, cons, and comparison to Jasper.",
+    "keywords": [
+      "writesonic review",
+      "writesonic",
+      "ai writing tool",
+      "writesonic pricing",
+      "best budget ai writer",
+      "writesonic vs jasper"
+    ],
+    "category": "ai-writing-tools",
+    "type": "review",
+    "author": "ShelbyAI Team",
+    "date": "2026-03-04",
+    "lastUpdated": "2026-03-04",
+    "featured": false,
+    "tool": "Writesonic",
+    "toolSlug": "writesonic",
+    "toolLogo": "/logos/writesonic.svg",
+    "rating": 3.8,
+    "bestFor": "Budget-conscious bloggers and small content teams",
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "10,000 words/month",
+          "100+ templates",
+          "Chat assistant",
+          "Landing page generator"
+        ],
+        "affiliateUrl": "https://writesonic.com"
+      },
+      {
+        "plan": "Individual",
+        "price": "$16",
+        "period": "/month",
+        "features": [
+          "Unlimited words",
+          "All templates",
+          "Brand voice",
+          "SEO optimizer",
+          "Article writer 6.0"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://writesonic.com"
+      },
+      {
+        "plan": "Team",
+        "price": "$79",
+        "period": "/month",
+        "features": [
+          "Everything in Individual",
+          "Up to 5 seats",
+          "Team collaboration",
+          "Priority support",
+          "API access"
+        ],
+        "affiliateUrl": "https://writesonic.com"
+      }
+    ],
+    "pros": [
+      "Best price-to-quality ratio in AI writing — $16/mo for unlimited words",
+      "Article Writer 6.0 produces surprisingly coherent long-form blog content",
+      "Generous free tier with 10,000 words/month for testing",
+      "Built-in SEO optimizer helps content rank without a separate tool",
+      "Clean, fast interface with minimal learning curve"
+    ],
+    "cons": [
+      "Output quality is a step below Jasper for marketing copy polish",
+      "Brand voice feature is functional but less nuanced than competitors",
+      "Team plan jumps to $79/mo — big gap from $16 Individual",
+      "Some templates produce generic, filler-heavy content"
+    ],
+    "verdict": "Writesonic is the best AI writer for people who want solid quality without the Jasper price tag. At $16/mo for unlimited words, the value is hard to beat. Blog content is genuinely good, and the SEO optimizer is a nice bonus. But if you need polished marketing copy for clients, you might find yourself editing more than with Jasper or Copy.ai.",
+    "affiliateUrl": "https://writesonic.com",
+    "affiliateLabel": "Try Writesonic Free",
+    "lastTested": "2026-03-03",
+    "socialLinks": {},
+    "youtubeUrl": null,
+    "readingTime": "22 min read"
+  }
+]

@@ -3,6 +3,7 @@
 import { Component, type ReactNode, type ErrorInfo } from 'react';
 import { AuthProvider } from '@/lib/auth-context';
 import { I18nProvider } from '@/i18n/context';
+import OnboardingGuard from '@/components/OnboardingGuard';
 
 /** Error boundary — prevents provider crashes from breaking the entire site */
 class ProviderErrorBoundary extends Component<
@@ -36,7 +37,9 @@ export default function Providers({ children }: { children: ReactNode }) {
     <ProviderErrorBoundary>
       <AuthProvider>
         <I18nProvider>
-          {children}
+          <OnboardingGuard>
+            {children}
+          </OnboardingGuard>
         </I18nProvider>
       </AuthProvider>
     </ProviderErrorBoundary>

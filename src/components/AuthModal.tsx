@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { X } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 import { useTranslation } from '@/i18n/context';
@@ -13,6 +14,7 @@ interface AuthModalProps {
 
 export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalProps) {
   const { signIn, signUp, signInWithGoogle } = useAuth();
+  const router = useRouter();
   const { t } = useTranslation();
   const [mode, setMode] = useState<'login' | 'signup'>(initialMode);
   const [loading, setLoading] = useState(false);
@@ -80,6 +82,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
       await signUp(email, password, { username, firstName, lastName });
       onClose();
       resetForm();
+      router.push('/onboarding');
     } catch (err) {
       const msg = err instanceof Error ? err.message : '';
       if (msg.includes('already registered')) {
