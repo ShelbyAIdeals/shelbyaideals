@@ -45,51 +45,32 @@ const GOOGLE_TRANSLATE_CODES: Record<string, string> = {
 };
 
 /* ── Google Translate via page proxy ──────────────────────── */
+const SITE_ORIGIN = 'https://www.shelby-ai.com';
 
-/** Check if we're currently on the Google Translate proxy */
 function isOnTranslateProxy(): boolean {
+  if (typeof window === 'undefined') return false;
   return window.location.hostname.endsWith('.translate.goog');
 }
 
-/** Get the original (non-proxy) URL for the current page */
+/** Get the original site URL for the current page path */
 function getOriginalUrl(): string {
-  if (!isOnTranslateProxy()) return window.location.href;
-  // translate.goog URLs look like: shelby--ai-com.translate.goog/path?_x_tr_sl=en&_x_tr_tl=es&...
-  // Reconstruct original: https://shelby-ai.com/path
-  const url = new URL(window.location.href);
-  url.searchParams.delete('_x_tr_sl');
-  url.searchParams.delete('_x_tr_tl');
-  url.searchParams.delete('_x_tr_hl');
-  url.searchParams.delete('_x_tr_pto');
-  url.searchParams.delete('_x_tr_hist');
-  // Hostname: www-shelby--ai-com.translate.goog → www.shelby-ai.com
-  // Google uses -- for literal dash, - for dot separator
-  const encoded = url.hostname.replace('.translate.goog', '');
-  const origHost = encoded.replace(/--/g, '\x00').replace(/-/g, '.').replace(/\x00/g, '-');
-  url.hostname = origHost;
-  url.protocol = 'https:';
-  return url.toString();
+  // Always reconstruct from the known origin + current pathname
+  // This avoids any hostname decode bugs from the proxy URL
+  return SITE_ORIGIN + window.location.pathname;
 }
 
 function triggerGoogleTranslate(langCode: string) {
   const gtCode = GOOGLE_TRANSLATE_CODES[langCode] ?? langCode;
 
   if (langCode === 'en') {
-    // Switch back to English → go to the original site
-    if (isOnTranslateProxy()) {
-      window.location.href = getOriginalUrl();
-    }
-    // If already on original site, nothing to do (UI translations handle it via t())
+    // Go back to original site
+    window.location.href = getOriginalUrl();
     return;
   }
 
-  // Navigate to Google Translate proxy for full-page translation.
-  // Use the canonical www. URL to avoid redirect chain issues.
-  let currentUrl = isOnTranslateProxy() ? getOriginalUrl() : window.location.href;
-  // Ensure www. prefix (shelby-ai.com redirects to www.shelby-ai.com, which breaks the proxy chain)
-  currentUrl = currentUrl.replace('://shelby-ai.com', '://www.shelby-ai.com');
-  const translateUrl = `https://translate.google.com/translate?sl=en&tl=${gtCode}&u=${encodeURIComponent(currentUrl)}`;
-  window.location.href = translateUrl;
+  // Build translation URL using the known origin (never decode proxy hostname)
+  const pageUrl = SITE_ORIGIN + window.location.pathname;
+  window.location.href = `https://translate.google.com/translate?sl=en&tl=${gtCode}&u=${encodeURIComponent(pageUrl)}`;
 }
 
 /* ── Detect browser language ─────────────────────────────── */
