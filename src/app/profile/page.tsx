@@ -54,29 +54,30 @@ export default function ProfilePage() {
     setSaving(true);
     setSaveError('');
 
-    const timeout = <T,>(p: Promise<T>, ms: number): Promise<T> =>
-      Promise.race([p, new Promise<never>((_, rej) => setTimeout(() => rej(new Error('Request timed out')), ms))]);
-
     try {
-      const result = await timeout(
-        supabase
-          .from('profiles')
-          .upsert({
-            id: user.id,
-            username: formData.username.trim(),
-            first_name: formData.firstName.trim(),
-            last_name: formData.lastName.trim(),
-          }, { onConflict: 'id' }),
-        8000
-      ) as { error: { message: string } | null };
+      const savePromise = supabase
+        .from('profiles')
+        .upsert({
+          id: user.id,
+          username: formData.username.trim(),
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+        }, { onConflict: 'id' })
+        .select();
 
-      if (result.error) {
+      const timeoutPromise = new Promise((_resolve, reject) => {
+        setTimeout(() => reject(new Error('Request timed out')), 8000);
+      });
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const result: any = await Promise.race([savePromise, timeoutPromise]);
+
+      if (result?.error) {
         setSaveError(result.error.message);
         setSaving(false);
         return;
       }
 
-      // Refresh profile in background — don't block the UI
       refreshProfile();
       setEditing(false);
     } catch (err) {
