@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
+import { useAuth } from '@/lib/auth-context';
 import HeroTextRotator from './motion/HeroTextRotator';
 
 const trendingTools = [
@@ -25,6 +26,9 @@ export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
   const router = useRouter();
   const { t } = useTranslation();
+  const { user, profile } = useAuth();
+  const firstName = profile?.first_name;
+  const isLoggedIn = !!user && !!firstName;
 
   const trustPoints = [
     { icon: Shield, text: t('hero.trust_no_sponsored', 'No sponsored rankings') },
@@ -68,7 +72,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container-main pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
+      <div className={`container-main pb-16 sm:pb-20 lg:pb-28 ${isLoggedIn ? 'pt-16 sm:pt-24 lg:pt-32' : 'pt-24 sm:pt-32 lg:pt-40'}`}>
         {/* Split Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
@@ -91,8 +95,9 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.1}
-              className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] notranslate"
+              className={`font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] notranslate ${isLoggedIn ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}
             >
+              {isLoggedIn && <span>{firstName}, </span>}
               {t('hero.headline_prefix', 'Discover the Best')}{' '}
               <br className="hidden sm:block" />
               {t('hero.headline_ai_tools', 'AI Tools')}{' '}

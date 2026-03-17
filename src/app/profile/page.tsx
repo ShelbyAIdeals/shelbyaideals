@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { User, Star, Calendar, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
-import { supabase, type UserReview } from '@/lib/supabase';
+import { supabase, upsertProfile, type UserReview } from '@/lib/supabase';
 import { useTranslation } from '@/i18n/context';
 
 export default function ProfilePage() {
@@ -16,6 +16,7 @@ export default function ProfilePage() {
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({ username: '', firstName: '', lastName: '' });
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState('');
 
   // Redirect if not logged in
   useEffect(() => {
@@ -51,16 +52,18 @@ export default function ProfilePage() {
   const handleSave = async () => {
     if (!user) return;
     setSaving(true);
+    setSaveError('');
     try {
-      await supabase.from('profiles').update({
+      await upsertProfile({
+        id: user.id,
         username: formData.username.trim(),
         first_name: formData.firstName.trim(),
         last_name: formData.lastName.trim(),
-      }).eq('id', user.id);
+      });
       await refreshProfile();
       setEditing(false);
-    } catch {
-      // Error handling
+    } catch (err) {
+      setSaveError(err instanceof Error ? err.message : 'Failed to save profile');
     } finally {
       setSaving(false);
     }
@@ -172,6 +175,9 @@ export default function ProfilePage() {
           >
             {saving ? t('common.loading') : t('common.save')}
           </button>
+          {saveError && (
+            <p className="text-sm text-red-400 mt-2">{saveError}</p>
+          )}
         </div>
       )}
 
