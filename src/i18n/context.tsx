@@ -47,28 +47,61 @@ const GOOGLE_TRANSLATE_CODES: Record<string, string> = {
 /* ── Google Translate ─────────────────────────────────────── */
 let gtLoaded = false;
 
+function setGoogTransCookies(gtCode: string) {
+  const hostname = window.location.hostname;
+  if (gtCode === 'en') {
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname}`;
+  } else {
+    document.cookie = `googtrans=/en/${gtCode}; path=/;`;
+    document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${hostname}`;
+  }
+}
+
+function getComboBox(): HTMLSelectElement | null {
+  return document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+}
+
+function selectLanguageInCombo(gtCode: string) {
+  const select = getComboBox();
+  if (!select) return false;
+  select.value = gtCode;
+  select.dispatchEvent(new Event('change'));
+  return true;
+}
+
+/** Poll for combo box, resolve when found or timeout */
+function waitForCombo(maxMs = 12000): Promise<HTMLSelectElement | null> {
+  return new Promise((resolve) => {
+    const start = Date.now();
+    const check = () => {
+      const combo = getComboBox();
+      if (combo) return resolve(combo);
+      if (Date.now() - start > maxMs) return resolve(null);
+      setTimeout(check, 300);
+    };
+    check();
+  });
+}
+
 function loadGoogleTranslate() {
   if (gtLoaded || typeof document === 'undefined') return;
   gtLoaded = true;
 
-  // Container must be rendered (not display:none) for widget to work.
-  // Position off-screen so it's invisible but fully functional.
+  // Container: in-flow, invisible but rendered (NOT display:none, NOT off-screen)
   let container = document.getElementById('google_translate_element');
   if (!container) {
     container = document.createElement('div');
     container.id = 'google_translate_element';
     document.body.appendChild(container);
   }
-  container.style.position = 'absolute';
-  container.style.left = '-9999px';
-  container.style.top = '-9999px';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const win = window as any;
   win.googleTranslateElementInit = () => {
     if (win.google?.translate?.TranslateElement) {
       new win.google.translate.TranslateElement(
-        { pageLanguage: 'en', autoDisplay: false },
+        { pageLanguage: 'en', autoDisplay: true },
         'google_translate_element'
       );
     }
@@ -82,44 +115,36 @@ function loadGoogleTranslate() {
 
 function triggerGoogleTranslate(langCode: string) {
   const gtCode = GOOGLE_TRANSLATE_CODES[langCode] ?? langCode;
-  const hostname = window.location.hostname;
+  setGoogTransCookies(gtCode);
 
   if (langCode === 'en') {
-    // Clear translation cookies
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname}`;
-    // Try combo box reset first
-    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-    if (select) {
-      select.value = 'en';
-      select.dispatchEvent(new Event('change'));
-    } else {
-      // Reload to clear translation
+    if (!selectLanguageInCombo('en')) {
       window.location.reload();
     }
     return;
   }
 
-  // Set translation cookies for both root and subdomain
-  document.cookie = `googtrans=/en/${gtCode}; path=/;`;
-  document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${hostname}`;
-
-  // Try the combo box approach first
-  const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-  if (select) {
-    select.value = gtCode;
-    select.dispatchEvent(new Event('change'));
-    // Verify it worked after a short delay — if not, reload
+  // Try combo immediately
+  if (selectLanguageInCombo(gtCode)) {
+    // Verify after delay — if page not translated, force reload
     setTimeout(() => {
-      const translated = document.querySelector('.translated-ltr, .translated-rtl');
-      if (!translated) {
+      if (!document.querySelector('.translated-ltr, .translated-rtl')) {
         window.location.reload();
       }
-    }, 1500);
-  } else {
-    // Widget not ready — reload with cookie set so it auto-translates on load
-    window.location.reload();
+    }, 2000);
+    return;
   }
+
+  // Combo not ready — wait for it
+  waitForCombo(8000).then((combo) => {
+    if (combo) {
+      combo.value = gtCode;
+      combo.dispatchEvent(new Event('change'));
+    } else {
+      // Widget never loaded — reload (autoDisplay: true + cookie will handle it)
+      window.location.reload();
+    }
+  });
 }
 
 /* ── Detect browser language ─────────────────────────────── */
@@ -144,23 +169,21 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     const lang = getLanguageByCode(initial);
     setIsRTL(lang?.isRTL ?? false);
 
-    // Load Google Translate widget for article content translation
+    // Load Google Translate for article/card content translation.
+    // With autoDisplay: true, GT auto-translates if googtrans cookie is set.
     loadGoogleTranslate();
 
-    // If a non-English locale is saved, trigger Google Translate after widget loads
+    // If a non-English locale is saved, set cookies and wait for combo box
     if (initial !== 'en') {
-      // Wait for widget to potentially load, then trigger
-      const waitAndTrigger = () => {
-        const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-        if (select) {
-          const gtCode = GOOGLE_TRANSLATE_CODES[initial] ?? initial;
-          select.value = gtCode;
-          select.dispatchEvent(new Event('change'));
+      const gtCode = GOOGLE_TRANSLATE_CODES[initial] ?? initial;
+      setGoogTransCookies(gtCode);
+      // Poll for combo and trigger once ready
+      waitForCombo(15000).then((combo) => {
+        if (combo && !document.querySelector('.translated-ltr, .translated-rtl')) {
+          combo.value = gtCode;
+          combo.dispatchEvent(new Event('change'));
         }
-      };
-      // Try after 2s (give script time to load), then 5s
-      setTimeout(waitAndTrigger, 2000);
-      setTimeout(waitAndTrigger, 5000);
+      });
     }
   }, []);
 

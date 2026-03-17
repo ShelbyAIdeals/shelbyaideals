@@ -199,7 +199,7 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-signal-500/15 border border-signal-500/20 flex items-center justify-center">
                   <Sparkles size={18} className="text-signal-400" />
                 </div>
-                <div className="notranslate">
+                <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_writing', 'AI Writing')}</div>
                   <div className="text-xs text-void-400">12 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
@@ -213,7 +213,7 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-ember-500/15 border border-ember-500/20 flex items-center justify-center">
                   <Zap size={18} className="text-ember-400" />
                 </div>
-                <div className="notranslate">
+                <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_automation', 'Automation')}</div>
                   <div className="text-xs text-void-400">8 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
@@ -227,7 +227,7 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-iris-500/15 border border-iris-500/20 flex items-center justify-center">
                   <Search size={18} className="text-iris-400" />
                 </div>
-                <div className="notranslate">
+                <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_seo', 'AI SEO')}</div>
                   <div className="text-xs text-void-400">6 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
