@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Sparkles, ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 interface DealOfTheWeekProps {
   toolName: string;
@@ -11,6 +12,7 @@ interface DealOfTheWeekProps {
 }
 
 export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl }: DealOfTheWeekProps) {
+  const { t } = useTranslation();
   return (
     <div className="relative overflow-hidden card-featured p-[1px] rounded-xl">
       {/* Animated shimmer border overlay */}
@@ -36,7 +38,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
           <div className="flex items-center gap-3 shrink-0">
             <span className="badge-ember gap-1.5">
               <Sparkles size={13} />
-              Deal of the Week
+              {t('common.deal_of_the_week', 'Deal of the Week')}
             </span>
           </div>
 
@@ -56,7 +58,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
               href={`/reviews/${reviewSlug}`}
               className="btn-ghost text-sm !px-4 !py-2 no-underline"
             >
-              Read Review
+              {t('common.read_review', 'Read Review')}
             </Link>
             <a
               href={affiliateUrl}
@@ -64,7 +66,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
               rel="nofollow sponsored noopener"
               className="btn-accent text-sm !py-2.5 !px-5 gap-1.5"
             >
-              Claim Deal <ArrowRight size={14} />
+              {t('common.claim_deal', 'Claim Deal')} <ArrowRight size={14} />
             </a>
           </div>
         </div>

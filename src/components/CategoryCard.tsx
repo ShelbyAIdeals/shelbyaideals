@@ -12,6 +12,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/i18n/context';
 
 /* ── Icon map ─────────────────────────────────────────── */
 
@@ -108,6 +109,7 @@ export default function CategoryCard({
   icon,
   articleCount,
 }: CategoryCardProps) {
+  const { t } = useTranslation();
   const IconComponent = iconMap[icon] || Zap;
   const tint = getTint(slug);
 
@@ -139,7 +141,7 @@ export default function CategoryCard({
 
           {/* Article count badge */}
           <span className="badge-void">
-            {articleCount} {articleCount === 1 ? 'article' : 'articles'}
+            {articleCount} {articleCount === 1 ? t('common.article_singular', 'article') : t('common.article_plural', 'articles')}
           </span>
         </div>
 
@@ -161,7 +163,7 @@ export default function CategoryCard({
             transition-all duration-200 mt-auto
           `}
         >
-          Explore
+          {t('common.explore', 'Explore')}
           <ArrowRight
             size={14}
             className="transition-transform duration-200 group-hover:translate-x-1"

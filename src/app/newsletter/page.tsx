@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { Mail, Sparkles, TrendingUp, Gift, ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 export default function NewsletterPage() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -43,18 +45,16 @@ export default function NewsletterPage() {
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-signal-500/10 border border-signal-500/30 text-signal-400 text-sm font-medium mb-6">
           <Mail size={16} />
-          Free Weekly Newsletter
+          {t('newsletter.free_weekly', 'Free Weekly Newsletter')}
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-void-50 leading-tight mb-6">
-          Stay Ahead of the{' '}
-          <span className="text-signal-400">AI Curve</span>
+          {t('newsletter.stay_ahead_title', 'Stay Ahead of the')}{' '}
+          <span className="text-signal-400">{t('newsletter.stay_ahead_highlight', 'AI Curve')}</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-void-300 max-w-2xl mx-auto leading-relaxed">
-          Get the best AI tool picks, exclusive deals, and workflow tips —
-          straight to your inbox every week. Join thousands of creators and
-          small teams who use AI to work smarter.
+          {t('newsletter.page_description', 'Get the best AI tool picks, exclusive deals, and workflow tips — straight to your inbox every week. Join thousands of creators and small teams who use AI to work smarter.')}
         </p>
       </div>
 
@@ -66,10 +66,10 @@ export default function NewsletterPage() {
               <Sparkles size={28} className="text-signal-400" />
             </div>
             <h2 className="text-2xl font-heading font-bold text-void-50 mb-2">
-              You&apos;re in!
+              {t('newsletter.youre_in', "You're in!")}
             </h2>
             <p className="text-void-300">
-              Check your inbox for a confirmation email. Your first issue arrives this week.
+              {t('newsletter.success_description', 'Check your inbox for a confirmation email. Your first issue arrives this week.')}
             </p>
           </div>
         ) : (
@@ -78,7 +78,7 @@ export default function NewsletterPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder={t('newsletter.email_placeholder', 'Enter your email')}
               required
               className="flex-1 px-5 py-4 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all text-base"
             />
@@ -87,7 +87,7 @@ export default function NewsletterPage() {
               disabled={status === 'loading'}
               className="px-8 py-4 rounded-xl bg-signal-500 text-void-950 font-bold text-base hover:bg-signal-400 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shrink-0"
             >
-              {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+              {status === 'loading' ? t('newsletter.subscribing', 'Subscribing...') : t('newsletter.subscribe', 'Subscribe')}
               {status !== 'loading' && <ArrowRight size={18} />}
             </button>
           </form>
@@ -98,14 +98,14 @@ export default function NewsletterPage() {
         )}
 
         <p className="text-xs text-void-600 text-center mt-3">
-          No spam, unsubscribe anytime. We respect your inbox.
+          {t('newsletter.no_spam_disclaimer', 'No spam, unsubscribe anytime. We respect your inbox.')}
         </p>
       </div>
 
       {/* What You'll Get */}
       <div className="mb-16">
         <h2 className="text-2xl font-heading font-bold text-void-50 text-center mb-10">
-          What You&apos;ll Get
+          {t('newsletter.what_you_get', "What You'll Get")}
         </h2>
 
         <div className="grid sm:grid-cols-3 gap-6">
@@ -114,11 +114,10 @@ export default function NewsletterPage() {
               <Sparkles size={24} className="text-signal-400" />
             </div>
             <h3 className="text-base font-semibold text-void-100 mb-2">
-              Weekly AI Tool Picks
+              {t('newsletter.weekly_picks_title', 'Weekly AI Tool Picks')}
             </h3>
             <p className="text-sm text-void-400 leading-relaxed">
-              Hand-picked AI tools we&apos;ve actually tested. No fluff,
-              no sponsored picks — just what works.
+              {t('newsletter.weekly_picks_desc', "Hand-picked AI tools we've actually tested. No fluff, no sponsored picks — just what works.")}
             </p>
           </div>
 
@@ -127,11 +126,10 @@ export default function NewsletterPage() {
               <Gift size={24} className="text-ember-400" />
             </div>
             <h3 className="text-base font-semibold text-void-100 mb-2">
-              Exclusive Deals
+              {t('newsletter.exclusive_deals_title', 'Exclusive Deals')}
             </h3>
             <p className="text-sm text-void-400 leading-relaxed">
-              Get discounts and extended trials that we negotiate directly
-              with AI tool companies.
+              {t('newsletter.exclusive_deals_desc', 'Get discounts and extended trials that we negotiate directly with AI tool companies.')}
             </p>
           </div>
 
@@ -140,11 +138,10 @@ export default function NewsletterPage() {
               <TrendingUp size={24} className="text-iris-400" />
             </div>
             <h3 className="text-base font-semibold text-void-100 mb-2">
-              Workflow Tips
+              {t('newsletter.workflow_tips_title', 'Workflow Tips')}
             </h3>
             <p className="text-sm text-void-400 leading-relaxed">
-              Real workflows from real users. Learn how others use AI
-              to save hours every week.
+              {t('newsletter.workflow_tips_desc', 'Real workflows from real users. Learn how others use AI to save hours every week.')}
             </p>
           </div>
         </div>
@@ -158,7 +155,7 @@ export default function NewsletterPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-signal-400 hover:text-signal-300 font-medium transition-colors"
         >
-          Browse Newsletter Archive
+          {t('newsletter.archive', 'Browse Newsletter Archive')}
           <ArrowRight size={16} />
         </a>
       </div>
