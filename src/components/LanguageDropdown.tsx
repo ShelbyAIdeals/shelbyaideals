@@ -84,7 +84,7 @@ export default function LanguageDropdown() {
       {/* Dropdown panel */}
       {open && (
         <div
-          className="absolute right-0 top-full mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-void-700/50 bg-void-900/95 backdrop-blur-xl shadow-2xl z-50 py-2 animate-[fadeInUp_0.15s_ease-out]"
+          className="absolute right-0 top-full mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-void-700/30 bg-void-900/60 backdrop-blur-2xl shadow-2xl z-50 py-2 animate-[fadeInUp_0.15s_ease-out]"
           role="listbox"
           aria-label={t('language.select')}
         >

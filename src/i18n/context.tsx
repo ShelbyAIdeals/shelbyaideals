@@ -44,30 +44,25 @@ const GOOGLE_TRANSLATE_CODES: Record<string, string> = {
   ar: 'ar', hi: 'hi', ru: 'ru',
 };
 
-/* ── Google Translate readiness detection ─────────────────── */
-let googleTranslateLoaded = false;
-let googleTranslateReadyResolve: (() => void) | null = null;
-const googleTranslateReady = new Promise<void>((resolve) => {
-  googleTranslateReadyResolve = resolve;
-});
+/* ── Google Translate ─────────────────────────────────────── */
+let gtLoaded = false;
 
-/** Load Google Translate script once */
 function loadGoogleTranslate() {
-  if (googleTranslateLoaded || typeof document === 'undefined') return;
-  googleTranslateLoaded = true;
+  if (gtLoaded || typeof document === 'undefined') return;
+  gtLoaded = true;
 
-  // Create container for Google Translate widget (visible but transparent via CSS)
-  const container = document.createElement('div');
-  container.id = 'google_translate_element';
-  container.style.position = 'fixed';
-  container.style.bottom = '0';
-  container.style.left = '0';
-  container.style.opacity = '0';
-  container.style.pointerEvents = 'none';
-  container.style.zIndex = '-1';
-  document.body.appendChild(container);
+  // Container must be rendered (not display:none) for widget to work.
+  // Position off-screen so it's invisible but fully functional.
+  let container = document.getElementById('google_translate_element');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'google_translate_element';
+    document.body.appendChild(container);
+  }
+  container.style.position = 'absolute';
+  container.style.left = '-9999px';
+  container.style.top = '-9999px';
 
-  // Define the callback Google Translate expects
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const win = window as any;
   win.googleTranslateElementInit = () => {
@@ -76,63 +71,54 @@ function loadGoogleTranslate() {
         { pageLanguage: 'en', autoDisplay: false },
         'google_translate_element'
       );
-
-      // Poll for the combo box to appear, then resolve the readiness promise
-      const poll = setInterval(() => {
-        if (document.querySelector('.goog-te-combo')) {
-          clearInterval(poll);
-          googleTranslateReadyResolve?.();
-        }
-      }, 200);
-      // Safety: stop polling after 10s
-      setTimeout(() => clearInterval(poll), 10000);
     }
   };
 
-  // Load the script
   const script = document.createElement('script');
   script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   script.async = true;
-  script.onerror = () => console.warn('Google Translate script failed to load');
   document.head.appendChild(script);
 }
 
-/** Trigger Google Translate to a specific language (async, waits for readiness) */
-async function triggerGoogleTranslate(langCode: string) {
+function triggerGoogleTranslate(langCode: string) {
   const gtCode = GOOGLE_TRANSLATE_CODES[langCode] ?? langCode;
+  const hostname = window.location.hostname;
 
   if (langCode === 'en') {
-    // Revert to original — remove Google Translate
-    const frame = document.querySelector('.goog-te-banner-frame') as HTMLIFrameElement;
-    if (frame) {
-      const closeBtn = frame.contentDocument?.querySelector('.goog-close-link') as HTMLElement;
-      closeBtn?.click();
-    }
-    // Also try cookie-based reset
+    // Clear translation cookies
     document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname;
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname}`;
+    // Try combo box reset first
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+    if (select) {
+      select.value = 'en';
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Reload to clear translation
+      window.location.reload();
+    }
     return;
   }
 
-  // Set the translation cookie
+  // Set translation cookies for both root and subdomain
   document.cookie = `googtrans=/en/${gtCode}; path=/;`;
-  document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${window.location.hostname}`;
+  document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${hostname}`;
 
-  // Wait for widget readiness (with timeout to avoid hanging forever)
-  const ready = await Promise.race([
-    googleTranslateReady.then(() => 'ready' as const),
-    new Promise<'timeout'>((resolve) => setTimeout(() => resolve('timeout'), 8000)),
-  ]);
-
-  if (ready === 'timeout') {
-    console.warn('Google Translate widget did not load in time — UI translations still active');
-    return;
-  }
-
-  const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+  // Try the combo box approach first
+  const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
   if (select) {
     select.value = gtCode;
     select.dispatchEvent(new Event('change'));
+    // Verify it worked after a short delay — if not, reload
+    setTimeout(() => {
+      const translated = document.querySelector('.translated-ltr, .translated-rtl');
+      if (!translated) {
+        window.location.reload();
+      }
+    }, 1500);
+  } else {
+    // Widget not ready — reload with cookie set so it auto-translates on load
+    window.location.reload();
   }
 }
 
@@ -158,12 +144,23 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     const lang = getLanguageByCode(initial);
     setIsRTL(lang?.isRTL ?? false);
 
-    // Load Google Translate for full-page translation
+    // Load Google Translate widget for article content translation
     loadGoogleTranslate();
 
-    // If a non-English language was saved, trigger translation (async, self-managing)
+    // If a non-English locale is saved, trigger Google Translate after widget loads
     if (initial !== 'en') {
-      triggerGoogleTranslate(initial);
+      // Wait for widget to potentially load, then trigger
+      const waitAndTrigger = () => {
+        const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+        if (select) {
+          const gtCode = GOOGLE_TRANSLATE_CODES[initial] ?? initial;
+          select.value = gtCode;
+          select.dispatchEvent(new Event('change'));
+        }
+      };
+      // Try after 2s (give script time to load), then 5s
+      setTimeout(waitAndTrigger, 2000);
+      setTimeout(waitAndTrigger, 5000);
     }
   }, []);
 

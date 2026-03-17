@@ -181,21 +181,12 @@
 
 /* ── Base Layer ───────────────────────────────────────── */
 
-/* ── Google Translate UI — visible but transparent so it functions ──── */
+/* ── Google Translate — hide chrome but keep widget functional ──── */
 .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
-.goog-te-gadget, #google_translate_element {
-  opacity: 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  pointer-events: none;
-  height: 0;
-  overflow: hidden;
-}
 body { top: 0 !important; }
-.skiptranslate:not(#google_translate_element) { display: none !important; }
-#google_translate_element .skiptranslate { display: block !important; opacity: 0; }
+/* Hide the "Powered by Google" bar but keep the select dropdown alive */
+.skiptranslate { height: 0 !important; overflow: hidden !important; opacity: 0 !important; }
+#google_translate_element { position: absolute !important; left: -9999px !important; top: -9999px !important; }
 
 @layer base {
   html {
