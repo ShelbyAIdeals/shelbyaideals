@@ -181,15 +181,9 @@
 
 /* ── Base Layer ───────────────────────────────────────── */
 
-/* ── Google Translate — hide visual chrome, keep widget functional ──── */
+/* ── Google Translate proxy — hide any leftover chrome ──── */
 .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
 body { top: 0 !important; }
-/* Hide the Google branding bar */
-.VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
-/* Keep the widget container in-flow but invisible — must NOT use display:none or off-screen position */
-#google_translate_element { opacity: 0 !important; height: 0 !important; overflow: hidden !important; }
-/* Hide the "Powered by Google Translate" skip-translate wrapper */
-body > .skiptranslate:first-child { height: 0 !important; overflow: hidden !important; opacity: 0 !important; }
 
 @layer base {
   html {

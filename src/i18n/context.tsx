@@ -44,107 +44,47 @@ const GOOGLE_TRANSLATE_CODES: Record<string, string> = {
   ar: 'ar', hi: 'hi', ru: 'ru',
 };
 
-/* ── Google Translate ─────────────────────────────────────── */
-let gtLoaded = false;
+/* ── Google Translate via page proxy ──────────────────────── */
 
-function setGoogTransCookies(gtCode: string) {
-  const hostname = window.location.hostname;
-  if (gtCode === 'en') {
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname}`;
-  } else {
-    document.cookie = `googtrans=/en/${gtCode}; path=/;`;
-    document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${hostname}`;
-  }
+/** Check if we're currently on the Google Translate proxy */
+function isOnTranslateProxy(): boolean {
+  return window.location.hostname.endsWith('.translate.goog');
 }
 
-function getComboBox(): HTMLSelectElement | null {
-  return document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-}
-
-function selectLanguageInCombo(gtCode: string) {
-  const select = getComboBox();
-  if (!select) return false;
-  select.value = gtCode;
-  select.dispatchEvent(new Event('change'));
-  return true;
-}
-
-/** Poll for combo box, resolve when found or timeout */
-function waitForCombo(maxMs = 12000): Promise<HTMLSelectElement | null> {
-  return new Promise((resolve) => {
-    const start = Date.now();
-    const check = () => {
-      const combo = getComboBox();
-      if (combo) return resolve(combo);
-      if (Date.now() - start > maxMs) return resolve(null);
-      setTimeout(check, 300);
-    };
-    check();
-  });
-}
-
-function loadGoogleTranslate() {
-  if (gtLoaded || typeof document === 'undefined') return;
-  gtLoaded = true;
-
-  // Container: in-flow, invisible but rendered (NOT display:none, NOT off-screen)
-  let container = document.getElementById('google_translate_element');
-  if (!container) {
-    container = document.createElement('div');
-    container.id = 'google_translate_element';
-    document.body.appendChild(container);
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const win = window as any;
-  win.googleTranslateElementInit = () => {
-    if (win.google?.translate?.TranslateElement) {
-      new win.google.translate.TranslateElement(
-        { pageLanguage: 'en', autoDisplay: true },
-        'google_translate_element'
-      );
-    }
-  };
-
-  const script = document.createElement('script');
-  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  script.async = true;
-  document.head.appendChild(script);
+/** Get the original (non-proxy) URL for the current page */
+function getOriginalUrl(): string {
+  if (!isOnTranslateProxy()) return window.location.href;
+  // translate.goog URLs look like: shelby--ai-com.translate.goog/path?_x_tr_sl=en&_x_tr_tl=es&...
+  // Reconstruct original: https://shelby-ai.com/path
+  const url = new URL(window.location.href);
+  url.searchParams.delete('_x_tr_sl');
+  url.searchParams.delete('_x_tr_tl');
+  url.searchParams.delete('_x_tr_hl');
+  url.searchParams.delete('_x_tr_pto');
+  url.searchParams.delete('_x_tr_hist');
+  // Hostname: shelby--ai-com.translate.goog → shelby-ai.com
+  const origHost = url.hostname.replace('.translate.goog', '').replace(/--/g, '.');
+  url.hostname = origHost;
+  url.protocol = 'https:';
+  return url.toString();
 }
 
 function triggerGoogleTranslate(langCode: string) {
   const gtCode = GOOGLE_TRANSLATE_CODES[langCode] ?? langCode;
-  setGoogTransCookies(gtCode);
 
   if (langCode === 'en') {
-    if (!selectLanguageInCombo('en')) {
-      window.location.reload();
+    // Switch back to English → go to the original site
+    if (isOnTranslateProxy()) {
+      window.location.href = getOriginalUrl();
     }
+    // If already on original site, nothing to do (UI translations handle it via t())
     return;
   }
 
-  // Try combo immediately
-  if (selectLanguageInCombo(gtCode)) {
-    // Verify after delay — if page not translated, force reload
-    setTimeout(() => {
-      if (!document.querySelector('.translated-ltr, .translated-rtl')) {
-        window.location.reload();
-      }
-    }, 2000);
-    return;
-  }
-
-  // Combo not ready — wait for it
-  waitForCombo(8000).then((combo) => {
-    if (combo) {
-      combo.value = gtCode;
-      combo.dispatchEvent(new Event('change'));
-    } else {
-      // Widget never loaded — reload (autoDisplay: true + cookie will handle it)
-      window.location.reload();
-    }
-  });
+  // Navigate to Google Translate proxy for full-page translation
+  const currentUrl = isOnTranslateProxy() ? getOriginalUrl() : window.location.href;
+  const translateUrl = `https://translate.google.com/translate?sl=en&tl=${gtCode}&u=${encodeURIComponent(currentUrl)}`;
+  window.location.href = translateUrl;
 }
 
 /* ── Detect browser language ─────────────────────────────── */
@@ -169,21 +109,17 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     const lang = getLanguageByCode(initial);
     setIsRTL(lang?.isRTL ?? false);
 
-    // Load Google Translate for article/card content translation.
-    // With autoDisplay: true, GT auto-translates if googtrans cookie is set.
-    loadGoogleTranslate();
-
-    // If a non-English locale is saved, set cookies and wait for combo box
-    if (initial !== 'en') {
-      const gtCode = GOOGLE_TRANSLATE_CODES[initial] ?? initial;
-      setGoogTransCookies(gtCode);
-      // Poll for combo and trigger once ready
-      waitForCombo(15000).then((combo) => {
-        if (combo && !document.querySelector('.translated-ltr, .translated-rtl')) {
-          combo.value = gtCode;
-          combo.dispatchEvent(new Event('change'));
+    // If on translate proxy, detect locale from URL params
+    if (isOnTranslateProxy()) {
+      const params = new URLSearchParams(window.location.search);
+      const proxyLang = params.get('_x_tr_tl');
+      if (proxyLang) {
+        const mapped = Object.entries(GOOGLE_TRANSLATE_CODES).find(([, v]) => v === proxyLang);
+        if (mapped) {
+          setLocaleState(mapped[0]);
+          localStorage.setItem('locale', mapped[0]);
         }
-      });
+      }
     }
   }, []);
 
