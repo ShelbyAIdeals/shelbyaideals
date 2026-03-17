@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import { getAllReviews } from '@/lib/content';
-import ReviewsContent from '@/components/ReviewsContent';
+import ToolsPageContent from '@/components/ToolsPageContent';
+import { CATEGORIES } from '@/lib/types';
 
 export const metadata: Metadata = {
-  title: 'AI Tool Reviews',
+  title: 'AI Tools Directory — Browse & Compare',
   description:
-    'In-depth, hands-on reviews of the AI tools that matter most for creators and small teams.',
+    'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
   openGraph: {
-    title: 'AI Tool Reviews',
+    title: 'AI Tools Directory — Browse & Compare',
     description:
-      'In-depth, hands-on reviews of the AI tools that matter most for creators and small teams.',
+      'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
     images: [
       {
         url: 'https://shelby-ai.com/images/og-thumbnail.png',
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Tool Reviews',
+    title: 'AI Tools Directory — Browse & Compare',
     description:
-      'In-depth, hands-on reviews of the AI tools that matter most for creators and small teams.',
+      'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
     images: ['https://shelby-ai.com/images/og-thumbnail.png'],
   },
 };
@@ -30,9 +31,14 @@ export const metadata: Metadata = {
 export default async function ReviewsPage() {
   const reviews = getAllReviews();
 
+  const categoriesWithCount = CATEGORIES.map((cat) => ({
+    ...cat,
+    articleCount: reviews.filter((r) => r.category === cat.slug).length,
+  }));
+
   return (
     <main className="min-h-screen">
-      <ReviewsContent reviews={reviews} />
+      <ToolsPageContent reviews={reviews} categoriesWithCount={categoriesWithCount} />
     </main>
   );
 }
