@@ -3,17 +3,12 @@
 import { useState } from 'react';
 import { Mail, ArrowRight, Loader2, Download, Check } from 'lucide-react';
 import clsx from 'clsx';
+import { useTranslation } from '@/i18n/context';
 
 interface NewsletterSignupProps {
   variant?: 'inline' | 'section';
   className?: string;
 }
-
-const benefits = [
-  'Weekly curated AI tool picks',
-  'Exclusive deals and discounts',
-  'Real workflow tips — no fluff',
-];
 
 export default function NewsletterSignup({
   variant = 'section',
@@ -23,6 +18,13 @@ export default function NewsletterSignup({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { t } = useTranslation();
+
+  const benefits = [
+    t('newsletter.benefit_1', 'Weekly curated AI tool picks'),
+    t('newsletter.benefit_2', 'Exclusive deals and discounts'),
+    t('newsletter.benefit_3', 'Real workflow tips — no fluff'),
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,7 +46,7 @@ export default function NewsletterSignup({
       });
       if (!res.ok) throw new Error('Subscription failed');
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);
       return;
     }
@@ -62,11 +64,11 @@ export default function NewsletterSignup({
             <Mail size={18} />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-void-100">
-              Get the Free AI Tool Stack Cheatsheet
+            <h4 className="text-sm font-bold text-void-100 notranslate">
+              {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h4>
-            <p className="text-xs text-void-500 mt-1 leading-relaxed">
-              Get curated AI tool recommendations and exclusive deals weekly.
+            <p className="text-xs text-void-500 mt-1 leading-relaxed notranslate">
+              {t('newsletter.subtitle', 'Get the best AI tool picks, exclusive deals, and workflow tips — straight to your inbox every week.')}
             </p>
           </div>
         </div>
@@ -78,7 +80,7 @@ export default function NewsletterSignup({
                 <Check size={12} className="text-signal-400" />
               </div>
               <p className="text-sm font-medium text-signal-400">
-                You&apos;re in! Check your inbox.
+                {t('newsletter.success', "You're in! Check your inbox.")}
               </p>
             </div>
             <a
@@ -88,7 +90,7 @@ export default function NewsletterSignup({
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-300 hover:text-signal-200 transition-colors"
             >
               <Download size={14} />
-              Download Cheatsheet
+              {t('newsletter.subscribe', 'Subscribe')}
             </a>
           </div>
         ) : (
@@ -103,7 +105,7 @@ export default function NewsletterSignup({
                 className="flex-1 px-3 py-2 text-sm rounded-lg border border-void-700/50 bg-void-900 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
               <button type="submit" disabled={loading} className="btn-accent text-sm !px-4 !py-2 gap-1.5">
-                {loading ? <Loader2 size={14} className="animate-spin" /> : <>Get Free Picks <ArrowRight size={14} /></>}
+                {loading ? <Loader2 size={14} className="animate-spin" /> : <>{t('newsletter.subscribe', 'Subscribe')} <ArrowRight size={14} /></>}
               </button>
             </form>
             {error && <p className="text-xs text-red-400 mt-2">{error}</p>}
@@ -128,12 +130,12 @@ export default function NewsletterSignup({
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
           {/* ── Left column: headline + benefits ────────────────── */}
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block">
-              Join 500+ creators
+            <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block notranslate">
+              {t('newsletter.join_creators', 'Join 500+ creators')}
             </span>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight">
-              Get the Free AI Tool Stack Cheatsheet
+            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight notranslate">
+              {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h2>
 
             <ul className="space-y-3">
@@ -158,7 +160,7 @@ export default function NewsletterSignup({
                   <Check size={24} className="text-signal-400" />
                 </div>
                 <p className="text-lg font-semibold text-void-50">
-                  You&apos;re in! Check your inbox.
+                  {t('newsletter.success', "You're in! Check your inbox.")}
                 </p>
                 <a
                   href="/ai-tool-stack-cheatsheet.html"
@@ -167,7 +169,7 @@ export default function NewsletterSignup({
                   className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-signal-500 text-void-950 hover:bg-signal-400 transition-colors"
                 >
                   <Download size={16} />
-                  Download Cheatsheet
+                  {t('newsletter.subscribe', 'Subscribe')}
                 </a>
               </div>
             ) : (
@@ -176,8 +178,8 @@ export default function NewsletterSignup({
                   <div className="w-10 h-10 rounded-lg bg-ember-500/10 border border-ember-500/15 text-ember-400 flex items-center justify-center shrink-0">
                     <Mail size={20} />
                   </div>
-                  <p className="text-sm font-medium text-void-200">
-                    Enter your email to get started
+                  <p className="text-sm font-medium text-void-200 notranslate">
+                    {t('newsletter.email_placeholder', 'Enter your email')}
                   </p>
                 </div>
 
@@ -205,8 +207,8 @@ export default function NewsletterSignup({
 
                 {error && <p className="text-xs text-red-400 mt-3">{error}</p>}
 
-                <p className="text-xs text-void-500 mt-4 text-center">
-                  No spam, unsubscribe anytime.
+                <p className="text-xs text-void-500 mt-4 text-center notranslate">
+                  {t('footer.no_spam', 'No spam, unsubscribe anytime.')}
                 </p>
               </div>
             )}

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/i18n/context';
 
 interface ReviewCardProps {
   title: string;
@@ -29,6 +30,7 @@ export default function ReviewCard({
   toolSlug,
   toolLogo,
 }: ReviewCardProps) {
+  const { t } = useTranslation();
   const imageSlug = toolSlug || slug.replace('-review', '');
   const webpSrc = `/images/tools/${imageSlug}/thumb.webp`;
   const svgSrc = `/images/tools/${imageSlug}/thumb.svg`;
@@ -115,15 +117,15 @@ export default function ReviewCard({
           {/* Tag row */}
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="badge-signal">{category}</span>
-            <span className="text-xs text-void-500">
-              <span className="font-semibold text-void-300">Best for:</span>{' '}
+            <span className="text-xs text-void-500 notranslate">
+              <span className="font-semibold text-void-300">{t('review.best_for', 'Best for')}:</span>{' '}
               {bestFor}
             </span>
           </div>
 
           {/* Read Review link */}
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto">
-            Read Review
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto notranslate">
+            {t('card.read_review', 'Read Review')}
             <ArrowRight
               size={14}
               className="transition-transform duration-200 group-hover:translate-x-1"

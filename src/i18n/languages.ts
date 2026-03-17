@@ -47,3 +47,22 @@ export const FLAG_EMOJIS: Record<string, string> = {
   hi: '🇮🇳',
   ru: '🇷🇺',
 };
+
+/** SVG flag image paths — renders correctly on all platforms including Windows */
+export const FLAG_PATHS: Record<string, string> = {
+  en: '/flags/en.svg',
+  es: '/flags/es.svg',
+  fr: '/flags/fr.svg',
+  de: '/flags/de.svg',
+  pt: '/flags/pt.svg',
+  it: '/flags/it.svg',
+  nl: '/flags/nl.svg',
+  pl: '/flags/pl.svg',
+  tr: '/flags/tr.svg',
+  ja: '/flags/ja.svg',
+  ko: '/flags/ko.svg',
+  zh: '/flags/zh.svg',
+  ar: '/flags/ar.svg',
+  hi: '/flags/hi.svg',
+  ru: '/flags/ru.svg',
+};

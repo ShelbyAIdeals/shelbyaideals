@@ -2,14 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-
-const phrases = [
-  'for Your Workflow',
-  'for Freelancers',
-  'for Small Teams',
-  'for Content Creators',
-  'for Solopreneurs',
-];
+import { useTranslation } from '@/i18n/context';
 
 interface HeroTextRotatorProps {
   className?: string;
@@ -17,16 +10,25 @@ interface HeroTextRotatorProps {
 
 export default function HeroTextRotator({ className }: HeroTextRotatorProps) {
   const [index, setIndex] = useState(0);
+  const { t } = useTranslation();
+
+  const phrases = [
+    t('hero.rotator_workflow', 'for Your Workflow'),
+    t('hero.rotator_freelancers', 'for Freelancers'),
+    t('hero.rotator_teams', 'for Small Teams'),
+    t('hero.rotator_creators', 'for Content Creators'),
+    t('hero.rotator_solopreneurs', 'for Solopreneurs'),
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % phrases.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, []);
+  }, [phrases.length]);
 
   return (
-    <span className={`inline-block relative ${className ?? ''}`}>
+    <span className={`inline-block relative notranslate ${className ?? ''}`}>
       <AnimatePresence mode="wait">
         <motion.span
           key={phrases[index]}

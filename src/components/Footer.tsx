@@ -3,37 +3,38 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Zap, ArrowRight, Twitter, Linkedin, Check, Send } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 /* ------------------------------------------------------------------ */
 /*  Link data                                                          */
 /* ------------------------------------------------------------------ */
 
 const categoryLinks = [
-  { label: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
-  { label: 'AI Design & Video', href: '/categories/ai-design-tools' },
-  { label: 'AI Coding Tools', href: '/categories/ai-coding-tools' },
-  { label: 'AI Automation', href: '/categories/ai-automation' },
-  { label: 'AI SEO Tools', href: '/categories/ai-seo-tools' },
-  { label: 'AI Productivity', href: '/categories/ai-productivity' },
+  { labelKey: 'footer.cat_ai_writing', fallback: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
+  { labelKey: 'footer.cat_ai_design', fallback: 'AI Design & Video', href: '/categories/ai-design-tools' },
+  { labelKey: 'footer.cat_ai_coding', fallback: 'AI Coding Tools', href: '/categories/ai-coding-tools' },
+  { labelKey: 'footer.cat_ai_automation', fallback: 'AI Automation', href: '/categories/ai-automation' },
+  { labelKey: 'footer.cat_ai_seo', fallback: 'AI SEO Tools', href: '/categories/ai-seo-tools' },
+  { labelKey: 'footer.cat_ai_productivity', fallback: 'AI Productivity', href: '/categories/ai-productivity' },
 ];
 
 const resourceLinks = [
-  { label: 'All Tools', href: '/reviews' },
-  { label: 'Deals', href: '/deals' },
-  { label: 'Comparisons', href: '/comparisons' },
-  { label: 'Best Of', href: '/best' },
-  { label: 'Guides', href: '/guides' },
-  { label: 'Alternatives', href: '/alternatives' },
-  { label: 'Pricing Guides', href: '/pricing' },
-  { label: 'Best For You', href: '/best-for' },
+  { labelKey: 'footer.res_all_tools', fallback: 'All Tools', href: '/reviews' },
+  { labelKey: 'footer.res_deals', fallback: 'Deals', href: '/deals' },
+  { labelKey: 'footer.res_comparisons', fallback: 'Comparisons', href: '/comparisons' },
+  { labelKey: 'footer.res_best_of', fallback: 'Best Of', href: '/best' },
+  { labelKey: 'footer.res_guides', fallback: 'Guides', href: '/guides' },
+  { labelKey: 'footer.res_alternatives', fallback: 'Alternatives', href: '/alternatives' },
+  { labelKey: 'footer.res_pricing', fallback: 'Pricing Guides', href: '/pricing' },
+  { labelKey: 'footer.res_best_for', fallback: 'Best For You', href: '/best-for' },
 ];
 
 const companyLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'How We Review', href: '/how-we-review' },
-  { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
+  { labelKey: 'footer.comp_about', fallback: 'About', href: '/about' },
+  { labelKey: 'footer.comp_faq', fallback: 'FAQ', href: '/faq' },
+  { labelKey: 'footer.comp_contact', fallback: 'Contact', href: '/contact' },
+  { labelKey: 'footer.comp_how_we_review', fallback: 'How We Review', href: '/how-we-review' },
+  { labelKey: 'footer.comp_affiliate', fallback: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
 ];
 
 const PinterestIcon = ({ size = 14, className = '' }: { size?: number; className?: string }) => (
@@ -44,35 +45,33 @@ const PinterestIcon = ({ size = 14, className = '' }: { size?: number; className
 
 const connectLinks = [
   {
-    label: 'X / Twitter',
+    labelKey: 'footer.social_twitter',
+    fallback: 'X / Twitter',
     href: 'https://x.com/shelbyaideals',
     external: true,
     icon: Twitter,
   },
   {
-    label: 'LinkedIn',
+    labelKey: 'footer.social_linkedin',
+    fallback: 'LinkedIn',
     href: 'https://www.linkedin.com/in/shelby-ai-1bb38a3b6/',
     external: true,
     icon: Linkedin,
   },
   {
-    label: 'Pinterest',
+    labelKey: 'footer.social_pinterest',
+    fallback: 'Pinterest',
     href: 'https://pinterest.com/shelbyaideals',
     external: true,
     icon: PinterestIcon,
   },
   {
-    label: 'Submit a Tool',
+    labelKey: 'footer.submit_tool',
+    fallback: 'Submit a Tool',
     href: '/submit-tool',
     external: false,
     icon: Send,
   },
-];
-
-const benefits = [
-  'Weekly curated AI tool picks',
-  'Exclusive deals and discounts',
-  'Workflow tips from real users',
 ];
 
 /* ------------------------------------------------------------------ */
@@ -84,6 +83,13 @@ export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { t } = useTranslation();
+
+  const benefits = [
+    t('newsletter.benefit_1', 'Weekly curated AI tool picks'),
+    t('newsletter.benefit_2', 'Exclusive deals and discounts'),
+    t('newsletter.benefit_3', 'Workflow tips from real users'),
+  ];
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,7 +110,7 @@ export default function Footer() {
       });
       if (!res.ok) throw new Error('Subscription failed');
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);
       return;
     }
@@ -129,12 +135,12 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-16">
             {/* Left — headline + benefits */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
-                Stay ahead of the AI curve
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5 notranslate">
+                {t('footer.stay_ahead', 'Stay ahead of the AI curve')}
               </h3>
               <ul className="space-y-3">
                 {benefits.map((b) => (
-                  <li key={b} className="flex items-center gap-2.5 text-sm text-void-300">
+                  <li key={b} className="flex items-center gap-2.5 text-sm text-void-300 notranslate">
                     <span className="flex-shrink-0 w-5 h-5 rounded-full bg-signal-500/15 flex items-center justify-center">
                       <Check size={12} className="text-signal-400" strokeWidth={3} />
                     </span>
@@ -151,11 +157,11 @@ export default function Footer() {
                   <div className="mx-auto mb-3 w-10 h-10 rounded-full bg-signal-500/15 flex items-center justify-center">
                     <Check size={20} className="text-signal-400" strokeWidth={2.5} />
                   </div>
-                  <p className="text-base font-semibold text-signal-400 mb-1">
-                    You&rsquo;re in!
+                  <p className="text-base font-semibold text-signal-400 mb-1 notranslate">
+                    {t('newsletter.success', "You're in! Check your inbox.")}
                   </p>
-                  <p className="text-sm text-void-400">
-                    Check your inbox for the first edition.
+                  <p className="text-sm text-void-400 notranslate">
+                    {t('footer.check_inbox', 'Check your inbox for the first edition.')}
                   </p>
                 </div>
               ) : (
@@ -165,28 +171,28 @@ export default function Footer() {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@email.com"
+                      placeholder={t('newsletter.email_placeholder', 'Enter your email')}
                       required
                       className="flex-1 min-w-0 px-4 py-3 text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent transition-shadow"
                     />
                     <button
                       type="submit"
                       disabled={loading}
-                      className="px-5 py-3 text-sm font-semibold rounded-lg bg-gradient-to-r from-signal-500 to-signal-400 text-void-950 hover:brightness-110 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                      className="px-5 py-3 text-sm font-semibold rounded-lg bg-gradient-to-r from-signal-500 to-signal-400 text-void-950 hover:brightness-110 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap notranslate"
                     >
                       {loading ? (
-                        'Sending...'
+                        t('footer.sending', 'Sending...')
                       ) : (
                         <>
-                          Get Free Picks
+                          {t('footer.get_free_picks', 'Get Free Picks')}
                           <ArrowRight size={14} />
                         </>
                       )}
                     </button>
                   </div>
                   {error && <p className="text-xs text-red-400">{error}</p>}
-                  <p className="text-xs text-void-500">
-                    Free forever. Unsubscribe anytime. No spam.
+                  <p className="text-xs text-void-500 notranslate">
+                    {t('footer.no_spam', 'Free forever. Unsubscribe anytime. No spam.')}
                   </p>
                 </form>
               )}
@@ -202,17 +208,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
-              Categories
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+              {t('footer.categories', 'Categories')}
             </h4>
             <ul className="space-y-2.5">
               {categoryLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
                   >
-                    {link.label}
+                    {t(link.labelKey, link.fallback)}
                   </Link>
                 </li>
               ))}
@@ -221,17 +227,17 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
-              Resources
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+              {t('footer.resources', 'Resources')}
             </h4>
             <ul className="space-y-2.5">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
                   >
-                    {link.label}
+                    {t(link.labelKey, link.fallback)}
                   </Link>
                 </li>
               ))}
@@ -240,17 +246,17 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
-              Company
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+              {t('footer.company', 'Company')}
             </h4>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
                   >
-                    {link.label}
+                    {t(link.labelKey, link.fallback)}
                   </Link>
                 </li>
               ))}
@@ -259,18 +265,12 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
-              Connect
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+              {t('footer.connect', 'Connect')}
             </h4>
             <ul className="space-y-2.5">
               {connectLinks.map((link) => {
                 const Icon = link.icon;
-                const inner = (
-                  <span className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors">
-                    <Icon size={14} className="flex-shrink-0" />
-                    {link.label}
-                  </span>
-                );
 
                 return (
                   <li key={link.href}>
@@ -279,19 +279,19 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
-                        aria-label={link.label}
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                        aria-label={t(link.labelKey, link.fallback)}
                       >
                         <Icon size={14} className="flex-shrink-0" />
-                        {link.label}
+                        {t(link.labelKey, link.fallback)}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
                       >
                         <Icon size={14} className="flex-shrink-0" />
-                        {link.label}
+                        {t(link.labelKey, link.fallback)}
                       </Link>
                     )}
                   </li>
@@ -323,21 +323,21 @@ export default function Footer() {
             <span className="hidden sm:inline text-void-700">|</span>
             <Link
               href="/terms-of-service"
-              className="hover:text-void-300 no-underline transition-colors"
+              className="hover:text-void-300 no-underline transition-colors notranslate"
             >
-              Terms
+              {t('footer.terms', 'Terms')}
             </Link>
             <Link
               href="/privacy-policy"
-              className="hover:text-void-300 no-underline transition-colors"
+              className="hover:text-void-300 no-underline transition-colors notranslate"
             >
-              Privacy
+              {t('footer.privacy', 'Privacy')}
             </Link>
             <Link
               href="/affiliate-disclosure"
-              className="hover:text-void-300 no-underline transition-colors"
+              className="hover:text-void-300 no-underline transition-colors notranslate"
             >
-              Affiliate Disclosure
+              {t('footer.affiliate_disclosure', 'Affiliate Disclosure')}
             </Link>
           </div>
         </div>

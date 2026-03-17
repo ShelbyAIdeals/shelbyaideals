@@ -44,8 +44,14 @@ const GOOGLE_TRANSLATE_CODES: Record<string, string> = {
   ar: 'ar', hi: 'hi', ru: 'ru',
 };
 
-/** Load Google Translate script once */
+/* ── Google Translate readiness detection ─────────────────── */
 let googleTranslateLoaded = false;
+let googleTranslateReadyResolve: (() => void) | null = null;
+const googleTranslateReady = new Promise<void>((resolve) => {
+  googleTranslateReadyResolve = resolve;
+});
+
+/** Load Google Translate script once */
 function loadGoogleTranslate() {
   if (googleTranslateLoaded || typeof document === 'undefined') return;
   googleTranslateLoaded = true;
@@ -65,6 +71,16 @@ function loadGoogleTranslate() {
         { pageLanguage: 'en', autoDisplay: false },
         'google_translate_element'
       );
+
+      // Poll for the combo box to appear, then resolve the readiness promise
+      const poll = setInterval(() => {
+        if (document.querySelector('.goog-te-combo')) {
+          clearInterval(poll);
+          googleTranslateReadyResolve?.();
+        }
+      }, 200);
+      // Safety: stop polling after 10s
+      setTimeout(() => clearInterval(poll), 10000);
     }
   };
 
@@ -75,8 +91,8 @@ function loadGoogleTranslate() {
   document.head.appendChild(script);
 }
 
-/** Trigger Google Translate to a specific language */
-function triggerGoogleTranslate(langCode: string) {
+/** Trigger Google Translate to a specific language (async, waits for readiness) */
+async function triggerGoogleTranslate(langCode: string) {
   const gtCode = GOOGLE_TRANSLATE_CODES[langCode] ?? langCode;
 
   if (langCode === 'en') {
@@ -96,14 +112,21 @@ function triggerGoogleTranslate(langCode: string) {
   document.cookie = `googtrans=/en/${gtCode}; path=/;`;
   document.cookie = `googtrans=/en/${gtCode}; path=/; domain=.${window.location.hostname}`;
 
-  // Try to use the Google Translate select element
+  // Wait for widget readiness (with timeout to avoid hanging forever)
+  const ready = await Promise.race([
+    googleTranslateReady.then(() => 'ready' as const),
+    new Promise<'timeout'>((resolve) => setTimeout(() => resolve('timeout'), 8000)),
+  ]);
+
+  if (ready === 'timeout') {
+    console.warn('Google Translate widget did not load in time — UI translations still active');
+    return;
+  }
+
   const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
   if (select) {
     select.value = gtCode;
     select.dispatchEvent(new Event('change'));
-  } else {
-    // If widget hasn't loaded yet, reload to pick up the cookie
-    window.location.reload();
   }
 }
 
@@ -132,10 +155,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     // Load Google Translate for full-page translation
     loadGoogleTranslate();
 
-    // If a non-English language was saved, trigger translation
+    // If a non-English language was saved, trigger translation (async, self-managing)
     if (initial !== 'en') {
-      // Small delay to let Google Translate script load
-      setTimeout(() => triggerGoogleTranslate(initial), 1500);
+      triggerGoogleTranslate(initial);
     }
   }, []);
 

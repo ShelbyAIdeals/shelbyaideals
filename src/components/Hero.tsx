@@ -5,16 +5,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from '@/i18n/context';
 import HeroTextRotator from './motion/HeroTextRotator';
 
 const trendingTools = [
   'Jasper AI', 'Copy.ai', 'Midjourney', 'Cursor', 'Surfer SEO', 'Descript',
-];
-
-const trustPoints = [
-  { icon: Shield, text: 'No sponsored rankings' },
-  { icon: Sparkles, text: '40+ tools tested' },
-  { icon: Zap, text: 'Workflow-first reviews' },
 ];
 
 const fadeUp = {
@@ -29,6 +24,13 @@ const fadeUp = {
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState('');
   const router = useRouter();
+  const { t } = useTranslation();
+
+  const trustPoints = [
+    { icon: Shield, text: t('hero.trust_no_sponsored', 'No sponsored rankings') },
+    { icon: Sparkles, text: t('hero.trust_tools_tested', '40+ tools tested') },
+    { icon: Zap, text: t('hero.trust_workflow', 'Workflow-first reviews') },
+  ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,10 +79,10 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/20 text-signal-400 text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/20 text-signal-400 text-sm font-medium mb-8 notranslate"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-signal-400 animate-glow" />
-              Honest AI Tool Reviews
+              {t('hero.eyebrow', 'Honest AI Tool Reviews')}
             </motion.div>
 
             {/* Headline */}
@@ -89,11 +91,11 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.1}
-              className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] notranslate"
             >
-              Discover the Best{' '}
+              {t('hero.headline_prefix', 'Discover the Best')}{' '}
               <br className="hidden sm:block" />
-              AI Tools{' '}
+              {t('hero.headline_ai_tools', 'AI Tools')}{' '}
               <HeroTextRotator />
             </motion.h1>
 
@@ -103,10 +105,9 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.2}
-              className="mt-6 text-lg sm:text-xl text-void-300 leading-relaxed max-w-lg mx-auto lg:mx-0"
+              className="mt-6 text-lg sm:text-xl text-void-300 leading-relaxed max-w-lg mx-auto lg:mx-0 notranslate"
             >
-              Real reviews from real testing. Head-to-head comparisons
-              and workflow-first recommendations for creators and teams.
+              {t('hero.subheadline', 'Real reviews from real testing. Head-to-head comparisons and workflow-first recommendations for creators and teams.')}
             </motion.p>
 
             {/* Search Bar */}
@@ -126,23 +127,23 @@ export default function Hero() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search tools, categories, or comparisons..."
+                  placeholder={t('hero.search_placeholder', 'Search tools, categories, or comparisons...')}
                   className="search-input !pl-12 !pr-28"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 text-sm font-semibold rounded-lg transition-all cursor-pointer text-void-950"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 text-sm font-semibold rounded-lg transition-all cursor-pointer text-void-950 notranslate"
                   style={{
                     background: 'linear-gradient(135deg, var(--color-signal-500), var(--color-signal-400))',
                   }}
                 >
-                  Search
+                  {t('hero.search_button', 'Search')}
                 </button>
               </form>
 
               {/* Trending pills */}
               <div className="mt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2 z-[2] relative">
-                <span className="text-xs text-void-500">Trending:</span>
+                <span className="text-xs text-void-500 notranslate">{t('hero.trending', 'Trending:')}</span>
                 {trendingTools.map((tool) => (
                   <Link
                     key={tool}
@@ -163,12 +164,12 @@ export default function Hero() {
               custom={0.4}
               className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
-              <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
-                Browse All Tools
+              <Link href="/reviews" className="btn-primary text-sm no-underline gap-2 notranslate">
+                {t('hero.browse_tools', 'Browse All Tools')}
                 <ArrowRight size={16} />
               </Link>
-              <Link href="/categories" className="btn-ghost text-sm no-underline gap-2">
-                Browse Categories
+              <Link href="/categories" className="btn-ghost text-sm no-underline gap-2 notranslate">
+                {t('hero.browse_categories', 'Browse Categories')}
                 <ArrowRight size={16} />
               </Link>
             </motion.div>
@@ -193,9 +194,9 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-signal-500/15 border border-signal-500/20 flex items-center justify-center">
                   <Sparkles size={18} className="text-signal-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-heading font-bold text-void-50">AI Writing</div>
-                  <div className="text-xs text-void-400">12 tools reviewed</div>
+                <div className="notranslate">
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_writing', 'AI Writing')}</div>
+                  <div className="text-xs text-void-400">12 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -207,9 +208,9 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-ember-500/15 border border-ember-500/20 flex items-center justify-center">
                   <Zap size={18} className="text-ember-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-heading font-bold text-void-50">Automation</div>
-                  <div className="text-xs text-void-400">8 tools reviewed</div>
+                <div className="notranslate">
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_automation', 'Automation')}</div>
+                  <div className="text-xs text-void-400">8 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -221,9 +222,9 @@ export default function Hero() {
                 <div className="w-10 h-10 rounded-lg bg-iris-500/15 border border-iris-500/20 flex items-center justify-center">
                   <Search size={18} className="text-iris-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-heading font-bold text-void-50">AI SEO</div>
-                  <div className="text-xs text-void-400">6 tools reviewed</div>
+                <div className="notranslate">
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_seo', 'AI SEO')}</div>
+                  <div className="text-xs text-void-400">6 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -237,7 +238,7 @@ export default function Hero() {
                   style={{ boxShadow: '0 0 40px rgba(10, 209, 200, 0.1)' }}
                 >
                   <span className="text-3xl font-mono font-bold text-signal-400">4.8</span>
-                  <span className="text-[10px] text-void-400 uppercase tracking-wider">Avg Rating</span>
+                  <span className="text-[10px] text-void-400 uppercase tracking-wider notranslate">{t('hero.avg_rating', 'Avg Rating')}</span>
                 </div>
               </motion.div>
 
@@ -261,7 +262,7 @@ export default function Hero() {
         >
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {trustPoints.map((point) => (
-              <div key={point.text} className="flex items-center gap-2.5">
+              <div key={point.text} className="flex items-center gap-2.5 notranslate">
                 <point.icon size={16} className="text-signal-500/60" />
                 <span className="text-sm text-void-400">{point.text}</span>
               </div>

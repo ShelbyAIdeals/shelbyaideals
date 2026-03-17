@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
-import { LANGUAGES, FLAG_EMOJIS } from '@/i18n/languages';
+import { LANGUAGES, FLAG_PATHS } from '@/i18n/languages';
 
 export default function LanguageDropdown() {
   const { locale, setLocale, t } = useTranslation();
@@ -57,8 +57,6 @@ export default function LanguageDropdown() {
     }
   }
 
-  const currentFlag = FLAG_EMOJIS[locale] ?? FLAG_EMOJIS.en;
-
   return (
     <div ref={containerRef} className="relative" onKeyDown={handleKeyDown}>
       {/* Trigger button */}
@@ -69,9 +67,13 @@ export default function LanguageDropdown() {
         aria-expanded={open}
         aria-haspopup="listbox"
       >
-        <span className="text-base leading-none" role="img" aria-label={locale}>
-          {currentFlag}
-        </span>
+        <img
+          src={FLAG_PATHS[locale] ?? FLAG_PATHS.en}
+          alt={locale}
+          className="w-5 h-5 rounded-full object-cover"
+          width={20}
+          height={20}
+        />
         <span className="text-xs font-medium uppercase">{locale}</span>
         <ChevronDown
           size={14}
@@ -108,13 +110,13 @@ export default function LanguageDropdown() {
                 }`}
               >
                 {/* Circular flag */}
-                <span
-                  className="w-6 h-6 rounded-full flex items-center justify-center text-base leading-none bg-void-800 border border-void-700/50 shrink-0"
-                  role="img"
-                  aria-label={lang.name}
-                >
-                  {FLAG_EMOJIS[lang.code]}
-                </span>
+                <img
+                  src={FLAG_PATHS[lang.code]}
+                  alt={lang.name}
+                  className="w-6 h-6 rounded-full object-cover border border-void-700/50 shrink-0"
+                  width={24}
+                  height={24}
+                />
 
                 {/* Language name */}
                 <span className="flex-1 text-left">
