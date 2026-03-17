@@ -363,7 +363,7 @@
       "publishedDate": "2026-03-07",
       "toolData": {
         "name": "Pictory",
-        "website": "https://pictory.ai?ref=fran26",
+        "website": "https://pictory.ai?ref=shelby-ai",
         "pricing": [
           {
             "plan": "Starter",
@@ -1227,6 +1227,448 @@
       ],
       "generatedDate": "2026-03-10",
       "publishedDate": "2026-03-10"
+    },
+    {
+      "id": 41,
+      "type": "review",
+      "status": "pending",
+      "title": "ElevenLabs Review 2026: The Best AI Voice Generator for Creators?",
+      "slug": "elevenlabs-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "elevenlabs review",
+      "keywords": ["elevenlabs review 2026", "ai voice generator review", "text to speech ai"],
+      "tool": "ElevenLabs",
+      "toolData": {
+        "name": "ElevenLabs",
+        "website": "https://elevenlabs.io",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["10,000 characters/month", "3 custom voices", "Basic models"]},
+          {"plan": "Starter", "price": "$5", "period": "/month", "features": ["30,000 characters/month", "10 custom voices", "Projects"]},
+          {"plan": "Creator", "price": "$22", "period": "/month", "features": ["100,000 characters/month", "30 custom voices", "Professional voice cloning"], "highlighted": true},
+          {"plan": "Pro", "price": "$99", "period": "/month", "features": ["500,000 characters/month", "160 custom voices", "44.1 kHz audio", "API access"]}
+        ],
+        "category": "AI Voice",
+        "bestFor": "Creators and developers who need ultra-realistic AI voiceovers and voice cloning",
+        "competitors": ["Murf AI", "Play.ht", "WellSaid Labs"]
+      }
+    },
+    {
+      "id": 42,
+      "type": "review",
+      "status": "pending",
+      "title": "Mangools Review 2026: Affordable SEO for Small Sites and Freelancers",
+      "slug": "mangools-review",
+      "category": "ai-seo-tools",
+      "primaryKeyword": "mangools review",
+      "keywords": ["mangools review 2026", "kwfinder review", "cheap seo tool"],
+      "tool": "Mangools",
+      "toolData": {
+        "name": "Mangools",
+        "website": "https://mangools.com",
+        "pricing": [
+          {"plan": "Mangools Entry", "price": "$29", "period": "/month", "features": ["100 keyword lookups/day", "200 SERP lookups/day", "25 site lookups/day"]},
+          {"plan": "Mangools Basic", "price": "$49", "period": "/month", "features": ["500 keyword lookups/day", "700 SERP lookups/day", "Unlimited site lookups"], "highlighted": true},
+          {"plan": "Mangools Premium", "price": "$69", "period": "/month", "features": ["1,200 keyword lookups/day", "1,500 SERP lookups/day", "Unlimited everything"]}
+        ],
+        "category": "AI SEO",
+        "bestFor": "Freelancers and small sites who want affordable keyword research and SERP analysis",
+        "competitors": ["Ahrefs", "SEMrush", "Ubersuggest"]
+      }
+    },
+    {
+      "id": 43,
+      "type": "review",
+      "status": "pending",
+      "title": "Frase Review 2026: AI Content Optimization That Actually Ranks",
+      "slug": "frase-review",
+      "category": "ai-seo-tools",
+      "primaryKeyword": "frase review",
+      "keywords": ["frase review 2026", "frase seo tool", "ai content optimization"],
+      "tool": "Frase",
+      "toolData": {
+        "name": "Frase",
+        "website": "https://www.frase.io",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["1 document/day", "SERP analysis", "Basic AI writing"]},
+          {"plan": "Solo", "price": "$15", "period": "/month", "features": ["10 documents/month", "AI writer", "SERP analysis"]},
+          {"plan": "Basic", "price": "$45", "period": "/month", "features": ["30 documents/month", "Full AI tools", "Content briefs"], "highlighted": true},
+          {"plan": "Team", "price": "$115", "period": "/month", "features": ["Unlimited documents", "3 users", "Custom templates"]}
+        ],
+        "category": "AI SEO",
+        "bestFor": "Content marketers who want AI-driven content briefs and SERP-optimized articles",
+        "competitors": ["Surfer SEO", "Clearscope", "MarketMuse"]
+      }
+    },
+    {
+      "id": 44,
+      "type": "review",
+      "status": "pending",
+      "title": "Rytr Review 2026: Budget AI Writer for Quick Content Needs",
+      "slug": "rytr-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "rytr review",
+      "keywords": ["rytr review 2026", "rytr ai writer", "cheap ai writing tool"],
+      "tool": "Rytr",
+      "toolData": {
+        "name": "Rytr",
+        "website": "https://rytr.me",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["10,000 characters/month", "40+ use cases", "20+ tones"]},
+          {"plan": "Saver", "price": "$9", "period": "/month", "features": ["100,000 characters/month", "Custom use cases", "API access"]},
+          {"plan": "Unlimited", "price": "$29", "period": "/month", "features": ["Unlimited characters", "Priority support", "Dedicated account manager"], "highlighted": true}
+        ],
+        "category": "AI Writing",
+        "bestFor": "Solopreneurs and freelancers who need quick, affordable AI copywriting",
+        "competitors": ["Jasper", "Copy.ai", "Writesonic"]
+      }
+    },
+    {
+      "id": 45,
+      "type": "review",
+      "status": "pending",
+      "title": "Easy Peasy AI Review 2026: All-in-One AI Writing Assistant",
+      "slug": "easy-peasy-ai-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "easy peasy ai review",
+      "keywords": ["easy peasy ai review 2026", "easy peasy writing tool", "ai content generator"],
+      "tool": "Easy Peasy AI",
+      "toolData": {
+        "name": "Easy Peasy AI",
+        "website": "https://easy-peasy.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["3,000 words/month", "AI images", "80+ templates"]},
+          {"plan": "Basic", "price": "$9.99", "period": "/month", "features": ["50,000 words/month", "Unlimited AI images", "Brand voice"]},
+          {"plan": "GPT-4 Unlimited", "price": "$19.99", "period": "/month", "features": ["Unlimited GPT-4 words", "AI transcription", "Priority support"], "highlighted": true}
+        ],
+        "category": "AI Writing",
+        "bestFor": "Content creators who want an affordable all-in-one AI writing and image generation tool",
+        "competitors": ["Jasper", "Copy.ai", "Rytr"]
+      }
+    },
+    {
+      "id": 46,
+      "type": "review",
+      "status": "pending",
+      "title": "Simplified Review 2026: Design + Write + Video in One AI Platform",
+      "slug": "simplified-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "simplified review",
+      "keywords": ["simplified ai review 2026", "simplified design tool", "all in one ai tool"],
+      "tool": "Simplified",
+      "toolData": {
+        "name": "Simplified",
+        "website": "https://simplified.com",
+        "pricing": [
+          {"plan": "Free Forever", "price": "$0", "period": "", "features": ["1 workspace", "AI writer", "AI designer", "Basic templates"]},
+          {"plan": "Small Team", "price": "$21", "period": "/month", "features": ["5 workspaces", "AI writer pro", "Brand kit", "100GB storage"], "highlighted": true},
+          {"plan": "Business", "price": "$35", "period": "/month", "features": ["Unlimited workspaces", "Custom fonts", "Priority support"]}
+        ],
+        "category": "AI Design",
+        "bestFor": "Small teams who need design, writing, and video creation in a single platform",
+        "competitors": ["Canva", "Jasper", "Adobe Express"]
+      }
+    },
+    {
+      "id": 47,
+      "type": "review",
+      "status": "pending",
+      "title": "Fliki Review 2026: Turn Text Into Videos with AI Voices",
+      "slug": "fliki-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "fliki review",
+      "keywords": ["fliki review 2026", "fliki ai video", "text to video ai"],
+      "tool": "Fliki",
+      "toolData": {
+        "name": "Fliki",
+        "website": "https://fliki.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["5 min/month", "720p", "Watermark"]},
+          {"plan": "Standard", "price": "$28", "period": "/month", "features": ["180 min/month", "1080p", "75 languages"], "highlighted": true},
+          {"plan": "Premium", "price": "$88", "period": "/month", "features": ["600 min/month", "Ultra-realistic voices", "No watermark"]}
+        ],
+        "category": "AI Video",
+        "bestFor": "Content creators who want to turn blog posts and scripts into videos with AI voiceover",
+        "competitors": ["Pictory", "Synthesia", "InVideo AI"]
+      }
+    },
+    {
+      "id": 48,
+      "type": "review",
+      "status": "pending",
+      "title": "Mubert Review 2026: AI-Generated Music for Creators and Developers",
+      "slug": "mubert-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "mubert review",
+      "keywords": ["mubert review 2026", "ai music generator", "royalty free ai music"],
+      "tool": "Mubert",
+      "toolData": {
+        "name": "Mubert",
+        "website": "https://mubert.com",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["25 tracks/month", "Personal use", "Mubert watermark"]},
+          {"plan": "Creator", "price": "$14", "period": "/month", "features": ["500 tracks/month", "Commercial license", "YouTube/podcast use"], "highlighted": true},
+          {"plan": "Business", "price": "$39", "period": "/month", "features": ["Unlimited tracks", "Full commercial rights", "API access"]}
+        ],
+        "category": "AI Audio",
+        "bestFor": "YouTubers, podcasters, and app developers who need royalty-free AI music",
+        "competitors": ["AIVA", "Soundraw", "Boomy"]
+      }
+    },
+    {
+      "id": 49,
+      "type": "review",
+      "status": "pending",
+      "title": "Decktopus AI Review 2026: AI Presentations in Minutes",
+      "slug": "decktopus-ai-review",
+      "category": "ai-productivity",
+      "primaryKeyword": "decktopus ai review",
+      "keywords": ["decktopus review 2026", "ai presentation maker", "ai slide generator"],
+      "tool": "Decktopus AI",
+      "toolData": {
+        "name": "Decktopus AI",
+        "website": "https://www.decktopus.com",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["Limited decks", "AI generation", "Basic templates"]},
+          {"plan": "Pro AI", "price": "$9.99", "period": "/month", "features": ["Unlimited decks", "Custom branding", "Export to PDF/PPTX", "AI content generation"], "highlighted": true},
+          {"plan": "Business", "price": "$36", "period": "/month", "features": ["Team collaboration", "Analytics", "Custom domains"]}
+        ],
+        "category": "AI Productivity",
+        "bestFor": "Professionals who need polished presentations quickly without design skills",
+        "competitors": ["Gamma", "Beautiful.ai", "Tome"]
+      }
+    },
+    {
+      "id": 50,
+      "type": "review",
+      "status": "pending",
+      "title": "Mixo Review 2026: Launch a Website in 30 Seconds with AI",
+      "slug": "mixo-review",
+      "category": "ai-coding-tools",
+      "primaryKeyword": "mixo review",
+      "keywords": ["mixo review 2026", "ai website builder", "ai landing page generator"],
+      "tool": "Mixo",
+      "toolData": {
+        "name": "Mixo",
+        "website": "https://www.mixo.io",
+        "pricing": [
+          {"plan": "Basic", "price": "$9", "period": "/month", "features": ["1 site", "Custom domain", "Email collection", "AI-generated content"]},
+          {"plan": "Growth", "price": "$19", "period": "/month", "features": ["5 sites", "Priority support", "Advanced analytics"], "highlighted": true},
+          {"plan": "Max", "price": "$39", "period": "/month", "features": ["Unlimited sites", "Remove Mixo branding", "Team access"]}
+        ],
+        "category": "AI Website Builder",
+        "bestFor": "Entrepreneurs validating ideas who need a landing page in minutes, not weeks",
+        "competitors": ["Durable", "10Web", "Framer AI"]
+      }
+    },
+    {
+      "id": 51,
+      "type": "review",
+      "status": "pending",
+      "title": "Chatbase Review 2026: Build Custom AI Chatbots for Your Website",
+      "slug": "chatbase-review",
+      "category": "ai-automation",
+      "primaryKeyword": "chatbase review",
+      "keywords": ["chatbase review 2026", "ai chatbot builder", "custom gpt chatbot"],
+      "tool": "Chatbase",
+      "toolData": {
+        "name": "Chatbase",
+        "website": "https://www.chatbase.co",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["1 chatbot", "20 messages/month", "400K character training"]},
+          {"plan": "Hobby", "price": "$19", "period": "/month", "features": ["2 chatbots", "2,000 messages/month", "11M characters"]},
+          {"plan": "Standard", "price": "$99", "period": "/month", "features": ["5 chatbots", "10,000 messages/month", "Remove branding", "API access"], "highlighted": true},
+          {"plan": "Unlimited", "price": "$399", "period": "/month", "features": ["10 chatbots", "40,000 messages/month", "Custom domains"]}
+        ],
+        "category": "AI Chatbot",
+        "bestFor": "Businesses who want to embed a custom AI chatbot trained on their own data",
+        "competitors": ["Botpress", "Voiceflow", "Intercom Fin"]
+      }
+    },
+    {
+      "id": 52,
+      "type": "review",
+      "status": "pending",
+      "title": "Julius AI Review 2026: AI Data Analysis for Non-Technical Teams",
+      "slug": "julius-ai-review",
+      "category": "ai-productivity",
+      "primaryKeyword": "julius ai review",
+      "keywords": ["julius ai review 2026", "ai data analysis tool", "ai spreadsheet analysis"],
+      "tool": "Julius AI",
+      "toolData": {
+        "name": "Julius AI",
+        "website": "https://julius.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["15 messages/month", "Basic analysis", "CSV upload"]},
+          {"plan": "Essential", "price": "$20", "period": "/month", "features": ["250 messages/month", "Advanced visualizations", "Excel/Google Sheets"], "highlighted": true},
+          {"plan": "Pro", "price": "$50", "period": "/month", "features": ["Unlimited messages", "API access", "Priority support"]}
+        ],
+        "category": "AI Data Analysis",
+        "bestFor": "Non-technical teams who need to analyze spreadsheets and data with natural language",
+        "competitors": ["ChatGPT Code Interpreter", "Rows AI", "Akkio"]
+      }
+    },
+    {
+      "id": 53,
+      "type": "review",
+      "status": "pending",
+      "title": "ChatGPT Review 2026: The AI That Started It All — Still the Best?",
+      "slug": "chatgpt-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "chatgpt review",
+      "keywords": ["chatgpt review 2026", "openai chatgpt review", "is chatgpt worth it"],
+      "tool": "ChatGPT",
+      "toolData": {
+        "name": "ChatGPT",
+        "website": "https://chat.openai.com",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["GPT-4o mini", "Limited GPT-4o", "Basic features"]},
+          {"plan": "Plus", "price": "$20", "period": "/month", "features": ["Full GPT-4o access", "DALL-E 3", "Advanced Data Analysis", "Custom GPTs"], "highlighted": true},
+          {"plan": "Pro", "price": "$200", "period": "/month", "features": ["Unlimited GPT-4o", "o1 pro mode", "Research tools", "Priority access"]},
+          {"plan": "Team", "price": "$30", "period": "/user/month", "features": ["Everything in Plus", "Workspace admin", "Data excluded from training"]}
+        ],
+        "category": "AI Assistant",
+        "bestFor": "Anyone who needs a versatile AI assistant for writing, coding, analysis, and creative tasks",
+        "competitors": ["Claude", "Google Gemini", "Perplexity"]
+      }
+    },
+    {
+      "id": 54,
+      "type": "review",
+      "status": "pending",
+      "title": "Claude AI Review 2026: The Thoughtful Alternative to ChatGPT",
+      "slug": "claude-ai-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "claude ai review",
+      "keywords": ["claude review 2026", "anthropic claude review", "claude vs chatgpt"],
+      "tool": "Claude AI",
+      "toolData": {
+        "name": "Claude AI",
+        "website": "https://claude.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["Claude Sonnet", "Basic features", "Limited messages"]},
+          {"plan": "Pro", "price": "$20", "period": "/month", "features": ["Claude Opus 4", "Extended thinking", "Projects", "Priority access"], "highlighted": true},
+          {"plan": "Team", "price": "$30", "period": "/user/month", "features": ["Everything in Pro", "Team admin", "Higher limits"]},
+          {"plan": "Enterprise", "price": "Custom", "period": "", "features": ["SSO/SCIM", "Audit logs", "Custom retention"]}
+        ],
+        "category": "AI Assistant",
+        "bestFor": "Writers, researchers, and developers who value nuanced, thoughtful AI responses",
+        "competitors": ["ChatGPT", "Google Gemini", "Perplexity"]
+      }
+    },
+    {
+      "id": 55,
+      "type": "review",
+      "status": "pending",
+      "title": "Midjourney Review 2026: The Gold Standard of AI Image Generation",
+      "slug": "midjourney-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "midjourney review",
+      "keywords": ["midjourney review 2026", "midjourney v6 review", "best ai image generator"],
+      "tool": "Midjourney",
+      "toolData": {
+        "name": "Midjourney",
+        "website": "https://www.midjourney.com",
+        "pricing": [
+          {"plan": "Basic", "price": "$10", "period": "/month", "features": ["3.3 hr fast GPU/month", "General commercial use", "Access to member gallery"]},
+          {"plan": "Standard", "price": "$30", "period": "/month", "features": ["15 hr fast GPU/month", "Unlimited relaxed", "Stealth mode"], "highlighted": true},
+          {"plan": "Pro", "price": "$60", "period": "/month", "features": ["30 hr fast GPU/month", "12 concurrent jobs", "Stealth mode"]},
+          {"plan": "Mega", "price": "$120", "period": "/month", "features": ["60 hr fast GPU/month", "12 concurrent jobs", "Stealth mode"]}
+        ],
+        "category": "AI Image",
+        "bestFor": "Designers, marketers, and creators who need stunning AI-generated images",
+        "competitors": ["DALL-E 3", "Leonardo AI", "Stable Diffusion"]
+      }
+    },
+    {
+      "id": 56,
+      "type": "review",
+      "status": "pending",
+      "title": "Perplexity Review 2026: AI Search Engine That Cites Its Sources",
+      "slug": "perplexity-review",
+      "category": "ai-productivity",
+      "primaryKeyword": "perplexity review",
+      "keywords": ["perplexity ai review 2026", "perplexity vs google", "ai search engine review"],
+      "tool": "Perplexity",
+      "toolData": {
+        "name": "Perplexity",
+        "website": "https://www.perplexity.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["Unlimited quick searches", "5 Pro searches/day", "Standard AI models"]},
+          {"plan": "Pro", "price": "$20", "period": "/month", "features": ["600+ Pro searches/day", "GPT-4o & Claude access", "File upload & analysis", "API access"], "highlighted": true}
+        ],
+        "category": "AI Search",
+        "bestFor": "Researchers and professionals who want AI-powered search with cited, trustworthy answers",
+        "competitors": ["Google", "ChatGPT", "You.com"]
+      }
+    },
+    {
+      "id": 57,
+      "type": "review",
+      "status": "pending",
+      "title": "Google Gemini Review 2026: Can Google's AI Compete with ChatGPT?",
+      "slug": "google-gemini-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "google gemini review",
+      "keywords": ["gemini review 2026", "google gemini vs chatgpt", "google ai review"],
+      "tool": "Google Gemini",
+      "toolData": {
+        "name": "Google Gemini",
+        "website": "https://gemini.google.com",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["Gemini 2.0 Flash", "Google integration", "Basic features"]},
+          {"plan": "Advanced", "price": "$19.99", "period": "/month", "features": ["Gemini Ultra", "1TB Google storage", "Gems (custom chatbots)", "Deep Research"], "highlighted": true}
+        ],
+        "category": "AI Assistant",
+        "bestFor": "Google Workspace users who want AI integrated into their existing workflow",
+        "competitors": ["ChatGPT", "Claude", "Perplexity"]
+      }
+    },
+    {
+      "id": 58,
+      "type": "review",
+      "status": "pending",
+      "title": "Grok Review 2026: Elon Musk's Unfiltered AI on X",
+      "slug": "grok-review",
+      "category": "ai-writing-tools",
+      "primaryKeyword": "grok review",
+      "keywords": ["grok review 2026", "grok ai x twitter", "grok vs chatgpt"],
+      "tool": "Grok",
+      "toolData": {
+        "name": "Grok",
+        "website": "https://x.com/i/grok",
+        "pricing": [
+          {"plan": "Free (X users)", "price": "$0", "period": "", "features": ["Basic Grok access", "Limited queries", "X integration"]},
+          {"plan": "X Premium", "price": "$8", "period": "/month", "features": ["Full Grok 2 access", "Image generation", "Real-time X data"]},
+          {"plan": "X Premium+", "price": "$16", "period": "/month", "features": ["Grok 2 unlimited", "Largest context window", "Revenue sharing"], "highlighted": true}
+        ],
+        "category": "AI Assistant",
+        "bestFor": "X/Twitter power users who want an AI with real-time social media data and fewer content restrictions",
+        "competitors": ["ChatGPT", "Claude", "Google Gemini"]
+      }
+    },
+    {
+      "id": 59,
+      "type": "review",
+      "status": "pending",
+      "title": "Leonardo AI Review 2026: Free AI Image Generation That Punches Above Its Weight",
+      "slug": "leonardo-ai-review",
+      "category": "ai-design-tools",
+      "primaryKeyword": "leonardo ai review",
+      "keywords": ["leonardo ai review 2026", "free ai image generator", "leonardo vs midjourney"],
+      "tool": "Leonardo AI",
+      "toolData": {
+        "name": "Leonardo AI",
+        "website": "https://leonardo.ai",
+        "pricing": [
+          {"plan": "Free", "price": "$0", "period": "", "features": ["150 tokens/day", "Basic models", "Community gallery"]},
+          {"plan": "Apprentice", "price": "$12", "period": "/month", "features": ["8,500 tokens/month", "Private generation", "Priority processing"]},
+          {"plan": "Artisan", "price": "$30", "period": "/month", "features": ["25,000 tokens/month", "Custom models", "API access"], "highlighted": true},
+          {"plan": "Maestro", "price": "$60", "period": "/month", "features": ["60,000 tokens/month", "Concierge support", "Full API"]}
+        ],
+        "category": "AI Image",
+        "bestFor": "Game developers, illustrators, and creators who want free/affordable AI image generation with fine-tuning",
+        "competitors": ["Midjourney", "DALL-E 3", "Stable Diffusion"]
+      }
     }
   ]
 }
