@@ -270,3 +270,28 @@ export async function deleteAccount(): Promise<void> {
   }
   await supabase.auth.signOut();
 }
+
+/* ── Favorites helpers ───────────────────────────────────── */
+
+export async function getUserFavorites(userId: string): Promise<string[]> {
+  const { data, error } = await supabase
+    .from('user_favorites')
+    .select('tool_slug')
+    .eq('user_id', userId);
+  if (error) return [];
+  return data.map((row) => row.tool_slug);
+}
+
+export async function addFavorite(userId: string, toolSlug: string): Promise<void> {
+  await supabase
+    .from('user_favorites')
+    .insert({ user_id: userId, tool_slug: toolSlug });
+}
+
+export async function removeFavorite(userId: string, toolSlug: string): Promise<void> {
+  await supabase
+    .from('user_favorites')
+    .delete()
+    .eq('user_id', userId)
+    .eq('tool_slug', toolSlug);
+}

@@ -8,6 +8,9 @@ import { useAuth } from '@/lib/auth-context';
 import { supabase, uploadAvatar, deleteAccount, getUserPreferences, type UserReview, type UserPreferences } from '@/lib/supabase';
 import { useTranslation } from '@/i18n/context';
 import RecommendationsTab from '@/components/RecommendationsTab';
+import FavoritesTab from '@/components/FavoritesTab';
+import DealsTab from '@/components/DealsTab';
+import { deals as allDeals } from '@/lib/deals-data';
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -15,7 +18,7 @@ export default function ProfilePage() {
   const { t } = useTranslation();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [activeTab, setActiveTab] = useState<'profile' | 'recommendations'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'favorites' | 'recommendations' | 'deals'>('profile');
   const [userReviews, setUserReviews] = useState<UserReview[]>([]);
   const [preferences, setPreferences] = useState<UserPreferences | null>(null);
   const [hasUnseenRecs, setHasUnseenRecs] = useState(false);
@@ -74,7 +77,7 @@ export default function ProfilePage() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const result: any = await Promise.race([savePromise, timer]);
       if (result?.error) { setSaveError(result.error.message); setSaving(false); return; }
-      refreshProfile();
+      await refreshProfile();
       setEditing(false);
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Failed to save profile');
@@ -111,7 +114,11 @@ export default function ProfilePage() {
   };
 
   const handleSignOut = async () => {
-    await signOut();
+    try {
+      await signOut();
+    } catch {
+      // Sign out locally even if server fails
+    }
     router.push('/');
   };
 
@@ -205,30 +212,24 @@ export default function ProfilePage() {
       )}
 
       {/* Tab bar */}
-      <div className="flex gap-1 p-1 rounded-xl bg-void-800/40 border border-void-700/30 mb-8">
-        <button
-          onClick={() => setActiveTab('profile')}
-          className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer ${
-            activeTab === 'profile' ? 'bg-signal-500/15 text-signal-400' : 'text-void-400 hover:text-void-200'
-          }`}
-        >
-          Profile
-        </button>
-        <button
-          onClick={() => setActiveTab('recommendations')}
-          className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-            activeTab === 'recommendations' ? 'bg-signal-500/15 text-signal-400' : 'text-void-400 hover:text-void-200'
-          }`}
-        >
-          Recommendations
-          {hasUnseenRecs && <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />}
-        </button>
+      <div className="flex gap-1 p-1 rounded-xl bg-void-800/40 border border-void-700/30 mb-8 overflow-x-auto scrollbar-hide">
+        {(['profile', 'favorites', 'recommendations', 'deals'] as const).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`flex-1 px-3 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all cursor-pointer whitespace-nowrap flex items-center justify-center gap-1.5 ${
+              activeTab === tab ? 'bg-signal-500/15 text-signal-400' : 'text-void-400 hover:text-void-200'
+            }`}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            {tab === 'recommendations' && hasUnseenRecs && <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />}
+          </button>
+        ))}
       </div>
 
       {/* Tab content */}
-      {activeTab === 'profile' ? (
+      {activeTab === 'profile' && (
         <>
-          {/* My Reviews */}
           <section id="reviews" className="mb-12">
             <h2 className="text-xl font-heading font-bold text-void-50 mb-6">{t('user.my_reviews')}</h2>
             {userReviews.length === 0 ? (
@@ -259,22 +260,18 @@ export default function ProfilePage() {
               </div>
             )}
           </section>
-
-          {/* Danger zone */}
           <section className="pt-8 border-t border-void-700/30">
             <h3 className="text-sm font-semibold text-red-400 mb-2">Danger Zone</h3>
             <p className="text-xs text-void-500 mb-4">Once you delete your account, there is no going back.</p>
-            <button
-              onClick={() => setShowDeleteConfirm(true)}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer"
-            >
+            <button onClick={() => setShowDeleteConfirm(true)} className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer">
               <Trash2 size={14} /> Delete Account
             </button>
           </section>
         </>
-      ) : (
-        <RecommendationsTab userId={user.id} preferences={preferences} onSeen={handleRecsSeen} />
       )}
+      {activeTab === 'favorites' && <FavoritesTab userId={user.id} />}
+      {activeTab === 'recommendations' && <RecommendationsTab userId={user.id} preferences={preferences} onSeen={handleRecsSeen} />}
+      {activeTab === 'deals' && <DealsTab deals={allDeals} />}
 
       {/* Delete confirmation modal */}
       {showDeleteConfirm && (

@@ -136,7 +136,7 @@ export default function Header() {
               <div className="w-10 h-10 rounded-xl bg-signal-500 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(10,209,200,0.4)] transition-shadow">
                 <Zap size={20} className="text-void-950" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-heading font-bold text-void-50 tracking-tight">
+              <span className="text-xl font-heading font-bold text-void-50 tracking-tight notranslate">
                 Shelby<span className="text-signal-400">AI</span>Deals
               </span>
             </Link>

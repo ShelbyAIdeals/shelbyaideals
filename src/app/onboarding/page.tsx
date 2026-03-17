@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, ArrowLeft, Loader2 } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
-import { upsertUserPreferences, upsertProfile } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
 import { ONBOARDING_QUESTIONS } from '@/lib/onboarding-data';
 import OnboardingCard from '@/components/OnboardingCard';
 
@@ -61,15 +61,32 @@ export default function OnboardingPage() {
     setSaving(true);
     setError('');
     try {
-      await upsertUserPreferences({
-        user_id: user.id,
-        business_type: answers.business_type as string,
-        role: answers.role as string,
-        industry: answers.industry as string,
-        interests: (answers.interests as string[]) || [],
-        goals: (answers.goals as string[]) || [],
-      });
-      await upsertProfile({ id: user.id, onboarding_completed: true });
+      // Save preferences with timeout
+      const prefsPromise = supabase
+        .from('user_preferences')
+        .upsert({
+          user_id: user.id,
+          business_type: answers.business_type as string,
+          role: answers.role as string,
+          industry: answers.industry as string,
+          interests: (answers.interests as string[]) || [],
+          goals: (answers.goals as string[]) || [],
+          updated_at: new Date().toISOString(),
+        }, { onConflict: 'user_id' });
+      const timer = new Promise((_r, rej) => setTimeout(() => rej(new Error('Request timed out')), 10000));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const prefsResult: any = await Promise.race([prefsPromise, timer]);
+      if (prefsResult?.error) throw new Error(prefsResult.error.message);
+
+      // Mark onboarding complete
+      const profilePromise = supabase
+        .from('profiles')
+        .update({ onboarding_completed: true })
+        .eq('id', user.id);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const profileResult: any = await Promise.race([profilePromise, new Promise((_r, rej) => setTimeout(() => rej(new Error('Request timed out')), 8000))]);
+      if (profileResult?.error) throw new Error(profileResult.error.message);
+
       await refreshProfile();
       router.push('/');
     } catch (err) {

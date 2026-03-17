@@ -7,20 +7,10 @@ export interface Language {
 
 export const LANGUAGES: Language[] = [
   { code: 'en', name: 'English',              nativeName: 'English',     isRTL: false },
-  { code: 'es', name: 'Spanish',              nativeName: 'Español',     isRTL: false },
-  { code: 'fr', name: 'French',               nativeName: 'Français',    isRTL: false },
-  { code: 'de', name: 'German',               nativeName: 'Deutsch',     isRTL: false },
-  { code: 'pt', name: 'Portuguese',           nativeName: 'Português',   isRTL: false },
-  { code: 'it', name: 'Italian',              nativeName: 'Italiano',    isRTL: false },
-  { code: 'nl', name: 'Dutch',                nativeName: 'Nederlands',  isRTL: false },
-  { code: 'pl', name: 'Polish',               nativeName: 'Polski',      isRTL: false },
-  { code: 'tr', name: 'Turkish',              nativeName: 'Türkçe',      isRTL: false },
-  { code: 'ja', name: 'Japanese',             nativeName: '日本語',       isRTL: false },
-  { code: 'ko', name: 'Korean',               nativeName: '한국어',       isRTL: false },
   { code: 'zh', name: 'Chinese (Simplified)', nativeName: '简体中文',     isRTL: false },
-  { code: 'ar', name: 'Arabic',               nativeName: 'العربية',      isRTL: true  },
   { code: 'hi', name: 'Hindi',                nativeName: 'हिन्दी',        isRTL: false },
-  { code: 'ru', name: 'Russian',              nativeName: 'Русский',     isRTL: false },
+  { code: 'es', name: 'Spanish',              nativeName: 'Español',     isRTL: false },
+  { code: 'ar', name: 'Arabic',               nativeName: 'العربية',      isRTL: true  },
 ];
 
 export const DEFAULT_LOCALE = 'en';

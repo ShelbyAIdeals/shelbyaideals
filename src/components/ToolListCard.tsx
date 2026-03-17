@@ -4,15 +4,18 @@ import Link from 'next/link';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
+import FavoriteButton from '@/components/FavoriteButton';
 import type { Category } from '@/lib/types';
 
 interface ToolListCardProps {
   slug: string;
   tool: string;
   toolLogo?: string;
+  toolSlug?: string;
   excerpt: string;
   category: Category;
   rating: number;
+  isFavorited?: boolean;
   bestFor: string;
   date: string;
 }
@@ -21,14 +24,17 @@ export default function ToolListCard({
   slug,
   tool,
   toolLogo,
+  toolSlug,
   excerpt,
   category,
   rating,
   bestFor,
+  isFavorited = false,
 }: ToolListCardProps) {
   const { t } = useTranslation();
   const clampedRating = Math.max(0, Math.min(5, Number(rating) || 0));
   const isVerified = clampedRating >= 4.0;
+  const favSlug = toolSlug || slug.replace('-review', '');
   const initial = tool.charAt(0).toUpperCase();
 
   const categoryLabel = category
@@ -82,8 +88,9 @@ export default function ToolListCard({
           </div>
         </div>
 
-        {/* Right: rating + arrow */}
-        <div className="shrink-0 flex items-center gap-3">
+        {/* Right: favorite + rating + arrow */}
+        <div className="shrink-0 flex items-center gap-2">
+          <FavoriteButton toolSlug={favSlug} isFavorited={isFavorited} />
           <div className="badge-score w-10 h-10 text-sm">
             {clampedRating.toFixed(1)}
           </div>

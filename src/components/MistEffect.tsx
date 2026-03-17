@@ -71,12 +71,12 @@ export default function MistEffect() {
     };
 
     const initStars = () => {
-      const count = Math.floor((w * h) / 3000);
+      const count = Math.floor((w * h) / 8000);
       stars.current = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random() * 1.5 + 0.3,
-        o: Math.random() * 0.7 + 0.3,
+        r: Math.random() * 1.0 + 0.2,
+        o: Math.random() * 0.5 + 0.15,
         twinkleSpeed: Math.random() * 0.02 + 0.005,
         twinkleOffset: Math.random() * Math.PI * 2,
       }));
