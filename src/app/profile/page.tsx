@@ -69,15 +69,16 @@ export default function ProfilePage() {
     setSaving(true);
     setSaveError('');
     try {
-      const savePromise = supabase
+      const { error } = await supabase
         .from('profiles')
-        .upsert({ id: user.id, username: formData.username.trim(), first_name: formData.firstName.trim(), last_name: formData.lastName.trim() }, { onConflict: 'id' })
-        .select();
-      const timer = new Promise((_r, rej) => setTimeout(() => rej(new Error('Request timed out')), 8000));
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const result: any = await Promise.race([savePromise, timer]);
-      if (result?.error) { setSaveError(result.error.message); setSaving(false); return; }
-      await refreshProfile();
+        .update({
+          username: formData.username.trim(),
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim(),
+        })
+        .eq('id', user.id);
+      if (error) { setSaveError(error.message); setSaving(false); return; }
+      refreshProfile();
       setEditing(false);
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Failed to save profile');
@@ -115,11 +116,16 @@ export default function ProfilePage() {
 
   const handleSignOut = async () => {
     try {
-      await signOut();
+      // Timeout signout after 3s — don't let it hang
+      await Promise.race([
+        signOut(),
+        new Promise((resolve) => setTimeout(resolve, 3000)),
+      ]);
     } catch {
-      // Sign out locally even if server fails
+      // Force clear even if server fails
     }
-    router.push('/');
+    // Always redirect regardless
+    window.location.href = '/';
   };
 
   const handleRecsSeen = useCallback(() => setHasUnseenRecs(false), []);
