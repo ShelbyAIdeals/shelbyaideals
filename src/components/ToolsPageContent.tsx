@@ -54,18 +54,9 @@ export default function ToolsPageContent({
         </div>
       </ScrollReveal>
 
-      {/* Mobile category pills (lg:hidden inside component) */}
-      <div className="lg:hidden">
-        <CategorySidebar
-          categories={categoriesWithCount}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
-      </div>
-
       {/* Main layout */}
-      <div className="flex gap-8 mt-6 lg:mt-0">
-        {/* Desktop sidebar (hidden lg:block inside component) */}
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        {/* Sidebar handles its own responsive rendering (desktop sidebar + mobile pills) */}
         <CategorySidebar
           categories={categoriesWithCount}
           activeCategory={activeCategory}
@@ -81,7 +72,7 @@ export default function ToolsPageContent({
           />
 
           {filteredAndSorted.length > 0 ? (
-            <StaggerContainer className="flex flex-col gap-3">
+            <StaggerContainer key={`${activeCategory}-${activeTab}`} className="flex flex-col gap-3">
               {filteredAndSorted.map((review) => (
                 <StaggerItem key={review.slug}>
                   <ToolListCard
