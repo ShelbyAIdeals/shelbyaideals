@@ -28,7 +28,7 @@ export default function HeroTextRotator({ className }: HeroTextRotatorProps) {
   }, [phrases.length]);
 
   return (
-    <span className={`inline-block relative notranslate ${className ?? ''}`}>
+    <span className={`inline-block relative ${className ?? ''}`}>
       <AnimatePresence mode="wait">
         <motion.span
           key={phrases[index]}

@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import StarRating from './StarRating';
+import { useTranslation } from '@/i18n/context';
 import type { ArticleMeta, ReviewMeta, Category } from '@/lib/types';
 
 interface RelatedArticlesProps {
@@ -17,6 +20,7 @@ const typePathMap: Record<string, string> = {
 };
 
 export default function RelatedArticles({ current, articles, maxItems = 3 }: RelatedArticlesProps) {
+  const { t } = useTranslation();
   const related = articles
     .filter((a) => a.slug !== current.slug)
     .filter((a) => a.category === current.category || a.type === current.type)
@@ -33,7 +37,7 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
   return (
     <section className="mt-12 pt-10 border-t border-void-700/50">
       <h2 className="text-xl font-heading font-bold text-void-50 mb-6">
-        Related Articles
+        {t('article.related_articles', 'Related Articles')}
       </h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {related.map((article) => {
@@ -60,7 +64,7 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
                 </div>
               )}
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
-                Read More <ArrowRight size={12} />
+                {t('article.read_more', 'Read More')} <ArrowRight size={12} />
               </span>
             </Link>
           );

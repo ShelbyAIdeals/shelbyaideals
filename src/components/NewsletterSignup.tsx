@@ -64,10 +64,10 @@ export default function NewsletterSignup({
             <Mail size={18} />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-void-100 notranslate">
+            <h4 className="text-sm font-bold text-void-100">
               {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h4>
-            <p className="text-xs text-void-500 mt-1 leading-relaxed notranslate">
+            <p className="text-xs text-void-500 mt-1 leading-relaxed">
               {t('newsletter.subtitle', 'Get the best AI tool picks, exclusive deals, and workflow tips — straight to your inbox every week.')}
             </p>
           </div>
@@ -130,11 +130,11 @@ export default function NewsletterSignup({
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
           {/* ── Left column: headline + benefits ────────────────── */}
           <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block notranslate">
+            <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block">
               {t('newsletter.join_creators', 'Join 500+ creators')}
             </span>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight notranslate">
+            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight">
               {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h2>
 
@@ -178,7 +178,7 @@ export default function NewsletterSignup({
                   <div className="w-10 h-10 rounded-lg bg-ember-500/10 border border-ember-500/15 text-ember-400 flex items-center justify-center shrink-0">
                     <Mail size={20} />
                   </div>
-                  <p className="text-sm font-medium text-void-200 notranslate">
+                  <p className="text-sm font-medium text-void-200">
                     {t('newsletter.email_placeholder', 'Enter your email')}
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function NewsletterSignup({
 
                 {error && <p className="text-xs text-red-400 mt-3">{error}</p>}
 
-                <p className="text-xs text-void-500 mt-4 text-center notranslate">
+                <p className="text-xs text-void-500 mt-4 text-center">
                   {t('footer.no_spam', 'No spam, unsubscribe anytime.')}
                 </p>
               </div>

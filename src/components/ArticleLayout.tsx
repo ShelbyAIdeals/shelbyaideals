@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, User, ShieldCheck } from 'lucide-react';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import NewsletterSignup from './NewsletterSignup';
+import { useTranslation } from '@/i18n/context';
 import type { ArticleMeta, Category } from '@/lib/types';
 
 const categoryLabels: Record<Category, string> = {
@@ -21,6 +24,7 @@ interface ArticleLayoutProps {
 }
 
 export default function ArticleLayout({ meta, backLink, children, sidebar }: ArticleLayoutProps) {
+  const { t } = useTranslation();
   return (
     <main className="min-h-screen">
       <div className="container-main py-8">
@@ -58,7 +62,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
             </span>
             <span className="flex items-center gap-1">
               <Calendar size={14} />
-              Last updated: {meta.lastUpdated}
+              {t('article.last_updated', 'Last updated:')} {meta.lastUpdated}
             </span>
             {meta.readingTime && (
               <span className="flex items-center gap-1">
@@ -69,7 +73,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
             {meta.lastTested && (
               <span className="flex items-center gap-1 text-void-400">
                 <ShieldCheck size={14} />
-                Last tested: {new Date(meta.lastTested + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                {t('article.last_tested_label', 'Last tested:')} {new Date(meta.lastTested + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </span>
             )}
           </div>

@@ -1,6 +1,9 @@
+'use client';
+
 import { Trophy, ArrowRight } from 'lucide-react';
 import StarRating from './StarRating';
 import Link from 'next/link';
+import { useTranslation } from '@/i18n/context';
 
 interface VerdictBoxProps {
   rating: number;
@@ -19,6 +22,7 @@ export default function VerdictBox({
   affiliateLabel,
   toolName,
 }: VerdictBoxProps) {
+  const { t } = useTranslation();
   const safeRating = Math.max(0, Math.min(5, Number(rating) || 0));
 
   return (
@@ -44,7 +48,7 @@ export default function VerdictBox({
           <div className="flex items-center gap-2 mb-2">
             <Trophy size={18} className="text-iris-400 shrink-0" />
             <span className="text-sm font-semibold uppercase tracking-wider text-iris-400">
-              Our Verdict
+              {t('article.our_verdict', 'Our Verdict')}
             </span>
           </div>
 
@@ -58,7 +62,7 @@ export default function VerdictBox({
 
           {/* Best for */}
           <p className="text-sm text-void-400 mb-6">
-            <span className="font-semibold text-void-200">Best for:</span>{' '}
+            <span className="font-semibold text-void-200">{t('article.best_for_colon', 'Best for:')}</span>{' '}
             {bestFor}
           </p>
 
@@ -70,7 +74,7 @@ export default function VerdictBox({
               rel="nofollow sponsored noopener"
               className="btn-accent gap-2"
             >
-              <span>Try {toolName}</span>
+              <span>{t('article.try_prefix', 'Try')} {toolName}</span>
               <ArrowRight size={16} />
             </a>
 
@@ -78,7 +82,7 @@ export default function VerdictBox({
               href="/reviews"
               className="btn-ghost gap-2"
             >
-              <span>Read Alternatives</span>
+              <span>{t('article.read_alternatives', 'Read Alternatives')}</span>
               <ArrowRight size={16} />
             </Link>
           </div>

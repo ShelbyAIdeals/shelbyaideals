@@ -117,14 +117,14 @@ export default function ReviewCard({
           {/* Tag row */}
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="badge-signal">{category}</span>
-            <span className="text-xs text-void-500 notranslate">
+            <span className="text-xs text-void-500">
               <span className="font-semibold text-void-300">{t('review.best_for', 'Best for')}:</span>{' '}
               {bestFor}
             </span>
           </div>
 
           {/* Read Review link */}
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto notranslate">
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto">
             {t('card.read_review', 'Read Review')}
             <ArrowRight
               size={14}

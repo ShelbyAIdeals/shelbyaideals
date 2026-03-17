@@ -135,12 +135,12 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-16">
             {/* Left — headline + benefits */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5 notranslate">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
                 {t('footer.stay_ahead', 'Stay ahead of the AI curve')}
               </h3>
               <ul className="space-y-3">
                 {benefits.map((b) => (
-                  <li key={b} className="flex items-center gap-2.5 text-sm text-void-300 notranslate">
+                  <li key={b} className="flex items-center gap-2.5 text-sm text-void-300">
                     <span className="flex-shrink-0 w-5 h-5 rounded-full bg-signal-500/15 flex items-center justify-center">
                       <Check size={12} className="text-signal-400" strokeWidth={3} />
                     </span>
@@ -157,10 +157,10 @@ export default function Footer() {
                   <div className="mx-auto mb-3 w-10 h-10 rounded-full bg-signal-500/15 flex items-center justify-center">
                     <Check size={20} className="text-signal-400" strokeWidth={2.5} />
                   </div>
-                  <p className="text-base font-semibold text-signal-400 mb-1 notranslate">
+                  <p className="text-base font-semibold text-signal-400 mb-1">
                     {t('newsletter.success', "You're in! Check your inbox.")}
                   </p>
-                  <p className="text-sm text-void-400 notranslate">
+                  <p className="text-sm text-void-400">
                     {t('footer.check_inbox', 'Check your inbox for the first edition.')}
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function Footer() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="px-5 py-3 text-sm font-semibold rounded-lg bg-gradient-to-r from-signal-500 to-signal-400 text-void-950 hover:brightness-110 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap notranslate"
+                      className="px-5 py-3 text-sm font-semibold rounded-lg bg-gradient-to-r from-signal-500 to-signal-400 text-void-950 hover:brightness-110 transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                     >
                       {loading ? (
                         t('footer.sending', 'Sending...')
@@ -191,7 +191,7 @@ export default function Footer() {
                     </button>
                   </div>
                   {error && <p className="text-xs text-red-400">{error}</p>}
-                  <p className="text-xs text-void-500 notranslate">
+                  <p className="text-xs text-void-500">
                     {t('footer.no_spam', 'Free forever. Unsubscribe anytime. No spam.')}
                   </p>
                 </form>
@@ -208,7 +208,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.categories', 'Categories')}
             </h4>
             <ul className="space-y-2.5">
@@ -216,7 +216,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {t(link.labelKey, link.fallback)}
                   </Link>
@@ -227,7 +227,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.resources', 'Resources')}
             </h4>
             <ul className="space-y-2.5">
@@ -235,7 +235,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {t(link.labelKey, link.fallback)}
                   </Link>
@@ -246,7 +246,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.company', 'Company')}
             </h4>
             <ul className="space-y-2.5">
@@ -254,7 +254,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                    className="text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                   >
                     {t(link.labelKey, link.fallback)}
                   </Link>
@@ -265,7 +265,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4 notranslate">
+            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.connect', 'Connect')}
             </h4>
             <ul className="space-y-2.5">
@@ -279,7 +279,7 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                         aria-label={t(link.labelKey, link.fallback)}
                       >
                         <Icon size={14} className="flex-shrink-0" />
@@ -288,7 +288,7 @@ export default function Footer() {
                     ) : (
                       <Link
                         href={link.href}
-                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors notranslate"
+                        className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 no-underline transition-colors"
                       >
                         <Icon size={14} className="flex-shrink-0" />
                         {t(link.labelKey, link.fallback)}
@@ -323,19 +323,19 @@ export default function Footer() {
             <span className="hidden sm:inline text-void-700">|</span>
             <Link
               href="/terms-of-service"
-              className="hover:text-void-300 no-underline transition-colors notranslate"
+              className="hover:text-void-300 no-underline transition-colors"
             >
               {t('footer.terms', 'Terms')}
             </Link>
             <Link
               href="/privacy-policy"
-              className="hover:text-void-300 no-underline transition-colors notranslate"
+              className="hover:text-void-300 no-underline transition-colors"
             >
               {t('footer.privacy', 'Privacy')}
             </Link>
             <Link
               href="/affiliate-disclosure"
-              className="hover:text-void-300 no-underline transition-colors notranslate"
+              className="hover:text-void-300 no-underline transition-colors"
             >
               {t('footer.affiliate_disclosure', 'Affiliate Disclosure')}
             </Link>

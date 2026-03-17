@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { List } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 interface Heading {
   id: string;
@@ -14,6 +15,7 @@ interface TableOfContentsProps {
 }
 
 export default function TableOfContents({ headings }: TableOfContentsProps) {
+  const { t } = useTranslation();
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
     <nav className="sticky top-24" aria-label="Table of contents">
       <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-void-200 font-heading">
         <List size={16} className="text-signal-500" />
-        <span>On This Page</span>
+        <span>{t('article.on_this_page', 'On This Page')}</span>
       </div>
 
       <ul className="space-y-1 border-l-2 border-void-800">

@@ -1,5 +1,8 @@
+'use client';
+
 import { Users, DollarSign, Calendar, ArrowRight } from 'lucide-react';
 import StarRating from './StarRating';
+import { useTranslation } from '@/i18n/context';
 
 interface QuickVerdictProps {
   rating: number;
@@ -20,6 +23,7 @@ export default function QuickVerdict({
   lastTested,
   lastUpdated,
 }: QuickVerdictProps) {
+  const { t } = useTranslation();
   const safeRating = Math.max(0, Math.min(5, Number(rating) || 0));
   const percentage = (safeRating / 5) * 100;
 
@@ -82,7 +86,7 @@ export default function QuickVerdict({
           <Users size={16} className="mt-0.5 shrink-0 text-signal-500" />
           <div className="flex flex-col">
             <span className="text-xs font-medium text-void-500 uppercase tracking-wider">
-              Best For
+              {t('article.best_for', 'Best For')}
             </span>
             <span className="text-sm text-void-200">{bestFor}</span>
           </div>
@@ -93,7 +97,7 @@ export default function QuickVerdict({
           <DollarSign size={16} className="mt-0.5 shrink-0 text-signal-500" />
           <div className="flex flex-col">
             <span className="text-xs font-medium text-void-500 uppercase tracking-wider">
-              Pricing
+              {t('article.pricing', 'Pricing')}
             </span>
             <span className="text-sm text-void-200">{pricing}</span>
           </div>
@@ -105,7 +109,7 @@ export default function QuickVerdict({
             <Calendar size={16} className="mt-0.5 shrink-0 text-signal-500" />
             <div className="flex flex-col">
               <span className="text-xs font-medium text-void-500 uppercase tracking-wider">
-                Last Tested
+                {t('article.last_tested', 'Last Tested')}
               </span>
               <span className="text-sm text-void-200">{lastTested}</span>
             </div>
@@ -127,7 +131,7 @@ export default function QuickVerdict({
       {/* Trust signal */}
       {lastUpdated && (
         <p className="mt-3 text-center text-xs text-void-500">
-          Updated {lastUpdated}
+          {t('article.updated', 'Updated')} {lastUpdated}
         </p>
       )}
     </div>

@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { Mail, ArrowRight, Loader2 } from 'lucide-react';
 import clsx from 'clsx';
+import { useTranslation } from '@/i18n/context';
 
 interface InlineNewsletterCTAProps {
   className?: string;
 }
 
 export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAProps) {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
       });
       if (!res.ok) throw new Error('Subscription failed');
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);
       return;
     }
@@ -60,10 +62,10 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
           </div>
           <div>
             <h3 className="text-base font-bold text-void-50 font-heading">
-              Get weekly AI tool picks
+              {t('article.get_weekly_picks', 'Get weekly AI tool picks')}
             </h3>
             <p className="text-sm text-void-400 mt-0.5">
-              Curated recommendations, workflow tips, and exclusive deals. No spam.
+              {t('article.picks_description', 'Curated recommendations, workflow tips, and exclusive deals. No spam.')}
             </p>
           </div>
         </div>
@@ -71,7 +73,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
         {submitted ? (
           <div className="mt-4 bg-void-800 border border-signal-500/20 rounded-lg p-4">
             <p className="text-sm font-semibold text-signal-400">
-              You are in! Check your inbox for this week's picks.
+              {t('article.picks_success', "You're in! Check your inbox for this week's picks.")}
             </p>
           </div>
         ) : (
@@ -81,7 +83,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={t('newsletter.email_placeholder', 'Enter your email')}
                 required
                 className="flex-1 px-4 py-2.5 text-sm rounded-lg border border-void-700/50 bg-void-950 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
@@ -94,7 +96,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
                   <Loader2 size={14} className="animate-spin" />
                 ) : (
                   <>
-                    Subscribe <ArrowRight size={14} />
+                    {t('newsletter.subscribe', 'Subscribe')} <ArrowRight size={14} />
                   </>
                 )}
               </button>

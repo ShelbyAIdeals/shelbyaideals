@@ -1,4 +1,7 @@
+'use client';
+
 import { CheckCircle, CheckCircle2, XCircle } from 'lucide-react';
+import { useTranslation } from '@/i18n/context';
 
 interface ProsConsProps {
   pros: string[];
@@ -6,6 +9,7 @@ interface ProsConsProps {
 }
 
 export default function ProsCons({ pros, cons }: ProsConsProps) {
+  const { t } = useTranslation();
   const safeP = pros ?? [];
   const safeC = cons ?? [];
   if (safeP.length === 0 && safeC.length === 0) return null;
@@ -19,7 +23,7 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
         <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-success-500/20">
           <CheckCircle size={20} className="text-success-500" />
           <h4 className="text-lg font-heading font-bold text-success-400">
-            Pros
+            {t('article.pros', 'Pros')}
           </h4>
         </div>
         <ul className="divide-y divide-void-800/50">
@@ -47,7 +51,7 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
         <div className="flex items-center gap-2 px-6 pt-5 pb-3 border-b border-danger-500/20">
           <XCircle size={20} className="text-danger-500" />
           <h4 className="text-lg font-heading font-bold text-danger-400">
-            Cons
+            {t('article.cons', 'Cons')}
           </h4>
         </div>
         <ul className="divide-y divide-void-800/50">
