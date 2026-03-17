@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { User, Star, Calendar, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
-import { supabase, upsertProfile, type UserReview } from '@/lib/supabase';
+import { supabase, type UserReview } from '@/lib/supabase';
 import { useTranslation } from '@/i18n/context';
 
 export default function ProfilePage() {
@@ -53,20 +53,36 @@ export default function ProfilePage() {
     if (!user) return;
     setSaving(true);
     setSaveError('');
+
+    const timeout = <T,>(p: Promise<T>, ms: number): Promise<T> =>
+      Promise.race([p, new Promise<never>((_, rej) => setTimeout(() => rej(new Error('Request timed out')), ms))]);
+
     try {
-      await upsertProfile({
-        id: user.id,
-        username: formData.username.trim(),
-        first_name: formData.firstName.trim(),
-        last_name: formData.lastName.trim(),
-      });
-      await refreshProfile();
+      const { error } = await timeout(
+        supabase
+          .from('profiles')
+          .upsert({
+            id: user.id,
+            username: formData.username.trim(),
+            first_name: formData.firstName.trim(),
+            last_name: formData.lastName.trim(),
+          }, { onConflict: 'id' }),
+        8000
+      );
+
+      if (error) {
+        setSaveError(error.message);
+        setSaving(false);
+        return;
+      }
+
+      // Refresh profile in background — don't block the UI
+      refreshProfile();
       setEditing(false);
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Failed to save profile');
-    } finally {
-      setSaving(false);
     }
+    setSaving(false);
   };
 
   if (authLoading || !user) {
