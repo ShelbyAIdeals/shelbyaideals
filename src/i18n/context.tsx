@@ -56,10 +56,15 @@ function loadGoogleTranslate() {
   if (googleTranslateLoaded || typeof document === 'undefined') return;
   googleTranslateLoaded = true;
 
-  // Create hidden container for Google Translate widget
+  // Create container for Google Translate widget (visible but transparent via CSS)
   const container = document.createElement('div');
   container.id = 'google_translate_element';
-  container.style.display = 'none';
+  container.style.position = 'fixed';
+  container.style.bottom = '0';
+  container.style.left = '0';
+  container.style.opacity = '0';
+  container.style.pointerEvents = 'none';
+  container.style.zIndex = '-1';
   document.body.appendChild(container);
 
   // Define the callback Google Translate expects
@@ -86,8 +91,9 @@ function loadGoogleTranslate() {
 
   // Load the script
   const script = document.createElement('script');
-  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
   script.async = true;
+  script.onerror = () => console.warn('Google Translate script failed to load');
   document.head.appendChild(script);
 }
 
