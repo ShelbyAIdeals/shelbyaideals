@@ -62,8 +62,10 @@ function getOriginalUrl(): string {
   url.searchParams.delete('_x_tr_hl');
   url.searchParams.delete('_x_tr_pto');
   url.searchParams.delete('_x_tr_hist');
-  // Hostname: shelby--ai-com.translate.goog → shelby-ai.com
-  const origHost = url.hostname.replace('.translate.goog', '').replace(/--/g, '.');
+  // Hostname: www-shelby--ai-com.translate.goog → www.shelby-ai.com
+  // Google uses -- for literal dash, - for dot separator
+  const encoded = url.hostname.replace('.translate.goog', '');
+  const origHost = encoded.replace(/--/g, '\x00').replace(/-/g, '.').replace(/\x00/g, '-');
   url.hostname = origHost;
   url.protocol = 'https:';
   return url.toString();
@@ -81,8 +83,11 @@ function triggerGoogleTranslate(langCode: string) {
     return;
   }
 
-  // Navigate to Google Translate proxy for full-page translation
-  const currentUrl = isOnTranslateProxy() ? getOriginalUrl() : window.location.href;
+  // Navigate to Google Translate proxy for full-page translation.
+  // Use the canonical www. URL to avoid redirect chain issues.
+  let currentUrl = isOnTranslateProxy() ? getOriginalUrl() : window.location.href;
+  // Ensure www. prefix (shelby-ai.com redirects to www.shelby-ai.com, which breaks the proxy chain)
+  currentUrl = currentUrl.replace('://shelby-ai.com', '://www.shelby-ai.com');
   const translateUrl = `https://translate.google.com/translate?sl=en&tl=${gtCode}&u=${encodeURIComponent(currentUrl)}`;
   window.location.href = translateUrl;
 }
