@@ -69,15 +69,34 @@ export default function ProfilePage() {
     setSaving(true);
     setSaveError('');
     try {
-      const { error } = await supabase
-        .from('profiles')
-        .update({
-          username: formData.username.trim(),
-          first_name: formData.firstName.trim(),
-          last_name: formData.lastName.trim(),
-        })
-        .eq('id', user.id);
-      if (error) { setSaveError(error.message); setSaving(false); return; }
+      // Use fetch directly — Supabase JS client hangs on some operations
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || supabaseKey;
+
+      const res = await fetch(
+        `${supabaseUrl}/rest/v1/profiles?id=eq.${user.id}`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: supabaseKey || '',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            username: formData.username.trim(),
+            first_name: formData.firstName.trim(),
+            last_name: formData.lastName.trim(),
+          }),
+        }
+      );
+      if (!res.ok) {
+        const body = await res.text();
+        setSaveError(`Save failed: ${body}`);
+        setSaving(false);
+        return;
+      }
       refreshProfile();
       setEditing(false);
     } catch (err) {
@@ -114,17 +133,22 @@ export default function ProfilePage() {
     }
   };
 
-  const handleSignOut = async () => {
+  const handleSignOut = () => {
+    // Force clear all auth state locally — don't wait for Supabase
     try {
-      // Timeout signout after 3s — don't let it hang
-      await Promise.race([
-        signOut(),
-        new Promise((resolve) => setTimeout(resolve, 3000)),
-      ]);
+      // Clear Supabase session from localStorage
+      const keys = Object.keys(localStorage);
+      for (const key of keys) {
+        if (key.startsWith('sb-') || key.includes('supabase')) {
+          localStorage.removeItem(key);
+        }
+      }
+      // Fire and forget the server signout
+      supabase.auth.signOut().catch(() => {});
     } catch {
-      // Force clear even if server fails
+      // Ignore errors
     }
-    // Always redirect regardless
+    // Hard navigate — forces full page reload with cleared state
     window.location.href = '/';
   };
 
