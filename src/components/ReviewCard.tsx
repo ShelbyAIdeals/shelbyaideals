@@ -72,11 +72,11 @@ export default function ReviewCard({
 
           {/* Tool logo (overlapping top-left of image area) */}
           {toolLogo && (
-            <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-void-900/80 border border-void-700/50 backdrop-blur-sm flex items-center justify-center overflow-hidden shadow-lg">
+            <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-lg">
               <img
                 src={toolLogo}
                 alt={`${tool} logo`}
-                className="w-7 h-7 object-contain"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>

@@ -50,12 +50,12 @@ export default function ToolListCard({
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       >
         {/* Logo */}
-        <div className="shrink-0 w-12 h-12 rounded-xl bg-void-700/50 border border-void-600/30 flex items-center justify-center overflow-hidden">
+        <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center overflow-hidden">
           {toolLogo ? (
             <img
               src={toolLogo}
               alt={`${tool} logo`}
-              className="w-8 h-8 object-contain"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           ) : (
