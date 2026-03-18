@@ -4,13 +4,13 @@ import ToolsPageContent from '@/components/ToolsPageContent';
 import { CATEGORIES } from '@/lib/types';
 
 export const metadata: Metadata = {
-  title: 'AI Tools Directory — Browse & Compare',
+  title: 'AI Video, Audio & Marketing Tools — Tested & Reviewed',
   description:
-    'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
+    'Browse 31 AI tools tested hands-on for small businesses. Video creators, SEO tools, and marketing automation — reviewed, rated, and ranked.',
   openGraph: {
-    title: 'AI Tools Directory — Browse & Compare',
+    title: 'AI Video, Audio & Marketing Tools — Tested & Reviewed',
     description:
-      'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
+      'Browse 31 AI tools tested hands-on for small businesses. Video creators, SEO tools, and marketing automation — reviewed, rated, and ranked.',
     images: [
       {
         url: 'https://shelby-ai.com/images/og-thumbnail.png',

@@ -27,9 +27,9 @@ const quickLinks = [
     icon: Layers,
     color: 'text-iris-400',
     links: [
-      { label: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
-      { label: 'AI Video Tools', href: '/categories/ai-video-tools' },
-      { label: 'AI Image Tools', href: '/categories/ai-image-generators' },
+      { label: 'AI Video & Audio', href: '/categories/ai-video-audio' },
+      { label: 'AI Marketing & SEO', href: '/categories/ai-marketing-seo' },
+      { label: 'AI Content & Productivity', href: '/categories/ai-content-productivity' },
       { label: 'All Categories', href: '/categories' },
     ],
   },

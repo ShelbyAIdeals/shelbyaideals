@@ -6,20 +6,30 @@ import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import { getArticlesByCategory } from '@/lib/content';
-import { CATEGORIES } from '@/lib/types';
+import { CATEGORIES, CATEGORY_MAP } from '@/lib/types';
 import type { ReviewMeta, ComparisonMeta, BestOfMeta, GuideMeta, Category } from '@/lib/types';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return CATEGORIES.map((cat) => ({ slug: cat.slug }));
+  // Generate pages for new categories AND legacy slugs so old URLs still work
+  const legacySlugs = Object.keys(CATEGORY_MAP);
+  const allSlugs = new Set([
+    ...CATEGORIES.map((cat) => cat.slug),
+    ...legacySlugs,
+  ]);
+  return Array.from(allSlugs).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const category = CATEGORIES.find((c) => c.slug === slug);
+  const mapped = CATEGORY_MAP[slug];
+  const category = CATEGORIES.find((c) => c.slug === slug) ??
+    (mapped ? CATEGORIES.find((c) => c.slug === mapped) : undefined);
 
   if (!category) {
     return { title: 'Category Not Found' };
@@ -50,13 +60,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params;
-  const category = CATEGORIES.find((c) => c.slug === slug);
+  // Resolve legacy slug to new category via CATEGORY_MAP
+  const resolvedSlug = CATEGORY_MAP[slug] ?? slug;
+  const category = CATEGORIES.find((c) => c.slug === resolvedSlug);
 
   if (!category) {
     notFound();
   }
 
-  const articles = getArticlesByCategory(slug as Category);
+  const articles = getArticlesByCategory(resolvedSlug as Category);
 
   // Group by type
   const reviews = articles.filter((a): a is ReviewMeta => a.type === 'review');

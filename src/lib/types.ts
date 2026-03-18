@@ -30,12 +30,18 @@ export interface ReviewMeta extends ArticleMeta {
   rating: number; // 0-5 scale
   toolSlug?: string;
   bestFor: string;
+  notFor?: string;             // Who should NOT use this tool
   pricing: PricingTier[];
   pros: string[];
   cons: string[];
   verdict: string;
   affiliateUrl: string;
   affiliateLabel: string;
+  // Trust & testing fields
+  testDuration?: string;       // e.g. "14 days"
+  testType?: string;           // e.g. "Full hands-on review"
+  authorBio?: string;          // Short author bio for review context
+  authorImage?: string;        // Author headshot path
   // Tool profile fields
   toolLogo?: string;           // e.g. "/logos/pictory.svg"
   socialLinks?: SocialLinks;
@@ -101,12 +107,30 @@ export interface RecommendedTool {
 }
 
 export type Category =
+  | 'ai-video-audio'
+  | 'ai-marketing-seo'
+  | 'ai-content-productivity'
+  // Legacy slugs — mapped to new categories in content.ts
   | 'ai-writing-tools'
   | 'ai-design-tools'
   | 'ai-coding-tools'
   | 'ai-automation'
   | 'ai-seo-tools'
   | 'ai-productivity';
+
+/** Maps legacy category slugs to new consolidated categories */
+export const CATEGORY_MAP: Record<string, Category> = {
+  'ai-writing-tools': 'ai-content-productivity',
+  'ai-design-tools': 'ai-video-audio',
+  'ai-coding-tools': 'ai-content-productivity',
+  'ai-automation': 'ai-marketing-seo',
+  'ai-seo-tools': 'ai-marketing-seo',
+  'ai-productivity': 'ai-content-productivity',
+  // New slugs map to themselves
+  'ai-video-audio': 'ai-video-audio',
+  'ai-marketing-seo': 'ai-marketing-seo',
+  'ai-content-productivity': 'ai-content-productivity',
+};
 
 export interface CategoryInfo {
   slug: Category;
@@ -117,39 +141,21 @@ export interface CategoryInfo {
 
 export const CATEGORIES: CategoryInfo[] = [
   {
-    slug: 'ai-writing-tools',
-    name: 'AI Writing Tools',
-    description: 'AI-powered writing, copywriting, and content generation tools reviewed for creators and small teams.',
+    slug: 'ai-video-audio',
+    name: 'AI Video & Audio',
+    description: 'AI video creators, voiceover generators, audio tools, and content repurposing platforms tested for small businesses.',
+    icon: 'video',
+  },
+  {
+    slug: 'ai-marketing-seo',
+    name: 'AI Marketing & SEO',
+    description: 'AI-powered SEO, content optimization, workflow automation, and marketing tools for small teams that want to rank and convert.',
+    icon: 'trending-up',
+  },
+  {
+    slug: 'ai-content-productivity',
+    name: 'AI Content & Productivity',
+    description: 'AI writing assistants, transcription tools, and productivity platforms for creating content faster.',
     icon: 'pen-tool',
-  },
-  {
-    slug: 'ai-design-tools',
-    name: 'AI Design & Video Tools',
-    description: 'AI image generators, graphic design tools, and video creation platforms for non-designers.',
-    icon: 'palette',
-  },
-  {
-    slug: 'ai-coding-tools',
-    name: 'AI Coding Tools',
-    description: 'AI code assistants, IDE integrations, and no-code AI builders for developers and non-technical founders.',
-    icon: 'code',
-  },
-  {
-    slug: 'ai-automation',
-    name: 'AI Automation',
-    description: 'Workflow automation tools, AI agents, and integration platforms to eliminate repetitive work.',
-    icon: 'zap',
-  },
-  {
-    slug: 'ai-seo-tools',
-    name: 'AI SEO Tools',
-    description: 'AI-powered SEO, content optimization, and keyword research tools for small sites and freelancers.',
-    icon: 'search',
-  },
-  {
-    slug: 'ai-productivity',
-    name: 'AI Productivity',
-    description: 'Meeting AI, transcription, note-taking, and project management tools that save hours every week.',
-    icon: 'clock',
   },
 ];

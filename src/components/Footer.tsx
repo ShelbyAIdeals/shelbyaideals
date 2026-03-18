@@ -10,12 +10,9 @@ import { useTranslation } from '@/i18n/context';
 /* ------------------------------------------------------------------ */
 
 const categoryLinks = [
-  { labelKey: 'footer.cat_ai_writing', fallback: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
-  { labelKey: 'footer.cat_ai_design', fallback: 'AI Design & Video', href: '/categories/ai-design-tools' },
-  { labelKey: 'footer.cat_ai_coding', fallback: 'AI Coding Tools', href: '/categories/ai-coding-tools' },
-  { labelKey: 'footer.cat_ai_automation', fallback: 'AI Automation', href: '/categories/ai-automation' },
-  { labelKey: 'footer.cat_ai_seo', fallback: 'AI SEO Tools', href: '/categories/ai-seo-tools' },
-  { labelKey: 'footer.cat_ai_productivity', fallback: 'AI Productivity', href: '/categories/ai-productivity' },
+  { labelKey: 'footer.cat_ai_video', fallback: 'AI Video & Audio', href: '/categories/ai-video-audio' },
+  { labelKey: 'footer.cat_ai_marketing', fallback: 'AI Marketing & SEO', href: '/categories/ai-marketing-seo' },
+  { labelKey: 'footer.cat_ai_content', fallback: 'AI Content & Productivity', href: '/categories/ai-content-productivity' },
 ];
 
 const resourceLinks = [

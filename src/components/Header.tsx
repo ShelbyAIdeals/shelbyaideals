@@ -14,7 +14,6 @@ import { useTranslation } from '@/i18n/context';
 const navLinks = [
   { labelKey: 'nav.tools', href: '/reviews' },
   { labelKey: 'nav.comparisons', href: '/comparisons' },
-  { labelKey: 'nav.deals', href: '/deals', hasBadge: true },
   { labelKey: 'nav.guides', href: '/guides' },
   { labelKey: 'nav.newsletter', href: '/newsletter' },
 ];
@@ -156,7 +155,7 @@ export default function Header() {
                     }`}
                   >
                     {t(link.labelKey)}
-                    {link.hasBadge && (
+                    {'hasBadge' in link && (link as { hasBadge?: boolean }).hasBadge && (
                       <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-ember-400 ring-2 ring-void-950" />
                     )}
                     {active && (
@@ -276,9 +275,6 @@ export default function Header() {
                         }`}
                       >
                         {t(link.labelKey)}
-                        {link.hasBadge && (
-                          <span className="w-2 h-2 rounded-full bg-ember-400" />
-                        )}
                       </Link>
                     </li>
                   );

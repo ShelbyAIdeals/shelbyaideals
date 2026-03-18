@@ -8,12 +8,16 @@ import { useTranslation } from '@/i18n/context';
 import type { ArticleMeta, Category } from '@/lib/types';
 
 const categoryLabels: Record<Category, string> = {
-  'ai-writing-tools': 'AI Writing Tools',
-  'ai-design-tools': 'AI Design & Video',
-  'ai-coding-tools': 'AI Coding Tools',
-  'ai-automation': 'AI Automation',
-  'ai-seo-tools': 'AI SEO Tools',
-  'ai-productivity': 'AI Productivity',
+  'ai-video-audio': 'AI Video & Audio',
+  'ai-marketing-seo': 'AI Marketing & SEO',
+  'ai-content-productivity': 'AI Content & Productivity',
+  // Legacy slugs (mapped to new categories in content.ts, but kept for type safety)
+  'ai-writing-tools': 'AI Content & Productivity',
+  'ai-design-tools': 'AI Video & Audio',
+  'ai-coding-tools': 'AI Content & Productivity',
+  'ai-automation': 'AI Marketing & SEO',
+  'ai-seo-tools': 'AI Marketing & SEO',
+  'ai-productivity': 'AI Content & Productivity',
 };
 
 interface ArticleLayoutProps {

@@ -90,35 +90,11 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl font-bold text-void-50">Who We Help</h2>
             </div>
-            <p className="text-void-50 leading-relaxed mb-4">
-              ShelbyAIDeals is built for people who wear multiple hats:
+            <p className="text-void-50 leading-relaxed">
+              Small business owners, freelancers, and lean marketing teams
+              (1&ndash;10 people) who need to create more content across blog, video,
+              social, and podcast channels without dedicated staff for each.
             </p>
-            <ul className="space-y-2 text-void-50">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-void-50 mt-2.5 shrink-0" />
-                <span>
-                  <span className="font-semibold text-void-50">Creators</span> &mdash;
-                  writers, YouTubers, podcasters, and designers who want AI to
-                  amplify their output, not replace their voice.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-void-50 mt-2.5 shrink-0" />
-                <span>
-                  <span className="font-semibold text-void-50">Freelancers</span> &mdash;
-                  independent professionals looking to deliver more value to
-                  clients without burning out.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-void-50 mt-2.5 shrink-0" />
-                <span>
-                  <span className="font-semibold text-void-50">Small teams (1&ndash;10 people)</span> &mdash;
-                  startups and small businesses that need enterprise-quality
-                  AI tools at a price point that makes sense.
-                </span>
-              </li>
-            </ul>
           </section>
 
           {/* How We Make Money */}
@@ -228,8 +204,8 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { value: '40+', label: 'Tools in our pipeline' },
-                { value: '6', label: 'Categories covered' },
+                { value: '31', label: 'Tools tested hands-on' },
+                { value: '3', label: 'Categories covered' },
                 { value: '$0', label: 'Cost to readers' },
                 { value: '100%', label: 'Independent reviews' },
               ].map((stat) => (
@@ -249,12 +225,9 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-void-50 mb-4">What We Cover</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { name: 'AI Writing Tools', href: '/categories/ai-writing-tools' },
-                { name: 'AI Design & Video', href: '/categories/ai-design-tools' },
-                { name: 'AI SEO Tools', href: '/categories/ai-seo-tools' },
-                { name: 'AI Automation', href: '/categories/ai-automation' },
-                { name: 'AI Coding Tools', href: '/categories/ai-coding-tools' },
-                { name: 'AI Productivity', href: '/categories/ai-productivity' },
+                { name: 'AI Video & Audio', href: '/categories/ai-video-audio' },
+                { name: 'AI Marketing & SEO', href: '/categories/ai-marketing-seo' },
+                { name: 'AI Content & Productivity', href: '/categories/ai-content-productivity' },
               ].map((cat) => (
                 <Link
                   key={cat.href}

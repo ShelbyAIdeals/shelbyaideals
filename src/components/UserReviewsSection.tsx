@@ -60,6 +60,9 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
   // Don't render if Supabase is not configured
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null;
 
+  // Don't render the section at all when there are no reviews
+  if (!loading && !error && reviews.length === 0) return null;
+
   return (
     <section className="mt-12" id="user-reviews">
       <div className="flex items-center justify-between mb-6">

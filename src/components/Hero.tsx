@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Search, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
+import { Search, ArrowRight, Sparkles, Shield, Zap, Video, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
 import { useAuth } from '@/lib/auth-context';
 import HeroTextRotator from './motion/HeroTextRotator';
 
 const trendingTools = [
-  'Jasper AI', 'Copy.ai', 'Midjourney', 'Cursor', 'Surfer SEO', 'Descript',
+  'Pictory', 'ElevenLabs', 'Synthesia', 'Frase', 'Mangools', 'Descript',
 ];
 
 const fadeUp = {
@@ -31,9 +31,9 @@ export default function Hero() {
   const isLoggedIn = !!user && !!firstName;
 
   const trustPoints = [
-    { icon: Shield, text: t('hero.trust_no_sponsored', 'No sponsored rankings') },
-    { icon: Sparkles, text: t('hero.trust_tools_tested', '40+ tools tested') },
-    { icon: Zap, text: t('hero.trust_workflow', 'Workflow-first reviews') },
+    { icon: Shield, text: t('hero.trust_no_sponsored', '31 tools tested hands-on') },
+    { icon: Sparkles, text: t('hero.trust_tools_tested', '0 sponsored rankings') },
+    { icon: Zap, text: t('hero.trust_workflow', 'Real output samples in every review') },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -86,7 +86,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/20 text-signal-400 text-sm font-medium mb-8"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-signal-400 animate-glow" />
-              {t('hero.eyebrow', 'Honest AI Tool Reviews')}
+              {t('hero.eyebrow', 'AI Tools for Small Business')}
             </motion.div>
 
             {/* Headline */}
@@ -98,9 +98,9 @@ export default function Hero() {
               className={`font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] ${isLoggedIn ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}
             >
               {isLoggedIn && <span>{firstName}, </span>}
-              {t('hero.headline_prefix', 'Discover the Best')}{' '}
+              {t('hero.headline_prefix', 'Turn One Piece of Content')}{' '}
               <br className="hidden sm:block" />
-              {t('hero.headline_ai_tools', 'AI Tools')}{' '}
+              {t('hero.headline_ai_tools', 'into Ten')}{' '}
               <HeroTextRotator />
             </motion.h1>
 
@@ -112,7 +112,7 @@ export default function Hero() {
               custom={0.2}
               className="mt-6 text-lg sm:text-xl text-void-300 leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              {t('hero.subheadline', 'Real reviews from real testing. Head-to-head comparisons and workflow-first recommendations for creators and teams.')}
+              {t('hero.subheadline', 'We test AI video, audio, and automation tools so small businesses can produce more content without hiring more people. Real testing. Real screenshots. No sponsored rankings.')}
             </motion.p>
 
             {/* Search Bar */}
@@ -190,18 +190,18 @@ export default function Hero() {
           >
             {/* Hero visual — abstract tech grid */}
             <div className="relative w-full max-w-md aspect-square">
-              {/* Floating cards representing tool categories */}
+              {/* Floating cards representing new categories */}
               <motion.div
                 className="absolute top-4 left-8 card-glass p-4 pr-8 flex items-center gap-3"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity }}
               >
                 <div className="w-10 h-10 rounded-lg bg-signal-500/15 border border-signal-500/20 flex items-center justify-center">
-                  <Sparkles size={18} className="text-signal-400" />
+                  <Video size={18} className="text-signal-400" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_writing', 'AI Writing')}</div>
-                  <div className="text-xs text-void-400">12 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_video', 'AI Video & Audio')}</div>
+                  <div className="text-xs text-void-400">8 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -211,11 +211,11 @@ export default function Hero() {
                 transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity, delay: 1 }}
               >
                 <div className="w-10 h-10 rounded-lg bg-ember-500/15 border border-ember-500/20 flex items-center justify-center">
-                  <Zap size={18} className="text-ember-400" />
+                  <TrendingUp size={18} className="text-ember-400" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_automation', 'Automation')}</div>
-                  <div className="text-xs text-void-400">8 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_marketing', 'Marketing & SEO')}</div>
+                  <div className="text-xs text-void-400">7 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -225,11 +225,11 @@ export default function Hero() {
                 transition={{ duration: 4.5, ease: 'easeInOut', repeat: Infinity, delay: 2 }}
               >
                 <div className="w-10 h-10 rounded-lg bg-iris-500/15 border border-iris-500/20 flex items-center justify-center">
-                  <Search size={18} className="text-iris-400" />
+                  <Sparkles size={18} className="text-iris-400" />
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_seo', 'AI SEO')}</div>
-                  <div className="text-xs text-void-400">6 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_content', 'Content & Productivity')}</div>
+                  <div className="text-xs text-void-400">16 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 

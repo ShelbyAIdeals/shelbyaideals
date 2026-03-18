@@ -107,6 +107,72 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
     commission: 'Varies',
     status: 'pending',
   },
+  chatbase: {
+    name: 'Chatbase',
+    url: 'https://www.chatbase.co', // Replace with Dub.co partner link from partners.dub.co/programs/chatbase/links
+    commission: 'Up to 30% per sale (1 year)',
+    status: 'active',
+  },
+  scalenut: {
+    name: 'Scalenut',
+    url: 'https://scalenut.com/?fpr=fran36',
+    commission: 'Recurring',
+    status: 'active',
+  },
+  appsumo: {
+    name: 'AppSumo',
+    url: 'https://appsumo.com', // Replace with Impact.com tracking link from dashboard
+    commission: 'Per sale',
+    status: 'active',
+  },
+  rytr: {
+    name: 'Rytr',
+    url: 'https://rytr.me', // Update with tracking link if available
+    commission: 'Recurring',
+    status: 'active',
+  },
+  fliki: {
+    name: 'Fliki',
+    url: 'https://fliki.ai', // Update with tracking link if available
+    commission: 'Recurring',
+    status: 'active',
+  },
+  'easy-peasy-ai': {
+    name: 'Easy Peasy AI',
+    url: 'https://easy-peasy.ai', // Update with tracking link if available
+    commission: 'Recurring',
+    status: 'active',
+  },
+  simplified: {
+    name: 'Simplified',
+    url: 'https://simplified.com', // Update with FirstPromoter tracking link
+    commission: 'Recurring',
+    status: 'active',
+  },
+  mubert: {
+    name: 'Mubert',
+    url: 'https://mubert.com',
+    commission: 'Recurring',
+    status: 'active',
+  },
+  mixo: {
+    name: 'Mixo',
+    url: 'https://mixo.io',
+    commission: 'Recurring',
+    status: 'active',
+  },
+  'decktopus-ai': {
+    name: 'Decktopus AI',
+    url: 'https://decktopus.com',
+    commission: 'Recurring',
+    status: 'active',
+  },
+  'julius-ai': {
+    name: 'Julius AI',
+    url: 'https://julius.ai',
+    commission: 'Recurring',
+    status: 'active',
+  },
 };
 
 export function getAffiliateLink(toolSlug: string): string {

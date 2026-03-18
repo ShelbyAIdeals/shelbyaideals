@@ -11,28 +11,29 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ShelbyAIDeals — Honest AI Tool Reviews for Creators & Small Teams',
-    template: '%s | ShelbyAIDeals',
+    default: 'ShelbyAI — AI Video, Audio & Marketing Tools for Small Business',
+    template: '%s | ShelbyAI',
   },
   description:
-    'We test AI tools the way you actually use them. Honest reviews, real comparisons, and workflow-first recommendations for creators, freelancers, and small teams.',
+    'We test AI video, audio, and marketing tools so small businesses can create more content without hiring more people. 31 tools reviewed hands-on.',
   keywords: [
-    'AI tools',
+    'AI video tools',
+    'AI audio tools',
+    'AI tools for small business',
+    'AI marketing tools',
+    'AI SEO tools',
+    'content repurposing AI',
     'AI tool reviews',
-    'best AI tools',
-    'AI writing tools',
-    'AI productivity',
-    'AI for freelancers',
-    'AI for small teams',
+    'best AI tools small business',
   ],
-  authors: [{ name: 'ShelbyAIDeals' }],
+  authors: [{ name: 'Fran Shelby' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'ShelbyAIDeals',
-    title: 'ShelbyAIDeals — Honest AI Tool Reviews for Creators & Small Teams',
+    siteName: 'ShelbyAI',
+    title: 'ShelbyAI — AI Video, Audio & Marketing Tools for Small Business',
     description:
-      'We test AI tools the way you actually use them. Honest reviews, real comparisons, and workflow-first recommendations.',
+      'We test AI video, audio, and marketing tools so small businesses can create more content without hiring more people.',
     images: [
       {
         url: 'https://shelby-ai.com/images/og-thumbnail.png',

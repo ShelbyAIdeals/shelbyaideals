@@ -8,6 +8,8 @@ import {
   Zap,
   Search,
   Clock,
+  Video,
+  TrendingUp,
   ArrowRight,
   type LucideIcon,
 } from 'lucide-react';
@@ -23,6 +25,8 @@ const iconMap: Record<string, LucideIcon> = {
   zap: Zap,
   search: Search,
   clock: Clock,
+  video: Video,
+  'trending-up': TrendingUp,
 };
 
 /* ── Category → color tint mapping ────────────────────── */
@@ -36,42 +40,21 @@ type ColorTint = {
 };
 
 const tintMap: Record<string, ColorTint> = {
-  'ai-writing': {
-    bg: 'bg-iris-500/[0.08]',
-    iconBg: 'bg-iris-500/15',
-    iconBorder: 'border-iris-500/20',
-    iconText: 'text-iris-400',
-    hoverBorder: 'group-hover:border-iris-500/40',
-  },
-  'ai-design': {
-    bg: 'bg-ember-500/[0.08]',
-    iconBg: 'bg-ember-500/15',
-    iconBorder: 'border-ember-500/20',
-    iconText: 'text-ember-400',
-    hoverBorder: 'group-hover:border-ember-500/40',
-  },
-  'ai-coding': {
+  'ai-video': {
     bg: 'bg-signal-500/[0.08]',
     iconBg: 'bg-signal-500/15',
     iconBorder: 'border-signal-500/20',
     iconText: 'text-signal-400',
     hoverBorder: 'group-hover:border-signal-500/40',
   },
-  'ai-automation': {
+  'ai-marketing': {
     bg: 'bg-ember-500/[0.08]',
     iconBg: 'bg-ember-500/15',
     iconBorder: 'border-ember-500/20',
     iconText: 'text-ember-400',
     hoverBorder: 'group-hover:border-ember-500/40',
   },
-  'ai-seo': {
-    bg: 'bg-signal-500/[0.08]',
-    iconBg: 'bg-signal-500/15',
-    iconBorder: 'border-signal-500/20',
-    iconText: 'text-signal-400',
-    hoverBorder: 'group-hover:border-signal-500/40',
-  },
-  'ai-productivity': {
+  'ai-content': {
     bg: 'bg-iris-500/[0.08]',
     iconBg: 'bg-iris-500/15',
     iconBorder: 'border-iris-500/20',

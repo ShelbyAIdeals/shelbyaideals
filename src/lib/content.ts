@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import type { ArticleMeta, ReviewMeta, ComparisonMeta, BestOfMeta, GuideMeta, Category } from './types';
+import { CATEGORY_MAP } from './types';
 
 const contentDir = path.join(process.cwd(), 'src/content');
 
@@ -32,8 +33,10 @@ function parseArticle(dir: string, filename: string) {
   // Ensure all required base fields have safe defaults
   data.title = data.title ?? filename.replace('.mdx', '');
   data.excerpt = data.excerpt ?? '';
-  data.category = data.category ?? 'ai-productivity';
-  data.author = data.author ?? 'ShelbyAI Team';
+  // Map legacy category slugs to new consolidated categories
+  const rawCategory = data.category ?? 'ai-content-productivity';
+  data.category = CATEGORY_MAP[rawCategory] ?? rawCategory;
+  data.author = data.author ?? 'Fran Shelby';
   data.date = data.date ?? new Date().toISOString().split('T')[0];
   data.lastUpdated = data.lastUpdated ?? data.date;
 
@@ -127,7 +130,9 @@ export function getAllArticles(): ArticleMeta[] {
 }
 
 export function getArticlesByCategory(category: Category): ArticleMeta[] {
-  return getAllArticles().filter((a) => a.category === category);
+  // Resolve the category through the map so legacy slugs in URLs still work
+  const resolved = CATEGORY_MAP[category] ?? category;
+  return getAllArticles().filter((a) => a.category === resolved);
 }
 
 export function getArticle(type: string, slug: string) {

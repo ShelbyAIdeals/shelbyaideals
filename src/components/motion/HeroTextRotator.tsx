@@ -13,11 +13,11 @@ export default function HeroTextRotator({ className }: HeroTextRotatorProps) {
   const { t } = useTranslation();
 
   const phrases = [
-    t('hero.rotator_workflow', 'for Your Workflow'),
-    t('hero.rotator_freelancers', 'for Freelancers'),
-    t('hero.rotator_teams', 'for Small Teams'),
-    t('hero.rotator_creators', 'for Content Creators'),
-    t('hero.rotator_solopreneurs', 'for Solopreneurs'),
+    t('hero.rotator_video', 'with AI Video'),
+    t('hero.rotator_audio', 'with AI Audio'),
+    t('hero.rotator_automation', 'with Automation'),
+    t('hero.rotator_repurposing', 'by Repurposing'),
+    t('hero.rotator_small_biz', 'for Small Business'),
   ];
 
   useEffect(() => {

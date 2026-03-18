@@ -101,13 +101,13 @@ export const ONBOARDING_QUESTIONS: readonly OnboardingQuestion[] = [
 
 /** Maps user interests to relevant tool categories for recommendations */
 export const INTEREST_CATEGORY_MAP: Record<string, Category[]> = {
-  marketing: ['ai-writing-tools', 'ai-seo-tools'],
-  audio: ['ai-design-tools'],
-  coding: ['ai-coding-tools'],
-  image: ['ai-design-tools'],
-  music: ['ai-design-tools'],
-  productivity: ['ai-productivity', 'ai-automation'],
-  text: ['ai-writing-tools'],
-  video: ['ai-design-tools'],
-  automation: ['ai-automation'],
+  marketing: ['ai-marketing-seo'],
+  audio: ['ai-video-audio'],
+  coding: ['ai-content-productivity'],
+  image: ['ai-video-audio'],
+  music: ['ai-video-audio'],
+  productivity: ['ai-content-productivity', 'ai-marketing-seo'],
+  text: ['ai-content-productivity'],
+  video: ['ai-video-audio'],
+  automation: ['ai-marketing-seo'],
 };

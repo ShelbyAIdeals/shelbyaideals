@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PenTool, Palette, Code, Zap, Search, Clock } from 'lucide-react';
+import { PenTool, Video, TrendingUp } from 'lucide-react';
 import { CATEGORIES } from '@/lib/types';
 import { getArticlesByCategory } from '@/lib/content';
 import type { Category } from '@/lib/types';
@@ -8,11 +8,11 @@ import type { Category } from '@/lib/types';
 export const metadata: Metadata = {
   title: 'Categories',
   description:
-    'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+    'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
   openGraph: {
     title: 'Categories',
     description:
-      'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+      'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
     images: [
       {
         url: 'https://shelby-ai.com/images/og-thumbnail.png',
@@ -25,18 +25,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Categories',
     description:
-      'Browse AI tools by category — writing, design, coding, automation, SEO, and productivity.',
+      'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
     images: ['https://shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 
 const iconMap: Record<string, React.ElementType> = {
   'pen-tool': PenTool,
-  palette: Palette,
-  code: Code,
-  zap: Zap,
-  search: Search,
-  clock: Clock,
+  video: Video,
+  'trending-up': TrendingUp,
 };
 
 export default function CategoriesPage() {
@@ -56,7 +53,7 @@ export default function CategoriesPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((cat) => {
             const articles = getArticlesByCategory(cat.slug as Category);
-            const Icon = iconMap[cat.icon] || Zap;
+            const Icon = iconMap[cat.icon] || PenTool;
 
             return (
               <Link

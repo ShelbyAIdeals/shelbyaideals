@@ -80,12 +80,9 @@ export default function SubmitToolForm() {
               className="search-input"
             >
               <option value="">Select a category</option>
-              <option value="ai-writing-tools">AI Writing Tools</option>
-              <option value="ai-design-tools">AI Design & Video</option>
-              <option value="ai-coding-tools">AI Coding Tools</option>
-              <option value="ai-automation">AI Automation</option>
-              <option value="ai-seo-tools">AI SEO Tools</option>
-              <option value="ai-productivity">AI Productivity</option>
+              <option value="ai-video-audio">AI Video & Audio</option>
+              <option value="ai-marketing-seo">AI Marketing & SEO</option>
+              <option value="ai-content-productivity">AI Content & Productivity</option>
             </select>
           </div>
 
