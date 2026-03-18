@@ -115,7 +115,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   scalenut: {
     name: 'Scalenut',
-    url: 'https://scalenut.com/?fpr=fran36',
+    url: 'https://scalenut.com/?fpr=shelby-ai',
     commission: 'Recurring',
     status: 'active',
   },
