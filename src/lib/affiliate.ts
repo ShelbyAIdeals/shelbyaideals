@@ -121,7 +121,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   appsumo: {
     name: 'AppSumo',
-    url: 'https://appsumo.com', // Replace with Impact.com tracking link from dashboard
+    url: 'https://appsumo.8odi.net/NG9YMP',
     commission: 'Per sale',
     status: 'active',
   },
