@@ -30,9 +30,17 @@ function buildSitemap(): string {
     { url: '/comparisons', priority: '0.9', changefreq: 'daily' },
     { url: '/best', priority: '0.9', changefreq: 'daily' },
     { url: '/guides', priority: '0.9', changefreq: 'weekly' },
+    { url: '/alternatives', priority: '0.8', changefreq: 'weekly' },
     { url: '/about', priority: '0.5', changefreq: 'monthly' },
+    { url: '/how-we-review', priority: '0.5', changefreq: 'monthly' },
+    { url: '/newsletter', priority: '0.5', changefreq: 'monthly' },
+    { url: '/faq', priority: '0.4', changefreq: 'monthly' },
+    { url: '/contact', priority: '0.3', changefreq: 'yearly' },
     { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
     { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
+    // Locale landing pages
+    { url: '/es', priority: '0.8', changefreq: 'weekly' },
+    { url: '/de', priority: '0.8', changefreq: 'weekly' },
   ];
 
   for (const page of staticPages) {
@@ -50,6 +58,7 @@ function buildSitemap(): string {
   // Alternatives pages
   const alternativesSlugs = [
     'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
+    'elevenlabs', 'synthesia', 'midjourney', 'chatgpt', 'grammarly', 'frase', 'semrush', 'mangools',
   ];
   for (const slug of alternativesSlugs) {
     entries.push({ url: `/alternatives/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
@@ -58,6 +67,7 @@ function buildSitemap(): string {
   // Pricing pages
   const pricingSlugs = [
     'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
+    'elevenlabs', 'synthesia', 'midjourney', 'chatgpt', 'grammarly', 'frase', 'semrush', 'mangools',
   ];
   entries.push({ url: '/pricing', lastmod: today, changefreq: 'weekly', priority: '0.8' });
   for (const slug of pricingSlugs) {

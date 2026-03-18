@@ -27,6 +27,14 @@ export const metadata: Metadata = {
       'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/',
+    languages: {
+      en: 'https://www.shelby-ai.com/',
+      es: 'https://www.shelby-ai.com/es/',
+      de: 'https://www.shelby-ai.com/de/',
+    },
+  },
 };
 
 export default async function HomePage() {

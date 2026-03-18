@@ -16,6 +16,7 @@ import PinButton from '@/components/PinButton';
 import SocialLinksRow from '@/components/SocialLinksRow';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import UserReviewsSection from '@/components/UserReviewsSection';
+import ToolHubLinks from '@/components/ToolHubLinks';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
@@ -177,6 +178,17 @@ export default async function ReviewPage({ params }: PageProps) {
     >
       <JsonLd type="review" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      <JsonLd
+        type="faq"
+        data={{
+          questions: [
+            ...(meta.bestFor ? [{ question: `Who is ${meta.tool} best for?`, answer: meta.bestFor }] : []),
+            ...(meta.pricing?.length > 0 ? [{ question: `How much does ${meta.tool} cost?`, answer: `${meta.tool} plans start at ${meta.pricing[0].price}/${meta.pricing[0].period}. ${meta.pricing.length > 1 ? `They offer ${meta.pricing.length} plans total.` : ''}` }] : []),
+            ...(meta.verdict ? [{ question: `Is ${meta.tool} worth it?`, answer: meta.verdict }] : []),
+            ...(meta.notFor ? [{ question: `Who should NOT use ${meta.tool}?`, answer: meta.notFor }] : []),
+          ].filter((q) => q.answer),
+        }}
+      />
       {meta.videoUrl && (
         <JsonLd
           type="video"
@@ -290,6 +302,9 @@ export default async function ReviewPage({ params }: PageProps) {
           toolName={meta.tool}
         />
       </div>
+
+      {/* Explore More — internal links to alternatives, pricing, best-for */}
+      <ToolHubLinks toolSlug={slug} toolName={meta.tool} category={meta.category} />
 
       {/* User Reviews */}
       <UserReviewsSection toolSlug={meta.toolSlug || slug} toolName={meta.tool} />

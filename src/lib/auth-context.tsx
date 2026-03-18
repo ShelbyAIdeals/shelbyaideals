@@ -8,6 +8,7 @@ import {
   signUpWithEmail,
   signInWithGoogle as googleSignIn,
   signOut as supabaseSignOut,
+  resetPassword as supabaseResetPassword,
   upsertProfileSafe,
   getProfile,
   type UserProfile,
@@ -25,6 +26,7 @@ interface AuthContextValue extends AuthState {
   signUp: (email: string, password: string, meta: { username: string; firstName: string; lastName: string }) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
+  resetPassword: (email: string) => Promise<void>;
   refreshProfile: () => Promise<void>;
 }
 
@@ -145,6 +147,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await googleSignIn();
   }, []);
 
+  const resetPassword = useCallback(async (email: string) => {
+    await supabaseResetPassword(email);
+  }, []);
+
   const signOut = useCallback(async () => {
     await supabaseSignOut();
     setState({ user: null, profile: null, session: null, loading: false });
@@ -156,7 +162,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ ...state, signIn, signUp, signInWithGoogle, signOut, refreshProfile }}
+      value={{ ...state, signIn, signUp, signInWithGoogle, signOut, resetPassword, refreshProfile }}
     >
       {children}
     </AuthContext.Provider>

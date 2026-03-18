@@ -134,9 +134,13 @@ export default function NewsletterSignup({
               {'Free Weekly Newsletter'}
             </span>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-3 leading-tight">
               {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h2>
+
+            <p className="text-sm text-void-400 mb-6">
+              Join small business owners and creators who get our weekly AI tool picks. No sponsored content — just what works.
+            </p>
 
             <ul className="space-y-3">
               {benefits.map((benefit) => (
