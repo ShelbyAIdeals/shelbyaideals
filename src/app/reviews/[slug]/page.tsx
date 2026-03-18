@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 import { notFound } from 'next/navigation';
 import ArticleLayout from '@/components/ArticleLayout';
 import QuickVerdict from '@/components/QuickVerdict';
@@ -17,8 +19,23 @@ import SocialLinksRow from '@/components/SocialLinksRow';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import UserReviewsSection from '@/components/UserReviewsSection';
 import ToolHubLinks from '@/components/ToolHubLinks';
+import ScreenshotGallery from '@/components/ScreenshotGallery';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
+
+/** Auto-detect screenshot images for a tool at build time */
+function getToolScreenshots(toolSlug: string): { src: string; alt: string }[] {
+  const dir = path.join(process.cwd(), 'public', 'images', 'tools', toolSlug);
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir).filter((f) => /^screenshot-\d+\.(webp|png|jpg)$/i.test(f));
+  files.sort(); // screenshot-1, screenshot-2, screenshot-3...
+
+  return files.map((f, i) => ({
+    src: `/images/tools/${toolSlug}/${f}`,
+    alt: `Screenshot ${i + 1}`,
+  }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -145,6 +162,7 @@ export default async function ReviewPage({ params }: PageProps) {
   const headings = extractHeadings(content);
   const [contentFirstHalf, contentSecondHalf] = splitContentAtMidpoint(content);
   const allArticles = getAllArticles();
+  const screenshots = getToolScreenshots(meta.toolSlug || slug.replace(/-review$/, ''));
 
   // Build pricing summary for QuickVerdict
   const pricingSummary = meta.pricing?.length > 0
@@ -211,6 +229,14 @@ export default async function ReviewPage({ params }: PageProps) {
             variant="hero"
             alt={`${meta.tool} screenshot`}
           />
+        </div>
+      )}
+
+      {/* Screenshot gallery — auto-detected from public/images/tools/{slug}/ */}
+      {screenshots.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-lg font-semibold text-void-50 mb-3">Screenshots</h2>
+          <ScreenshotGallery images={screenshots} />
         </div>
       )}
 
