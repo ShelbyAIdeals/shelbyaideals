@@ -117,14 +117,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   ) => {
     const { user } = await signUpWithEmail(email, password, meta);
     if (user) {
-      // Use .upsert() without .select().single() — the chained version hangs on production
-      await upsertProfileSafe({
-        id: user.id,
-        username: meta.username,
-        first_name: meta.firstName,
-        last_name: meta.lastName,
-        avatar_url: null,
-      });
+      // Profile creation may fail if email confirmation is required (no session = RLS blocks).
+      // That's OK — ensureProfile will create it on first login after confirmation.
+      try {
+        await upsertProfileSafe({
+          id: user.id,
+          username: meta.username,
+          first_name: meta.firstName,
+          last_name: meta.lastName,
+          avatar_url: null,
+        });
+      } catch {
+        // Expected when email confirmation is enabled — profile created on first login
+      }
 
       // Auto-subscribe to newsletter (non-blocking)
       try {
