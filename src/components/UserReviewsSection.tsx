@@ -67,7 +67,7 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
     <section className="mt-12" id="user-reviews">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-heading font-bold text-void-50">
-          {t('review.user_rating')}
+          {t('review.user_rating', 'User Rating')}
         </h2>
         {user && !userHasReview && !showForm && (
           <button
@@ -75,7 +75,7 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-signal-500/10 border border-signal-500/30 text-signal-400 text-sm font-medium hover:bg-signal-500/20 transition-all cursor-pointer"
           >
             <MessageSquarePlus size={16} />
-            {t('review.write_review')}
+            {t('review.write_review', 'Write a Review')}
           </button>
         )}
       </div>
@@ -83,19 +83,19 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
       {/* Loading state */}
       {loading && (
         <div className="py-8 text-center text-void-500 text-sm animate-pulse">
-          {t('common.loading')}
+          {t('common.loading', 'Loading...')}
         </div>
       )}
 
       {/* Error state */}
       {error && !loading && (
         <div className="py-8 text-center">
-          <p className="text-sm text-void-500">{t('common.error')}</p>
+          <p className="text-sm text-void-500">{t('common.error', 'Something went wrong')}</p>
           <button
             onClick={fetchReviews}
             className="mt-2 text-sm text-signal-400 hover:text-signal-300 cursor-pointer"
           >
-            {t('common.retry')}
+            {t('common.retry', 'Try again')}
           </button>
         </div>
       )}
@@ -114,7 +114,7 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
           {showForm && (
             <div className="p-5 rounded-xl border border-signal-500/30 bg-signal-500/5 mb-6">
               <h3 className="text-sm font-semibold text-void-200 mb-4">
-                {editingReview ? t('review.edit_review') : t('review.write_review')}
+                {editingReview ? t('review.edit_review', 'Edit your review') : t('review.write_review', 'Write a Review')}
               </h3>
               <ReviewForm
                 toolSlug={toolSlug}
@@ -125,7 +125,7 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
                 onClick={() => { setShowForm(false); setEditingReview(null); }}
                 className="mt-3 text-xs text-void-500 hover:text-void-300 cursor-pointer"
               >
-                {t('common.cancel')}
+                {t('common.cancel', 'Cancel')}
               </button>
             </div>
           )}
@@ -146,19 +146,19 @@ export default function UserReviewsSection({ toolSlug, toolName }: UserReviewsSe
                   onClick={() => setVisibleCount((prev) => prev + 5)}
                   className="w-full py-3 text-sm text-signal-400 hover:text-signal-300 border border-void-700/50 rounded-xl hover:bg-void-800/40 transition-all cursor-pointer"
                 >
-                  {t('common.show_more')} ({reviews.length - visibleCount} more)
+                  {t('common.show_more', 'Show more')} ({reviews.length - visibleCount} more)
                 </button>
               )}
             </div>
           ) : !showForm ? (
             <div className="py-8 text-center border border-void-700/30 rounded-xl">
-              <p className="text-sm text-void-500 mb-3">{t('review.no_reviews')}</p>
+              <p className="text-sm text-void-500 mb-3">{t('review.no_reviews', 'No reviews yet. Be the first!')}</p>
               {user && (
                 <button
                   onClick={() => setShowForm(true)}
                   className="text-sm text-signal-400 hover:text-signal-300 cursor-pointer"
                 >
-                  {t('review.write_review')}
+                  {t('review.write_review', 'Write a Review')}
                 </button>
               )}
             </div>

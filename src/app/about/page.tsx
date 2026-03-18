@@ -4,11 +4,11 @@ import { FlaskConical, Target, Users, DollarSign, ClipboardCheck, Twitter, Linke
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export const metadata: Metadata = {
-  title: 'About ShelbyAIDeals',
+  title: 'About ShelbyAI',
   description:
     'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
   openGraph: {
-    title: 'About ShelbyAIDeals',
+    title: 'About ShelbyAI',
     description:
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About ShelbyAIDeals',
+    title: 'About ShelbyAI',
     description:
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: ['https://shelby-ai.com/images/og-thumbnail.png'],
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           {/* Page Header */}
           <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-6">
-            About ShelbyAIDeals
+            About ShelbyAI
           </h1>
 
           {/* Mission Statement */}
@@ -64,7 +64,7 @@ export default function AboutPage() {
               <p>
                 <span className="font-semibold text-void-50">Hands-on testing.</span>{' '}
                 Every tool we review gets put through real-world scenarios &mdash;
-                writing copy, generating images, building automations, optimizing
+                creating videos, generating voiceovers, automating content distribution, optimizing
                 content. We don't just read the feature list; we use the product.
               </p>
               <p>

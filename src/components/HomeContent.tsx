@@ -93,10 +93,10 @@ export default function HomeContent({
         <div className="container-main">
           <ScrollReveal>
             <DealOfTheWeek
-              toolName="Jasper AI"
-              deal="7-Day Free Trial + 20% Off First 3 Months"
-              reviewSlug="jasper-ai-review"
-              affiliateUrl="https://www.jasper.ai"
+              toolName="Pictory"
+              deal="14-Day Free Trial — Turn Blog Posts into Videos"
+              reviewSlug="pictory-review"
+              affiliateUrl="https://pictory.ai?ref=fran26"
             />
           </ScrollReveal>
         </div>

@@ -35,9 +35,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Category Not Found' };
   }
 
+  // If this is a legacy slug, set canonical to the new category URL
+  const canonicalSlug = mapped && mapped !== slug ? mapped : slug;
+
   return {
     title: category.name,
     description: `${category.description} Tested and reviewed with real-world workflows.`,
+    alternates: {
+      canonical: `https://www.shelby-ai.com/categories/${canonicalSlug}/`,
+    },
     openGraph: {
       title: category.name,
       description: `${category.description} Tested and reviewed with real-world workflows.`,

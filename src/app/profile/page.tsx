@@ -157,7 +157,7 @@ export default function ProfilePage() {
   if (authLoading || !user) {
     return (
       <main className="max-w-3xl mx-auto px-4 py-16">
-        <div className="animate-pulse text-center text-void-500">{t('common.loading')}</div>
+        <div className="animate-pulse text-center text-void-500">{t('common.loading', 'Loading...')}</div>
       </main>
     );
   }
@@ -171,7 +171,7 @@ export default function ProfilePage() {
       {/* Back */}
       <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-void-400 hover:text-signal-400 mb-8 no-underline transition-colors">
         <ArrowLeft size={14} />
-        {t('common.back')}
+        {t('common.back', 'Back')}
       </Link>
 
       {/* Profile header */}
@@ -208,7 +208,7 @@ export default function ProfilePage() {
 
         <div className="flex items-center gap-2 shrink-0">
           <button onClick={() => setEditing(!editing)} className="px-4 py-2 text-sm font-medium border border-void-600/50 rounded-lg text-void-300 hover:text-void-100 hover:bg-void-700/40 transition-all cursor-pointer">
-            {editing ? t('common.cancel') : 'Edit Profile'}
+            {editing ? t('common.cancel', 'Cancel') : 'Edit Profile'}
           </button>
           <button onClick={handleSignOut} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer">
             <LogOut size={14} /> Sign Out
@@ -222,21 +222,21 @@ export default function ProfilePage() {
       {editing && (
         <div className="p-6 rounded-xl border border-void-700/50 bg-void-800/30 mb-8 space-y-4">
           <div>
-            <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.username')}</label>
+            <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.username', 'Username')}</label>
             <input type="text" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.first_name')}</label>
+              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.first_name', 'First Name')}</label>
               <input type="text" value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
             </div>
             <div>
-              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.last_name')}</label>
+              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.last_name', 'Last Name')}</label>
               <input type="text" value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
             </div>
           </div>
           <button onClick={handleSave} disabled={saving} className="px-6 py-2.5 rounded-lg bg-signal-500 text-void-950 font-bold text-sm hover:bg-signal-400 transition-all cursor-pointer disabled:opacity-50">
-            {saving ? t('common.loading') : t('common.save')}
+            {saving ? t('common.loading', 'Loading...') : t('common.save', 'Save')}
           </button>
         </div>
       )}
@@ -261,7 +261,7 @@ export default function ProfilePage() {
       {activeTab === 'profile' && (
         <>
           <section id="reviews" className="mb-12">
-            <h2 className="text-xl font-heading font-bold text-void-50 mb-6">{t('user.my_reviews')}</h2>
+            <h2 className="text-xl font-heading font-bold text-void-50 mb-6">{t('user.my_reviews', 'My Reviews')}</h2>
             {userReviews.length === 0 ? (
               <div className="py-10 text-center border border-void-700/30 rounded-xl">
                 <Star size={32} className="text-void-600 mx-auto mb-3" />

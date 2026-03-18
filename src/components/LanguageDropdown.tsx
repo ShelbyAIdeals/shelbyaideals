@@ -63,7 +63,7 @@ export default function LanguageDropdown() {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-void-300 hover:text-void-100 hover:bg-void-700/40 transition-all cursor-pointer"
-        aria-label={t('language.select')}
+        aria-label={t('language.select', 'Language')}
         aria-expanded={open}
         aria-haspopup="listbox"
       >
@@ -86,7 +86,7 @@ export default function LanguageDropdown() {
         <div
           className="absolute right-0 top-full mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-void-700/30 bg-void-900/60 backdrop-blur-2xl shadow-2xl z-50 py-2 animate-[fadeInUp_0.15s_ease-out]"
           role="listbox"
-          aria-label={t('language.select')}
+          aria-label={t('language.select', 'Language')}
         >
           {LANGUAGES.map((lang, idx) => {
             const isActive = lang.code === locale;

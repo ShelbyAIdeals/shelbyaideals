@@ -74,7 +74,7 @@ export default function UserMenu() {
               className="flex items-center gap-3 px-4 py-2.5 text-sm text-void-200 hover:text-void-50 hover:bg-void-700/40 transition-colors no-underline"
             >
               <User size={16} />
-              {t('user.profile')}
+              {t('user.profile', 'Profile')}
             </Link>
             <Link
               href="/profile#reviews"
@@ -82,7 +82,7 @@ export default function UserMenu() {
               className="flex items-center gap-3 px-4 py-2.5 text-sm text-void-200 hover:text-void-50 hover:bg-void-700/40 transition-colors no-underline"
             >
               <Star size={16} />
-              {t('user.my_reviews')}
+              {t('user.my_reviews', 'My Reviews')}
             </Link>
           </div>
 
@@ -96,7 +96,7 @@ export default function UserMenu() {
               className="flex items-center gap-3 w-full px-4 py-2.5 text-sm text-void-400 hover:text-red-400 hover:bg-void-700/40 transition-colors cursor-pointer"
             >
               <LogOut size={16} />
-              {t('auth.sign_out')}
+              {t('auth.sign_out', 'Sign Out')}
             </button>
           </div>
         </div>

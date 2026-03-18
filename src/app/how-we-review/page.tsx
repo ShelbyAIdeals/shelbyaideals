@@ -110,7 +110,7 @@ export default function HowWeReviewPage() {
                       4. Scoring
                     </h3>
                     <p>
-                      We assign a score out of 10 based on the criteria below.
+                      We assign a score out of 5 based on the criteria below.
                       Scores reflect overall value &mdash; a tool with a lower
                       price and solid performance can score higher than an
                       expensive tool with marginal improvements.

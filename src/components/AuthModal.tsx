@@ -64,7 +64,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
       onClose();
       resetForm();
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.error.invalid_credentials'));
+      setError(err instanceof Error ? err.message : t('auth.error.invalid_credentials', 'Invalid email or password'));
     } finally {
       setLoading(false);
     }
@@ -73,7 +73,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password.length < 6) {
-      setError(t('auth.error.weak_password'));
+      setError(t('auth.error.weak_password', 'Password must be at least 6 characters'));
       return;
     }
     setLoading(true);
@@ -86,11 +86,11 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     } catch (err) {
       const msg = err instanceof Error ? err.message : '';
       if (msg.includes('already registered')) {
-        setError(t('auth.error.email_taken'));
+        setError(t('auth.error.email_taken', 'This email is already registered'));
       } else if (msg.includes('username')) {
-        setError(t('auth.error.username_taken'));
+        setError(t('auth.error.username_taken', 'This username is already taken'));
       } else {
-        setError(msg || t('auth.error.generic'));
+        setError(msg || t('auth.error.generic', 'Something went wrong. Please try again.'));
       }
     } finally {
       setLoading(false);
@@ -104,7 +104,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
       await signInWithGoogle();
       // signInWithOAuth triggers browser redirect to Google automatically
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.error.generic'));
+      setError(err instanceof Error ? err.message : t('auth.error.generic', 'Something went wrong. Please try again.'));
       setLoading(false);
     }
   };
@@ -125,7 +125,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-1.5 rounded-lg text-void-400 hover:text-void-200 hover:bg-void-700/40 transition-colors cursor-pointer"
-          aria-label={t('common.close')}
+          aria-label={t('common.close', 'Close')}
         >
           <X size={18} />
         </button>
@@ -133,18 +133,18 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
         {/* Header */}
         <div className="px-8 pt-8 pb-4">
           <h2 className="text-2xl font-heading font-bold text-void-50">
-            {mode === 'login' ? t('auth.sign_in') : t('auth.sign_up')}
+            {mode === 'login' ? t('auth.sign_in', 'Sign In') : t('auth.sign_up', 'Sign Up')}
           </h2>
           <p className="text-sm text-void-400 mt-1">
             {mode === 'login'
-              ? t('auth.dont_have_account')
-              : t('auth.already_have_account')}
+              ? t('auth.dont_have_account', "Don't have an account?")
+              : t('auth.already_have_account', 'Already have an account?')}
             {' '}
             <button
               onClick={() => { setMode(mode === 'login' ? 'signup' : 'login'); setError(''); }}
               className="text-signal-400 hover:text-signal-300 font-medium transition-colors cursor-pointer"
             >
-              {mode === 'login' ? t('auth.sign_up') : t('auth.sign_in')}
+              {mode === 'login' ? t('auth.sign_up', 'Sign Up') : t('auth.sign_in', 'Sign In')}
             </button>
           </p>
         </div>
@@ -163,14 +163,14 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
-            {mode === 'login' ? t('auth.sign_in_google') : t('auth.sign_up_google')}
+            {mode === 'login' ? t('auth.sign_in_google', 'Sign in with Google') : t('auth.sign_up_google', 'Sign up with Google')}
           </button>
         </div>
 
         {/* Divider */}
         <div className="px-8 pb-4 flex items-center gap-4">
           <div className="flex-1 h-px bg-void-700/50" />
-          <span className="text-xs text-void-500 font-medium">{t('auth.or_continue_with')}</span>
+          <span className="text-xs text-void-500 font-medium">{t('auth.or_continue_with', 'Or continue with')}</span>
           <div className="flex-1 h-px bg-void-700/50" />
         </div>
 
@@ -182,7 +182,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
               <>
                 <input
                   type="text"
-                  placeholder={t('auth.username')}
+                  placeholder={t('auth.username', 'Username')}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -193,7 +193,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="text"
-                    placeholder={t('auth.first_name')}
+                    placeholder={t('auth.first_name', 'First Name')}
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
@@ -201,7 +201,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                   />
                   <input
                     type="text"
-                    placeholder={t('auth.last_name')}
+                    placeholder={t('auth.last_name', 'Last Name')}
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     required
@@ -214,7 +214,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             {/* Email */}
             <input
               type="email"
-              placeholder={t('auth.email')}
+              placeholder={t('auth.email', 'Email')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -224,7 +224,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             {/* Password */}
             <input
               type="password"
-              placeholder={t('auth.password')}
+              placeholder={t('auth.password', 'Password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -240,7 +240,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
                 type="button"
                 className="text-xs text-void-500 hover:text-signal-400 transition-colors cursor-pointer"
               >
-                {t('auth.forgot_password')}
+                {t('auth.forgot_password', 'Forgot password?')}
               </button>
             </div>
           )}
@@ -259,8 +259,8 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             className="w-full mt-4 px-4 py-3 rounded-xl bg-signal-500 text-void-950 font-bold text-sm hover:bg-signal-400 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading
-              ? (mode === 'login' ? t('auth.signing_in') : t('auth.creating_account'))
-              : (mode === 'login' ? t('auth.sign_in') : t('auth.sign_up'))
+              ? (mode === 'login' ? t('auth.signing_in', 'Signing in...') : t('auth.creating_account', 'Creating account...'))
+              : (mode === 'login' ? t('auth.sign_in', 'Sign In') : t('auth.sign_up', 'Sign Up'))
             }
           </button>
         </form>

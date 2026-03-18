@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | ShelbyAI',
   },
   description:
-    'We test AI video, audio, and marketing tools so small businesses can create more content without hiring more people. 31 tools reviewed hands-on.',
+    'We test AI video, audio, and marketing tools so small businesses can produce more content without hiring more people. 31 tools reviewed hands-on. No sponsored rankings.',
   keywords: [
     'AI video tools',
     'AI audio tools',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'ShelbyAI',
     title: 'ShelbyAI — AI Video, Audio & Marketing Tools for Small Business',
     description:
-      'We test AI video, audio, and marketing tools so small businesses can create more content without hiring more people.',
+      'We test AI video, audio, and marketing tools so small businesses can produce more content without hiring more people. 31 tools reviewed hands-on. No sponsored rankings.',
     images: [
       {
         url: 'https://shelby-ai.com/images/og-thumbnail.png',

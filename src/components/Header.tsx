@@ -12,10 +12,10 @@ import { useAuth } from '@/lib/auth-context';
 import { useTranslation } from '@/i18n/context';
 
 const navLinks = [
-  { labelKey: 'nav.tools', href: '/reviews' },
-  { labelKey: 'nav.comparisons', href: '/comparisons' },
-  { labelKey: 'nav.guides', href: '/guides' },
-  { labelKey: 'nav.newsletter', href: '/newsletter' },
+  { label: 'Tools', href: '/reviews' },
+  { label: 'Comparisons', href: '/comparisons' },
+  { label: 'Guides', href: '/guides' },
+  { label: 'Newsletter', href: '/newsletter' },
 ];
 
 export default function Header() {
@@ -154,7 +154,7 @@ export default function Header() {
                         : 'text-void-200 hover:text-void-50 hover:bg-void-700/40'
                     }`}
                   >
-                    {t(link.labelKey)}
+                    {link.label}
                     {'hasBadge' in link && (link as { hasBadge?: boolean }).hasBadge && (
                       <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-ember-400 ring-2 ring-void-950" />
                     )}
@@ -172,10 +172,10 @@ export default function Header() {
               <button
                 onClick={() => setPaletteOpen(true)}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-void-700/50 bg-void-800/40 text-void-400 hover:text-void-200 hover:border-void-600 hover:bg-void-800/70 transition-all cursor-pointer"
-                aria-label={t('nav.search')}
+                aria-label={'Search'}
               >
                 <Search size={15} />
-                <span className="text-sm">{t('nav.search')}</span>
+                <span className="text-sm">{'Search'}</span>
                 <kbd className="hidden xl:inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 text-[10px] font-mono font-medium text-void-500 bg-void-900/80 border border-void-700/60 rounded">
                   <Command size={10} />K
                 </kbd>
@@ -192,8 +192,8 @@ export default function Header() {
                 <button
                   onClick={toggleMist}
                   className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                  aria-label={mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
-                  title={mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
+                  aria-label={mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
+                  title={mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
                 >
                   {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
                 </button>
@@ -203,8 +203,8 @@ export default function Header() {
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                aria-label={lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
-                title={lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
+                aria-label={lightMode ? t('theme.dark_mode', 'Dark Mode') : t('theme.light_mode', 'White Mode')}
+                title={lightMode ? t('theme.dark_mode', 'Dark Mode') : t('theme.light_mode', 'White Mode')}
               >
                 {lightMode ? <Moon size={18} /> : <Sun size={18} />}
               </button>
@@ -223,13 +223,13 @@ export default function Header() {
                       className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-void-200 hover:text-void-50 rounded-lg hover:bg-void-700/40 transition-all cursor-pointer"
                     >
                       <LogIn size={16} />
-                      {t('auth.login')}
+                      {t('auth.login', 'Login')}
                     </button>
                     <button
                       onClick={() => openAuth('signup')}
                       className="px-4 py-2 text-sm font-bold rounded-lg bg-signal-500 text-void-950 hover:bg-signal-400 transition-all cursor-pointer"
                     >
-                      {t('auth.join_free')}
+                      {t('auth.join_free', 'Join for Free')}
                     </button>
                   </div>
                 )
@@ -241,7 +241,7 @@ export default function Header() {
               <button
                 onClick={() => setPaletteOpen(true)}
                 className="p-2 rounded-lg text-void-200 hover:text-signal-300 hover:bg-void-700/40 transition-colors cursor-pointer"
-                aria-label={t('nav.search')}
+                aria-label={'Search'}
               >
                 <Search size={22} />
               </button>
@@ -274,7 +274,7 @@ export default function Header() {
                             : 'text-void-100 hover:bg-void-700/40 hover:text-signal-300'
                         }`}
                       >
-                        {t(link.labelKey)}
+                        {link.label}
                       </Link>
                     </li>
                   );
@@ -290,7 +290,7 @@ export default function Header() {
                         : 'text-void-100 hover:bg-void-700/40 hover:text-signal-300'
                     }`}
                   >
-                    {t('nav.about')}
+                    {'About'}
                   </Link>
                 </li>
 
@@ -311,7 +311,7 @@ export default function Header() {
                       className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
                     >
                       {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-                      {mistOn ? t('theme.hide_mist') : t('theme.show_mist')}
+                      {mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
                     </button>
                   </li>
                 )}
@@ -322,7 +322,7 @@ export default function Header() {
                     className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
                   >
                     {lightMode ? <Moon size={18} /> : <Sun size={18} />}
-                    {lightMode ? t('theme.dark_mode') : t('theme.light_mode')}
+                    {lightMode ? t('theme.dark_mode', 'Dark Mode') : t('theme.light_mode', 'White Mode')}
                   </button>
                 </li>
 
@@ -337,13 +337,13 @@ export default function Header() {
                         onClick={() => openAuth('login')}
                         className="flex-1 py-2.5 text-sm font-semibold text-void-200 border border-void-600/50 rounded-lg hover:bg-void-700/40 transition-colors cursor-pointer"
                       >
-                        {t('auth.login')}
+                        {t('auth.login', 'Login')}
                       </button>
                       <button
                         onClick={() => openAuth('signup')}
                         className="flex-1 py-2.5 text-sm font-bold bg-signal-500 text-void-950 rounded-lg hover:bg-signal-400 transition-colors cursor-pointer"
                       >
-                        {t('auth.join_free')}
+                        {t('auth.join_free', 'Join for Free')}
                       </button>
                     </li>
                   </>

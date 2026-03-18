@@ -131,7 +131,7 @@ export default function NewsletterSignup({
           {/* ── Left column: headline + benefits ────────────────── */}
           <div>
             <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block">
-              {t('newsletter.join_creators', 'Join 500+ creators')}
+              {'Free Weekly Newsletter'}
             </span>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-6 leading-tight">

@@ -25,7 +25,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
   const initials = (profile?.first_name?.[0] ?? '') + (profile?.last_name?.[0] ?? '');
 
   const handleDelete = async () => {
-    if (!confirm(t('review.confirm_delete'))) return;
+    if (!confirm(t('review.confirm_delete', 'Are you sure you want to delete this review?'))) return;
     setDeleting(true);
     try {
       await deleteReview(review.id);
@@ -107,7 +107,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
                 className={`flex items-center gap-1 text-xs transition-colors cursor-pointer ${
                   voted === 'helpful' ? 'text-signal-400' : 'text-void-500 hover:text-void-300'
                 }`}
-                title={t('review.helpful')}
+                title={t('review.helpful', 'Helpful')}
               >
                 <ThumbsUp size={14} />
                 {helpfulCount > 0 && <span>{helpfulCount}</span>}
@@ -117,7 +117,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
                 className={`flex items-center gap-1 text-xs transition-colors cursor-pointer ${
                   voted === 'unhelpful' ? 'text-red-400' : 'text-void-500 hover:text-void-300'
                 }`}
-                title={t('review.not_helpful')}
+                title={t('review.not_helpful', 'Not helpful')}
               >
                 <ThumbsDown size={14} />
               </button>
@@ -133,7 +133,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
               className="flex items-center gap-1 text-xs text-void-500 hover:text-signal-400 transition-colors cursor-pointer"
             >
               <Pencil size={13} />
-              {t('review.edit_review')}
+              {t('review.edit_review', 'Edit your review')}
             </button>
             <button
               onClick={handleDelete}
@@ -141,7 +141,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
               className="flex items-center gap-1 text-xs text-void-500 hover:text-red-400 transition-colors cursor-pointer disabled:opacity-50"
             >
               <Trash2 size={13} />
-              {t('review.delete_review')}
+              {t('review.delete_review', 'Delete')}
             </button>
           </div>
         )}

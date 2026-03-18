@@ -25,7 +25,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
   if (!user) {
     return (
       <div className="text-center py-6 px-4 rounded-xl border border-void-700/50 bg-void-800/40">
-        <p className="text-sm text-void-400">{t('review.login_to_review')}</p>
+        <p className="text-sm text-void-400">{t('review.login_to_review', 'Log in to write a review')}</p>
       </div>
     );
   }
@@ -53,7 +53,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
         setBody('');
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.error.generic'));
+      setError(err instanceof Error ? err.message : t('auth.error.generic', 'Something went wrong. Please try again.'));
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
       {/* Star selector */}
       <div>
         <label className="text-sm font-medium text-void-300 mb-2 block">
-          {t('review.your_rating')}
+          {t('review.your_rating', 'Your Rating')}
         </label>
         <div className="flex items-center gap-1">
           {[1, 2, 3, 4, 5].map((star) => (
@@ -99,7 +99,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
       <div>
         <input
           type="text"
-          placeholder={t('review.review_title_placeholder')}
+          placeholder={t('review.review_title_placeholder', 'Summarize your experience')}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -111,7 +111,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
       {/* Body */}
       <div>
         <textarea
-          placeholder={t('review.review_body_placeholder')}
+          placeholder={t('review.review_body_placeholder', 'Share your experience with this tool...')}
           value={body}
           onChange={(e) => setBody(e.target.value)}
           maxLength={2000}
@@ -136,7 +136,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
         disabled={loading || rating === 0}
         className="px-6 py-2.5 rounded-xl bg-signal-500 text-void-950 font-bold text-sm hover:bg-signal-400 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {loading ? t('review.submitting') : (existingReview ? t('review.edit_review') : t('review.submit'))}
+        {loading ? t('review.submitting', 'Submitting...') : (existingReview ? t('review.edit_review', 'Edit your review') : t('review.submit', 'Submit Review'))}
       </button>
     </form>
   );

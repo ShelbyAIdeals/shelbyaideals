@@ -242,8 +242,8 @@ export default function Hero() {
                 <div className="w-24 h-24 rounded-2xl bg-void-900 border border-signal-500/20 flex flex-col items-center justify-center shadow-lg"
                   style={{ boxShadow: '0 0 40px rgba(10, 209, 200, 0.1)' }}
                 >
-                  <span className="text-3xl font-mono font-bold text-signal-400">4.8</span>
-                  <span className="text-[10px] text-void-400 uppercase tracking-wider">{t('hero.avg_rating', 'Avg Rating')}</span>
+                  <span className="text-lg font-mono font-bold text-signal-400 leading-tight text-center px-1">7–14</span>
+                  <span className="text-[10px] text-void-400 uppercase tracking-wider text-center leading-tight">{t('hero.days_tested', 'Days Tested Per Tool')}</span>
                 </div>
               </motion.div>
 
