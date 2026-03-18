@@ -136,35 +136,17 @@ export async function upsertProfile(profile: Partial<UserProfile> & { id: string
 }
 
 /**
- * Create or update a profile using direct PostgREST fetch.
- * The Supabase JS client's .upsert().select().single() hangs on production,
- * so we bypass it for write operations during signup.
+ * Create or update a profile without the .select().single() chain.
+ * The chained .upsert().select().single() hangs on production,
+ * but .upsert() alone works fine — the JS client handles auth/RLS properly.
  */
-export async function upsertProfileDirect(
+export async function upsertProfileSafe(
   profile: Partial<UserProfile> & { id: string },
-  accessToken?: string,
 ): Promise<void> {
-  if (!supabaseUrl || !supabaseAnonKey) return;
-
-  const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
-    'apikey': supabaseAnonKey,
-    'Prefer': 'resolution=merge-duplicates',
-  };
-  if (accessToken) {
-    headers['Authorization'] = `Bearer ${accessToken}`;
-  }
-
-  const response = await fetch(`${supabaseUrl}/rest/v1/profiles`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify(profile),
-  });
-
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`Profile creation failed: ${response.status} ${body}`);
-  }
+  const { error } = await supabase
+    .from('profiles')
+    .upsert(profile, { onConflict: 'id' });
+  if (error) throw error;
 }
 
 /* ── Review helpers ───────────────────────────────────────── */
@@ -282,7 +264,7 @@ export async function uploadAvatar(userId: string, file: File): Promise<string> 
   const { data } = supabase.storage.from('avatars').getPublicUrl(filePath);
   const publicUrl = `${data.publicUrl}?t=${Date.now()}`;
 
-  await upsertProfile({ id: userId, avatar_url: publicUrl });
+  await upsertProfileSafe({ id: userId, avatar_url: publicUrl });
   return publicUrl;
 }
 
