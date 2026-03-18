@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'FAQ — ShelbyAIDeals',
     description:
       'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

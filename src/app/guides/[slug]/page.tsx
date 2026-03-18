@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const metaDescription = guide.description || guide.excerpt;
 
     const ogImage = guide.featuredImage || {
-      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       width: 1200,
       height: 630,
     };
@@ -91,9 +91,9 @@ export default async function GuidePage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://shelby-ai.com' },
-    { name: 'Guides', url: 'https://shelby-ai.com/guides' },
-    { name: meta.title, url: `https://shelby-ai.com/guides/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com' },
+    { name: 'Guides', url: 'https://www.shelby-ai.com/guides' },
+    { name: meta.title, url: `https://www.shelby-ai.com/guides/${slug}` },
   ];
 
   const sidebar = (

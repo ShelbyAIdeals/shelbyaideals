@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'About ShelbyAI',
     description:
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

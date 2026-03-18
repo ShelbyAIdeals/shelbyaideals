@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description,
       type: 'article',
-      url: `https://shelby-ai.com/best-for/${slug}`,
+      url: `https://www.shelby-ai.com/best-for/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: page.description,
     },
     alternates: {
-      canonical: `https://shelby-ai.com/best-for/${slug}`,
+      canonical: `https://www.shelby-ai.com/best-for/${slug}`,
     },
   };
 }
@@ -55,9 +55,9 @@ export default async function BestForPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shelby-ai.com' },
-      { '@type': 'ListItem', position: 2, name: 'Best For', item: 'https://shelby-ai.com/best-for' },
-      { '@type': 'ListItem', position: 3, name: page.title, item: `https://shelby-ai.com/best-for/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.shelby-ai.com' },
+      { '@type': 'ListItem', position: 2, name: 'Best For', item: 'https://www.shelby-ai.com/best-for' },
+      { '@type': 'ListItem', position: 3, name: page.title, item: `https://www.shelby-ai.com/best-for/${slug}` },
     ],
   };
 
@@ -72,8 +72,8 @@ export default async function BestForPage({ params }: PageProps) {
       position: i + 1,
       name: tool.name,
       url: tool.reviewSlug
-        ? `https://shelby-ai.com/reviews/${tool.reviewSlug}`
-        : `https://shelby-ai.com/best-for/${slug}`,
+        ? `https://www.shelby-ai.com/reviews/${tool.reviewSlug}`
+        : `https://www.shelby-ai.com/best-for/${slug}`,
     })),
   };
 

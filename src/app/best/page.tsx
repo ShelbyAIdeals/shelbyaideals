@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Best AI Tools',
     description:
       'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

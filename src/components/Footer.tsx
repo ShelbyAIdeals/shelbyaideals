@@ -17,7 +17,6 @@ const categoryLinks = [
 
 const resourceLinks = [
   { labelKey: 'footer.res_all_tools', fallback: 'All Tools', href: '/reviews' },
-  { labelKey: 'footer.res_deals', fallback: 'Deals', href: '/deals' },
   { labelKey: 'footer.res_comparisons', fallback: 'Comparisons', href: '/comparisons' },
   { labelKey: 'footer.res_best_of', fallback: 'Best Of', href: '/best' },
   { labelKey: 'footer.res_guides', fallback: 'Guides', href: '/guides' },

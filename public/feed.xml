@@ -2,369 +2,558 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shelby AI Deals</title>
-    <link>https://shelby-ai.com</link>
+    <link>https://www.shelby-ai.com</link>
     <description>Honest AI tool reviews for creators, freelancers, and small teams.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2026 09:59:07 GMT</lastBuildDate>
-    <atom:link href="https://shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Mar 2026 18:40:47 GMT</lastBuildDate>
+    <atom:link href="https://www.shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ElevenLabs vs Murf vs Play.ht: Best AI Voice Generator in 2026</title>
+      <link>https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-vs-playht</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-vs-playht</guid>
+      <description>Three AI voice generators tested head-to-head. Which one sounds most natural and delivers the best value?</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-video-audio</category>
+    </item>
+    <item>
+      <title>Pictory vs Lumen5 vs InVideo: Best AI Video Creator for Small Business</title>
+      <link>https://www.shelby-ai.com/comparisons/pictory-vs-lumen5-vs-invideo</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/pictory-vs-lumen5-vs-invideo</guid>
+      <description>We tested all three AI video creators side by side. Here&apos;s which one actually delivers for small business content.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-video-audio</category>
+    </item>
+    <item>
+      <title>Chatbase Review 2026: Build Custom AI Chatbots for Your Website</title>
+      <link>https://www.shelby-ai.com/reviews/chatbase-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/chatbase-review</guid>
+      <description>This Chatbase review evaluates the platform&apos;s ability to create custom AI chatbots tailored to your business needs, providing a detailed look at its features, pricing, and competition.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-automation</category>
+    </item>
+    <item>
+      <title>ChatGPT Review 2026: The AI That Started It All — Still the Best?</title>
+      <link>https://www.shelby-ai.com/reviews/chatgpt-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/chatgpt-review</guid>
+      <description>This ChatGPT review explores whether the AI tool that started it all remains the best choice in 2026 for versatile writing and creative tasks.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>Claude AI Review 2026: The Thoughtful Alternative to ChatGPT</title>
+      <link>https://www.shelby-ai.com/reviews/claude-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/claude-ai-review</guid>
+      <description>In this Claude AI review, we delve into its thoughtful approach to AI writing, offering nuanced responses for writers, researchers, and developers.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>Decktopus AI Review 2026: AI Presentations in Minutes</title>
+      <link>https://www.shelby-ai.com/reviews/decktopus-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/decktopus-ai-review</guid>
+      <description>Our Decktopus AI review reveals how this AI presentation maker allows professionals to create polished slides in minutes, offering a competitive edge in the rapidly evolving market of AI productivity tools.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-productivity</category>
+    </item>
+    <item>
+      <title>Easy Peasy AI Review 2026: All-in-One AI Writing Assistant</title>
+      <link>https://www.shelby-ai.com/reviews/easy-peasy-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/easy-peasy-ai-review</guid>
+      <description>Our Easy Peasy AI review 2026 explores this affordable all-in-one tool for content creators seeking AI-driven writing and image generation capabilities.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>ElevenLabs Review 2026: The Best AI Voice Generator for Creators?</title>
+      <link>https://www.shelby-ai.com/reviews/elevenlabs-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/elevenlabs-review</guid>
+      <description>This ElevenLabs review explores whether it stands as the best AI voice generator in 2026, evaluating its features, pricing, and competition.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
+    <item>
+      <title>Fliki Review 2026: Turn Text Into Videos with AI Voices</title>
+      <link>https://www.shelby-ai.com/reviews/fliki-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/fliki-review</guid>
+      <description>This Fliki review explores how the AI tool transforms text into video content with lifelike AI voices, making it a strong contender for content creators seeking efficiency.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
+    <item>
+      <title>Frase Review 2026: AI Content Optimization That Actually Ranks</title>
+      <link>https://www.shelby-ai.com/reviews/frase-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/frase-review</guid>
+      <description>Our Frase review reveals how this AI content optimization tool empowers content marketers with AI-driven briefs and SERP-optimized articles, standing out in a crowded field.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-seo-tools</category>
+    </item>
+    <item>
+      <title>Google Gemini Review 2026: Can Google&apos;s AI Compete with ChatGPT?</title>
+      <link>https://www.shelby-ai.com/reviews/google-gemini-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/google-gemini-review</guid>
+      <description>This Google Gemini review explores how the AI tool integrates seamlessly into Google Workspace but faces stiff competition from ChatGPT and others in the AI writing space.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>Grok Review 2026: Elon Musk&apos;s Unfiltered AI on X</title>
+      <link>https://www.shelby-ai.com/reviews/grok-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/grok-review</guid>
+      <description>Our Grok review explores Elon Musk&apos;s unfiltered AI tool, designed for X power users seeking real-time data integration and fewer content restrictions.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>Julius AI Review 2026: AI Data Analysis for Non-Technical Teams</title>
+      <link>https://www.shelby-ai.com/reviews/julius-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/julius-ai-review</guid>
+      <description>In this Julius AI review, we evaluate its capabilities as a user-friendly AI data analysis tool designed for non-technical teams. Discover its strengths, weaknesses, and how it stands against competitors.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-productivity</category>
+    </item>
+    <item>
+      <title>Leonardo AI Review 2026: Free AI Image Generation That Punches Above Its Weight</title>
+      <link>https://www.shelby-ai.com/reviews/leonardo-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/leonardo-ai-review</guid>
+      <description>In our Leonardo AI review, we explore how this free AI image generator stands out for game developers and creatives with its fine-tuning capabilities and affordable pricing.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
+    <item>
+      <title>Mangools Review 2026: Affordable SEO for Small Sites and Freelancers</title>
+      <link>https://www.shelby-ai.com/reviews/mangools-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/mangools-review</guid>
+      <description>In our Mangools review, we explore how this affordable SEO tool caters to freelancers and small sites with its robust keyword research and SERP analysis capabilities.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-seo-tools</category>
+    </item>
+    <item>
+      <title>Midjourney Review 2026: The Gold Standard of AI Image Generation</title>
+      <link>https://www.shelby-ai.com/reviews/midjourney-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/midjourney-review</guid>
+      <description>Our Midjourney review 2026 evaluates why it stands as the gold standard in AI image generation, delivering unparalleled quality and functionality for designers and creators.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
+    <item>
+      <title>Mixo Review 2026: Launch a Website in 30 Seconds with AI</title>
+      <link>https://www.shelby-ai.com/reviews/mixo-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/mixo-review</guid>
+      <description>Our Mixo review explores how this AI website builder enables entrepreneurs to create landing pages in just 30 seconds, making it a top choice for rapid idea validation.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-coding-tools</category>
+    </item>
+    <item>
+      <title>Mubert Review 2026: AI-Generated Music for Creators and Developers</title>
+      <link>https://www.shelby-ai.com/reviews/mubert-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/mubert-review</guid>
+      <description>In this Mubert review, we explore how AI-generated music is transforming content creation for YouTubers, podcasters, and app developers with its royalty-free tracks.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
+    <item>
+      <title>Perplexity Review 2026: AI Search Engine That Cites Its Sources</title>
+      <link>https://www.shelby-ai.com/reviews/perplexity-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/perplexity-review</guid>
+      <description>Our Perplexity review explores how this AI search engine stands out by providing cited, trustworthy answers for researchers and professionals.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-productivity</category>
+    </item>
+    <item>
+      <title>Rytr Review 2026: Budget AI Writer for Quick Content Needs</title>
+      <link>https://www.shelby-ai.com/reviews/rytr-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/rytr-review</guid>
+      <description>Our Rytr review dives into its strengths as a budget AI writer for solopreneurs and freelancers needing quick content solutions without breaking the bank.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-writing-tools</category>
+    </item>
+    <item>
+      <title>Simplified Review 2026: Design + Write + Video in One AI Platform</title>
+      <link>https://www.shelby-ai.com/reviews/simplified-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/simplified-review</guid>
+      <description>Our Simplified review explores how this all-in-one AI platform effectively combines design, writing, and video creation for small teams, but falls short in some areas.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Fran Shelby</author>
+      <category>ai-design-tools</category>
+    </item>
     <item>
       <title>Grammarly Review 2026: More Than a Spell Checker for Professional Writers</title>
-      <link>https://shelby-ai.com/reviews/grammarly-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/grammarly-review</guid>
+      <link>https://www.shelby-ai.com/reviews/grammarly-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/grammarly-review</guid>
       <description>Our Grammarly review examines its capabilities beyond basic spell checking, revealing why it&apos;s a top choice for professional writers seeking grammar, clarity, and tone assistance.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Otter.ai Review 2026: Best AI Meeting Notes for Freelancers &amp; Small Teams</title>
-      <link>https://shelby-ai.com/reviews/otter-ai-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/otter-ai-review</guid>
+      <link>https://www.shelby-ai.com/reviews/otter-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/otter-ai-review</guid>
       <description>Our Otter.ai review explores how this AI-powered tool excels in creating accurate meeting notes, making it a top choice for freelancers and small teams.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>Runway ML Review 2026: AI Video Editing for Creators Who Aren&apos;t Editors</title>
-      <link>https://shelby-ai.com/reviews/runway-ml-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/runway-ml-review</guid>
+      <link>https://www.shelby-ai.com/reviews/runway-ml-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/runway-ml-review</guid>
       <description>Our Runway ML review explores its AI video editing capabilities for creators who aren&apos;t video pros, evaluating its features, pricing, and competition in 2026.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>SEMrush Review 2026: Is the Price Tag Justified for Small Teams?</title>
-      <link>https://shelby-ai.com/reviews/semrush-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/semrush-review</guid>
+      <link>https://www.shelby-ai.com/reviews/semrush-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/semrush-review</guid>
       <description>Our SEMrush review for small business reveals whether the premium pricing is worth it for small teams and freelancers in 2026.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-seo-tools</category>
     </item>
     <item>
       <title>Synthesia Review 2026: AI Video Without a Camera (Is It Actually Good?)</title>
-      <link>https://shelby-ai.com/reviews/synthesia-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/synthesia-review</guid>
+      <link>https://www.shelby-ai.com/reviews/synthesia-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/synthesia-review</guid>
       <description>In this Synthesia review, we dissect whether this AI video generator lives up to expectations for creating training and marketing content without cameras or actors.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>ChatGPT vs Jasper vs Claude for Content Writing: Honest Comparison</title>
-      <link>https://shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude</guid>
+      <link>https://www.shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude</guid>
       <description>Comparing ChatGPT, Jasper AI, and Claude for writing reveals strengths in different scenarios. From ease of use to pricing, this analysis covers all aspects of AI writing tools.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Descript vs Riverside vs CapCut: Best AI Video Editor for Creators</title>
-      <link>https://shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut</guid>
+      <link>https://www.shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut</guid>
       <description>In the battle of Descript vs Riverside vs CapCut, creators are seeking the best AI video editor for diverse needs. We compare these tools to identify strengths across different scenarios.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Grammarly vs ProWritingAid vs Hemingway: Best AI Editor for Freelance Writers</title>
-      <link>https://shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway</guid>
+      <link>https://www.shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway</guid>
       <description>In this comparison of Grammarly, ProWritingAid, and Hemingway, we evaluate which AI editor offers the best tools for freelance writers, focusing on output quality, pricing, and ease of use.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Midjourney vs DALL-E vs Leonardo AI: Best AI Image Generator for Marketers</title>
-      <link>https://shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</guid>
+      <link>https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</guid>
       <description>In the battle of Midjourney vs DALL-E vs Leonardo AI, we explore which AI image generator offers the best features for marketers. From pricing to ease of use, we cover all angles.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Notion AI vs ClickUp AI vs Monday AI: Best AI Project Management for Small Teams</title>
-      <link>https://shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday</guid>
+      <link>https://www.shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday</guid>
       <description>Notion AI vs ClickUp AI vs Monday AI compared. Find the best AI project management tool for small teams based on features, ease of use, and pricing.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>Otter.ai vs Fireflies vs Fathom: Best AI Meeting Assistant</title>
-      <link>https://shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom</guid>
+      <link>https://www.shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom</guid>
       <description>In the battle of Otter vs Fireflies vs Fathom, we compare these AI tools to help you choose the best AI meeting notes tool for your needs, covering features, pricing, and more.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>Surfer SEO vs Clearscope vs Frase: Best Content Optimizer for Small Teams</title>
-      <link>https://shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase</guid>
+      <link>https://www.shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase</guid>
       <description>In this comprehensive comparison of Surfer SEO, Clearscope, and Frase, we evaluate which content optimization tool offers the best features, ease of use, and value for small teams.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-seo-tools</category>
     </item>
     <item>
       <title>Writesonic vs Rytr vs Koala: Best Budget AI Writer Under $20/mo</title>
-      <link>https://shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala</guid>
+      <link>https://www.shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala</guid>
       <description>In the battle of Writesonic vs Rytr vs Koala, we compare these budget AI writing tools to find the best option under $20/mo. Discover which tool excels in output quality, features, and pricing value.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Zapier vs Make.com: Which Automation Tool Saves More Time (and Money)?</title>
-      <link>https://shelby-ai.com/comparisons/zapier-vs-make</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/zapier-vs-make</guid>
+      <link>https://www.shelby-ai.com/comparisons/zapier-vs-make</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/zapier-vs-make</guid>
       <description>Zapier vs Make.com — we compare pricing, integrations, ease of use, and real-world workflow performance. See which automation tool wins for freelancers, small teams, and complex workflows.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>Best AI Automation Tools for Non-Technical Founders</title>
-      <link>https://shelby-ai.com/best/best-ai-automation-tools</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-automation-tools</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-automation-tools</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-automation-tools</guid>
       <description>Discover the best AI automation tools for non-technical founders in our comprehensive roundup. We evaluated 7 top tools based on output quality, ease of use, and value for money.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>Best AI Design Tools for Non-Designers (Social Media, Ads, Decks)</title>
-      <link>https://shelby-ai.com/best/best-ai-design-tools-non-designers</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-design-tools-non-designers</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-design-tools-non-designers</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-design-tools-non-designers</guid>
       <description>Discover the best AI design tools for non-designers, focusing on social media, ads, and decks. We evaluated over 10 tools and ranked the top 6 based on user-friendliness, features, and pricing.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Best AI SEO Tools in 2026: Tested for Small Sites</title>
-      <link>https://shelby-ai.com/best/best-ai-seo-tools</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-seo-tools</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-seo-tools</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-seo-tools</guid>
       <description>Discover the 6 best AI SEO tools in 2026, carefully ranked based on output quality, value, and ease of use. Includes a top free option for transparency.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-seo-tools</category>
     </item>
     <item>
       <title>5 Best AI Tools for Small Marketing Teams in 2026</title>
-      <link>https://shelby-ai.com/best/best-ai-tools-marketing-teams</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-tools-marketing-teams</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-tools-marketing-teams</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-tools-marketing-teams</guid>
       <description>The 5 best AI tools for small marketing teams in 2026, picked from 20+ options. Ranked by features, value, and ease of use.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>Best AI Tools for Real Estate Agents: Content, Listings &amp; Follow-Up</title>
-      <link>https://shelby-ai.com/best/best-ai-tools-real-estate</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-tools-real-estate</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-tools-real-estate</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-tools-real-estate</guid>
       <description>The best AI tools for real estate agents in 2026. Six top picks for content creation, listings, and follow-up ranked by output quality and value.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>Best AI Video Tools for Content Creators (No Editing Skills Needed)</title>
-      <link>https://shelby-ai.com/best/best-ai-video-tools-creators</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-video-tools-creators</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-video-tools-creators</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-video-tools-creators</guid>
       <description>Discover the best AI video tools for creators with no editing skills required. We&apos;ve evaluated 6 top tools based on ease of use, output quality, and value for money.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Best Free AI Tools for Solopreneurs (That Are Actually Useful)</title>
-      <link>https://shelby-ai.com/best/best-free-ai-tools-solopreneurs</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-free-ai-tools-solopreneurs</guid>
+      <link>https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs</guid>
       <description>Explore the best free AI tools for solopreneurs in 2026, ranked by output quality, ease of use, and value. Discover five tools that truly stand out.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>How to Create an AI-Powered Client Onboarding System (For Freelancers)</title>
-      <link>https://shelby-ai.com/guides/ai-client-onboarding</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/ai-client-onboarding</guid>
+      <link>https://www.shelby-ai.com/guides/ai-client-onboarding</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/ai-client-onboarding</guid>
       <description>Discover how to streamline and automate your client onboarding process using AI tools, making your freelance business more efficient and client-friendly.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>How to Build a Complete AI Content Workflow (From Idea to Publish)</title>
-      <link>https://shelby-ai.com/guides/ai-content-workflow</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/ai-content-workflow</guid>
+      <link>https://www.shelby-ai.com/guides/ai-content-workflow</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/ai-content-workflow</guid>
       <description>Discover how to streamline your ai content workflow, from brainstorming ideas to publishing polished articles, using top AI tools and strategies.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>AI Tools for eCommerce Store Owners: Product Descriptions to Customer Service</title>
-      <link>https://shelby-ai.com/guides/ai-tools-ecommerce</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/ai-tools-ecommerce</guid>
+      <link>https://www.shelby-ai.com/guides/ai-tools-ecommerce</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/ai-tools-ecommerce</guid>
       <description>Streamline your eCommerce operations from product descriptions to customer service using AI tools. Enhance efficiency and improve customer satisfaction by following our guide.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>AI Tools for Freelance Copywriters: Stay Competitive Without Selling Out</title>
-      <link>https://shelby-ai.com/guides/ai-tools-for-copywriters</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/ai-tools-for-copywriters</guid>
+      <link>https://www.shelby-ai.com/guides/ai-tools-for-copywriters</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/ai-tools-for-copywriters</guid>
       <description>Discover essential AI tools for copywriters to enhance productivity and creativity without compromising on quality.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>AI Tools for Podcasters: Record, Edit, Transcribe &amp; Repurpose</title>
-      <link>https://shelby-ai.com/guides/ai-tools-for-podcasters</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/ai-tools-for-podcasters</guid>
+      <link>https://www.shelby-ai.com/guides/ai-tools-for-podcasters</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/ai-tools-for-podcasters</guid>
       <description>Discover how using AI tools for podcasters can streamline your production workflow, from recording and editing to transcribing and repurposing content.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>How to Automate Your Marketing with Zapier + AI (Step-by-Step)</title>
-      <link>https://shelby-ai.com/guides/automate-marketing-ai-zapier</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/automate-marketing-ai-zapier</guid>
+      <link>https://www.shelby-ai.com/guides/automate-marketing-ai-zapier</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/automate-marketing-ai-zapier</guid>
       <description>Discover how to automate marketing with AI using Zapier, saving time and boosting efficiency in your marketing efforts.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>How to Use AI for SEO: A Practical Guide for Beginners</title>
-      <link>https://shelby-ai.com/guides/how-to-use-ai-for-seo</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/how-to-use-ai-for-seo</guid>
+      <link>https://www.shelby-ai.com/guides/how-to-use-ai-for-seo</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-ai-for-seo</guid>
       <description>Learn how to use AI for SEO to enhance your website&apos;s visibility with this beginner-friendly guide. Achieve higher rankings and streamline your content strategy efficiently.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-seo-tools</category>
     </item>
     <item>
       <title>How to Repurpose One Blog Post Into 10 Pieces of Content Using AI</title>
-      <link>https://shelby-ai.com/guides/repurpose-content-with-ai</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/repurpose-content-with-ai</guid>
+      <link>https://www.shelby-ai.com/guides/repurpose-content-with-ai</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/repurpose-content-with-ai</guid>
       <description>Learn how to repurpose content with AI to transform a single blog post into 10 different pieces of content, boosting your productivity and reach.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
     <item>
       <title>How to Write a Blog Post With AI (Without It Reading Like AI)</title>
-      <link>https://shelby-ai.com/guides/write-blog-post-with-ai</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/write-blog-post-with-ai</guid>
+      <link>https://www.shelby-ai.com/guides/write-blog-post-with-ai</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/write-blog-post-with-ai</guid>
       <description>Learn how to write a blog post with AI that feels human and authentic. This guide helps you craft engaging content using AI tools without losing your personal touch.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Pictory Review 2026: Turn Blog Posts Into Videos (Does It Actually Work?)</title>
-      <link>https://shelby-ai.com/reviews/pictory-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/pictory-review</guid>
+      <link>https://www.shelby-ai.com/reviews/pictory-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/pictory-review</guid>
       <description>Pictory turns text into videos automatically using AI. We tested it with 20 real blog posts to see if the output is genuinely publish-worthy or just a gimmick.</description>
       <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Make.com Review 2026: The Best Automation Platform for Non-Developers?</title>
-      <link>https://shelby-ai.com/reviews/make-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/make-review</guid>
+      <link>https://www.shelby-ai.com/reviews/make-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/make-review</guid>
       <description>Make.com (formerly Integromat) lets you build complex automations visually. We automated 15 real workflows over six weeks to test its limits and value.</description>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-automation</category>
     </item>
     <item>
       <title>Surfer SEO Review 2026: The Content Optimization Tool Freelancers Actually Need</title>
-      <link>https://shelby-ai.com/reviews/surfer-seo-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/surfer-seo-review</guid>
+      <link>https://www.shelby-ai.com/reviews/surfer-seo-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/surfer-seo-review</guid>
       <description>We used Surfer SEO to optimize 20 articles over 90 days. Here is whether the $89/mo price tag is justified for freelancers and small content sites.</description>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-seo-tools</category>
     </item>
     <item>
       <title>Descript Review 2026: Can It Replace Your Entire Video Editing Suite?</title>
-      <link>https://shelby-ai.com/reviews/descript-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/descript-review</guid>
+      <link>https://www.shelby-ai.com/reviews/descript-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/descript-review</guid>
       <description>Descript promises text-based video editing that anyone can use. We spent 45 days editing real client projects to find out if it truly delivers.</description>
       <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-design-tools</category>
     </item>
     <item>
       <title>Writesonic Review 2026: Best Budget AI Writer for Small Teams?</title>
-      <link>https://shelby-ai.com/reviews/writesonic-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/writesonic-review</guid>
+      <link>https://www.shelby-ai.com/reviews/writesonic-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/writesonic-review</guid>
       <description>At $16/mo, Writesonic is one of the cheapest serious AI writers. We tested it for 30 days on real content to find out if budget pricing means budget quality.</description>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Jasper vs Copy.ai: Which AI Writer Actually Delivers? (2026 Test)</title>
-      <link>https://shelby-ai.com/comparisons/jasper-vs-copy-ai</link>
-      <guid isPermaLink="true">https://shelby-ai.com/comparisons/jasper-vs-copy-ai</guid>
+      <link>https://www.shelby-ai.com/comparisons/jasper-vs-copy-ai</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/jasper-vs-copy-ai</guid>
       <description>We tested Jasper and Copy.ai on the exact same briefs — ads, blog posts, emails, and sales copy. Here is who wins and when each tool is better.</description>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>7 Best AI Writing Tools for Freelancers in 2026 (Tested &amp; Ranked)</title>
-      <link>https://shelby-ai.com/best/best-ai-writing-tools-freelancers</link>
-      <guid isPermaLink="true">https://shelby-ai.com/best/best-ai-writing-tools-freelancers</guid>
+      <link>https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers</guid>
       <description>We tested 12 AI writing tools and narrowed it down to 7 that actually deliver value for freelancers. Ranked by output quality, price, and real-world usability.</description>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Copy.ai Review 2026: Can It Replace a Freelance Copywriter?</title>
-      <link>https://shelby-ai.com/reviews/copy-ai-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/copy-ai-review</guid>
+      <link>https://www.shelby-ai.com/reviews/copy-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/copy-ai-review</guid>
       <description>We tested Copy.ai on real client work — ads, emails, blog posts, and sales pages. Here is whether it can actually replace hiring a freelance copywriter.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>Jasper AI Review 2026: Is It Still Worth It for Content Creators?</title>
-      <link>https://shelby-ai.com/reviews/jasper-ai-review</link>
-      <guid isPermaLink="true">https://shelby-ai.com/reviews/jasper-ai-review</guid>
+      <link>https://www.shelby-ai.com/reviews/jasper-ai-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/jasper-ai-review</guid>
       <description>We spent 30 days testing Jasper AI on real content projects. Here is our honest take on pricing, output quality, and whether it is worth it in 2026.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-writing-tools</category>
     </item>
     <item>
       <title>The Solopreneur AI Stack: Every Tool You Need for Under $100/mo</title>
-      <link>https://shelby-ai.com/guides/solopreneur-ai-stack</link>
-      <guid isPermaLink="true">https://shelby-ai.com/guides/solopreneur-ai-stack</guid>
+      <link>https://www.shelby-ai.com/guides/solopreneur-ai-stack</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/solopreneur-ai-stack</guid>
       <description>The complete AI tool stack for solopreneurs — writing, design, automation, SEO, and productivity — all tested and selected for under $100 per month.</description>
       <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
-      <author>ShelbyAI Team</author>
+      <author>Fran Shelby</author>
       <category>ai-productivity</category>
     </item>
   </channel>

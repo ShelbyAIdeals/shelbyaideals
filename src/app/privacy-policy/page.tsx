@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy',
     description:
       'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

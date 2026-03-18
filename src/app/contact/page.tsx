@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'Contact Us',
     description:
       'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

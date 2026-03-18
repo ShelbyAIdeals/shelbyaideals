@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       'Suggest an AI tool for us to review. We test every submission with real-world workflows and publish honest, in-depth reviews.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'Submit a Tool',
     description:
       'Suggest an AI tool for us to review. We test every submission with real-world workflows and publish honest, in-depth reviews.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'Affiliate Disclosure',
     description:
       'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

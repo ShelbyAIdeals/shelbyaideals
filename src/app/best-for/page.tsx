@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Find the best AI tools for your specific use case. Curated recommendations for writers, freelancers, marketers, startups, and more. Tested and reviewed.',
   alternates: {
-    canonical: 'https://shelby-ai.com/best-for',
+    canonical: 'https://www.shelby-ai.com/best-for',
   },
 };
 

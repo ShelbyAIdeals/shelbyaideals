@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Search, TestTube, Scale, Star, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Search, TestTube, Scale, Star, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'How We Review',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
       'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: 'How We Review',
     description:
       'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 
@@ -126,7 +127,7 @@ export default function HowWeReviewPage() {
                 Scoring Criteria
               </h2>
               <p className="mb-4">
-                Each tool is scored on a 0&ndash;10 scale across these factors:
+                Each tool is scored on a 0&ndash;5 scale across these factors:
               </p>
 
               <div className="rounded-xl border border-void-700/50 overflow-hidden">
@@ -216,6 +217,147 @@ export default function HowWeReviewPage() {
                 </a>
                 .
               </p>
+            </section>
+
+            {/* Scoring in Practice */}
+            <section>
+              <h2 className="text-xl font-bold text-void-100 mb-4">
+                Scoring in Practice: Pictory Review Example
+              </h2>
+              <p className="mb-4">
+                To make our methodology concrete, here&apos;s how we scored{' '}
+                <Link href="/reviews/pictory-review" className="text-signal-400 hover:text-signal-300 underline">
+                  Pictory
+                </Link>{' '}
+                across each criterion during our 14-day hands-on test:
+              </p>
+
+              <div className="rounded-xl border border-void-700/50 overflow-hidden mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-void-800 text-void-200">
+                      <th className="text-left px-4 py-3 font-semibold">Criterion</th>
+                      <th className="text-left px-4 py-3 font-semibold">Weight</th>
+                      <th className="text-left px-4 py-3 font-semibold">Score</th>
+                      <th className="text-left px-4 py-3 font-semibold">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-void-700/50">
+                    <tr className="bg-void-950">
+                      <td className="px-4 py-3 font-medium text-void-200">Output Quality</td>
+                      <td className="px-4 py-3 text-signal-400">30%</td>
+                      <td className="px-4 py-3 text-void-200">3.5/5</td>
+                      <td className="px-4 py-3">Blog-to-video conversion works but AI voices need improvement</td>
+                    </tr>
+                    <tr className="bg-void-900/50">
+                      <td className="px-4 py-3 font-medium text-void-200">Ease of Use</td>
+                      <td className="px-4 py-3 text-signal-400">20%</td>
+                      <td className="px-4 py-3 text-void-200">4.0/5</td>
+                      <td className="px-4 py-3">No editing skills needed; intuitive interface</td>
+                    </tr>
+                    <tr className="bg-void-950">
+                      <td className="px-4 py-3 font-medium text-void-200">Value for Money</td>
+                      <td className="px-4 py-3 text-signal-400">25%</td>
+                      <td className="px-4 py-3 text-void-200">3.5/5</td>
+                      <td className="px-4 py-3">$19/mo starter plan is fair for the output quality</td>
+                    </tr>
+                    <tr className="bg-void-900/50">
+                      <td className="px-4 py-3 font-medium text-void-200">Features</td>
+                      <td className="px-4 py-3 text-signal-400">15%</td>
+                      <td className="px-4 py-3 text-void-200">3.0/5</td>
+                      <td className="px-4 py-3">Limited customization; no green screen or webcam</td>
+                    </tr>
+                    <tr className="bg-void-950">
+                      <td className="px-4 py-3 font-medium text-void-200">Support &amp; Docs</td>
+                      <td className="px-4 py-3 text-signal-400">10%</td>
+                      <td className="px-4 py-3 text-void-200">3.5/5</td>
+                      <td className="px-4 py-3">Good documentation but slow email support</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr className="bg-void-800">
+                      <td className="px-4 py-3 font-bold text-void-100">Final Score</td>
+                      <td className="px-4 py-3" />
+                      <td className="px-4 py-3 font-bold text-signal-400">3.5/5</td>
+                      <td className="px-4 py-3" />
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <p className="mb-2">
+                <Link
+                  href="/reviews/pictory-review"
+                  className="inline-flex items-center gap-1.5 text-signal-400 hover:text-signal-300 font-semibold no-underline"
+                >
+                  Read the full Pictory review
+                  <ArrowRight size={14} />
+                </Link>
+              </p>
+              <p className="text-void-400 text-sm">
+                Every review on this site follows this same scoring methodology.
+                You can see the breakdown in each review&apos;s verdict section.
+              </p>
+            </section>
+
+            {/* See Our Reviews */}
+            <section>
+              <h2 className="text-xl font-bold text-void-100 mb-4">
+                See Our Reviews
+              </h2>
+              <p className="mb-6">
+                Here are a few examples of our methodology in action:
+              </p>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                <Link
+                  href="/reviews/pictory-review"
+                  className="rounded-xl border border-void-700/50 bg-void-900/50 p-5 no-underline hover:border-signal-500/30 hover:-translate-y-0.5 transition-all block group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-base font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      Pictory
+                    </span>
+                    <span className="text-sm font-bold text-signal-400">3.5/5</span>
+                  </div>
+                  <p className="text-xs text-void-400 mb-3">AI video creator for turning blog posts into videos</p>
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
+                    Read Review <ArrowRight size={12} />
+                  </span>
+                </Link>
+
+                <Link
+                  href="/reviews/elevenlabs-review"
+                  className="rounded-xl border border-void-700/50 bg-void-900/50 p-5 no-underline hover:border-signal-500/30 hover:-translate-y-0.5 transition-all block group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-base font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      ElevenLabs
+                    </span>
+                    <span className="text-sm font-bold text-signal-400">4.0/5</span>
+                  </div>
+                  <p className="text-xs text-void-400 mb-3">AI voice generator with industry-leading natural speech</p>
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
+                    Read Review <ArrowRight size={12} />
+                  </span>
+                </Link>
+
+                <Link
+                  href="/reviews/make-review"
+                  className="rounded-xl border border-void-700/50 bg-void-900/50 p-5 no-underline hover:border-signal-500/30 hover:-translate-y-0.5 transition-all block group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-base font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      Make.com
+                    </span>
+                    <span className="text-sm font-bold text-signal-400">4.3/5</span>
+                  </div>
+                  <p className="text-xs text-void-400 mb-3">Visual automation platform for complex workflows</p>
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
+                    Read Review <ArrowRight size={12} />
+                  </span>
+                </Link>
+              </div>
             </section>
           </div>
         </div>

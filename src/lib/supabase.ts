@@ -135,6 +135,38 @@ export async function upsertProfile(profile: Partial<UserProfile> & { id: string
   return data;
 }
 
+/**
+ * Create or update a profile using direct PostgREST fetch.
+ * The Supabase JS client's .upsert().select().single() hangs on production,
+ * so we bypass it for write operations during signup.
+ */
+export async function upsertProfileDirect(
+  profile: Partial<UserProfile> & { id: string },
+  accessToken?: string,
+): Promise<void> {
+  if (!supabaseUrl || !supabaseAnonKey) return;
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    'apikey': supabaseAnonKey,
+    'Prefer': 'resolution=merge-duplicates',
+  };
+  if (accessToken) {
+    headers['Authorization'] = `Bearer ${accessToken}`;
+  }
+
+  const response = await fetch(`${supabaseUrl}/rest/v1/profiles`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(profile),
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Profile creation failed: ${response.status} ${body}`);
+  }
+}
+
 /* ── Review helpers ───────────────────────────────────────── */
 
 export interface UserReview {

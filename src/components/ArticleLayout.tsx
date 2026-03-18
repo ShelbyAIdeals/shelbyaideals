@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, User, ShieldCheck } from 'lucide-react';
 import AffiliateDisclosure from './AffiliateDisclosure';
+import AuthorCard from './AuthorCard';
 import NewsletterSignup from './NewsletterSignup';
 import { useTranslation } from '@/i18n/context';
 import type { ArticleMeta, Category } from '@/lib/types';
@@ -90,6 +91,7 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
           {/* Main Content */}
           <article className="flex-1 min-w-0">
             {children}
+            <AuthorCard />
             <div className="mt-12">
               <NewsletterSignup variant="section" />
             </div>

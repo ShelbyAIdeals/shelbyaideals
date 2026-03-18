@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const metaDescription = review.description || review.excerpt;
 
     const ogImage = review.featuredImage || {
-      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       width: 1200,
       height: 630,
     };
@@ -164,9 +164,9 @@ export default async function ReviewPage({ params }: PageProps) {
   );
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://shelby-ai.com' },
-    { name: 'Reviews', url: 'https://shelby-ai.com/reviews' },
-    { name: meta.tool, url: `https://shelby-ai.com/reviews/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com' },
+    { name: 'Reviews', url: 'https://www.shelby-ai.com/reviews' },
+    { name: meta.tool, url: `https://www.shelby-ai.com/reviews/${slug}` },
   ];
 
   return (
@@ -183,7 +183,7 @@ export default async function ReviewPage({ params }: PageProps) {
           data={{
             name: meta.videoTitle || `${meta.tool} Review`,
             description: meta.videoDescription || meta.excerpt,
-            thumbnailUrl: meta.videoPosterUrl || `https://shelby-ai.com/images/og-thumbnail.png`,
+            thumbnailUrl: meta.videoPosterUrl || `https://www.shelby-ai.com/images/og-thumbnail.png`,
             contentUrl: meta.videoUrl,
             uploadDate: meta.videoUploadDate || meta.date,
             duration: meta.videoDuration,
@@ -219,8 +219,8 @@ export default async function ReviewPage({ params }: PageProps) {
               Video Review
             </h2>
             <PinButton
-              url={`https://shelby-ai.com/reviews/${slug}/`}
-              imageUrl={meta.featuredImage || 'https://shelby-ai.com/images/og-thumbnail.png'}
+              url={`https://www.shelby-ai.com/reviews/${slug}/`}
+              imageUrl={meta.featuredImage || 'https://www.shelby-ai.com/images/og-thumbnail.png'}
               description={`${meta.tool} Review: ${meta.excerpt}`}
             />
           </div>
@@ -247,8 +247,8 @@ export default async function ReviewPage({ params }: PageProps) {
       {!meta.videoUrl && (
         <div className="flex justify-end mb-4">
           <PinButton
-            url={`https://shelby-ai.com/reviews/${slug}/`}
-            imageUrl={meta.featuredImage || 'https://shelby-ai.com/images/og-thumbnail.png'}
+            url={`https://www.shelby-ai.com/reviews/${slug}/`}
+            imageUrl={meta.featuredImage || 'https://www.shelby-ai.com/images/og-thumbnail.png'}
             description={`${meta.tool} Review: ${meta.excerpt}`}
           />
         </div>

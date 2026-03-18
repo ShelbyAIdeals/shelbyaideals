@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Complete pricing breakdowns for the top AI tools. Compare plans, features, and costs side-by-side. Updated for 2026 with real pricing data.',
   alternates: {
-    canonical: 'https://shelby-ai.com/pricing',
+    canonical: 'https://www.shelby-ai.com/pricing',
   },
 };
 

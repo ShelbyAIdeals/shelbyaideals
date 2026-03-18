@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       'Curated AI tool deals, free trials, and exclusive discounts for creators and small teams.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'AI Tool Deals & Free Trials',
     description:
       'Curated AI tool deals, free trials, and exclusive discounts for creators and small teams.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

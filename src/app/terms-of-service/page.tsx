@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Terms and conditions for using the ShelbyAIDeals website.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'Terms of Service',
     description:
       'Terms and conditions for using the ShelbyAIDeals website.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

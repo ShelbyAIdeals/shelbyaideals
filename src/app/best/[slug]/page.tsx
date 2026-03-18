@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const metaDescription = bestOf.description || bestOf.excerpt;
 
     const ogImage = bestOf.featuredImage || {
-      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       width: 1200,
       height: 630,
     };
@@ -90,9 +90,9 @@ export default async function BestOfArticlePage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://shelby-ai.com' },
-    { name: 'Best Of', url: 'https://shelby-ai.com/best' },
-    { name: meta.title, url: `https://shelby-ai.com/best/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com' },
+    { name: 'Best Of', url: 'https://www.shelby-ai.com/best' },
+    { name: meta.title, url: `https://www.shelby-ai.com/best/${slug}` },
   ];
 
   const sidebar = (

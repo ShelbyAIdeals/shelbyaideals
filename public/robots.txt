@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /search
 
-Sitemap: https://shelby-ai.com/sitemap.xml
+Sitemap: https://www.shelby-ai.com/sitemap.xml

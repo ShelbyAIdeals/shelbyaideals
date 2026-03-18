@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const SITE_URL = process.env.SITE_URL || 'https://shelby-ai.com';
+const SITE_URL = process.env.SITE_URL || 'https://www.shelby-ai.com';
 const SITE_TITLE = 'Shelby AI Deals';
 const SITE_DESCRIPTION = 'Honest AI tool reviews for creators, freelancers, and small teams.';
 const contentDir = path.join(process.cwd(), 'src/content');

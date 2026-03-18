@@ -11,7 +11,7 @@ const defaultProps: ToolReviewProps = {
   pros: ['Easy to use', 'Great value', 'Fast results'],
   cons: ['Limited free tier'],
   verdict: 'A solid tool that delivers on its promises.',
-  affiliateUrl: 'https://shelby-ai.com',
+  affiliateUrl: 'https://www.shelby-ai.com',
   screenshots: [],
   voiceoverUrl: undefined,
 };

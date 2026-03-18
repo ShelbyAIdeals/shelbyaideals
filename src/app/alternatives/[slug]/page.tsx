@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description,
       type: 'article',
-      url: `https://shelby-ai.com/alternatives/${slug}`,
+      url: `https://www.shelby-ai.com/alternatives/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: page.description,
     },
     alternates: {
-      canonical: `https://shelby-ai.com/alternatives/${slug}`,
+      canonical: `https://www.shelby-ai.com/alternatives/${slug}`,
     },
   };
 }
@@ -117,19 +117,19 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://shelby-ai.com',
+        item: 'https://www.shelby-ai.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Alternatives',
-        item: 'https://shelby-ai.com/alternatives',
+        item: 'https://www.shelby-ai.com/alternatives',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: page.title,
-        item: `https://shelby-ai.com/alternatives/${slug}`,
+        item: `https://www.shelby-ai.com/alternatives/${slug}`,
       },
     ],
   };
@@ -145,7 +145,7 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
       position: i + 1,
       name: alt.name,
       url: alt.reviewSlug
-        ? `https://shelby-ai.com/reviews/${alt.reviewSlug}`
+        ? `https://www.shelby-ai.com/reviews/${alt.reviewSlug}`
         : alt.url,
     })),
   };

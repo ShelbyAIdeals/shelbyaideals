@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const SITE_URL = process.env.SITE_URL || 'https://shelby-ai.com';
+const SITE_URL = process.env.SITE_URL || 'https://www.shelby-ai.com';
 const contentDir = path.join(process.cwd(), 'src/content');
 const outDir = path.join(process.cwd(), 'public');
 
@@ -39,10 +39,9 @@ function buildSitemap(): string {
     entries.push({ url: page.url, lastmod: today, changefreq: page.changefreq, priority: page.priority });
   }
 
-  // Category pages
+  // Category pages (consolidated)
   const categories = [
-    'ai-writing-tools', 'ai-design-tools', 'ai-coding-tools',
-    'ai-automation', 'ai-seo-tools', 'ai-productivity',
+    'ai-video-audio', 'ai-marketing-seo', 'ai-content-productivity',
   ];
   for (const cat of categories) {
     entries.push({ url: `/categories/${cat}`, lastmod: today, changefreq: 'weekly', priority: '0.8' });

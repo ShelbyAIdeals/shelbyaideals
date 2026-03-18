@@ -28,11 +28,11 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'ShelbyAIDeals',
-      url: 'https://shelby-ai.com',
+      url: 'https://www.shelby-ai.com',
       description: 'Honest AI tool reviews for creators, freelancers, and small teams.',
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://shelby-ai.com/search?q={search_term_string}',
+        target: 'https://www.shelby-ai.com/search?q={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     };
@@ -59,12 +59,12 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       author: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
-        url: 'https://shelby-ai.com',
+        url: 'https://www.shelby-ai.com',
       },
       publisher: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
-        url: 'https://shelby-ai.com',
+        url: 'https://www.shelby-ai.com',
       },
       itemReviewed: {
         '@type': 'SoftwareApplication',
@@ -95,12 +95,12 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       author: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
-        url: 'https://shelby-ai.com',
+        url: 'https://www.shelby-ai.com',
       },
       publisher: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
-        url: 'https://shelby-ai.com',
+        url: 'https://www.shelby-ai.com',
       },
     };
   } else if (type === 'faq' && data && 'questions' in data) {
@@ -131,10 +131,10 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       publisher: {
         '@type': 'Organization',
         name: 'ShelbyAIDeals',
-        url: 'https://shelby-ai.com',
+        url: 'https://www.shelby-ai.com',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://shelby-ai.com/images/logo.png',
+          url: 'https://www.shelby-ai.com/images/logo.png',
         },
       },
     };

@@ -103,7 +103,13 @@ export function getAllComparisons(): ComparisonMeta[] {
   return getFilesFromDir('comparisons')
     .map((f) => safeParseArticle('comparisons', f))
     .filter((r): r is NonNullable<typeof r> => r !== null)
-    .map((r) => r.meta as ComparisonMeta);
+    .map((r) => r.meta as ComparisonMeta)
+    .sort((a, b) => {
+      // Featured items first, then by date descending
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 }
 
 export function getAllBestOf(): BestOfMeta[] {
@@ -117,7 +123,13 @@ export function getAllGuides(): GuideMeta[] {
   return getFilesFromDir('guides')
     .map((f) => safeParseArticle('guides', f))
     .filter((r): r is NonNullable<typeof r> => r !== null)
-    .map((r) => r.meta as GuideMeta);
+    .map((r) => r.meta as GuideMeta)
+    .sort((a, b) => {
+      // Featured items first, then by date descending
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 }
 
 export function getAllArticles(): ArticleMeta[] {

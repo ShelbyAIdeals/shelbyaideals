@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       'Step-by-step guides to building AI-powered workflows that save time and grow your business.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'AI Guides & Tutorials',
     description:
       'Step-by-step guides to building AI-powered workflows that save time and grow your business.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

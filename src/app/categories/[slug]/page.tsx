@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${category.description} Tested and reviewed with real-world workflows.`,
       images: [
         {
-          url: 'https://shelby-ai.com/images/og-thumbnail.png',
+          url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
           width: 1200,
           height: 630,
         },
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: category.name,
       description: `${category.description} Tested and reviewed with real-world workflows.`,
-      images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+      images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
     },
   };
 }

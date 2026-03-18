@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, Command, LogIn } from 'lucide-react';
 import CommandPalette from './CommandPalette';
-import LanguageDropdown from './LanguageDropdown';
 import AuthModal from './AuthModal';
 import UserMenu from './UserMenu';
 import { useAuth } from '@/lib/auth-context';
@@ -181,12 +180,6 @@ export default function Header() {
                 </kbd>
               </button>
 
-              {/* Language dropdown */}
-              <LanguageDropdown />
-
-              {/* Divider */}
-              <div className="w-px h-5 bg-void-700/50 mx-1" />
-
               {/* Mist toggle — hidden in light mode */}
               {!lightMode && (
                 <button
@@ -296,11 +289,6 @@ export default function Header() {
 
                 <li>
                   <hr className="border-void-700/50 my-2 mx-3" />
-                </li>
-
-                {/* Language selector (mobile) */}
-                <li className="px-3 py-2">
-                  <LanguageDropdown />
                 </li>
 
                 {/* Mist toggle — hidden in light mode */}

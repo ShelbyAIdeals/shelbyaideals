@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     description:
       'Find the best alternatives to popular AI tools. Side-by-side comparisons with real pricing, features, and honest recommendations.',
     type: 'website',
-    url: 'https://shelby-ai.com/alternatives',
+    url: 'https://www.shelby-ai.com/alternatives',
   },
   alternates: {
-    canonical: 'https://shelby-ai.com/alternatives',
+    canonical: 'https://www.shelby-ai.com/alternatives',
   },
 };
 

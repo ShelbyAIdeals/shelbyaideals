@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'Browse 31 AI tools tested hands-on for small businesses. Video creators, SEO tools, and marketing automation — reviewed, rated, and ranked.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'AI Tools Directory — Browse & Compare',
     description:
       'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

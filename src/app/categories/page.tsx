@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Categories',
     description:
       'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
 

@@ -9,6 +9,7 @@ import {
   signInWithGoogle as googleSignIn,
   signOut as supabaseSignOut,
   upsertProfile,
+  upsertProfileDirect,
   getProfile,
   type UserProfile,
 } from './supabase';
@@ -44,7 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setState((prev) => ({ ...prev, profile }));
   }, []);
 
-  /* ── Ensure profile row exists (first login) ───────────── */
+  /* ── Ensure profile row exists (first login / OAuth) ───── */
   const ensureProfile = useCallback(async (user: User) => {
     const existing = await getProfile(user.id);
     if (existing) {
@@ -52,14 +53,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
     const meta = user.user_metadata ?? {};
-    const profile = await upsertProfile({
+    const profileData = {
       id: user.id,
       username: meta.username ?? meta.preferred_username ?? user.email?.split('@')[0] ?? null,
       first_name: meta.first_name ?? meta.given_name ?? null,
       last_name: meta.last_name ?? meta.family_name ?? null,
       avatar_url: meta.avatar_url ?? meta.picture ?? null,
-    });
-    setState((prev) => ({ ...prev, profile }));
+    };
+    // Use direct PostgREST to avoid JS client hang on production
+    const session = await supabase.auth.getSession().catch(() => ({ data: { session: null } }));
+    await upsertProfileDirect(profileData, session.data.session?.access_token ?? undefined);
+    // Re-fetch the profile to get the full row with defaults
+    const created = await getProfile(user.id);
+    setState((prev) => ({ ...prev, profile: created }));
   }, []);
 
   /* ── Listen for auth state changes ─────────────────────── */
@@ -106,17 +112,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     password: string,
     meta: { username: string; firstName: string; lastName: string }
   ) => {
-    const { user } = await signUpWithEmail(email, password, meta);
+    const { user, session } = await signUpWithEmail(email, password, meta);
     if (user) {
-      await upsertProfile({
-        id: user.id,
-        username: meta.username,
-        first_name: meta.firstName,
-        last_name: meta.lastName,
-        avatar_url: null,
-      });
+      // Use direct PostgREST fetch — the JS client's .upsert().select().single() hangs on production
+      await upsertProfileDirect(
+        {
+          id: user.id,
+          username: meta.username,
+          first_name: meta.firstName,
+          last_name: meta.lastName,
+          avatar_url: null,
+        },
+        session?.access_token,
+      );
 
-      // Auto-subscribe to newsletter
+      // Auto-subscribe to newsletter (non-blocking)
       try {
         await fetch('/api/subscribe', {
           method: 'POST',
@@ -128,7 +138,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           }),
         });
       } catch {
-        // Non-blocking — newsletter signup failure shouldn't break auth
+        // Newsletter signup failure shouldn't break auth
       }
     }
   }, []);

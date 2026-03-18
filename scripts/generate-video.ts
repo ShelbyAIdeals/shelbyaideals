@@ -60,7 +60,7 @@ function loadReview(slug: string): ReviewData | null {
     pros: data.pros || [],
     cons: data.cons || [],
     verdict: data.verdict || data.excerpt || '',
-    affiliateUrl: data.affiliateUrl || `https://shelby-ai.com/reviews/${slug}/`,
+    affiliateUrl: data.affiliateUrl || `https://www.shelby-ai.com/reviews/${slug}/`,
     excerpt: data.excerpt || '',
   };
 }

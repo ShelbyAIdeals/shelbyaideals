@@ -233,18 +233,6 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             />
           </div>
 
-          {/* Forgot password */}
-          {mode === 'login' && (
-            <div className="mt-2 text-right">
-              <button
-                type="button"
-                className="text-xs text-void-500 hover:text-signal-400 transition-colors cursor-pointer"
-              >
-                {t('auth.forgot_password', 'Forgot password?')}
-              </button>
-            </div>
-          )}
-
           {/* Error message */}
           {error && (
             <div className="mt-3 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">

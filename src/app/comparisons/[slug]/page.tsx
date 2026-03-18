@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const metaDescription = comparison.description || comparison.excerpt;
 
     const ogImage = comparison.featuredImage || {
-      url: 'https://shelby-ai.com/images/og-thumbnail.png',
+      url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       width: 1200,
       height: 630,
     };
@@ -90,9 +90,9 @@ export default async function ComparisonPage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://shelby-ai.com' },
-    { name: 'Comparisons', url: 'https://shelby-ai.com/comparisons' },
-    { name: meta.title, url: `https://shelby-ai.com/comparisons/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com' },
+    { name: 'Comparisons', url: 'https://www.shelby-ai.com/comparisons' },
+    { name: meta.title, url: `https://www.shelby-ai.com/comparisons/${slug}` },
   ];
 
   const sidebar = (

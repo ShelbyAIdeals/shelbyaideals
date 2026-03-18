@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       'We test AI video, audio, and marketing tools so small businesses can produce more content without hiring more people. 31 tools reviewed hands-on. No sponsored rankings.',
     images: [
       {
-        url: 'https://shelby-ai.com/images/og-thumbnail.png',
+        url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
         width: 1200,
         height: 630,
       },
@@ -47,16 +47,16 @@ export const metadata: Metadata = {
     title: 'ShelbyAIDeals',
     description:
       'Honest AI tool reviews for creators, freelancers, and small teams.',
-    images: ['https://shelby-ai.com/images/og-thumbnail.png'],
+    images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://shelby-ai.com',
+    canonical: 'https://www.shelby-ai.com',
     types: {
-      'application/rss+xml': 'https://shelby-ai.com/feed.xml',
+      'application/rss+xml': 'https://www.shelby-ai.com/feed.xml',
     },
   },
 };

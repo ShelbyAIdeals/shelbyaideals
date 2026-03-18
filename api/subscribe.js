@@ -1,4 +1,4 @@
-const ALLOWED_ORIGINS = ['https://shelby-ai.com', 'https://www.shelby-ai.com'];
+const ALLOWED_ORIGINS = ['https://www.shelby-ai.com', 'https://www.shelby-ai.com'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Rate limiter: 5 requests per IP per 60 seconds
@@ -65,7 +65,7 @@ module.exports = async function handler(req, res) {
           send_welcome_email: true,
           utm_source: utm_source || 'website',
           utm_medium: utm_medium || 'organic',
-          referring_site: referring_site || 'https://shelby-ai.com',
+          referring_site: referring_site || 'https://www.shelby-ai.com',
         }),
       }
     );
