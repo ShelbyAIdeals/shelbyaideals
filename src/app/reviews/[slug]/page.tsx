@@ -221,6 +221,25 @@ export default async function ReviewPage({ params }: PageProps) {
         />
       )}
 
+      {/* Tool logo + name header */}
+      {meta.toolLogo && (
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-lg shrink-0">
+            <img
+              src={meta.toolLogo}
+              alt={`${meta.tool} logo`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="text-xl font-heading font-bold text-void-50">{meta.tool}</h2>
+            {meta.bestFor && (
+              <p className="text-sm text-void-400">{meta.bestFor}</p>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Hero image */}
       {meta.toolSlug && (
         <div className="aspect-video rounded-xl overflow-hidden border border-void-700/50 mb-8 bg-void-800">
