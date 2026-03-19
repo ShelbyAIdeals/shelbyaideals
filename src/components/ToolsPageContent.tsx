@@ -38,7 +38,7 @@ export default function ToolsPageContent({
   }, [reviews, activeCategory, activeTab]);
 
   return (
-    <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
+    <div className="container-main pt-24 sm:pt-28 pb-12 sm:pb-16">
       {/* Page Header */}
       <ScrollReveal>
         <div className="max-w-2xl mb-10">

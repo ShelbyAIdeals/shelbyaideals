@@ -40,7 +40,7 @@ export default function NewsletterPage() {
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-0 sm:pt-2 pb-16 sm:pb-24">
       {/* Hero */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-signal-500/10 border border-signal-500/30 text-signal-400 text-sm font-medium mb-6">

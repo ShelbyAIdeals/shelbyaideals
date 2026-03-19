@@ -66,7 +66,12 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
       onClose();
       resetForm();
     } catch (err) {
-      setError(err instanceof Error ? err.message : t('auth.error.invalid_credentials', 'Invalid email or password'));
+      const msg = err instanceof Error ? err.message : '';
+      if (msg.includes('Invalid login credentials') || msg.includes('Email not confirmed')) {
+        setError('Invalid credentials. If you just signed up, check your email and confirm your account first.');
+      } else {
+        setError(msg || t('auth.error.invalid_credentials', 'Invalid email or password'));
+      }
     } finally {
       setLoading(false);
     }
@@ -129,9 +134,8 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     return (
       <div
         className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-        onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       >
-        <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
         <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center">
           <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg text-void-400 hover:text-void-200 hover:bg-void-700/40 transition-colors cursor-pointer" aria-label="Close">
             <X size={18} />
@@ -158,9 +162,8 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     return (
       <div
         className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-        onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       >
-        <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
         <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center">
           <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg text-void-400 hover:text-void-200 hover:bg-void-700/40 transition-colors cursor-pointer" aria-label="Close">
             <X size={18} />
@@ -186,10 +189,9 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
       <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out]">
