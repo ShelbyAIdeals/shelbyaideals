@@ -16,6 +16,7 @@ export default function ToolImage({
   className = '',
 }: ToolImageProps) {
   const webp = `/images/tools/${toolSlug}/${variant}.webp`;
+  const png = `/images/tools/${toolSlug}/${variant}.png`;
   const svg = `/images/tools/${toolSlug}/${variant}.svg`;
   const fallback = `/images/placeholders/tool-${variant}.svg`;
   const [imgSrc, setImgSrc] = useState(webp);
@@ -27,7 +28,8 @@ export default function ToolImage({
       className={`w-full h-full object-cover ${className}`}
       loading="lazy"
       onError={() => {
-        if (imgSrc === webp) setImgSrc(svg);
+        if (imgSrc === webp) setImgSrc(png);
+        else if (imgSrc === png) setImgSrc(svg);
         else if (imgSrc !== fallback) setImgSrc(fallback);
       }}
     />
