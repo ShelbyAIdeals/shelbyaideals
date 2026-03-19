@@ -79,6 +79,7 @@ export default function ToolsPageContent({
                     slug={review.slug}
                     tool={review.tool}
                     toolLogo={review.toolLogo}
+                    socialLinks={review.socialLinks}
                     excerpt={review.excerpt}
                     category={review.category as Category}
                     rating={review.rating}
