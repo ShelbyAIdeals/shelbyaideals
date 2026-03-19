@@ -4,6 +4,7 @@ import { Component, type ReactNode, type ErrorInfo } from 'react';
 import { AuthProvider } from '@/lib/auth-context';
 import { I18nProvider } from '@/i18n/context';
 import OnboardingGuard from '@/components/OnboardingGuard';
+import CookieConsent from '@/components/CookieConsent';
 
 /** Error boundary — prevents provider crashes from breaking the entire site */
 class ProviderErrorBoundary extends Component<
@@ -39,6 +40,7 @@ export default function Providers({ children }: { children: ReactNode }) {
         <I18nProvider>
           <OnboardingGuard>
             {children}
+            <CookieConsent />
           </OnboardingGuard>
         </I18nProvider>
       </AuthProvider>

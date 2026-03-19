@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Search, ArrowRight, Layers, GitCompare, Sparkles, BookOpen, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Search, ArrowRight, Layers, GitCompare, Sparkles, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface CommandPaletteProps {
@@ -16,10 +17,10 @@ const quickLinks = [
     icon: Sparkles,
     color: 'text-signal-400',
     links: [
-      { label: 'Jasper AI Review', href: '/reviews/jasper-ai-review' },
-      { label: 'Copy.ai Review', href: '/reviews/copy-ai-review' },
-      { label: 'Pictory Review', href: '/reviews/pictory-ai-review' },
-      { label: 'Writesonic Review', href: '/reviews/writesonic-review' },
+      { label: 'Pictory Review', href: '/reviews/pictory-review' },
+      { label: 'ElevenLabs Review', href: '/reviews/elevenlabs-review' },
+      { label: 'Synthesia Review', href: '/reviews/synthesia-review' },
+      { label: 'Descript Review', href: '/reviews/descript-review' },
     ],
   },
   {
@@ -30,7 +31,6 @@ const quickLinks = [
       { label: 'AI Video & Audio', href: '/categories/ai-video-audio' },
       { label: 'AI Marketing & SEO', href: '/categories/ai-marketing-seo' },
       { label: 'AI Content & Productivity', href: '/categories/ai-content-productivity' },
-      { label: 'All Categories', href: '/categories' },
     ],
   },
   {
@@ -38,8 +38,8 @@ const quickLinks = [
     icon: GitCompare,
     color: 'text-ember-400',
     links: [
-      { label: 'Jasper vs Copy.ai', href: '/comparisons/jasper-ai-vs-copy-ai' },
       { label: 'Pictory vs Synthesia', href: '/comparisons/pictory-vs-synthesia' },
+      { label: 'ElevenLabs vs Murf vs Play.ht', href: '/comparisons/elevenlabs-vs-murf-vs-playht' },
       { label: 'All Comparisons', href: '/comparisons' },
     ],
   },
@@ -69,11 +69,13 @@ const panelVariants = {
 export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const [query, setQuery] = useState('');
 
-  /* Focus input when opened */
+  /* Focus input when opened, clear query on close */
   useEffect(() => {
     if (isOpen) {
-      // Small delay so framer-motion has rendered the element
+      setQuery('');
       const t = setTimeout(() => inputRef.current?.focus(), 80);
       return () => clearTimeout(t);
     }
@@ -113,7 +115,6 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       }
     };
 
-    // Lock body scroll while palette is open
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -121,6 +122,20 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  const handleSearch = () => {
+    const trimmed = query.trim();
+    if (!trimmed) return;
+    router.push(`/search?q=${encodeURIComponent(trimmed)}`);
+    onClose();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -145,7 +160,7 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Command palette"
+            aria-label="Search"
             className="relative w-full max-w-xl rounded-2xl border border-void-700/30 overflow-hidden bg-void-900 shadow-2xl"
             style={{
               backdropFilter: 'blur(24px) saturate(1.3)',
@@ -162,6 +177,9 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
               <input
                 ref={inputRef}
                 type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
                 placeholder="Search tools, guides, comparisons..."
                 className="flex-1 bg-transparent text-void-50 text-base placeholder:text-void-500 outline-none"
               />
@@ -170,41 +188,59 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
               </kbd>
             </div>
 
-            {/* Quick links */}
-            <div className="px-5 py-4 max-h-[60vh] overflow-y-auto">
-              {quickLinks.map((section) => (
-                <div key={section.title} className="mb-5 last:mb-0">
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <section.icon size={15} className={section.color} />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-void-400">
-                      {section.title}
-                    </span>
+            {/* Search action when query is typed */}
+            {query.trim() && (
+              <div className="px-5 pt-4 pb-2">
+                <button
+                  onClick={handleSearch}
+                  className="w-full group flex items-center justify-between px-3 py-3 rounded-lg text-sm text-void-100 bg-signal-500/10 hover:bg-signal-500/20 transition-colors cursor-pointer"
+                >
+                  <span className="flex items-center gap-2">
+                    <Search size={15} className="text-signal-400" />
+                    Search for &ldquo;{query.trim()}&rdquo;
+                  </span>
+                  <ArrowRight size={14} className="text-signal-400" />
+                </button>
+              </div>
+            )}
+
+            {/* Quick links — shown when no query */}
+            {!query.trim() && (
+              <div className="px-5 py-4 max-h-[60vh] overflow-y-auto">
+                {quickLinks.map((section) => (
+                  <div key={section.title} className="mb-5 last:mb-0">
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <section.icon size={15} className={section.color} />
+                      <span className="text-xs font-semibold uppercase tracking-wider text-void-400">
+                        {section.title}
+                      </span>
+                    </div>
+                    <ul className="space-y-0.5">
+                      {section.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            onClick={onClose}
+                            className="group flex items-center justify-between px-3 py-2 rounded-lg text-sm text-void-200 no-underline hover:bg-signal-500/10 hover:text-signal-300 transition-colors"
+                          >
+                            <span>{link.label}</span>
+                            <ArrowRight
+                              size={14}
+                              className="text-void-600 group-hover:text-signal-400 transition-colors"
+                            />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-0.5">
-                    {section.links.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          onClick={onClose}
-                          className="group flex items-center justify-between px-3 py-2 rounded-lg text-sm text-void-200 no-underline hover:bg-signal-500/10 hover:text-signal-300 transition-colors"
-                        >
-                          <span>{link.label}</span>
-                          <ArrowRight
-                            size={14}
-                            className="text-void-600 group-hover:text-signal-400 transition-colors"
-                          />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* Footer hint */}
             <div className="px-5 py-3 border-t border-void-700/30 flex items-center justify-between">
               <span className="text-[11px] text-void-500">
-                Navigate with links above or type to search
+                {query.trim() ? 'Press Enter to search' : 'Type to search or browse links above'}
               </span>
               <span className="text-[11px] text-void-500">
                 <kbd className="font-mono">ESC</kbd> to close

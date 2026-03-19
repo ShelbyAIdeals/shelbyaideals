@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, Command, LogIn } from 'lucide-react';
+import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, LogIn } from 'lucide-react';
 import CommandPalette from './CommandPalette';
 import AuthModal from './AuthModal';
 import UserMenu from './UserMenu';
@@ -175,9 +175,6 @@ export default function Header() {
               >
                 <Search size={15} />
                 <span className="text-sm">{'Search'}</span>
-                <kbd className="hidden xl:inline-flex items-center gap-0.5 ml-1 px-1.5 py-0.5 text-[10px] font-mono font-medium text-void-500 bg-void-900/80 border border-void-700/60 rounded">
-                  <Command size={10} />K
-                </kbd>
               </button>
 
               {/* Mist toggle — hidden in light mode */}
