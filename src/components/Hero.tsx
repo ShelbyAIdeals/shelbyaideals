@@ -22,7 +22,11 @@ const fadeUp = {
   }),
 };
 
-export default function Hero() {
+interface HeroProps {
+  categoryCounts?: Record<string, number>;
+}
+
+export default function Hero({ categoryCounts = {} }: HeroProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const router = useRouter();
   const { t } = useTranslation();
@@ -201,7 +205,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_ai_video', 'AI Video & Audio')}</div>
-                  <div className="text-xs text-void-400">8 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-xs text-void-400">{categoryCounts['ai-video-audio'] ?? 0} {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -215,7 +219,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_marketing', 'Marketing & SEO')}</div>
-                  <div className="text-xs text-void-400">7 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-xs text-void-400">{categoryCounts['ai-marketing-seo'] ?? 0} {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 
@@ -229,7 +233,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="text-sm font-heading font-bold text-void-50">{t('hero.card_content', 'Content & Productivity')}</div>
-                  <div className="text-xs text-void-400">16 {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
+                  <div className="text-xs text-void-400">{categoryCounts['ai-content-productivity'] ?? 0} {t('hero.card_tools_reviewed', 'tools reviewed')}</div>
                 </div>
               </motion.div>
 

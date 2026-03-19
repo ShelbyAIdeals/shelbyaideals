@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import ReviewCard from '@/components/ReviewCard';
 import CategoryCard from '@/components/CategoryCard';
-import NewsletterSignup from '@/components/NewsletterSignup';
 import DealOfTheWeek from '@/components/DealOfTheWeek';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -202,13 +201,6 @@ export default function HomeContent({
           </div>
         </section>
       )}
-
-      {/* 6. Newsletter */}
-      <section className="py-16 sm:py-20">
-        <div className="container-main">
-          <NewsletterSignup variant="section" />
-        </div>
-      </section>
 
       <div className="section-divider" />
 

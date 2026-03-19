@@ -54,9 +54,16 @@ export default async function HomePage() {
     articleCount: getArticlesByCategory(cat.slug).length,
   }));
 
+  // Compute review-only counts per category for Hero floating cards
+  const reviewCountsByCategory: Record<string, number> = {};
+  for (const cat of CATEGORIES) {
+    reviewCountsByCategory[cat.slug] = getArticlesByCategory(cat.slug)
+      .filter((a) => a.type === 'review').length;
+  }
+
   return (
     <main>
-      <Hero />
+      <Hero categoryCounts={reviewCountsByCategory} />
       <HomeContent
         featuredReviews={featuredReviews}
         latestComparisons={latestComparisons}
