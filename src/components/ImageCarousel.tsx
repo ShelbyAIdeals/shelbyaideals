@@ -20,7 +20,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       <img
         src={images[current].src}
         alt={images[current].alt}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
       />
 
       {images.length > 1 && (
