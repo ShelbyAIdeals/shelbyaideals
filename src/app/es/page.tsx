@@ -4,6 +4,7 @@ import { Zap, Star, ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import Hreflang from '@/components/Hreflang';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'ShelbyAI — Herramientas de IA para Video, Audio y Marketing para Pequeñas Empresas',
   description:
     'Probamos herramientas de IA de video, audio y marketing para que las pequeñas empresas puedan producir más contenido sin contratar más personal. 31 herramientas probadas. Sin clasificaciones patrocinadas.',

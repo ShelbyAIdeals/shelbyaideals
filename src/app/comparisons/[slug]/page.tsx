@@ -35,6 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: comparison.title,
       description: metaDescription,
+      alternates: {
+        canonical: `https://www.shelby-ai.com/comparisons/${slug}`,
+      },
       openGraph: {
         title: comparison.title,
         description: metaDescription,

@@ -79,6 +79,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: review.title,
       description: metaDescription,
+      alternates: {
+        canonical: `https://www.shelby-ai.com/reviews/${slug}`,
+      },
       openGraph,
       twitter: {
         card: 'summary_large_image',

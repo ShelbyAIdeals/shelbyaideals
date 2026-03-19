@@ -4,6 +4,7 @@ import { Zap, Star, ArrowRight, Shield, CheckCircle } from 'lucide-react';
 import Hreflang from '@/components/Hreflang';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'ShelbyAI — KI-Tools für Video, Audio & Marketing für Kleinunternehmen',
   description:
     'Wir testen KI-Tools für Video, Audio und Marketing, damit Kleinunternehmen mehr Inhalte produzieren können, ohne mehr Personal einzustellen. 31 Tools getestet. Keine gesponserten Rankings.',
