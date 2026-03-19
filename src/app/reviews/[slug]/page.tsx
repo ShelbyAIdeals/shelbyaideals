@@ -7,7 +7,7 @@ import QuickVerdict from '@/components/QuickVerdict';
 import MDXContent from '@/components/MDXContent';
 import ProsCons from '@/components/ProsCons';
 import VerdictBox from '@/components/VerdictBox';
-import ToolImage from '@/components/ToolImage';
+import ImageCarousel from '@/components/ImageCarousel';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
@@ -19,22 +19,31 @@ import SocialLinksRow from '@/components/SocialLinksRow';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import UserReviewsSection from '@/components/UserReviewsSection';
 import ToolHubLinks from '@/components/ToolHubLinks';
-import ScreenshotGallery from '@/components/ScreenshotGallery';
 import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
 import type { ReviewMeta } from '@/lib/types';
 
-/** Auto-detect screenshot images for a tool at build time */
-function getToolScreenshots(toolSlug: string): { src: string; alt: string }[] {
+/** Auto-detect hero + screenshot images for a tool at build time */
+function getToolImages(toolSlug: string): { src: string; alt: string }[] {
   const dir = path.join(process.cwd(), 'public', 'images', 'tools', toolSlug);
   if (!fs.existsSync(dir)) return [];
 
-  const files = fs.readdirSync(dir).filter((f) => /^screenshot-\d+\.(webp|png|jpg)$/i.test(f));
-  files.sort(); // screenshot-1, screenshot-2, screenshot-3...
+  const allFiles = fs.readdirSync(dir);
+  const images: { src: string; alt: string }[] = [];
 
-  return files.map((f, i) => ({
-    src: `/images/tools/${toolSlug}/${f}`,
-    alt: `Screenshot ${i + 1}`,
-  }));
+  // Add hero image first (try webp, then png, then svg)
+  const heroFile = ['hero.webp', 'hero.png', 'hero.svg'].find((f) => allFiles.includes(f));
+  if (heroFile) {
+    images.push({ src: `/images/tools/${toolSlug}/${heroFile}`, alt: 'Dashboard overview' });
+  }
+
+  // Add numbered screenshots
+  const screenshots = allFiles.filter((f) => /^screenshot-\d+\.(webp|png|jpg)$/i.test(f));
+  screenshots.sort();
+  screenshots.forEach((f, i) => {
+    images.push({ src: `/images/tools/${toolSlug}/${f}`, alt: `Screenshot ${i + 1}` });
+  });
+
+  return images;
 }
 
 interface PageProps {
@@ -165,7 +174,7 @@ export default async function ReviewPage({ params }: PageProps) {
   const headings = extractHeadings(content);
   const [contentFirstHalf, contentSecondHalf] = splitContentAtMidpoint(content);
   const allArticles = getAllArticles();
-  const screenshots = getToolScreenshots(meta.toolSlug || slug.replace(/-review$/, ''));
+  const toolImages = getToolImages(meta.toolSlug || slug.replace(/-review$/, ''));
 
   // Build pricing summary for QuickVerdict
   const pricingSummary = meta.pricing?.length > 0
@@ -243,22 +252,10 @@ export default async function ReviewPage({ params }: PageProps) {
         </div>
       )}
 
-      {/* Hero image */}
-      {meta.toolSlug && (
-        <div className="aspect-video rounded-xl overflow-hidden border border-void-700/50 mb-8 bg-void-800">
-          <ToolImage
-            toolSlug={meta.toolSlug}
-            variant="hero"
-            alt={`${meta.tool} screenshot`}
-          />
-        </div>
-      )}
-
-      {/* Screenshot gallery — auto-detected from public/images/tools/{slug}/ */}
-      {screenshots.length > 0 && (
+      {/* Tool images carousel — hero + screenshots */}
+      {toolImages.length > 0 && (
         <div className="mb-8">
-          <h2 className="text-lg font-semibold text-void-50 mb-3">Screenshots</h2>
-          <ScreenshotGallery images={screenshots} />
+          <ImageCarousel images={toolImages} />
         </div>
       )}
 
