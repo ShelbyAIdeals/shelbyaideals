@@ -21,9 +21,9 @@ export default function NewsletterSignup({
   const { t } = useTranslation();
 
   const benefits = [
-    t('newsletter.benefit_1', 'Weekly curated AI tool picks'),
-    t('newsletter.benefit_2', 'Exclusive deals and discounts'),
-    t('newsletter.benefit_3', 'Real workflow tips — no fluff'),
+    t('newsletter.benefit_1', 'One tested AI tool recommendation per week'),
+    t('newsletter.benefit_2', 'Early access to new reviews and comparisons'),
+    t('newsletter.benefit_3', 'Practical workflow tips — zero fluff'),
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -68,7 +68,7 @@ export default function NewsletterSignup({
               {t('newsletter.title', 'Stay Ahead of the AI Curve')}
             </h4>
             <p className="text-xs text-void-500 mt-1 leading-relaxed">
-              {t('newsletter.subtitle', 'Get the best AI tool picks, exclusive deals, and workflow tips — straight to your inbox every week.')}
+              {t('newsletter.subtitle', 'One tested AI tool pick per week plus practical workflow tips — straight to your inbox.')}
             </p>
           </div>
         </div>
@@ -131,15 +131,15 @@ export default function NewsletterSignup({
           {/* ── Left column: headline + benefits ────────────────── */}
           <div>
             <span className="text-xs font-semibold tracking-widest uppercase text-signal-400 mb-3 block">
-              {'Free Weekly Newsletter'}
+              {'Free Weekly Picks'}
             </span>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-void-50 font-heading mb-3 leading-tight">
-              {t('newsletter.title', 'Stay Ahead of the AI Curve')}
+              {t('newsletter.title', 'Get the Best AI Tools in Your Inbox')}
             </h2>
 
             <p className="text-sm text-void-400 mb-6">
-              Join small business owners and creators who get our weekly AI tool picks. No sponsored content — just what works.
+              Every week, we send one tested AI tool pick plus practical tips. Read by creators, freelancers, and lean teams. No sponsored content.
             </p>
 
             <ul className="space-y-3">
@@ -204,7 +204,7 @@ export default function NewsletterSignup({
                     {loading ? (
                       <Loader2 size={14} className="animate-spin" />
                     ) : (
-                      <>Get Free Picks <ArrowRight size={14} /></>
+                      <>Get Weekly AI Picks <ArrowRight size={14} /></>
                     )}
                   </button>
                 </form>

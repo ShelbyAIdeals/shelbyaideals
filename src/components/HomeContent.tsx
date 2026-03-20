@@ -37,20 +37,20 @@ export default function HomeContent({
               <div className="flex items-end justify-between mb-10">
                 <div>
                   <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
-                    {t('home.reviews_eyebrow', 'Reviews')}
+                    {t('home.reviews_eyebrow', 'Tested & Rated')}
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
-                    {t('home.featured_reviews', 'Featured Reviews')}
+                    {t('home.featured_reviews', 'Top-Rated AI Tools This Month')}
                   </h2>
                   <p className="mt-2 text-void-400 text-sm">
-                    {t('home.featured_reviews_desc', 'In-depth, hands-on reviews of the tools that matter.')}
+                    {t('home.featured_reviews_desc', 'Each tool tested for 7-14 days with real workflows. See what actually works.')}
                   </p>
                 </div>
                 <Link
                   href="/reviews"
                   className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline group"
                 >
-                  {t('home.all_reviews', 'All Reviews')}
+                  {t('home.all_reviews', 'See All Reviews')}
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -79,7 +79,7 @@ export default function HomeContent({
                 href="/reviews"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-signal-400 no-underline"
               >
-                {t('home.all_reviews', 'All Reviews')} <ArrowRight size={14} />
+                {t('home.all_reviews', 'See All Reviews')} <ArrowRight size={14} />
               </Link>
             </div>
           </div>
@@ -92,12 +92,12 @@ export default function HomeContent({
           <ScrollReveal>
             <FeaturedBanner
               imageSrc="/images/og-thumbnail.png"
-              imageAlt="ShelbyAI Deals — Honest AI tool reviews"
-              title="Honest Reviews. Real Testing. No Sponsored Rankings."
-              description="Every tool is tested hands-on for 7-14 days. We show real screenshots, real output samples, and rate based on actual experience — not ad budgets."
-              ctaLabel="Explore Reviews"
-              ctaHref="/reviews"
-              badge="Why Trust Us"
+              imageAlt="ShelbyAI — Tested AI tool reviews and comparisons"
+              title="Every Rating Earned, Not Paid For"
+              description="We spend 7-14 days with each tool, testing real workflows and documenting real output. Our ratings are based on hands-on experience — not ad budgets or sponsorship deals."
+              ctaLabel="See How We Test"
+              ctaHref="/how-we-review"
+              badge="Our Testing Process"
               variant="signal"
             />
           </ScrollReveal>
@@ -129,13 +129,13 @@ export default function HomeContent({
             <div className="flex items-end justify-between mb-10">
               <div>
                 <span className="text-xs font-semibold tracking-widest uppercase text-iris-400 mb-2 block">
-                  {t('home.browse_eyebrow', 'Browse')}
+                  {t('home.browse_eyebrow', 'By Use Case')}
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
-                  {t('home.explore_by_category', 'Explore by Category')}
+                  {t('home.explore_by_category', 'Find Tools for Your Workflow')}
                 </h2>
                 <p className="mt-2 text-void-400 text-sm">
-                  {t('home.explore_by_category_desc', 'Find the right AI tools for your workflow.')}
+                  {t('home.explore_by_category_desc', 'Curated AI tools organized by what you actually need to get done.')}
                 </p>
               </div>
             </div>
@@ -170,17 +170,17 @@ export default function HomeContent({
                     {t('home.head_to_head_eyebrow', 'Head-to-Head')}
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
-                    {t('home.tool_comparisons', 'Tool Comparisons')}
+                    {t('home.tool_comparisons', 'Which Tool Should You Pick?')}
                   </h2>
                   <p className="mt-2 text-void-400 text-sm">
-                    {t('home.tool_comparisons_desc', 'Side-by-side matchups with clear winners by use case.')}
+                    {t('home.tool_comparisons_desc', 'Side-by-side comparisons with clear winners for each use case.')}
                   </p>
                 </div>
                 <Link
                   href="/comparisons"
                   className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline group"
                 >
-                  {t('home.all_comparisons', 'All Comparisons')}
+                  {t('home.all_comparisons', 'See All Comparisons')}
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -210,7 +210,7 @@ export default function HomeContent({
                       {comp.excerpt}
                     </p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300">
-                      {t('home.read_comparison', 'Read Comparison')}
+                      {t('home.read_comparison', 'See Which Wins')}
                       <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </Link>
@@ -231,20 +231,20 @@ export default function HomeContent({
               <div className="flex items-end justify-between mb-10">
                 <div>
                   <span className="text-xs font-semibold tracking-widest uppercase text-iris-400 mb-2 block">
-                    {t('home.learn_eyebrow', 'Learn')}
+                    {t('home.learn_eyebrow', 'Practical Guides')}
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
-                    {t('home.latest_guides', 'Latest Guides')}
+                    {t('home.latest_guides', 'Build AI-Powered Workflows')}
                   </h2>
                   <p className="mt-2 text-void-400 text-sm">
-                    {t('home.latest_guides_desc', 'Step-by-step tutorials to build AI-powered workflows.')}
+                    {t('home.latest_guides_desc', 'Step-by-step tutorials to save time and produce better content with AI.')}
                   </p>
                 </div>
                 <Link
                   href="/guides"
                   className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline group"
                 >
-                  {t('home.all_guides', 'All Guides')}
+                  {t('home.all_guides', 'See All Guides')}
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -271,7 +271,7 @@ export default function HomeContent({
                         </span>
                       )}
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300">
-                        {t('home.read_guide', 'Read Guide')}
+                        {t('home.read_guide', 'Follow the Guide')}
                         <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                       </span>
                     </div>

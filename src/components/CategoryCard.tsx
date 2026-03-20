@@ -146,7 +146,7 @@ export default function CategoryCard({
             transition-all duration-200 mt-auto
           `}
         >
-          {t('common.explore', 'Explore')}
+          {t('common.explore', 'See Tools')}
           <ArrowRight
             size={14}
             className="transition-transform duration-200 group-hover:translate-x-1"

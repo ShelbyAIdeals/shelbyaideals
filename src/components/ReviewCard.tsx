@@ -142,7 +142,7 @@ export default function ReviewCard({
 
           {/* Read Review link */}
           <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 group-hover:text-signal-300 transition-colors mt-auto">
-            {t('card.read_review', 'Read Review')}
+            {t('card.read_review', 'See If It\'s Worth It')}
             <ArrowRight
               size={14}
               className="transition-transform duration-200 group-hover:translate-x-1"

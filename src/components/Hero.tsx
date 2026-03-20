@@ -35,9 +35,9 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
   const isLoggedIn = !!user && !!firstName;
 
   const trustPoints = [
-    { icon: Shield, text: t('hero.trust_no_sponsored', '31 tools tested hands-on') },
-    { icon: Sparkles, text: t('hero.trust_tools_tested', '0 sponsored rankings') },
-    { icon: Zap, text: t('hero.trust_workflow', 'Real output samples in every review') },
+    { icon: Shield, text: t('hero.trust_no_sponsored', '31+ tools tested hands-on') },
+    { icon: Sparkles, text: t('hero.trust_tools_tested', 'Zero sponsored rankings') },
+    { icon: Zap, text: t('hero.trust_workflow', 'Real screenshots & output samples') },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -90,7 +90,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/20 text-signal-400 text-sm font-medium mb-8"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-signal-400 animate-glow" />
-              {t('hero.eyebrow', 'AI Tools for Small Business')}
+              {t('hero.eyebrow', 'Tested AI Tools for Business')}
             </motion.div>
 
             {/* Headline */}
@@ -102,9 +102,9 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               className={`font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] ${isLoggedIn ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}
             >
               {isLoggedIn && <span>{firstName}, </span>}
-              {t('hero.headline_prefix', 'Turn One Piece of Content')}{' '}
+              {t('hero.headline_prefix', 'Find the Right AI Tool')}{' '}
               <br className="hidden sm:block" />
-              {t('hero.headline_ai_tools', 'into Ten')}{' '}
+              {t('hero.headline_ai_tools', 'Before You Buy')}{' '}
               <HeroTextRotator />
             </motion.h1>
 
@@ -116,7 +116,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               custom={0.2}
               className="mt-6 text-lg sm:text-xl text-void-300 leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              {t('hero.subheadline', 'We test AI video, audio, and automation tools so small businesses can produce more content without hiring more people. Real testing. Real screenshots. No sponsored rankings.')}
+              {t('hero.subheadline', 'Hands-on reviews, side-by-side comparisons, and honest recommendations so you can pick the best AI tools for your workflow — without wasting time or money.')}
             </motion.p>
 
             {/* Search Bar */}
@@ -152,7 +152,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
               {/* Trending pills */}
               <div className="mt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2 z-[2] relative">
-                <span className="text-xs text-void-500">{t('hero.trending', 'Trending:')}</span>
+                <span className="text-xs text-void-500">{t('hero.trending', 'Popular now:')}</span>
                 {trendingTools.map((tool) => (
                   <Link
                     key={tool}
@@ -174,11 +174,11 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
               <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
-                {t('hero.browse_tools', 'Find Your Perfect AI Tool')}
+                {t('hero.browse_tools', 'See Top-Rated Tools')}
                 <ArrowRight size={16} />
               </Link>
-              <Link href="/categories" className="btn-ghost text-sm no-underline gap-2">
-                {t('hero.browse_categories', 'Browse Categories')}
+              <Link href="/comparisons" className="btn-ghost text-sm no-underline gap-2">
+                {t('hero.browse_categories', 'Compare Your Options')}
                 <ArrowRight size={16} />
               </Link>
             </motion.div>

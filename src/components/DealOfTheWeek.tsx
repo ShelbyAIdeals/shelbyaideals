@@ -38,7 +38,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
           <div className="flex items-center gap-3 shrink-0">
             <span className="badge-ember gap-1.5">
               <Sparkles size={13} />
-              {t('common.deal_of_the_week', 'Deal of the Week')}
+              {t('common.deal_of_the_week', 'Editor\'s Pick')}
             </span>
           </div>
 
@@ -58,7 +58,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
               href={`/reviews/${reviewSlug}`}
               className="btn-ghost text-sm !px-4 !py-2 no-underline"
             >
-              {t('common.read_review', 'Read Review')}
+              {t('common.read_review', 'See Full Review')}
             </Link>
             <a
               href={affiliateUrl}
