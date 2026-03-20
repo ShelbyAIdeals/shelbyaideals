@@ -19,6 +19,7 @@ import SocialLinksRow from '@/components/SocialLinksRow';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import UserReviewsSection from '@/components/UserReviewsSection';
 import ToolHubLinks from '@/components/ToolHubLinks';
+import ToolProfileVideo from '@/components/ToolProfileVideo';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getArticle, getArticleSlugs, getAllArticles, getAllComparisons } from '@/lib/content';
@@ -48,6 +49,27 @@ function getToolImages(toolSlug: string): { src: string; alt: string }[] {
   });
 
   return images;
+}
+
+/** Auto-detect profile video for a tool at build time.
+ *  Convention: place video as `profile-video.mp4` (or .webm) in the tool's image folder.
+ *  Optional poster: `profile-video-poster.jpg` (or .png/.webp) in the same folder.
+ */
+function getToolProfileVideo(toolSlug: string): { src: string; poster?: string } | null {
+  const dir = path.join(process.cwd(), 'public', 'images', 'tools', toolSlug);
+  if (!fs.existsSync(dir)) return null;
+
+  const allFiles = fs.readdirSync(dir);
+
+  const videoFile = allFiles.find((f) => /^profile-video\.(mp4|webm)$/i.test(f));
+  if (!videoFile) return null;
+
+  const posterFile = allFiles.find((f) => /^profile-video-poster\.(jpg|jpeg|png|webp)$/i.test(f));
+
+  return {
+    src: `/images/tools/${toolSlug}/${videoFile}`,
+    poster: posterFile ? `/images/tools/${toolSlug}/${posterFile}` : undefined,
+  };
 }
 
 interface PageProps {
@@ -178,7 +200,9 @@ export default async function ReviewPage({ params }: PageProps) {
   const headings = extractHeadings(content);
   const [contentFirstHalf, contentSecondHalf] = splitContentAtMidpoint(content);
   const allArticles = getAllArticles();
-  const toolImages = getToolImages(meta.toolSlug || slug.replace(/-review$/, ''));
+  const resolvedToolSlug = meta.toolSlug || slug.replace(/-review$/, '');
+  const toolImages = getToolImages(resolvedToolSlug);
+  const profileVideo = getToolProfileVideo(resolvedToolSlug);
 
   // Build pricing summary for QuickVerdict
   const pricingSummary = meta.pricing?.length > 0
@@ -261,6 +285,17 @@ export default async function ReviewPage({ params }: PageProps) {
         <div className="mb-8">
           <ImageCarousel images={toolImages} />
         </div>
+      )}
+
+      {/* Profile video — auto-discovered from tool folder */}
+      {profileVideo && (
+        <ToolProfileVideo
+          toolName={meta.tool}
+          videoSrc={profileVideo.src}
+          posterSrc={profileVideo.poster}
+          affiliateUrl={meta.affiliateUrl}
+          affiliateLabel={meta.affiliateLabel}
+        />
       )}
 
       {/* Social links */}
