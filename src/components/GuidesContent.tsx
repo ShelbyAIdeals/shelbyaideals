@@ -35,38 +35,40 @@ export default function GuidesContent({ guides }: GuidesContentProps) {
             <StaggerItem key={guide.slug}>
               <Link
                 href={`/guides/${guide.slug}`}
-                className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 flex flex-col h-full"
               >
                 <span className="badge-void mb-3 inline-block">{t('guides.badge', 'Guide')}</span>
 
-                <h2 className="text-lg font-bold text-void-100 mb-2">
+                <h2 className="text-lg font-bold text-void-100 mb-2 line-clamp-2">
                   {guide.title}
                 </h2>
 
-                <p className="text-sm text-void-400 leading-relaxed mb-4">
+                <p className="text-sm text-void-400 leading-relaxed mb-4 line-clamp-2 flex-1">
                   {guide.excerpt}
                 </p>
 
                 {/* Recommended tools preview */}
-                {guide.recommendedTools.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {guide.recommendedTools.slice(0, 3).map((tool) => (
-                      <span
-                        key={tool.name}
-                        className="rounded-full bg-signal-500/15 px-2.5 py-0.5 text-xs font-medium text-signal-300"
-                      >
-                        {tool.name}
-                      </span>
-                    ))}
-                    {guide.recommendedTools.length > 3 && (
-                      <span className="rounded-full bg-void-700/50 px-2.5 py-0.5 text-xs font-medium text-void-500">
-                        +{guide.recommendedTools.length - 3} {t('guides.more', 'more')}
-                      </span>
-                    )}
-                  </div>
-                )}
+                <div className="min-h-[2rem] mb-4">
+                  {guide.recommendedTools.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {guide.recommendedTools.slice(0, 3).map((tool) => (
+                        <span
+                          key={tool.name}
+                          className="rounded-full bg-signal-500/15 px-2.5 py-0.5 text-xs font-medium text-signal-300"
+                        >
+                          {tool.name}
+                        </span>
+                      ))}
+                      {guide.recommendedTools.length > 3 && (
+                        <span className="rounded-full bg-void-700/50 px-2.5 py-0.5 text-xs font-medium text-void-500">
+                          +{guide.recommendedTools.length - 3} {t('guides.more', 'more')}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto pt-4">
                   {guide.readingTime && (
                     <span className="text-xs text-void-400">
                       {guide.readingTime}

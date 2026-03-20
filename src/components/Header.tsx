@@ -19,7 +19,7 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const { user, loading: authLoading } = useAuth();
+  const { user, loading: authLoading, profileLoading } = useAuth();
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -203,7 +203,7 @@ export default function Header() {
               <div className="w-px h-5 bg-void-700/50 mx-1" />
 
               {/* Auth buttons / User menu */}
-              {!authLoading && (
+              {!authLoading && !profileLoading && (
                 user ? (
                   <UserMenu />
                 ) : (
@@ -312,7 +312,7 @@ export default function Header() {
                 </li>
 
                 {/* Auth buttons (mobile) */}
-                {!authLoading && !user && (
+                {!authLoading && !profileLoading && !user && (
                   <>
                     <li>
                       <hr className="border-void-700/50 my-2 mx-3" />

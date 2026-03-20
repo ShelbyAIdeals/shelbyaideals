@@ -1,16 +1,7 @@
 'use client';
 
-import { Github, Linkedin, Instagram, Youtube } from 'lucide-react';
-
-interface SocialLinks {
-  twitter?: string;
-  youtube?: string;
-  linkedin?: string;
-  instagram?: string;
-  github?: string;
-  tiktok?: string;
-  discord?: string;
-}
+import { Github, Globe, Linkedin, Instagram, Youtube } from 'lucide-react';
+import type { SocialLinks } from '@/lib/types';
 
 interface SocialLinksRowProps {
   links: SocialLinks;
@@ -44,14 +35,25 @@ function DiscordIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+/* ── Facebook icon ─────────────────────────────────────── */
+function FacebookIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
 const SOCIAL_CONFIG: { key: keyof SocialLinks; icon: React.FC<{ size?: number }>; label: string }[] = [
-  { key: 'twitter',   icon: XIcon,       label: 'X (Twitter)' },
-  { key: 'youtube',   icon: Youtube,     label: 'YouTube' },
-  { key: 'linkedin',  icon: Linkedin,    label: 'LinkedIn' },
-  { key: 'instagram', icon: Instagram,   label: 'Instagram' },
-  { key: 'github',    icon: Github,      label: 'GitHub' },
-  { key: 'tiktok',    icon: TikTokIcon,  label: 'TikTok' },
-  { key: 'discord',   icon: DiscordIcon, label: 'Discord' },
+  { key: 'website',   icon: Globe,        label: 'Website' },
+  { key: 'twitter',   icon: XIcon,        label: 'X (Twitter)' },
+  { key: 'youtube',   icon: Youtube,      label: 'YouTube' },
+  { key: 'linkedin',  icon: Linkedin,     label: 'LinkedIn' },
+  { key: 'facebook',  icon: FacebookIcon, label: 'Facebook' },
+  { key: 'instagram', icon: Instagram,    label: 'Instagram' },
+  { key: 'github',    icon: Github,       label: 'GitHub' },
+  { key: 'tiktok',    icon: TikTokIcon,   label: 'TikTok' },
+  { key: 'discord',   icon: DiscordIcon,  label: 'Discord' },
 ];
 
 export default function SocialLinksRow({ links, toolName }: SocialLinksRowProps) {

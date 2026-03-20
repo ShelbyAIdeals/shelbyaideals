@@ -7,7 +7,7 @@ import { useAuth } from '@/lib/auth-context';
 import { useTranslation } from '@/i18n/context';
 
 export default function UserMenu() {
-  const { profile, signOut } = useAuth();
+  const { user, profile, signOut } = useAuth();
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,8 +22,8 @@ export default function UserMenu() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const displayName = profile?.username || profile?.first_name || 'User';
-  const initials = (profile?.first_name?.[0] ?? '') + (profile?.last_name?.[0] ?? '');
+  const displayName = profile?.username || profile?.first_name || user?.email?.split('@')[0] || 'User';
+  const initials = (profile?.first_name?.[0] ?? '') + (profile?.last_name?.[0] ?? '') || (user?.email?.[0]?.toUpperCase() ?? '');
 
   return (
     <div ref={containerRef} className="relative">

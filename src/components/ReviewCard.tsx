@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
+import { isAffiliateActive } from '@/lib/affiliate';
 
 interface ReviewCardProps {
   title: string;
@@ -34,11 +35,14 @@ export default function ReviewCard({
   const imageSlug = toolSlug || slug.replace('-review', '');
   const webpSrc = `/images/tools/${imageSlug}/thumb.webp`;
   const svgSrc = `/images/tools/${imageSlug}/thumb.svg`;
+  const heroPngSrc = `/images/tools/${imageSlug}/hero.png`;
+  const toolPngSrc = `/images/tools/${imageSlug}/${imageSlug}.png`;
   const imageSrc = featuredImage || webpSrc;
   const fallbackSrc = '/images/placeholders/tool-thumb.svg';
 
   const clampedRating = Math.max(0, Math.min(5, Number(rating) || 0));
   const isVerified = clampedRating >= 4.0;
+  const hasAffiliate = isAffiliateActive(imageSlug);
 
   return (
     <Link href={`/reviews/${slug}`} className="no-underline block h-full">
@@ -48,7 +52,7 @@ export default function ReviewCard({
         transition={{ type: 'spring', stiffness: 300, damping: 24 }}
       >
         {/* Image area with gradient overlay + rating circle */}
-        <div className="relative aspect-video bg-void-800 overflow-hidden">
+        <div className="relative aspect-video bg-void-800/80 overflow-hidden">
           <img
             src={imageSrc}
             alt={`${tool} review`}
@@ -56,8 +60,11 @@ export default function ReviewCard({
             loading="lazy"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
-              if (img.src.endsWith('.webp')) img.src = svgSrc;
-              else if (!img.src.endsWith('tool-thumb.svg')) img.src = fallbackSrc;
+              const src = img.src;
+              if (src.includes('thumb.webp')) img.src = svgSrc;
+              else if (src.includes('thumb.svg')) img.src = heroPngSrc;
+              else if (src.includes('hero.png')) img.src = toolPngSrc;
+              else if (!src.includes('tool-thumb.svg')) img.src = fallbackSrc;
             }}
           />
 
@@ -77,9 +84,17 @@ export default function ReviewCard({
                 src={toolLogo}
                 alt={`${tool} logo`}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
+          )}
+
+          {/* Affiliate "Top Pick" badge */}
+          {hasAffiliate && (
+            <span className="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-ember-500/90 text-white shadow-sm">
+              Top Pick
+            </span>
           )}
 
           {/* Rating score circle */}

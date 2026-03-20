@@ -186,3 +186,14 @@ export function getAffiliateProgram(toolSlug: string): AffiliateProgram | null {
 export function getAllPrograms(): Record<string, AffiliateProgram> {
   return affiliateLinks;
 }
+
+export function isAffiliateActive(toolSlug: string): boolean {
+  const entry = affiliateLinks[toolSlug];
+  return entry ? entry.status === 'active' : false;
+}
+
+export function getActiveAffiliateSlugs(): string[] {
+  return Object.entries(affiliateLinks)
+    .filter(([, v]) => v.status === 'active')
+    .map(([k]) => k);
+}

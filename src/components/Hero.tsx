@@ -174,7 +174,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
               <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
-                {t('hero.browse_tools', 'Browse All Tools')}
+                {t('hero.browse_tools', 'Find Your Perfect AI Tool')}
                 <ArrowRight size={16} />
               </Link>
               <Link href="/categories" className="btn-ghost text-sm no-underline gap-2">
@@ -269,11 +269,11 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
           custom={0.5}
           className="mt-16 pt-8 border-t border-void-800/50"
         >
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             {trustPoints.map((point) => (
-              <div key={point.text} className="flex items-center gap-2.5">
-                <point.icon size={16} className="text-signal-500/60" />
-                <span className="text-sm text-void-400">{point.text}</span>
+              <div key={point.text} className="flex items-center gap-2.5 bg-void-800/40 px-4 py-2.5 rounded-lg border border-void-700/30">
+                <point.icon size={18} className="text-signal-400 shrink-0" />
+                <span className="text-sm text-void-300">{point.text}</span>
               </div>
             ))}
           </div>

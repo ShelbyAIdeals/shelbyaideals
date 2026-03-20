@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, BadgeCheck, Youtube, Linkedin, Instagram, Github } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Globe, Youtube, Linkedin, Instagram, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
 import FavoriteButton from '@/components/FavoriteButton';
+import { isAffiliateActive } from '@/lib/affiliate';
 import type { Category, SocialLinks } from '@/lib/types';
 
 /* ── Inline social icons (lucide doesn't have X/TikTok/Discord) ── */
@@ -33,10 +34,20 @@ function DiscordIcon({ size = 12 }: { size?: number }) {
   );
 }
 
+function FacebookIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
 const SOCIAL_CONFIG: { key: keyof SocialLinks; icon: React.FC<{ size?: number }>; label: string }[] = [
+  { key: 'website',   icon: Globe,        label: 'Website' },
   { key: 'twitter',   icon: XIcon,        label: 'X' },
   { key: 'youtube',   icon: Youtube,      label: 'YouTube' },
   { key: 'linkedin',  icon: Linkedin,     label: 'LinkedIn' },
+  { key: 'facebook',  icon: FacebookIcon, label: 'Facebook' },
   { key: 'instagram', icon: Instagram,    label: 'Instagram' },
   { key: 'github',    icon: Github,       label: 'GitHub' },
   { key: 'tiktok',    icon: TikTokIcon,   label: 'TikTok' },
@@ -80,6 +91,8 @@ export default function ToolListCard({
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
+  const hasAffiliate = isAffiliateActive(toolSlug || slug.replace('-review', ''));
+
   const activeSocials = socialLinks
     ? SOCIAL_CONFIG.filter(({ key }) => socialLinks[key])
     : [];
@@ -87,7 +100,7 @@ export default function ToolListCard({
   return (
     <Link href={`/reviews/${slug}`} className="no-underline block">
       <motion.article
-        className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl border border-void-700/40 bg-void-800/30 hover:border-signal-500/30 hover:bg-void-800/50 transition-all duration-200 cursor-pointer group"
+        className={`flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl border border-void-700/40 bg-void-800/30 hover:border-signal-500/30 hover:bg-void-800/50 transition-all duration-200 cursor-pointer group ${hasAffiliate ? 'border-l-2 border-l-signal-500/30' : ''}`}
         whileHover={{ x: 4 }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       >
@@ -98,7 +111,7 @@ export default function ToolListCard({
               src={toolLogo}
               alt={`${tool} logo`}
               className="w-full h-full object-cover"
-              loading="lazy"
+              loading="eager"
             />
           ) : (
             <span className="text-lg font-bold text-signal-400">{initial}</span>
@@ -113,6 +126,11 @@ export default function ToolListCard({
             </h3>
             {isVerified && (
               <BadgeCheck size={15} className="text-signal-400 shrink-0" />
+            )}
+            {hasAffiliate && (
+              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-ember-500/15 text-ember-400 border border-ember-500/20 shrink-0">
+                Recommended
+              </span>
             )}
             {/* Social icons */}
             {activeSocials.length > 0 && (

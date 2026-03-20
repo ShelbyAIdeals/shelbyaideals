@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import ReviewCard from '@/components/ReviewCard';
 import CategoryCard from '@/components/CategoryCard';
 import DealOfTheWeek from '@/components/DealOfTheWeek';
+import FeaturedBanner from '@/components/FeaturedBanner';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
@@ -84,6 +85,24 @@ export default function HomeContent({
           </div>
         </section>
       )}
+
+      {/* Featured Banner — update imageSrc when new image is ready */}
+      <section className="py-10 sm:py-14">
+        <div className="container-main">
+          <ScrollReveal>
+            <FeaturedBanner
+              imageSrc="/images/og-thumbnail.png"
+              imageAlt="ShelbyAI Deals — Honest AI tool reviews"
+              title="Honest Reviews. Real Testing. No Sponsored Rankings."
+              description="Every tool is tested hands-on for 7-14 days. We show real screenshots, real output samples, and rate based on actual experience — not ad budgets."
+              ctaLabel="Explore Reviews"
+              ctaHref="/reviews"
+              badge="Why Trust Us"
+              variant="signal"
+            />
+          </ScrollReveal>
+        </div>
+      </section>
 
       <div className="section-divider" />
 
@@ -236,16 +255,16 @@ export default function HomeContent({
                 <StaggerItem key={guide.slug}>
                   <Link
                     href={`/guides/${guide.slug}`}
-                    className="card group p-6 no-underline hover:-translate-y-1 transition-all block"
+                    className="card group p-6 no-underline hover:-translate-y-1 transition-all flex flex-col h-full"
                   >
                     <span className="badge-iris mb-3 inline-block">{t('home.guide_badge', 'Guide')}</span>
-                    <h3 className="text-lg font-heading font-bold text-void-100 mb-2 group-hover:text-signal-400 transition-colors">
+                    <h3 className="text-lg font-heading font-bold text-void-100 mb-2 group-hover:text-signal-400 transition-colors line-clamp-2">
                       {guide.title}
                     </h3>
-                    <p className="text-sm text-void-400 leading-relaxed mb-4 flex-1">
+                    <p className="text-sm text-void-400 leading-relaxed mb-4 flex-1 line-clamp-2">
                       {guide.excerpt}
                     </p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       {guide.readingTime && (
                         <span className="text-xs text-void-500">
                           {guide.readingTime}

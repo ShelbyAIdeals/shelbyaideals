@@ -19,6 +19,7 @@ interface AuthState {
   profile: UserProfile | null;
   session: Session | null;
   loading: boolean;
+  profileLoading: boolean;
 }
 
 interface AuthContextValue extends AuthState {
@@ -38,6 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     profile: null,
     session: null,
     loading: true,
+    profileLoading: true,
   });
 
   /* ── Load profile from Supabase ────────────────────────── */
@@ -48,10 +50,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   /* ── Ensure profile row exists (first login / OAuth) ───── */
   const ensureProfile = useCallback(async (user: User) => {
+    setState((prev) => ({ ...prev, profileLoading: true }));
     try {
       const existing = await getProfile(user.id);
       if (existing) {
-        setState((prev) => ({ ...prev, profile: existing }));
+        setState((prev) => ({ ...prev, profile: existing, profileLoading: false }));
         return;
       }
       const meta = user.user_metadata ?? {};
@@ -64,10 +67,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       // Re-fetch to get the full row with DB defaults
       const created = await getProfile(user.id);
-      setState((prev) => ({ ...prev, profile: created }));
+      setState((prev) => ({ ...prev, profile: created, profileLoading: false }));
     } catch {
       // Profile creation can fail (e.g., RLS during email confirmation).
       // Don't crash — the profile will be created on next successful auth.
+      setState((prev) => ({ ...prev, profileLoading: false }));
     }
   }, []);
 
@@ -83,14 +87,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           if (user) {
             await ensureProfile(user);
           } else {
-            setState((prev) => ({ ...prev, profile: null }));
+            setState((prev) => ({ ...prev, profile: null, profileLoading: false }));
           }
         }
       );
       subscription = result.data.subscription;
     } catch {
       // Supabase not configured or key format incompatible — degrade gracefully
-      setState((prev) => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false, profileLoading: false }));
     }
 
     // Initial session check
@@ -99,7 +103,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setState((prev) => ({ ...prev, user, session, loading: false }));
       if (user) ensureProfile(user);
     }).catch(() => {
-      setState((prev) => ({ ...prev, loading: false }));
+      setState((prev) => ({ ...prev, loading: false, profileLoading: false }));
     });
 
     return () => subscription?.unsubscribe();
@@ -158,7 +162,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = useCallback(async () => {
     await supabaseSignOut();
-    setState({ user: null, profile: null, session: null, loading: false });
+    setState({ user: null, profile: null, session: null, loading: false, profileLoading: false });
   }, []);
 
   const refreshProfile = useCallback(async () => {

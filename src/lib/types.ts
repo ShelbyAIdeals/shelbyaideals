@@ -15,9 +15,11 @@ export interface ArticleMeta {
 }
 
 export interface SocialLinks {
+  website?: string;
   twitter?: string;
   youtube?: string;
   linkedin?: string;
+  facebook?: string;
   instagram?: string;
   github?: string;
   tiktok?: string;

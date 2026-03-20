@@ -8,6 +8,7 @@ import CategorySidebar from '@/components/CategorySidebar';
 import ToolsTabs from '@/components/ToolsTabs';
 import ToolListCard from '@/components/ToolListCard';
 import { useTranslation } from '@/i18n/context';
+import { isAffiliateActive } from '@/lib/affiliate';
 import type { ReviewMeta, Category, CategoryInfo } from '@/lib/types';
 
 interface ToolsPageContentProps {
@@ -30,7 +31,11 @@ export default function ToolsPageContent({
         : reviews.filter((r) => r.category === activeCategory);
 
     const sorted = [...filtered].sort((a, b) => {
-      if (activeTab === 'popular') return b.rating - a.rating;
+      if (activeTab === 'popular') {
+        const aBoost = isAffiliateActive(a.toolSlug || a.slug.replace('-review', '')) ? 0.1 : 0;
+        const bBoost = isAffiliateActive(b.toolSlug || b.slug.replace('-review', '')) ? 0.1 : 0;
+        return (b.rating + bBoost) - (a.rating + aBoost);
+      }
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 

@@ -283,14 +283,28 @@ export async function deleteAccount(): Promise<void> {
   const { data: { session } } = await supabase.auth.getSession();
   if (!session?.access_token) throw new Error('Not authenticated');
 
-  const response = await fetch('/api/delete-account', {
-    method: 'DELETE',
-    headers: { Authorization: `Bearer ${session.access_token}` },
-  });
-  if (!response.ok) {
-    const body = await response.json().catch(() => ({}));
-    throw new Error(body.error || 'Failed to delete account');
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch('/api/delete-account', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${session.access_token}` },
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      const body = await response.json().catch(() => ({}));
+      throw new Error(body.error || 'Failed to delete account');
+    }
+  } catch (err) {
+    if (err instanceof DOMException && err.name === 'AbortError') {
+      throw new Error('Request timed out. Please try again.');
+    }
+    throw err;
+  } finally {
+    clearTimeout(timeout);
   }
+
   await supabase.auth.signOut();
 }
 

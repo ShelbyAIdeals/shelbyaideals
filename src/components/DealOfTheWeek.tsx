@@ -66,7 +66,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
               rel="nofollow sponsored noopener"
               className="btn-accent text-sm !py-2.5 !px-5 gap-1.5"
             >
-              {t('common.claim_deal', 'Claim Deal')} <ArrowRight size={14} />
+              {t('common.claim_deal', 'Start Free Trial')} <ArrowRight size={14} />
             </a>
           </div>
         </div>

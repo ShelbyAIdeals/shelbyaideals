@@ -31,7 +31,7 @@ export default function MistEffect() {
   const stars = useRef<Star[]>([]);
   const mouseDown = useRef(false);
   const lastRegenTime = useRef(0);
-  const mistDensity = useRef(50);
+  const mistDensity = useRef(100);
   const isLight = useRef(false);
 
   useEffect(() => {
@@ -191,10 +191,21 @@ export default function MistEffect() {
 
         p.x += p.vx;
         p.y += p.vy;
-        p.vx *= 0.999;
-        p.vy *= 0.999;
+        p.vx *= 0.9995;
+        p.vy *= 0.9995;
         p.vx += (Math.random() - 0.5) * 0.003;
         p.vy += (Math.random() - 0.5) * 0.002;
+
+        // Enforce minimum velocity so mist keeps drifting
+        const minV = 0.08;
+        if (Math.abs(p.vx) < minV) p.vx += (p.vx >= 0 ? 1 : -1) * minV * 0.5;
+        if (Math.abs(p.vy) < minV) p.vy += (p.vy >= 0 ? 1 : -1) * minV * 0.5;
+
+        // Periodic velocity kick to maintain visual freshness
+        if (frame % 300 === 0) {
+          p.vx += (Math.random() - 0.5) * 0.15;
+          p.vy += (Math.random() - 0.5) * 0.1;
+        }
 
         if (p.x < -p.r) p.x = w + p.r;
         if (p.x > w + p.r) p.x = -p.r;

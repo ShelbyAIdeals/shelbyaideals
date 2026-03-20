@@ -123,11 +123,13 @@ export default function ProfilePage() {
 
   const handleDelete = async () => {
     setDeleting(true);
+    setSaveError('');
     try {
       await deleteAccount();
       router.push('/');
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : 'Delete failed');
+    } finally {
       setDeleting(false);
       setShowDeleteConfirm(false);
     }
@@ -311,7 +313,7 @@ export default function ProfilePage() {
             <h3 className="text-lg font-heading font-bold text-void-50 mb-2">Delete Account</h3>
             <p className="text-sm text-void-400 mb-6">This will permanently delete your account, reviews, and all data. This cannot be undone.</p>
             <div className="flex gap-3">
-              <button onClick={() => setShowDeleteConfirm(false)} className="flex-1 py-2.5 text-sm font-medium rounded-lg border border-void-600/50 text-void-300 hover:bg-void-700/40 transition-all cursor-pointer">Cancel</button>
+              <button onClick={() => { setShowDeleteConfirm(false); setDeleting(false); }} className="flex-1 py-2.5 text-sm font-medium rounded-lg border border-void-600/50 text-void-300 hover:bg-void-700/40 transition-all cursor-pointer">Cancel</button>
               <button onClick={handleDelete} disabled={deleting} className="flex-1 py-2.5 text-sm font-medium rounded-lg bg-red-500 text-white hover:bg-red-600 disabled:opacity-50 transition-all cursor-pointer">
                 {deleting ? 'Deleting...' : 'Delete Forever'}
               </button>
