@@ -9,7 +9,16 @@ import ToolsTabs from '@/components/ToolsTabs';
 import ToolListCard from '@/components/ToolListCard';
 import { useTranslation } from '@/i18n/context';
 import { isAffiliateActive } from '@/lib/affiliate';
+import Link from 'next/link';
 import type { ReviewMeta, Category, CategoryInfo } from '@/lib/types';
+
+const audiencePills = [
+  { label: 'Content Writers', slug: 'content-writers' },
+  { label: 'Marketers', slug: 'marketing-teams' },
+  { label: 'Freelancers', slug: 'freelancers' },
+  { label: 'Video Creators', slug: 'video-creators' },
+  { label: 'Small Teams', slug: 'small-business' },
+];
 
 interface ToolsPageContentProps {
   reviews: ReviewMeta[];
@@ -53,9 +62,21 @@ export default function ToolsPageContent({
           <p className="text-base sm:text-lg text-void-400 leading-relaxed">
             {t(
               'tools.page_description',
-              'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.'
+              'Tested, rated, and ranked — find the right AI tool for your workflow.'
             )}
           </p>
+          <div className="flex flex-wrap items-center gap-2 mt-4">
+            <span className="text-xs text-void-500">{t('tools.popular_for', 'Popular for:')}</span>
+            {audiencePills.map((pill) => (
+              <Link
+                key={pill.slug}
+                href={`/best-for/${pill.slug}/`}
+                className="px-3 py-1 text-xs font-medium text-void-400 bg-void-800/60 border border-void-700/40 rounded-full hover:border-signal-500/30 hover:text-signal-400 no-underline transition-all"
+              >
+                {pill.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </ScrollReveal>
 

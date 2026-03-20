@@ -1,20 +1,24 @@
 'use client';
 
-import { CheckCircle, CheckCircle2, XCircle } from 'lucide-react';
+import Link from 'next/link';
+import { CheckCircle, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
 
 interface ProsConsProps {
   pros: string[];
   cons: string[];
+  toolSlug?: string;
+  toolName?: string;
 }
 
-export default function ProsCons({ pros, cons }: ProsConsProps) {
+export default function ProsCons({ pros, cons, toolSlug, toolName }: ProsConsProps) {
   const { t } = useTranslation();
   const safeP = pros ?? [];
   const safeC = cons ?? [];
   if (safeP.length === 0 && safeC.length === 0) return null;
 
   return (
+    <>
     <div className="pros-cons-grid">
       {/* Pros */}
       <div className="rounded-xl border border-void-800 overflow-hidden"
@@ -72,5 +76,16 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
         </ul>
       </div>
     </div>
+    {toolSlug && (
+      <div className="mt-4 text-center">
+        <Link
+          href={`/alternatives/${toolSlug}/`}
+          className="inline-flex items-center gap-1.5 text-sm text-void-400 hover:text-signal-400 transition-colors"
+        >
+          Not sure? Compare {toolName || 'this tool'} with alternatives <ArrowRight size={14} />
+        </Link>
+      </div>
+    )}
+    </>
   );
 }

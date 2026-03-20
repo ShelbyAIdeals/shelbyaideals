@@ -161,6 +161,33 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       {/* Related Articles */}
       <RelatedArticles current={meta} articles={allArticles} />
+
+      {/* Bottom CTA — repeat winner recommendation */}
+      {meta.winners.length > 0 && (
+        <section className="mt-10 p-6 rounded-xl border border-ember-500/20 bg-void-900">
+          <h2 className="text-lg font-heading font-bold text-void-50 mb-4">Ready to get started?</h2>
+          <div className="flex flex-col gap-3">
+            {meta.winners.map((winner) => (
+              <div key={winner.scenario} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <div className="flex-1 min-w-0">
+                  <span className="text-sm text-void-400">Best for {winner.scenario}:</span>{' '}
+                  <span className="text-sm font-semibold text-void-100">{winner.winner}</span>
+                </div>
+                {meta.affiliateUrls[winner.winner] && (
+                  <a
+                    href={meta.affiliateUrls[winner.winner]}
+                    target="_blank"
+                    rel="nofollow sponsored noopener"
+                    className="btn-accent text-sm !py-2 !px-4 gap-1.5 shrink-0"
+                  >
+                    Try {winner.winner} <ArrowRight size={14} />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </ArticleLayout>
   );
 }

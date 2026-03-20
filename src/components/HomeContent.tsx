@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Users, PenTool, Briefcase, Video, TrendingUp, Lightbulb } from 'lucide-react';
 import ReviewCard from '@/components/ReviewCard';
 import CategoryCard from '@/components/CategoryCard';
 import DealOfTheWeek from '@/components/DealOfTheWeek';
@@ -11,6 +11,15 @@ import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import { useTranslation } from '@/i18n/context';
 import type { ReviewMeta, ComparisonMeta, GuideMeta, CategoryInfo } from '@/lib/types';
+
+const audienceSegments = [
+  { label: 'Content Writers', slug: 'content-writers', icon: PenTool },
+  { label: 'Marketers', slug: 'marketing-teams', icon: TrendingUp },
+  { label: 'Freelancers', slug: 'freelancers', icon: Briefcase },
+  { label: 'Video Creators', slug: 'video-creators', icon: Video },
+  { label: 'Small Business', slug: 'small-business', icon: Users },
+  { label: 'Solopreneurs', slug: 'solopreneurs', icon: Lightbulb },
+];
 
 interface HomeContentProps {
   featuredReviews: ReviewMeta[];
@@ -151,6 +160,48 @@ export default function HomeContent({
                   icon={cat.icon}
                   articleCount={cat.articleCount}
                 />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* 4b. Find Tools for Your Role */}
+      <section className="py-16 sm:py-20">
+        <div className="container-main">
+          <ScrollReveal>
+            <div className="mb-10">
+              <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
+                {t('home.role_eyebrow', 'By Role')}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+                {t('home.role_heading', 'Find the Best Tools for Your Role')}
+              </h2>
+              <p className="mt-2 text-void-400 text-sm">
+                {t('home.role_desc', 'Curated picks based on how you work — not just what category a tool falls into.')}
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {audienceSegments.map((seg) => (
+              <StaggerItem key={seg.slug}>
+                <Link
+                  href={`/best-for/${seg.slug}/`}
+                  className="flex items-center gap-4 p-4 rounded-xl border border-void-700/40 bg-void-800/20 hover:border-signal-500/30 hover:bg-void-800/40 transition-all no-underline group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center shrink-0">
+                    <seg.icon size={18} className="text-signal-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-sm font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      Best AI Tools for {seg.label}
+                    </span>
+                  </div>
+                  <ArrowRight size={14} className="text-void-500 group-hover:text-signal-400 transition-colors shrink-0" />
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>

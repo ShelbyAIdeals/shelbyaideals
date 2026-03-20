@@ -337,7 +337,7 @@ export default async function ReviewPage({ params }: PageProps) {
 
       {/* Pros & Cons */}
       <div className="mt-10">
-        <ProsCons pros={meta.pros} cons={meta.cons} />
+        <ProsCons pros={meta.pros} cons={meta.cons} toolSlug={meta.toolSlug || slug.replace('-review', '')} toolName={meta.tool} />
       </div>
 
       {/* Final Verdict */}
@@ -349,6 +349,7 @@ export default async function ReviewPage({ params }: PageProps) {
           affiliateUrl={meta.affiliateUrl}
           affiliateLabel={meta.affiliateLabel}
           toolName={meta.tool}
+          toolSlug={meta.toolSlug || slug.replace('-review', '')}
         />
       </div>
 

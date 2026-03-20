@@ -45,8 +45,11 @@ export default function AuthorCard() {
             {AUTHOR.title}
           </p>
 
-          <p className="text-sm text-void-300 leading-relaxed mb-3">
+          <p className="text-sm text-void-300 leading-relaxed mb-2">
             {AUTHOR.bio}
+          </p>
+          <p className="text-xs text-void-500 mb-3">
+            31+ tools tested &middot; 7-14 days per review &middot; Real workflows, real results
           </p>
 
           {/* Bottom row: social + profile link */}

@@ -16,9 +16,9 @@ export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rati
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 60% of the page
+      // Show after scrolling 40% of the page
       const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      setVisible(scrollPercent > 0.6);
+      setVisible(scrollPercent > 0.4);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

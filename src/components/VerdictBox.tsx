@@ -2,6 +2,7 @@
 
 import { Trophy, ArrowRight } from 'lucide-react';
 import StarRating from './StarRating';
+import TrustBadge from './TrustBadge';
 import Link from 'next/link';
 import { useTranslation } from '@/i18n/context';
 
@@ -12,6 +13,7 @@ interface VerdictBoxProps {
   affiliateUrl: string;
   affiliateLabel: string;
   toolName: string;
+  toolSlug?: string;
 }
 
 export default function VerdictBox({
@@ -21,6 +23,7 @@ export default function VerdictBox({
   affiliateUrl,
   affiliateLabel,
   toolName,
+  toolSlug,
 }: VerdictBoxProps) {
   const { t } = useTranslation();
   const safeRating = Math.max(0, Math.min(5, Number(rating) || 0));
@@ -79,13 +82,15 @@ export default function VerdictBox({
             </a>
 
             <Link
-              href="/reviews"
+              href={toolSlug ? `/alternatives/${toolSlug}/` : '/reviews/'}
               className="btn-ghost gap-2"
             >
-              <span>{t('article.read_alternatives', 'Read Alternatives')}</span>
+              <span>{toolSlug ? `See ${toolName} Alternatives` : t('article.read_alternatives', 'See All Tools')}</span>
               <ArrowRight size={16} />
             </Link>
           </div>
+
+          <TrustBadge />
         </div>
       </div>
     </div>

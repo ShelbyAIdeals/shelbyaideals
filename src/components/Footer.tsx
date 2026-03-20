@@ -82,9 +82,9 @@ export default function Footer() {
   const { t } = useTranslation();
 
   const benefits = [
-    t('newsletter.benefit_1', 'Weekly curated AI tool picks'),
-    t('newsletter.benefit_2', 'Exclusive deals and discounts'),
-    t('newsletter.benefit_3', 'Workflow tips from real users'),
+    t('newsletter.benefit_1', 'One tested AI tool recommendation per week'),
+    t('newsletter.benefit_2', 'Early access to new reviews and comparisons'),
+    t('newsletter.benefit_3', 'Practical workflow tips — zero fluff'),
   ];
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -132,7 +132,7 @@ export default function Footer() {
             {/* Left — headline + benefits */}
             <div className="flex-1 min-w-0">
               <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
-                {t('footer.stay_ahead', 'Stay ahead of the AI curve')}
+                {t('footer.stay_ahead', 'Get the Best AI Tools in Your Inbox')}
               </h3>
               <ul className="space-y-3">
                 {benefits.map((b) => (
@@ -180,7 +180,7 @@ export default function Footer() {
                         t('footer.sending', 'Sending...')
                       ) : (
                         <>
-                          {t('footer.get_free_picks', 'Get Free Picks')}
+                          {t('footer.get_free_picks', 'Get Weekly AI Picks')}
                           <ArrowRight size={14} />
                         </>
                       )}

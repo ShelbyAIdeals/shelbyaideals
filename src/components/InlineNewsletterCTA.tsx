@@ -62,10 +62,10 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
           </div>
           <div>
             <h3 className="text-base font-bold text-void-50 font-heading">
-              {t('article.get_weekly_picks', 'Get weekly AI tool picks')}
+              {t('article.get_weekly_picks', 'Get tested AI tool picks every week')}
             </h3>
             <p className="text-sm text-void-400 mt-0.5">
-              {t('article.picks_description', 'Curated recommendations, workflow tips, and exclusive deals. No spam.')}
+              {t('article.picks_description', 'One recommendation, practical tips, and comparison highlights. Read by creators and small teams.')}
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
                   <Loader2 size={14} className="animate-spin" />
                 ) : (
                   <>
-                    {t('newsletter.subscribe', 'Subscribe')} <ArrowRight size={14} />
+                    {t('newsletter.subscribe', 'Get Weekly Picks')} <ArrowRight size={14} />
                   </>
                 )}
               </button>

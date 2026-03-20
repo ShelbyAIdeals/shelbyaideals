@@ -26,8 +26,8 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
     .filter((a) => a.category === current.category || a.type === current.type)
     .sort((a, b) => {
       // Prioritize same category
-      const aScore = (a.category === current.category ? 2 : 0) + (a.type === current.type ? 1 : 0);
-      const bScore = (b.category === current.category ? 2 : 0) + (b.type === current.type ? 1 : 0);
+      const aScore = (a.category === current.category ? 2 : 0) + (a.type !== current.type ? 1 : 0);
+      const bScore = (b.category === current.category ? 2 : 0) + (b.type !== current.type ? 1 : 0);
       return bScore - aScore || new Date(b.date).getTime() - new Date(a.date).getTime();
     })
     .slice(0, maxItems);
