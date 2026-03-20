@@ -6,7 +6,9 @@ import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
-import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
 import type { ComparisonMeta } from '@/lib/types';
 
 interface PageProps {
@@ -127,6 +129,32 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       <JsonLd type="article" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+
+      {/* Cross-links to individual reviews */}
+      {(() => {
+        const reviews = getAllReviews();
+        const toolReviews = meta.tools
+          .map((toolName) => reviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
+          .filter(Boolean);
+        if (toolReviews.length === 0) return null;
+        return (
+          <section className="mb-8 p-5 rounded-xl border border-void-700/40 bg-void-800/20">
+            <h2 className="text-lg font-heading font-bold text-void-100 mb-3">Read the Full Reviews</h2>
+            <div className="flex flex-col gap-2">
+              {toolReviews.map((review) => (
+                <Link
+                  key={review!.slug}
+                  href={`/reviews/${review!.slug}/`}
+                  className="inline-flex items-center gap-2 text-sm text-signal-400 hover:text-signal-300 transition-colors"
+                >
+                  <ArrowRight size={14} />
+                  {`Read our full ${review!.tool} review`}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* MDX Body */}
       <MDXContent source={content} />

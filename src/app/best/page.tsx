@@ -28,6 +28,9 @@ export const metadata: Metadata = {
       'Curated, tested, and ranked -- the best AI tools for every use case and budget.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/best/',
+  },
 };
 
 export default async function BestOfPage() {

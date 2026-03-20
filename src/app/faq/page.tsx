@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/faq/',
+  },
 };
 
 const faqs = [

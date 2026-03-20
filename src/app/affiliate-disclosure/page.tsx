@@ -23,6 +23,9 @@ export const metadata: Metadata = {
       'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/affiliate-disclosure/',
+  },
 };
 
 export default function AffiliateDisclosurePage() {

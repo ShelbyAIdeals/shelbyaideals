@@ -25,6 +25,9 @@ export const metadata: Metadata = {
       'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/how-we-review/',
+  },
 };
 
 export default function HowWeReviewPage() {

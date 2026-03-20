@@ -121,6 +121,7 @@ export default function RootLayout({
           </noscript>
         )}
         <JsonLd type="website" />
+        <JsonLd type="organization" />
         <MistEffect />
         <Providers>
           <div className="relative z-[2] isolate flex flex-col min-h-screen">

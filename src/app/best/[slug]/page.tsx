@@ -47,6 +47,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: metaDescription,
         images: [typeof ogImage === 'string' ? ogImage : ogImage.url],
       },
+      alternates: {
+        canonical: `https://www.shelby-ai.com/best/${slug}/`,
+      },
     };
   } catch {
     return { title: 'Best-Of List Not Found' };

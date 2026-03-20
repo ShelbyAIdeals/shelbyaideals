@@ -20,6 +20,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
       <img
         src={images[current].src}
         alt={images[current].alt}
+        width={1200}
+        height={675}
         className="w-full h-full object-contain"
       />
 

@@ -38,9 +38,8 @@ function buildSitemap(): string {
     { url: '/contact', priority: '0.3', changefreq: 'yearly' },
     { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
     { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
-    // Locale landing pages
-    { url: '/es', priority: '0.8', changefreq: 'weekly' },
-    { url: '/de', priority: '0.8', changefreq: 'weekly' },
+    // Categories collection page
+    { url: '/categories', priority: '0.8', changefreq: 'weekly' },
   ];
 
   for (const page of staticPages) {
@@ -114,12 +113,15 @@ function buildSitemap(): string {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${entries
   .map(
-    (e) => `  <url>
-    <loc>${SITE_URL}${e.url}</loc>
+    (e) => {
+      const loc = e.url.endsWith('/') ? e.url : `${e.url}/`;
+      return `  <url>
+    <loc>${SITE_URL}${loc}</loc>
     <lastmod>${e.lastmod}</lastmod>
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>
-  </url>`
+  </url>`;
+    }
   )
   .join('\n')}
 </urlset>`;

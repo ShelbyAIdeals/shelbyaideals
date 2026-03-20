@@ -55,7 +55,9 @@ export default function ReviewCard({
         <div className="relative aspect-video bg-void-800/80 overflow-hidden">
           <img
             src={imageSrc}
-            alt={`${tool} review`}
+            alt={`${tool} review — hands-on testing and rating`}
+            width={600}
+            height={338}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             onError={(e) => {

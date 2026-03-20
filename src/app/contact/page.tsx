@@ -24,6 +24,9 @@ export const metadata: Metadata = {
       'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/contact/',
+  },
 };
 
 export default function ContactPage() {

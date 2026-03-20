@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getAllGuides } from '@/lib/content';
 import GuidesContent from '@/components/GuidesContent';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Guides & Tutorials',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
       'Step-by-step guides to building AI-powered workflows that save time and grow your business.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/guides/',
+  },
 };
 
 export default async function GuidesPage() {
@@ -32,6 +36,16 @@ export default async function GuidesPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="itemlist"
+        data={{
+          name: 'AI Guides & Tutorials',
+          items: guides.map((g) => ({
+            name: g.title,
+            url: `https://www.shelby-ai.com/guides/${g.slug}/`,
+          })),
+        }}
+      />
       <GuidesContent guides={guides} />
     </main>
   );

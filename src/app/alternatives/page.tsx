@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://www.shelby-ai.com/alternatives',
   },
   alternates: {
-    canonical: 'https://www.shelby-ai.com/alternatives',
+    canonical: 'https://www.shelby-ai.com/alternatives/',
   },
 };
 

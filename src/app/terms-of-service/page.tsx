@@ -23,6 +23,9 @@ export const metadata: Metadata = {
       'Terms and conditions for using the ShelbyAIDeals website.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/terms-of-service/',
+  },
 };
 
 export default function TermsOfServicePage() {

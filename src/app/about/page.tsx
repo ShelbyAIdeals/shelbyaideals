@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/about/',
+  },
 };
 
 export default function AboutPage() {

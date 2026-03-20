@@ -14,9 +14,14 @@ interface VideoData {
   duration?: string;
 }
 
+interface ItemListData {
+  name: string;
+  items: { url: string; name: string }[];
+}
+
 interface JsonLdProps {
-  type: 'review' | 'article' | 'website' | 'breadcrumb' | 'faq' | 'video';
-  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData;
+  type: 'review' | 'article' | 'website' | 'organization' | 'breadcrumb' | 'faq' | 'video' | 'itemlist';
+  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData | ItemListData;
   breadcrumbs?: { name: string; url: string }[];
 }
 
@@ -35,6 +40,32 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
         target: 'https://www.shelby-ai.com/search?q={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
+    };
+  } else if (type === 'organization') {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'ShelbyAIDeals',
+      url: 'https://www.shelby-ai.com',
+      logo: 'https://www.shelby-ai.com/images/og-thumbnail.png',
+      description: 'Honest AI tool reviews for creators, freelancers, and small teams. 31+ tools tested hands-on.',
+      sameAs: [
+        'https://x.com/ShelbyAIDeals',
+      ],
+    };
+  } else if (type === 'itemlist' && data && 'items' in data) {
+    const list = data as ItemListData;
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: list.name,
+      numberOfItems: list.items.length,
+      itemListElement: list.items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        url: item.url,
+      })),
     };
   } else if (type === 'breadcrumb' && breadcrumbs) {
     schema = {

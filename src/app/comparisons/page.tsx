@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getAllComparisons } from '@/lib/content';
 import ComparisonsContent from '@/components/ComparisonsContent';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Tool Comparisons',
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
       'Head-to-head comparisons with real testing, side-by-side features, and clear winners by scenario.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/comparisons/',
+  },
 };
 
 export default async function ComparisonsPage() {
@@ -32,6 +36,16 @@ export default async function ComparisonsPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="itemlist"
+        data={{
+          name: 'AI Tool Comparisons',
+          items: comparisons.map((c) => ({
+            name: c.title,
+            url: `https://www.shelby-ai.com/comparisons/${c.slug}/`,
+          })),
+        }}
+      />
       <ComparisonsContent comparisons={comparisons} />
     </main>
   );

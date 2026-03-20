@@ -64,7 +64,7 @@ export default function RelatedArticles({ current, articles, maxItems = 3 }: Rel
                 </div>
               )}
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-signal-400 group-hover:text-signal-300">
-                {t('article.read_more', 'Read More')} <ArrowRight size={12} />
+                {`Read ${article.title.length > 40 ? article.title.slice(0, 40) + '...' : article.title}`} <ArrowRight size={12} />
               </span>
             </Link>
           );

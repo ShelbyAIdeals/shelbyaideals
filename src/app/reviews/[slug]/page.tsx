@@ -19,8 +19,10 @@ import SocialLinksRow from '@/components/SocialLinksRow';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import UserReviewsSection from '@/components/UserReviewsSection';
 import ToolHubLinks from '@/components/ToolHubLinks';
-import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
-import type { ReviewMeta } from '@/lib/types';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { getArticle, getArticleSlugs, getAllArticles, getAllComparisons } from '@/lib/content';
+import type { ReviewMeta, ComparisonMeta } from '@/lib/types';
 
 /** Auto-detect hero + screenshot images for a tool at build time */
 function getToolImages(toolSlug: string): { src: string; alt: string }[] {
@@ -30,17 +32,19 @@ function getToolImages(toolSlug: string): { src: string; alt: string }[] {
   const allFiles = fs.readdirSync(dir);
   const images: { src: string; alt: string }[] = [];
 
+  const toolName = toolSlug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
   // Add hero image first (try webp, then png, then svg)
   const heroFile = ['hero.webp', 'hero.png', 'hero.svg'].find((f) => allFiles.includes(f));
   if (heroFile) {
-    images.push({ src: `/images/tools/${toolSlug}/${heroFile}`, alt: 'Dashboard overview' });
+    images.push({ src: `/images/tools/${toolSlug}/${heroFile}`, alt: `${toolName} dashboard overview` });
   }
 
   // Add numbered screenshots
   const screenshots = allFiles.filter((f) => /^screenshot-\d+\.(webp|png|jpg)$/i.test(f));
   screenshots.sort();
   screenshots.forEach((f, i) => {
-    images.push({ src: `/images/tools/${toolSlug}/${f}`, alt: `Screenshot ${i + 1}` });
+    images.push({ src: `/images/tools/${toolSlug}/${f}`, alt: `${toolName} interface — screenshot ${i + 1}` });
   });
 
   return images;
@@ -347,6 +351,32 @@ export default async function ReviewPage({ params }: PageProps) {
           toolName={meta.tool}
         />
       </div>
+
+      {/* Related comparisons mentioning this tool */}
+      {(() => {
+        const comparisons = getAllComparisons();
+        const related = comparisons.filter((c: ComparisonMeta) =>
+          c.tools.some((t) => t.toLowerCase() === meta.tool.toLowerCase())
+        );
+        if (related.length === 0) return null;
+        return (
+          <section className="mt-8 p-5 rounded-xl border border-void-700/40 bg-void-800/20">
+            <h2 className="text-lg font-heading font-bold text-void-100 mb-3">{meta.tool} in Comparisons</h2>
+            <div className="flex flex-col gap-2">
+              {related.map((comp: ComparisonMeta) => (
+                <Link
+                  key={comp.slug}
+                  href={`/comparisons/${comp.slug}/`}
+                  className="inline-flex items-center gap-2 text-sm text-signal-400 hover:text-signal-300 transition-colors"
+                >
+                  <ArrowRight size={14} />
+                  {comp.title}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Explore More — internal links to alternatives, pricing, best-for */}
       <ToolHubLinks toolSlug={slug} toolName={meta.tool} category={meta.category} />

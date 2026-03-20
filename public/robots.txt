@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 Sitemap: https://www.shelby-ai.com/sitemap.xml

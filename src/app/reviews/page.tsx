@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getAllReviews } from '@/lib/content';
 import ToolsPageContent from '@/components/ToolsPageContent';
+import JsonLd from '@/components/JsonLd';
 import { CATEGORIES } from '@/lib/types';
 
 export const metadata: Metadata = {
@@ -26,6 +27,9 @@ export const metadata: Metadata = {
       'Browse and compare the best AI tools — reviewed, rated, and ranked for creators and small teams.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/reviews/',
+  },
 };
 
 export default async function ReviewsPage() {
@@ -38,6 +42,16 @@ export default async function ReviewsPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="itemlist"
+        data={{
+          name: 'AI Tool Reviews',
+          items: reviews.map((r) => ({
+            name: `${r.tool} Review`,
+            url: `https://www.shelby-ai.com/reviews/${r.slug}/`,
+          })),
+        }}
+      />
       <ToolsPageContent reviews={reviews} categoriesWithCount={categoriesWithCount} />
     </main>
   );

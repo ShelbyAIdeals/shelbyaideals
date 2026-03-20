@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, User, ShieldCheck } from 'lucide-react';
+import Breadcrumb from './Breadcrumb';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import AuthorCard from './AuthorCard';
 import NewsletterSignup from './NewsletterSignup';
@@ -34,13 +35,12 @@ export default function ArticleLayout({ meta, backLink, children, sidebar }: Art
     <main className="min-h-screen">
       <div className="container-main py-8">
         {/* Breadcrumb */}
-        <Link
-          href={backLink.href}
-          className="inline-flex items-center gap-2 text-sm text-void-300 hover:text-signal-400 mb-6"
-        >
-          <ArrowLeft size={16} />
-          {backLink.label}
-        </Link>
+        <Breadcrumb
+          items={[
+            { label: backLink.label, href: backLink.href },
+            { label: meta.title },
+          ]}
+        />
 
         {/* Article Header */}
         <header className="mb-8">

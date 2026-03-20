@@ -23,6 +23,9 @@ export const metadata: Metadata = {
       'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/privacy-policy/',
+  },
 };
 
 export default function PrivacyPolicyPage() {

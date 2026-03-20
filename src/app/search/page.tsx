@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Search AI Tools',
   description: 'Search our AI tool reviews, comparisons, and guides.',
+  robots: { index: false, follow: true },
   openGraph: {
     title: 'Search AI Tools',
     description: 'Search our AI tool reviews, comparisons, and guides.',
