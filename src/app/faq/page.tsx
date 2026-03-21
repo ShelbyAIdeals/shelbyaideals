@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { HelpCircle } from 'lucide-react';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import JsonLd from '@/components/JsonLd';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'FAQ — ShelbyAIDeals',
@@ -158,6 +159,8 @@ export default function FAQPage() {
           <section className="mt-12">
             <NewsletterSignup variant="section" />
           </section>
+
+          <ExploreMore variant="static" />
         </div>
       </div>
     </main>

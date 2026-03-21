@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Mail, Sparkles, TrendingUp, Gift, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
+import ExploreMore from '@/components/ExploreMore';
 
 export default function NewsletterPage() {
   const { t } = useTranslation();
@@ -159,6 +160,8 @@ export default function NewsletterPage() {
           <ArrowRight size={16} />
         </a>
       </div>
+
+      <ExploreMore variant="static" />
     </main>
   );
 }

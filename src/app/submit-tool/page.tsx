@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SubmitToolForm from './SubmitToolForm';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'Submit a Tool',
@@ -39,6 +40,8 @@ export default function SubmitToolPage() {
           </p>
 
           <SubmitToolForm />
+
+          <ExploreMore variant="static" />
         </div>
       </div>
     </main>

@@ -4,6 +4,7 @@ import { getAllAlternativesPages } from '@/lib/alternatives-data';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'AI Tool Alternatives',
@@ -93,6 +94,8 @@ export default function AlternativesPage() {
             </p>
           </div>
         </ScrollReveal>
+
+        <ExploreMore variant="alternatives" />
       </div>
     </main>
   );

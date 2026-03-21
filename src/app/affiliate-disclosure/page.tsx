@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'Affiliate Disclosure',
@@ -169,6 +170,8 @@ export default function AffiliateDisclosurePage() {
               </p>
             </section>
           </div>
+
+          <ExploreMore variant="legal" />
         </div>
       </div>
     </main>

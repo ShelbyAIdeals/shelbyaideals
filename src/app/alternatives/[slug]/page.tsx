@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {
   getAlternativesSlugs,
   getAlternativesPage,
+  getAllAlternativesPages,
 } from '@/lib/alternatives-data';
 import type { AlternativeTool } from '@/lib/alternatives-data';
 import ScrollReveal from '@/components/motion/ScrollReveal';
@@ -264,6 +265,38 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
       </div>
+
+      {/* More Alternatives */}
+      {(() => {
+        const allPages = getAllAlternativesPages().filter((p) => p.slug !== slug);
+        const related = allPages.slice(0, 3);
+        if (related.length === 0) return null;
+        return (
+          <div className="container-main pb-12 sm:pb-16">
+            <ScrollReveal>
+              <h2 className="text-xl font-bold text-void-100 mb-6 font-heading">
+                More Alternatives
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {related.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/alternatives/${p.slug}`}
+                    className="group card p-5 border border-void-700/50 hover:border-signal-500/40 rounded-xl no-underline transition-all"
+                  >
+                    <span className="text-sm font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      {p.tool} Alternatives
+                    </span>
+                    <p className="text-xs text-void-400 mt-1">
+                      {p.alternatives.length} alternatives compared
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        );
+      })()}
     </main>
   );
 }

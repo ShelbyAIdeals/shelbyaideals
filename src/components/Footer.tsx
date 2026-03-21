@@ -20,6 +20,7 @@ const resourceLinks = [
   { labelKey: 'footer.res_comparisons', fallback: 'Comparisons', href: '/comparisons' },
   { labelKey: 'footer.res_best_of', fallback: 'Best Of', href: '/best' },
   { labelKey: 'footer.res_guides', fallback: 'Guides', href: '/guides' },
+  { labelKey: 'footer.res_deals', fallback: 'Deals & Trials', href: '/deals' },
   { labelKey: 'footer.res_alternatives', fallback: 'Alternatives', href: '/alternatives' },
   { labelKey: 'footer.res_pricing', fallback: 'Pricing Guides', href: '/pricing' },
   { labelKey: 'footer.res_best_for', fallback: 'Best For You', href: '/best-for' },

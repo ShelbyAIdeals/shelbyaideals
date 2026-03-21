@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Star, DollarSign, Zap } from 'lucide-react';
-import { getUseCaseSlugs, getUseCasePage } from '@/lib/use-case-data';
+import { getUseCaseSlugs, getUseCasePage, getAllUseCasePages } from '@/lib/use-case-data';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -228,6 +228,38 @@ export default async function BestForPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Browse by Role */}
+      {(() => {
+        const allPages = getAllUseCasePages().filter((p) => p.slug !== slug);
+        const related = allPages.slice(0, 3);
+        if (related.length === 0) return null;
+        return (
+          <div className="container-main pb-12 sm:pb-16">
+            <ScrollReveal>
+              <h2 className="text-xl font-bold text-void-100 mb-6 font-heading">
+                Browse by Role
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {related.map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/best-for/${p.slug}`}
+                    className="group card p-5 border border-void-700/50 hover:border-signal-500/40 rounded-xl no-underline transition-all"
+                  >
+                    <span className="text-sm font-semibold text-void-100 group-hover:text-signal-400 transition-colors">
+                      Best for {p.useCase}
+                    </span>
+                    <p className="text-xs text-void-400 mt-1">
+                      {p.tools.length} tools recommended
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        );
+      })()}
     </main>
   );
 }

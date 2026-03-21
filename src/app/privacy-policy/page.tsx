@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -273,6 +274,8 @@ export default function PrivacyPolicyPage() {
               </p>
             </section>
           </div>
+
+          <ExploreMore variant="legal" />
         </div>
       </div>
     </main>

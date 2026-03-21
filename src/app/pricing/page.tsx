@@ -5,6 +5,7 @@ import { getAllPricingPages } from '@/lib/pricing-data';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'AI Tool Pricing Guides 2026 — Plans, Costs & Value Comparisons',
@@ -75,6 +76,8 @@ export default function PricingIndexPage() {
             );
           })}
         </StaggerContainer>
+
+        <ExploreMore variant="pricing" />
       </div>
     </main>
   );

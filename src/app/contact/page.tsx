@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Mail, MessageSquare, Clock } from 'lucide-react';
+import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -136,6 +137,8 @@ export default function ContactPage() {
               </p>
             </section>
           </div>
+
+          <ExploreMore variant="static" />
         </div>
       </div>
     </main>
