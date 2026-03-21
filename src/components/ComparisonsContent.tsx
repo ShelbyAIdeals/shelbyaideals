@@ -35,7 +35,7 @@ export default function ComparisonsContent({ comparisons }: ComparisonsContentPr
             <StaggerItem key={comp.slug}>
               <Link
                 href={`/comparisons/${comp.slug}`}
-                className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 block"
+                className="card p-6 no-underline hover:border-signal-500/40 border border-void-700/50 transition-all hover:-translate-y-1 flex flex-col h-full"
               >
                 {/* Tools involved */}
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -47,17 +47,17 @@ export default function ComparisonsContent({ comparisons }: ComparisonsContentPr
                 </div>
 
                 {/* Title */}
-                <h2 className="text-lg font-bold text-void-100 mb-2">
+                <h2 className="text-lg font-bold text-void-100 mb-2 line-clamp-2">
                   {comp.title}
                 </h2>
 
                 {/* Excerpt */}
-                <p className="text-sm text-void-400 leading-relaxed mb-4">
+                <p className="text-sm text-void-400 leading-relaxed mb-4 line-clamp-3 flex-1">
                   {comp.excerpt}
                 </p>
 
                 {/* Winner count + link */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto">
                   <span className="text-xs text-void-400">
                     {comp.winners.length}{' '}
                     {comp.winners.length === 1
