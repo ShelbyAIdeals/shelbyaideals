@@ -816,7 +816,7 @@ export const pricingData: PricingPage[] = [
           '20 site lookups/day',
           'All 5 SEO tools included',
         ],
-        affiliateUrl: 'https://mangools.com/a/a69b085f86aee0888864a82a9',
+        affiliateUrl: 'https://mangools.com#',
       },
       {
         name: 'Basic',
@@ -832,7 +832,7 @@ export const pricingData: PricingPage[] = [
           'All 5 SEO tools included',
         ],
         highlighted: true,
-        affiliateUrl: 'https://mangools.com/a/a69b085f86aee0888864a82a9',
+        affiliateUrl: 'https://mangools.com#',
       },
       {
         name: 'Premium',
@@ -847,7 +847,7 @@ export const pricingData: PricingPage[] = [
           '150 site lookups/day',
           'All 5 SEO tools included',
         ],
-        affiliateUrl: 'https://mangools.com/a/a69b085f86aee0888864a82a9',
+        affiliateUrl: 'https://mangools.com#',
       },
       {
         name: 'Agency',
@@ -862,7 +862,7 @@ export const pricingData: PricingPage[] = [
           '300 site lookups/day',
           'All 5 SEO tools included',
         ],
-        affiliateUrl: 'https://mangools.com/a/a69b085f86aee0888864a82a9',
+        affiliateUrl: 'https://mangools.com#',
       },
     ],
     faqs: [
