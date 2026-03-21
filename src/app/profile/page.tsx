@@ -14,7 +14,7 @@ import { deals as allDeals } from '@/lib/deals-data';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { user, profile, loading: authLoading, refreshProfile, signOut } = useAuth();
+  const { user, profile, session, loading: authLoading, refreshProfile, signOut } = useAuth();
   const { t } = useTranslation();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -70,9 +70,10 @@ export default function ProfilePage() {
     setSaveError('');
     try {
       // Use fetch directly — Supabase JS client hangs on some operations
+      // Use session from auth context — calling getSession() acquires a lock
+      // that conflicts with background token refreshes ("steal" error)
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
       const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      const { data: { session } } = await supabase.auth.getSession();
       const token = session?.access_token || supabaseKey;
 
       const res = await fetch(
