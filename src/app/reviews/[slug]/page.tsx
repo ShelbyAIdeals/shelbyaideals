@@ -42,7 +42,7 @@ function getToolImages(toolSlug: string): { src: string; alt: string }[] {
   }
 
   // Add numbered screenshots
-  const screenshots = allFiles.filter((f) => /^screenshot-\d+\.(webp|png|jpg)$/i.test(f));
+  const screenshots = allFiles.filter((f) => /^screenshot-\d+\.(webp|png|jpe?g)$/i.test(f));
   screenshots.sort();
   screenshots.forEach((f, i) => {
     images.push({ src: `/images/tools/${toolSlug}/${f}`, alt: `${toolName} interface — screenshot ${i + 1}` });

@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { Twitter, Linkedin, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Fran Shelby \u2014 Lead Reviewer | ShelbyAI',
+  title: 'Frank Shelby \u2014 Lead Reviewer | ShelbyAI',
   description:
-    'Meet Fran Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
+    'Meet Frank Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
   openGraph: {
-    title: 'Fran Shelby \u2014 Lead Reviewer | ShelbyAI',
+    title: 'Frank Shelby \u2014 Lead Reviewer | ShelbyAI',
     description:
-      'Meet Fran Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
+      'Meet Frank Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fran Shelby \u2014 Lead Reviewer | ShelbyAI',
+    title: 'Frank Shelby \u2014 Lead Reviewer | ShelbyAI',
     description:
-      'Meet Fran Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
+      'Meet Frank Shelby, the founder and lead reviewer at ShelbyAI. Every review on this site comes from hands-on testing with real projects.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
 };
@@ -52,7 +52,7 @@ export default function FranShelbyPage() {
             </div>
             <div className="text-center sm:text-left">
               <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-2">
-                About Fran Shelby
+                About Frank Shelby
               </h1>
               <p className="text-lg text-void-400">
                 Founder & Lead Reviewer at ShelbyAI

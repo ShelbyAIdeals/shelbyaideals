@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Twitter, Linkedin, ArrowRight } from 'lucide-react';
 
 const AUTHOR = {
-  name: 'Fran Shelby',
+  name: 'Frank Shelby',
   title: 'Founder & Lead Reviewer at ShelbyAI',
   initials: 'FS',
   bio: "I've personally tested every tool on this site \u2014 signing up, paying for plans, and running real projects for 7\u201314 days each. When I say a tool works, I mean I've used it on actual client work.",

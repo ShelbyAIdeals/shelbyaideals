@@ -36,7 +36,7 @@ function parseArticle(dir: string, filename: string) {
   // Map legacy category slugs to new consolidated categories
   const rawCategory = data.category ?? 'ai-content-productivity';
   data.category = CATEGORY_MAP[rawCategory] ?? rawCategory;
-  data.author = data.author ?? 'Fran Shelby';
+  data.author = data.author ?? 'Frank Shelby';
   data.date = data.date ?? new Date().toISOString().split('T')[0];
   data.lastUpdated = data.lastUpdated ?? data.date;
 

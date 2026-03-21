@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'AI tool reviews',
     'best AI tools small business',
   ],
-  authors: [{ name: 'Fran Shelby' }],
+  authors: [{ name: 'Frank Shelby' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
