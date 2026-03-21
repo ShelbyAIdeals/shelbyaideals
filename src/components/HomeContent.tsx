@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Users, PenTool, Briefcase, Video, TrendingUp, Lightbulb } from 'lucide-react';
+import { ArrowRight, Users, PenTool, Briefcase, Video, TrendingUp, Lightbulb, FlaskConical, Scale, ShieldCheck, RefreshCw, Star } from 'lucide-react';
 import ReviewCard from '@/components/ReviewCard';
 import CategoryCard from '@/components/CategoryCard';
 import DealOfTheWeek from '@/components/DealOfTheWeek';
@@ -38,6 +38,83 @@ export default function HomeContent({
 
   return (
     <>
+      {/* Quick Picks by Use Case */}
+      <section className="py-14 sm:py-16">
+        <div className="container-main">
+          <ScrollReveal>
+            <div className="mb-8">
+              <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
+                Quick Answer
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+                Best AI Tools by Use Case
+              </h2>
+              <p className="mt-2 text-void-400 text-sm">
+                Short on time? Here are our top picks after testing 31+ tools hands-on.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggerContainer className="grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                label: 'Best for Writing & SEO',
+                tool: 'Frase',
+                rating: 4.0,
+                reason: 'AI content briefs + SERP optimization in one tool. Replaced two separate subscriptions.',
+                href: '/best-for/content-writers',
+                reviewHref: '/reviews/frase-review',
+              },
+              {
+                label: 'Best for Video Creation',
+                tool: 'Pictory',
+                rating: 3.5,
+                reason: 'Paste a blog URL, get a video. No editing skills needed. Best for content repurposing.',
+                href: '/best-for/video-creators',
+                reviewHref: '/reviews/pictory-review',
+              },
+              {
+                label: 'Best for Small Business',
+                tool: 'Make.com',
+                rating: 4.3,
+                reason: 'Visual workflow builder that replaced Zapier for us. Cheaper for multi-step automations.',
+                href: '/best-for/small-business',
+                reviewHref: '/reviews/make-review',
+              },
+            ].map((pick) => (
+              <StaggerItem key={pick.label}>
+                <div className="card p-5 border border-void-700/40 h-full flex flex-col">
+                  <span className="text-xs font-semibold text-signal-400 mb-2">{pick.label}</span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-base font-bold text-void-50">{pick.tool}</span>
+                    <span className="flex items-center gap-0.5 text-xs text-amber-400">
+                      <Star size={11} fill="currentColor" /> {pick.rating}
+                    </span>
+                  </div>
+                  <p className="text-xs text-void-400 leading-relaxed mb-4 flex-1">{pick.reason}</p>
+                  <div className="flex items-center gap-3">
+                    <Link
+                      href={pick.reviewHref}
+                      className="text-xs font-semibold text-signal-400 hover:text-signal-300 no-underline inline-flex items-center gap-1"
+                    >
+                      Read Review <ArrowRight size={11} />
+                    </Link>
+                    <Link
+                      href={pick.href}
+                      className="text-xs text-void-400 hover:text-void-300 no-underline"
+                    >
+                      See All Picks
+                    </Link>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
       {/* 2. Featured Reviews */}
       {featuredReviews.length > 0 && (
         <section className="py-16 sm:py-20">
@@ -109,6 +186,73 @@ export default function HomeContent({
               badge="Our Testing Process"
               variant="signal"
             />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* How We Test — Trust Section */}
+      <section className="py-16 sm:py-20 section-alt">
+        <div className="container-main">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
+                Our Process
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+                How We Test AI Tools
+              </h2>
+              <p className="mt-2 text-void-400 text-sm max-w-2xl mx-auto">
+                Every rating on this site is earned through hands-on testing. No tool company pays for placement or scores.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggerContainer className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: FlaskConical,
+                title: '7-14 Days Hands-On',
+                desc: 'We sign up, complete onboarding, and run real tasks — writing, video, SEO, automation — for at least a week.',
+              },
+              {
+                icon: Scale,
+                title: 'Weighted Scoring',
+                desc: 'Output quality (30%), value for money (25%), ease of use (20%), features (15%), support (10%).',
+              },
+              {
+                icon: ShieldCheck,
+                title: 'No Sponsored Rankings',
+                desc: 'Affiliate links help fund the site, but they never influence ratings, rankings, or recommendations.',
+              },
+              {
+                icon: RefreshCw,
+                title: 'Regularly Updated',
+                desc: 'AI tools change fast. We re-test when major updates ship and update our scores accordingly.',
+              },
+            ].map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="text-center p-5">
+                  <div className="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mx-auto mb-4">
+                    <item.icon size={22} className="text-signal-400" />
+                  </div>
+                  <h3 className="text-sm font-bold text-void-100 mb-2">{item.title}</h3>
+                  <p className="text-xs text-void-400 leading-relaxed">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <ScrollReveal>
+            <div className="text-center mt-8">
+              <Link
+                href="/how-we-review"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline"
+              >
+                See Full Methodology <ArrowRight size={14} />
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

@@ -9,6 +9,7 @@ import RelatedArticles from '@/components/RelatedArticles';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
+import { getAllUseCasePages } from '@/lib/use-case-data';
 import type { ComparisonMeta } from '@/lib/types';
 
 interface PageProps {
@@ -149,6 +150,36 @@ export default async function ComparisonPage({ params }: PageProps) {
                 >
                   <ArrowRight size={14} />
                   {`Read our full ${review!.tool} review`}
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Best-for links based on category */}
+      {(() => {
+        const useCasePages = getAllUseCasePages();
+        const categoryMap: Record<string, string[]> = {
+          'ai-video-audio': ['video-creators'],
+          'ai-marketing-seo': ['marketing-teams', 'content-writers', 'freelancers'],
+          'ai-content-productivity': ['solopreneurs', 'small-business', 'freelancers'],
+        };
+        const relevantSlugs = categoryMap[meta.category] ?? [];
+        const relatedPages = useCasePages.filter((p) => relevantSlugs.includes(p.slug)).slice(0, 2);
+        if (relatedPages.length === 0) return null;
+        return (
+          <section className="mb-8 p-5 rounded-xl border border-void-700/40 bg-void-800/20">
+            <h2 className="text-lg font-heading font-bold text-void-100 mb-3">Find Tools by Role</h2>
+            <div className="flex flex-col gap-2">
+              {relatedPages.map((page) => (
+                <Link
+                  key={page.slug}
+                  href={`/best-for/${page.slug}/`}
+                  className="inline-flex items-center gap-2 text-sm text-signal-400 hover:text-signal-300 transition-colors"
+                >
+                  <ArrowRight size={14} />
+                  Best AI Tools for {page.useCase}
                 </Link>
               ))}
             </div>

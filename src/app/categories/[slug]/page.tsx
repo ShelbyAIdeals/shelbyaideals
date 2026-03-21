@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ReviewCard from '@/components/ReviewCard';
+import JsonLd from '@/components/JsonLd';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
@@ -82,8 +83,25 @@ export default async function CategoryPage({ params }: PageProps) {
   const bestOf = articles.filter((a): a is BestOfMeta => a.type === 'best');
   const guides = articles.filter((a): a is GuideMeta => a.type === 'guide');
 
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://www.shelby-ai.com' },
+    { name: 'Categories', url: 'https://www.shelby-ai.com/categories' },
+    { name: category.name, url: `https://www.shelby-ai.com/categories/${resolvedSlug}` },
+  ];
+
   return (
     <main className="min-h-screen">
+      <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      <JsonLd
+        type="itemlist"
+        data={{
+          name: category.name,
+          items: reviews.map((r) => ({
+            name: r.tool,
+            url: `https://www.shelby-ai.com/reviews/${r.slug}/`,
+          })),
+        }}
+      />
       <div className="container-main py-12 sm:py-16">
         {/* Category Header */}
         <ScrollReveal>

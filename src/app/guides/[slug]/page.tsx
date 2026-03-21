@@ -7,7 +7,7 @@ import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
-import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
+import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
 import type { GuideMeta } from '@/lib/types';
 
 interface PageProps {
@@ -112,45 +112,60 @@ export default async function GuidePage({ params }: PageProps) {
       sidebar={sidebar}
     >
       {/* Recommended Tools */}
-      {meta.recommendedTools.length > 0 && (
-        <div className="mb-10">
-          <h2 className="text-lg font-bold text-void-50 mb-4">
-            Tools Mentioned in This Guide
-          </h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {meta.recommendedTools.map((tool) => (
-              <a
-                key={tool.name}
-                href={tool.affiliateUrl}
-                target="_blank"
-                rel="nofollow sponsored noopener"
-                className="card p-4 no-underline hover:border-signal-400/50 border-2 border-transparent transition-all group"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h3 className="text-sm font-bold text-void-100 group-hover:text-signal-400 transition-colors">
-                      {tool.name}
-                    </h3>
-                    <p className="text-xs text-void-300 mt-0.5">
-                      {tool.category} &middot; {tool.pricing}
-                    </p>
-                    <p className="text-xs text-void-400 mt-1.5 leading-relaxed line-clamp-2">
-                      {tool.description}
-                    </p>
+      {meta.recommendedTools.length > 0 && (() => {
+        const reviews = getAllReviews();
+        const reviewMap = new Map(reviews.map((r) => [r.tool.toLowerCase(), r.slug]));
+        return (
+          <div className="mb-10">
+            <h2 className="text-lg font-bold text-void-50 mb-4">
+              Tools Mentioned in This Guide
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {meta.recommendedTools.map((tool) => {
+                const reviewSlug = reviewMap.get(tool.name.toLowerCase());
+                return (
+                  <div
+                    key={tool.name}
+                    className="card p-4 border-2 border-transparent"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <h3 className="text-sm font-bold text-void-100">
+                          {tool.name}
+                        </h3>
+                        <p className="text-xs text-void-300 mt-0.5">
+                          {tool.category} &middot; {tool.pricing}
+                        </p>
+                        <p className="text-xs text-void-400 mt-1.5 leading-relaxed line-clamp-2">
+                          {tool.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-3 flex items-center gap-3">
+                      {reviewSlug && (
+                        <Link
+                          href={`/reviews/${reviewSlug}/`}
+                          className="text-xs font-semibold text-signal-400 hover:text-signal-300 no-underline inline-flex items-center gap-1"
+                        >
+                          Read Review <ArrowRight size={11} />
+                        </Link>
+                      )}
+                      <a
+                        href={tool.affiliateUrl}
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        className="text-xs font-semibold text-void-400 hover:text-void-300 no-underline inline-flex items-center gap-1"
+                      >
+                        Try It <ArrowRight size={11} />
+                      </a>
+                    </div>
                   </div>
-                  <ArrowRight
-                    size={14}
-                    className="shrink-0 text-signal-400 mt-0.5 group-hover:translate-x-0.5 transition-transform"
-                  />
-                </div>
-                <span className="mt-2 block text-[10px] text-void-500">
-                  Affiliate link
-                </span>
-              </a>
-            ))}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       <JsonLd type="article" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
