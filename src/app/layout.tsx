@@ -49,6 +49,14 @@ export const metadata: Metadata = {
       'Honest AI tool reviews for creators, freelancers, and small teams.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
