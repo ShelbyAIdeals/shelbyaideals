@@ -95,7 +95,7 @@ export const deals: Deal[] = [
       'LinkMiner backlink analysis',
       'SiteProfiler competitor intel',
     ],
-    affiliateUrl: 'https://mangools.com#',
+    affiliateUrl: 'https://mangools.com#a69b085f86aee0888864a82a9',
     category: 'AI SEO Tools',
     featured: true,
   },

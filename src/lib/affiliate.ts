@@ -85,7 +85,7 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   mangools: {
     name: 'Mangools',
-    url: 'https://mangools.com#',
+    url: 'https://mangools.com#a69b085f86aee0888864a82a9',
     commission: '30% recurring',
     status: 'active',
   },
