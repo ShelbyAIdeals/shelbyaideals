@@ -25,6 +25,29 @@ interface JsonLdProps {
   breadcrumbs?: { name: string; url: string }[];
 }
 
+const AUTHOR_PERSON = {
+  '@type': 'Person',
+  name: 'Frank Shelby',
+  url: 'https://www.shelby-ai.com/author/frank-shelby',
+  jobTitle: 'Founder & Lead Reviewer',
+  knowsAbout: ['AI Tools', 'Video Creation', 'Content Marketing', 'SEO', 'Small Business Technology'],
+  sameAs: [
+    'https://x.com/ShelbyAIDeals',
+    'https://www.pinterest.com/shelbyaideals/',
+    'https://github.com/ShelbyAIdeals',
+  ],
+};
+
+const PUBLISHER_ORG = {
+  '@type': 'Organization',
+  name: 'ShelbyAIDeals',
+  url: 'https://www.shelby-ai.com',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
+  },
+};
+
 export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -49,8 +72,11 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       url: 'https://www.shelby-ai.com',
       logo: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       description: 'Honest AI tool reviews for creators, freelancers, and small teams. 31+ tools tested hands-on.',
+      founder: AUTHOR_PERSON,
       sameAs: [
         'https://x.com/ShelbyAIDeals',
+        'https://www.pinterest.com/shelbyaideals/',
+        'https://github.com/ShelbyAIdeals',
       ],
     };
   } else if (type === 'itemlist' && data && 'items' in data) {
@@ -80,6 +106,10 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
     };
   } else if (type === 'review' && data && 'rating' in data) {
     const review = data as ReviewMeta;
+    const toolSlug = review.toolSlug || review.slug?.replace('-review', '') || '';
+    const imageUrl = review.featuredImage
+      ? `https://www.shelby-ai.com${review.featuredImage}`
+      : `https://www.shelby-ai.com/images/tools/${toolSlug}/screenshot-1.png`;
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Review',
@@ -87,16 +117,9 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       description: review.excerpt,
       datePublished: review.date,
       dateModified: review.lastUpdated,
-      author: {
-        '@type': 'Organization',
-        name: 'ShelbyAIDeals',
-        url: 'https://www.shelby-ai.com',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'ShelbyAIDeals',
-        url: 'https://www.shelby-ai.com',
-      },
+      image: imageUrl,
+      author: AUTHOR_PERSON,
+      publisher: PUBLISHER_ORG,
       itemReviewed: {
         '@type': 'SoftwareApplication',
         name: review.tool,
@@ -116,6 +139,9 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
     };
   } else if (type === 'article' && data && 'title' in data) {
     const article = data as ArticleMeta;
+    const imageUrl = article.featuredImage
+      ? `https://www.shelby-ai.com${article.featuredImage}`
+      : 'https://www.shelby-ai.com/images/og-thumbnail.png';
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -123,16 +149,9 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       description: article.excerpt,
       datePublished: article.date,
       dateModified: article.lastUpdated,
-      author: {
-        '@type': 'Organization',
-        name: 'ShelbyAIDeals',
-        url: 'https://www.shelby-ai.com',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'ShelbyAIDeals',
-        url: 'https://www.shelby-ai.com',
-      },
+      image: imageUrl,
+      author: AUTHOR_PERSON,
+      publisher: PUBLISHER_ORG,
     };
   } else if (type === 'faq' && data && 'questions' in data) {
     const faqData = data as { questions: FAQItem[] };

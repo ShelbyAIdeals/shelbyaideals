@@ -25,6 +25,8 @@ export default function ToolImage({
     <img
       src={imgSrc}
       alt={alt}
+      width={variant === 'hero' ? 1200 : 400}
+      height={variant === 'hero' ? 675 : 225}
       className={`w-full h-full object-cover ${className}`}
       loading="lazy"
       onError={() => {

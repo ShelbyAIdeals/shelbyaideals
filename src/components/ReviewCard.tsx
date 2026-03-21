@@ -70,6 +70,8 @@ export default function ReviewCard({
             <img
               src={imageSrc}
               alt={`${tool} — UI screenshot from hands-on testing`}
+              width={600}
+              height={338}
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               loading="lazy"
               onError={(e) => {
@@ -95,6 +97,8 @@ export default function ReviewCard({
                 <img
                   src={toolLogo}
                   alt={`${tool} logo`}
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover"
                   loading="eager"
                   fetchPriority="high"

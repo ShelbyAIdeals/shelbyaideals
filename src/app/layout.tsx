@@ -10,6 +10,7 @@ import Providers from '@/components/Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.shelby-ai.com'),
   title: {
     default: 'ShelbyAI — AI Video, Audio & Marketing Tools for Small Business',
     template: '%s | ShelbyAI',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    url: 'https://www.shelby-ai.com/',
     siteName: 'ShelbyAI',
     title: 'ShelbyAI — AI Video, Audio & Marketing Tools for Small Business',
     description:
@@ -63,6 +65,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.shelby-ai.com',
+    languages: {
+      en: 'https://www.shelby-ai.com/',
+      es: 'https://www.shelby-ai.com/es/',
+      de: 'https://www.shelby-ai.com/de/',
+      'x-default': 'https://www.shelby-ai.com/',
+    },
     types: {
       'application/rss+xml': 'https://www.shelby-ai.com/feed.xml',
     },

@@ -1,0 +1,58 @@
+# ShelbyAI — Honest AI Tool Reviews
+
+> ShelbyAI (www.shelby-ai.com) is an independent AI tool review site for creators, freelancers, and small businesses. We test every tool hands-on for 7-14 days with real workflows. No sponsored rankings.
+
+## What We Cover
+
+- **AI Video & Audio Tools**: Pictory, ElevenLabs, Synthesia, Descript, Fliki, Murf AI, and more
+- **AI Marketing & SEO Tools**: Frase, Surfer SEO, Semrush, Mangools, Scalenut, and more
+- **AI Content & Productivity Tools**: ChatGPT, Jasper, Copy.ai, Grammarly, Writesonic, Rytr, and more
+
+## Content Types
+
+- **Reviews** (37+): In-depth, hands-on reviews with ratings, pricing, pros/cons, and verdicts
+- **Comparisons** (17+): Head-to-head tool comparisons with per-scenario winners
+- **Guides** (25+): How-to guides for AI workflows, tool stacks, and use cases
+- **Best-Of Lists** (8+): Curated ranked lists by category and use case
+- **Alternatives** (15+): Alternative tools for popular AI products
+- **Pricing Guides** (16+): Detailed pricing breakdowns with plan recommendations
+
+## Key Pages
+
+- Homepage: https://www.shelby-ai.com/
+- All Reviews: https://www.shelby-ai.com/reviews/
+- Comparisons: https://www.shelby-ai.com/comparisons/
+- Guides: https://www.shelby-ai.com/guides/
+- Best AI Tools: https://www.shelby-ai.com/best/
+- Alternatives: https://www.shelby-ai.com/alternatives/
+- Pricing Guides: https://www.shelby-ai.com/pricing/
+- How We Review: https://www.shelby-ai.com/how-we-review/
+- About: https://www.shelby-ai.com/about/
+- FAQ: https://www.shelby-ai.com/faq/
+
+## Popular Reviews
+
+- Pictory Review: https://www.shelby-ai.com/reviews/pictory-review/
+- ElevenLabs Review: https://www.shelby-ai.com/reviews/elevenlabs-review/
+- Jasper AI Review: https://www.shelby-ai.com/reviews/jasper-ai-review/
+- ChatGPT Review: https://www.shelby-ai.com/reviews/chatgpt-review/
+- Copy.ai Review: https://www.shelby-ai.com/reviews/copy-ai-review/
+- Frase Review: https://www.shelby-ai.com/reviews/frase-review/
+- Descript Review: https://www.shelby-ai.com/reviews/descript-review/
+- Synthesia Review: https://www.shelby-ai.com/reviews/synthesia-review/
+
+## Popular Comparisons
+
+- ChatGPT vs Claude: https://www.shelby-ai.com/comparisons/chatgpt-vs-claude-for-business/
+- Jasper vs Copy.ai: https://www.shelby-ai.com/comparisons/jasper-ai-vs-copy-ai/
+- ElevenLabs Alternatives: https://www.shelby-ai.com/comparisons/elevenlabs-alternatives/
+
+## Review Methodology
+
+Every tool is tested for 7-14 days with real content workflows. Ratings use a weighted scoring system: Output Quality (30%), Value for Money (25%), Ease of Use (20%), Features (15%), Support (10%). Full methodology: https://www.shelby-ai.com/how-we-review/
+
+## Contact
+
+- Website: https://www.shelby-ai.com
+- Email: support@shelby-ai.com
+- Twitter/X: https://x.com/ShelbyAIDeals

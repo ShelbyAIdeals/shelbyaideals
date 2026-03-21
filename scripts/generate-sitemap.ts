@@ -38,6 +38,8 @@ function buildSitemap(): string {
     { url: '/contact', priority: '0.3', changefreq: 'yearly' },
     { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
     { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
+    // Author page
+    { url: '/author/frank-shelby', priority: '0.5', changefreq: 'monthly' },
     // Categories collection page
     { url: '/categories', priority: '0.8', changefreq: 'weekly' },
   ];
