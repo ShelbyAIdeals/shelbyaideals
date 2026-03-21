@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
+import MistEffect from '@/components/MistEffect';
 import PageScaler from '@/components/PageScaler';
 import JsonLd from '@/components/JsonLd';
 import Providers from '@/components/Providers';
@@ -129,6 +130,7 @@ export default function RootLayout({
         )}
         <JsonLd type="website" />
         <JsonLd type="organization" />
+        <MistEffect />
         <Providers>
           <div className="relative z-[2] isolate flex flex-col min-h-screen">
             <ScrollProgress />
