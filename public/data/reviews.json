@@ -12,7 +12,13 @@
     "featured": false,
     "tool": "Chatbase",
     "toolSlug": "chatbase",
-    "toolLogo": "/logos/chatbase.svg",
+    "toolLogo": "/logos/chatbase.png",
+    "socialLinks": {
+      "twitter": "https://x.com/chatbase",
+      "youtube": "https://www.youtube.com/@chatbase_",
+      "linkedin": "https://www.linkedin.com/company/chatbase-co/",
+      "website": "https://www.chatbase.co"
+    },
     "rating": 3.9,
     "bestFor": "Businesses seeking to leverage AI chatbots trained on their specific data for enhanced customer interaction.",
     "notFor": "Developers needing full chatbot framework control or teams requiring complex multi-channel bot deployments",
@@ -80,7 +86,6 @@
     "verdict": "Chatbase is ideal for businesses wanting to create custom AI chatbots without extensive technical expertise. However, those needing extensive customization or operating on a tight budget might consider alternatives like Botpress. Overall, Chatbase offers a solid balance of features and usability, though its pricing could be a barrier for some.",
     "affiliateUrl": "https://link.chatbase.co/shelby-ai",
     "affiliateLabel": "Try Chatbase Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -97,7 +102,15 @@
     "featured": false,
     "tool": "ChatGPT",
     "toolSlug": "chatgpt",
-    "toolLogo": "/logos/chatgpt.svg",
+    "toolLogo": "/logos/chatgpt.png",
+    "socialLinks": {
+      "twitter": "https://x.com/OpenAI",
+      "youtube": "https://www.youtube.com/@OpenAI",
+      "linkedin": "https://www.linkedin.com/company/openai",
+      "website": "https://openai.com",
+      "github": "https://github.com/openai",
+      "discord": "https://discord.com/invite/openai"
+    },
     "rating": 4.2,
     "bestFor": "Versatile creators needing a reliable AI assistant for writing, coding, and analysis.",
     "notFor": "Teams needing specialized domain tools with built-in workflows",
@@ -166,7 +179,6 @@
     "verdict": "ChatGPT remains a powerful tool for those requiring a versatile AI assistant. While not ideal for users on a strict budget, its feature set justifies the cost for many creators and teams.",
     "affiliateUrl": "https://chat.openai.com",
     "affiliateLabel": "Try ChatGPT Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -183,7 +195,13 @@
     "featured": false,
     "tool": "Claude AI",
     "toolSlug": "claude-ai",
-    "toolLogo": "/logos/claude-ai.svg",
+    "toolLogo": "/logos/claude-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/AnthropicAI",
+      "youtube": "https://www.youtube.com/@anthropic-ai",
+      "linkedin": "https://www.linkedin.com/company/anthropicresearch",
+      "website": "https://www.anthropic.com"
+    },
     "rating": 4,
     "bestFor": "Writers and researchers seeking nuanced, thoughtful AI-generated content.",
     "notFor": "Users who need a large plugin ecosystem or real-time web browsing built in",
@@ -251,7 +269,6 @@
     "verdict": "Claude AI is ideal for writers and researchers who prioritize thoughtful, nuanced AI outputs. However, those needing extensive free features might find ChatGPT a better fit. Overall, it provides robust capabilities for its price, especially in collaborative environments.",
     "affiliateUrl": "https://claude.ai",
     "affiliateLabel": "Try Claude AI Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -276,7 +293,12 @@
     "featured": false,
     "tool": "Copy.ai",
     "toolSlug": "copy-ai",
-    "toolLogo": "/logos/copy-ai.svg",
+    "toolLogo": "/logos/copy-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/copy_ai",
+      "linkedin": "https://www.linkedin.com/company/copyai/",
+      "website": "https://www.copy.ai"
+    },
     "rating": 3.9,
     "bestFor": "Freelancers and solopreneurs who need fast marketing copy on a budget",
     "notFor": "Content teams needing polished long-form blog posts or in-depth technical writing",
@@ -354,7 +376,6 @@
     "affiliateUrl": "https://www.copy.ai",
     "affiliateLabel": "Try Copy.ai Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "21 min read"
   },
@@ -371,7 +392,15 @@
     "featured": false,
     "tool": "Decktopus AI",
     "toolSlug": "decktopus-ai",
-    "toolLogo": "/logos/decktopus-ai.svg",
+    "toolLogo": "/logos/decktopus-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/decktopus",
+      "youtube": "https://www.youtube.com/channel/UCcmvCMfTz8NI3xKoaakKm0w",
+      "linkedin": "https://www.linkedin.com/company/decktopus",
+      "website": "https://www.decktopus.com",
+      "instagram": "https://www.instagram.com/decktopus",
+      "tiktok": "https://www.tiktok.com/@decktopus"
+    },
     "rating": 3.9,
     "bestFor": "Professionals who need to generate polished presentations quickly without investing time in design.",
     "notFor": "Design-heavy teams needing pixel-perfect slide control or complex animations",
@@ -430,7 +459,6 @@
     "verdict": "Decktopus AI is ideal for individual professionals who need fast, polished presentations without design hassles. However, teams may find better value elsewhere due to limited collaboration features. Overall, it offers competitive features for solo users at a fair price point.",
     "affiliateUrl": "https://www.decktopus.com/?via=Shelby-ai",
     "affiliateLabel": "Try Decktopus AI Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -455,7 +483,12 @@
     "featured": false,
     "tool": "Descript",
     "toolSlug": "descript",
-    "toolLogo": "/logos/descript.svg",
+    "toolLogo": "/logos/descript.png",
+    "socialLinks": {
+      "twitter": "https://x.com/DescriptApp",
+      "youtube": "https://www.youtube.com/@descript",
+      "linkedin": "https://www.linkedin.com/company/descript/"
+    },
     "rating": 4,
     "bestFor": "Podcasters, YouTubers, and small teams who need fast video editing",
     "notFor": "Professional video editors needing advanced color grading, VFX, or multi-cam workflows",
@@ -519,7 +552,6 @@
     "affiliateUrl": "https://www.descript.com",
     "affiliateLabel": "Try Descript Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "19 min read"
   },
@@ -536,7 +568,15 @@
     "featured": false,
     "tool": "Easy Peasy AI",
     "toolSlug": "easy-peasy-ai",
-    "toolLogo": "/logos/easy-peasy-ai.svg",
+    "toolLogo": "/logos/easy-peasy-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/easy_peasy_ai",
+      "youtube": "https://www.youtube.com/@easy-peasy-ai",
+      "linkedin": "https://www.linkedin.com/company/easy-peasy-ai",
+      "website": "https://easy-peasy.ai",
+      "instagram": "https://www.instagram.com/easy_peasy.ai/",
+      "tiktok": "https://www.tiktok.com/@easy_peasy_ai"
+    },
     "rating": 3.8,
     "bestFor": "Content creators needing a budget-friendly AI writing and image generation tool.",
     "notFor": "Professional content teams requiring enterprise-grade output quality and advanced brand voice controls",
@@ -593,7 +633,6 @@
     "verdict": "Easy Peasy AI is a decent choice for budget-conscious creators needing basic AI writing and image capabilities. However, those requiring advanced content generation might find competitors like Jasper more suitable. Overall, it's a solid entry-level tool worth considering for lighter tasks.",
     "affiliateUrl": "https://easy-peasy.ai/?via=Shelby-ai",
     "affiliateLabel": "Try Easy Peasy AI Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -608,9 +647,16 @@
     "lastUpdated": "2026-03-17",
     "lastTested": "2026-03-15",
     "featured": true,
+    "featuredImage": "/images/tools/elevenlabs/elevenlabs.png",
     "tool": "ElevenLabs",
     "toolSlug": "elevenlabs",
-    "toolLogo": "/logos/elevenlabs.svg",
+    "toolLogo": "/logos/elevenlabs.png",
+    "socialLinks": {
+      "twitter": "https://x.com/elevenlabsio",
+      "youtube": "https://www.youtube.com/@ElevenLabs",
+      "linkedin": "https://www.linkedin.com/company/elevenlabs/",
+      "discord": "https://discord.gg/elevenlabs"
+    },
     "rating": 4,
     "bestFor": "Creators and developers seeking ultra-realistic AI voiceovers and voice cloning capabilities.",
     "notFor": "Podcasters who prefer recording their own voice or teams on a tight audio budget",
@@ -680,7 +726,6 @@
     "affiliateUrl": "https://try.elevenlabs.io/3vu715wo9f9y",
     "affiliateLabel": "Try ElevenLabs Free",
     "verdict": "ElevenLabs offers a powerful solution for creators needing high-fidelity voice generation, but the cost might be prohibitive for casual users. Ideal for professionals who value quality over cost.",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -697,7 +742,12 @@
     "featured": false,
     "tool": "Fliki",
     "toolSlug": "fliki",
-    "toolLogo": "/logos/fliki.svg",
+    "toolLogo": "/logos/fliki.png",
+    "socialLinks": {
+      "twitter": "https://x.com/flikiAI",
+      "youtube": "https://www.youtube.com/@FlikiAI",
+      "linkedin": "https://www.linkedin.com/company/fliki-ai/"
+    },
     "rating": 3.9,
     "bestFor": "Content creators looking to efficiently turn scripts and blog posts into engaging videos.",
     "notFor": "Video professionals needing advanced editing, custom animations, or live-action footage integration",
@@ -754,7 +804,6 @@
     "verdict": "Fliki is ideal for creators needing quick video conversions from text with minimal effort. However, its pricing may deter budget-conscious users, and those requiring advanced editing should consider alternatives.",
     "affiliateUrl": "https://fliki.ai/?via=Shelby-ai",
     "affiliateLabel": "Try Fliki Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -771,7 +820,13 @@
     "featured": false,
     "tool": "Frase",
     "toolSlug": "frase",
-    "toolLogo": "/logos/frase.svg",
+    "toolLogo": "/logos/frase.png",
+    "socialLinks": {
+      "twitter": "https://x.com/frase_io",
+      "linkedin": "https://www.linkedin.com/company/frase",
+      "website": "https://www.frase.io",
+      "facebook": "https://www.facebook.com/fraseio"
+    },
     "rating": 4,
     "bestFor": "Content marketers seeking AI-driven content briefs and SERP-optimized articles.",
     "notFor": "Enterprise SEO teams needing full-suite backlink analysis and site auditing",
@@ -840,7 +895,6 @@
     "verdict": "Frase is an excellent choice for content marketers focused on SEO optimization. While its free plan is limited, the paid options offer robust features. Those needing more advanced insights might consider Surfer SEO.",
     "affiliateUrl": "https://www.frase.io/?via=shelby-ai",
     "affiliateLabel": "Try Frase Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "8 min read"
   },
@@ -857,7 +911,13 @@
     "featured": false,
     "tool": "Google Gemini",
     "toolSlug": "google-gemini",
-    "toolLogo": "/logos/google-gemini.svg",
+    "toolLogo": "/logos/google-gemini.png",
+    "socialLinks": {
+      "twitter": "https://x.com/GeminiApp",
+      "youtube": "https://www.youtube.com/@googledeepmind",
+      "linkedin": "https://www.linkedin.com/company/googledeepmind/",
+      "website": "https://gemini.google.com"
+    },
     "rating": 3.9,
     "bestFor": "Google Workspace users who want AI integrated into their existing workflow.",
     "notFor": "Creative writers needing conversational finesse or teams outside the Google ecosystem",
@@ -904,7 +964,6 @@
     "verdict": "Google Gemini is ideal for those deeply embedded in the Google ecosystem but falls short for users seeking versatile AI writing outside of it. Its competitive pricing makes it an appealing choice for small teams. However, those needing robust creative capabilities might prefer alternatives like ChatGPT.",
     "affiliateUrl": "https://gemini.google.com",
     "affiliateLabel": "Try Google Gemini Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -921,7 +980,15 @@
     "featured": false,
     "tool": "Grammarly",
     "toolSlug": "grammarly",
-    "toolLogo": "/logos/grammarly.svg",
+    "toolLogo": "/logos/grammarly.png",
+    "socialLinks": {
+      "twitter": "https://x.com/Grammarly",
+      "youtube": "https://www.youtube.com/@Grammarly",
+      "linkedin": "https://www.linkedin.com/company/grammarly",
+      "website": "https://www.grammarly.com",
+      "instagram": "https://www.instagram.com/grammarly/",
+      "facebook": "https://www.facebook.com/grammarly"
+    },
     "rating": 4,
     "bestFor": "Professional writers who require advanced grammar, clarity, and tone assistance across multiple platforms.",
     "notFor": "Casual writers satisfied with free spell checkers or teams needing full AI content generation",
@@ -980,7 +1047,6 @@
     "verdict": "Grammarly is ideal for professional writers who need robust grammar and style assistance, but its premium pricing may deter casual users. While it excels in clarity and tone suggestions, those on a budget might prefer alternatives like ProWritingAid.",
     "affiliateUrl": "https://www.grammarly.com",
     "affiliateLabel": "Try Grammarly Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "8 min read"
   },
@@ -997,7 +1063,13 @@
     "featured": false,
     "tool": "Grok",
     "toolSlug": "grok",
-    "toolLogo": "/logos/grok.svg",
+    "toolLogo": "/logos/grok.png",
+    "socialLinks": {
+      "twitter": "https://x.com/xai",
+      "linkedin": "https://www.linkedin.com/company/xai",
+      "website": "https://x.ai",
+      "github": "https://github.com/xai-org"
+    },
     "rating": 3.9,
     "bestFor": "X power users who require real-time social media insights with minimal content restrictions.",
     "notFor": "Users seeking a general-purpose AI assistant or teams needing deep research and document analysis",
@@ -1053,7 +1125,6 @@
     "verdict": "Grok is ideal for X power users seeking an AI tool with real-time data integration and minimal restrictions. Those needing broader capabilities may find better alternatives elsewhere.",
     "affiliateUrl": "https://x.com/i/grok",
     "affiliateLabel": "Try Grok Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -1078,7 +1149,15 @@
     "featured": false,
     "tool": "Jasper AI",
     "toolSlug": "jasper-ai",
-    "toolLogo": "/logos/jasper-ai.svg",
+    "toolLogo": "/logos/jasper-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/heyjasperai",
+      "youtube": "https://www.youtube.com/@JasperAI",
+      "linkedin": "https://www.linkedin.com/company/heyjasperai/",
+      "website": "https://www.jasper.ai",
+      "instagram": "https://www.instagram.com/heyjasperai/",
+      "facebook": "https://www.facebook.com/heyjasperai"
+    },
     "rating": 4.1,
     "bestFor": "Marketing teams and content creators who publish frequently",
     "notFor": "Solopreneurs on a tight budget or developers needing code generation",
@@ -1143,7 +1222,6 @@
     "affiliateUrl": "https://www.jasper.ai",
     "affiliateLabel": "Try Jasper AI Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "21 min read"
   },
@@ -1160,7 +1238,14 @@
     "featured": false,
     "tool": "Julius AI",
     "toolSlug": "julius-ai",
-    "toolLogo": "/logos/julius-ai.svg",
+    "toolLogo": "/logos/julius-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/JuliusAI_",
+      "youtube": "https://www.youtube.com/@Julius-AI",
+      "linkedin": "https://www.linkedin.com/company/julius-ai",
+      "website": "https://julius.ai",
+      "discord": "https://discord.com/invite/yNMRYtXXkU"
+    },
     "rating": 3.9,
     "bestFor": "Non-technical teams wanting a straightforward approach to data analysis using natural language.",
     "notFor": "Data scientists needing advanced statistical modeling or SQL-heavy database workflows",
@@ -1217,7 +1302,6 @@
     "verdict": "Julius AI is ideal for non-technical teams seeking a simple way to analyze data without complex tools. However, if your needs require more in-depth capabilities, consider alternatives like ChatGPT Code Interpreter.",
     "affiliateUrl": "https://julius.ai/?via=Shelby-ai",
     "affiliateLabel": "Try Julius AI Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -1234,7 +1318,14 @@
     "featured": false,
     "tool": "Leonardo AI",
     "toolSlug": "leonardo-ai",
-    "toolLogo": "/logos/leonardo-ai.svg",
+    "toolLogo": "/logos/leonardo-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/LeonardoAi_",
+      "linkedin": "https://www.linkedin.com/company/leonardo-ai",
+      "website": "https://leonardo.ai",
+      "discord": "https://discord.com/invite/leonardo-ai",
+      "instagram": "https://www.instagram.com/leonardoaiofficial/"
+    },
     "rating": 3.9,
     "bestFor": "Game developers and illustrators seeking affordable, fine-tuned image generation.",
     "notFor": "Enterprise creative teams needing guaranteed photorealistic consistency at scale",
@@ -1301,7 +1392,6 @@
     "verdict": "Leonardo AI is ideal for creators and developers on a budget who need customizable image generation. It may not satisfy power users requiring high-end features or consistent quality.",
     "affiliateUrl": "https://leonardo.ai",
     "affiliateLabel": "Try Leonardo AI Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -1326,7 +1416,12 @@
     "featured": false,
     "tool": "Make.com",
     "toolSlug": "make",
-    "toolLogo": "/logos/make.svg",
+    "toolLogo": "/logos/make.png",
+    "socialLinks": {
+      "twitter": "https://x.com/makehq",
+      "youtube": "https://www.youtube.com/@Make",
+      "linkedin": "https://www.linkedin.com/company/make-hq/"
+    },
     "rating": 4.3,
     "bestFor": "Freelancers and small teams automating repetitive workflows",
     "notFor": "Non-technical users wanting simple one-click automations without a learning curve",
@@ -1401,7 +1496,6 @@
     "affiliateUrl": "https://www.make.com",
     "affiliateLabel": "Try Make.com Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "25 min read"
   },
@@ -1418,7 +1512,13 @@
     "featured": false,
     "tool": "Mangools",
     "toolSlug": "mangools",
-    "toolLogo": "/logos/mangools.svg",
+    "toolLogo": "/logos/mangools.png",
+    "socialLinks": {
+      "twitter": "https://x.com/mangools_com",
+      "youtube": "https://www.youtube.com/c/mangools",
+      "linkedin": "https://www.linkedin.com/company/mangools",
+      "website": "https://mangools.com"
+    },
     "rating": 3.9,
     "bestFor": "Freelancers and small site owners who need effective SEO tools without breaking the bank.",
     "notFor": "Large agencies needing enterprise-grade backlink databases and multi-team reporting",
@@ -1476,7 +1576,6 @@
     "verdict": "Mangools is an appealing choice for freelancers and small site owners who need effective SEO tools on a budget. However, those needing extensive backlink analysis might consider Ahrefs or SEMrush instead. Overall, Mangools offers great value for its price point.",
     "affiliateUrl": "https://mangools.com/a/a69b085f86aee0888864a82a9",
     "affiliateLabel": "Try Mangools Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -1493,7 +1592,14 @@
     "featured": false,
     "tool": "Midjourney",
     "toolSlug": "midjourney",
-    "toolLogo": "/logos/midjourney.svg",
+    "toolLogo": "/logos/midjourney.png",
+    "socialLinks": {
+      "twitter": "https://x.com/midjourney",
+      "youtube": "https://www.youtube.com/@midjourney",
+      "linkedin": "https://www.linkedin.com/company/midjourney",
+      "website": "https://www.midjourney.com",
+      "discord": "https://discord.com/invite/midjourney"
+    },
     "rating": 4.2,
     "bestFor": "Designers and creators who demand the highest quality AI-generated images for professional use.",
     "notFor": "Beginners seeking a free or low-cost image tool with a simple web interface",
@@ -1562,7 +1668,6 @@
     "verdict": "Midjourney is ideal for professionals needing high-quality images, but its cost and complexity might deter casual users or those on a budget. It remains the top choice for serious creators.",
     "affiliateUrl": "https://www.midjourney.com",
     "affiliateLabel": "Try Midjourney Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -1579,7 +1684,13 @@
     "featured": false,
     "tool": "Mixo",
     "toolSlug": "mixo",
-    "toolLogo": "/logos/mixo.svg",
+    "toolLogo": "/logos/mixo.png",
+    "socialLinks": {
+      "twitter": "https://x.com/MixoTeam",
+      "youtube": "https://www.youtube.com/@mixoapp",
+      "linkedin": "https://www.linkedin.com/company/mixo-io",
+      "website": "https://www.mixo.io"
+    },
     "rating": 3.9,
     "bestFor": "Entrepreneurs who need to quickly validate ideas with a simple landing page.",
     "notFor": "Businesses needing a full-featured website with e-commerce, blogs, or custom functionality",
@@ -1636,7 +1747,6 @@
     "verdict": "Mixo is ideal for entrepreneurs needing quick, effective landing pages, but it's not suitable for those requiring detailed customization or advanced features. For simple, rapid deployment, it's a solid choice.",
     "affiliateUrl": "https://www.mixo.io/?via=Shelby-ai",
     "affiliateLabel": "Try Mixo Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -1653,7 +1763,13 @@
     "featured": false,
     "tool": "Mubert",
     "toolSlug": "mubert",
-    "toolLogo": "/logos/mubert.svg",
+    "toolLogo": "/logos/mubert.png",
+    "socialLinks": {
+      "twitter": "https://x.com/mubertapp",
+      "linkedin": "https://www.linkedin.com/company/mubert/",
+      "website": "https://mubert.com",
+      "instagram": "https://www.instagram.com/mubert.app/"
+    },
     "rating": 3.9,
     "bestFor": "Creators and developers who need a steady stream of royalty-free AI music for commercial use.",
     "notFor": "Musicians seeking full creative control over composition, arrangement, and mixing",
@@ -1710,7 +1826,6 @@
     "verdict": "Mubert offers a compelling AI music generation service for content creators needing royalty-free tracks. While it excels in quick production and commercial licensing, its limitations in customization and genre depth make it less suitable for those requiring highly specific music styles.",
     "affiliateUrl": "https://mubert.com/render/pricing?via=Shelby-ai",
     "affiliateLabel": "Try Mubert Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -1727,7 +1842,13 @@
     "featured": false,
     "tool": "Otter.ai",
     "toolSlug": "otter-ai",
-    "toolLogo": "/logos/otter-ai.svg",
+    "toolLogo": "/logos/otter-ai.png",
+    "socialLinks": {
+      "twitter": "https://x.com/otter_ai",
+      "youtube": "https://www.youtube.com/@Otterai",
+      "linkedin": "https://www.linkedin.com/company/otter-ai/",
+      "website": "https://otter.ai"
+    },
     "rating": 4,
     "bestFor": "Freelancers and small teams who need effective, automated meeting notes and transcription services.",
     "notFor": "Teams needing offline transcription or support for highly technical jargon-heavy industries",
@@ -1798,7 +1919,6 @@
     "verdict": "Otter.ai is ideal for teams and freelancers who prioritize accurate meeting notes and seamless integration with business tools. While its higher-tier plans could be costly for individual users, its robust features justify the investment for businesses needing comprehensive transcription solutions.",
     "affiliateUrl": "https://otter.ai",
     "affiliateLabel": "Try Otter.ai Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -1815,7 +1935,14 @@
     "featured": false,
     "tool": "Perplexity",
     "toolSlug": "perplexity",
-    "toolLogo": "/logos/perplexity.svg",
+    "toolLogo": "/logos/perplexity.png",
+    "socialLinks": {
+      "twitter": "https://x.com/perplexity_ai",
+      "linkedin": "https://www.linkedin.com/company/perplexity-ai",
+      "website": "https://www.perplexity.ai",
+      "discord": "https://discord.com/invite/perplexity-ai",
+      "instagram": "https://www.instagram.com/perplexity/"
+    },
     "rating": 4,
     "bestFor": "Researchers and professionals needing reliable, cited information quickly.",
     "notFor": "Casual users who only need basic web searches or teams needing content generation capabilities",
@@ -1861,7 +1988,6 @@
     "verdict": "Perplexity is ideal for users requiring cited, reliable search results, notably researchers and professionals. However, the cost may deter casual users who can find sufficient alternatives in free platforms.",
     "affiliateUrl": "https://www.perplexity.ai",
     "affiliateLabel": "Try Perplexity Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -1884,9 +2010,15 @@
     "date": "2026-03-07",
     "lastUpdated": "2026-03-07",
     "featured": true,
+    "featuredImage": "/images/tools/pictory/hero.png",
     "tool": "Pictory",
     "toolSlug": "pictory",
-    "toolLogo": "/logos/pictory.svg",
+    "toolLogo": "/logos/pictory.png",
+    "socialLinks": {
+      "twitter": "https://x.com/pictaborai",
+      "youtube": "https://www.youtube.com/@Pictory",
+      "linkedin": "https://www.linkedin.com/company/pictory-ai/"
+    },
     "rating": 3.5,
     "bestFor": "Content repurposers and marketers who need video at scale",
     "notFor": "Teams needing live-action video or advanced motion graphics",
@@ -1951,7 +2083,6 @@
     "affiliateUrl": "https://pictory.ai?ref=shelby-ai",
     "affiliateLabel": "Try Pictory Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "23 min read"
   },
@@ -1968,7 +2099,16 @@
     "featured": false,
     "tool": "Runway ML",
     "toolSlug": "runway-ml",
-    "toolLogo": "/logos/runway-ml.svg",
+    "toolLogo": "/logos/runway-ml.png",
+    "socialLinks": {
+      "twitter": "https://x.com/runwayml",
+      "youtube": "https://www.youtube.com/c/RunwayML",
+      "linkedin": "https://www.linkedin.com/company/runwayml/",
+      "website": "https://runwayml.com",
+      "discord": "https://discord.gg/runwayml",
+      "instagram": "https://www.instagram.com/runwayapp/",
+      "github": "https://github.com/runwayml"
+    },
     "rating": 3.9,
     "bestFor": "Creators seeking innovative AI video editing without needing professional skills.",
     "notFor": "Production studios needing frame-accurate editing or teams with existing Premiere/DaVinci workflows",
@@ -2053,7 +2193,6 @@
     "verdict": "Runway ML is ideal for creators looking to harness AI for video editing without mastering traditional editing skills. However, those with budget constraints or seeking absolute top-tier performance might explore alternatives like Pika or Kling AI. Overall, it strikes a balance between innovation and usability.",
     "affiliateUrl": "https://runwayml.com",
     "affiliateLabel": "Try Runway ML Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "8 min read"
   },
@@ -2070,7 +2209,13 @@
     "featured": false,
     "tool": "Rytr",
     "toolSlug": "rytr",
-    "toolLogo": "/logos/rytr.svg",
+    "toolLogo": "/logos/rytr.png",
+    "socialLinks": {
+      "twitter": "https://x.com/rytr_me",
+      "linkedin": "https://www.linkedin.com/company/rytr-me",
+      "website": "https://rytr.me",
+      "instagram": "https://www.instagram.com/rytr_me/"
+    },
     "rating": 3.8,
     "bestFor": "Solopreneurs and freelancers needing affordable, quick AI writing assistance.",
     "notFor": "Marketing teams needing polished brand-consistent copy or advanced workflow automation",
@@ -2126,7 +2271,6 @@
     "verdict": "Rytr is well-suited for individuals and small teams seeking an affordable AI writing tool. However, those requiring advanced features and integrations might find better value elsewhere.",
     "affiliateUrl": "https://rytr.me/?via=Shelby-ai",
     "affiliateLabel": "Try Rytr Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -2143,7 +2287,14 @@
     "featured": false,
     "tool": "SEMrush",
     "toolSlug": "semrush",
-    "toolLogo": "/logos/semrush.svg",
+    "toolLogo": "/logos/semrush.png",
+    "socialLinks": {
+      "twitter": "https://x.com/semrush",
+      "youtube": "https://www.youtube.com/user/SemrushHQ",
+      "linkedin": "https://www.linkedin.com/company/semrush",
+      "website": "https://www.semrush.com",
+      "instagram": "https://www.instagram.com/semrush/"
+    },
     "rating": 3.9,
     "bestFor": "SEO professionals and agencies needing a comprehensive marketing toolkit.",
     "notFor": "Freelancers and small businesses on a tight budget who only need basic keyword research",
@@ -2206,7 +2357,6 @@
     "verdict": "SEMrush offers a powerful, all-in-one marketing solution ideal for agencies and larger teams. However, small businesses and freelancers may find the cost and complexity more than they need. Consider alternatives if budget constraints are significant.",
     "affiliateUrl": "https://www.semrush.com",
     "affiliateLabel": "Try SEMrush Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -2223,7 +2373,15 @@
     "featured": false,
     "tool": "Simplified",
     "toolSlug": "simplified",
-    "toolLogo": "/logos/simplified.svg",
+    "toolLogo": "/logos/simplified.png",
+    "socialLinks": {
+      "twitter": "https://x.com/sosimplified",
+      "youtube": "https://www.youtube.com/@SimplifiedAI",
+      "linkedin": "https://www.linkedin.com/company/simplifiedhq",
+      "website": "https://simplified.com",
+      "instagram": "https://www.instagram.com/simplifiedhq/",
+      "tiktok": "https://www.tiktok.com/@simplifiedhq"
+    },
     "rating": 3.8,
     "bestFor": "Small teams needing a comprehensive design, writing, and video tool in one platform.",
     "notFor": "Professional designers or video editors who need advanced tools like After Effects or Figma",
@@ -2282,7 +2440,6 @@
     "verdict": "Simplified is ideal for small teams that need a unified platform for design, writing, and video tasks. However, those requiring advanced video editing or extensive template libraries might find it lacking. Overall, it is a cost-effective solution for general creative needs.",
     "affiliateUrl": "https://simplified.com?fpr=shelby-ai",
     "affiliateLabel": "Try Simplified Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "6 min read"
   },
@@ -2307,7 +2464,12 @@
     "featured": false,
     "tool": "Surfer SEO",
     "toolSlug": "surfer-seo",
-    "toolLogo": "/logos/surfer-seo.svg",
+    "toolLogo": "/logos/surfer-seo.png",
+    "socialLinks": {
+      "twitter": "https://x.com/surferseo",
+      "youtube": "https://www.youtube.com/@SurferSEO",
+      "linkedin": "https://www.linkedin.com/company/surferseo/"
+    },
     "rating": 4,
     "bestFor": "SEO-focused freelancers and content agencies",
     "notFor": "Bloggers who write for passion rather than rankings or teams without an SEO strategy",
@@ -2371,7 +2533,6 @@
     "affiliateUrl": "https://surferseo.com",
     "affiliateLabel": "Try Surfer SEO",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "23 min read"
   },
@@ -2388,7 +2549,12 @@
     "featured": false,
     "tool": "Synthesia",
     "toolSlug": "synthesia",
-    "toolLogo": "/logos/synthesia.svg",
+    "toolLogo": "/logos/synthesia.png",
+    "socialLinks": {
+      "twitter": "https://x.com/synthesiaIO",
+      "youtube": "https://www.youtube.com/@Synthesia",
+      "linkedin": "https://www.linkedin.com/company/synthesia-technologies/"
+    },
     "rating": 3.9,
     "bestFor": "Businesses seeking efficient creation of training and marketing videos without traditional filming.",
     "notFor": "Creative agencies needing cinematic quality or brands that require real human presenters",
@@ -2460,7 +2626,6 @@
     "verdict": "Synthesia is a compelling choice for companies needing rapid video content creation without production overhead. However, budget-conscious users might find more value in alternatives like HeyGen or Colossyan.",
     "affiliateUrl": "https://www.synthesia.io/?via=shelbyai",
     "affiliateLabel": "Try Synthesia Free",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "7 min read"
   },
@@ -2485,7 +2650,14 @@
     "featured": false,
     "tool": "Writesonic",
     "toolSlug": "writesonic",
-    "toolLogo": "/logos/writesonic.svg",
+    "toolLogo": "/logos/writesonic.png",
+    "socialLinks": {
+      "twitter": "https://x.com/WriteSonic",
+      "youtube": "https://www.youtube.com/@WritesonicAI",
+      "linkedin": "https://www.linkedin.com/company/writesonic/",
+      "website": "https://writesonic.com",
+      "instagram": "https://www.instagram.com/writesonic/"
+    },
     "rating": 3.8,
     "bestFor": "Budget-conscious bloggers and small content teams",
     "notFor": "Enterprise marketing teams needing polished client-facing copy with strict brand guidelines",
@@ -2549,7 +2721,6 @@
     "affiliateUrl": "https://writesonic.com",
     "affiliateLabel": "Try Writesonic Free",
     "lastTested": "2026-03-15",
-    "socialLinks": {},
     "youtubeUrl": null,
     "readingTime": "22 min read"
   }
