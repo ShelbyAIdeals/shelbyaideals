@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, Zap, Sun, Moon, CloudFog, CloudOff, LogIn } from 'lucide-react';
+import { Menu, X, Search, Zap, Sun, Moon, LogIn } from 'lucide-react';
 import CommandPalette from './CommandPalette';
 import AuthModal from './AuthModal';
 import UserMenu from './UserMenu';
@@ -24,7 +24,6 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lightMode, setLightMode] = useState(false);
-  const [mistOn, setMistOn] = useState(true);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [authModal, setAuthModal] = useState<{ open: boolean; mode: 'login' | 'signup' }>({
     open: false,
@@ -48,23 +47,13 @@ export default function Header() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  /* ── Restore theme & mist from localStorage ──────────────── */
+  /* ── Restore theme from localStorage ──────────────────────── */
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    const isLight = saved === 'light';
-    if (isLight) {
+    if (saved === 'light') {
       setLightMode(true);
       document.documentElement.dataset.theme = 'light';
       window.dispatchEvent(new CustomEvent('themeChange', { detail: 'light' }));
-      window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
-    } else {
-      const savedMist = localStorage.getItem('mistOff') === 'true';
-      if (savedMist) {
-        setMistOn(false);
-        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
-      } else {
-        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 100 }));
-      }
     }
   }, []);
 
@@ -86,26 +75,11 @@ export default function Header() {
       if (next) {
         document.documentElement.dataset.theme = 'light';
         localStorage.setItem('theme', 'light');
-        window.dispatchEvent(new CustomEvent('mistDensity', { detail: 0 }));
       } else {
         delete document.documentElement.dataset.theme;
         localStorage.setItem('theme', 'dark');
-        const mistWasOff = localStorage.getItem('mistOff') === 'true';
-        if (!mistWasOff) {
-          setMistOn(true);
-          window.dispatchEvent(new CustomEvent('mistDensity', { detail: 100 }));
-        }
       }
       window.dispatchEvent(new CustomEvent('themeChange', { detail: next ? 'light' : 'dark' }));
-      return next;
-    });
-  }, []);
-
-  const toggleMist = useCallback(() => {
-    setMistOn((prev) => {
-      const next = !prev;
-      localStorage.setItem('mistOff', next ? 'false' : 'true');
-      window.dispatchEvent(new CustomEvent('mistDensity', { detail: next ? 40 : 0 }));
       return next;
     });
   }, []);
@@ -176,18 +150,6 @@ export default function Header() {
                 <Search size={15} />
                 <span className="text-sm">{'Search'}</span>
               </button>
-
-              {/* Mist toggle — hidden in light mode */}
-              {!lightMode && (
-                <button
-                  onClick={toggleMist}
-                  className="p-2 rounded-lg text-void-300 hover:text-signal-300 hover:bg-void-700/40 transition-all cursor-pointer"
-                  aria-label={mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
-                  title={mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
-                >
-                  {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-                </button>
-              )}
 
               {/* Theme toggle */}
               <button
@@ -287,19 +249,6 @@ export default function Header() {
                 <li>
                   <hr className="border-void-700/50 my-2 mx-3" />
                 </li>
-
-                {/* Mist toggle — hidden in light mode */}
-                {!lightMode && (
-                  <li>
-                    <button
-                      onClick={toggleMist}
-                      className="flex items-center gap-2.5 w-full px-3 py-2.5 rounded-lg text-base font-semibold text-void-100 hover:bg-void-700/40 hover:text-signal-300 transition-colors cursor-pointer"
-                    >
-                      {mistOn ? <CloudOff size={18} /> : <CloudFog size={18} />}
-                      {mistOn ? t('theme.hide_mist', 'Hide Mist') : t('theme.show_mist', 'Show Mist')}
-                    </button>
-                  </li>
-                )}
 
                 <li>
                   <button
