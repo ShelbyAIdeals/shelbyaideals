@@ -51,7 +51,7 @@ const connectLinks = [
   {
     labelKey: 'footer.social_linkedin',
     fallback: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/shelby-ai-1bb38a3b6/',
+    href: 'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
     external: true,
     icon: Linkedin,
   },

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Star, BarChart3, Twitter, Github } from 'lucide-react';
+import { ArrowRight, BookOpen, Star, BarChart3, Twitter, Github, Linkedin } from 'lucide-react';
 import JsonLd from '@/components/JsonLd';
 import { getAllArticles } from '@/lib/content';
 
@@ -56,6 +56,8 @@ const personSchema = JSON.stringify({
   ],
   sameAs: [
     'https://x.com/ShelbyAIDeals',
+    'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
+    'https://www.reddit.com/user/Legitimate_Farmer529/',
     'https://www.pinterest.com/shelbyaideals/',
     'https://github.com/ShelbyAIdeals',
   ],
@@ -115,7 +117,7 @@ export default function AuthorPage() {
             </p>
 
             {/* Social links */}
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <a
                 href="https://x.com/ShelbyAIDeals"
                 target="_blank"
@@ -123,6 +125,23 @@ export default function AuthorPage() {
                 className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors"
               >
                 <Twitter size={16} /> @ShelbyAIDeals
+              </a>
+              <a
+                href="https://www.linkedin.com/in/frank-shelby-1bb38a3b6/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors"
+              >
+                <Linkedin size={16} /> LinkedIn
+              </a>
+              <a
+                href="https://www.reddit.com/user/Legitimate_Farmer529/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M14.5 9.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0m-5 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+                Reddit
               </a>
               <a
                 href="https://github.com/ShelbyAIdeals"

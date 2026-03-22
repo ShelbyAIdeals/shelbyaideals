@@ -46,6 +46,8 @@ const AUTHOR_PERSON = {
   knowsAbout: ['AI Tools', 'Video Creation', 'Content Marketing', 'SEO', 'Small Business Technology'],
   sameAs: [
     'https://x.com/ShelbyAIDeals',
+    'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
+    'https://www.reddit.com/user/Legitimate_Farmer529/',
     'https://www.pinterest.com/shelbyaideals/',
     'https://github.com/ShelbyAIdeals',
   ],
@@ -93,6 +95,8 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       founder: AUTHOR_PERSON,
       sameAs: [
         'https://x.com/ShelbyAIDeals',
+        'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
+        'https://www.reddit.com/user/Legitimate_Farmer529/',
         'https://www.pinterest.com/shelbyaideals/',
         'https://github.com/ShelbyAIdeals',
       ],
