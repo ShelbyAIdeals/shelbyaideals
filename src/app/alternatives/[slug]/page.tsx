@@ -7,6 +7,7 @@ import {
   getAllAlternativesPages,
 } from '@/lib/alternatives-data';
 import type { AlternativeTool } from '@/lib/alternatives-data';
+import ComparisonTable from '@/components/ComparisonTable';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: page.description,
     },
     alternates: {
-      canonical: `https://www.shelby-ai.com/alternatives/${slug}`,
+      canonical: `https://www.shelby-ai.com/alternatives/${slug}/`,
     },
   };
 }
@@ -69,6 +70,43 @@ function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number
       <p className="text-sm text-void-300 leading-relaxed mb-4">
         {tool.description}
       </p>
+
+      {/* Pros & Cons */}
+      {(tool.pros?.length || tool.cons?.length) ? (
+        <div className="flex gap-4 mb-4 text-xs">
+          {tool.pros && tool.pros.length > 0 && (
+            <div className="flex-1">
+              <span className="font-semibold text-signal-400 block mb-1">Pros</span>
+              <ul className="space-y-0.5 text-void-300">
+                {tool.pros.map((pro) => (
+                  <li key={pro} className="flex items-start gap-1">
+                    <span className="text-signal-500 mt-0.5">+</span> {pro}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {tool.cons && tool.cons.length > 0 && (
+            <div className="flex-1">
+              <span className="font-semibold text-ember-400 block mb-1">Cons</span>
+              <ul className="space-y-0.5 text-void-300">
+                {tool.cons.map((con) => (
+                  <li key={con} className="flex items-start gap-1">
+                    <span className="text-ember-400 mt-0.5">&minus;</span> {con}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ) : null}
+
+      {/* Why Switch */}
+      {tool.whySwitch && (
+        <p className="text-xs text-void-400 italic mb-4">
+          {tool.whySwitch}
+        </p>
+      )}
 
       {/* Pricing */}
       <div className="flex items-center gap-2 mb-5">
@@ -135,6 +173,19 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
     ],
   };
 
+  const faqSchema = page.faqs && page.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faqs.map((faq: { question: string; answer: string }) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -162,6 +213,12 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         {/* Breadcrumb */}
@@ -206,6 +263,37 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
               </p>
             )}
           </div>
+        </ScrollReveal>
+
+        {/* Why Look for Alternatives */}
+        {page.whyLookForAlternatives && (
+          <ScrollReveal>
+            <div className="bg-void-900/60 border border-void-700/50 rounded-xl p-6 mb-10 backdrop-blur-sm">
+              <h2 className="text-lg font-bold text-void-50 mb-3 font-heading">
+                Why Look for {page.tool} Alternatives?
+              </h2>
+              <p className="text-sm text-void-300 leading-relaxed">
+                {page.whyLookForAlternatives}
+              </p>
+            </div>
+          </ScrollReveal>
+        )}
+
+        {/* Comparison Table */}
+        <ScrollReveal>
+          <h2 className="text-xl font-bold text-void-50 mb-4 font-heading">
+            {page.tool} vs Alternatives at a Glance
+          </h2>
+          <ComparisonTable
+            tools={page.alternatives.slice(0, 5).map((alt) => ({
+              name: alt.name,
+              features: {
+                'Starting Price': alt.pricing,
+                'Best For': alt.bestFor,
+              },
+              affiliateUrl: alt.reviewSlug ? `/reviews/${alt.reviewSlug}` : alt.url,
+            }))}
+          />
         </ScrollReveal>
 
         {/* Quick jump */}
@@ -265,6 +353,33 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
       </div>
+
+      {/* FAQ Section */}
+      {page.faqs && page.faqs.length > 0 && (
+        <div className="container-main pb-12">
+          <ScrollReveal>
+            <h2 className="text-xl font-bold text-void-100 mb-6 font-heading">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4 max-w-3xl">
+              {page.faqs.map((faq: { question: string; answer: string }) => (
+                <details
+                  key={faq.question}
+                  className="group card border border-void-700/50 rounded-xl overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-void-100 hover:text-signal-400 transition-colors list-none">
+                    {faq.question}
+                    <span className="text-void-500 group-open:rotate-180 transition-transform ml-2 shrink-0">&#9662;</span>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-void-300 leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      )}
 
       {/* More Alternatives */}
       {(() => {

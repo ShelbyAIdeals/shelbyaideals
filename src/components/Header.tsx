@@ -165,26 +165,29 @@ export default function Header() {
               <div className="w-px h-5 bg-void-700/50 mx-1" />
 
               {/* Auth buttons / User menu */}
-              {!authLoading && !profileLoading && (
-                user ? (
-                  <UserMenu />
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => openAuth('login')}
-                      className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-void-200 hover:text-void-50 rounded-lg hover:bg-void-700/40 transition-all cursor-pointer"
-                    >
-                      <LogIn size={16} />
-                      {t('auth.login', 'Login')}
-                    </button>
-                    <button
-                      onClick={() => openAuth('signup')}
-                      className="px-4 py-2 text-sm font-bold rounded-lg bg-signal-500 text-void-950 hover:bg-signal-400 transition-all cursor-pointer"
-                    >
-                      {t('auth.join_free', 'Join for Free')}
-                    </button>
-                  </div>
-                )
+              {authLoading || profileLoading ? (
+                <div className="flex items-center gap-2 px-2 py-1.5 animate-pulse">
+                  <div className="w-7 h-7 rounded-full bg-void-700/50" />
+                  <div className="w-16 h-4 rounded bg-void-700/50 hidden xl:block" />
+                </div>
+              ) : user ? (
+                <UserMenu />
+              ) : (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => openAuth('login')}
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-void-200 hover:text-void-50 rounded-lg hover:bg-void-700/40 transition-all cursor-pointer"
+                  >
+                    <LogIn size={16} />
+                    {t('auth.login', 'Login')}
+                  </button>
+                  <button
+                    onClick={() => openAuth('signup')}
+                    className="px-4 py-2 text-sm font-bold rounded-lg bg-signal-500 text-void-950 hover:bg-signal-400 transition-all cursor-pointer"
+                  >
+                    {t('auth.join_free', 'Join for Free')}
+                  </button>
+                </div>
               )}
             </div>
 
@@ -261,7 +264,12 @@ export default function Header() {
                 </li>
 
                 {/* Auth buttons (mobile) */}
-                {!authLoading && !profileLoading && !user && (
+                {authLoading || profileLoading ? (
+                  <li className="px-3 py-2 flex items-center gap-2 animate-pulse">
+                    <div className="w-7 h-7 rounded-full bg-void-700/50" />
+                    <div className="w-24 h-4 rounded bg-void-700/50" />
+                  </li>
+                ) : !user ? (
                   <>
                     <li>
                       <hr className="border-void-700/50 my-2 mx-3" />
@@ -281,7 +289,7 @@ export default function Header() {
                       </button>
                     </li>
                   </>
-                )}
+                ) : null}
               </ul>
             </nav>
           )}

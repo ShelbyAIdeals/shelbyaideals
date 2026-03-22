@@ -73,20 +73,20 @@ function buildSitemap(): string {
     entries.push({ url: `/categories/${cat}`, lastmod: today, changefreq: 'weekly', priority: '0.8' });
   }
 
-  // Alternatives pages
-  const alternativesSlugs = [
-    'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
-    'elevenlabs', 'synthesia', 'midjourney', 'chatgpt', 'grammarly', 'frase', 'semrush', 'mangools',
-  ];
+  // Alternatives pages — dynamically read all slugs from alternatives-data.ts
+  const altDataPath = path.join(process.cwd(), 'src/lib/alternatives-data.ts');
+  const altSource = fs.readFileSync(altDataPath, 'utf-8');
+  const alternativesSlugs = Array.from(altSource.matchAll(/^\s+slug:\s*'([^']+)'/gm))
+    .map((m) => m[1])
+    .filter((s) => !['slug'].includes(s)); // skip interface field definitions
   for (const slug of alternativesSlugs) {
     entries.push({ url: `/alternatives/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
   }
 
-  // Pricing pages
-  const pricingSlugs = [
-    'jasper-ai', 'copy-ai', 'writesonic', 'surfer-seo', 'descript', 'make-com', 'pictory',
-    'elevenlabs', 'synthesia', 'midjourney', 'chatgpt', 'grammarly', 'frase', 'semrush', 'mangools',
-  ];
+  // Pricing pages — dynamically read all slugs from pricing-data.ts
+  const pricingDataPath = path.join(process.cwd(), 'src/lib/pricing-data.ts');
+  const pricingSource = fs.readFileSync(pricingDataPath, 'utf-8');
+  const pricingSlugs = Array.from(pricingSource.matchAll(/^\s+slug:\s*'([^']+)'/gm)).map((m) => m[1]);
   entries.push({ url: '/pricing', lastmod: today, changefreq: 'weekly', priority: '0.8' });
   for (const slug of pricingSlugs) {
     entries.push({ url: `/pricing/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });

@@ -37,6 +37,15 @@ export default async function ComparisonsPage() {
   return (
     <main className="min-h-screen">
       <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'AI Tool Comparisons',
+          description:
+            'Head-to-head comparisons with real testing, side-by-side features, and clear winners by scenario.',
+          url: 'https://www.shelby-ai.com/comparisons/',
+        }}
+      />
+      <JsonLd
         type="itemlist"
         data={{
           name: 'AI Tool Comparisons',

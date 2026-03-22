@@ -1,6 +1,7 @@
 # ShelbyAI — Honest AI Tool Reviews
 
 > ShelbyAI (www.shelby-ai.com) is an independent AI tool review site for creators, freelancers, and small businesses. We test every tool hands-on for 7-14 days with real workflows. No sponsored rankings.
+> Full tool directory: https://www.shelby-ai.com/llms-full.txt
 
 ## What We Cover
 

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: guide.title,
       description: metaDescription,
       alternates: {
-        canonical: `https://www.shelby-ai.com/guides/${slug}`,
+        canonical: `https://www.shelby-ai.com/guides/${slug}/`,
       },
       openGraph: {
         title: guide.title,
@@ -76,6 +76,18 @@ function extractHeadings(content: string) {
   return headings;
 }
 
+function extractHowToSteps(content: string): { name: string; text: string }[] {
+  const sections = content.split(/^##\s+/m).slice(1);
+  if (sections.length < 3) return []; // Not a step-by-step guide
+
+  return sections.slice(0, 10).map((section) => {
+    const lines = section.trim().split('\n');
+    const name = lines[0].replace(/^(?:Step\s+\d+[:.]\s*)?/, '').trim();
+    const text = lines.slice(1).join(' ').replace(/[#*`]/g, '').trim().slice(0, 300);
+    return { name, text };
+  });
+}
+
 export default async function GuidePage({ params }: PageProps) {
   const { slug } = await params;
 
@@ -91,6 +103,7 @@ export default async function GuidePage({ params }: PageProps) {
   }
 
   const headings = extractHeadings(content);
+  const howToSteps = extractHowToSteps(content);
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
@@ -169,6 +182,16 @@ export default async function GuidePage({ params }: PageProps) {
 
       <JsonLd type="article" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      {howToSteps.length >= 3 && (
+        <JsonLd
+          type="howto"
+          data={{
+            name: meta.title,
+            description: meta.excerpt || meta.description || '',
+            steps: howToSteps,
+          }}
+        />
+      )}
 
       {/* MDX Body */}
       <MDXContent source={content} />

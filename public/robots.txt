@@ -5,23 +5,99 @@ Disallow: /profile
 Disallow: /api/
 Disallow: /onboarding
 
-# AI search crawlers — allow indexing for AI-powered search visibility
+# AI search crawlers — allow public content for AI-powered search visibility
+# Each block includes Disallow rules because per robots.txt spec,
+# specific User-agent blocks do NOT inherit rules from the * block.
+
 User-agent: GPTBot
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 User-agent: ClaudeBot-Web
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: Bytespider
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: CCBot
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: YouBot
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /search
+Disallow: /profile
+Disallow: /api/
+Disallow: /onboarding
 
 Sitemap: https://www.shelby-ai.com/sitemap.xml

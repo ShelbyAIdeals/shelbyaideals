@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
 import type { User, Session } from '@supabase/supabase-js';
 import {
   supabase,
@@ -76,6 +76,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   /* ── Listen for auth state changes ─────────────────────── */
+  const initialLoadDone = useRef(false);
+
   useEffect(() => {
     let subscription: { unsubscribe: () => void } | null = null;
 
@@ -83,10 +85,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const result = supabase.auth.onAuthStateChange(
         async (_event, session) => {
           const user = session?.user ?? null;
-          setState((prev) => ({ ...prev, user, session, loading: false }));
+          // Don't set loading: false until getSession() has resolved — prevents
+          // a flash where onAuthStateChange fires with null before storage is read
+          setState((prev) => ({
+            ...prev,
+            user,
+            session,
+            loading: initialLoadDone.current ? false : prev.loading,
+          }));
           if (user) {
             await ensureProfile(user);
-          } else {
+          } else if (initialLoadDone.current) {
             setState((prev) => ({ ...prev, profile: null, profileLoading: false }));
           }
         }
@@ -97,12 +106,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setState((prev) => ({ ...prev, loading: false, profileLoading: false }));
     }
 
-    // Initial session check
+    // Initial session check — this is the authoritative first load
     supabase.auth.getSession().then(({ data: { session } }) => {
+      initialLoadDone.current = true;
       const user = session?.user ?? null;
       setState((prev) => ({ ...prev, user, session, loading: false }));
-      if (user) ensureProfile(user);
+      if (user) {
+        ensureProfile(user);
+      } else {
+        setState((prev) => ({ ...prev, profileLoading: false }));
+      }
     }).catch(() => {
+      initialLoadDone.current = true;
       setState((prev) => ({ ...prev, loading: false, profileLoading: false }));
     });
 

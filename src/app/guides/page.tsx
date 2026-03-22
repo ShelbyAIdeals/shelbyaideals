@@ -37,6 +37,15 @@ export default async function GuidesPage() {
   return (
     <main className="min-h-screen">
       <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'AI Tool Guides',
+          description:
+            'Step-by-step guides to building AI-powered workflows that save time and grow your business.',
+          url: 'https://www.shelby-ai.com/guides/',
+        }}
+      />
+      <JsonLd
         type="itemlist"
         data={{
           name: 'AI Guides & Tutorials',

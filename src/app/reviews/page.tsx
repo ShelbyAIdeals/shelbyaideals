@@ -43,6 +43,15 @@ export default async function ReviewsPage() {
   return (
     <main className="min-h-screen">
       <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'AI Tool Reviews',
+          description:
+            'Browse 31 AI tools tested hands-on for small businesses. Video creators, SEO tools, and marketing automation — reviewed, rated, and ranked.',
+          url: 'https://www.shelby-ai.com/reviews/',
+        }}
+      />
+      <JsonLd
         type="itemlist"
         data={{
           name: 'AI Tool Reviews',

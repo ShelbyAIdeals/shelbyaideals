@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: page.description,
     },
     alternates: {
-      canonical: `https://www.shelby-ai.com/pricing/${slug}`,
+      canonical: `https://www.shelby-ai.com/pricing/${slug}/`,
     },
   };
 }

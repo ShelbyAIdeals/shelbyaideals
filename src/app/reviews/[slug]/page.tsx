@@ -115,7 +115,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: review.title,
       description: metaDescription,
       alternates: {
-        canonical: `https://www.shelby-ai.com/reviews/${slug}`,
+        canonical: `https://www.shelby-ai.com/reviews/${slug}/`,
       },
       openGraph,
       twitter: {

@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ExploreMore from '@/components/ExploreMore';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Tool Alternatives',
@@ -27,6 +28,15 @@ export default function AlternativesPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'AI Tool Alternatives',
+          description:
+            'Find the best alternatives to popular AI tools. Side-by-side comparisons with real pricing, features, and honest recommendations from hands-on testing.',
+          url: 'https://www.shelby-ai.com/alternatives/',
+        }}
+      />
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         {/* Page Header */}
         <ScrollReveal>

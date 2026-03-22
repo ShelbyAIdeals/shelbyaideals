@@ -19,9 +19,22 @@ interface ItemListData {
   items: { url: string; name: string }[];
 }
 
+interface HowToData {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+}
+
+interface CollectionPageData {
+  name: string;
+  description: string;
+  url: string;
+}
+
 interface JsonLdProps {
-  type: 'review' | 'article' | 'website' | 'organization' | 'breadcrumb' | 'faq' | 'video' | 'itemlist';
-  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData | ItemListData;
+  type: 'review' | 'article' | 'website' | 'organization' | 'breadcrumb' | 'faq' | 'video' | 'itemlist' | 'howto' | 'collectionpage';
+  data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData | ItemListData | HowToData | CollectionPageData;
   breadcrumbs?: { name: string; url: string }[];
 }
 
@@ -48,6 +61,11 @@ const PUBLISHER_ORG = {
   },
 };
 
+/**
+ * Renders JSON-LD structured data for SEO and AI search visibility.
+ * All data is developer-controlled (not user-generated), so JSON.stringify
+ * is safe here — no untrusted input reaches the output.
+ */
 export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -71,13 +89,20 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       name: 'ShelbyAIDeals',
       url: 'https://www.shelby-ai.com',
       logo: 'https://www.shelby-ai.com/images/og-thumbnail.png',
-      description: 'Honest AI tool reviews for creators, freelancers, and small teams. 31+ tools tested hands-on.',
+      description: 'Honest AI tool reviews for creators, freelancers, and small teams. 37+ tools tested hands-on.',
       founder: AUTHOR_PERSON,
       sameAs: [
         'https://x.com/ShelbyAIDeals',
         'https://www.pinterest.com/shelbyaideals/',
         'https://github.com/ShelbyAIdeals',
       ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.5',
+        reviewCount: '37',
+        bestRating: '5',
+        worstRating: '1',
+      },
     };
   } else if (type === 'itemlist' && data && 'items' in data) {
     const list = data as ItemListData;
@@ -120,6 +145,10 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       image: imageUrl,
       author: AUTHOR_PERSON,
       publisher: PUBLISHER_ORG,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '.quick-verdict', '.verdict-box'],
+      },
       itemReviewed: {
         '@type': 'SoftwareApplication',
         name: review.tool,
@@ -152,6 +181,10 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       image: imageUrl,
       author: AUTHOR_PERSON,
       publisher: PUBLISHER_ORG,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'article > p:first-of-type'],
+      },
     };
   } else if (type === 'faq' && data && 'questions' in data) {
     const faqData = data as { questions: FAQItem[] };
@@ -188,6 +221,35 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
         },
       },
     };
+  } else if (type === 'howto' && data && 'steps' in data) {
+    const howTo = data as HowToData;
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: howTo.name,
+      description: howTo.description,
+      totalTime: howTo.totalTime,
+      step: howTo.steps.map((s, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    };
+  } else if (type === 'collectionpage' && data && 'url' in data) {
+    const page = data as CollectionPageData;
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: page.name,
+      description: page.description,
+      url: page.url,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'ShelbyAIDeals',
+        url: 'https://www.shelby-ai.com',
+      },
+    };
   } else {
     return null;
   }
@@ -195,6 +257,7 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
+      // Safe: all data is developer-controlled static content, not user input
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );

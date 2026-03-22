@@ -1,0 +1,408 @@
+# ShelbyAI — Complete AI Tool Directory
+
+> Comprehensive AI tool reviews, comparisons, and pricing guides. Every tool tested hands-on for 7-14 days.
+> Full directory: https://www.shelby-ai.com/llms-full.txt
+> Summary: https://www.shelby-ai.com/llms.txt
+
+## About ShelbyAI
+ShelbyAI is an independent AI tool review site for creators, freelancers, and small businesses. We test every tool for 7-14 days with real workflows. No sponsored rankings, no pay-to-play.
+
+---
+
+## All Reviewed Tools (31)
+
+### ChatGPT
+- Category: AI Writing Tools
+- Best For: Versatile creators needing a reliable AI assistant for writing, coding, and analysis
+- Pricing: Free, Plus $20/mo, Team $25/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/chatgpt-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/chatgpt/
+- Alternatives: https://www.shelby-ai.com/alternatives/chatgpt/
+
+### Claude AI
+- Category: AI Writing Tools
+- Rating: 4.0/5
+- Best For: Writers and researchers seeking nuanced, thoughtful AI-generated content
+- Pricing: Free, Pro $20/mo, Team $25/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/claude-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/claude-ai/
+
+### Jasper AI
+- Category: AI Writing Tools
+- Best For: Marketing teams and content creators who publish frequently
+- Pricing: Pro $69/mo, Business Custom
+- Review: https://www.shelby-ai.com/reviews/jasper-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/jasper-ai/
+- Alternatives: https://www.shelby-ai.com/alternatives/jasper-ai/
+
+### Copy.ai
+- Category: AI Writing Tools
+- Rating: 3.9/5
+- Best For: Freelancers and solopreneurs who need fast marketing copy on a budget
+- Pricing: Free, Starter $49/mo, Advanced Custom
+- Review: https://www.shelby-ai.com/reviews/copy-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/copy-ai/
+- Alternatives: https://www.shelby-ai.com/alternatives/copy-ai/
+
+### Writesonic
+- Category: AI Writing Tools
+- Best For: Budget-conscious bloggers and small content teams
+- Pricing: Free, Individual $20/mo, Business Custom
+- Review: https://www.shelby-ai.com/reviews/writesonic-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/writesonic/
+- Alternatives: https://www.shelby-ai.com/alternatives/writesonic/
+
+### Grammarly
+- Category: AI Writing Tools
+- Best For: Professional writers who require advanced grammar, clarity, and tone assistance
+- Pricing: Free, Premium $12/mo, Business $15/mo per seat
+- Review: https://www.shelby-ai.com/reviews/grammarly-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/grammarly/
+- Alternatives: https://www.shelby-ai.com/alternatives/grammarly/
+
+### Rytr
+- Category: AI Writing Tools
+- Rating: 3.8/5
+- Best For: Solopreneurs and freelancers needing affordable, quick AI writing assistance
+- Pricing: Free, Saver $9/mo, Unlimited $29/mo
+- Review: https://www.shelby-ai.com/reviews/rytr-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/rytr/
+
+### Easy Peasy AI
+- Category: AI Writing Tools
+- Best For: Content creators needing a budget-friendly AI writing and image generation tool
+- Pricing: Free, Basic $5.99/mo, Unlimited $15.99/mo
+- Review: https://www.shelby-ai.com/reviews/easy-peasy-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/easy-peasy-ai/
+
+### Google Gemini
+- Category: AI Writing Tools
+- Rating: 3.9/5
+- Best For: Google Workspace users who want AI integrated into their existing workflow
+- Pricing: Free, Advanced $19.99/mo
+- Review: https://www.shelby-ai.com/reviews/google-gemini-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/google-gemini/
+
+### Grok
+- Category: AI Writing Tools
+- Rating: 3.9/5
+- Best For: X power users who require real-time social media insights with minimal content restrictions
+- Pricing: Free, Premium $16/mo
+- Review: https://www.shelby-ai.com/reviews/grok-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/grok/
+
+### Perplexity
+- Category: AI Productivity
+- Best For: Researchers and professionals needing reliable, cited information quickly
+- Pricing: Free, Pro $20/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/perplexity-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/perplexity/
+
+### Pictory
+- Category: AI Video & Audio
+- Best For: Content repurposers and marketers who need video at scale
+- Pricing: Starter $19/mo, Professional $39/mo, Teams $99/mo
+- Affiliate: ?ref=fran26
+- Review: https://www.shelby-ai.com/reviews/pictory-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/pictory/
+- Alternatives: https://www.shelby-ai.com/alternatives/pictory/
+
+### ElevenLabs
+- Category: AI Video & Audio
+- Best For: Creators and developers seeking ultra-realistic AI voiceovers and voice cloning
+- Pricing: Free, Starter $5/mo, Creator $22/mo, Pro $99/mo, Scale $330/mo
+- Review: https://www.shelby-ai.com/reviews/elevenlabs-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/elevenlabs/
+- Alternatives: https://www.shelby-ai.com/alternatives/elevenlabs/
+
+### Synthesia
+- Category: AI Video & Audio
+- Rating: 3.9/5
+- Best For: Businesses seeking efficient creation of training and marketing videos without traditional filming
+- Pricing: Free, Starter $22/mo, Creator $67/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/synthesia-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/synthesia/
+- Alternatives: https://www.shelby-ai.com/alternatives/synthesia/
+
+### Descript
+- Category: AI Video & Audio
+- Rating: 4.0/5
+- Best For: Podcasters, YouTubers, and small teams who need fast video editing
+- Pricing: Free, Hobbyist $8/mo, Creator $24/mo, Business $40/mo
+- Review: https://www.shelby-ai.com/reviews/descript-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/descript/
+- Alternatives: https://www.shelby-ai.com/alternatives/descript/
+
+### Fliki
+- Category: AI Video & Audio
+- Rating: 3.9/5
+- Best For: Content creators looking to efficiently turn scripts and blog posts into engaging videos
+- Pricing: Free, Standard $28/mo, Premium $88/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/fliki-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/fliki/
+
+### Runway ML
+- Category: AI Video & Audio
+- Best For: Creators seeking innovative AI video editing without needing professional skills
+- Pricing: Standard $12/mo, Pro $28/mo, Unlimited $76/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/runway-ml-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/runway-ml/
+
+### Mubert
+- Category: AI Video & Audio
+- Rating: 3.9/5
+- Best For: Creators and developers who need royalty-free AI music for commercial use
+- Pricing: Free, Creator $14/mo, Pro $39/mo, Business $199/mo
+- Review: https://www.shelby-ai.com/reviews/mubert-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/mubert/
+
+### Midjourney
+- Category: AI Design Tools
+- Best For: Designers and creators who demand the highest quality AI-generated images
+- Pricing: Basic $10/mo, Standard $30/mo, Pro $60/mo, Mega $120/mo
+- Review: https://www.shelby-ai.com/reviews/midjourney-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/midjourney/
+- Alternatives: https://www.shelby-ai.com/alternatives/midjourney/
+
+### Leonardo AI
+- Category: AI Design Tools
+- Best For: Game developers and illustrators seeking affordable, fine-tuned image generation
+- Pricing: Free, Apprentice $12/mo, Artisan $30/mo, Maestro $60/mo
+- Review: https://www.shelby-ai.com/reviews/leonardo-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/leonardo-ai/
+
+### Simplified
+- Category: AI Design Tools
+- Best For: Small teams needing a comprehensive design, writing, and video tool in one platform
+- Pricing: Free, Pro $9/mo, Business $15/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/simplified-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/simplified/
+
+### Surfer SEO
+- Category: AI SEO Tools
+- Rating: 4.0/5
+- Best For: SEO-focused freelancers and content agencies
+- Pricing: Essential $89/mo, Scale $129/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/surfer-seo-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/surfer-seo/
+- Alternatives: https://www.shelby-ai.com/alternatives/surfer-seo/
+
+### Frase
+- Category: AI SEO Tools
+- Rating: 4.0/5
+- Best For: Content marketers seeking AI-driven content briefs and SERP-optimized articles
+- Pricing: Solo $15/mo, Basic $45/mo, Team $115/mo
+- Review: https://www.shelby-ai.com/reviews/frase-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/frase/
+- Alternatives: https://www.shelby-ai.com/alternatives/frase/
+
+### SEMrush
+- Category: AI SEO Tools
+- Best For: SEO professionals and agencies needing a comprehensive marketing toolkit
+- Pricing: Pro $139.95/mo, Guru $249.95/mo, Business $499.95/mo
+- Review: https://www.shelby-ai.com/reviews/semrush-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/semrush/
+- Alternatives: https://www.shelby-ai.com/alternatives/semrush/
+
+### Mangools
+- Category: AI SEO Tools
+- Rating: 3.9/5
+- Best For: Freelancers and small site owners who need effective SEO tools without breaking the bank
+- Pricing: Entry $29.90/mo, Basic $44.90/mo, Premium $89.90/mo, Agency $129.90/mo
+- Review: https://www.shelby-ai.com/reviews/mangools-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/mangools/
+- Alternatives: https://www.shelby-ai.com/alternatives/mangools/
+
+### Make.com
+- Category: AI Automation
+- Rating: 4.3/5
+- Best For: Freelancers and small teams automating repetitive workflows
+- Pricing: Free, Core $10.59/mo, Pro $18.82/mo, Teams $34.12/mo
+- Review: https://www.shelby-ai.com/reviews/make-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/make-com/
+- Alternatives: https://www.shelby-ai.com/alternatives/make-com/
+
+### Chatbase
+- Category: AI Automation
+- Rating: 3.9/5
+- Best For: Businesses seeking to leverage AI chatbots trained on their specific data
+- Pricing: Free, Hobby $19/mo, Standard $99/mo, Unlimited $399/mo
+- Review: https://www.shelby-ai.com/reviews/chatbase-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/chatbase/
+
+### Otter.ai
+- Category: AI Productivity
+- Rating: 4.0/5
+- Best For: Freelancers and small teams who need effective, automated meeting notes
+- Pricing: Free, Pro $16.99/mo, Business $30/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/otter-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/otter-ai/
+
+### Julius AI
+- Category: AI Productivity
+- Best For: Non-technical teams wanting straightforward data analysis using natural language
+- Pricing: Free, Essential $20/mo, Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/julius-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/julius-ai/
+
+### Decktopus AI
+- Category: AI Productivity
+- Best For: Professionals who need polished presentations quickly without investing time in design
+- Pricing: Pro AI $9.99/mo, Business AI $36/mo
+- Review: https://www.shelby-ai.com/reviews/decktopus-ai-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/decktopus-ai/
+
+### Mixo
+- Category: AI Website Builder
+- Rating: 3.9/5
+- Best For: Entrepreneurs who need to quickly validate ideas with a simple landing page
+- Pricing: Basic $9/mo, Growth $19/mo, Max $39/mo
+- Review: https://www.shelby-ai.com/reviews/mixo-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/mixo/
+
+---
+
+## All Comparisons (17)
+
+- ChatGPT vs Claude for Business: https://www.shelby-ai.com/comparisons/chatgpt-vs-claude-for-business/
+- ChatGPT vs Jasper vs Claude for Content Writing: https://www.shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude/
+- Jasper vs Copy.ai: https://www.shelby-ai.com/comparisons/jasper-vs-copy-ai/
+- Writesonic vs Rytr vs Koala: https://www.shelby-ai.com/comparisons/writesonic-vs-rytr-vs-koala/
+- Grammarly vs ProWritingAid vs Hemingway: https://www.shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway/
+- Pictory vs Synthesia: https://www.shelby-ai.com/comparisons/pictory-vs-synthesia/
+- Pictory vs Lumen5 vs InVideo: https://www.shelby-ai.com/comparisons/pictory-vs-lumen5-vs-invideo/
+- Descript vs CapCut: https://www.shelby-ai.com/comparisons/descript-vs-capcut/
+- Descript vs Riverside vs CapCut: https://www.shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut/
+- ElevenLabs vs Murf AI: https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-ai/
+- ElevenLabs vs Murf vs Play.ht: https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-vs-playht/
+- Midjourney vs DALL-E vs Leonardo AI: https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo/
+- Frase vs Surfer SEO: https://www.shelby-ai.com/comparisons/frase-vs-surfer-seo/
+- Surfer SEO vs Clearscope vs Frase: https://www.shelby-ai.com/comparisons/surfer-vs-clearscope-vs-frase/
+- Zapier vs Make.com: https://www.shelby-ai.com/comparisons/zapier-vs-make/
+- Notion AI vs ClickUp vs Monday AI: https://www.shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday/
+- Otter.ai vs Fireflies vs Fathom: https://www.shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom/
+
+---
+
+## All Guides (20)
+
+- How to Build a Complete AI Content Workflow: https://www.shelby-ai.com/guides/ai-content-workflow/
+- How to Write a Blog Post With AI: https://www.shelby-ai.com/guides/write-blog-post-with-ai/
+- How to Use AI for SEO: https://www.shelby-ai.com/guides/how-to-use-ai-for-seo/
+- How to Repurpose One Blog Post Into 10 Pieces of Content Using AI: https://www.shelby-ai.com/guides/repurpose-content-with-ai/
+- How to Automate Your Marketing with Zapier + AI: https://www.shelby-ai.com/guides/automate-marketing-ai-zapier/
+- How to Create an AI-Powered Client Onboarding System: https://www.shelby-ai.com/guides/ai-client-onboarding/
+- AI Video Tools for Ecommerce: https://www.shelby-ai.com/guides/ai-video-tools-ecommerce/
+- AI Tools for eCommerce Store Owners: https://www.shelby-ai.com/guides/ai-tools-ecommerce/
+- AI Tools for Freelance Copywriters: https://www.shelby-ai.com/guides/ai-tools-for-copywriters/
+- AI Tools for Podcasters: https://www.shelby-ai.com/guides/ai-tools-for-podcasters/
+- AI Tools for Service Businesses: https://www.shelby-ai.com/guides/ai-tools-for-service-businesses/
+- The Complete AI Marketing Stack for Solopreneurs: https://www.shelby-ai.com/guides/ai-marketing-stack-solopreneurs/
+- The Solopreneur AI Stack Under $100/mo: https://www.shelby-ai.com/guides/solopreneur-ai-stack/
+- Best AI Tools for Agencies: https://www.shelby-ai.com/guides/best-ai-tools-for-agencies/
+- Best AI Voice Generators Under $30/mo: https://www.shelby-ai.com/guides/best-ai-voice-generators-under-30/
+- Is Pictory Worth It in 2026?: https://www.shelby-ai.com/guides/is-pictory-worth-it/
+- Is ElevenLabs Worth It?: https://www.shelby-ai.com/guides/is-elevenlabs-worth-it/
+- Is Frase Worth It?: https://www.shelby-ai.com/guides/is-frase-worth-it/
+- Is Surfer SEO Worth It?: https://www.shelby-ai.com/guides/is-surfer-seo-worth-it/
+- Is Synthesia Worth It?: https://www.shelby-ai.com/guides/is-synthesia-worth-it/
+
+---
+
+## All Best-Of Lists (8)
+
+- Best AI Writing Tools for Freelancers: https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers/
+- Best AI Video Tools for Content Creators: https://www.shelby-ai.com/best/best-ai-video-tools-creators/
+- Best AI SEO Tools: https://www.shelby-ai.com/best/best-ai-seo-tools/
+- Best AI Tools for Marketing Teams: https://www.shelby-ai.com/best/best-ai-tools-marketing-teams/
+- Best AI Tools for Real Estate Agents: https://www.shelby-ai.com/best/best-ai-tools-real-estate/
+- Best AI Automation Tools for Non-Technical Founders: https://www.shelby-ai.com/best/best-ai-automation-tools/
+- Best AI Design Tools for Non-Designers: https://www.shelby-ai.com/best/best-ai-design-tools-non-designers/
+- Best Free AI Tools for Solopreneurs: https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs/
+
+---
+
+## All Pricing Guides (31)
+
+- Jasper AI Pricing (from $69/mo): https://www.shelby-ai.com/pricing/jasper-ai/
+- Copy.ai Pricing (Free tier available): https://www.shelby-ai.com/pricing/copy-ai/
+- Writesonic Pricing (Free tier available): https://www.shelby-ai.com/pricing/writesonic/
+- Surfer SEO Pricing (from $89/mo): https://www.shelby-ai.com/pricing/surfer-seo/
+- Descript Pricing (Free tier available): https://www.shelby-ai.com/pricing/descript/
+- Make.com Pricing (Free tier available): https://www.shelby-ai.com/pricing/make-com/
+- Pictory Pricing (from $19/mo): https://www.shelby-ai.com/pricing/pictory/
+- ElevenLabs Pricing (Free tier available): https://www.shelby-ai.com/pricing/elevenlabs/
+- Synthesia Pricing (Free tier available): https://www.shelby-ai.com/pricing/synthesia/
+- Frase Pricing (from $15/mo): https://www.shelby-ai.com/pricing/frase/
+- Mangools Pricing (from $29.90/mo): https://www.shelby-ai.com/pricing/mangools/
+- Chatbase Pricing (Free tier available): https://www.shelby-ai.com/pricing/chatbase/
+- Midjourney Pricing (from $10/mo): https://www.shelby-ai.com/pricing/midjourney/
+- Grammarly Pricing (Free tier available): https://www.shelby-ai.com/pricing/grammarly/
+- SEMrush Pricing (from $139.95/mo): https://www.shelby-ai.com/pricing/semrush/
+- ChatGPT Pricing (Free tier available): https://www.shelby-ai.com/pricing/chatgpt/
+- Claude AI Pricing (Free tier available): https://www.shelby-ai.com/pricing/claude-ai/
+- Fliki Pricing (Free tier available): https://www.shelby-ai.com/pricing/fliki/
+- Rytr Pricing (Free tier available): https://www.shelby-ai.com/pricing/rytr/
+- Easy Peasy AI Pricing (Free tier available): https://www.shelby-ai.com/pricing/easy-peasy-ai/
+- Simplified Pricing (Free tier available): https://www.shelby-ai.com/pricing/simplified/
+- Mubert Pricing (Free tier available): https://www.shelby-ai.com/pricing/mubert/
+- Mixo Pricing (from $9/mo): https://www.shelby-ai.com/pricing/mixo/
+- Decktopus AI Pricing (from $9.99/mo): https://www.shelby-ai.com/pricing/decktopus-ai/
+- Julius AI Pricing (Free tier available): https://www.shelby-ai.com/pricing/julius-ai/
+- Otter.ai Pricing (Free tier available): https://www.shelby-ai.com/pricing/otter-ai/
+- Perplexity Pricing (Free tier available): https://www.shelby-ai.com/pricing/perplexity/
+- Google Gemini Pricing (Free tier available): https://www.shelby-ai.com/pricing/google-gemini/
+- Grok Pricing (Free tier available): https://www.shelby-ai.com/pricing/grok/
+- Runway ML Pricing (from $12/mo): https://www.shelby-ai.com/pricing/runway-ml/
+- Leonardo AI Pricing (Free tier available): https://www.shelby-ai.com/pricing/leonardo-ai/
+
+---
+
+## All Alternatives Guides (15)
+
+- Best Jasper AI Alternatives: https://www.shelby-ai.com/alternatives/jasper-ai/
+- Best Copy.ai Alternatives: https://www.shelby-ai.com/alternatives/copy-ai/
+- Best Writesonic Alternatives: https://www.shelby-ai.com/alternatives/writesonic/
+- Best Surfer SEO Alternatives: https://www.shelby-ai.com/alternatives/surfer-seo/
+- Best Descript Alternatives: https://www.shelby-ai.com/alternatives/descript/
+- Best Make.com Alternatives: https://www.shelby-ai.com/alternatives/make-com/
+- Best Pictory Alternatives: https://www.shelby-ai.com/alternatives/pictory/
+- Best ElevenLabs Alternatives: https://www.shelby-ai.com/alternatives/elevenlabs/
+- Best Synthesia Alternatives: https://www.shelby-ai.com/alternatives/synthesia/
+- Best Midjourney Alternatives: https://www.shelby-ai.com/alternatives/midjourney/
+- Best ChatGPT Alternatives: https://www.shelby-ai.com/alternatives/chatgpt/
+- Best Grammarly Alternatives: https://www.shelby-ai.com/alternatives/grammarly/
+- Best Frase Alternatives: https://www.shelby-ai.com/alternatives/frase/
+- Best Semrush Alternatives: https://www.shelby-ai.com/alternatives/semrush/
+- Best Mangools Alternatives: https://www.shelby-ai.com/alternatives/mangools/
+
+---
+
+## Best AI Tools by Use Case (8)
+
+- Best AI Tools for Content Writers: https://www.shelby-ai.com/best-for/content-writers/
+- Best AI Tools for Freelancers: https://www.shelby-ai.com/best-for/freelancers/
+- Best AI Tools for Small Business: https://www.shelby-ai.com/best-for/small-business/
+- Best AI Tools for Marketing Teams: https://www.shelby-ai.com/best-for/marketing-teams/
+- Best AI Tools for Video Creators: https://www.shelby-ai.com/best-for/video-creators/
+- Best AI Tools for SEO: https://www.shelby-ai.com/best-for/seo/
+- Best AI Tools for Solopreneurs: https://www.shelby-ai.com/best-for/solopreneurs/
+- Best AI Tools for Startups: https://www.shelby-ai.com/best-for/startups/
+
+---
+
+## Review Methodology
+
+Every tool is tested for 7-14 days with real content workflows. Rating breakdown: Output Quality (30%), Value for Money (25%), Ease of Use (20%), Features (15%), Support (10%). No tool pays for placement. No sponsored rankings.
+
+Full methodology: https://www.shelby-ai.com/how-we-review/
+
+---
+
+## Contact
+
+- Website: https://www.shelby-ai.com
+- Author: Frank Shelby (Founder & Lead Reviewer)
+- Twitter/X: https://x.com/ShelbyAIDeals
+- Pinterest: https://www.pinterest.com/shelbyaideals/
+- GitHub: https://github.com/ShelbyAIdeals

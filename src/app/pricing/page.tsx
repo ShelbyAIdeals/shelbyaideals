@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ExploreMore from '@/components/ExploreMore';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Tool Pricing Guides 2026 — Plans, Costs & Value Comparisons',
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.shelby-ai.com/pricing/',
   },
+  openGraph: {
+    title: 'AI Tool Pricing Guides 2026 — Plans, Costs & Value Comparisons',
+    description: 'Complete pricing breakdowns for the top AI tools. Compare plans, features, and costs side-by-side. Updated for 2026 with real pricing data.',
+    type: 'website',
+    url: 'https://www.shelby-ai.com/pricing/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Tool Pricing Guides 2026',
+    description: 'Complete pricing breakdowns for the top AI tools. Compare plans, features, and costs side-by-side.',
+  },
 };
 
 export default function PricingIndexPage() {
@@ -21,6 +33,15 @@ export default function PricingIndexPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'AI Tool Pricing Guides',
+          description:
+            'Complete pricing breakdowns for the top AI tools. Compare plans, features, and costs side-by-side. Updated for 2026 with real pricing data.',
+          url: 'https://www.shelby-ai.com/pricing/',
+        }}
+      />
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         <ScrollReveal>
           <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">

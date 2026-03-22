@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ExploreMore from '@/components/ExploreMore';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Best AI Tools by Use Case — Find the Right Tool for Your Needs',
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.shelby-ai.com/best-for/',
   },
+  openGraph: {
+    title: 'Best AI Tools by Use Case — Find the Right Tool for Your Needs',
+    description: 'Find the best AI tools for your specific use case. Curated recommendations for writers, freelancers, marketers, startups, and more.',
+    type: 'website',
+    url: 'https://www.shelby-ai.com/best-for/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best AI Tools by Use Case',
+    description: 'Find the best AI tools for your specific use case. Curated recommendations tested and reviewed.',
+  },
 };
 
 export default function BestForIndexPage() {
@@ -21,6 +33,15 @@ export default function BestForIndexPage() {
 
   return (
     <main className="min-h-screen">
+      <JsonLd
+        type="collectionpage"
+        data={{
+          name: 'Best AI Tools by Use Case',
+          description:
+            'Find the best AI tools for your specific use case. Curated recommendations for writers, freelancers, marketers, startups, and more. Tested and reviewed.',
+          url: 'https://www.shelby-ai.com/best-for/',
+        }}
+      />
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         <ScrollReveal>
           <nav className="flex items-center gap-2 text-sm text-void-500 mb-8">
