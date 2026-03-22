@@ -9,9 +9,11 @@ export const metadata: Metadata = {
   description:
     'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
   openGraph: {
-    title: 'ShelbyAIDeals — Honest AI Tool Reviews for Creators & Small Teams',
+    title: 'ShelbyAI — Honest AI Tool Reviews for Creators & Small Teams',
     description:
       'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
+    type: 'website',
+    url: 'https://www.shelby-ai.com/',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShelbyAIDeals — Honest AI Tool Reviews for Creators & Small Teams',
+    title: 'ShelbyAI — Honest AI Tool Reviews for Creators & Small Teams',
     description:
       'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],

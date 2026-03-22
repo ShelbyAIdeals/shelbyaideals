@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description: 'Complete pricing breakdowns for the top AI tools. Compare plans, features, and costs side-by-side. Updated for 2026 with real pricing data.',
     type: 'website',
     url: 'https://www.shelby-ai.com/pricing/',
+    images: [{ url: 'https://www.shelby-ai.com/images/og-thumbnail.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

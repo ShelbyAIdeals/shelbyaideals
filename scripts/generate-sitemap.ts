@@ -73,20 +73,21 @@ function buildSitemap(): string {
     entries.push({ url: `/categories/${cat}`, lastmod: today, changefreq: 'weekly', priority: '0.8' });
   }
 
-  // Alternatives pages — dynamically read all slugs from alternatives-data.ts
+  // Alternatives pages — dynamically read page-level slugs from alternatives-data.ts
+  // Only match 4-space indented slugs (page entries), not 8+ space (sub-alternative tools)
   const altDataPath = path.join(process.cwd(), 'src/lib/alternatives-data.ts');
   const altSource = fs.readFileSync(altDataPath, 'utf-8');
-  const alternativesSlugs = Array.from(altSource.matchAll(/^\s+slug:\s*'([^']+)'/gm))
-    .map((m) => m[1])
-    .filter((s) => !['slug'].includes(s)); // skip interface field definitions
+  const alternativesSlugs = Array.from(altSource.matchAll(/^ {2,4}slug:\s*'([^']+)'/gm))
+    .map((m) => m[1]);
   for (const slug of alternativesSlugs) {
     entries.push({ url: `/alternatives/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
   }
 
-  // Pricing pages — dynamically read all slugs from pricing-data.ts
+  // Pricing pages — dynamically read page-level slugs from pricing-data.ts
+  // Match 2-4 space indented slugs (top-level entries in the array)
   const pricingDataPath = path.join(process.cwd(), 'src/lib/pricing-data.ts');
   const pricingSource = fs.readFileSync(pricingDataPath, 'utf-8');
-  const pricingSlugs = Array.from(pricingSource.matchAll(/^\s+slug:\s*'([^']+)'/gm)).map((m) => m[1]);
+  const pricingSlugs = Array.from(pricingSource.matchAll(/^ {2,4}slug:\s*'([^']+)'/gm)).map((m) => m[1]);
   entries.push({ url: '/pricing', lastmod: today, changefreq: 'weekly', priority: '0.8' });
   for (const slug of pricingSlugs) {
     entries.push({ url: `/pricing/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
@@ -128,9 +129,17 @@ function buildSitemap(): string {
     }
   }
 
+  // Deduplicate entries by URL
+  const seen = new Set<string>();
+  const uniqueEntries = entries.filter((e) => {
+    if (seen.has(e.url)) return false;
+    seen.add(e.url);
+    return true;
+  });
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${entries
+${uniqueEntries
   .map(
     (e) => {
       const loc = e.url.endsWith('/') ? e.url : `${e.url}/`;
