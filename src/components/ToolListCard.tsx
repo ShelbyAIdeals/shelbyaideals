@@ -64,6 +64,7 @@ interface ToolListCardProps {
   category: Category;
   rating: number;
   isFavorited?: boolean;
+  onFavoriteToggle?: (newState: boolean) => void;
   bestFor: string;
   date: string;
 }
@@ -79,6 +80,7 @@ export default function ToolListCard({
   rating,
   bestFor,
   isFavorited = false,
+  onFavoriteToggle,
 }: ToolListCardProps) {
   const { t } = useTranslation();
   const clampedRating = Math.max(0, Math.min(5, Number(rating) || 0));
@@ -169,7 +171,7 @@ export default function ToolListCard({
 
         {/* Right: favorite + rating + arrow */}
         <div className="shrink-0 flex items-center gap-2">
-          <FavoriteButton toolSlug={favSlug} isFavorited={isFavorited} />
+          <FavoriteButton toolSlug={favSlug} isFavorited={isFavorited} onToggle={onFavoriteToggle} />
           <div className="badge-score w-10 h-10 text-sm">
             {clampedRating.toFixed(1)}
           </div>
