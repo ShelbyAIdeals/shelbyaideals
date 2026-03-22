@@ -4,11 +4,11 @@ import { FlaskConical, Target, Users, DollarSign, ClipboardCheck, Twitter, Linke
 import NewsletterSignup from '@/components/NewsletterSignup';
 
 export const metadata: Metadata = {
-  title: 'About ShelbyAI',
+  title: 'About ShelbyAI — How We Test & Review AI Tools',
   description:
     'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
   openGraph: {
-    title: 'About ShelbyAI',
+    title: 'About ShelbyAI — How We Test & Review AI Tools',
     description:
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About ShelbyAI',
+    title: 'About ShelbyAI — How We Test & Review AI Tools',
     description:
       'We test AI tools the way you actually use them. Learn about our hands-on testing methodology, honest reviews, and workflow-first approach.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
@@ -40,6 +40,22 @@ export default function AboutPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-6">
             About ShelbyAI
           </h1>
+
+          <div className="flex items-center gap-4 mb-8">
+            <img
+              src="/images/frank-shelby.jpg"
+              alt="Frank Shelby"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full border border-signal-500/20 object-cover"
+            />
+            <div>
+              <Link href="/author/frank-shelby" className="text-sm font-semibold text-void-100 hover:text-signal-400 no-underline transition-colors">
+                Frank Shelby
+              </Link>
+              <p className="text-xs text-void-400">Founder & Lead Reviewer</p>
+            </div>
+          </div>
 
           {/* Mission Statement */}
           <section className="mb-12">

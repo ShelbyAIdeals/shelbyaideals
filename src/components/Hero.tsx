@@ -104,7 +104,6 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               {isLoggedIn && <span>{firstName}, </span>}
               {t('hero.headline_prefix', 'Find the Right AI Tool')}{' '}
               <br className="hidden sm:block" />
-              {t('hero.headline_ai_tools', 'Before You Buy')}{' '}
               <HeroTextRotator />
             </motion.h1>
 
@@ -116,7 +115,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               custom={0.2}
               className="mt-6 text-lg sm:text-xl text-void-300 leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              {t('hero.subheadline', 'Hands-on reviews, side-by-side comparisons, and honest recommendations so you can pick the best AI tools for your workflow — without wasting time or money.')}
+              {t('hero.subheadline', 'Before you buy. Hands-on reviews, side-by-side comparisons, and honest recommendations so you can pick the best AI tools for your workflow — without wasting time or money.')}
             </motion.p>
 
             {/* Search Bar */}

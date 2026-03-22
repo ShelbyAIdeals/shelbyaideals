@@ -5,4 +5,23 @@ Disallow: /profile
 Disallow: /api/
 Disallow: /onboarding
 
+# AI search crawlers — allow indexing for AI-powered search visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 Sitemap: https://www.shelby-ai.com/sitemap.xml

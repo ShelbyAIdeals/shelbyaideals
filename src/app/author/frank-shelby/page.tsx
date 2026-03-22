@@ -38,6 +38,7 @@ const personSchema = JSON.stringify({
   '@type': 'Person',
   name: 'Frank Shelby',
   url: 'https://www.shelby-ai.com/author/frank-shelby/',
+  image: 'https://www.shelby-ai.com/images/frank-shelby.jpg',
   jobTitle: 'Founder & Lead Reviewer',
   worksFor: {
     '@type': 'Organization',
@@ -84,12 +85,23 @@ export default function AuthorPage() {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <div className="mb-10">
-            <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-4">
-              Frank Shelby
-            </h1>
-            <p className="text-lg text-signal-400 font-medium mb-4">
-              Founder & Lead Reviewer at ShelbyAI
-            </p>
+            <div className="flex items-center gap-6 mb-6">
+              <img
+                src="/images/frank-shelby.jpg"
+                alt="Frank Shelby — Founder and Lead Reviewer at ShelbyAI"
+                width={96}
+                height={96}
+                className="w-24 h-24 rounded-full border-2 border-signal-500/30 object-cover"
+              />
+              <div>
+                <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-2">
+                  Frank Shelby
+                </h1>
+                <p className="text-lg text-signal-400 font-medium">
+                  Founder & Lead Reviewer at ShelbyAI
+                </p>
+              </div>
+            </div>
             <p className="text-void-300 leading-relaxed mb-6">
               I started ShelbyAI because I was tired of &ldquo;reviews&rdquo; that were barely-disguised sales pages.
               Every tool on this site gets tested for 7-14 days with real content workflows before I write a single word.

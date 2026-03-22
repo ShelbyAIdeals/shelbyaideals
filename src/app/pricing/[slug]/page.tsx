@@ -81,6 +81,25 @@ export default async function PricingDetailPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {/* Product/Offer schema — all data is from trusted static pricing-data.ts, not user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: page.tool,
+          applicationCategory: 'BusinessApplication',
+          offers: page.plans
+            .filter((p) => p.price !== 'Custom' && p.price !== 'Free')
+            .map((p) => ({
+              '@type': 'Offer',
+              name: p.name,
+              price: p.price.replace(/[^0-9.]/g, '') || '0',
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+            })),
+        }) }}
+      />
 
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">
         {/* Breadcrumb */}
@@ -138,6 +157,26 @@ export default async function PricingDetailPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
 
+        {/* Value Analysis & Annual vs Monthly */}
+        {(page.valueAnalysis || page.annualVsMonthly) && (
+          <ScrollReveal>
+            <div className="max-w-3xl mb-12 space-y-6">
+              {page.valueAnalysis && (
+                <div>
+                  <h2 className="text-lg font-bold text-void-50 mb-2 font-heading">Is {page.tool} Worth It?</h2>
+                  <p className="text-sm text-void-300 leading-relaxed">{page.valueAnalysis}</p>
+                </div>
+              )}
+              {page.annualVsMonthly && (
+                <div className="p-4 rounded-lg border border-signal-500/15 bg-void-900/40">
+                  <h3 className="text-sm font-semibold text-signal-400 mb-2">Annual vs Monthly Billing</h3>
+                  <p className="text-sm text-void-300 leading-relaxed">{page.annualVsMonthly}</p>
+                </div>
+              )}
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Pricing Cards */}
         <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-16">
           {page.plans.map((plan) => (
@@ -192,6 +231,26 @@ export default async function PricingDetailPage({ params }: PageProps) {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* Per-Unit Breakdown & Competitor Comparison */}
+        {(page.perUnitBreakdown || page.competitorComparison) && (
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto mb-12 space-y-6">
+              {page.perUnitBreakdown && (
+                <div>
+                  <h2 className="text-lg font-bold text-void-50 mb-2 font-heading">Cost Per Unit</h2>
+                  <p className="text-sm text-void-300 leading-relaxed">{page.perUnitBreakdown}</p>
+                </div>
+              )}
+              {page.competitorComparison && (
+                <div>
+                  <h2 className="text-lg font-bold text-void-50 mb-2 font-heading">How {page.tool} Pricing Compares</h2>
+                  <p className="text-sm text-void-300 leading-relaxed">{page.competitorComparison}</p>
+                </div>
+              )}
+            </div>
+          </ScrollReveal>
+        )}
 
         {/* FAQs */}
         <ScrollReveal>

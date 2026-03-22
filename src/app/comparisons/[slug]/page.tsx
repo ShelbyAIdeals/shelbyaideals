@@ -94,6 +94,7 @@ export default async function ComparisonPage({ params }: PageProps) {
 
   const headings = extractHeadings(content);
   const allArticles = getAllArticles();
+  const allReviews = getAllReviews();
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://www.shelby-ai.com' },
@@ -130,12 +131,18 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       <JsonLd type="article" data={meta} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      {/* Review schema for compared tools */}
+      {meta.tools
+        .map((toolName) => allReviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
+        .filter((r): r is NonNullable<typeof r> => r != null && typeof r.rating === 'number')
+        .map((review) => (
+          <JsonLd key={review.slug} type="review" data={review} />
+        ))}
 
       {/* Cross-links to individual reviews */}
       {(() => {
-        const reviews = getAllReviews();
         const toolReviews = meta.tools
-          .map((toolName) => reviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
+          .map((toolName) => allReviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
           .filter(Boolean);
         if (toolReviews.length === 0) return null;
         return (

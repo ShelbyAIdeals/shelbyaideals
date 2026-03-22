@@ -19,6 +19,23 @@ function getContentFiles(dir: string): string[] {
   return fs.readdirSync(fullPath).filter((f) => f.endsWith('.mdx'));
 }
 
+/** Get file mtime as YYYY-MM-DD for a page source file */
+function getFileLastmod(urlPath: string, fallback: string): string {
+  // Map URL path to Next.js page file path
+  const srcPath = urlPath === '/' ? '' : urlPath.replace(/^\//, '');
+  const candidates = [
+    path.join(process.cwd(), 'src/app', srcPath, 'page.tsx'),
+    path.join(process.cwd(), 'src/app', srcPath, 'page.ts'),
+  ];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      const stat = fs.statSync(candidate);
+      return stat.mtime.toISOString().split('T')[0];
+    }
+  }
+  return fallback;
+}
+
 function buildSitemap(): string {
   const entries: SitemapEntry[] = [];
   const today = new Date().toISOString().split('T')[0];
@@ -45,7 +62,7 @@ function buildSitemap(): string {
   ];
 
   for (const page of staticPages) {
-    entries.push({ url: page.url, lastmod: today, changefreq: page.changefreq, priority: page.priority });
+    entries.push({ url: page.url, lastmod: getFileLastmod(page.url, today), changefreq: page.changefreq, priority: page.priority });
   }
 
   // Category pages (consolidated)

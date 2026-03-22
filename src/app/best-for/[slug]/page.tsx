@@ -112,6 +112,20 @@ export default async function BestForPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
 
+        {/* Selection Criteria */}
+        {page.selectionCriteria && (
+          <ScrollReveal>
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-xl font-bold text-void-50 mb-3 font-heading">
+                How We Selected These Tools
+              </h2>
+              <p className="text-sm text-void-300 leading-relaxed">
+                {page.selectionCriteria}
+              </p>
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Quick Summary */}
         <ScrollReveal>
           <div className="bg-void-900/60 border border-signal-500/15 rounded-xl p-6 mb-12 backdrop-blur-sm">
@@ -167,6 +181,12 @@ export default async function BestForPage({ params }: PageProps) {
                       {tool.description}
                     </p>
 
+                    {tool.editorialNote && (
+                      <p className="text-sm text-void-400 leading-relaxed mb-4 border-l-2 border-signal-500/30 pl-4 italic">
+                        {tool.editorialNote}
+                      </p>
+                    )}
+
                     <div className="flex flex-wrap items-center gap-4 mb-5">
                       <div className="flex items-center gap-1.5 text-sm">
                         <DollarSign size={14} className="text-signal-500" />
@@ -205,6 +225,26 @@ export default async function BestForPage({ params }: PageProps) {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* Methodology Summary */}
+        {page.methodologySummary && (
+          <ScrollReveal>
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-lg font-bold text-void-100 mb-3 font-heading">
+                Our Testing Methodology
+              </h2>
+              <p className="text-sm text-void-400 leading-relaxed">
+                {page.methodologySummary}
+              </p>
+              <Link
+                href="/how-we-review"
+                className="text-sm text-signal-400 hover:text-signal-300 no-underline mt-2 inline-block transition-colors"
+              >
+                See full methodology &rarr;
+              </Link>
+            </div>
+          </ScrollReveal>
+        )}
 
         {/* Bottom CTA */}
         <ScrollReveal>

@@ -25,6 +25,10 @@ export interface PricingPage {
   freeTrialAvailable: boolean;
   freeTrialDays?: number;
   moneyBackGuarantee?: string;
+  valueAnalysis?: string;
+  annualVsMonthly?: string;
+  perUnitBreakdown?: string;
+  competitorComparison?: string;
   plans: PricingPlan[];
   faqs: { question: string; answer: string }[];
 }
@@ -43,6 +47,14 @@ export const pricingData: PricingPage[] = [
     reviewSlug: 'jasper-ai-review',
     freeTrialAvailable: true,
     freeTrialDays: 7,
+    valueAnalysis:
+      'Jasper AI is worth it if you produce 10+ pieces of content per month. At $69/mo, the brand voice feature alone saves hours of editing for consistency. Teams publishing daily will see the strongest ROI. For occasional writers, the price is harder to justify — consider Writesonic at $20/mo instead.',
+    annualVsMonthly:
+      'Jasper only offers annual billing for self-serve plans, making the commitment higher. The 7-day free trial lets you validate the tool before locking in. Business plans are custom-priced with flexible billing.',
+    perUnitBreakdown:
+      'At $69/mo for the Pro plan, Jasper costs roughly $2.30/day. If it saves you 30 minutes of writing per day — equivalent to $15-25 of a content writer\'s hourly rate — the tool pays for itself 6-10x over.',
+    competitorComparison:
+      'Jasper Pro ($69/mo) is significantly more expensive than Copy.ai Free or Writesonic Pro ($20/mo). The premium buys you superior brand voice controls and campaign-level content management. For budget-conscious users, Copy.ai or Writesonic cover 80% of the functionality at a fraction of the cost.',
     plans: [
       {
         name: 'Pro',
@@ -101,6 +113,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-01',
     reviewSlug: 'copy-ai-review',
     freeTrialAvailable: false,
+    valueAnalysis:
+      'Copy.ai offers the best free plan in the AI writing space — genuinely usable, not a teaser. The Pro plan at $49/mo is competitive but faces stiff competition from Writesonic at $20/mo. Copy.ai wins on workflow automation; Writesonic wins on price.',
+    annualVsMonthly:
+      'Copy.ai pricing is listed at $49/mo for Pro. Annual billing may offer savings — check their pricing page for current promotions. The free plan has no time limit.',
+    perUnitBreakdown:
+      'On the Free plan, you get 2,000 words/month at $0. On Pro with unlimited words at $49/mo, the per-word cost approaches zero at scale. The value improves the more content you produce.',
+    competitorComparison:
+      'Copy.ai Free beats Writesonic (limited free trial vs. ongoing free plan). Copy.ai Pro ($49/mo) is 2.5x more than Writesonic Pro ($20/mo) but includes 5 team seats and workflow automation. Jasper Pro ($69/mo) offers superior brand voice at a higher price.',
     plans: [
       {
         name: 'Free',
@@ -173,6 +193,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-01',
     reviewSlug: 'writesonic-review',
     freeTrialAvailable: false,
+    valueAnalysis:
+      'Writesonic is the best-value AI writer on the market. At $20/mo for Pro, it costs less than half of Jasper and includes built-in SEO scoring. The free trial gives you 10,000 words to validate the tool before paying.',
+    annualVsMonthly:
+      'Writesonic Pro is $20/mo when billed annually. Monthly billing is typically 20-30% more. The free trial (10,000 words) gives you enough to complete 3-4 blog posts before deciding.',
+    perUnitBreakdown:
+      'On Pro at $20/mo with generous word limits, Writesonic delivers roughly $0.001 per word for active users. Compare this to freelance writing rates of $0.05-0.15/word — a 50-150x cost reduction.',
+    competitorComparison:
+      'Writesonic Pro ($20/mo) is the most affordable paid AI writer. Jasper Pro is $69/mo (3.5x more), Copy.ai Pro is $49/mo (2.5x more). Writesonic sacrifices brand voice controls and team collaboration for price leadership.',
     plans: [
       {
         name: 'Free Trial',
@@ -244,6 +272,14 @@ export const pricingData: PricingPage[] = [
     reviewSlug: 'surfer-seo-review',
     freeTrialAvailable: false,
     moneyBackGuarantee: '7-day money-back guarantee',
+    valueAnalysis:
+      'Surfer SEO is a premium investment that pays off through organic traffic growth. At $89/mo for Essential, it is the most expensive tool in many content stacks. The ROI comes from ranking improvements — even one first-page ranking can drive hundreds of monthly visitors worth far more than $89.',
+    annualVsMonthly:
+      'Annual billing saves roughly 17% compared to monthly. The 7-day money-back guarantee reduces risk on annual plans. Most users should start with monthly to validate, then switch to annual once they confirm the tool fits their workflow.',
+    perUnitBreakdown:
+      'On the Essential plan at $89/mo with 30 articles, each content optimization costs about $2.97. Scale plans reduce this further. Compare to hiring an SEO consultant at $100-200/hour for content optimization guidance.',
+    competitorComparison:
+      'Surfer SEO Essential ($89/mo) competes with Frase ($15/mo for basic) and Clearscope ($170/mo). Surfer offers the best balance of features and price. Frase is cheaper but less comprehensive; Clearscope is more expensive with marginal gains.',
     plans: [
       {
         name: 'Essential',
@@ -315,6 +351,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-01',
     reviewSlug: 'descript-review',
     freeTrialAvailable: false,
+    valueAnalysis:
+      'Descript is worth it for anyone who edits video or podcasts regularly. The free plan is genuinely useful for testing. Pro at $24/mo replaces tools that cost $20-50/mo individually (transcription, editing, recording). The text-based editing approach saves 50-70% of editing time.',
+    annualVsMonthly:
+      'Descript Pro is $24/mo on annual billing. Monthly billing is $33/mo — a 27% premium. The free plan has no time limit, so test thoroughly before upgrading.',
+    perUnitBreakdown:
+      'On Pro at $24/mo with 30 hours of transcription, each hour costs $0.80 — far cheaper than human transcription ($1-2/minute). The video editing capabilities are essentially free on top of the transcription value.',
+    competitorComparison:
+      'Descript Pro ($24/mo) competes with Adobe Premiere ($23/mo) and Final Cut Pro ($300 one-time). Descript is easier to learn but less powerful for advanced editing. For content creators, Descript\'s text-based approach delivers faster results.',
     plans: [
       {
         name: 'Free',
@@ -400,6 +444,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-01',
     reviewSlug: 'make-review',
     freeTrialAvailable: false,
+    valueAnalysis:
+      'Make.com is the most cost-effective automation platform for small teams. The free plan (1,000 ops/month) covers basic automations. Core at $10.59/mo handles most small business needs. The ROI is immediate — automating one 30-minute weekly task saves 26 hours/year.',
+    annualVsMonthly:
+      'Annual billing saves approximately 25% compared to monthly. The free plan has no time limit. Most users start on free, then upgrade to Core when they hit the 1,000 operations limit.',
+    perUnitBreakdown:
+      'On Core at $10.59/mo with 10,000 operations, each operation costs about $0.001. A typical 5-step automation uses 5 operations per run. Running it daily costs about $0.15/month — trivial compared to the time saved.',
+    competitorComparison:
+      'Make.com Core ($10.59/mo) is significantly cheaper than Zapier Starter ($19.99/mo) with more operations included. Make.com offers more complex logic (branching, loops) in its visual builder. Zapier is simpler but more expensive per operation.',
     plans: [
       {
         name: 'Free',
@@ -483,6 +535,14 @@ export const pricingData: PricingPage[] = [
     reviewSlug: 'pictory-review',
     freeTrialAvailable: true,
     freeTrialDays: 14,
+    valueAnalysis:
+      'Pictory is worth it if you need to create video content from existing text. At $19/mo for Starter, it is the most affordable AI video tool. The value proposition is clear: create 30 videos/month that would cost $500+ each from a freelance video producer.',
+    annualVsMonthly:
+      'Pictory Starter is $19/mo on annual billing. Monthly billing is higher. The 14-day free trial gives you enough time to create 5-10 test videos and evaluate quality before committing.',
+    perUnitBreakdown:
+      'On Starter at $19/mo with 30 videos, each video costs about $0.63 to create. Professional plans at $39/mo with 60 videos bring the per-video cost to $0.65. The Teams plan at $99/mo offers the best per-video economics at $1.10 but with longer videos.',
+    competitorComparison:
+      'Pictory Starter ($19/mo) is cheaper than Lumen5 ($29/mo) and InVideo ($25/mo). Pictory wins on blog-to-video conversion; Lumen5 wins on social media templates; InVideo wins on creative flexibility. For text-based video creation, Pictory offers the best value.',
     plans: [
       {
         name: 'Starter',
@@ -554,6 +614,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-18',
     reviewSlug: 'elevenlabs-review',
     freeTrialAvailable: false,
+    valueAnalysis:
+      'ElevenLabs is the highest-quality AI voice platform available. The free plan (10,000 chars/month) is enough for short projects. Starter at $5/mo is remarkably affordable for 30,000 characters. The value becomes exceptional for podcasters and content creators who would otherwise hire voice talent.',
+    annualVsMonthly:
+      'ElevenLabs offers both monthly and annual billing. Annual plans save approximately 20%. The free plan has no time limit — use it to test voice quality before upgrading.',
+    perUnitBreakdown:
+      'On Starter at $5/mo with 30,000 characters, each character costs $0.00017. A typical blog post voiceover (5,000 chars) costs about $0.83. Compare to professional voiceover artists charging $100-500 per recording.',
+    competitorComparison:
+      'ElevenLabs Starter ($5/mo) undercuts Murf AI ($26/mo) and Play.ht ($39/mo) significantly. Voice quality is widely regarded as the best in the industry. The main trade-off is character limits at lower tiers — high-volume users may need Creator ($22/mo) or Pro ($99/mo).',
     plans: [
       {
         name: 'Free',
@@ -732,6 +800,14 @@ export const pricingData: PricingPage[] = [
     lastUpdated: '2026-03-18',
     reviewSlug: 'frase-review',
     freeTrialAvailable: true,
+    valueAnalysis:
+      'Frase is the best value in SEO content optimization. At $15/mo for Solo, it costs a fraction of Surfer SEO ($89/mo) while covering content research, writing, and optimization in one tool. The 5-day free trial lets you test the full platform.',
+    annualVsMonthly:
+      'Frase Solo is $15/mo on monthly billing. Annual billing may offer savings. The 5-day free trial requires no credit card — enough time to test on 2-3 content pieces.',
+    perUnitBreakdown:
+      'On Solo at $15/mo with 10 articles, each content optimization costs $1.50. Compare to Surfer SEO at $2.97/article on their Essential plan. Frase delivers 50% cost savings per article with similar optimization quality.',
+    competitorComparison:
+      'Frase Solo ($15/mo) undercuts Surfer SEO Essential ($89/mo) by 83%. Surfer offers deeper NLP analysis and more integrations, but Frase covers 80% of the functionality at 17% of the price. For budget-conscious SEO practitioners, Frase is the clear winner.',
     freeTrialDays: 5,
     plans: [
       {

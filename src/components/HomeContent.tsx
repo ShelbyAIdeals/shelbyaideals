@@ -200,9 +200,9 @@ export default function HomeContent({
               <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
                 Our Process
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+              <h3 className="text-2xl sm:text-3xl font-bold text-void-50">
                 How We Test AI Tools
-              </h2>
+              </h3>
               <p className="mt-2 text-void-400 text-sm max-w-2xl mx-auto">
                 Every rating on this site is earned through hands-on testing. No tool company pays for placement or scores.
               </p>
@@ -320,9 +320,9 @@ export default function HomeContent({
               <span className="text-xs font-semibold tracking-widest uppercase text-signal-500 mb-2 block">
                 {t('home.role_eyebrow', 'By Role')}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+              <h3 className="text-2xl sm:text-3xl font-bold text-void-50">
                 {t('home.role_heading', 'Find the Best Tools for Your Role')}
-              </h2>
+              </h3>
               <p className="mt-2 text-void-400 text-sm">
                 {t('home.role_desc', 'Curated picks based on how you work — not just what category a tool falls into.')}
               </p>
@@ -428,9 +428,9 @@ export default function HomeContent({
                   <span className="text-xs font-semibold tracking-widest uppercase text-iris-400 mb-2 block">
                     {t('home.learn_eyebrow', 'Practical Guides')}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-void-50">
                     {t('home.latest_guides', 'Build AI-Powered Workflows')}
-                  </h2>
+                  </h3>
                   <p className="mt-2 text-void-400 text-sm">
                     {t('home.latest_guides_desc', 'Step-by-step tutorials to save time and produce better content with AI.')}
                   </p>

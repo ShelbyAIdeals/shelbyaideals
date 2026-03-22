@@ -21,6 +21,7 @@ export const metadata: Metadata = {
       en: 'https://www.shelby-ai.com/',
       es: 'https://www.shelby-ai.com/es/',
       de: 'https://www.shelby-ai.com/de/',
+      'x-default': 'https://www.shelby-ai.com/',
     },
   },
 };
@@ -55,7 +56,7 @@ const categories = [
 export default function SpanishHomePage() {
   return (
     <main className="min-h-screen">
-      <Hreflang path="/es/" />
+      <Hreflang path="/" />
 
       {/* Hero */}
       <section className="relative pt-44 sm:pt-52 pb-16 sm:pb-24">
