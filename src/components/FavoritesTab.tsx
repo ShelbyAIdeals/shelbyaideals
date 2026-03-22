@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
-import { getUserFavorites } from '@/lib/supabase';
+import { getUserFavorites, removeFavorite } from '@/lib/supabase';
 import ToolListCard from '@/components/ToolListCard';
 import type { Category } from '@/lib/types';
 
@@ -43,6 +43,17 @@ export default function FavoritesTab({ userId }: FavoritesTabProps) {
     return favSlugs.includes(slug) || favSlugs.includes(r.slug);
   });
 
+  const handleUnfavorite = async (toolSlug: string, reviewSlug: string) => {
+    const slug = toolSlug || reviewSlug.replace('-review', '');
+    setFavSlugs((prev) => prev.filter((s) => s !== slug && s !== reviewSlug));
+    try {
+      await removeFavorite(userId, slug);
+    } catch {
+      // Re-add on failure
+      setFavSlugs((prev) => [...prev, slug]);
+    }
+  };
+
   if (loading) {
     return <div className="text-center py-16 text-void-500 text-sm">Loading favorites...</div>;
   }
@@ -64,17 +75,25 @@ export default function FavoritesTab({ userId }: FavoritesTabProps) {
       </div>
       <div className="flex flex-col gap-3">
         {favoriteTools.map((review) => (
-          <ToolListCard
-            key={review.slug}
-            slug={review.slug}
-            tool={review.tool}
-            toolLogo={review.toolLogo}
-            excerpt={review.excerpt}
-            category={review.category as Category}
-            rating={review.rating}
-            bestFor={review.bestFor}
-            date={review.date}
-          />
+          <div key={review.slug} className="relative group">
+            <ToolListCard
+              slug={review.slug}
+              tool={review.tool}
+              toolLogo={review.toolLogo}
+              excerpt={review.excerpt}
+              category={review.category as Category}
+              rating={review.rating}
+              bestFor={review.bestFor}
+              date={review.date}
+            />
+            <button
+              onClick={() => handleUnfavorite(review.toolSlug || '', review.slug)}
+              className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-void-700/50 transition-all cursor-pointer z-10"
+              title="Remove from favorites"
+            >
+              <Heart size={16} className="text-red-400 fill-red-400" />
+            </button>
+          </div>
         ))}
       </div>
     </div>
