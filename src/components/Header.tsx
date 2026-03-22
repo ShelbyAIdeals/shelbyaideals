@@ -105,7 +105,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-[72px]">
             {/* ── Logo ─────────────────────────────────────────── */}
             <Link href="/" className="flex items-center gap-3 no-underline group shrink-0">
-              <div className="w-10 h-10 rounded-xl bg-signal-500 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(10,209,200,0.4)] transition-shadow">
+              <div className="w-10 h-10 rounded-xl bg-signal-500 flex items-center justify-center group-hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-signal-500)_40%,transparent)] transition-shadow">
                 <Zap size={20} className="text-void-950" strokeWidth={2.5} />
               </div>
               <span className="text-xl font-heading font-bold text-void-50 tracking-tight notranslate">
