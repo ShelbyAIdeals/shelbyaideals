@@ -76,7 +76,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
         />
       </div>
 
-      <div className={`container-main pb-16 sm:pb-20 lg:pb-28 ${isLoggedIn ? 'pt-16 sm:pt-24 lg:pt-32' : 'pt-24 sm:pt-32 lg:pt-40'}`}>
+      <div className={`container-main pb-16 sm:pb-20 lg:pb-28 ${isLoggedIn ? 'pt-12 sm:pt-20 lg:pt-24' : 'pt-20 sm:pt-24 lg:pt-32'}`}>
         {/* Split Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
