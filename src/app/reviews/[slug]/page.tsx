@@ -223,9 +223,9 @@ export default async function ReviewPage({ params }: PageProps) {
   );
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://www.shelby-ai.com' },
-    { name: 'Reviews', url: 'https://www.shelby-ai.com/reviews' },
-    { name: meta.tool, url: `https://www.shelby-ai.com/reviews/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com/' },
+    { name: 'Reviews', url: 'https://www.shelby-ai.com/reviews/' },
+    { name: meta.tool, url: `https://www.shelby-ai.com/reviews/${slug}/` },
   ];
 
   return (

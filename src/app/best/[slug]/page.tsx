@@ -93,9 +93,9 @@ export default async function BestOfArticlePage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://www.shelby-ai.com' },
-    { name: 'Best Of', url: 'https://www.shelby-ai.com/best' },
-    { name: meta.title, url: `https://www.shelby-ai.com/best/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com/' },
+    { name: 'Best Of', url: 'https://www.shelby-ai.com/best/' },
+    { name: meta.title, url: `https://www.shelby-ai.com/best/${slug}/` },
   ];
 
   const sidebar = (

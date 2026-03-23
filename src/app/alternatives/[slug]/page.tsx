@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description,
       type: 'article',
-      url: `https://www.shelby-ai.com/alternatives/${slug}`,
+      url: `https://www.shelby-ai.com/alternatives/${slug}/`,
       images: [{ url: 'https://www.shelby-ai.com/images/og-thumbnail.png', width: 1200, height: 630 }],
     },
     twitter: {

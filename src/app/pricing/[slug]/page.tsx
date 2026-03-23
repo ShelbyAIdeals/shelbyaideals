@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description,
       type: 'article',
-      url: `https://www.shelby-ai.com/pricing/${slug}`,
+      url: `https://www.shelby-ai.com/pricing/${slug}/`,
       images: [{ url: 'https://www.shelby-ai.com/images/og-thumbnail.png', width: 1200, height: 630 }],
     },
     twitter: {
@@ -57,9 +57,9 @@ export default async function PricingDetailPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.shelby-ai.com' },
-      { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.shelby-ai.com/pricing' },
-      { '@type': 'ListItem', position: 3, name: `${page.tool} Pricing`, item: `https://www.shelby-ai.com/pricing/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.shelby-ai.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.shelby-ai.com/pricing/' },
+      { '@type': 'ListItem', position: 3, name: `${page.tool} Pricing`, item: `https://www.shelby-ai.com/pricing/${slug}/` },
     ],
   };
 

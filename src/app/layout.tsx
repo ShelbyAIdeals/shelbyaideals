@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://www.shelby-ai.com',
+    canonical: 'https://www.shelby-ai.com/',
     languages: {
       en: 'https://www.shelby-ai.com/',
       es: 'https://www.shelby-ai.com/es/',

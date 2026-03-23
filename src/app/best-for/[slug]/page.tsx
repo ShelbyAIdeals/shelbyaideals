@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.title,
       description: page.description,
       type: 'article',
-      url: `https://www.shelby-ai.com/best-for/${slug}`,
+      url: `https://www.shelby-ai.com/best-for/${slug}/`,
     },
     twitter: {
       card: 'summary_large_image',

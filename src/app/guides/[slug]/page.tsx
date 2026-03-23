@@ -107,9 +107,9 @@ export default async function GuidePage({ params }: PageProps) {
   const allArticles = getAllArticles();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://www.shelby-ai.com' },
-    { name: 'Guides', url: 'https://www.shelby-ai.com/guides' },
-    { name: meta.title, url: `https://www.shelby-ai.com/guides/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com/' },
+    { name: 'Guides', url: 'https://www.shelby-ai.com/guides/' },
+    { name: meta.title, url: `https://www.shelby-ai.com/guides/${slug}/` },
   ];
 
   const sidebar = (

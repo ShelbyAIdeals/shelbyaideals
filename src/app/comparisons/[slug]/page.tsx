@@ -97,9 +97,9 @@ export default async function ComparisonPage({ params }: PageProps) {
   const allReviews = getAllReviews();
 
   const breadcrumbs = [
-    { name: 'Home', url: 'https://www.shelby-ai.com' },
-    { name: 'Comparisons', url: 'https://www.shelby-ai.com/comparisons' },
-    { name: meta.title, url: `https://www.shelby-ai.com/comparisons/${slug}` },
+    { name: 'Home', url: 'https://www.shelby-ai.com/' },
+    { name: 'Comparisons', url: 'https://www.shelby-ai.com/comparisons/' },
+    { name: meta.title, url: `https://www.shelby-ai.com/comparisons/${slug}/` },
   ];
 
   const sidebar = (

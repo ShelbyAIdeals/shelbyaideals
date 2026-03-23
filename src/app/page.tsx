@@ -7,11 +7,11 @@ import type { ReviewMeta } from '@/lib/types';
 
 export const metadata: Metadata = {
   description:
-    'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
+    'We test AI video, marketing, and productivity tools hands-on. 31 tools reviewed with real pricing, pros/cons, and head-to-head comparisons for small teams and creators.',
   openGraph: {
-    title: 'ShelbyAI — Honest AI Tool Reviews for Creators & Small Teams',
+    title: 'ShelbyAI — AI Tool Reviews, Pricing & Comparisons for Small Teams',
     description:
-      'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
+      'We test AI video, marketing, and productivity tools hands-on. 31 tools reviewed with real pricing, pros/cons, and head-to-head comparisons for small teams and creators.',
     type: 'website',
     url: 'https://www.shelby-ai.com/',
     images: [
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShelbyAI — Honest AI Tool Reviews for Creators & Small Teams',
+    title: 'ShelbyAI — AI Tool Reviews, Pricing & Comparisons for Small Teams',
     description:
-      'Honest AI tool reviews, comparisons, and guides for creators, freelancers, and small teams. Find the best AI tools for your workflow.',
+      'We test AI video, marketing, and productivity tools hands-on. 31 tools reviewed with real pricing, pros/cons, and head-to-head comparisons.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {
