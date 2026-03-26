@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Sparkles } from 'lucide-react';
 import ToolListCard from '@/components/ToolListCard';
 import { INTEREST_CATEGORY_MAP } from '@/lib/onboarding-data';
-import { markRecommendationsSeen } from '@/lib/supabase';
+import { markRecommendationsSeen, getUserFavorites } from '@/lib/supabase';
 import type { UserPreferences } from '@/lib/supabase';
 import type { Category } from '@/lib/types';
 
@@ -27,13 +27,26 @@ interface RecommendationsTabProps {
 
 export default function RecommendationsTab({ userId, preferences, onSeen }: RecommendationsTabProps) {
   const [allReviews, setAllReviews] = useState<ReviewData[]>([]);
+  const [favSlugs, setFavSlugs] = useState<Set<string>>(new Set());
 
-  // Fetch static review data
+  // Fetch static review data + favorites
   useEffect(() => {
-    fetch('/data/reviews.json')
-      .then((r) => r.json())
-      .then(setAllReviews)
-      .catch(() => {});
+    Promise.all([
+      fetch('/data/reviews.json').then((r) => r.json()).catch(() => []),
+      userId ? getUserFavorites(userId) : Promise.resolve([]),
+    ]).then(([reviews, slugs]) => {
+      setAllReviews(reviews);
+      setFavSlugs(new Set(slugs));
+    });
+  }, [userId]);
+
+  const handleFavoriteToggle = useCallback((toolSlug: string, newState: boolean) => {
+    setFavSlugs((prev) => {
+      const next = new Set(prev);
+      if (newState) next.add(toolSlug);
+      else next.delete(toolSlug);
+      return next;
+    });
   }, []);
 
   // Mark as seen on mount
@@ -94,6 +107,8 @@ export default function RecommendationsTab({ userId, preferences, onSeen }: Reco
             rating={review.rating}
             bestFor={review.bestFor}
             date={review.date}
+            isFavorited={favSlugs.has(review.slug.replace('-review', ''))}
+            onFavoriteToggle={(newState) => handleFavoriteToggle(review.slug.replace('-review', ''), newState)}
           />
         ))}
       </div>

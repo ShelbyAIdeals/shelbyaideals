@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -8,6 +8,8 @@ import CategorySidebar from '@/components/CategorySidebar';
 import ToolsTabs from '@/components/ToolsTabs';
 import ToolListCard from '@/components/ToolListCard';
 import { useTranslation } from '@/i18n/context';
+import { useAuth } from '@/lib/auth-context';
+import { getUserFavorites } from '@/lib/supabase';
 import { isAffiliateActive } from '@/lib/affiliate';
 import Link from 'next/link';
 import type { ReviewMeta, Category, CategoryInfo } from '@/lib/types';
@@ -30,8 +32,27 @@ export default function ToolsPageContent({
   categoriesWithCount,
 }: ToolsPageContentProps) {
   const { t } = useTranslation();
+  const { user } = useAuth();
   const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all');
   const [activeTab, setActiveTab] = useState<'popular' | 'recent'>('popular');
+  const [favSlugs, setFavSlugs] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    if (user?.id) {
+      getUserFavorites(user.id).then((slugs) => setFavSlugs(new Set(slugs)));
+    } else {
+      setFavSlugs(new Set());
+    }
+  }, [user?.id]);
+
+  const handleFavoriteToggle = useCallback((toolSlug: string, newState: boolean) => {
+    setFavSlugs((prev) => {
+      const next = new Set(prev);
+      if (newState) next.add(toolSlug);
+      else next.delete(toolSlug);
+      return next;
+    });
+  }, []);
 
   const filteredAndSorted = useMemo(() => {
     const filtered =
@@ -105,12 +126,15 @@ export default function ToolsPageContent({
                     slug={review.slug}
                     tool={review.tool}
                     toolLogo={review.toolLogo}
+                    toolSlug={review.toolSlug}
                     socialLinks={review.socialLinks}
                     excerpt={review.excerpt}
                     category={review.category as Category}
                     rating={review.rating}
                     bestFor={review.bestFor}
                     date={review.date}
+                    isFavorited={favSlugs.has(review.toolSlug || review.slug.replace('-review', ''))}
+                    onFavoriteToggle={(newState) => handleFavoriteToggle(review.toolSlug || review.slug.replace('-review', ''), newState)}
                   />
                 </StaggerItem>
               ))}
