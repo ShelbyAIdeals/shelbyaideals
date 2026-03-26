@@ -10,20 +10,28 @@
 
 | # | Type | Topic | Linked Article | Status |
 |---|------|-------|----------------|--------|
-| 1 | Thread (7 tweets) | $100/mo AI Solopreneur Stack | /guides/solopreneur-ai-stack | Draft |
+| 1 | Thread (7 tweets) | $100/mo AI Solopreneur Stack | /guides/solopreneur-ai-stack | Posted 2026-03-26 |
 | 2 | Thread (6 tweets) | Budget AI Writers Comparison | /comparisons/writesonic-vs-rytr-vs-koala | Draft |
 | 3 | Thread (7 tweets) | 1 Blog Post = 10 Content Pieces | /guides/repurpose-content-with-ai | Draft |
 | 4 | Single | Jasper vs Copy.ai | /comparisons/jasper-vs-copy-ai | Draft |
 | 5 | Single | AI video without a camera | /best/best-ai-video-tools-creators | Draft |
-| 6 | Single | Free AI tools | /best/best-free-ai-tools-solopreneurs | Draft |
+| 6 | Single | Free AI tools | /best/best-free-ai-tools-solopreneurs | Posted 2026-03-26 |
 | 7 | Single | AI for real estate agents | /best/best-ai-tools-real-estate | Draft |
 | 8 | Single | AI writing that doesn't sound like AI | /guides/write-blog-post-with-ai | Draft |
+
+## 2026-03-22
+
+### X / Twitter
+
+| # | Type | Topic | Linked Article | Status |
+|---|------|-------|----------------|--------|
+| 9 | Thread (8 tweets) | Honest take — which AI tools are worth paying for | /reviews | Posted 2026-03-22 |
 
 ### Pinterest
 
 | # | Topic | Linked Article | Status |
 |---|-------|----------------|--------|
-| 1 | Solopreneur AI Stack | /guides/solopreneur-ai-stack | Draft |
+| 1 | Solopreneur AI Stack | /guides/solopreneur-ai-stack | Posted 2026-03-26 |
 | 2 | Best AI Writing Tools | /best/best-ai-writing-tools-freelancers | Draft |
 | 3 | Best AI Video Tools | /best/best-ai-video-tools-creators | Draft |
 | 4 | AI Design for Non-Designers | /best/best-ai-design-tools-non-designers | Draft |
@@ -38,7 +46,7 @@
 
 | # | Topic | Linked Article | Status |
 |---|-------|----------------|--------|
-| 1 | Solopreneur Stack breakdown | /guides/solopreneur-ai-stack | Draft |
+| 1 | Solopreneur Stack breakdown | /guides/solopreneur-ai-stack | Posted 2026-03-26 |
 | 2 | AI content that doesn't sound like AI | /guides/write-blog-post-with-ai | Draft |
 | 3 | Jasper vs Copy.ai comparison | /comparisons/jasper-vs-copy-ai | Draft |
 | 4 | AI tools for small marketing teams | /best/best-ai-tools-marketing-teams | Draft |
