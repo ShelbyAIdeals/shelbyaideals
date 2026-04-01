@@ -1,4 +1,4 @@
-const ALLOWED_ORIGINS = ['https://www.shelby-ai.com', 'https://www.shelby-ai.com'];
+const ALLOWED_ORIGINS = ['https://www.shelby-ai.com'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Rate limiter: 5 requests per IP per 60 seconds

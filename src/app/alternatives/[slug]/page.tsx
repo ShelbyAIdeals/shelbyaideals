@@ -131,7 +131,7 @@ function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number
           <a
             href={tool.url}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow sponsored noopener"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-void-300 hover:text-signal-400 no-underline transition-colors"
           >
             Visit Website <span>&rarr;</span>

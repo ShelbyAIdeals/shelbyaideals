@@ -117,7 +117,7 @@ export default function RootLayout({
               width="1"
               style={{ display: 'none' }}
               src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
-              alt=""
+              alt="Meta Pixel"
             />
           </noscript>
         )}
@@ -132,7 +132,7 @@ export default function RootLayout({
               width="1"
               style={{ display: 'none' }}
               src={`https://px.ads.linkedin.com/collect/?pid=${process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID}&fmt=gif`}
-              alt=""
+              alt="LinkedIn Insight"
             />
           </noscript>
         )}
