@@ -129,7 +129,7 @@ export default async function ComparisonPage({ params }: PageProps) {
         </div>
       )}
 
-      <JsonLd type="article" data={meta} />
+      <JsonLd type="article" data={meta} canonicalUrl={`https://www.shelby-ai.com/comparisons/${slug}/`} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
       {/* Review schema for compared tools */}
       {meta.tools

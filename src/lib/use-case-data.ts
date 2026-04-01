@@ -2,7 +2,12 @@
  * Programmatic SEO data for "Best AI Tools for [Use Case]" pages.
  * Each entry generates a static page at /best-for/[slug].
  * Targets use-case and audience-specific search queries.
+ *
+ * Affiliate URLs in tool data are fallbacks — accessor functions resolve
+ * through the centralized affiliate.ts for tracked links when available.
  */
+
+import { resolveAffiliateUrl } from './affiliate';
 
 export interface UseCaseTool {
   name: string;
@@ -562,6 +567,17 @@ export const useCaseData: UseCasePage[] = [
   },
 ];
 
+/** Resolve affiliate URLs in tools through centralized affiliate.ts */
+function withResolvedToolUrls(page: UseCasePage): UseCasePage {
+  return {
+    ...page,
+    tools: page.tools.map((tool) => ({
+      ...tool,
+      affiliateUrl: resolveAffiliateUrl(tool.slug, tool.affiliateUrl),
+    })),
+  };
+}
+
 /** Get all use-case page slugs for generateStaticParams */
 export function getUseCaseSlugs(): string[] {
   return useCaseData.map((page) => page.slug);
@@ -569,10 +585,11 @@ export function getUseCaseSlugs(): string[] {
 
 /** Get a single use-case page by slug */
 export function getUseCasePage(slug: string): UseCasePage | undefined {
-  return useCaseData.find((page) => page.slug === slug);
+  const page = useCaseData.find((p) => p.slug === slug);
+  return page ? withResolvedToolUrls(page) : undefined;
 }
 
 /** Get all use-case pages */
 export function getAllUseCasePages(): UseCasePage[] {
-  return useCaseData;
+  return useCaseData.map(withResolvedToolUrls);
 }

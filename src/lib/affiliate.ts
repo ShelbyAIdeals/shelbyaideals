@@ -127,56 +127,70 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   rytr: {
     name: 'Rytr',
-    url: 'https://rytr.me', // Update with tracking link if available
+    url: 'https://rytr.me', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   fliki: {
     name: 'Fliki',
-    url: 'https://fliki.ai', // Update with tracking link if available
+    url: 'https://fliki.ai', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   'easy-peasy-ai': {
     name: 'Easy Peasy AI',
-    url: 'https://easy-peasy.ai', // Update with tracking link if available
+    url: 'https://easy-peasy.ai', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   simplified: {
     name: 'Simplified',
-    url: 'https://simplified.com', // Update with FirstPromoter tracking link
+    url: 'https://simplified.com', // TODO: apply for FirstPromoter tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   mubert: {
     name: 'Mubert',
-    url: 'https://mubert.com',
+    url: 'https://mubert.com', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   mixo: {
     name: 'Mixo',
-    url: 'https://mixo.io',
+    url: 'https://mixo.io', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   'decktopus-ai': {
     name: 'Decktopus AI',
-    url: 'https://decktopus.com',
+    url: 'https://decktopus.com', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
   'julius-ai': {
     name: 'Julius AI',
-    url: 'https://julius.ai',
+    url: 'https://julius.ai', // TODO: apply for tracking link
     commission: 'Recurring',
-    status: 'active',
+    status: 'pending',
   },
 };
 
 export function getAffiliateLink(toolSlug: string): string {
   return affiliateLinks[toolSlug]?.url ?? '#';
+}
+
+/** Maps variant slugs used in data files to canonical affiliate.ts keys. */
+const SLUG_ALIASES: Record<string, string> = {
+  'jasper-ai': 'jasper',
+  'surfer-seo': 'surfer',
+  'make-com': 'make',
+};
+
+/** Returns the tracked affiliate URL if the program is active, otherwise the fallback URL. */
+export function resolveAffiliateUrl(toolSlug: string, fallbackUrl: string): string {
+  const canonicalSlug = SLUG_ALIASES[toolSlug] ?? toolSlug;
+  const program = affiliateLinks[canonicalSlug];
+  return program?.status === 'active' ? program.url : fallbackUrl;
 }
 
 export function getAffiliateProgram(toolSlug: string): AffiliateProgram | null {

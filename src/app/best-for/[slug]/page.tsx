@@ -70,11 +70,45 @@ export default async function BestForPage({ params }: PageProps) {
     itemListElement: page.tools.map((tool, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: tool.name,
-      url: tool.reviewSlug
-        ? `https://www.shelby-ai.com/reviews/${tool.reviewSlug}`
-        : `https://www.shelby-ai.com/best-for/${slug}`,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: tool.name,
+        applicationCategory: 'BusinessApplication',
+        description: tool.description,
+        offers: {
+          '@type': 'Offer',
+          price: tool.pricing.replace(/[^0-9.]/g, '') || '0',
+          priceCurrency: 'USD',
+        },
+        url: tool.reviewSlug
+          ? `https://www.shelby-ai.com/reviews/${tool.reviewSlug}`
+          : tool.affiliateUrl,
+      },
     })),
+  };
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: page.title,
+    description: page.description,
+    author: {
+      '@type': 'Person',
+      name: 'Frank Shelby',
+      url: 'https://www.shelby-ai.com/author/frank-shelby',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ShelbyAIDeals',
+      url: 'https://www.shelby-ai.com',
+      logo: { '@type': 'ImageObject', url: 'https://www.shelby-ai.com/images/og-thumbnail.png' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.shelby-ai.com/best-for/${slug}/` },
+    image: 'https://www.shelby-ai.com/images/og-thumbnail.png',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'article > p:first-of-type'],
+    },
   };
 
   return (
@@ -86,6 +120,11 @@ export default async function BestForPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      {/* Article schema — all data is developer-controlled static content, not user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
       <div className="container-main pt-48 sm:pt-52 pb-12 sm:pb-16">

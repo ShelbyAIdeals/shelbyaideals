@@ -91,6 +91,9 @@ export default async function PricingDetailPage({ params }: PageProps) {
           '@type': 'SoftwareApplication',
           name: page.tool,
           applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: `https://www.shelby-ai.com/pricing/${slug}/`,
+          mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.shelby-ai.com/pricing/${slug}/` },
           offers: page.plans
             .filter((p) => p.price !== 'Custom' && p.price !== 'Free')
             .map((p) => ({

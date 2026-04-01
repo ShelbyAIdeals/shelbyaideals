@@ -2,7 +2,12 @@
  * Programmatic SEO data for "[Tool] Pricing [Year]" pages.
  * Each entry generates a static page at /pricing/[slug].
  * High-intent search queries — people searching pricing are close to buying.
+ *
+ * Affiliate URLs in plan data are fallbacks — accessor functions resolve
+ * through the centralized affiliate.ts for tracked links when available.
  */
+
+import { resolveAffiliateUrl } from './affiliate';
 
 export interface PricingPlan {
   name: string;
@@ -2591,6 +2596,17 @@ export const pricingData: PricingPage[] = [
   },
 ];
 
+/** Resolve affiliate URLs in plans through centralized affiliate.ts */
+function withResolvedUrls(page: PricingPage): PricingPage {
+  return {
+    ...page,
+    plans: page.plans.map((plan) => ({
+      ...plan,
+      affiliateUrl: resolveAffiliateUrl(page.slug, plan.affiliateUrl),
+    })),
+  };
+}
+
 /** Get all pricing page slugs for generateStaticParams */
 export function getPricingSlugs(): string[] {
   return pricingData.map((page) => page.slug);
@@ -2598,10 +2614,11 @@ export function getPricingSlugs(): string[] {
 
 /** Get a single pricing page by slug */
 export function getPricingPage(slug: string): PricingPage | undefined {
-  return pricingData.find((page) => page.slug === slug);
+  const page = pricingData.find((p) => p.slug === slug);
+  return page ? withResolvedUrls(page) : undefined;
 }
 
 /** Get all pricing pages */
 export function getAllPricingPages(): PricingPage[] {
-  return pricingData;
+  return pricingData.map(withResolvedUrls);
 }

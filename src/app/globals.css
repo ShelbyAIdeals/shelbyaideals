@@ -96,6 +96,7 @@
 /* ── White Mode Overrides ────────────────────────────── */
 
 [data-theme="light"] {
+  /* Void palette — inverted for light backgrounds */
   --color-void-50: #141210;
   --color-void-100: #252017;
   --color-void-200: #3a3228;
@@ -108,15 +109,65 @@
   --color-void-900: #ffffff;
   --color-void-950: #f5eddd;
 
+  /* Signal — dark green range for warm beige backgrounds */
+  --color-signal-50: #f0f7f1;
+  --color-signal-100: #d4e8d6;
+  --color-signal-200: #a3c9a7;
   --color-signal-300: #5a8a5e;
   --color-signal-400: #4B6F4E;
   --color-signal-500: #3d5b40;
+  --color-signal-600: #2f4731;
+  --color-signal-700: #243824;
+  --color-signal-800: #1a2b1a;
+  --color-signal-900: #111f11;
+  --color-signal-950: #091209;
 
+  /* Ember — darker amber for light mode contrast */
+  --color-ember-50: #fef6e7;
+  --color-ember-100: #fde8b8;
+  --color-ember-200: #fbd573;
+  --color-ember-300: #f5b82e;
   --color-ember-400: #d97706;
   --color-ember-500: #b45309;
+  --color-ember-600: #92400e;
+  --color-ember-700: #78350f;
+  --color-ember-800: #5c2a0e;
+  --color-ember-900: #451a03;
+  --color-ember-950: #2e0f01;
 
+  /* Iris — deeper purple for light mode contrast */
+  --color-iris-50: #f3f0ff;
+  --color-iris-100: #e5dfff;
+  --color-iris-200: #cec0fe;
+  --color-iris-300: #a893fc;
   --color-iris-400: #7c3aed;
   --color-iris-500: #6d28d9;
+  --color-iris-600: #5b21b6;
+  --color-iris-700: #4c1d95;
+  --color-iris-800: #3b1578;
+  --color-iris-900: #2e1065;
+  --color-iris-950: #1a0842;
+
+  /* Semantic tokens — adjusted for light backgrounds */
+  --color-success-50: #f0faf5;
+  --color-success-400: #059669;
+  --color-success-500: #047857;
+  --color-success-600: #065f46;
+
+  --color-danger-50: #fef2f3;
+  --color-danger-400: #e11d48;
+  --color-danger-500: #be123c;
+  --color-danger-600: #9f1239;
+
+  --color-warning-50: #fef9ed;
+  --color-warning-400: #d97706;
+  --color-warning-500: #b45309;
+  --color-warning-600: #92400e;
+
+  --color-info-50: #f0f7f1;
+  --color-info-400: #3d5b40;
+  --color-info-500: #2f4731;
+  --color-info-600: #243824;
 
   /* Legacy accent overrides */
   --color-accent-300: var(--color-signal-300);
@@ -335,13 +386,62 @@ body { top: 0 !important; }
     border-color: rgba(10, 209, 200, 0.2);
     background: rgba(21, 26, 40, 0.75);
   }
+  [data-theme="light"] .card {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  [data-theme="light"] .card:hover {
+    border-color: rgba(61, 91, 64, 0.3);
+    box-shadow: 0 0 24px rgba(61, 91, 64, 0.08);
+  }
+
+  [data-theme="light"] .card-elevated {
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  [data-theme="light"] .card-elevated:hover {
+    border-color: rgba(61, 91, 64, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 24px rgba(61, 91, 64, 0.06);
+  }
+
+  [data-theme="light"] .card-featured {
+    border-color: rgba(180, 83, 9, 0.2);
+    box-shadow: 0 0 20px rgba(180, 83, 9, 0.04);
+  }
+  [data-theme="light"] .card-featured:hover {
+    border-color: rgba(180, 83, 9, 0.35);
+    box-shadow: 0 0 32px rgba(180, 83, 9, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
   [data-theme="light"] .card-glass {
     background: rgba(255, 255, 255, 0.75);
     border-color: rgba(0, 0, 0, 0.08);
   }
   [data-theme="light"] .card-glass:hover {
     background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(10, 134, 130, 0.25);
+    border-color: rgba(61, 91, 64, 0.25);
+  }
+
+  [data-theme="light"] .btn-primary {
+    box-shadow: 0 0 20px rgba(61, 91, 64, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  [data-theme="light"] .btn-primary:hover {
+    box-shadow: 0 0 32px rgba(61, 91, 64, 0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+
+  [data-theme="light"] .btn-accent {
+    box-shadow: 0 0 20px rgba(180, 83, 9, 0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  [data-theme="light"] .btn-accent:hover {
+    box-shadow: 0 0 32px rgba(180, 83, 9, 0.25), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+
+  [data-theme="light"] .verdict-box {
+    border-color: rgba(109, 40, 217, 0.15);
+    box-shadow: 0 0 30px rgba(109, 40, 217, 0.03);
+  }
+
+  [data-theme="light"] .pattern-dots {
+    opacity: 0.15;
   }
 
   /* ── Badges ─────────────────────────────────────────── */

@@ -33,6 +33,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           alt={images[current].alt}
           width={1200}
           height={675}
+          loading="lazy"
           className="w-full h-full object-contain"
         />
 

@@ -1,7 +1,12 @@
 /**
  * Programmatic SEO data for "[Tool] Alternatives" pages.
  * Each entry generates a static page at /alternatives/[slug].
+ *
+ * Tool URLs are fallbacks — accessor functions resolve
+ * through the centralized affiliate.ts for tracked links when available.
  */
+
+import { resolveAffiliateUrl } from './affiliate';
 
 export interface AlternativeTool {
   name: string;
@@ -2530,6 +2535,17 @@ export const alternativesData: AlternativesPage[] = [
   },
 ];
 
+/** Resolve alternative tool URLs through centralized affiliate.ts */
+function withResolvedAltUrls(page: AlternativesPage): AlternativesPage {
+  return {
+    ...page,
+    alternatives: page.alternatives.map((alt) => ({
+      ...alt,
+      url: resolveAffiliateUrl(alt.slug, alt.url),
+    })),
+  };
+}
+
 /** Get all slugs for generateStaticParams */
 export function getAlternativesSlugs(): string[] {
   return alternativesData.map((page) => page.slug);
@@ -2537,10 +2553,11 @@ export function getAlternativesSlugs(): string[] {
 
 /** Get a single alternatives page by slug */
 export function getAlternativesPage(slug: string): AlternativesPage | undefined {
-  return alternativesData.find((page) => page.slug === slug);
+  const page = alternativesData.find((p) => p.slug === slug);
+  return page ? withResolvedAltUrls(page) : undefined;
 }
 
 /** Get all alternatives pages */
 export function getAllAlternativesPages(): AlternativesPage[] {
-  return alternativesData;
+  return alternativesData.map(withResolvedAltUrls);
 }

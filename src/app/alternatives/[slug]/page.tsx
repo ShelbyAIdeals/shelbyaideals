@@ -197,11 +197,45 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
     itemListElement: page.alternatives.map((alt, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: alt.name,
-      url: alt.reviewSlug
-        ? `https://www.shelby-ai.com/reviews/${alt.reviewSlug}`
-        : alt.url,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: alt.name,
+        applicationCategory: 'BusinessApplication',
+        description: alt.description,
+        offers: {
+          '@type': 'Offer',
+          price: alt.pricing.replace(/[^0-9.]/g, '') || '0',
+          priceCurrency: 'USD',
+        },
+        url: alt.reviewSlug
+          ? `https://www.shelby-ai.com/reviews/${alt.reviewSlug}`
+          : alt.url,
+      },
     })),
+  };
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: page.title,
+    description: page.description,
+    author: {
+      '@type': 'Person',
+      name: 'Frank Shelby',
+      url: 'https://www.shelby-ai.com/author/frank-shelby',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ShelbyAIDeals',
+      url: 'https://www.shelby-ai.com',
+      logo: { '@type': 'ImageObject', url: 'https://www.shelby-ai.com/images/og-thumbnail.png' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.shelby-ai.com/alternatives/${slug}/` },
+    image: 'https://www.shelby-ai.com/images/og-thumbnail.png',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'article > p:first-of-type'],
+    },
   };
 
   return (
@@ -214,6 +248,11 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      {/* Safe: articleSchema is built from developer-controlled static data, not user input */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       {faqSchema && (
         <script

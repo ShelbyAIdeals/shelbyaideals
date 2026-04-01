@@ -234,7 +234,7 @@ export default async function ReviewPage({ params }: PageProps) {
       backLink={{ href: '/reviews', label: 'All Reviews' }}
       sidebar={sidebar}
     >
-      <JsonLd type="review" data={meta} />
+      <JsonLd type="review" data={meta} canonicalUrl={`https://www.shelby-ai.com/reviews/${slug}/`} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
       <JsonLd
         type="faq"
@@ -268,6 +268,8 @@ export default async function ReviewPage({ params }: PageProps) {
             <img
               src={meta.toolLogo}
               alt={`${meta.tool} logo`}
+              width={56}
+              height={56}
               className="w-full h-full object-cover"
             />
           </div>

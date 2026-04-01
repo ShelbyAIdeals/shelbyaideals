@@ -180,7 +180,7 @@ export default async function GuidePage({ params }: PageProps) {
         );
       })()}
 
-      <JsonLd type="article" data={meta} />
+      <JsonLd type="article" data={meta} canonicalUrl={`https://www.shelby-ai.com/guides/${slug}/`} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
       {howToSteps.length >= 3 && (
         <JsonLd

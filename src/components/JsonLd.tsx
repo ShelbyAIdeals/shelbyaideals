@@ -36,6 +36,7 @@ interface JsonLdProps {
   type: 'review' | 'article' | 'website' | 'organization' | 'breadcrumb' | 'faq' | 'video' | 'itemlist' | 'howto' | 'collectionpage';
   data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData | ItemListData | HowToData | CollectionPageData;
   breadcrumbs?: { name: string; url: string }[];
+  canonicalUrl?: string;
 }
 
 const AUTHOR_PERSON = {
@@ -68,7 +69,7 @@ const PUBLISHER_ORG = {
  * All data is developer-controlled (not user-generated), so JSON.stringify
  * is safe here — no untrusted input reaches the output.
  */
-export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
+export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
   if (type === 'website') {
@@ -149,6 +150,7 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       image: imageUrl,
       author: AUTHOR_PERSON,
       publisher: PUBLISHER_ORG,
+      ...(canonicalUrl && { mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl } }),
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['h1', '.quick-verdict', '.verdict-box'],
@@ -185,6 +187,7 @@ export default function JsonLd({ type, data, breadcrumbs }: JsonLdProps) {
       image: imageUrl,
       author: AUTHOR_PERSON,
       publisher: PUBLISHER_ORG,
+      ...(canonicalUrl && { mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl } }),
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['h1', 'article > p:first-of-type'],

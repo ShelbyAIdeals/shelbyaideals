@@ -1,7 +1,12 @@
 /**
  * Deals page data — curated AI tool deals with affiliate CTAs.
  * Featured deals are tools with active affiliate programs.
+ *
+ * Affiliate URLs are fallbacks — accessor functions resolve
+ * through the centralized affiliate.ts for tracked links when available.
  */
+
+import { resolveAffiliateUrl } from './affiliate';
 
 export interface Deal {
   slug: string;
@@ -254,10 +259,18 @@ export const deals: Deal[] = [
   },
 ];
 
+/** Resolve affiliate URL through centralized affiliate.ts */
+function withResolvedDealUrl(deal: Deal): Deal {
+  return {
+    ...deal,
+    affiliateUrl: resolveAffiliateUrl(deal.toolSlug, deal.affiliateUrl),
+  };
+}
+
 export function getFeaturedDeals(): Deal[] {
-  return deals.filter((d) => d.featured);
+  return deals.filter((d) => d.featured).map(withResolvedDealUrl);
 }
 
 export function getAllDeals(): Deal[] {
-  return deals;
+  return deals.map(withResolvedDealUrl);
 }

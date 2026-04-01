@@ -131,7 +131,7 @@ export default async function BestOfArticlePage({ params }: PageProps) {
         </div>
       )}
 
-      <JsonLd type="article" data={meta} />
+      <JsonLd type="article" data={meta} canonicalUrl={`https://www.shelby-ai.com/best/${slug}/`} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
 
       {/* MDX Body */}

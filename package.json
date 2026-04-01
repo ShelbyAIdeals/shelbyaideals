@@ -16,7 +16,8 @@
     "social": "tsx scripts/social-post.ts --latest",
     "autopilot": "tsx scripts/publish-next.ts --count 1",
     "video": "tsx scripts/generate-video.ts",
-    "video:preview": "npx remotion studio remotion/Root.tsx"
+    "video:preview": "npx remotion studio remotion/Root.tsx",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -44,6 +45,7 @@
     "@types/react-dom": "^19.0.0",
     "@vercel/node": "^4.0.0",
     "remotion": "^4.0.435",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.7.0"
