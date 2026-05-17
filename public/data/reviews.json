@@ -2087,6 +2087,96 @@
     "readingTime": "23 min read"
   },
   {
+    "title": "Portrait Union Review 2026: AI Portrait Studio for Pets, Couples & Family",
+    "slug": "portrait-union-review",
+    "excerpt": "In our Portrait Union review, we test how this AI portrait studio turns phone photos of pets and family into nine hand-tuned art styles — and print them.",
+    "category": "ai-video-audio",
+    "type": "review",
+    "author": "Frank Shelby",
+    "date": "2026-05-17",
+    "lastUpdated": "2026-05-17",
+    "lastTested": "2026-05-17",
+    "featured": false,
+    "tool": "Portrait Union",
+    "toolSlug": "portrait-union",
+    "toolLogo": "/logos/portrait-union.png",
+    "socialLinks": {
+      "website": "https://portraitunion.com"
+    },
+    "rating": 4.1,
+    "bestFor": "Pet owners, couples, and families who want gallery-grade art portraits from an ordinary phone photo — with the option to order prints.",
+    "notFor": "Power users who need a general-purpose image generator with flexible dimensions, an API, or high-volume batch output.",
+    "testType": "Hands-on review",
+    "pricing": [
+      {
+        "plan": "Free preview",
+        "price": "$0",
+        "period": "",
+        "features": [
+          "1 preview, no account",
+          "All 9 styles selectable",
+          "Watermarked output"
+        ],
+        "affiliateUrl": "https://portraitunion.com"
+      },
+      {
+        "plan": "Starter",
+        "price": "€9.99",
+        "period": " one-time",
+        "features": [
+          "1 HD portrait download",
+          "2 AI previews",
+          "Commercial license",
+          "Credits never expire"
+        ],
+        "affiliateUrl": "https://portraitunion.com"
+      },
+      {
+        "plan": "Creator",
+        "price": "€19.99",
+        "period": " one-time",
+        "features": [
+          "3 HD downloads",
+          "6 AI previews",
+          "~33% cheaper per portrait",
+          "Commercial license"
+        ],
+        "highlighted": true,
+        "affiliateUrl": "https://portraitunion.com"
+      },
+      {
+        "plan": "Studio",
+        "price": "€29.99",
+        "period": " one-time",
+        "features": [
+          "5 HD downloads",
+          "10 AI previews",
+          "~40% cheaper per portrait",
+          "Custom style requests"
+        ],
+        "affiliateUrl": "https://portraitunion.com"
+      }
+    ],
+    "pros": [
+      "Nine distinct, hand-tuned style pipelines — not one filter recolored nine ways.",
+      "Strong identity preservation, including pet fur patterns and up to six subjects in one composition.",
+      "No subscription, no dark patterns: one-time packs, credits never expire, failed generations are auto-refunded.",
+      "Free preview with no account required — genuinely low-friction to try.",
+      "End-to-end: print-grade 4096×5120 output plus Gelato print fulfillment with free worldwide shipping."
+    ],
+    "cons": [
+      "Only nine styles today; Baroque, Cyberpunk, Watercolor, and Pixar are still roadmap items.",
+      "Single fixed 4:5 aspect ratio and one resolution tier — no landscape or custom dimensions.",
+      "Narrow by design: portraits of people and pets only, not a general-purpose image tool.",
+      "Newer brand with a smaller track record and community than Midjourney or Leonardo AI."
+    ],
+    "verdict": "Portrait Union does one thing — turn a phone photo into a framed-worthy portrait — and does it with unusual polish and honest pricing. It is the right pick for pet, couple, and family portraits where identity must survive the style transfer, and for buyers who want a print, not just a file. It is the wrong pick if you need a flexible, general-purpose image generator.",
+    "affiliateUrl": "https://portraitunion.com",
+    "affiliateLabel": "Try Portrait Union Free",
+    "youtubeUrl": null,
+    "readingTime": "11 min read"
+  },
+  {
     "title": "Runway ML Review 2026: Is It Worth Paying For? (Hands-On Verdict)",
     "slug": "runway-ml-review",
     "excerpt": "We tested Runway ML for 10 days — Gen-4, Gen-4.5, pricing from $0 to $76/mo, and real output quality. Here's our honest verdict on who should buy it and who should skip it.",
