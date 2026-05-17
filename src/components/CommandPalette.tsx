@@ -17,10 +17,10 @@ const quickLinks = [
     icon: Sparkles,
     color: 'text-signal-400',
     links: [
-      { label: 'Pictory Review', href: '/reviews/pictory-review' },
-      { label: 'ElevenLabs Review', href: '/reviews/elevenlabs-review' },
       { label: 'Synthesia Review', href: '/reviews/synthesia-review' },
+      { label: 'Frase Review', href: '/reviews/frase-review' },
       { label: 'Descript Review', href: '/reviews/descript-review' },
+      { label: 'Mangools Review', href: '/reviews/mangools-review' },
     ],
   },
   {
@@ -38,8 +38,8 @@ const quickLinks = [
     icon: GitCompare,
     color: 'text-ember-400',
     links: [
-      { label: 'Pictory vs Synthesia', href: '/comparisons/pictory-vs-synthesia' },
-      { label: 'ElevenLabs vs Murf vs Play.ht', href: '/comparisons/elevenlabs-vs-murf-vs-playht' },
+      { label: 'Frase vs Surfer SEO', href: '/comparisons/frase-vs-surfer-seo' },
+      { label: 'Descript vs CapCut', href: '/comparisons/descript-vs-capcut' },
       { label: 'All Comparisons', href: '/comparisons' },
     ],
   },

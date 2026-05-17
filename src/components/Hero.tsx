@@ -10,7 +10,7 @@ import { useAuth } from '@/lib/auth-context';
 import HeroTextRotator from './motion/HeroTextRotator';
 
 const trendingTools = [
-  'Pictory', 'ElevenLabs', 'Synthesia', 'Frase', 'Mangools', 'Descript',
+  'Synthesia', 'Frase', 'Mangools', 'Descript', 'Chatbase', 'Midjourney',
 ];
 
 const fadeUp = {

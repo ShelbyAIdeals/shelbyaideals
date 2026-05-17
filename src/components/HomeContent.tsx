@@ -10,6 +10,7 @@ import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import { useTranslation } from '@/i18n/context';
+import { resolveAffiliateUrl } from '@/lib/affiliate';
 import type { ReviewMeta, ComparisonMeta, GuideMeta, CategoryInfo } from '@/lib/types';
 
 const audienceSegments = [
@@ -67,11 +68,11 @@ export default function HomeContent({
               },
               {
                 label: 'Best for Video Creation',
-                tool: 'Pictory',
-                rating: 3.5,
-                reason: 'Paste a blog URL, get a video. No editing skills needed. Best for content repurposing.',
+                tool: 'Synthesia',
+                rating: 3.9,
+                reason: 'Type a script, get an AI-avatar video in 120+ languages — no camera, actors, or studio. Best for training & explainer content.',
                 href: '/best-for/video-creators',
-                reviewHref: '/reviews/pictory-review',
+                reviewHref: '/reviews/synthesia-review',
               },
               {
                 label: 'Best for Small Business',
@@ -264,10 +265,10 @@ export default function HomeContent({
         <div className="container-main">
           <ScrollReveal>
             <DealOfTheWeek
-              toolName="Pictory"
-              deal="14-Day Free Trial — Turn Blog Posts into Videos"
-              reviewSlug="pictory-review"
-              affiliateUrl="https://pictory.ai?ref=fran26"
+              toolName="Synthesia"
+              deal="Free Plan — Create AI Avatar Videos Without a Camera"
+              reviewSlug="synthesia-review"
+              affiliateUrl={resolveAffiliateUrl('synthesia', 'https://www.synthesia.io')}
             />
           </ScrollReveal>
         </div>
