@@ -101,13 +101,6 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
         'https://www.pinterest.com/shelbyaideals/',
         'https://github.com/ShelbyAIdeals',
       ],
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.5',
-        reviewCount: '31',
-        bestRating: '5',
-        worstRating: '1',
-      },
     };
   } else if (type === 'itemlist' && data && 'items' in data) {
     const list = data as ItemListData;
