@@ -42,6 +42,9 @@ If you have heard developers talk about "agentic coding" in 2026, they are almos
 
 This guide walks you through the whole thing: installing it, authenticating, the core commands you will actually use, and how to pair it with **Claude Design**, Anthropic's newer product for turning prompts into prototypes. By the end you will have a repeatable workflow for shipping features, fixing bugs, and going from a rough idea to working code. You do not need to be an expert engineer to follow along, but a little command-line comfort helps.
 
+![Claude Code by Anthropic](/images/guides/how-to-use-claude-code.webp)
+*Claude Code runs across the terminal, IDE, desktop app, and the web at claude.ai/code — all sharing the same settings and memory.*
+
 ## Why This Matters
 
 The way software gets built changed fast over the last year. Anthropic shipped Claude Code from beta to a mature 2.x product across 2025, and by 2026 it runs in your terminal, your IDE, a desktop app, and the browser at claude.ai/code. The default model for most users is now **Claude Opus 4.7**, with **Sonnet 4.6** and **Haiku 4.5** available for cheaper, faster work.
@@ -109,8 +112,8 @@ Once you are in, you are talking to an agent. Type what you want in plain langua
 
 Claude will map your project on its own — you do not need to manually attach files. This "agentic search" is a big part of why it feels different from autocomplete tools.
 
-![Claude Code running in the terminal](/images/guides/how-to-use-claude-code-2.webp)
-*Claude Code runs right in your terminal — you describe what you want in plain language and it plans, edits files, and runs commands.*
+![The Claude Code desktop app](/images/guides/how-to-use-claude-code-2.webp)
+*The Claude Code desktop app adds visual diff review and parallel sessions on top of the same agent you run in the terminal.*
 
 ## Step 3: Use Plan Mode Before You Let It Edit
 
@@ -166,8 +169,8 @@ git diff main --name-only | claude -p "review these changed files for security i
 
 Useful slash commands inside a session include `/model` (switch between Opus, Sonnet, and Haiku to control cost), `/context` and `/usage` (track what you are spending), `/diff` (review changes), and `/plan`. You can also package repeatable workflows as **custom commands** — drop a markdown file in `.claude/commands/` and its filename becomes a `/command` — or as **Skills** in `.claude/skills/<name>/SKILL.md`.
 
-![The Claude Code desktop app](/images/guides/how-to-use-claude-code-3.webp)
-*Beyond the terminal, Claude Code also ships as a desktop app with visual diff review and parallel sessions — plus IDE and web versions that share the same settings.*
+![Claude Code in the terminal](/images/guides/how-to-use-claude-code-3.webp)
+*Day to day, most agentic coding happens right in the terminal — you give an instruction and review the changes Claude proposes.*
 
 ## Step 6: Pair It With Claude Design
 
