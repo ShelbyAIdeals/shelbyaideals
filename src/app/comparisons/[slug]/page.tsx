@@ -102,6 +102,18 @@ export default async function ComparisonPage({ params }: PageProps) {
     { name: meta.title, url: `https://www.shelby-ai.com/comparisons/${slug}/` },
   ];
 
+  // Data-backed FAQs from tools + winner scenarios (visible FAQ + FAQPage schema; GEO + long-tail).
+  const faqQuestions = [
+    {
+      question: `What is the difference between ${meta.tools.join(', ')}?`,
+      answer: meta.description || meta.excerpt,
+    },
+    ...meta.winners.map((w) => ({
+      question: `${w.scenario} — which should you choose?`,
+      answer: `${w.winner}. ${w.reason}`,
+    })),
+  ].filter((q) => q.answer);
+
   const sidebar = (
     <div className="space-y-8">
       <TableOfContents headings={headings} />
@@ -131,6 +143,7 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       <JsonLd type="article" data={meta} canonicalUrl={`https://www.shelby-ai.com/comparisons/${slug}/`} />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
+      {faqQuestions.length > 0 && <JsonLd type="faq" data={{ questions: faqQuestions }} />}
       {/* Review schema for compared tools */}
       {meta.tools
         .map((toolName) => allReviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
@@ -196,6 +209,21 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       {/* MDX Body */}
       <MDXContent source={content} />
+
+      {/* FAQ — data-backed Q&A for GEO / AI citations + long-tail coverage */}
+      {faqQuestions.length > 0 && (
+        <section className="mt-12 pt-8 border-t border-void-700/50">
+          <h2 className="text-2xl font-heading font-bold text-void-50 mb-5">Frequently Asked Questions</h2>
+          <div className="space-y-5">
+            {faqQuestions.map((q) => (
+              <div key={q.question}>
+                <h3 className="text-base font-heading font-semibold text-void-100 mb-1.5">{q.question}</h3>
+                <p className="text-sm text-void-300 leading-relaxed">{q.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Related Articles */}
       <RelatedArticles current={meta} articles={allArticles} />
