@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx scripts/generate-reviews-json.ts && next build",
+    "build": "tsx scripts/generate-reviews-json.ts && tsx scripts/generate-llms.ts && next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "tsx scripts/generate-article.ts",
@@ -13,6 +13,7 @@
     "publish:batch": "tsx scripts/publish-next.ts --count 3",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "rss": "tsx scripts/generate-rss.ts",
+    "llms": "tsx scripts/generate-llms.ts",
     "social": "tsx scripts/social-post.ts --latest",
     "autopilot": "tsx scripts/publish-next.ts --count 1",
     "video": "tsx scripts/generate-video.ts",
