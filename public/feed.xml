@@ -5,8 +5,53 @@
     <link>https://www.shelby-ai.com</link>
     <description>Honest AI tool reviews for creators, freelancers, and small teams.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 May 2026 09:59:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 21:43:13 GMT</lastBuildDate>
     <atom:link href="https://www.shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Use Claude Code (and Claude Design): A Complete 2026 Guide</title>
+      <link>https://www.shelby-ai.com/guides/how-to-use-claude-code</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-claude-code</guid>
+      <description>Learn how to use Claude Code, Anthropic&apos;s agentic coding tool, plus Claude Design for prototypes. Step-by-step setup, commands, workflows, and pricing for 2026.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Use Claude Design: Anthropic&apos;s Prompt-to-Prototype Tool (2026)</title>
+      <link>https://www.shelby-ai.com/guides/how-to-use-claude-design</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-claude-design</guid>
+      <description>Learn how to use Claude Design, Anthropic&apos;s AI tool that turns prompts into prototypes, slides, and mockups. Step-by-step setup, refinement, exports, and pricing.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Use the Hermes Agent: A Complete Beginner&apos;s Guide (2026)</title>
+      <link>https://www.shelby-ai.com/guides/how-to-use-hermes-agent</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-hermes-agent</guid>
+      <description>Learn how to use the Hermes Agent by Nous Research — the open-source, self-hosted AI agent. Step-by-step install, model setup, messaging gateway, and security hardening.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Use OpenAI Codex: The Complete 2026 Guide</title>
+      <link>https://www.shelby-ai.com/guides/how-to-use-openai-codex</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-openai-codex</guid>
+      <description>Learn how to use OpenAI Codex in 2026 — the cloud agent, CLI, and IDE extension. Step-by-step setup, approval modes, AGENTS.md, pricing, and real workflows.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Use OpenClaw: A Complete Beginner&apos;s Guide (2026)</title>
+      <link>https://www.shelby-ai.com/guides/how-to-use-openclaw</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/how-to-use-openclaw</guid>
+      <description>Learn how to use OpenClaw, the open-source self-hosted AI agent that runs in your messaging apps. Step-by-step install, model setup, skills, and essential security.</description>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
     <item>
       <title>Portrait Union Review 2026: AI Portrait Studio for Pets, Couples &amp; Family</title>
       <link>https://www.shelby-ai.com/reviews/portrait-union-review</link>

@@ -552,6 +552,19 @@ body { top: 0 !important; }
       italic text-void-400;
   }
 
+  .prose-article img {
+    @apply w-full h-auto rounded-xl border border-void-800 mt-6 mb-1 shadow-lg;
+  }
+
+  /* Caption: an italic line in the same paragraph as an image */
+  .prose-article p:has(> img) {
+    @apply mb-6;
+  }
+
+  .prose-article p:has(> img) em {
+    @apply block text-center text-sm text-void-500 mt-2 not-italic;
+  }
+
   .prose-article table {
     @apply w-full border-collapse my-6;
   }
