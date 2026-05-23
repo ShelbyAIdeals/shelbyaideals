@@ -6,7 +6,8 @@ import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
-import { getArticle, getArticleSlugs, getAllArticles } from '@/lib/content';
+import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
+import { pricingData } from '@/lib/pricing-data';
 import type { BestOfMeta } from '@/lib/types';
 
 interface PageProps {
@@ -91,6 +92,7 @@ export default async function BestOfArticlePage({ params }: PageProps) {
 
   const headings = extractHeadings(content);
   const allArticles = getAllArticles();
+  const allReviews = getAllReviews();
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://www.shelby-ai.com/' },
@@ -116,18 +118,24 @@ export default async function BestOfArticlePage({ params }: PageProps) {
           <h2 className="text-xl font-bold text-void-50 mb-4">
             Our Top Picks
           </h2>
-          {meta.tools.map((tool) => (
-            <ToolCard
-              key={tool.name}
-              rank={tool.rank}
-              name={tool.name}
-              tagline={tool.tagline}
-              rating={tool.rating}
-              pricing={tool.pricing}
-              bestFor={tool.bestFor}
-              affiliateUrl={tool.affiliateUrl}
-            />
-          ))}
+          {meta.tools.map((tool) => {
+            const review = allReviews.find((r) => r.tool.toLowerCase() === tool.name.toLowerCase());
+            const pricing = pricingData.find((p) => p.tool.toLowerCase() === tool.name.toLowerCase());
+            return (
+              <ToolCard
+                key={tool.name}
+                rank={tool.rank}
+                name={tool.name}
+                tagline={tool.tagline}
+                rating={tool.rating}
+                pricing={tool.pricing}
+                bestFor={tool.bestFor}
+                affiliateUrl={tool.affiliateUrl}
+                reviewSlug={review?.slug}
+                pricingSlug={pricing?.slug}
+              />
+            );
+          })}
         </div>
       )}
 

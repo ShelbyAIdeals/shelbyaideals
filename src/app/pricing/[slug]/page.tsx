@@ -304,8 +304,13 @@ export default async function PricingDetailPage({ params }: PageProps) {
 
       {/* Related Pricing Guides */}
       {(() => {
-        const allPages = getAllPricingPages().filter((p) => p.slug !== slug);
-        const related = allPages.slice(0, 3);
+        const allPages = getAllPricingPages();
+        const idx = allPages.findIndex((p) => p.slug === slug);
+        // Rotating window so internal links distribute evenly across ALL pricing
+        // pages (the old slice(0,3) made every page link only the first 3).
+        const related = [1, 2, 3]
+          .map((offset) => allPages[(idx + offset) % allPages.length])
+          .filter((p) => p && p.slug !== slug);
         if (related.length === 0) return null;
         return (
           <div className="container-main pb-12 sm:pb-16">

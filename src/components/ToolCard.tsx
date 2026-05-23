@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import StarRating from './StarRating';
 import CTAButton from './CTAButton';
 
@@ -13,6 +14,8 @@ interface ToolCardProps {
   pricing: string;
   bestFor: string;
   affiliateUrl: string;
+  reviewSlug?: string;
+  pricingSlug?: string;
 }
 
 export default function ToolCard({
@@ -23,6 +26,8 @@ export default function ToolCard({
   pricing,
   bestFor,
   affiliateUrl,
+  reviewSlug,
+  pricingSlug,
 }: ToolCardProps) {
   return (
     <motion.div
@@ -56,6 +61,21 @@ export default function ToolCard({
             Best for: {bestFor}
           </span>
         </div>
+
+        {(reviewSlug || pricingSlug) && (
+          <div className="mt-2.5 flex flex-wrap items-center gap-x-4 text-xs">
+            {reviewSlug && (
+              <Link href={`/reviews/${reviewSlug}/`} className="inline-flex items-center gap-1 text-signal-400 hover:text-signal-300 no-underline transition-colors">
+                <ArrowRight size={12} /> Read review
+              </Link>
+            )}
+            {pricingSlug && (
+              <Link href={`/pricing/${pricingSlug}/`} className="inline-flex items-center gap-1 text-signal-400 hover:text-signal-300 no-underline transition-colors">
+                <ArrowRight size={12} /> See pricing
+              </Link>
+            )}
+          </div>
+        )}
       </div>
 
       {/* CTA */}

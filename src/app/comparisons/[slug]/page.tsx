@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
 import { getAllUseCasePages } from '@/lib/use-case-data';
+import { pricingData } from '@/lib/pricing-data';
 import type { ComparisonMeta } from '@/lib/types';
 
 interface PageProps {
@@ -152,25 +153,34 @@ export default async function ComparisonPage({ params }: PageProps) {
           <JsonLd key={review.slug} type="review" data={review} />
         ))}
 
-      {/* Cross-links to individual reviews */}
+      {/* Cross-links: full review + pricing page for each compared tool */}
       {(() => {
-        const toolReviews = meta.tools
-          .map((toolName) => allReviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()))
-          .filter(Boolean);
-        if (toolReviews.length === 0) return null;
+        const items = meta.tools
+          .map((toolName) => ({
+            name: toolName,
+            review: allReviews.find((r) => r.tool.toLowerCase() === toolName.toLowerCase()),
+            pricing: pricingData.find((p) => p.tool.toLowerCase() === toolName.toLowerCase()),
+          }))
+          .filter((i) => i.review || i.pricing);
+        if (items.length === 0) return null;
         return (
           <section className="mb-8 p-5 rounded-xl border border-void-700/40 bg-void-800/20">
-            <h2 className="text-lg font-heading font-bold text-void-100 mb-3">Read the Full Reviews</h2>
-            <div className="flex flex-col gap-2">
-              {toolReviews.map((review) => (
-                <Link
-                  key={review!.slug}
-                  href={`/reviews/${review!.slug}/`}
-                  className="inline-flex items-center gap-2 text-sm text-signal-400 hover:text-signal-300 transition-colors"
-                >
-                  <ArrowRight size={14} />
-                  {`Read our full ${review!.tool} review`}
-                </Link>
+            <h2 className="text-lg font-heading font-bold text-void-100 mb-3">Explore Each Tool</h2>
+            <div className="flex flex-col gap-2.5">
+              {items.map((i) => (
+                <div key={i.name} className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+                  <span className="font-semibold text-void-200 min-w-[7rem]">{i.name}</span>
+                  {i.review && (
+                    <Link href={`/reviews/${i.review.slug}/`} className="inline-flex items-center gap-1 text-signal-400 hover:text-signal-300 transition-colors">
+                      <ArrowRight size={13} /> Full review
+                    </Link>
+                  )}
+                  {i.pricing && (
+                    <Link href={`/pricing/${i.pricing.slug}/`} className="inline-flex items-center gap-1 text-signal-400 hover:text-signal-300 transition-colors">
+                      <ArrowRight size={13} /> Pricing &amp; plans
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
           </section>
