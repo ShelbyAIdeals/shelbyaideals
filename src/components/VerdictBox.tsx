@@ -5,6 +5,7 @@ import StarRating from './StarRating';
 import TrustBadge from './TrustBadge';
 import Link from 'next/link';
 import { useTranslation } from '@/i18n/context';
+import { hasAlternativesPage } from '@/lib/alternatives-data';
 
 interface VerdictBoxProps {
   rating: number;
@@ -82,10 +83,10 @@ export default function VerdictBox({
             </a>
 
             <Link
-              href={toolSlug ? `/alternatives/${toolSlug}/` : '/reviews/'}
+              href={toolSlug && hasAlternativesPage(toolSlug) ? `/alternatives/${toolSlug}/` : '/reviews/'}
               className="btn-ghost gap-2"
             >
-              <span>{toolSlug ? `See ${toolName} Alternatives` : t('article.read_alternatives', 'See All Tools')}</span>
+              <span>{toolSlug && hasAlternativesPage(toolSlug) ? `See ${toolName} Alternatives` : t('article.read_alternatives', 'See All Tools')}</span>
               <ArrowRight size={16} />
             </Link>
           </div>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { CheckCircle, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
+import { hasAlternativesPage } from '@/lib/alternatives-data';
 
 interface ProsConsProps {
   pros: string[];
@@ -76,7 +77,7 @@ export default function ProsCons({ pros, cons, toolSlug, toolName }: ProsConsPro
         </ul>
       </div>
     </div>
-    {toolSlug && (
+    {toolSlug && hasAlternativesPage(toolSlug) && (
       <div className="mt-4 text-center">
         <Link
           href={`/alternatives/${toolSlug}/`}

@@ -13,5 +13,8 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    { "source": "/about/fran-shelby", "destination": "/author/frank-shelby", "permanent": true }
   ]
 }

@@ -8,10 +8,10 @@ const AUTHOR = {
   title: 'Founder & Lead Reviewer at ShelbyAI',
   initials: 'FS',
   bio: "I've personally tested every tool on this site \u2014 signing up, paying for plans, and running real projects for 7\u201314 days each. When I say a tool works, I mean I've used it on actual client work.",
-  profileUrl: '/about/fran-shelby/',
+  profileUrl: '/author/frank-shelby/',
   social: {
     twitter: 'https://x.com/shelbyaideals',
-    linkedin: 'https://www.linkedin.com/in/shelby-ai-1bb38a3b6/',
+    linkedin: 'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
   },
 } as const;
 

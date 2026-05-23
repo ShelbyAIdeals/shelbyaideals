@@ -55,6 +55,9 @@ function buildSitemap(): string {
     { url: '/contact', priority: '0.3', changefreq: 'yearly' },
     { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
     { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
+    { url: '/terms-of-service', priority: '0.3', changefreq: 'yearly' },
+    { url: '/deals', priority: '0.8', changefreq: 'weekly' },
+    { url: '/submit-tool', priority: '0.4', changefreq: 'monthly' },
     // Author page
     { url: '/author/frank-shelby', priority: '0.5', changefreq: 'monthly' },
     // Categories collection page

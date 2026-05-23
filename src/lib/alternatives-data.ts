@@ -2561,3 +2561,8 @@ export function getAlternativesPage(slug: string): AlternativesPage | undefined 
 export function getAllAlternativesPages(): AlternativesPage[] {
   return alternativesData.map(withResolvedAltUrls);
 }
+
+/** Whether a dedicated /alternatives/[slug] page exists for a tool slug */
+export function hasAlternativesPage(slug: string): boolean {
+  return alternativesData.some((a) => a.slug === slug);
+}

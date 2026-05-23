@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Check, Clock, Shield, CreditCard } from 'lucide-react';
 import { getPricingSlugs, getPricingPage, getAllPricingPages } from '@/lib/pricing-data';
+import { hasAlternativesPage } from '@/lib/alternatives-data';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -290,9 +291,11 @@ export default async function PricingDetailPage({ params }: PageProps) {
                     Read Full Review
                   </Link>
                 )}
-                <Link href={`/alternatives/${slug}`} className="btn-outline text-sm no-underline">
-                  See Alternatives
-                </Link>
+                {hasAlternativesPage(slug) && (
+                  <Link href={`/alternatives/${slug}`} className="btn-outline text-sm no-underline">
+                    See Alternatives
+                  </Link>
+                )}
               </div>
             </div>
           </div>
