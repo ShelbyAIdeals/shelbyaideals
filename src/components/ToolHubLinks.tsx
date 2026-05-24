@@ -28,8 +28,9 @@ export default function ToolHubLinks({ toolSlug, toolName, category }: ToolHubLi
       { slug: 'content-writers', label: 'Best for Content Writers' },
     ],
     'ai-content-productivity': [
-      { slug: 'freelancers', label: 'Best for Freelancers' },
       { slug: 'solopreneurs', label: 'Best for Solopreneurs' },
+      { slug: 'startups', label: 'Best for Startups' },
+      { slug: 'freelancers', label: 'Best for Freelancers' },
       { slug: 'small-business', label: 'Best for Small Business' },
     ],
   };
@@ -49,7 +50,7 @@ export default function ToolHubLinks({ toolSlug, toolName, category }: ToolHubLi
       icon: DollarSign,
       label: `${toolName} Pricing`,
     },
-    ...bestForLinks.slice(0, 2).map((bf) => ({
+    ...bestForLinks.slice(0, 3).map((bf) => ({
       href: `/best-for/${bf.slug}`,
       icon: Bookmark,
       label: bf.label,

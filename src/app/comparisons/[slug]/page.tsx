@@ -8,7 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
+import { getArticle, getArticleSlugs, getAllArticles, getAllReviews, getAllComparisons } from '@/lib/content';
 import { getAllUseCasePages } from '@/lib/use-case-data';
 import { pricingData } from '@/lib/pricing-data';
 import type { ComparisonMeta } from '@/lib/types';
@@ -115,6 +115,18 @@ export default async function ComparisonPage({ params }: PageProps) {
     })),
   ].filter((q) => q.answer);
 
+  // Related comparisons sharing >=2 tools — surfaces sibling comparisons so near-duplicate
+  // 2-way/3-way pages reinforce each other instead of cannibalizing the same query.
+  const normTool = (t: string) => t.toLowerCase().replace(/\s+ai$/, '').trim();
+  const myTools = new Set(meta.tools.map(normTool));
+  const relatedComparisons = getAllComparisons()
+    .filter((c) => c.slug !== slug)
+    .map((c) => ({ c, shared: (c.tools || []).filter((t) => myTools.has(normTool(t))).length }))
+    .filter((x) => x.shared >= 2)
+    .sort((a, b) => b.shared - a.shared)
+    .slice(0, 2)
+    .map((x) => x.c);
+
   const sidebar = (
     <div className="space-y-8">
       <TableOfContents headings={headings} />
@@ -138,6 +150,18 @@ export default async function ComparisonPage({ params }: PageProps) {
               reason={winner.reason}
               affiliateUrl={meta.affiliateUrls[winner.winner] ?? '#'}
             />
+          ))}
+        </div>
+      )}
+
+      {relatedComparisons.length > 0 && (
+        <div className="mb-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm rounded-lg border border-void-700/40 bg-void-800/20 px-4 py-3">
+          <span className="text-void-400">Also comparing these tools:</span>
+          {relatedComparisons.map((c, i) => (
+            <span key={c.slug}>
+              <Link href={`/comparisons/${c.slug}/`} className="text-signal-400 hover:text-signal-300 transition-colors">{c.title}</Link>
+              {i < relatedComparisons.length - 1 && <span className="text-void-600"> · </span>}
+            </span>
           ))}
         </div>
       )}
