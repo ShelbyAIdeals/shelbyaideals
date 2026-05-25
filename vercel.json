@@ -15,6 +15,60 @@
     }
   ],
   "redirects": [
-    { "source": "/about/fran-shelby", "destination": "/author/frank-shelby", "permanent": true }
+    { "source": "/about/fran-shelby", "destination": "/author/frank-shelby/", "permanent": true },
+
+    { "source": "/alternatives/chatbase/", "destination": "/reviews/chatbase-review/", "permanent": true },
+    { "source": "/alternatives/claude-ai/", "destination": "/reviews/claude-ai-review/", "permanent": true },
+    { "source": "/alternatives/julius-ai/", "destination": "/reviews/julius-ai-review/", "permanent": true },
+    { "source": "/alternatives/mixo/", "destination": "/reviews/mixo-review/", "permanent": true },
+    { "source": "/alternatives/otter-ai/", "destination": "/reviews/otter-ai-review/", "permanent": true },
+    { "source": "/alternatives/rytr/", "destination": "/reviews/rytr-review/", "permanent": true },
+    { "source": "/alternatives/simplified/", "destination": "/reviews/simplified-review/", "permanent": true },
+    { "source": "/alternatives/fliki/", "destination": "/reviews/fliki-review/", "permanent": true },
+    { "source": "/alternatives/google-gemini/", "destination": "/reviews/google-gemini-review/", "permanent": true },
+    { "source": "/alternatives/leonardo-ai/", "destination": "/reviews/leonardo-ai-review/", "permanent": true },
+    { "source": "/alternatives/mubert/", "destination": "/reviews/mubert-review/", "permanent": true },
+    { "source": "/alternatives/perplexity/", "destination": "/reviews/perplexity-review/", "permanent": true },
+    { "source": "/alternatives/make/", "destination": "/reviews/make-review/", "permanent": true },
+    { "source": "/alternatives/portrait-union/", "destination": "/reviews/portrait-union-review/", "permanent": true },
+
+    { "source": "/alternatives/activepieces/", "destination": "/best/best-ai-automation-tools/", "permanent": true },
+    { "source": "/alternatives/adobe-firefly/", "destination": "/best/best-ai-design-tools-non-designers/", "permanent": true },
+    { "source": "/alternatives/capcut/", "destination": "/best/best-ai-video-tools-creators/", "permanent": true },
+    { "source": "/alternatives/clearscope/", "destination": "/best/best-ai-seo-tools/", "permanent": true },
+    { "source": "/alternatives/dall-e-3/", "destination": "/comparisons/midjourney-vs-dalle-vs-leonardo/", "permanent": true },
+    { "source": "/alternatives/heygen/", "destination": "/best/best-ai-video-tools-creators/", "permanent": true },
+    { "source": "/alternatives/kapwing/", "destination": "/best/best-ai-video-tools-creators/", "permanent": true },
+    { "source": "/alternatives/languagetool/", "destination": "/best/best-ai-writing-tools-freelancers/", "permanent": true },
+    { "source": "/alternatives/marketmuse/", "destination": "/best/best-ai-seo-tools/", "permanent": true },
+    { "source": "/alternatives/moz-pro/", "destination": "/best/best-ai-seo-tools/", "permanent": true },
+    { "source": "/alternatives/murf-ai/", "destination": "/comparisons/elevenlabs-vs-murf-ai/", "permanent": true },
+    { "source": "/alternatives/speechify/", "destination": "/comparisons/elevenlabs-vs-murf-ai/", "permanent": true },
+    { "source": "/alternatives/stable-diffusion/", "destination": "/comparisons/midjourney-vs-dalle-vs-leonardo/", "permanent": true },
+    { "source": "/alternatives/wellsaid-labs/", "destination": "/comparisons/elevenlabs-vs-murf-ai/", "permanent": true },
+    { "source": "/alternatives/wordtune/", "destination": "/best/best-ai-writing-tools-freelancers/", "permanent": true },
+
+    { "source": "/comparisons/claude-vs-chatgpt/", "destination": "/comparisons/chatgpt-vs-claude-for-business/", "permanent": true },
+    { "source": "/comparisons/leonardo-vs-midjourney/", "destination": "/comparisons/midjourney-vs-dalle-vs-leonardo/", "permanent": true },
+    { "source": "/comparisons/midjourney-vs-dall-e-3/", "destination": "/comparisons/midjourney-vs-dalle-vs-leonardo/", "permanent": true },
+    { "source": "/comparisons/murf-vs-elevenlabs/", "destination": "/comparisons/elevenlabs-vs-murf-ai/", "permanent": true },
+    { "source": "/comparisons/fliki-vs-pictory/", "destination": "/comparisons/pictory-vs-synthesia/", "permanent": true },
+    { "source": "/comparisons/julius-ai-vs-akkio/", "destination": "/comparisons/", "permanent": true },
+    { "source": "/comparisons/semrush-vs-mangools/", "destination": "/comparisons/", "permanent": true },
+    { "source": "/comparisons/google-gemini-vs-chatgpt/", "destination": "/comparisons/", "permanent": true },
+    { "source": "/comparisons/grok-vs-chatgpt/", "destination": "/comparisons/", "permanent": true },
+    { "source": "/comparisons/chatbase-vs-botpress/", "destination": "/comparisons/", "permanent": true },
+    { "source": "/comparisons/decktopus-vs-tome/", "destination": "/comparisons/", "permanent": true },
+
+    { "source": "/reviews/jasper-review/", "destination": "/reviews/jasper-ai-review/", "permanent": true },
+    { "source": "/reviews/ahrefs-review/", "destination": "/best/best-ai-seo-tools/", "permanent": true },
+    { "source": "/reviews/10web-review/", "destination": "/reviews/", "permanent": true },
+
+    { "source": "/best/ai-seo-tools/", "destination": "/best/best-ai-seo-tools/", "permanent": true },
+
+    { "source": "/categories/seo-tools/", "destination": "/categories/ai-marketing-seo/", "permanent": true },
+
+    { "source": "/mo/", "destination": "/", "permanent": true },
+    { "source": "/month/", "destination": "/", "permanent": true }
   ]
 }
