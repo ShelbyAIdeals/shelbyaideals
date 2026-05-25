@@ -13,6 +13,7 @@ const categoryLinks = [
   { labelKey: 'footer.cat_ai_video', fallback: 'AI Video & Audio', href: '/categories/ai-video-audio' },
   { labelKey: 'footer.cat_ai_marketing', fallback: 'AI Marketing & SEO', href: '/categories/ai-marketing-seo' },
   { labelKey: 'footer.cat_ai_content', fallback: 'AI Content & Productivity', href: '/categories/ai-content-productivity' },
+  { labelKey: 'footer.cat_all', fallback: 'All Categories', href: '/categories' },
 ];
 
 const resourceLinks = [
