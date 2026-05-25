@@ -25,6 +25,9 @@ export const metadata: Metadata = {
       'Suggest an AI tool for us to review. We test every submission with real-world workflows and publish honest, in-depth reviews.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/submit-tool/',
+  },
 };
 
 export default function SubmitToolPage() {

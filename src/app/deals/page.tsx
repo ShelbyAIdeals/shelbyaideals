@@ -25,6 +25,9 @@ export const metadata: Metadata = {
       'Curated AI tool deals, free trials, and exclusive discounts for creators and small teams.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/deals/',
+  },
 };
 
 export default function DealsPage() {

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
       'Browse AI tools by category — video & audio, marketing & SEO, and content & productivity.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
+  alternates: {
+    canonical: 'https://www.shelby-ai.com/categories/',
+  },
 };
 
 const iconMap: Record<string, React.ElementType> = {
