@@ -125,7 +125,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-void-50">How We Make Money</h2>
             </div>
             <p className="text-void-50 leading-relaxed mb-4">
-              We believe in full transparency. ShelbyAIDeals earns revenue through
+              We believe in full transparency. ShelbyAI earns revenue through
               affiliate partnerships. When you click a link to a tool we
               recommend and make a purchase, we may earn a commission &mdash; at
               no extra cost to you.

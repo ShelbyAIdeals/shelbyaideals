@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ShelbyAIDeals',
+    title: 'ShelbyAI',
     description:
       'Honest AI tool reviews for creators, freelancers, and small teams.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],

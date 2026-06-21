@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { X, ArrowRight, Zap, Download } from 'lucide-react';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false);
@@ -55,6 +56,7 @@ export default function ExitIntentPopup() {
         }),
       });
       if (!res.ok) throw new Error('Failed');
+      trackNewsletterSignup('exit_intent_popup');
     } catch {
       setError('Something went wrong. Please try again.');
       setLoading(false);

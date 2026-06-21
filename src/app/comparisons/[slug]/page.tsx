@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import ArticleLayout from '@/components/ArticleLayout';
 import WinnerBox from '@/components/WinnerBox';
 import KeyTakeaway from '@/components/KeyTakeaway';
+import InlineNewsletterCTA from '@/components/InlineNewsletterCTA';
 import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
@@ -250,6 +251,11 @@ export default async function ComparisonPage({ params }: PageProps) {
 
       {/* MDX Body */}
       <MDXContent source={content} />
+
+      {/* Newsletter capture — high-traffic, high-bounce pages need an email hook */}
+      <div className="mt-10">
+        <InlineNewsletterCTA />
+      </div>
 
       {/* FAQ — data-backed Q&A for GEO / AI citations + long-tail coverage */}
       {faqQuestions.length > 0 && (

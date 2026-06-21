@@ -5,11 +5,11 @@ import ExploreMore from '@/components/ExploreMore';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+    'Get in touch with the ShelbyAI team. Questions, feedback, partnership inquiries, and corrections.',
   openGraph: {
     title: 'Contact Us',
     description:
-      'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+      'Get in touch with the ShelbyAI team. Questions, feedback, partnership inquiries, and corrections.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Us',
     description:
-      'Get in touch with the ShelbyAIDeals team. Questions, feedback, partnership inquiries, and corrections.',
+      'Get in touch with the ShelbyAI team. Questions, feedback, partnership inquiries, and corrections.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {

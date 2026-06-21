@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Find the best alternatives to popular AI tools. Side-by-side comparisons with real pricing, features, and honest recommendations from hands-on testing.',
   openGraph: {
-    title: 'AI Tool Alternatives | ShelbyAIDeals',
+    title: 'AI Tool Alternatives | ShelbyAI',
     description:
       'Find the best alternatives to popular AI tools. Side-by-side comparisons with real pricing, features, and honest recommendations.',
     type: 'website',

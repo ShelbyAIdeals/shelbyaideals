@@ -37,7 +37,7 @@ const linkSets: Record<Variant, ExploreLink[]> = {
   legal: [
     { label: 'Browse All Reviews', description: 'See every AI tool we have tested and reviewed.', href: '/reviews' },
     { label: 'How We Review', description: 'Our testing methodology and editorial standards.', href: '/how-we-review' },
-    { label: 'About Us', description: 'Meet the team behind ShelbyAIDeals.', href: '/about' },
+    { label: 'About Us', description: 'Meet the team behind ShelbyAI.', href: '/about' },
     { label: 'FAQ', description: 'Answers to common questions about our site and process.', href: '/faq' },
   ],
 };

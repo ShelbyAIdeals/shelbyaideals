@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Curated AI tool deals, free trials, and exclusive discounts. Save on the best AI writing, video, SEO, and automation tools in 2026.',
   openGraph: {
-    title: 'AI Tool Deals & Free Trials | ShelbyAIDeals',
+    title: 'AI Tool Deals & Free Trials | ShelbyAI',
     description:
       'Curated AI tool deals, free trials, and exclusive discounts for creators and small teams.',
     images: [

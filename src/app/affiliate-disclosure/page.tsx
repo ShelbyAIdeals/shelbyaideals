@@ -4,11 +4,11 @@ import ExploreMore from '@/components/ExploreMore';
 export const metadata: Metadata = {
   title: 'Affiliate Disclosure',
   description:
-    'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+    'Learn how ShelbyAI earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
   openGraph: {
     title: 'Affiliate Disclosure',
     description:
-      'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+      'Learn how ShelbyAI earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Affiliate Disclosure',
     description:
-      'Learn how ShelbyAIDeals earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
+      'Learn how ShelbyAI earns revenue through affiliate partnerships and how it affects (and does not affect) our reviews.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {
@@ -45,7 +45,7 @@ export default function AffiliateDisclosurePage() {
                 How We Earn Revenue
               </h2>
               <p>
-                ShelbyAIDeals participates in affiliate programs with various AI
+                ShelbyAI participates in affiliate programs with various AI
                 tool providers. This means that when you click on certain links on
                 our site and make a purchase, we may earn a commission from the
                 sale &mdash; at absolutely no extra cost to you.
@@ -120,7 +120,7 @@ export default function AffiliateDisclosurePage() {
               <h2 className="text-xl font-bold text-void-100 mb-3">
                 Our Editorial Process
               </h2>
-              <p>Every piece of content on ShelbyAIDeals follows this process:</p>
+              <p>Every piece of content on ShelbyAI follows this process:</p>
               <ol className="mt-3 space-y-2 list-decimal list-inside">
                 <li>
                   <span className="font-semibold text-void-100">Test first.</span>{' '}

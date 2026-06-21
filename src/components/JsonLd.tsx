@@ -46,7 +46,7 @@ const AUTHOR_PERSON = {
   jobTitle: 'Founder & Lead Reviewer',
   knowsAbout: ['AI Tools', 'Video Creation', 'Content Marketing', 'SEO', 'Small Business Technology'],
   sameAs: [
-    'https://x.com/ShelbyAIDeals',
+    'https://x.com/ShelbyAI',
     'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
     'https://www.reddit.com/user/Legitimate_Farmer529/',
     'https://www.pinterest.com/shelbyaideals/',
@@ -56,7 +56,7 @@ const AUTHOR_PERSON = {
 
 const PUBLISHER_ORG = {
   '@type': 'Organization',
-  name: 'ShelbyAIDeals',
+  name: 'ShelbyAI',
   url: 'https://www.shelby-ai.com',
   logo: {
     '@type': 'ImageObject',
@@ -76,7 +76,7 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
     schema = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'ShelbyAIDeals',
+      name: 'ShelbyAI',
       url: 'https://www.shelby-ai.com',
       description: 'Honest AI tool reviews for creators, freelancers, and small teams.',
       potentialAction: {
@@ -89,13 +89,13 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'ShelbyAIDeals',
+      name: 'ShelbyAI',
       url: 'https://www.shelby-ai.com',
       logo: 'https://www.shelby-ai.com/images/og-thumbnail.png',
       description: 'Honest AI tool reviews for creators, freelancers, and small teams. 37+ tools tested hands-on.',
       founder: AUTHOR_PERSON,
       sameAs: [
-        'https://x.com/ShelbyAIDeals',
+        'https://x.com/ShelbyAI',
         'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
         'https://www.reddit.com/user/Legitimate_Farmer529/',
         'https://www.pinterest.com/shelbyaideals/',
@@ -213,7 +213,7 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
       duration: video.duration,
       publisher: {
         '@type': 'Organization',
-        name: 'ShelbyAIDeals',
+        name: 'ShelbyAI',
         url: 'https://www.shelby-ai.com',
         logo: {
           '@type': 'ImageObject',
@@ -246,7 +246,7 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
       url: page.url,
       isPartOf: {
         '@type': 'WebSite',
-        name: 'ShelbyAIDeals',
+        name: 'ShelbyAI',
         url: 'https://www.shelby-ai.com',
       },
     };

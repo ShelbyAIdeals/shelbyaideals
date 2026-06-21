@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Mail, ArrowRight, Loader2, Download, Check } from 'lucide-react';
 import clsx from 'clsx';
 import { useTranslation } from '@/i18n/context';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 interface NewsletterSignupProps {
   variant?: 'inline' | 'section';
@@ -45,6 +46,7 @@ export default function NewsletterSignup({
         }),
       });
       if (!res.ok) throw new Error('Subscription failed');
+      trackNewsletterSignup('newsletter_signup_section');
     } catch {
       setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);

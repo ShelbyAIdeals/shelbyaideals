@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Zap, ArrowRight, Twitter, Linkedin, Check, Send } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 /* ------------------------------------------------------------------ */
 /*  Link data                                                          */
@@ -107,6 +108,7 @@ export default function Footer() {
         }),
       });
       if (!res.ok) throw new Error('Subscription failed');
+      trackNewsletterSignup('footer');
     } catch {
       setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);
@@ -317,7 +319,7 @@ export default function Footer() {
 
           {/* Copyright + legal links */}
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-1 text-xs text-void-500">
-            <span>&copy; {new Date().getFullYear()} ShelbyAIDeals</span>
+            <span>&copy; {new Date().getFullYear()} ShelbyAI</span>
             <span className="hidden sm:inline text-void-700">|</span>
             <Link
               href="/terms-of-service"

@@ -6,13 +6,13 @@ import JsonLd from '@/components/JsonLd';
 import ExploreMore from '@/components/ExploreMore';
 
 export const metadata: Metadata = {
-  title: 'FAQ — ShelbyAIDeals',
+  title: 'FAQ — ShelbyAI',
   description:
-    'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
+    'Frequently asked questions about ShelbyAI — how we review tools, how we make money, and how to get the most from our content.',
   openGraph: {
-    title: 'FAQ — ShelbyAIDeals',
+    title: 'FAQ — ShelbyAI',
     description:
-      'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
+      'Frequently asked questions about ShelbyAI — how we review tools, how we make money, and how to get the most from our content.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ — ShelbyAIDeals',
+    title: 'FAQ — ShelbyAI',
     description:
-      'Frequently asked questions about ShelbyAIDeals — how we review tools, how we make money, and how to get the most from our content.',
+      'Frequently asked questions about ShelbyAI — how we review tools, how we make money, and how to get the most from our content.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {
@@ -40,7 +40,7 @@ const faqs = [
       'Every tool goes through a hands-on testing process. We create real accounts, complete the onboarding, and run actual tasks — writing copy, generating images, building automations, optimizing content. We benchmark results against competitors and document everything with screenshots, scores, and clear verdicts. No scripted demos or cherry-picked examples.',
   },
   {
-    question: 'How does ShelbyAIDeals make money?',
+    question: 'How does ShelbyAI make money?',
     answer:
       'We earn revenue through affiliate partnerships. When you click a link to a tool we recommend and make a purchase, we may earn a commission at no extra cost to you. This keeps our content free. Affiliate relationships never influence our ratings, rankings, or recommendations — we review tools based on merit alone.',
   },
@@ -60,7 +60,7 @@ const faqs = [
       'Yes! Use our Submit a Tool page to suggest any AI tool you would like us to review. We prioritize tools based on reader interest, market relevance, and category coverage. If we review your suggestion, we will notify you if you leave your email.',
   },
   {
-    question: 'Who is ShelbyAIDeals for?',
+    question: 'Who is ShelbyAI for?',
     answer:
       'We write for creators, freelancers, and small teams (1-10 people) who want to use AI tools effectively without spending hours researching every option. If you need practical, workflow-focused recommendations rather than feature-list comparisons, you are in the right place.',
   },
@@ -111,7 +111,7 @@ export default function FAQPage() {
             </h1>
           </div>
           <p className="text-void-400 mb-12 leading-relaxed">
-            Everything you need to know about ShelbyAIDeals, our reviews, and how we work.
+            Everything you need to know about ShelbyAI, our reviews, and how we work.
           </p>
 
           {/* FAQ Items */}

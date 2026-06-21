@@ -42,7 +42,7 @@ const personSchema = JSON.stringify({
   jobTitle: 'Founder & Lead Reviewer',
   worksFor: {
     '@type': 'Organization',
-    name: 'ShelbyAIDeals',
+    name: 'ShelbyAI',
     url: 'https://www.shelby-ai.com',
   },
   knowsAbout: [
@@ -55,7 +55,7 @@ const personSchema = JSON.stringify({
     'SaaS Product Reviews',
   ],
   sameAs: [
-    'https://x.com/ShelbyAIDeals',
+    'https://x.com/ShelbyAI',
     'https://www.linkedin.com/in/frank-shelby-1bb38a3b6/',
     'https://www.reddit.com/user/Legitimate_Farmer529/',
     'https://www.pinterest.com/shelbyaideals/',
@@ -119,12 +119,12 @@ export default function AuthorPage() {
             {/* Social links */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://x.com/ShelbyAIDeals"
+                href="https://x.com/ShelbyAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-void-400 hover:text-signal-400 transition-colors"
               >
-                <Twitter size={16} /> @ShelbyAIDeals
+                <Twitter size={16} /> @ShelbyAI
               </a>
               <a
                 href="https://www.linkedin.com/in/frank-shelby-1bb38a3b6/"

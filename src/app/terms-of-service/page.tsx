@@ -4,11 +4,11 @@ import ExploreMore from '@/components/ExploreMore';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
-    'Terms and conditions for using the ShelbyAIDeals website.',
+    'Terms and conditions for using the ShelbyAI website.',
   openGraph: {
     title: 'Terms of Service',
     description:
-      'Terms and conditions for using the ShelbyAIDeals website.',
+      'Terms and conditions for using the ShelbyAI website.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Terms of Service',
     description:
-      'Terms and conditions for using the ShelbyAIDeals website.',
+      'Terms and conditions for using the ShelbyAI website.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {
@@ -44,7 +44,7 @@ export default function TermsOfServicePage() {
           <div className="space-y-8 text-void-300 leading-relaxed">
             <section>
               <p>
-                Welcome to ShelbyAIDeals. By accessing or using our website at
+                Welcome to ShelbyAI. By accessing or using our website at
                 shelby-ai.com (&ldquo;the Site&rdquo;), you agree to be bound
                 by these Terms of Service. If you do not agree, please do not
                 use the Site.
@@ -85,7 +85,7 @@ export default function TermsOfServicePage() {
               <p>
                 All content on this Site &mdash; including reviews, comparisons,
                 guides, graphics, and code &mdash; is the property of
-                ShelbyAIDeals and is protected by copyright law. You may share
+                ShelbyAI and is protected by copyright law. You may share
                 links to our content, but reproducing or republishing full
                 articles requires our prior written consent.
               </p>
@@ -116,7 +116,7 @@ export default function TermsOfServicePage() {
                 AI tools. However, features, pricing, and availability of
                 third-party tools may change without notice. We recommend
                 verifying current details directly with the tool provider before
-                making a purchase decision. ShelbyAIDeals is not responsible for
+                making a purchase decision. ShelbyAI is not responsible for
                 changes made by third-party services after our reviews are
                 published.
               </p>
@@ -140,7 +140,7 @@ export default function TermsOfServicePage() {
                 Limitation of Liability
               </h2>
               <p>
-                To the fullest extent permitted by law, ShelbyAIDeals shall not
+                To the fullest extent permitted by law, ShelbyAI shall not
                 be liable for any indirect, incidental, special, or
                 consequential damages arising from your use of or inability to
                 use the Site, including but not limited to damages resulting

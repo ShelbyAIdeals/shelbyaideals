@@ -5,11 +5,11 @@ import { Search, TestTube, Scale, Star, ShieldCheck, ArrowRight } from 'lucide-r
 export const metadata: Metadata = {
   title: 'How We Review',
   description:
-    'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
+    'Our editorial process and review methodology at ShelbyAI. Learn how we test, score, and recommend AI tools.',
   openGraph: {
     title: 'How We Review',
     description:
-      'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
+      'Our editorial process and review methodology at ShelbyAI. Learn how we test, score, and recommend AI tools.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How We Review',
     description:
-      'Our editorial process and review methodology at ShelbyAIDeals. Learn how we test, score, and recommend AI tools.',
+      'Our editorial process and review methodology at ShelbyAI. Learn how we test, score, and recommend AI tools.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {

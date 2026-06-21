@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowRight, Check, Clock, Shield, CreditCard } from 'lucide-react';
+import { ArrowRight, Check, Clock, Shield, CreditCard, Star } from 'lucide-react';
 import { getPricingSlugs, getPricingPage, getAllPricingPages } from '@/lib/pricing-data';
 import { hasAlternativesPage } from '@/lib/alternatives-data';
+import { getAffiliateLink } from '@/lib/affiliate';
+import { getAllReviews } from '@/lib/content';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -46,6 +48,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+/**
+ * Commissionable cross-sell: pricing pages for non-affiliate tools (ChatGPT, Gemini,
+ * Midjourney, etc.) pull big traffic but earn nothing. Surface a category-matched tool
+ * we *actually* earn from and recommend, so high-intent traffic converts to revenue.
+ * All picks are honest top-rated tools — not pay-to-rank.
+ */
+interface CrossSellPick {
+  toolKey: string; // affiliate.ts key
+  name: string;
+  reviewSlug: string;
+  reason: string;
+}
+const CROSS_SELL_BY_CATEGORY: Record<string, CrossSellPick> = {
+  video: { toolKey: 'pictory', name: 'Pictory', reviewSlug: 'pictory-review', reason: 'turns scripts and blog posts into social-ready video in minutes' },
+  voice: { toolKey: 'elevenlabs', name: 'ElevenLabs', reviewSlug: 'elevenlabs-review', reason: 'the most natural AI voices we tested, with a usable free tier' },
+  seo: { toolKey: 'mangools', name: 'Mangools', reviewSlug: 'mangools-review', reason: 'affordable keyword research and rank tracking built for small sites' },
+  writing: { toolKey: 'frase', name: 'Frase', reviewSlug: 'frase-review', reason: 'AI writing engineered to actually rank in search, not just sound good' },
+};
+
+function classifyTool(toolName: string): keyof typeof CROSS_SELL_BY_CATEGORY | null {
+  const t = toolName.toLowerCase();
+  if (/(runway|pictory|synthesia|descript|fliki|invideo|lumen|heygen|opus|capcut|veo)/.test(t)) return 'video';
+  if (/(elevenlabs|murf|play\.?ht|mubert|speechify|voice)/.test(t)) return 'voice';
+  if (/(semrush|surfer|mangools|frase|ahrefs|clearscope|seo)/.test(t)) return 'seo';
+  if (/(jasper|copy\.?ai|writesonic|rytr|grammarly|chatgpt|gemini|claude|grok|perplexity|notion)/.test(t)) return 'writing';
+  return null;
+}
+
 export default async function PricingDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const page = getPricingPage(slug);
@@ -53,6 +83,23 @@ export default async function PricingDetailPage({ params }: PageProps) {
   if (!page) {
     notFound();
   }
+
+  // Commissionable cross-sell pick (skip if the page's own tool is the pick).
+  const ratingBySlug = new Map(
+    getAllReviews()
+      .filter((r) => typeof r.rating === 'number' && r.rating > 0)
+      .map((r) => [r.slug, r.rating]),
+  );
+  const cat = classifyTool(page.tool);
+  const candidate = cat ? CROSS_SELL_BY_CATEGORY[cat] : null;
+  const crossSell =
+    candidate && candidate.reviewSlug !== page.reviewSlug
+      ? {
+          ...candidate,
+          url: getAffiliateLink(candidate.toolKey),
+          rating: ratingBySlug.get(candidate.reviewSlug),
+        }
+      : null;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -238,6 +285,39 @@ export default async function PricingDetailPage({ params }: PageProps) {
           ))}
         </StaggerContainer>
 
+        {/* Commissionable cross-sell — convert high-intent traffic toward tools we earn from */}
+        {crossSell && crossSell.url !== '#' && (
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto mb-12 rounded-xl border border-signal-500/25 bg-void-900 p-6" style={{ boxShadow: '0 0 24px rgba(10,209,200,0.05)' }}>
+              <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Our tested top pick</span>
+              <div className="mt-2 flex flex-wrap items-center gap-3">
+                <h2 className="text-xl font-bold text-void-50 font-heading">{crossSell.name}</h2>
+                {crossSell.rating && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
+                    <Star size={11} className="fill-amber-300" /> {crossSell.rating.toFixed(1)}/5
+                  </span>
+                )}
+              </div>
+              <p className="mt-2 text-sm text-void-300 leading-relaxed">
+                Comparing {page.tool}? If you want a tool we genuinely rate, {crossSell.name} {crossSell.reason}.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a
+                  href={crossSell.url}
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                  className="inline-flex items-center gap-2 rounded-lg bg-signal-500 px-5 py-2.5 text-sm font-semibold text-void-950 no-underline hover:bg-signal-400 transition-colors"
+                >
+                  Try {crossSell.name} <ArrowRight size={14} />
+                </a>
+                <Link href={`/reviews/${crossSell.reviewSlug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline transition-colors">
+                  Read our review <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Per-Unit Breakdown & Competitor Comparison */}
         {(page.perUnitBreakdown || page.competitorComparison) && (
           <ScrollReveal>
@@ -296,6 +376,9 @@ export default async function PricingDetailPage({ params }: PageProps) {
                     See Alternatives
                   </Link>
                 )}
+                <Link href="/finder" className="btn-outline text-sm no-underline">
+                  Find Your Best Match
+                </Link>
               </div>
             </div>
           </div>

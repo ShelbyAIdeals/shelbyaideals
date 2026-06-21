@@ -4,11 +4,11 @@ import ExploreMore from '@/components/ExploreMore';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
+    'Learn how ShelbyAI collects, uses, and protects your personal information.',
   openGraph: {
     title: 'Privacy Policy',
     description:
-      'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
+      'Learn how ShelbyAI collects, uses, and protects your personal information.',
     images: [
       {
         url: 'https://www.shelby-ai.com/images/og-thumbnail.png',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Privacy Policy',
     description:
-      'Learn how ShelbyAIDeals collects, uses, and protects your personal information.',
+      'Learn how ShelbyAI collects, uses, and protects your personal information.',
     images: ['https://www.shelby-ai.com/images/og-thumbnail.png'],
   },
   alternates: {
@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
             {/* Introduction */}
             <section>
               <p>
-                ShelbyAIDeals (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+                ShelbyAI (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
                 &ldquo;our&rdquo;) is committed to protecting your privacy. This
                 Privacy Policy explains how we collect, use, disclose, and
                 safeguard your information when you visit our website.

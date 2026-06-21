@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Mail, ArrowRight, Loader2 } from 'lucide-react';
 import clsx from 'clsx';
 import { useTranslation } from '@/i18n/context';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 interface InlineNewsletterCTAProps {
   className?: string;
@@ -35,6 +36,7 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
         }),
       });
       if (!res.ok) throw new Error('Subscription failed');
+      trackNewsletterSignup('inline_article_cta');
     } catch {
       setError(t('newsletter.error', 'Something went wrong. Please try again.'));
       setLoading(false);

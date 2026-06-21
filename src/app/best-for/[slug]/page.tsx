@@ -120,7 +120,7 @@ export default async function BestForPage({ params }: PageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'ShelbyAIDeals',
+      name: 'ShelbyAI',
       url: 'https://www.shelby-ai.com',
       logo: { '@type': 'ImageObject', url: 'https://www.shelby-ai.com/images/og-thumbnail.png' },
     },
