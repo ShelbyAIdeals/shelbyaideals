@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Star, DollarSign, Zap } from 'lucide-react';
 import { getUseCaseSlugs, getUseCasePage, getAllUseCasePages } from '@/lib/use-case-data';
+import { getAllReviews } from '@/lib/content';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
@@ -51,6 +52,16 @@ export default async function BestForPage({ params }: PageProps) {
     notFound();
   }
 
+  // Real ShelbyAI review ratings keyed by reviewSlug — surfaced as numeric scores
+  // (AI engines strongly prefer numeric ratings when answering "what's best").
+  const ratingBySlug = new Map(
+    getAllReviews()
+      .filter((r) => typeof r.rating === 'number' && r.rating > 0)
+      .map((r) => [r.slug, r.rating]),
+  );
+  const ratingFor = (reviewSlug?: string): number | undefined =>
+    reviewSlug ? ratingBySlug.get(reviewSlug) : undefined;
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -80,6 +91,16 @@ export default async function BestForPage({ params }: PageProps) {
           price: tool.pricing.replace(/[^0-9.]/g, '') || '0',
           priceCurrency: 'USD',
         },
+        ...(ratingFor(tool.reviewSlug)
+          ? {
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: ratingFor(tool.reviewSlug),
+                bestRating: 5,
+                ratingCount: 1,
+              },
+            }
+          : {}),
         url: tool.reviewSlug
           ? `https://www.shelby-ai.com/reviews/${tool.reviewSlug}`
           : tool.affiliateUrl,
@@ -214,6 +235,12 @@ export default async function BestForPage({ params }: PageProps) {
                         <Zap size={10} />
                         {tool.standoutFeature}
                       </span>
+                      {ratingFor(tool.reviewSlug) && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
+                          <Star size={10} className="fill-amber-300" />
+                          {ratingFor(tool.reviewSlug)!.toFixed(1)}/5
+                        </span>
+                      )}
                     </div>
 
                     <p className="text-sm text-void-300 leading-relaxed mb-4">

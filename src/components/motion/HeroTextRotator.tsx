@@ -13,6 +13,7 @@ export default function HeroTextRotator({ className }: HeroTextRotatorProps) {
   const { t } = useTranslation();
 
   const phrases = [
+    t('hero.rotator_all', 'for Video, Audio, Marketing & SEO'),
     t('hero.rotator_video', 'for AI Video'),
     t('hero.rotator_audio', 'for AI Audio'),
     t('hero.rotator_seo', 'for SEO & Marketing'),

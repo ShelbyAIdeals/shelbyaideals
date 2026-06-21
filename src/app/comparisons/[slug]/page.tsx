@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ArticleLayout from '@/components/ArticleLayout';
 import WinnerBox from '@/components/WinnerBox';
+import KeyTakeaway from '@/components/KeyTakeaway';
 import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
@@ -139,6 +140,12 @@ export default async function ComparisonPage({ params }: PageProps) {
       backLink={{ href: '/comparisons', label: 'All Comparisons' }}
       sidebar={sidebar}
     >
+      {/* Key Takeaways — answer-first TL;DR for skim readers + AI extraction */}
+      <KeyTakeaway
+        summary={meta.description || meta.excerpt}
+        points={meta.winners.map((w) => `Best for ${w.scenario.toLowerCase()}: ${w.winner} — ${w.reason}`)}
+      />
+
       {/* Winner Boxes */}
       {meta.winners.length > 0 && (
         <div className="mb-8">

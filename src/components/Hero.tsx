@@ -102,7 +102,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               className={`font-heading font-bold tracking-[-0.02em] text-void-50 leading-[1.08] ${isLoggedIn ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}
             >
               {isLoggedIn && <span>{firstName}, </span>}
-              {t('hero.headline_prefix', 'Find the Right AI Tool')}{' '}
+              {t('hero.headline_prefix', 'Find the Best AI Tools')}{' '}
               <br className="hidden sm:block" />
               <HeroTextRotator />
             </motion.h1>

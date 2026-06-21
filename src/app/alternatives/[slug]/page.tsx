@@ -7,6 +7,8 @@ import {
   getAllAlternativesPages,
 } from '@/lib/alternatives-data';
 import type { AlternativeTool } from '@/lib/alternatives-data';
+import { getAllReviews } from '@/lib/content';
+import { Star } from 'lucide-react';
 import ComparisonTable from '@/components/ComparisonTable';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
@@ -50,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number }) {
+function AlternativeCard({ tool, index, rating }: { tool: AlternativeTool; index: number; rating?: number }) {
   return (
     <div className="card group relative flex flex-col p-6 hover:border-signal-500/40 border border-void-700/50 transition-all">
       {/* Rank number */}
@@ -62,9 +64,17 @@ function AlternativeCard({ tool, index }: { tool: AlternativeTool; index: number
           <h2 className="text-lg font-bold text-void-50 mb-1 font-heading">
             {tool.name}
           </h2>
-          <span className="inline-flex items-center rounded-full bg-signal-500/10 border border-signal-500/20 px-3 py-0.5 text-xs font-medium text-signal-400">
-            Best for: {tool.bestFor}
-          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-signal-500/10 border border-signal-500/20 px-3 py-0.5 text-xs font-medium text-signal-400">
+              Best for: {tool.bestFor}
+            </span>
+            {rating && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
+                <Star size={10} className="fill-amber-300" />
+                {rating.toFixed(1)}/5
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
@@ -150,6 +160,15 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // Real ShelbyAI review ratings keyed by reviewSlug — numeric scores for AI citation.
+  const ratingBySlug = new Map(
+    getAllReviews()
+      .filter((r) => typeof r.rating === 'number' && r.rating > 0)
+      .map((r) => [r.slug, r.rating]),
+  );
+  const ratingFor = (reviewSlug?: string): number | undefined =>
+    reviewSlug ? ratingBySlug.get(reviewSlug) : undefined;
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -207,6 +226,16 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
           price: alt.pricing.replace(/[^0-9.]/g, '') || '0',
           priceCurrency: 'USD',
         },
+        ...(ratingFor(alt.reviewSlug)
+          ? {
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: ratingFor(alt.reviewSlug),
+                bestRating: 5,
+                ratingCount: 1,
+              },
+            }
+          : {}),
         url: alt.reviewSlug
           ? `https://www.shelby-ai.com/reviews/${alt.reviewSlug}`
           : alt.url,
@@ -360,7 +389,7 @@ export default async function AlternativesDetailPage({ params }: PageProps) {
         <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {page.alternatives.map((alt, index) => (
             <StaggerItem key={alt.slug}>
-              <AlternativeCard tool={alt} index={index} />
+              <AlternativeCard tool={alt} index={index} rating={ratingFor(alt.reviewSlug)} />
             </StaggerItem>
           ))}
         </StaggerContainer>

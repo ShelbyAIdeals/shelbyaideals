@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import ArticleLayout from '@/components/ArticleLayout';
+import KeyTakeaway from '@/components/KeyTakeaway';
 import MDXContent from '@/components/MDXContent';
 import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
@@ -105,6 +106,34 @@ export default async function GuidePage({ params }: PageProps) {
   const headings = extractHeadings(content);
   const howToSteps = extractHowToSteps(content);
   const allArticles = getAllArticles();
+  const tools = meta.recommendedTools ?? [];
+
+  // Key takeaways: hand-authored if present, else derived from recommended tools.
+  const takeawayPoints =
+    meta.keyTakeaways && meta.keyTakeaways.length > 0
+      ? meta.keyTakeaways
+      : tools.slice(0, 4).map((t) => `${t.name} (${t.pricing}) — ${t.description}`);
+
+  // FAQ: hand-authored if present, else data-backed Q&A from real tool frontmatter.
+  // Derived answers reuse existing descriptions/pricing — no fabricated claims.
+  const derivedFaq = (() => {
+    if (tools.length === 0) return [];
+    const items: { question: string; answer: string }[] = [];
+    if (tools.length > 0) {
+      items.push({
+        question: `Which AI tools does this guide recommend?`,
+        answer: `This guide covers ${tools.map((t) => t.name).join(', ')}.`,
+      });
+    }
+    tools.slice(0, 4).forEach((t) => {
+      items.push({
+        question: `Is ${t.name} worth it?`,
+        answer: `${t.description} Pricing: ${t.pricing}.`,
+      });
+    });
+    return items;
+  })();
+  const faqItems = (meta.faq && meta.faq.length > 0 ? meta.faq : derivedFaq).filter((q) => q.answer);
 
   const breadcrumbs = [
     { name: 'Home', url: 'https://www.shelby-ai.com/' },
@@ -124,6 +153,9 @@ export default async function GuidePage({ params }: PageProps) {
       backLink={{ href: '/guides', label: 'All Guides' }}
       sidebar={sidebar}
     >
+      {/* Key Takeaways — answer-first TL;DR for skim readers + AI extraction */}
+      <KeyTakeaway summary={meta.description || meta.excerpt} points={takeawayPoints} />
+
       {/* Recommended Tools */}
       {meta.recommendedTools.length > 0 && (() => {
         const reviews = getAllReviews();
@@ -193,8 +225,25 @@ export default async function GuidePage({ params }: PageProps) {
         />
       )}
 
+      {faqItems.length > 0 && <JsonLd type="faq" data={{ questions: faqItems }} />}
+
       {/* MDX Body */}
       <MDXContent source={content} />
+
+      {/* FAQ — data-backed Q&A for GEO / AI citations + long-tail coverage */}
+      {faqItems.length > 0 && (
+        <section className="mt-12 pt-8 border-t border-void-700/50">
+          <h2 className="text-2xl font-heading font-bold text-void-50 mb-5">Frequently Asked Questions</h2>
+          <div className="space-y-5">
+            {faqItems.map((q) => (
+              <div key={q.question}>
+                <h3 className="text-base font-heading font-semibold text-void-100 mb-1.5">{q.question}</h3>
+                <p className="text-sm text-void-300 leading-relaxed">{q.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Related Articles */}
       <RelatedArticles current={meta} articles={allArticles} />

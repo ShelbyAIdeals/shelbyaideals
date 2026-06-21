@@ -73,6 +73,15 @@ export interface BestOfMeta extends ArticleMeta {
 export interface GuideMeta extends ArticleMeta {
   type: 'guide';
   recommendedTools: RecommendedTool[];
+  /** Optional hand-authored FAQ; falls back to data-derived Q&A when absent. */
+  faq?: FaqItem[];
+  /** Optional explicit key takeaways; falls back to excerpt + recommended tools. */
+  keyTakeaways?: string[];
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export interface PricingTier {
