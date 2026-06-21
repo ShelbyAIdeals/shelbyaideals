@@ -77,6 +77,8 @@ const llms = `# ShelbyAI — Honest AI Tool Reviews
 - Pricing Guides: ${SITE}/pricing/
 - Deals & Free Trials: ${SITE}/deals/
 - AI Tool Finder (interactive recommender): ${SITE}/finder/
+- Compare AI Tools side by side (interactive): ${SITE}/compare/
+- AI Tool Stack Cost Calculator (interactive): ${SITE}/calculator/
 - How We Review: ${SITE}/how-we-review/
 - About / Author: ${SITE}/author/frank-shelby/
 

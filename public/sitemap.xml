@@ -32,19 +32,19 @@
   </url>
   <url>
     <loc>https://www.shelby-ai.com/alternatives/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/about/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/how-we-review/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -56,42 +56,54 @@
   </url>
   <url>
     <loc>https://www.shelby-ai.com/faq/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/contact/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/affiliate-disclosure/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/privacy-policy/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/terms-of-service/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/deals/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.shelby-ai.com/finder/</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shelby-ai.com/compare/</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.shelby-ai.com/calculator/</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -104,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.shelby-ai.com/author/frank-shelby/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
