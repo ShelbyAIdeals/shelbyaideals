@@ -28,6 +28,7 @@
 - Guides: https://www.shelby-ai.com/guides/
 - Pricing Guides: https://www.shelby-ai.com/pricing/
 - Deals & Free Trials: https://www.shelby-ai.com/deals/
+- AI Tool Finder (interactive recommender): https://www.shelby-ai.com/finder/
 - How We Review: https://www.shelby-ai.com/how-we-review/
 - About / Author: https://www.shelby-ai.com/author/frank-shelby/
 

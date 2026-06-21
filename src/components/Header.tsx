@@ -14,6 +14,7 @@ const navLinks = [
   { label: 'Tools', href: '/reviews' },
   { label: 'Comparisons', href: '/comparisons' },
   { label: 'Guides', href: '/guides' },
+  { label: 'Tool Finder', href: '/finder' },
   { label: 'Newsletter', href: '/newsletter' },
 ];
 
