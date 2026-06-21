@@ -99,11 +99,11 @@ function buildSitemap(): string {
     entries.push({ url: `/pricing/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
   }
 
-  // Best-for use case pages
-  const useCaseSlugs = [
-    'content-writers', 'freelancers', 'small-business', 'marketing-teams',
-    'video-creators', 'seo', 'solopreneurs', 'startups',
-  ];
+  // Best-for use case pages — read page-level slugs dynamically from use-case-data.ts
+  // (4-space indent = page slug; tool slugs are deeper-indented and excluded).
+  const useCaseDataPath = path.join(process.cwd(), 'src/lib/use-case-data.ts');
+  const useCaseSource = fs.readFileSync(useCaseDataPath, 'utf-8');
+  const useCaseSlugs = Array.from(useCaseSource.matchAll(/^ {4}slug:\s*'([^']+)'/gm)).map((m) => m[1]);
   entries.push({ url: '/best-for', lastmod: today, changefreq: 'weekly', priority: '0.8' });
   for (const slug of useCaseSlugs) {
     entries.push({ url: `/best-for/${slug}`, lastmod: today, changefreq: 'monthly', priority: '0.7' });
