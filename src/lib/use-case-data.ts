@@ -565,6 +565,170 @@ export const useCaseData: UseCasePage[] = [
       },
     ],
   },
+
+  // ── Best AI Tools for YouTubers ────────────────────────
+  {
+    slug: 'youtubers',
+    useCase: 'YouTubers',
+    title: 'Best AI Tools for YouTubers in 2026',
+    description:
+      'We tested the AI tools that actually save YouTubers time — from turning scripts into video to studio-quality voiceovers and fast editing. Here are the ones worth paying for.',
+    intro:
+      'Running a YouTube channel is a content treadmill: scripting, recording, editing, repurposing. The right AI tools cut hours off every video without making your content feel generic. These are the tools we tested hands-on against a real upload schedule.',
+    selectionCriteria:
+      'We judged each tool on time saved per video, output quality at 1080p+, how natural AI voices sound, and whether the free or entry tier is genuinely usable for a growing channel rather than a teaser.',
+    methodologySummary:
+      'We used each tool to produce or edit real short- and long-form videos, measuring rendering time, editing speed, and how much manual cleanup the output needed before publishing.',
+    tools: [
+      {
+        name: 'Descript', slug: 'descript', description: 'Edit video by editing text, remove filler words automatically, and clean up audio in one place.',
+        pricing: 'Free plan, Hobbyist from $19/mo', standoutFeature: 'Text-based video editing', reviewSlug: 'descript-review',
+        affiliateUrl: 'https://www.descript.com',
+        editorialNote: 'Descript is the fastest path from raw footage to a clean cut for talking-head and tutorial creators. Filler-word removal and Studio Sound alone justify it if you publish weekly.',
+      },
+      {
+        name: 'Pictory', slug: 'pictory', description: 'Turn scripts, blog posts, or long videos into short, captioned clips for YouTube Shorts.',
+        pricing: 'From $19/mo', standoutFeature: 'Long-form to Shorts in minutes', reviewSlug: 'pictory-review',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
+        editorialNote: 'Pictory is the repurposing engine: feed it a long upload and it auto-clips the highlights with captions for Shorts. Best value if Shorts are part of your growth plan.',
+      },
+      {
+        name: 'ElevenLabs', slug: 'elevenlabs', description: 'Studio-grade AI voiceovers and narration in dozens of voices and languages.',
+        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Most natural AI voiceover', reviewSlug: 'elevenlabs-review',
+        affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
+        editorialNote: 'For faceless channels or multi-language dubs, ElevenLabs is the most convincing voice we tested. The free tier is enough to trial real videos before paying.',
+      },
+      {
+        name: 'Synthesia', slug: 'synthesia', description: 'Create presenter-style videos from a script using AI avatars — no camera needed.',
+        pricing: 'From $18/mo', standoutFeature: 'AI avatar presenter videos', reviewSlug: 'synthesia-review',
+        affiliateUrl: 'https://www.synthesia.io/?via=shelbyai',
+        editorialNote: 'If you want consistent on-screen presence without filming, Synthesia avatars are the most polished option. Strong for educational and explainer channels.',
+      },
+    ],
+  },
+
+  // ── Best AI Tools for Podcasters ───────────────────────
+  {
+    slug: 'podcasters',
+    useCase: 'Podcasters',
+    title: 'Best AI Tools for Podcasters in 2026',
+    description:
+      'From recording cleanup to transcripts, show notes, and audiograms — the AI tools we tested that make podcasting faster without a sound engineer.',
+    intro:
+      'Podcasting is more than hitting record: editing, transcripts, show notes, and clips eat the real time. These AI tools handle the grunt work so you can publish consistently, and we tested each on real episodes.',
+    selectionCriteria:
+      'We weighed audio cleanup quality, transcription accuracy, how usable the auto-generated show notes and clips were, and value for a solo or small-team podcast budget.',
+    methodologySummary:
+      'We ran real recorded episodes through each tool, scoring transcription accuracy, editing time saved, and how much the AI-generated assets (notes, clips) needed fixing before use.',
+    tools: [
+      {
+        name: 'Descript', slug: 'descript', description: 'Record, edit, and clean podcast audio by editing the transcript, with one-click Studio Sound.',
+        pricing: 'Free plan, from $19/mo', standoutFeature: 'Edit audio like a doc', reviewSlug: 'descript-review',
+        affiliateUrl: 'https://www.descript.com',
+        editorialNote: 'Descript is the all-in-one podcast workstation — transcribe, cut, and enhance in one place. The single biggest time-saver for solo podcasters we tested.',
+      },
+      {
+        name: 'Otter.ai', slug: 'otter-ai', description: 'Accurate transcripts and searchable notes from your recordings and live conversations.',
+        pricing: 'Free plan, Pro from $8.33/mo', standoutFeature: 'Fast, accurate transcripts', reviewSlug: 'otter-ai-review',
+        affiliateUrl: 'https://otter.ai',
+        editorialNote: 'When you just need clean transcripts and searchable notes for show pages, Otter is cheaper and quicker than full editors.',
+      },
+      {
+        name: 'ElevenLabs', slug: 'elevenlabs', description: 'AI voices for intros, ads, and dubbing episodes into other languages.',
+        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Natural AI narration & dubbing', reviewSlug: 'elevenlabs-review',
+        affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
+        editorialNote: 'Great for branded intros/outros and reaching new audiences with dubbed episodes — the most natural voices we tested.',
+      },
+      {
+        name: 'Fliki', slug: 'fliki', description: 'Turn episodes or scripts into captioned audiograms and video clips for social.',
+        pricing: 'Free plan, paid from $28/mo', standoutFeature: 'Audio-to-video clips', reviewSlug: 'fliki-review',
+        affiliateUrl: 'https://fliki.ai',
+        editorialNote: 'Fliki is the simplest way to spin episodes into shareable audiograms and clips to promote the show on social.',
+      },
+    ],
+  },
+
+  // ── Best AI Tools for Ecommerce Sellers ────────────────
+  {
+    slug: 'ecommerce-sellers',
+    useCase: 'Ecommerce Sellers',
+    title: 'Best AI Tools for Ecommerce Sellers in 2026',
+    description:
+      'Product descriptions, ad copy, and product videos at scale — the AI tools we tested that help online sellers create more and sell more without a big team.',
+    intro:
+      'Ecommerce lives or dies on volume: dozens of product descriptions, ad variations, and short videos. These AI tools let small sellers produce that volume without hiring, and we tested each on real product catalogs.',
+    selectionCriteria:
+      'We assessed output quality for product copy and video, how well each tool scaled to many SKUs, ease of staying on-brand, and value for a lean ecommerce budget.',
+    methodologySummary:
+      'We generated product descriptions, ad copy, and short product videos for real listings, measuring quality, editing needed, and time saved versus doing it manually.',
+    tools: [
+      {
+        name: 'Pictory', slug: 'pictory', description: 'Turn product info and scripts into short product and ad videos with captions.',
+        pricing: 'From $19/mo', standoutFeature: 'Fast product & ad videos', reviewSlug: 'pictory-review',
+        affiliateUrl: 'https://pictory.ai?ref=fran26',
+        editorialNote: 'Pictory is the quickest way to get scroll-stopping product clips for ads and social without a video team — strong ROI for sellers running paid social.',
+      },
+      {
+        name: 'Copy.ai', slug: 'copy-ai', description: 'Generate product descriptions, ad copy, and email campaigns at scale.',
+        pricing: 'Free plan, Pro from $49/mo', standoutFeature: 'Bulk product copy & automations', reviewSlug: 'copy-ai-review',
+        affiliateUrl: 'https://www.copy.ai',
+        editorialNote: 'Copy.ai shines for catalogs — its workflows can batch out descriptions and ad variations across many SKUs in one go.',
+      },
+      {
+        name: 'Jasper AI', slug: 'jasper-ai', description: 'Brand-voice copy for product pages, ads, and campaigns with team controls.',
+        pricing: 'From $49/mo', standoutFeature: 'Consistent brand voice at scale', reviewSlug: 'jasper-ai-review',
+        affiliateUrl: 'https://www.jasper.ai',
+        editorialNote: 'Worth it once brand consistency across many listings and channels matters more than raw price — Jasper keeps tone uniform across a big catalog.',
+      },
+      {
+        name: 'Synthesia', slug: 'synthesia', description: 'AI avatar videos for product explainers and how-to content without filming.',
+        pricing: 'From $18/mo', standoutFeature: 'Explainer videos without a camera', reviewSlug: 'synthesia-review',
+        affiliateUrl: 'https://www.synthesia.io/?via=shelbyai',
+        editorialNote: 'Useful for product explainers and onboarding videos at scale — consistent presenter quality without re-filming for every SKU.',
+      },
+    ],
+  },
+
+  // ── Best AI Tools for Course Creators ──────────────────
+  {
+    slug: 'course-creators',
+    useCase: 'Course Creators',
+    title: 'Best AI Tools for Course Creators in 2026',
+    description:
+      'Lesson videos, voiceovers, transcripts, and SEO-ready content — the AI tools we tested that help course creators build and market courses faster.',
+    intro:
+      'Building an online course means producing a lot of polished video and supporting content. These AI tools help solo creators ship professional lessons and market them, and we tested each on real course material.',
+    selectionCriteria:
+      'We looked at lesson-video quality, voiceover naturalness, how well transcripts and notes came out, and whether the marketing content actually helps a course rank and convert.',
+    methodologySummary:
+      'We produced sample lessons, voiceovers, transcripts, and landing-page content, scoring quality, polish, and the editing required before a paying student would see it.',
+    tools: [
+      {
+        name: 'Synthesia', slug: 'synthesia', description: 'Turn lesson scripts into presenter videos with AI avatars in 140+ languages.',
+        pricing: 'From $18/mo', standoutFeature: 'Scripted lesson videos, no camera', reviewSlug: 'synthesia-review',
+        affiliateUrl: 'https://www.synthesia.io/?via=shelbyai',
+        editorialNote: 'Synthesia is the standout for course lessons: update a slide or script and re-render without re-filming, and localize into many languages instantly.',
+      },
+      {
+        name: 'ElevenLabs', slug: 'elevenlabs', description: 'Natural AI voiceovers and narration for lessons and slide decks.',
+        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Most natural AI narration', reviewSlug: 'elevenlabs-review',
+        affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
+        editorialNote: 'For voiceover-driven courses, ElevenLabs sounds the most human and makes updates painless — re-generate a line instead of re-recording.',
+      },
+      {
+        name: 'Descript', slug: 'descript', description: 'Edit lesson recordings by text and clean up audio without an editor.',
+        pricing: 'Free plan, from $19/mo', standoutFeature: 'Edit lessons like a document', reviewSlug: 'descript-review',
+        affiliateUrl: 'https://www.descript.com',
+        editorialNote: 'Best for creators recording their own lessons — fast cuts, filler removal, and clean audio without learning a full NLE.',
+      },
+      {
+        name: 'Frase', slug: 'frase', description: 'Research and write SEO content that helps your course pages and blog rank.',
+        pricing: 'From $15/mo', standoutFeature: 'SEO content that ranks', reviewSlug: 'frase-review',
+        affiliateUrl: 'https://www.frase.io/?via=shelby-ai',
+        editorialNote: 'The marketing piece: Frase helps you build search-optimized blog and landing content that pulls free traffic to your course over time.',
+      },
+    ],
+  },
 ];
 
 /** Resolve affiliate URLs in tools through centralized affiliate.ts */

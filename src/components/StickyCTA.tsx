@@ -16,9 +16,10 @@ export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rati
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 40% of the page
+      // Show after scrolling 30% — GA shows ~90% bounce on key pages, so surface the
+      // affiliate CTA earlier to capture intent before visitors leave.
       const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      setVisible(scrollPercent > 0.4);
+      setVisible(scrollPercent > 0.3);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
