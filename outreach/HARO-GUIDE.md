@@ -11,7 +11,7 @@ Goal: DR70+ news backlinks by answering journalist requests as "Frank Shelby, fo
 ## Pitch rules (what makes answers win)
 - Answer the EXACT question in the first sentence. No warm-up.
 - One unique number they can't get elsewhere — that's why we built the Pricing Index. Examples ready to use:
-  - "Median entry price of a paid AI tool is $16/month across the 31 most popular tools (ShelbyAI AI Tool Pricing Index, 2026)."
+  - "Median entry price of a paid AI tool is $16.99/month across the 31 most popular tools (ShelbyAI AI Tool Pricing Index, 2026)."
   - "About 2 in 3 popular AI tools now offer a free plan."
   - "Entry prices range from $5/mo (ElevenLabs) to $139/mo (Semrush)."
 - 2–4 short paragraphs max. Credentials line at the end, not the start.
