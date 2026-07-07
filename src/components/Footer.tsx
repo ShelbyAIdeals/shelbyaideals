@@ -26,6 +26,8 @@ const resourceLinks = [
   { labelKey: 'footer.res_alternatives', fallback: 'Alternatives', href: '/alternatives' },
   { labelKey: 'footer.res_pricing', fallback: 'Pricing Guides', href: '/pricing' },
   { labelKey: 'footer.res_best_for', fallback: 'Best For You', href: '/best-for' },
+  { labelKey: 'footer.res_finder', fallback: 'Tool Finder', href: '/finder' },
+  { labelKey: 'footer.res_calculator', fallback: 'AI Cost Calculator', href: '/calculator' },
 ];
 
 const companyLinks = [

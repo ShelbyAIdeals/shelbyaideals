@@ -7,6 +7,7 @@ import MistEffect from '@/components/MistEffect';
 import PageScaler from '@/components/PageScaler';
 import JsonLd from '@/components/JsonLd';
 import Providers from '@/components/Providers';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -144,6 +145,7 @@ export default function RootLayout({
             <Header />
             <PageScaler>{children}</PageScaler>
             <Footer />
+            <ExitIntentPopup />
           </div>
         </Providers>
       </body>

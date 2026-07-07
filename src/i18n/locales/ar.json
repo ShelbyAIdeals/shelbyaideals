@@ -7,7 +7,6 @@
   "nav.about": "من نحن",
   "nav.search": "بحث",
   "nav.search_placeholder": "ابحث عن أدوات الذكاء الاصطناعي...",
-
   "auth.login": "تسجيل الدخول",
   "auth.join_free": "انضم مجاناً",
   "auth.sign_up": "إنشاء حساب",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
   "auth.error.invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
   "auth.error.generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-
   "user.profile": "الملف الشخصي",
   "user.my_reviews": "مراجعاتي",
   "user.settings": "الإعدادات",
-
   "theme.dark_mode": "الوضع الداكن",
   "theme.light_mode": "الوضع الفاتح",
   "theme.hide_mist": "إخفاء الضباب",
   "theme.show_mist": "إظهار الضباب",
-
   "language.select": "اللغة",
   "language.current": "العربية",
-
   "newsletter.title": "ابقَ في طليعة ثورة الذكاء الاصطناعي",
   "newsletter.subtitle": "احصل على أفضل أدوات الذكاء الاصطناعي، والعروض الحصرية، ونصائح الإنتاجية — مباشرة إلى بريدك الإلكتروني كل أسبوع.",
   "newsletter.email_placeholder": "أدخل بريدك الإلكتروني",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "نصائح إنتاجية من مستخدمين حقيقيين",
   "newsletter.what_you_get": "ماذا ستحصل عليه",
   "newsletter.archive": "تصفح أرشيف النشرة البريدية",
-
   "review.rating": "التقييم",
   "review.reviews": "مراجعات",
   "review.write_review": "اكتب مراجعة",
@@ -87,11 +81,9 @@
   "review.related": "مقالات ذات صلة",
   "review.watch_youtube": "شاهد على YouTube",
   "review.social_links": "تابعنا",
-
   "card.read_review": "اقرأ المراجعة",
   "card.free": "مجاني",
   "card.from": "يبدأ من",
-
   "hero.eyebrow": "مراجعات صادقة لأدوات الذكاء الاصطناعي",
   "hero.headline_prefix": "اكتشف أفضل",
   "hero.headline_ai_tools": "أدوات الذكاء الاصطناعي",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "لصناع المحتوى",
   "hero.rotator_solopreneurs": "لرواد الأعمال المنفردين",
   "newsletter.join_creators": "انضم إلى 500+ مبدع",
-
   "footer.categories": "الفئات",
   "footer.resources": "الموارد",
   "footer.company": "الشركة",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "تقديم أداة",
-
   "home.reviews_eyebrow": "المراجعات",
   "home.featured_reviews": "مراجعات مميزة",
   "home.featured_reviews_desc": "مراجعات معمقة وعملية للأدوات التي تهم.",
@@ -172,14 +162,12 @@
   "home.all_guides": "جميع الأدلة",
   "home.read_guide": "اقرأ الدليل",
   "home.guide_badge": "دليل",
-
   "comparisons.title": "مقارنات أدوات الذكاء الاصطناعي",
   "comparisons.description": "مقارنات مباشرة مع اختبارات حقيقية، ميزات جنبًا إلى جنب، وفائزون واضحون حسب السيناريو.",
   "comparisons.scenario_singular": "سيناريو تمت مقارنته",
   "comparisons.scenario_plural": "سيناريوهات تمت مقارنتها",
   "comparisons.read_comparison": "اقرأ المقارنة",
   "comparisons.empty": "لا توجد مقارنات منشورة بعد. عد قريبًا.",
-
   "deals.updated_date": "محدث مارس 2026",
   "deals.title": "عروض وتجارب مجانية لأدوات الذكاء الاصطناعي",
   "deals.description": "عروض مختارة على أفضل أدوات الذكاء الاصطناعي للمبدعين والمستقلين والفرق الصغيرة. تجارب مجانية وخطط مجانية وخصومات حصرية — الكل في مكان واحد.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "احصل على",
   "deals.read_full_review": "اقرأ المراجعة الكاملة",
   "deals.affiliate_link": "رابط تابع",
-
   "guides.title": "أدلة ودروس الذكاء الاصطناعي",
   "guides.description": "أدلة خطوة بخطوة لبناء سير عمل بالذكاء الاصطناعي يوفر الوقت وينمي عملك.",
   "guides.badge": "دليل",
   "guides.read_guide": "اقرأ الدليل",
   "guides.more": "المزيد",
   "guides.empty": "لا توجد أدلة منشورة بعد. عد قريبًا.",
-
   "newsletter.free_weekly": "نشرة أسبوعية مجانية",
   "newsletter.stay_ahead_title": "ابقَ في طليعة",
   "newsletter.stay_ahead_highlight": "ثورة الذكاء الاصطناعي",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "احصل على خصومات وتجارب ممتدة نتفاوض عليها مباشرة مع شركات أدوات الذكاء الاصطناعي.",
   "newsletter.workflow_tips_title": "نصائح الإنتاجية",
   "newsletter.workflow_tips_desc": "سير عمل حقيقي من مستخدمين حقيقيين. تعلم كيف يوفر الآخرون ساعات كل أسبوع باستخدام الذكاء الاصطناعي.",
-
   "article.best_for": "الأفضل لـ",
   "article.pricing": "الأسعار",
   "article.last_tested": "آخر اختبار",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "الأدوات المذكورة في هذا الدليل",
   "article.affiliate_link": "رابط تابع",
   "article.our_top_picks": "أفضل اختياراتنا",
-
   "reviews_page.title": "مراجعات أدوات الذكاء الاصطناعي",
   "reviews_page.description": "مراجعات معمقة وعملية لأدوات الذكاء الاصطناعي الأهم للمبدعين والفرق الصغيرة.",
   "reviews_page.empty": "لا توجد مراجعات منشورة بعد. عد قريبًا.",
-
   "category_page.reviews": "المراجعات",
   "category_page.comparisons": "المقارنات",
   "category_page.best_of": "قوائم الأفضل",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "اقرأ الدليل",
   "category_page.tools_ranked": "أدوات مصنفة",
   "category_page.empty": "لا توجد مقالات في هذه الفئة بعد. عد قريبًا.",
-
   "common.deal_of_the_week": "عرض الأسبوع",
   "common.read_review": "اقرأ المراجعة",
   "common.claim_deal": "احصل على العرض",
   "common.explore": "استكشف",
   "common.article_singular": "مقال",
   "common.article_plural": "مقالات",
-
   "common.loading": "جارٍ التحميل...",
   "common.error": "حدث خطأ ما",
   "common.retry": "حاول مرة أخرى",
@@ -271,5 +252,9 @@
   "common.next": "التالي",
   "common.previous": "السابق",
   "common.show_more": "عرض المزيد",
-  "common.show_less": "عرض أقل"
+  "common.show_less": "عرض أقل",
+  "hero.find_tool": "اعثر على أداة الذكاء الاصطناعي في 30 ثانية",
+  "hero.cost_calculator": "احسب تكاليف الذكاء الاصطناعي",
+  "footer.res_finder": "الباحث عن الأدوات",
+  "footer.res_calculator": "حاسبة تكاليف الذكاء الاصطناعي"
 }

@@ -7,7 +7,6 @@
   "nav.about": "サイトについて",
   "nav.search": "検索",
   "nav.search_placeholder": "AIツールを検索...",
-
   "auth.login": "ログイン",
   "auth.join_free": "無料で登録",
   "auth.sign_up": "新規登録",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "パスワードは6文字以上にしてください",
   "auth.error.invalid_credentials": "メールアドレスまたはパスワードが正しくありません",
   "auth.error.generic": "エラーが発生しました。もう一度お試しください。",
-
   "user.profile": "プロフィール",
   "user.my_reviews": "マイレビュー",
   "user.settings": "設定",
-
   "theme.dark_mode": "ダークモード",
   "theme.light_mode": "ライトモード",
   "theme.hide_mist": "ミストを非表示",
   "theme.show_mist": "ミストを表示",
-
   "language.select": "言語",
   "language.current": "日本語",
-
   "newsletter.title": "AI最前線の情報をお届け",
   "newsletter.subtitle": "厳選されたAIツール、限定セール、生産性向上のヒントを毎週あなたの受信トレイにお届けします。",
   "newsletter.email_placeholder": "メールアドレスを入力",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "実際のユーザーからの生産性向上のヒント",
   "newsletter.what_you_get": "お届けする内容",
   "newsletter.archive": "ニュースレターアーカイブを見る",
-
   "review.rating": "評価",
   "review.reviews": "件のレビュー",
   "review.write_review": "レビューを書く",
@@ -87,11 +81,9 @@
   "review.related": "関連記事",
   "review.watch_youtube": "YouTubeで見る",
   "review.social_links": "フォロー",
-
   "card.read_review": "レビューを読む",
   "card.free": "無料",
   "card.from": "月額",
-
   "hero.eyebrow": "正直なAIツールレビュー",
   "hero.headline_prefix": "最高の",
   "hero.headline_ai_tools": "AIツールを発見",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "コンテンツクリエイターに",
   "hero.rotator_solopreneurs": "個人起業家に",
   "newsletter.join_creators": "500人以上のクリエイターに参加",
-
   "footer.categories": "カテゴリー",
   "footer.resources": "リソース",
   "footer.company": "運営情報",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "ツールを提出",
-
   "home.reviews_eyebrow": "レビュー",
   "home.featured_reviews": "注目のレビュー",
   "home.featured_reviews_desc": "重要なツールの詳細で実践的なレビュー。",
@@ -172,14 +162,12 @@
   "home.all_guides": "すべてのガイド",
   "home.read_guide": "ガイドを読む",
   "home.guide_badge": "ガイド",
-
   "comparisons.title": "AIツール比較",
   "comparisons.description": "実際のテストによる直接比較、機能の並列比較、シナリオ別の明確な勝者。",
   "comparisons.scenario_singular": "シナリオを比較",
   "comparisons.scenario_plural": "シナリオを比較",
   "comparisons.read_comparison": "比較を読む",
   "comparisons.empty": "まだ比較記事はありません。近日公開予定です。",
-
   "deals.updated_date": "2026年3月更新",
   "deals.title": "AIツールのお得情報＆無料トライアル",
   "deals.description": "クリエイター、フリーランサー、小規模チーム向けの厳選AIツールのお得情報。無料トライアル、無料プラン、限定割引がすべて一か所に。",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "入手",
   "deals.read_full_review": "詳細レビューを読む",
   "deals.affiliate_link": "アフィリエイトリンク",
-
   "guides.title": "AIガイド＆チュートリアル",
   "guides.description": "時間を節約しビジネスを成長させるAIワークフローを構築するステップバイステップガイド。",
   "guides.badge": "ガイド",
   "guides.read_guide": "ガイドを読む",
   "guides.more": "件以上",
   "guides.empty": "まだガイドはありません。近日公開予定です。",
-
   "newsletter.free_weekly": "無料ウィークリーニュースレター",
   "newsletter.stay_ahead_title": "AIの",
   "newsletter.stay_ahead_highlight": "最前線を行く",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "AIツール企業と直接交渉した割引や延長トライアルを入手。",
   "newsletter.workflow_tips_title": "ワークフローのヒント",
   "newsletter.workflow_tips_desc": "実際のユーザーからの実際のワークフロー。他の人がどのようにAIで毎週何時間も節約しているか学びましょう。",
-
   "article.best_for": "おすすめ対象",
   "article.pricing": "料金",
   "article.last_tested": "最終テスト",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "このガイドで紹介したツール",
   "article.affiliate_link": "アフィリエイトリンク",
   "article.our_top_picks": "おすすめトップピック",
-
   "reviews_page.title": "AIツールレビュー",
   "reviews_page.description": "クリエイターや小規模チームにとって最も重要なAIツールの詳細で実践的なレビュー。",
   "reviews_page.empty": "まだレビューはありません。近日公開予定です。",
-
   "category_page.reviews": "レビュー",
   "category_page.comparisons": "比較",
   "category_page.best_of": "ベストリスト",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "ガイドを読む",
   "category_page.tools_ranked": "件のツールをランク付け",
   "category_page.empty": "このカテゴリにはまだ記事がありません。近日公開予定です。",
-
   "common.deal_of_the_week": "今週のお得情報",
   "common.read_review": "レビューを読む",
   "common.claim_deal": "特典を入手",
   "common.explore": "探索",
   "common.article_singular": "記事",
   "common.article_plural": "記事",
-
   "common.loading": "読み込み中...",
   "common.error": "エラーが発生しました",
   "common.retry": "再試行",
@@ -271,5 +252,9 @@
   "common.next": "次へ",
   "common.previous": "前へ",
   "common.show_more": "もっと見る",
-  "common.show_less": "閉じる"
+  "common.show_less": "閉じる",
+  "hero.find_tool": "30秒であなたのAIツールを見つける",
+  "hero.cost_calculator": "AIコストを計算する",
+  "footer.res_finder": "ツールファインダー",
+  "footer.res_calculator": "AIコスト計算ツール"
 }

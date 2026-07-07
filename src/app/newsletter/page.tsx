@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Mail, Sparkles, TrendingUp, Gift, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/i18n/context';
 import ExploreMore from '@/components/ExploreMore';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 export default function NewsletterPage() {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ export default function NewsletterPage() {
         throw new Error(data.error || 'Subscription failed');
       }
 
+      trackNewsletterSignup('newsletter_page');
       setStatus('success');
       setEmail('');
     } catch (err) {
@@ -151,7 +153,7 @@ export default function NewsletterPage() {
       {/* Archive link */}
       <div className="text-center">
         <a
-          href="https://shelbyaideals.beehiiv.com"
+          href="https://shelby-ai.beehiiv.com"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-signal-400 hover:text-signal-300 font-medium transition-colors"

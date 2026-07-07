@@ -7,7 +7,6 @@
   "nav.about": "О нас",
   "nav.search": "Поиск",
   "nav.search_placeholder": "Поиск ИИ-инструментов...",
-
   "auth.login": "Войти",
   "auth.join_free": "Зарегистрироваться бесплатно",
   "auth.sign_up": "Регистрация",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Пароль должен содержать не менее 6 символов",
   "auth.error.invalid_credentials": "Неверный email или пароль",
   "auth.error.generic": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
-
   "user.profile": "Профиль",
   "user.my_reviews": "Мои отзывы",
   "user.settings": "Настройки",
-
   "theme.dark_mode": "Тёмная тема",
   "theme.light_mode": "Светлая тема",
   "theme.hide_mist": "Скрыть туман",
   "theme.show_mist": "Показать туман",
-
   "language.select": "Язык",
   "language.current": "Русский",
-
   "newsletter.title": "Будьте впереди в мире ИИ",
   "newsletter.subtitle": "Получайте лучшие ИИ-инструменты, эксклюзивные предложения и советы по продуктивности — прямо в ваш почтовый ящик каждую неделю.",
   "newsletter.email_placeholder": "Введите ваш email",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Советы по продуктивности от реальных пользователей",
   "newsletter.what_you_get": "Что вы получите",
   "newsletter.archive": "Просмотреть архив рассылки",
-
   "review.rating": "Рейтинг",
   "review.reviews": "отзывов",
   "review.write_review": "Написать отзыв",
@@ -87,11 +81,9 @@
   "review.related": "Похожие статьи",
   "review.watch_youtube": "Смотреть на YouTube",
   "review.social_links": "Подписаться",
-
   "card.read_review": "Читать отзыв",
   "card.free": "Бесплатно",
   "card.from": "От",
-
   "hero.eyebrow": "Честные Обзоры ИИ-Инструментов",
   "hero.headline_prefix": "Откройте Лучшие",
   "hero.headline_ai_tools": "ИИ-Инструменты",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "для Создателей Контента",
   "hero.rotator_solopreneurs": "для Предпринимателей",
   "newsletter.join_creators": "Присоединяйтесь к 500+ создателям",
-
   "footer.categories": "Категории",
   "footer.resources": "Ресурсы",
   "footer.company": "Компания",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Предложить Инструмент",
-
   "home.reviews_eyebrow": "Обзоры",
   "home.featured_reviews": "Избранные Обзоры",
   "home.featured_reviews_desc": "Подробные, практические обзоры инструментов, которые имеют значение.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Все Руководства",
   "home.read_guide": "Читать Руководство",
   "home.guide_badge": "Руководство",
-
   "comparisons.title": "Сравнения ИИ-Инструментов",
   "comparisons.description": "Прямые сравнения с реальными тестами, функции бок о бок и явные победители по сценариям.",
   "comparisons.scenario_singular": "сценарий сравнён",
   "comparisons.scenario_plural": "сценариев сравнено",
   "comparisons.read_comparison": "Читать Сравнение",
   "comparisons.empty": "Сравнений пока нет. Заходите позже.",
-
   "deals.updated_date": "Обновлено март 2026",
   "deals.title": "Скидки и Бесплатные Пробные Версии ИИ",
   "deals.description": "Подборка лучших предложений на ИИ-инструменты для создателей, фрилансеров и небольших команд. Бесплатные пробные версии, бесплатные планы и эксклюзивные скидки — всё в одном месте.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Получить",
   "deals.read_full_review": "Читать Полный Обзор",
   "deals.affiliate_link": "Партнёрская ссылка",
-
   "guides.title": "Руководства и Учебники по ИИ",
   "guides.description": "Пошаговые руководства по созданию рабочих процессов с ИИ, которые экономят время и развивают ваш бизнес.",
   "guides.badge": "Руководство",
   "guides.read_guide": "Читать Руководство",
   "guides.more": "ещё",
   "guides.empty": "Руководств пока нет. Заходите позже.",
-
   "newsletter.free_weekly": "Бесплатная Еженедельная Рассылка",
   "newsletter.stay_ahead_title": "Будьте Впереди",
   "newsletter.stay_ahead_highlight": "ИИ-Революции",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Получайте скидки и расширенные пробные версии, которые мы договариваемся напрямую с компаниями ИИ-инструментов.",
   "newsletter.workflow_tips_title": "Советы по Продуктивности",
   "newsletter.workflow_tips_desc": "Реальные рабочие процессы от реальных пользователей. Узнайте, как другие экономят часы каждую неделю с помощью ИИ.",
-
   "article.best_for": "Лучше Всего Для",
   "article.pricing": "Цены",
   "article.last_tested": "Последний Тест",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Инструменты, Упомянутые в Этом Руководстве",
   "article.affiliate_link": "Партнёрская ссылка",
   "article.our_top_picks": "Наш Лучший Выбор",
-
   "reviews_page.title": "Обзоры ИИ-Инструментов",
   "reviews_page.description": "Подробные, практические обзоры ИИ-инструментов, наиболее важных для создателей и небольших команд.",
   "reviews_page.empty": "Обзоров пока нет. Заходите позже.",
-
   "category_page.reviews": "Обзоры",
   "category_page.comparisons": "Сравнения",
   "category_page.best_of": "Списки Лучших",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Читать Руководство",
   "category_page.tools_ranked": "инструментов в рейтинге",
   "category_page.empty": "В этой категории пока нет статей. Заходите позже.",
-
   "common.deal_of_the_week": "Предложение Недели",
   "common.read_review": "Читать Обзор",
   "common.claim_deal": "Получить Предложение",
   "common.explore": "Исследовать",
   "common.article_singular": "статья",
   "common.article_plural": "статей",
-
   "common.loading": "Загрузка...",
   "common.error": "Что-то пошло не так",
   "common.retry": "Попробовать снова",
@@ -271,5 +252,9 @@
   "common.next": "Далее",
   "common.previous": "Назад",
   "common.show_more": "Показать больше",
-  "common.show_less": "Показать меньше"
+  "common.show_less": "Показать меньше",
+  "hero.find_tool": "Найдите свой ИИ-инструмент за 30с",
+  "hero.cost_calculator": "Рассчитайте расходы на ИИ",
+  "footer.res_finder": "Подбор инструмента",
+  "footer.res_calculator": "Калькулятор расходов на ИИ"
 }

@@ -7,7 +7,6 @@
   "nav.about": "Hakkımızda",
   "nav.search": "Ara",
   "nav.search_placeholder": "Yapay zeka araçlarını ara...",
-
   "auth.login": "Giriş yap",
   "auth.join_free": "Ücretsiz katıl",
   "auth.sign_up": "Kayıt ol",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Şifre en az 6 karakter olmalıdır",
   "auth.error.invalid_credentials": "Geçersiz e-posta veya şifre",
   "auth.error.generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
-
   "user.profile": "Profil",
   "user.my_reviews": "Değerlendirmelerim",
   "user.settings": "Ayarlar",
-
   "theme.dark_mode": "Karanlık mod",
   "theme.light_mode": "Aydınlık mod",
   "theme.hide_mist": "Sisi gizle",
   "theme.show_mist": "Sisi göster",
-
   "language.select": "Dil",
   "language.current": "Türkçe",
-
   "newsletter.title": "Yapay zekada bir adım önde olun",
   "newsletter.subtitle": "En iyi yapay zeka araçları, özel fırsatlar ve verimlilik ipuçlarını her hafta doğrudan gelen kutunuza alın.",
   "newsletter.email_placeholder": "E-posta adresinizi girin",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Gerçek kullanıcılardan verimlilik ipuçları",
   "newsletter.what_you_get": "Neler alacaksınız",
   "newsletter.archive": "Bülten arşivine göz at",
-
   "review.rating": "Puan",
   "review.reviews": "değerlendirme",
   "review.write_review": "Değerlendirme yaz",
@@ -87,11 +81,9 @@
   "review.related": "İlgili makaleler",
   "review.watch_youtube": "YouTube'da izle",
   "review.social_links": "Takip et",
-
   "card.read_review": "Değerlendirmeyi oku",
   "card.free": "Ücretsiz",
   "card.from": "Başlangıç",
-
   "hero.eyebrow": "Dürüst AI Araç İncelemeleri",
   "hero.headline_prefix": "En İyi",
   "hero.headline_ai_tools": "AI Araçlarını Keşfedin",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "İçerik Üreticileri İçin",
   "hero.rotator_solopreneurs": "Girişimciler İçin",
   "newsletter.join_creators": "500+ yaratıcıya katılın",
-
   "footer.categories": "Kategoriler",
   "footer.resources": "Kaynaklar",
   "footer.company": "Şirket",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Araç Gönder",
-
   "home.reviews_eyebrow": "İncelemeler",
   "home.featured_reviews": "Öne Çıkan İncelemeler",
   "home.featured_reviews_desc": "Önemli araçların derinlemesine, uygulamalı incelemeleri.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Tüm Rehberler",
   "home.read_guide": "Rehberi Oku",
   "home.guide_badge": "Rehber",
-
   "comparisons.title": "AI Araç Karşılaştırmaları",
   "comparisons.description": "Gerçek testlerle birebir karşılaştırmalar, yan yana özellikler ve senaryoya göre net kazananlar.",
   "comparisons.scenario_singular": "senaryo karşılaştırıldı",
   "comparisons.scenario_plural": "senaryo karşılaştırıldı",
   "comparisons.read_comparison": "Karşılaştırmayı Oku",
   "comparisons.empty": "Henüz karşılaştırma yayınlanmadı. Yakında tekrar kontrol edin.",
-
   "deals.updated_date": "Güncellendi Mart 2026",
   "deals.title": "AI Araç Fırsatları ve Ücretsiz Denemeler",
   "deals.description": "Yaratıcılar, serbest çalışanlar ve küçük ekipler için en iyi AI araçlarında seçilmiş fırsatlar. Ücretsiz denemeler, ücretsiz planlar ve özel indirimler — hepsi tek bir yerde.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Al",
   "deals.read_full_review": "Tam İncelemeyi Oku",
   "deals.affiliate_link": "Ortaklık linki",
-
   "guides.title": "AI Rehberleri ve Eğitimler",
   "guides.description": "Zaman kazandıran ve işinizi büyüten AI destekli iş akışları oluşturmak için adım adım rehberler.",
   "guides.badge": "Rehber",
   "guides.read_guide": "Rehberi Oku",
   "guides.more": "daha fazla",
   "guides.empty": "Henüz rehber yayınlanmadı. Yakında tekrar kontrol edin.",
-
   "newsletter.free_weekly": "Ücretsiz Haftalık Bülten",
   "newsletter.stay_ahead_title": "AI Eğrisinin",
   "newsletter.stay_ahead_highlight": "Önünde Kalın",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "AI araç şirketleriyle doğrudan müzakere ettiğimiz indirimler ve uzatılmış deneme süreleri alın.",
   "newsletter.workflow_tips_title": "Verimlilik İpuçları",
   "newsletter.workflow_tips_desc": "Gerçek kullanıcılardan gerçek iş akışları. Başkalarının her hafta saatlerce nasıl tasarruf ettiğini öğrenin.",
-
   "article.best_for": "En Uygun",
   "article.pricing": "Fiyatlandırma",
   "article.last_tested": "Son Test",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Bu Rehberde Bahsedilen Araçlar",
   "article.affiliate_link": "Ortaklık linki",
   "article.our_top_picks": "En İyi Seçimlerimiz",
-
   "reviews_page.title": "AI Araç İncelemeleri",
   "reviews_page.description": "Yaratıcılar ve küçük ekipler için en önemli AI araçlarının derinlemesine, uygulamalı incelemeleri.",
   "reviews_page.empty": "Henüz inceleme yayınlanmadı. Yakında tekrar kontrol edin.",
-
   "category_page.reviews": "İncelemeler",
   "category_page.comparisons": "Karşılaştırmalar",
   "category_page.best_of": "En İyi Listeleri",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Rehberi Oku",
   "category_page.tools_ranked": "araç sıralandı",
   "category_page.empty": "Bu kategoride henüz makale yok. Yakında tekrar kontrol edin.",
-
   "common.deal_of_the_week": "Haftanın Fırsatı",
   "common.read_review": "İncelemeyi Oku",
   "common.claim_deal": "Fırsatı Al",
   "common.explore": "Keşfet",
   "common.article_singular": "makale",
   "common.article_plural": "makale",
-
   "common.loading": "Yükleniyor...",
   "common.error": "Bir şeyler ters gitti",
   "common.retry": "Tekrar dene",
@@ -271,5 +252,9 @@
   "common.next": "İleri",
   "common.previous": "Önceki",
   "common.show_more": "Daha fazla göster",
-  "common.show_less": "Daha az göster"
+  "common.show_less": "Daha az göster",
+  "hero.find_tool": "30 saniyede yapay zeka aracını bul",
+  "hero.cost_calculator": "Yapay zeka maliyetini hesapla",
+  "footer.res_finder": "Araç Bulucu",
+  "footer.res_calculator": "Yapay Zeka Maliyet Hesaplayıcı"
 }

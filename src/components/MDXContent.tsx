@@ -1,5 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
+import { isTrackedAffiliateUrl } from '@/lib/affiliate';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import CTAButton from './CTAButton';
 import PricingTable from './PricingTable';
@@ -56,11 +57,16 @@ const components = {
   a: (props: React.ComponentProps<'a'>) => {
     const isExternal = props.href?.startsWith('http');
     if (isExternal) {
+      // Tracked affiliate links need rel="sponsored": Google requires it for paid
+      // links, and the GA affiliate_click delegation handler (layout.tsx) only
+      // fires on a[rel*="sponsored"] — without it, in-content affiliate clicks
+      // (the highest-intent placements) are invisible to analytics.
+      const isAffiliate = isTrackedAffiliateUrl(props.href);
       return (
         <a
           {...props}
           target="_blank"
-          rel="noopener noreferrer nofollow"
+          rel={isAffiliate ? 'noopener nofollow sponsored' : 'noopener noreferrer nofollow'}
           className="text-signal-400 hover:text-signal-300 underline underline-offset-2"
         />
       );

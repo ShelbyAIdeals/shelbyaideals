@@ -7,7 +7,6 @@
   "nav.about": "Acerca de",
   "nav.search": "Buscar",
   "nav.search_placeholder": "Buscar herramientas de IA...",
-
   "auth.login": "Iniciar sesión",
   "auth.join_free": "Únete gratis",
   "auth.sign_up": "Registrarse",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "La contraseña debe tener al menos 6 caracteres",
   "auth.error.invalid_credentials": "Correo electrónico o contraseña incorrectos",
   "auth.error.generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
-
   "user.profile": "Perfil",
   "user.my_reviews": "Mis reseñas",
   "user.settings": "Configuración",
-
   "theme.dark_mode": "Modo oscuro",
   "theme.light_mode": "Modo claro",
   "theme.hide_mist": "Ocultar niebla",
   "theme.show_mist": "Mostrar niebla",
-
   "language.select": "Idioma",
   "language.current": "Español",
-
   "newsletter.title": "Mantente a la vanguardia de la IA",
   "newsletter.subtitle": "Recibe las mejores herramientas de IA, ofertas exclusivas y consejos de productividad, directamente en tu bandeja de entrada cada semana.",
   "newsletter.email_placeholder": "Introduce tu correo electrónico",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Consejos de productividad de usuarios reales",
   "newsletter.what_you_get": "Lo que recibirás",
   "newsletter.archive": "Explorar archivo del boletín",
-
   "review.rating": "Puntuación",
   "review.reviews": "reseñas",
   "review.write_review": "Escribir una reseña",
@@ -87,11 +81,9 @@
   "review.related": "Artículos relacionados",
   "review.watch_youtube": "Ver en YouTube",
   "review.social_links": "Seguir",
-
   "card.read_review": "Leer reseña",
   "card.free": "Gratis",
   "card.from": "Desde",
-
   "hero.eyebrow": "Reseñas Honestas de Herramientas IA",
   "hero.headline_prefix": "Descubre las Mejores",
   "hero.headline_ai_tools": "Herramientas IA",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "para Creadores de Contenido",
   "hero.rotator_solopreneurs": "para Emprendedores",
   "newsletter.join_creators": "Únete a 500+ creadores",
-
   "footer.categories": "Categorías",
   "footer.resources": "Recursos",
   "footer.company": "Empresa",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Enviar una Herramienta",
-
   "home.reviews_eyebrow": "Reseñas",
   "home.featured_reviews": "Reseñas Destacadas",
   "home.featured_reviews_desc": "Reseñas detalladas y prácticas de las herramientas que importan.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Todas las Guías",
   "home.read_guide": "Leer Guía",
   "home.guide_badge": "Guía",
-
   "comparisons.title": "Comparativas de Herramientas IA",
   "comparisons.description": "Comparativas cara a cara con pruebas reales, funciones lado a lado y ganadores claros por escenario.",
   "comparisons.scenario_singular": "escenario comparado",
   "comparisons.scenario_plural": "escenarios comparados",
   "comparisons.read_comparison": "Leer Comparativa",
   "comparisons.empty": "Aún no hay comparativas publicadas. Vuelve pronto.",
-
   "deals.updated_date": "Actualizado marzo 2026",
   "deals.title": "Ofertas y Pruebas Gratuitas de IA",
   "deals.description": "Ofertas seleccionadas en las mejores herramientas de IA para creadores, freelancers y equipos pequeños. Pruebas gratuitas, planes gratuitos y descuentos exclusivos — todo en un solo lugar.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Obtener",
   "deals.read_full_review": "Leer Reseña Completa",
   "deals.affiliate_link": "Enlace de afiliado",
-
   "guides.title": "Guías y Tutoriales de IA",
   "guides.description": "Guías paso a paso para crear flujos de trabajo con IA que ahorran tiempo y hacen crecer tu negocio.",
   "guides.badge": "Guía",
   "guides.read_guide": "Leer Guía",
   "guides.more": "más",
   "guides.empty": "Aún no hay guías publicadas. Vuelve pronto.",
-
   "newsletter.free_weekly": "Newsletter Semanal Gratuito",
   "newsletter.stay_ahead_title": "Mantente a la Vanguardia de la",
   "newsletter.stay_ahead_highlight": "Revolución IA",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Obtén descuentos y pruebas extendidas que negociamos directamente con las empresas de herramientas de IA.",
   "newsletter.workflow_tips_title": "Consejos de Productividad",
   "newsletter.workflow_tips_desc": "Flujos de trabajo reales de usuarios reales. Aprende cómo otros usan IA para ahorrar horas cada semana.",
-
   "article.best_for": "Ideal Para",
   "article.pricing": "Precios",
   "article.last_tested": "Último Test",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Herramientas Mencionadas en Esta Guía",
   "article.affiliate_link": "Enlace de afiliado",
   "article.our_top_picks": "Nuestras Mejores Selecciones",
-
   "reviews_page.title": "Reseñas de Herramientas IA",
   "reviews_page.description": "Reseñas detalladas y prácticas de las herramientas de IA más importantes para creadores y equipos pequeños.",
   "reviews_page.empty": "Aún no hay reseñas publicadas. Vuelve pronto.",
-
   "category_page.reviews": "Reseñas",
   "category_page.comparisons": "Comparativas",
   "category_page.best_of": "Listas de Mejores",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Leer Guía",
   "category_page.tools_ranked": "herramientas clasificadas",
   "category_page.empty": "Aún no hay artículos en esta categoría. Vuelve pronto.",
-
   "common.deal_of_the_week": "Oferta de la Semana",
   "common.read_review": "Leer Reseña",
   "common.claim_deal": "Obtener Oferta",
   "common.explore": "Explorar",
   "common.article_singular": "artículo",
   "common.article_plural": "artículos",
-
   "common.loading": "Cargando...",
   "common.error": "Algo salió mal",
   "common.retry": "Intentar de nuevo",
@@ -271,5 +252,9 @@
   "common.next": "Siguiente",
   "common.previous": "Anterior",
   "common.show_more": "Mostrar más",
-  "common.show_less": "Mostrar menos"
+  "common.show_less": "Mostrar menos",
+  "hero.find_tool": "Encuentra tu herramienta IA en 30s",
+  "hero.cost_calculator": "Calcula tus costes de IA",
+  "footer.res_finder": "Buscador de herramientas",
+  "footer.res_calculator": "Calculadora de costes IA"
 }

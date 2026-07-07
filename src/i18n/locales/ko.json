@@ -7,7 +7,6 @@
   "nav.about": "소개",
   "nav.search": "검색",
   "nav.search_placeholder": "AI 도구 검색...",
-
   "auth.login": "로그인",
   "auth.join_free": "무료 가입",
   "auth.sign_up": "회원가입",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "비밀번호는 6자 이상이어야 합니다",
   "auth.error.invalid_credentials": "이메일 또는 비밀번호가 올바르지 않습니다",
   "auth.error.generic": "문제가 발생했습니다. 다시 시도해 주세요.",
-
   "user.profile": "프로필",
   "user.my_reviews": "내 리뷰",
   "user.settings": "설정",
-
   "theme.dark_mode": "다크 모드",
   "theme.light_mode": "라이트 모드",
   "theme.hide_mist": "미스트 숨기기",
   "theme.show_mist": "미스트 표시",
-
   "language.select": "언어",
   "language.current": "한국어",
-
   "newsletter.title": "AI 트렌드를 앞서가세요",
   "newsletter.subtitle": "엄선된 AI 도구, 독점 할인, 생산성 팁을 매주 이메일로 받아보세요.",
   "newsletter.email_placeholder": "이메일 주소를 입력하세요",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "실제 사용자들의 생산성 팁",
   "newsletter.what_you_get": "받을 수 있는 혜택",
   "newsletter.archive": "뉴스레터 아카이브 보기",
-
   "review.rating": "평점",
   "review.reviews": "리뷰",
   "review.write_review": "리뷰 작성",
@@ -87,11 +81,9 @@
   "review.related": "관련 기사",
   "review.watch_youtube": "YouTube에서 보기",
   "review.social_links": "팔로우",
-
   "card.read_review": "리뷰 읽기",
   "card.free": "무료",
   "card.from": "월",
-
   "hero.eyebrow": "정직한 AI 도구 리뷰",
   "hero.headline_prefix": "최고의",
   "hero.headline_ai_tools": "AI 도구를 발견하세요",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "콘텐츠 크리에이터를 위해",
   "hero.rotator_solopreneurs": "1인 기업가를 위해",
   "newsletter.join_creators": "500명 이상의 크리에이터와 함께하세요",
-
   "footer.categories": "카테고리",
   "footer.resources": "리소스",
   "footer.company": "회사",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "도구 제출",
-
   "home.reviews_eyebrow": "리뷰",
   "home.featured_reviews": "추천 리뷰",
   "home.featured_reviews_desc": "중요한 도구에 대한 심층적이고 실용적인 리뷰.",
@@ -172,14 +162,12 @@
   "home.all_guides": "모든 가이드",
   "home.read_guide": "가이드 읽기",
   "home.guide_badge": "가이드",
-
   "comparisons.title": "AI 도구 비교",
   "comparisons.description": "실제 테스트를 통한 맞대결 비교, 나란히 보는 기능, 시나리오별 확실한 승자.",
   "comparisons.scenario_singular": "시나리오 비교됨",
   "comparisons.scenario_plural": "시나리오 비교됨",
   "comparisons.read_comparison": "비교 읽기",
   "comparisons.empty": "아직 게시된 비교가 없습니다. 곧 다시 확인하세요.",
-
   "deals.updated_date": "2026년 3월 업데이트",
   "deals.title": "AI 도구 할인 및 무료 체험",
   "deals.description": "크리에이터, 프리랜서, 소규모 팀을 위한 최고의 AI 도구 큐레이션 딜. 무료 체험, 무료 플랜, 독점 할인 — 한곳에서 모두.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "시작하기",
   "deals.read_full_review": "전체 리뷰 읽기",
   "deals.affiliate_link": "제휴 링크",
-
   "guides.title": "AI 가이드 및 튜토리얼",
   "guides.description": "시간을 절약하고 비즈니스를 성장시키는 AI 워크플로를 구축하는 단계별 가이드.",
   "guides.badge": "가이드",
   "guides.read_guide": "가이드 읽기",
   "guides.more": "더 보기",
   "guides.empty": "아직 게시된 가이드가 없습니다. 곧 다시 확인하세요.",
-
   "newsletter.free_weekly": "무료 주간 뉴스레터",
   "newsletter.stay_ahead_title": "AI",
   "newsletter.stay_ahead_highlight": "트렌드를 앞서가세요",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "AI 도구 회사와 직접 협상한 할인과 연장 체험을 받으세요.",
   "newsletter.workflow_tips_title": "워크플로 팁",
   "newsletter.workflow_tips_desc": "실제 사용자의 실제 워크플로. 다른 사람들이 AI로 매주 몇 시간을 절약하는지 배워보세요.",
-
   "article.best_for": "추천 대상",
   "article.pricing": "가격",
   "article.last_tested": "최근 테스트",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "이 가이드에서 언급된 도구",
   "article.affiliate_link": "제휴 링크",
   "article.our_top_picks": "추천 선택",
-
   "reviews_page.title": "AI 도구 리뷰",
   "reviews_page.description": "크리에이터와 소규모 팀에게 가장 중요한 AI 도구의 심층적이고 실용적인 리뷰.",
   "reviews_page.empty": "아직 게시된 리뷰가 없습니다. 곧 다시 확인하세요.",
-
   "category_page.reviews": "리뷰",
   "category_page.comparisons": "비교",
   "category_page.best_of": "베스트 리스트",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "가이드 읽기",
   "category_page.tools_ranked": "개 도구 순위",
   "category_page.empty": "이 카테고리에는 아직 기사가 없습니다. 곧 다시 확인하세요.",
-
   "common.deal_of_the_week": "금주의 딜",
   "common.read_review": "리뷰 읽기",
   "common.claim_deal": "딜 받기",
   "common.explore": "탐색",
   "common.article_singular": "기사",
   "common.article_plural": "기사",
-
   "common.loading": "로딩 중...",
   "common.error": "문제가 발생했습니다",
   "common.retry": "다시 시도",
@@ -271,5 +252,9 @@
   "common.next": "다음",
   "common.previous": "이전",
   "common.show_more": "더 보기",
-  "common.show_less": "접기"
+  "common.show_less": "접기",
+  "hero.find_tool": "30초 만에 AI 도구 찾기",
+  "hero.cost_calculator": "AI 비용 계산하기",
+  "footer.res_finder": "도구 찾기",
+  "footer.res_calculator": "AI 비용 계산기"
 }

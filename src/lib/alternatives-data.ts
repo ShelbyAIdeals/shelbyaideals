@@ -1406,7 +1406,7 @@ export const alternativesData: AlternativesPage[] = [
         pricing: 'Starter from $19/mo',
         bestFor: 'Text-to-video content marketing',
         reviewSlug: 'pictory-review',
-        url: 'https://pictory.ai?ref=shelby-ai',
+        url: 'https://pictory.ai?ref=fran26',
         pros: [
           'More affordable than Synthesia',
           'Blog-to-video automation',

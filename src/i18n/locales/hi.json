@@ -7,7 +7,6 @@
   "nav.about": "हमारे बारे में",
   "nav.search": "खोजें",
   "nav.search_placeholder": "AI टूल्स खोजें...",
-
   "auth.login": "लॉगिन",
   "auth.join_free": "मुफ्त में जुड़ें",
   "auth.sign_up": "साइन अप",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
   "auth.error.invalid_credentials": "गलत ईमेल या पासवर्ड",
   "auth.error.generic": "कुछ गलत हो गया। कृपया फिर से कोशिश करें।",
-
   "user.profile": "प्रोफ़ाइल",
   "user.my_reviews": "मेरी समीक्षाएँ",
   "user.settings": "सेटिंग्स",
-
   "theme.dark_mode": "डार्क मोड",
   "theme.light_mode": "लाइट मोड",
   "theme.hide_mist": "धुंध छुपाएँ",
   "theme.show_mist": "धुंध दिखाएँ",
-
   "language.select": "भाषा",
   "language.current": "हिन्दी",
-
   "newsletter.title": "AI की दुनिया में आगे रहें",
   "newsletter.subtitle": "बेहतरीन AI टूल्स, विशेष ऑफर और प्रोडक्टिविटी टिप्स हर हफ्ते सीधे आपके इनबॉक्स में पाएँ।",
   "newsletter.email_placeholder": "अपना ईमेल दर्ज करें",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "असली यूज़र्स से प्रोडक्टिविटी टिप्स",
   "newsletter.what_you_get": "आपको क्या मिलेगा",
   "newsletter.archive": "न्यूज़लेटर आर्काइव देखें",
-
   "review.rating": "रेटिंग",
   "review.reviews": "समीक्षाएँ",
   "review.write_review": "समीक्षा लिखें",
@@ -87,11 +81,9 @@
   "review.related": "संबंधित लेख",
   "review.watch_youtube": "YouTube पर देखें",
   "review.social_links": "फ़ॉलो करें",
-
   "card.read_review": "समीक्षा पढ़ें",
   "card.free": "मुफ्त",
   "card.from": "शुरुआती कीमत",
-
   "hero.eyebrow": "ईमानदार AI टूल समीक्षाएं",
   "hero.headline_prefix": "सबसे बेहतरीन",
   "hero.headline_ai_tools": "AI टूल्स खोजें",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "कंटेंट क्रिएटर्स के लिए",
   "hero.rotator_solopreneurs": "एकल उद्यमियों के लिए",
   "newsletter.join_creators": "500+ क्रिएटर्स से जुड़ें",
-
   "footer.categories": "श्रेणियाँ",
   "footer.resources": "संसाधन",
   "footer.company": "कंपनी",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "टूल सबमिट करें",
-
   "home.reviews_eyebrow": "समीक्षाएं",
   "home.featured_reviews": "विशेष समीक्षाएं",
   "home.featured_reviews_desc": "महत्वपूर्ण टूल्स की गहन, व्यावहारिक समीक्षाएं।",
@@ -172,14 +162,12 @@
   "home.all_guides": "सभी गाइड",
   "home.read_guide": "गाइड पढ़ें",
   "home.guide_badge": "गाइड",
-
   "comparisons.title": "AI टूल तुलनाएं",
   "comparisons.description": "वास्तविक परीक्षणों के साथ आमने-सामने तुलना, सुविधाओं की साथ-साथ तुलना, और परिदृश्य के अनुसार स्पष्ट विजेता।",
   "comparisons.scenario_singular": "परिदृश्य की तुलना की गई",
   "comparisons.scenario_plural": "परिदृश्यों की तुलना की गई",
   "comparisons.read_comparison": "तुलना पढ़ें",
   "comparisons.empty": "अभी तक कोई तुलना प्रकाशित नहीं हुई। जल्द वापस आएं।",
-
   "deals.updated_date": "मार्च 2026 अपडेट किया गया",
   "deals.title": "AI टूल ऑफर और मुफ्त ट्रायल",
   "deals.description": "क्रिएटर्स, फ्रीलांसर्स और छोटी टीमों के लिए सर्वश्रेष्ठ AI टूल्स पर चयनित ऑफर। मुफ्त ट्रायल, मुफ्त प्लान और विशेष छूट — सब एक जगह।",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "प्राप्त करें",
   "deals.read_full_review": "पूरी समीक्षा पढ़ें",
   "deals.affiliate_link": "एफिलिएट लिंक",
-
   "guides.title": "AI गाइड और ट्यूटोरियल",
   "guides.description": "समय बचाने और व्यवसाय बढ़ाने वाले AI वर्कफ़्लो बनाने के लिए चरण-दर-चरण गाइड।",
   "guides.badge": "गाइड",
   "guides.read_guide": "गाइड पढ़ें",
   "guides.more": "और",
   "guides.empty": "अभी तक कोई गाइड प्रकाशित नहीं हुई। जल्द वापस आएं।",
-
   "newsletter.free_weekly": "मुफ्त साप्ताहिक न्यूज़लेटर",
   "newsletter.stay_ahead_title": "AI की",
   "newsletter.stay_ahead_highlight": "दुनिया में आगे रहें",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "AI टूल कंपनियों के साथ सीधे बातचीत करके प्राप्त छूट और विस्तारित ट्रायल।",
   "newsletter.workflow_tips_title": "वर्कफ़्लो टिप्स",
   "newsletter.workflow_tips_desc": "वास्तविक उपयोगकर्ताओं से वास्तविक वर्कफ़्लो। जानें कि दूसरे कैसे AI से हर सप्ताह घंटे बचाते हैं।",
-
   "article.best_for": "सबसे उपयुक्त",
   "article.pricing": "मूल्य",
   "article.last_tested": "अंतिम परीक्षण",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "इस गाइड में उल्लेखित टूल्स",
   "article.affiliate_link": "एफिलिएट लिंक",
   "article.our_top_picks": "हमारे शीर्ष चयन",
-
   "reviews_page.title": "AI टूल समीक्षाएं",
   "reviews_page.description": "क्रिएटर्स और छोटी टीमों के लिए सबसे महत्वपूर्ण AI टूल्स की गहन, व्यावहारिक समीक्षाएं।",
   "reviews_page.empty": "अभी तक कोई समीक्षा प्रकाशित नहीं हुई। जल्द वापस आएं।",
-
   "category_page.reviews": "समीक्षाएं",
   "category_page.comparisons": "तुलनाएं",
   "category_page.best_of": "सर्वश्रेष्ठ सूचियाँ",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "गाइड पढ़ें",
   "category_page.tools_ranked": "टूल्स रैंक किए गए",
   "category_page.empty": "इस श्रेणी में अभी कोई लेख नहीं। जल्द वापस आएं।",
-
   "common.deal_of_the_week": "सप्ताह का ऑफर",
   "common.read_review": "समीक्षा पढ़ें",
   "common.claim_deal": "ऑफर प्राप्त करें",
   "common.explore": "खोजें",
   "common.article_singular": "लेख",
   "common.article_plural": "लेख",
-
   "common.loading": "लोड हो रहा है...",
   "common.error": "कुछ गलत हो गया",
   "common.retry": "फिर से कोशिश करें",
@@ -271,5 +252,9 @@
   "common.next": "अगला",
   "common.previous": "पिछला",
   "common.show_more": "और दिखाएँ",
-  "common.show_less": "कम दिखाएँ"
+  "common.show_less": "कम दिखाएँ",
+  "hero.find_tool": "30 सेकंड में अपना AI टूल खोजें",
+  "hero.cost_calculator": "अपनी AI लागत की गणना करें",
+  "footer.res_finder": "टूल फ़ाइंडर",
+  "footer.res_calculator": "AI लागत कैलकुलेटर"
 }

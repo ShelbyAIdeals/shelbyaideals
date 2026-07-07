@@ -109,9 +109,15 @@ const affiliateLinks: Record<string, AffiliateProgram> = {
   },
   chatbase: {
     name: 'Chatbase',
-    url: 'https://www.chatbase.co', // Replace with Dub.co partner link from partners.dub.co/programs/chatbase/links
+    url: 'https://link.chatbase.co/shelby-ai',
     commission: 'Up to 30% per sale (1 year)',
     status: 'active',
+  },
+  'otter-ai': {
+    name: 'Otter.ai',
+    url: 'https://otter.ai', // TODO: apply for tracking link
+    commission: 'Recurring',
+    status: 'pending',
   },
   scalenut: {
     name: 'Scalenut',
@@ -210,4 +216,35 @@ export function getActiveAffiliateSlugs(): string[] {
   return Object.entries(affiliateLinks)
     .filter(([, v]) => v.status === 'active')
     .map(([k]) => k);
+}
+
+/**
+ * Detects whether a URL is an actual tracked affiliate link (carries a ref/partner
+ * parameter or uses a known partner domain). Used to (a) mark in-content links
+ * rel="sponsored" for Google compliance + GA click tracking, and (b) only show the
+ * "Affiliate link" disclosure label on links that really are affiliate links.
+ */
+const TRACKING_PATTERNS: RegExp[] = [
+  /[?&](via|ref|fpr|aff|affiliate|irclickid)=/i,
+  /try\.elevenlabs\.io/i,
+  /appsumo\.8odi\.net/i,
+  /link\.chatbase\.co/i,
+  /mangools\.com\/?#a/i,
+];
+
+export function isTrackedAffiliateUrl(url: string | undefined | null): boolean {
+  if (!url) return false;
+  return TRACKING_PATTERNS.some((p) => p.test(url));
+}
+
+/**
+ * Resolves an affiliate URL from a display name ("Copy.ai", "Jasper AI", "Make.com")
+ * instead of a slug — for content surfaces (best-of frontmatter) that only carry names.
+ */
+export function resolveAffiliateUrlByName(toolName: string, fallbackUrl: string): string {
+  const slug = toolName
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+  return resolveAffiliateUrl(slug, fallbackUrl);
 }

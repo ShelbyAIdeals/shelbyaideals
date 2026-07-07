@@ -7,7 +7,6 @@
   "nav.about": "About",
   "nav.search": "Search",
   "nav.search_placeholder": "Search AI tools...",
-
   "auth.login": "Login",
   "auth.join_free": "Join for Free",
   "auth.sign_up": "Sign Up",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Password must be at least 6 characters",
   "auth.error.invalid_credentials": "Invalid email or password",
   "auth.error.generic": "Something went wrong. Please try again.",
-
   "user.profile": "Profile",
   "user.my_reviews": "My Reviews",
   "user.settings": "Settings",
-
   "theme.dark_mode": "Dark Mode",
   "theme.light_mode": "White Mode",
   "theme.hide_mist": "Hide Mist",
   "theme.show_mist": "Show Mist",
-
   "language.select": "Language",
   "language.current": "English",
-
   "newsletter.title": "Stay Ahead of the AI Curve",
   "newsletter.subtitle": "Get the best AI tool picks, exclusive deals, and workflow tips — straight to your inbox every week.",
   "newsletter.email_placeholder": "Enter your email",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Workflow tips from real users",
   "newsletter.what_you_get": "What You'll Get",
   "newsletter.archive": "Browse Newsletter Archive",
-
   "review.rating": "Rating",
   "review.reviews": "reviews",
   "review.write_review": "Write a Review",
@@ -87,11 +81,9 @@
   "review.related": "Related Articles",
   "review.watch_youtube": "Watch on YouTube",
   "review.social_links": "Follow",
-
   "card.read_review": "Read Review",
   "card.free": "Free",
   "card.from": "From",
-
   "hero.eyebrow": "Honest AI Tool Reviews",
   "hero.headline_prefix": "Discover the Best",
   "hero.headline_ai_tools": "AI Tools",
@@ -114,9 +106,7 @@
   "hero.rotator_teams": "for Small Teams",
   "hero.rotator_creators": "for Content Creators",
   "hero.rotator_solopreneurs": "for Solopreneurs",
-
   "newsletter.join_creators": "Join 500+ creators",
-
   "footer.categories": "Categories",
   "footer.resources": "Resources",
   "footer.company": "Company",
@@ -153,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Submit a Tool",
-
   "home.reviews_eyebrow": "Reviews",
   "home.featured_reviews": "Featured Reviews",
   "home.featured_reviews_desc": "In-depth, hands-on reviews of the tools that matter.",
@@ -173,14 +162,12 @@
   "home.all_guides": "All Guides",
   "home.read_guide": "Read Guide",
   "home.guide_badge": "Guide",
-
   "comparisons.title": "AI Tool Comparisons",
   "comparisons.description": "Head-to-head comparisons with real testing, side-by-side features, and clear winners by scenario.",
   "comparisons.scenario_singular": "scenario compared",
   "comparisons.scenario_plural": "scenarios compared",
   "comparisons.read_comparison": "Read Comparison",
   "comparisons.empty": "No comparisons published yet. Check back soon.",
-
   "deals.updated_date": "Updated March 2026",
   "deals.title": "AI Tool Deals & Free Trials",
   "deals.description": "Curated deals on the best AI tools for creators, freelancers, and small teams. Free trials, free tiers, and exclusive discounts — all in one place.",
@@ -190,14 +177,12 @@
   "deals.get_prefix": "Get",
   "deals.read_full_review": "Read Full Review",
   "deals.affiliate_link": "Affiliate link",
-
   "guides.title": "AI Guides & Tutorials",
   "guides.description": "Step-by-step guides to building AI-powered workflows that save time and grow your business.",
   "guides.badge": "Guide",
   "guides.read_guide": "Read Guide",
   "guides.more": "more",
   "guides.empty": "No guides published yet. Check back soon.",
-
   "newsletter.free_weekly": "Free Weekly Newsletter",
   "newsletter.stay_ahead_title": "Stay Ahead of the",
   "newsletter.stay_ahead_highlight": "AI Curve",
@@ -211,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Get discounts and extended trials that we negotiate directly with AI tool companies.",
   "newsletter.workflow_tips_title": "Workflow Tips",
   "newsletter.workflow_tips_desc": "Real workflows from real users. Learn how others use AI to save hours every week.",
-
   "article.best_for": "Best For",
   "article.pricing": "Pricing",
   "article.last_tested": "Last Tested",
@@ -240,11 +224,9 @@
   "article.tools_mentioned": "Tools Mentioned in This Guide",
   "article.affiliate_link": "Affiliate link",
   "article.our_top_picks": "Our Top Picks",
-
   "reviews_page.title": "AI Tool Reviews",
   "reviews_page.description": "In-depth, hands-on reviews of the AI tools that matter most for creators and small teams.",
   "reviews_page.empty": "No reviews published yet. Check back soon.",
-
   "category_page.reviews": "Reviews",
   "category_page.comparisons": "Comparisons",
   "category_page.best_of": "Best-Of Lists",
@@ -254,14 +236,12 @@
   "category_page.read_guide": "Read Guide",
   "category_page.tools_ranked": "tools ranked",
   "category_page.empty": "No articles in this category yet. Check back soon.",
-
   "common.deal_of_the_week": "Deal of the Week",
   "common.read_review": "Read Review",
   "common.claim_deal": "Claim Deal",
   "common.explore": "Explore",
   "common.article_singular": "article",
   "common.article_plural": "articles",
-
   "common.loading": "Loading...",
   "common.error": "Something went wrong",
   "common.retry": "Try again",
@@ -272,5 +252,9 @@
   "common.next": "Next",
   "common.previous": "Previous",
   "common.show_more": "Show more",
-  "common.show_less": "Show less"
+  "common.show_less": "Show less",
+  "hero.find_tool": "Find Your AI Tool in 30s",
+  "hero.cost_calculator": "Calculate Your AI Costs",
+  "footer.res_finder": "Tool Finder",
+  "footer.res_calculator": "AI Cost Calculator"
 }

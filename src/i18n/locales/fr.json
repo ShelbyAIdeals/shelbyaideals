@@ -7,7 +7,6 @@
   "nav.about": "À propos",
   "nav.search": "Rechercher",
   "nav.search_placeholder": "Rechercher des outils IA...",
-
   "auth.login": "Connexion",
   "auth.join_free": "S'inscrire gratuitement",
   "auth.sign_up": "S'inscrire",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Le mot de passe doit comporter au moins 6 caractères",
   "auth.error.invalid_credentials": "E-mail ou mot de passe invalide",
   "auth.error.generic": "Une erreur s'est produite. Veuillez réessayer.",
-
   "user.profile": "Profil",
   "user.my_reviews": "Mes avis",
   "user.settings": "Paramètres",
-
   "theme.dark_mode": "Mode sombre",
   "theme.light_mode": "Mode clair",
   "theme.hide_mist": "Masquer la brume",
   "theme.show_mist": "Afficher la brume",
-
   "language.select": "Langue",
   "language.current": "Français",
-
   "newsletter.title": "Gardez une longueur d'avance sur l'IA",
   "newsletter.subtitle": "Recevez les meilleurs outils IA, des offres exclusives et des conseils de productivité, directement dans votre boîte mail chaque semaine.",
   "newsletter.email_placeholder": "Entrez votre e-mail",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Conseils de productivité d'utilisateurs réels",
   "newsletter.what_you_get": "Ce que vous recevrez",
   "newsletter.archive": "Parcourir les archives de la newsletter",
-
   "review.rating": "Note",
   "review.reviews": "avis",
   "review.write_review": "Écrire un avis",
@@ -87,11 +81,9 @@
   "review.related": "Articles connexes",
   "review.watch_youtube": "Regarder sur YouTube",
   "review.social_links": "Suivre",
-
   "card.read_review": "Lire l'avis",
   "card.free": "Gratuit",
   "card.from": "À partir de",
-
   "hero.eyebrow": "Avis Honnêtes sur les Outils IA",
   "hero.headline_prefix": "Découvrez les Meilleurs",
   "hero.headline_ai_tools": "Outils IA",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "pour les Créateurs de Contenu",
   "hero.rotator_solopreneurs": "pour les Solopreneurs",
   "newsletter.join_creators": "Rejoignez 500+ créateurs",
-
   "footer.categories": "Catégories",
   "footer.resources": "Ressources",
   "footer.company": "Entreprise",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Soumettre un Outil",
-
   "home.reviews_eyebrow": "Avis",
   "home.featured_reviews": "Avis en Vedette",
   "home.featured_reviews_desc": "Des avis approfondis et pratiques sur les outils qui comptent.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Tous les Guides",
   "home.read_guide": "Lire le Guide",
   "home.guide_badge": "Guide",
-
   "comparisons.title": "Comparatifs d'Outils IA",
   "comparisons.description": "Comparatifs face à face avec des tests réels, des fonctionnalités côte à côte et des gagnants clairs par scénario.",
   "comparisons.scenario_singular": "scénario comparé",
   "comparisons.scenario_plural": "scénarios comparés",
   "comparisons.read_comparison": "Lire le Comparatif",
   "comparisons.empty": "Aucun comparatif publié pour le moment. Revenez bientôt.",
-
   "deals.updated_date": "Mis à jour mars 2026",
   "deals.title": "Offres et Essais Gratuits IA",
   "deals.description": "Offres sélectionnées sur les meilleurs outils IA pour créateurs, freelances et petites équipes. Essais gratuits, plans gratuits et réductions exclusives — tout en un seul endroit.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Obtenir",
   "deals.read_full_review": "Lire l'Avis Complet",
   "deals.affiliate_link": "Lien d'affiliation",
-
   "guides.title": "Guides et Tutoriels IA",
   "guides.description": "Guides étape par étape pour créer des flux de travail IA qui font gagner du temps et développent votre activité.",
   "guides.badge": "Guide",
   "guides.read_guide": "Lire le Guide",
   "guides.more": "de plus",
   "guides.empty": "Aucun guide publié pour le moment. Revenez bientôt.",
-
   "newsletter.free_weekly": "Newsletter Hebdomadaire Gratuite",
   "newsletter.stay_ahead_title": "Gardez une Longueur d'Avance sur la",
   "newsletter.stay_ahead_highlight": "Révolution IA",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Obtenez des réductions et des essais prolongés que nous négocions directement avec les entreprises d'outils IA.",
   "newsletter.workflow_tips_title": "Conseils de Productivité",
   "newsletter.workflow_tips_desc": "De vrais flux de travail de vrais utilisateurs. Découvrez comment d'autres utilisent l'IA pour gagner des heures chaque semaine.",
-
   "article.best_for": "Idéal Pour",
   "article.pricing": "Tarifs",
   "article.last_tested": "Dernier Test",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Outils Mentionnés dans Ce Guide",
   "article.affiliate_link": "Lien d'affiliation",
   "article.our_top_picks": "Nos Meilleurs Choix",
-
   "reviews_page.title": "Avis sur les Outils IA",
   "reviews_page.description": "Des avis approfondis et pratiques sur les outils IA les plus importants pour les créateurs et les petites équipes.",
   "reviews_page.empty": "Aucun avis publié pour le moment. Revenez bientôt.",
-
   "category_page.reviews": "Avis",
   "category_page.comparisons": "Comparatifs",
   "category_page.best_of": "Listes du Meilleur",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Lire le Guide",
   "category_page.tools_ranked": "outils classés",
   "category_page.empty": "Aucun article dans cette catégorie pour le moment. Revenez bientôt.",
-
   "common.deal_of_the_week": "Offre de la Semaine",
   "common.read_review": "Lire l'Avis",
   "common.claim_deal": "Obtenir l'Offre",
   "common.explore": "Explorer",
   "common.article_singular": "article",
   "common.article_plural": "articles",
-
   "common.loading": "Chargement...",
   "common.error": "Une erreur s'est produite",
   "common.retry": "Réessayer",
@@ -271,5 +252,9 @@
   "common.next": "Suivant",
   "common.previous": "Précédent",
   "common.show_more": "Afficher plus",
-  "common.show_less": "Afficher moins"
+  "common.show_less": "Afficher moins",
+  "hero.find_tool": "Trouvez votre outil IA en 30s",
+  "hero.cost_calculator": "Calculez vos coûts IA",
+  "footer.res_finder": "Chercheur d'outils",
+  "footer.res_calculator": "Calculateur de coûts IA"
 }

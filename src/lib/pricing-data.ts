@@ -1303,12 +1303,12 @@ export const pricingData: PricingPage[] = [
   {
     slug: 'chatgpt',
     tool: 'ChatGPT',
-    title: 'ChatGPT Pricing 2026: Free vs Plus vs Team vs Enterprise',
+    title: 'ChatGPT Pricing 2026: Free vs Plus vs Pro vs Team vs Enterprise',
     description:
-      'Complete ChatGPT pricing guide for 2026. Compare Free, Plus, Team, and Enterprise plans. Find the best OpenAI plan for your AI needs and budget.',
+      'Complete ChatGPT pricing guide for 2026. Compare Free, Plus, Pro, Team, and Enterprise plans. Find the best OpenAI plan for your AI needs and budget.',
     intro:
-      'ChatGPT by OpenAI is the most widely used AI assistant in the world. Pricing ranges from free to enterprise-grade, with each tier unlocking more capable models and higher usage limits. Here is exactly what each plan offers.',
-    lastUpdated: '2026-03-18',
+      'ChatGPT by OpenAI is the most widely used AI assistant in the world. Pricing ranges from free to the $200/month Pro tier and enterprise-grade plans, with each tier unlocking more capable models and higher usage limits. Here is exactly what each plan offers.',
+    lastUpdated: '2026-07-07',
     reviewSlug: 'chatgpt-review',
     freeTrialAvailable: false,
     valueAnalysis:
@@ -1352,6 +1352,21 @@ export const pricingData: PricingPage[] = [
         affiliateUrl: 'https://chat.openai.com',
       },
       {
+        name: 'Pro',
+        price: '$200',
+        period: '/month',
+        description: 'For power users who need unlimited access to the best models.',
+        features: [
+          'Everything in Plus',
+          'Unlimited access to top models',
+          'Extended reasoning (o1 pro mode)',
+          'Higher limits on video & voice',
+          'Priority access to new features',
+          'Best for heavy daily AI workloads',
+        ],
+        affiliateUrl: 'https://chat.openai.com',
+      },
+      {
         name: 'Team',
         price: '$25',
         period: '/month per user (billed annually)',
@@ -1386,6 +1401,7 @@ export const pricingData: PricingPage[] = [
       { question: 'Is ChatGPT free?', answer: 'Yes. The free plan includes access to GPT-4o mini and limited GPT-4o usage. It is powerful enough for casual use but power users will hit limits quickly.' },
       { question: 'Is ChatGPT Plus worth $20/month?', answer: 'If you use ChatGPT daily for work, Plus is absolutely worth it. You get full GPT-4o access, DALL-E image generation, and significantly higher usage limits that eliminate the wait times free users experience.' },
       { question: 'What is the difference between Plus and Team?', answer: 'Team ($25/user/month) adds shared workspaces, admin controls, and guarantees that your data is not used to train OpenAI models. Plus is for individuals, Team is for organizations.' },
+      { question: 'What is ChatGPT Pro and who is it for?', answer: 'ChatGPT Pro costs $200/month and gives effectively unlimited access to OpenAI\'s best models, including extended "pro mode" reasoning. It only makes sense for heavy daily users — researchers, developers, and professionals who hit Plus limits constantly. Most people are better served by Plus at $20/month.' },
       { question: 'Does ChatGPT Enterprise have a minimum seat count?', answer: 'Yes, Enterprise typically requires a minimum commitment. Contact OpenAI sales for specific pricing based on your organization size and needs.' },
     ],
   },

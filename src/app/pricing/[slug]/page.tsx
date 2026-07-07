@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { ArrowRight, Check, Clock, Shield, CreditCard, Star } from 'lucide-react';
 import { getPricingSlugs, getPricingPage, getAllPricingPages } from '@/lib/pricing-data';
 import { hasAlternativesPage } from '@/lib/alternatives-data';
-import { getAffiliateLink } from '@/lib/affiliate';
+import { isTrackedAffiliateUrl } from '@/lib/affiliate';
+import { getCrossSell } from '@/lib/cross-sell';
 import { getAllReviews } from '@/lib/content';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import StaggerContainer from '@/components/motion/StaggerContainer';
 import StaggerItem from '@/components/motion/StaggerItem';
+import StickyCTA from '@/components/StickyCTA';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -48,34 +50,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-/**
- * Commissionable cross-sell: pricing pages for non-affiliate tools (ChatGPT, Gemini,
- * Midjourney, etc.) pull big traffic but earn nothing. Surface a category-matched tool
- * we *actually* earn from and recommend, so high-intent traffic converts to revenue.
- * All picks are honest top-rated tools — not pay-to-rank.
- */
-interface CrossSellPick {
-  toolKey: string; // affiliate.ts key
-  name: string;
-  reviewSlug: string;
-  reason: string;
-}
-const CROSS_SELL_BY_CATEGORY: Record<string, CrossSellPick> = {
-  video: { toolKey: 'pictory', name: 'Pictory', reviewSlug: 'pictory-review', reason: 'turns scripts and blog posts into social-ready video in minutes' },
-  voice: { toolKey: 'elevenlabs', name: 'ElevenLabs', reviewSlug: 'elevenlabs-review', reason: 'the most natural AI voices we tested, with a usable free tier' },
-  seo: { toolKey: 'mangools', name: 'Mangools', reviewSlug: 'mangools-review', reason: 'affordable keyword research and rank tracking built for small sites' },
-  writing: { toolKey: 'frase', name: 'Frase', reviewSlug: 'frase-review', reason: 'AI writing engineered to actually rank in search, not just sound good' },
-};
-
-function classifyTool(toolName: string): keyof typeof CROSS_SELL_BY_CATEGORY | null {
-  const t = toolName.toLowerCase();
-  if (/(runway|pictory|synthesia|descript|fliki|invideo|lumen|heygen|opus|capcut|veo)/.test(t)) return 'video';
-  if (/(elevenlabs|murf|play\.?ht|mubert|speechify|voice)/.test(t)) return 'voice';
-  if (/(semrush|surfer|mangools|frase|ahrefs|clearscope|seo)/.test(t)) return 'seo';
-  if (/(jasper|copy\.?ai|writesonic|rytr|grammarly|chatgpt|gemini|claude|grok|perplexity|notion)/.test(t)) return 'writing';
-  return null;
-}
-
 export default async function PricingDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const page = getPricingPage(slug);
@@ -90,14 +64,27 @@ export default async function PricingDetailPage({ params }: PageProps) {
       .filter((r) => typeof r.rating === 'number' && r.rating > 0)
       .map((r) => [r.slug, r.rating]),
   );
-  const cat = classifyTool(page.tool);
-  const candidate = cat ? CROSS_SELL_BY_CATEGORY[cat] : null;
-  const crossSell =
-    candidate && candidate.reviewSlug !== page.reviewSlug
+  const crossSell = getCrossSell(page.tool, page.reviewSlug, ratingBySlug);
+
+  // StickyCTA target: the page's own tool when its plan links actually earn,
+  // otherwise the commissionable cross-sell pick. Pricing pages are the site's
+  // top organic entry points (~23% of views) with ~89% bounce — they need a
+  // persistent CTA as much as reviews do.
+  const highlightedPlan = page.plans.find((p) => p.highlighted) ?? page.plans[0];
+  const ownToolTracked = isTrackedAffiliateUrl(highlightedPlan?.affiliateUrl);
+  const sticky = ownToolTracked
+    ? {
+        toolName: page.tool,
+        url: highlightedPlan.affiliateUrl,
+        label: `Try ${page.tool}`,
+        rating: page.reviewSlug ? ratingBySlug.get(page.reviewSlug) : undefined,
+      }
+    : crossSell
       ? {
-          ...candidate,
-          url: getAffiliateLink(candidate.toolKey),
-          rating: ratingBySlug.get(candidate.reviewSlug),
+          toolName: `Our top pick: ${crossSell.name}`,
+          url: crossSell.url,
+          label: `Try ${crossSell.name}`,
+          rating: crossSell.rating,
         }
       : null;
 
@@ -210,6 +197,43 @@ export default async function PricingDetailPage({ params }: PageProps) {
           </div>
         </ScrollReveal>
 
+        {/* Commissionable cross-sell — above the fold: pricing pages are the top
+            organic entry points with ~89% bounce, so the earning CTA must be seen
+            before visitors leave, not after 4 screens of plans. */}
+        {crossSell && (
+          <ScrollReveal>
+            <div className="max-w-3xl mb-12 rounded-xl border border-signal-500/25 bg-void-900 p-6" style={{ boxShadow: '0 0 24px rgba(10,209,200,0.05)' }}>
+              <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Our tested top pick</span>
+              <div className="mt-2 flex flex-wrap items-center gap-3">
+                <h2 className="text-xl font-bold text-void-50 font-heading">{crossSell.name}</h2>
+                {crossSell.rating && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
+                    <Star size={11} className="fill-amber-300" /> {crossSell.rating.toFixed(1)}/5
+                  </span>
+                )}
+              </div>
+              <p className="mt-2 text-sm text-void-300 leading-relaxed">
+                Comparing {page.tool}? If you want a tool we genuinely rate, {crossSell.name} {crossSell.reason}.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a
+                  href={crossSell.url}
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                  className="inline-flex items-center gap-2 rounded-lg bg-signal-500 px-5 py-2.5 text-sm font-semibold text-void-950 no-underline hover:bg-signal-400 transition-colors"
+                >
+                  Try {crossSell.name} <ArrowRight size={14} />
+                </a>
+                {crossSell.reviewSlug && (
+                  <Link href={`/reviews/${crossSell.reviewSlug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline transition-colors">
+                    Read our review <ArrowRight size={13} />
+                  </Link>
+                )}
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
+
         {/* Value Analysis & Annual vs Monthly */}
         {(page.valueAnalysis || page.annualVsMonthly) && (
           <ScrollReveal>
@@ -269,7 +293,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
                 <a
                   href={plan.affiliateUrl}
                   target="_blank"
-                  rel="nofollow sponsored noopener"
+                  rel={isTrackedAffiliateUrl(plan.affiliateUrl) ? 'nofollow sponsored noopener' : 'nofollow noopener'}
                   className={`flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold no-underline transition-all ${
                     plan.highlighted
                       ? 'bg-signal-500 text-void-950 hover:bg-signal-400'
@@ -279,44 +303,15 @@ export default async function PricingDetailPage({ params }: PageProps) {
                   {plan.price === 'Custom' ? 'Contact Sales' : `Try ${plan.name}`}
                   <ArrowRight size={14} />
                 </a>
-                <span className="mt-1.5 text-center text-xs text-void-600">Affiliate link</span>
+                {/* Only disclose "Affiliate link" when the link actually is one —
+                    labeling a plain vendor URL as affiliate is misleading. */}
+                {isTrackedAffiliateUrl(plan.affiliateUrl) && (
+                  <span className="mt-1.5 text-center text-xs text-void-600">Affiliate link</span>
+                )}
               </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
-
-        {/* Commissionable cross-sell — convert high-intent traffic toward tools we earn from */}
-        {crossSell && crossSell.url !== '#' && (
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto mb-12 rounded-xl border border-signal-500/25 bg-void-900 p-6" style={{ boxShadow: '0 0 24px rgba(10,209,200,0.05)' }}>
-              <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Our tested top pick</span>
-              <div className="mt-2 flex flex-wrap items-center gap-3">
-                <h2 className="text-xl font-bold text-void-50 font-heading">{crossSell.name}</h2>
-                {crossSell.rating && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                    <Star size={11} className="fill-amber-300" /> {crossSell.rating.toFixed(1)}/5
-                  </span>
-                )}
-              </div>
-              <p className="mt-2 text-sm text-void-300 leading-relaxed">
-                Comparing {page.tool}? If you want a tool we genuinely rate, {crossSell.name} {crossSell.reason}.
-              </p>
-              <div className="mt-4 flex flex-wrap items-center gap-3">
-                <a
-                  href={crossSell.url}
-                  target="_blank"
-                  rel="nofollow sponsored noopener"
-                  className="inline-flex items-center gap-2 rounded-lg bg-signal-500 px-5 py-2.5 text-sm font-semibold text-void-950 no-underline hover:bg-signal-400 transition-colors"
-                >
-                  Try {crossSell.name} <ArrowRight size={14} />
-                </a>
-                <Link href={`/reviews/${crossSell.reviewSlug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-signal-400 hover:text-signal-300 no-underline transition-colors">
-                  Read our review <ArrowRight size={13} />
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        )}
 
         {/* Per-Unit Breakdown & Competitor Comparison */}
         {(page.perUnitBreakdown || page.competitorComparison) && (
@@ -421,6 +416,16 @@ export default async function PricingDetailPage({ params }: PageProps) {
           </div>
         );
       })()}
+
+      {/* Persistent CTA — same treatment reviews get; targets the earning link. */}
+      {sticky && (
+        <StickyCTA
+          toolName={sticky.toolName}
+          affiliateUrl={sticky.url}
+          affiliateLabel={sticky.label}
+          rating={sticky.rating}
+        />
+      )}
     </main>
   );
 }

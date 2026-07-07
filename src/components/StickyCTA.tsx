@@ -7,7 +7,7 @@ interface StickyCTAProps {
   toolName: string;
   affiliateUrl: string;
   affiliateLabel: string;
-  rating: number;
+  rating?: number;
 }
 
 export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rating }: StickyCTAProps) {
@@ -35,9 +35,11 @@ export default function StickyCTA({ toolName, affiliateUrl, affiliateLabel, rati
           <span className="text-sm font-semibold text-void-50 truncate">
             {toolName}
           </span>
-          <span className="text-xs text-signal-400 font-semibold shrink-0">
-            {rating}/5
-          </span>
+          {typeof rating === 'number' && (
+            <span className="text-xs text-signal-400 font-semibold shrink-0">
+              {rating}/5
+            </span>
+          )}
         </div>
 
         <div className="flex items-center gap-2 shrink-0">

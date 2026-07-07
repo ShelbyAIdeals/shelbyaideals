@@ -172,12 +172,16 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
               custom={0.4}
               className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
-              <Link href="/reviews" className="btn-primary text-sm no-underline gap-2">
+              <Link href="/finder" className="btn-primary text-sm no-underline gap-2">
+                {t('hero.find_tool', 'Find Your AI Tool in 30s')}
+                <ArrowRight size={16} />
+              </Link>
+              <Link href="/reviews" className="btn-ghost text-sm no-underline gap-2">
                 {t('hero.browse_tools', 'See Top-Rated Tools')}
                 <ArrowRight size={16} />
               </Link>
-              <Link href="/comparisons" className="btn-ghost text-sm no-underline gap-2">
-                {t('hero.browse_categories', 'Compare Your Options')}
+              <Link href="/calculator" className="btn-ghost text-sm no-underline gap-2">
+                {t('hero.cost_calculator', 'Calculate Your AI Costs')}
                 <ArrowRight size={16} />
               </Link>
             </motion.div>

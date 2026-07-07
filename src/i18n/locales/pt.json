@@ -7,7 +7,6 @@
   "nav.about": "Sobre",
   "nav.search": "Buscar",
   "nav.search_placeholder": "Buscar ferramentas de IA...",
-
   "auth.login": "Entrar",
   "auth.join_free": "Cadastre-se grátis",
   "auth.sign_up": "Cadastrar",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "A senha deve ter pelo menos 6 caracteres",
   "auth.error.invalid_credentials": "E-mail ou senha inválidos",
   "auth.error.generic": "Algo deu errado. Por favor, tente novamente.",
-
   "user.profile": "Perfil",
   "user.my_reviews": "Minhas avaliações",
   "user.settings": "Configurações",
-
   "theme.dark_mode": "Modo escuro",
   "theme.light_mode": "Modo claro",
   "theme.hide_mist": "Ocultar névoa",
   "theme.show_mist": "Mostrar névoa",
-
   "language.select": "Idioma",
   "language.current": "Português",
-
   "newsletter.title": "Fique à frente na revolução da IA",
   "newsletter.subtitle": "Receba as melhores ferramentas de IA, ofertas exclusivas e dicas de produtividade — direto na sua caixa de entrada toda semana.",
   "newsletter.email_placeholder": "Digite seu e-mail",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Dicas de produtividade de usuários reais",
   "newsletter.what_you_get": "O que você vai receber",
   "newsletter.archive": "Explorar arquivo da newsletter",
-
   "review.rating": "Nota",
   "review.reviews": "avaliações",
   "review.write_review": "Escrever uma avaliação",
@@ -87,11 +81,9 @@
   "review.related": "Artigos relacionados",
   "review.watch_youtube": "Assistir no YouTube",
   "review.social_links": "Seguir",
-
   "card.read_review": "Ler avaliação",
   "card.free": "Grátis",
   "card.from": "A partir de",
-
   "hero.eyebrow": "Avaliações Honestas de Ferramentas IA",
   "hero.headline_prefix": "Descubra as Melhores",
   "hero.headline_ai_tools": "Ferramentas IA",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "para Criadores de Conteúdo",
   "hero.rotator_solopreneurs": "para Empreendedores Solo",
   "newsletter.join_creators": "Junte-se a 500+ criadores",
-
   "footer.categories": "Categorias",
   "footer.resources": "Recursos",
   "footer.company": "Empresa",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Enviar uma Ferramenta",
-
   "home.reviews_eyebrow": "Avaliações",
   "home.featured_reviews": "Avaliações em Destaque",
   "home.featured_reviews_desc": "Avaliações detalhadas e práticas das ferramentas que importam.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Todos os Guias",
   "home.read_guide": "Ler Guia",
   "home.guide_badge": "Guia",
-
   "comparisons.title": "Comparativos de Ferramentas IA",
   "comparisons.description": "Comparativos cara a cara com testes reais, funcionalidades lado a lado e vencedores claros por cenário.",
   "comparisons.scenario_singular": "cenário comparado",
   "comparisons.scenario_plural": "cenários comparados",
   "comparisons.read_comparison": "Ler Comparativo",
   "comparisons.empty": "Nenhum comparativo publicado ainda. Volte em breve.",
-
   "deals.updated_date": "Atualizado março 2026",
   "deals.title": "Ofertas e Testes Gratuitos de IA",
   "deals.description": "Ofertas selecionadas nas melhores ferramentas de IA para criadores, freelancers e equipes pequenas. Testes gratuitos, planos gratuitos e descontos exclusivos — tudo em um só lugar.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Obter",
   "deals.read_full_review": "Ler Avaliação Completa",
   "deals.affiliate_link": "Link de afiliado",
-
   "guides.title": "Guias e Tutoriais de IA",
   "guides.description": "Guias passo a passo para criar fluxos de trabalho com IA que economizam tempo e fazem seu negócio crescer.",
   "guides.badge": "Guia",
   "guides.read_guide": "Ler Guia",
   "guides.more": "mais",
   "guides.empty": "Nenhum guia publicado ainda. Volte em breve.",
-
   "newsletter.free_weekly": "Newsletter Semanal Gratuita",
   "newsletter.stay_ahead_title": "Fique à Frente da",
   "newsletter.stay_ahead_highlight": "Revolução IA",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Obtenha descontos e testes estendidos que negociamos diretamente com empresas de ferramentas de IA.",
   "newsletter.workflow_tips_title": "Dicas de Produtividade",
   "newsletter.workflow_tips_desc": "Fluxos de trabalho reais de usuários reais. Aprenda como outros usam IA para economizar horas toda semana.",
-
   "article.best_for": "Melhor Para",
   "article.pricing": "Preços",
   "article.last_tested": "Último Teste",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Ferramentas Mencionadas Neste Guia",
   "article.affiliate_link": "Link de afiliado",
   "article.our_top_picks": "Nossas Melhores Escolhas",
-
   "reviews_page.title": "Avaliações de Ferramentas IA",
   "reviews_page.description": "Avaliações detalhadas e práticas das ferramentas de IA mais importantes para criadores e equipes pequenas.",
   "reviews_page.empty": "Nenhuma avaliação publicada ainda. Volte em breve.",
-
   "category_page.reviews": "Avaliações",
   "category_page.comparisons": "Comparativos",
   "category_page.best_of": "Listas de Melhores",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Ler Guia",
   "category_page.tools_ranked": "ferramentas classificadas",
   "category_page.empty": "Ainda não há artigos nesta categoria. Volte em breve.",
-
   "common.deal_of_the_week": "Oferta da Semana",
   "common.read_review": "Ler Avaliação",
   "common.claim_deal": "Obter Oferta",
   "common.explore": "Explorar",
   "common.article_singular": "artigo",
   "common.article_plural": "artigos",
-
   "common.loading": "Carregando...",
   "common.error": "Algo deu errado",
   "common.retry": "Tentar novamente",
@@ -271,5 +252,9 @@
   "common.next": "Próximo",
   "common.previous": "Anterior",
   "common.show_more": "Mostrar mais",
-  "common.show_less": "Mostrar menos"
+  "common.show_less": "Mostrar menos",
+  "hero.find_tool": "Encontre sua ferramenta de IA em 30s",
+  "hero.cost_calculator": "Calcule seus custos de IA",
+  "footer.res_finder": "Localizador de ferramentas",
+  "footer.res_calculator": "Calculadora de custos de IA"
 }

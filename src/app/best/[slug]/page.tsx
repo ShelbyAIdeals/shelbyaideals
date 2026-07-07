@@ -7,6 +7,7 @@ import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
+import { resolveAffiliateUrlByName } from '@/lib/affiliate';
 import { pricingData } from '@/lib/pricing-data';
 import type { BestOfMeta } from '@/lib/types';
 
@@ -130,7 +131,7 @@ export default async function BestOfArticlePage({ params }: PageProps) {
                 rating={tool.rating}
                 pricing={tool.pricing}
                 bestFor={tool.bestFor}
-                affiliateUrl={tool.affiliateUrl}
+                affiliateUrl={resolveAffiliateUrlByName(tool.name, tool.affiliateUrl)}
                 reviewSlug={review?.slug}
                 pricingSlug={pricing?.slug}
               />

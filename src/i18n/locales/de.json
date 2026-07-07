@@ -7,7 +7,6 @@
   "nav.about": "Über uns",
   "nav.search": "Suche",
   "nav.search_placeholder": "KI-Tools suchen...",
-
   "auth.login": "Anmelden",
   "auth.join_free": "Kostenlos beitreten",
   "auth.sign_up": "Registrieren",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Das Passwort muss mindestens 6 Zeichen lang sein",
   "auth.error.invalid_credentials": "Ungültige E-Mail oder Passwort",
   "auth.error.generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
-
   "user.profile": "Profil",
   "user.my_reviews": "Meine Bewertungen",
   "user.settings": "Einstellungen",
-
   "theme.dark_mode": "Dunkelmodus",
   "theme.light_mode": "Hellmodus",
   "theme.hide_mist": "Nebel ausblenden",
   "theme.show_mist": "Nebel einblenden",
-
   "language.select": "Sprache",
   "language.current": "Deutsch",
-
   "newsletter.title": "Bleib der KI einen Schritt voraus",
   "newsletter.subtitle": "Erhalte die besten KI-Tool-Empfehlungen, exklusive Angebote und Produktivitätstipps — jede Woche direkt in dein Postfach.",
   "newsletter.email_placeholder": "Gib deine E-Mail ein",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Produktivitätstipps von echten Nutzern",
   "newsletter.what_you_get": "Das bekommst du",
   "newsletter.archive": "Newsletter-Archiv durchsuchen",
-
   "review.rating": "Bewertung",
   "review.reviews": "Bewertungen",
   "review.write_review": "Bewertung schreiben",
@@ -87,11 +81,9 @@
   "review.related": "Verwandte Artikel",
   "review.watch_youtube": "Auf YouTube ansehen",
   "review.social_links": "Folgen",
-
   "card.read_review": "Bewertung lesen",
   "card.free": "Kostenlos",
   "card.from": "Ab",
-
   "hero.eyebrow": "Ehrliche KI-Tool Bewertungen",
   "hero.headline_prefix": "Entdecke die Besten",
   "hero.headline_ai_tools": "KI-Tools",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "für Content-Ersteller",
   "hero.rotator_solopreneurs": "für Solopreneure",
   "newsletter.join_creators": "Schließe dich 500+ Kreativen an",
-
   "footer.categories": "Kategorien",
   "footer.resources": "Ressourcen",
   "footer.company": "Unternehmen",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Tool Einreichen",
-
   "home.reviews_eyebrow": "Bewertungen",
   "home.featured_reviews": "Ausgewählte Bewertungen",
   "home.featured_reviews_desc": "Ausführliche, praxisnahe Bewertungen der Tools, die zählen.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Alle Anleitungen",
   "home.read_guide": "Anleitung Lesen",
   "home.guide_badge": "Anleitung",
-
   "comparisons.title": "KI-Tool Vergleiche",
   "comparisons.description": "Direktvergleiche mit echten Tests, Funktionen nebeneinander und klare Gewinner pro Szenario.",
   "comparisons.scenario_singular": "Szenario verglichen",
   "comparisons.scenario_plural": "Szenarien verglichen",
   "comparisons.read_comparison": "Vergleich Lesen",
   "comparisons.empty": "Noch keine Vergleiche veröffentlicht. Schau bald wieder vorbei.",
-
   "deals.updated_date": "Aktualisiert März 2026",
   "deals.title": "KI-Tool Angebote & Kostenlose Tests",
   "deals.description": "Ausgewählte Angebote für die besten KI-Tools für Kreative, Freelancer und kleine Teams. Kostenlose Tests, Gratisversionen und exklusive Rabatte — alles an einem Ort.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Zu",
   "deals.read_full_review": "Vollständige Bewertung Lesen",
   "deals.affiliate_link": "Affiliate-Link",
-
   "guides.title": "KI-Anleitungen & Tutorials",
   "guides.description": "Schritt-für-Schritt-Anleitungen für KI-gestützte Workflows, die Zeit sparen und dein Business voranbringen.",
   "guides.badge": "Anleitung",
   "guides.read_guide": "Anleitung Lesen",
   "guides.more": "weitere",
   "guides.empty": "Noch keine Anleitungen veröffentlicht. Schau bald wieder vorbei.",
-
   "newsletter.free_weekly": "Kostenloser Wöchentlicher Newsletter",
   "newsletter.stay_ahead_title": "Bleib der",
   "newsletter.stay_ahead_highlight": "KI-Kurve Voraus",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Erhalte Rabatte und verlängerte Testphasen, die wir direkt mit KI-Tool-Unternehmen aushandeln.",
   "newsletter.workflow_tips_title": "Produktivitätstipps",
   "newsletter.workflow_tips_desc": "Echte Workflows von echten Nutzern. Erfahre, wie andere KI nutzen, um jede Woche Stunden zu sparen.",
-
   "article.best_for": "Am Besten Für",
   "article.pricing": "Preise",
   "article.last_tested": "Zuletzt Getestet",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "In Diesem Ratgeber Erwähnte Tools",
   "article.affiliate_link": "Affiliate-Link",
   "article.our_top_picks": "Unsere Top-Auswahl",
-
   "reviews_page.title": "KI-Tool Bewertungen",
   "reviews_page.description": "Ausführliche, praxisnahe Bewertungen der KI-Tools, die für Kreative und kleine Teams am wichtigsten sind.",
   "reviews_page.empty": "Noch keine Bewertungen veröffentlicht. Schau bald wieder vorbei.",
-
   "category_page.reviews": "Bewertungen",
   "category_page.comparisons": "Vergleiche",
   "category_page.best_of": "Best-Of-Listen",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Anleitung Lesen",
   "category_page.tools_ranked": "Tools bewertet",
   "category_page.empty": "Noch keine Artikel in dieser Kategorie. Schau bald wieder vorbei.",
-
   "common.deal_of_the_week": "Angebot der Woche",
   "common.read_review": "Bewertung Lesen",
   "common.claim_deal": "Angebot Sichern",
   "common.explore": "Erkunden",
   "common.article_singular": "Artikel",
   "common.article_plural": "Artikel",
-
   "common.loading": "Wird geladen...",
   "common.error": "Etwas ist schiefgelaufen",
   "common.retry": "Erneut versuchen",
@@ -271,5 +252,9 @@
   "common.next": "Weiter",
   "common.previous": "Zurück",
   "common.show_more": "Mehr anzeigen",
-  "common.show_less": "Weniger anzeigen"
+  "common.show_less": "Weniger anzeigen",
+  "hero.find_tool": "Finde dein KI-Tool in 30s",
+  "hero.cost_calculator": "Berechne deine KI-Kosten",
+  "footer.res_finder": "Tool-Finder",
+  "footer.res_calculator": "KI-Kostenrechner"
 }

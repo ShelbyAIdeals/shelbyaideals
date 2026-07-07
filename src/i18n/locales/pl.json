@@ -7,7 +7,6 @@
   "nav.about": "O nas",
   "nav.search": "Szukaj",
   "nav.search_placeholder": "Szukaj narzędzi AI...",
-
   "auth.login": "Zaloguj się",
   "auth.join_free": "Dołącz za darmo",
   "auth.sign_up": "Zarejestruj się",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Hasło musi mieć co najmniej 6 znaków",
   "auth.error.invalid_credentials": "Nieprawidłowy e-mail lub hasło",
   "auth.error.generic": "Coś poszło nie tak. Spróbuj ponownie.",
-
   "user.profile": "Profil",
   "user.my_reviews": "Moje recenzje",
   "user.settings": "Ustawienia",
-
   "theme.dark_mode": "Tryb ciemny",
   "theme.light_mode": "Tryb jasny",
   "theme.hide_mist": "Ukryj mgłę",
   "theme.show_mist": "Pokaż mgłę",
-
   "language.select": "Język",
   "language.current": "Polski",
-
   "newsletter.title": "Bądź na bieżąco ze światem AI",
   "newsletter.subtitle": "Otrzymuj najlepsze narzędzia AI, ekskluzywne oferty i wskazówki dotyczące produktywności — prosto do Twojej skrzynki co tydzień.",
   "newsletter.email_placeholder": "Wpisz swój e-mail",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Wskazówki od prawdziwych użytkowników",
   "newsletter.what_you_get": "Co otrzymasz",
   "newsletter.archive": "Przeglądaj archiwum newslettera",
-
   "review.rating": "Ocena",
   "review.reviews": "recenzje",
   "review.write_review": "Napisz recenzję",
@@ -87,11 +81,9 @@
   "review.related": "Powiązane artykuły",
   "review.watch_youtube": "Obejrzyj na YouTube",
   "review.social_links": "Obserwuj",
-
   "card.read_review": "Przeczytaj recenzję",
   "card.free": "Za darmo",
   "card.from": "Od",
-
   "hero.eyebrow": "Uczciwe Recenzje Narzędzi AI",
   "hero.headline_prefix": "Odkryj Najlepsze",
   "hero.headline_ai_tools": "Narzędzia AI",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "dla Twórców Treści",
   "hero.rotator_solopreneurs": "dla Soloprzedsiębiorców",
   "newsletter.join_creators": "Dołącz do 500+ twórców",
-
   "footer.categories": "Kategorie",
   "footer.resources": "Zasoby",
   "footer.company": "Firma",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Prześlij Narzędzie",
-
   "home.reviews_eyebrow": "Recenzje",
   "home.featured_reviews": "Wyróżnione Recenzje",
   "home.featured_reviews_desc": "Szczegółowe, praktyczne recenzje narzędzi, które się liczą.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Wszystkie Poradniki",
   "home.read_guide": "Czytaj Poradnik",
   "home.guide_badge": "Poradnik",
-
   "comparisons.title": "Porównania Narzędzi AI",
   "comparisons.description": "Bezpośrednie porównania z prawdziwymi testami, funkcjami obok siebie i wyraźnymi zwycięzcami w każdym scenariuszu.",
   "comparisons.scenario_singular": "scenariusz porównany",
   "comparisons.scenario_plural": "scenariuszy porównanych",
   "comparisons.read_comparison": "Czytaj Porównanie",
   "comparisons.empty": "Brak opublikowanych porównań. Wróć wkrótce.",
-
   "deals.updated_date": "Zaktualizowano marzec 2026",
   "deals.title": "Oferty i Darmowe Wersje Próbne AI",
   "deals.description": "Wyselekcjonowane oferty najlepszych narzędzi AI dla twórców, freelancerów i małych zespołów. Darmowe wersje próbne, darmowe plany i ekskluzywne zniżki — wszystko w jednym miejscu.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Pobierz",
   "deals.read_full_review": "Czytaj Pełną Recenzję",
   "deals.affiliate_link": "Link partnerski",
-
   "guides.title": "Poradniki i Tutoriale AI",
   "guides.description": "Poradniki krok po kroku do tworzenia przepływów pracy z AI, które oszczędzają czas i rozwijają Twój biznes.",
   "guides.badge": "Poradnik",
   "guides.read_guide": "Czytaj Poradnik",
   "guides.more": "więcej",
   "guides.empty": "Brak opublikowanych poradników. Wróć wkrótce.",
-
   "newsletter.free_weekly": "Darmowy Tygodniowy Newsletter",
   "newsletter.stay_ahead_title": "Bądź o Krok Przed",
   "newsletter.stay_ahead_highlight": "Rewolucją AI",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Otrzymaj zniżki i przedłużone wersje próbne, które negocjujemy bezpośrednio z firmami narzędzi AI.",
   "newsletter.workflow_tips_title": "Wskazówki Produktywności",
   "newsletter.workflow_tips_desc": "Prawdziwe przepływy pracy od prawdziwych użytkowników. Dowiedz się, jak inni używają AI, aby oszczędzać godziny każdego tygodnia.",
-
   "article.best_for": "Najlepsze Dla",
   "article.pricing": "Cennik",
   "article.last_tested": "Ostatnio Testowane",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Narzędzia Wymienione w Tym Poradniku",
   "article.affiliate_link": "Link partnerski",
   "article.our_top_picks": "Nasze Najlepsze Wybory",
-
   "reviews_page.title": "Recenzje Narzędzi AI",
   "reviews_page.description": "Szczegółowe, praktyczne recenzje narzędzi AI najważniejszych dla twórców i małych zespołów.",
   "reviews_page.empty": "Brak opublikowanych recenzji. Wróć wkrótce.",
-
   "category_page.reviews": "Recenzje",
   "category_page.comparisons": "Porównania",
   "category_page.best_of": "Listy Najlepszych",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Czytaj Poradnik",
   "category_page.tools_ranked": "narzędzi sklasyfikowanych",
   "category_page.empty": "Brak artykułów w tej kategorii. Wróć wkrótce.",
-
   "common.deal_of_the_week": "Oferta Tygodnia",
   "common.read_review": "Czytaj Recenzję",
   "common.claim_deal": "Skorzystaj z Oferty",
   "common.explore": "Odkryj",
   "common.article_singular": "artykuł",
   "common.article_plural": "artykuły",
-
   "common.loading": "Ładowanie...",
   "common.error": "Coś poszło nie tak",
   "common.retry": "Spróbuj ponownie",
@@ -271,5 +252,9 @@
   "common.next": "Dalej",
   "common.previous": "Poprzedni",
   "common.show_more": "Pokaż więcej",
-  "common.show_less": "Pokaż mniej"
+  "common.show_less": "Pokaż mniej",
+  "hero.find_tool": "Znajdź swoje narzędzie AI w 30s",
+  "hero.cost_calculator": "Oblicz koszty AI",
+  "footer.res_finder": "Wyszukiwarka narzędzi",
+  "footer.res_calculator": "Kalkulator kosztów AI"
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ToolFinder, { type FinderGoal } from '@/components/ToolFinder';
-import { useCaseData } from '@/lib/use-case-data';
+import { getAllUseCasePages } from '@/lib/use-case-data';
 import { getAllReviews } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -40,8 +40,11 @@ export default function FinderPage() {
       .map((r) => [r.slug, r.rating]),
   );
 
+  // Resolve through the affiliate.ts accessor so finder CTAs can never drift
+  // from centrally-managed tracked links.
+  const useCasePages = getAllUseCasePages();
   const goals: FinderGoal[] = GOAL_MAP.map((g) => {
-    const page = useCaseData.find((p) => p.slug === g.useCaseSlug);
+    const page = useCasePages.find((p) => p.slug === g.useCaseSlug);
     const tools = (page?.tools ?? []).map((t) => ({
       name: t.name,
       pricing: t.pricing,

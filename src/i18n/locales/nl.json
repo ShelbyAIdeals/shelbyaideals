@@ -7,7 +7,6 @@
   "nav.about": "Over ons",
   "nav.search": "Zoeken",
   "nav.search_placeholder": "AI-tools zoeken...",
-
   "auth.login": "Inloggen",
   "auth.join_free": "Gratis aanmelden",
   "auth.sign_up": "Registreren",
@@ -31,19 +30,15 @@
   "auth.error.weak_password": "Het wachtwoord moet minimaal 6 tekens bevatten",
   "auth.error.invalid_credentials": "Ongeldig e-mailadres of wachtwoord",
   "auth.error.generic": "Er is iets misgegaan. Probeer het opnieuw.",
-
   "user.profile": "Profiel",
   "user.my_reviews": "Mijn beoordelingen",
   "user.settings": "Instellingen",
-
   "theme.dark_mode": "Donkere modus",
   "theme.light_mode": "Lichte modus",
   "theme.hide_mist": "Mist verbergen",
   "theme.show_mist": "Mist tonen",
-
   "language.select": "Taal",
   "language.current": "Nederlands",
-
   "newsletter.title": "Blijf voorop in de AI-revolutie",
   "newsletter.subtitle": "Ontvang de beste AI-tools, exclusieve aanbiedingen en productiviteitstips — elke week rechtstreeks in je inbox.",
   "newsletter.email_placeholder": "Vul je e-mailadres in",
@@ -56,7 +51,6 @@
   "newsletter.benefit_3": "Productiviteitstips van echte gebruikers",
   "newsletter.what_you_get": "Wat je krijgt",
   "newsletter.archive": "Nieuwsbriefarchief bekijken",
-
   "review.rating": "Beoordeling",
   "review.reviews": "beoordelingen",
   "review.write_review": "Schrijf een beoordeling",
@@ -87,11 +81,9 @@
   "review.related": "Gerelateerde artikelen",
   "review.watch_youtube": "Bekijk op YouTube",
   "review.social_links": "Volgen",
-
   "card.read_review": "Lees beoordeling",
   "card.free": "Gratis",
   "card.from": "Vanaf",
-
   "hero.eyebrow": "Eerlijke AI-Tool Reviews",
   "hero.headline_prefix": "Ontdek de Beste",
   "hero.headline_ai_tools": "AI-Tools",
@@ -115,7 +107,6 @@
   "hero.rotator_creators": "voor Content Creators",
   "hero.rotator_solopreneurs": "voor Solopreneurs",
   "newsletter.join_creators": "Sluit je aan bij 500+ makers",
-
   "footer.categories": "Categorieën",
   "footer.resources": "Bronnen",
   "footer.company": "Bedrijf",
@@ -152,7 +143,6 @@
   "footer.social_linkedin": "LinkedIn",
   "footer.social_pinterest": "Pinterest",
   "footer.submit_tool": "Tool Indienen",
-
   "home.reviews_eyebrow": "Reviews",
   "home.featured_reviews": "Uitgelichte Reviews",
   "home.featured_reviews_desc": "Diepgaande, praktische reviews van de tools die ertoe doen.",
@@ -172,14 +162,12 @@
   "home.all_guides": "Alle Handleidingen",
   "home.read_guide": "Handleiding Lezen",
   "home.guide_badge": "Handleiding",
-
   "comparisons.title": "AI-Tool Vergelijkingen",
   "comparisons.description": "Onderlinge vergelijkingen met echte tests, functies naast elkaar en duidelijke winnaars per scenario.",
   "comparisons.scenario_singular": "scenario vergeleken",
   "comparisons.scenario_plural": "scenario's vergeleken",
   "comparisons.read_comparison": "Vergelijking Lezen",
   "comparisons.empty": "Nog geen vergelijkingen gepubliceerd. Kom snel terug.",
-
   "deals.updated_date": "Bijgewerkt maart 2026",
   "deals.title": "AI-Tool Aanbiedingen & Gratis Proefversies",
   "deals.description": "Geselecteerde aanbiedingen voor de beste AI-tools voor makers, freelancers en kleine teams. Gratis proefversies, gratis plannen en exclusieve kortingen — alles op één plek.",
@@ -189,14 +177,12 @@
   "deals.get_prefix": "Naar",
   "deals.read_full_review": "Volledige Review Lezen",
   "deals.affiliate_link": "Affiliate-link",
-
   "guides.title": "AI Handleidingen & Tutorials",
   "guides.description": "Stap-voor-stap handleidingen voor AI-aangedreven workflows die tijd besparen en je bedrijf laten groeien.",
   "guides.badge": "Handleiding",
   "guides.read_guide": "Handleiding Lezen",
   "guides.more": "meer",
   "guides.empty": "Nog geen handleidingen gepubliceerd. Kom snel terug.",
-
   "newsletter.free_weekly": "Gratis Wekelijkse Nieuwsbrief",
   "newsletter.stay_ahead_title": "Blijf Voorop in de",
   "newsletter.stay_ahead_highlight": "AI-Revolutie",
@@ -210,7 +196,6 @@
   "newsletter.exclusive_deals_desc": "Krijg kortingen en verlengde proefperiodes die we rechtstreeks met AI-tool bedrijven onderhandelen.",
   "newsletter.workflow_tips_title": "Productiviteitstips",
   "newsletter.workflow_tips_desc": "Echte workflows van echte gebruikers. Ontdek hoe anderen AI gebruiken om elke week uren te besparen.",
-
   "article.best_for": "Het Beste Voor",
   "article.pricing": "Prijzen",
   "article.last_tested": "Laatst Getest",
@@ -239,11 +224,9 @@
   "article.tools_mentioned": "Tools Genoemd in Deze Handleiding",
   "article.affiliate_link": "Affiliate-link",
   "article.our_top_picks": "Onze Topkeuzes",
-
   "reviews_page.title": "AI-Tool Reviews",
   "reviews_page.description": "Diepgaande, praktische reviews van de AI-tools die het meest belangrijk zijn voor makers en kleine teams.",
   "reviews_page.empty": "Nog geen reviews gepubliceerd. Kom snel terug.",
-
   "category_page.reviews": "Reviews",
   "category_page.comparisons": "Vergelijkingen",
   "category_page.best_of": "Best-Of Lijsten",
@@ -253,14 +236,12 @@
   "category_page.read_guide": "Handleiding Lezen",
   "category_page.tools_ranked": "tools gerangschikt",
   "category_page.empty": "Nog geen artikelen in deze categorie. Kom snel terug.",
-
   "common.deal_of_the_week": "Aanbieding van de Week",
   "common.read_review": "Review Lezen",
   "common.claim_deal": "Aanbieding Claimen",
   "common.explore": "Verkennen",
   "common.article_singular": "artikel",
   "common.article_plural": "artikelen",
-
   "common.loading": "Laden...",
   "common.error": "Er is iets misgegaan",
   "common.retry": "Opnieuw proberen",
@@ -271,5 +252,9 @@
   "common.next": "Volgende",
   "common.previous": "Vorige",
   "common.show_more": "Meer tonen",
-  "common.show_less": "Minder tonen"
+  "common.show_less": "Minder tonen",
+  "hero.find_tool": "Vind je AI-tool in 30s",
+  "hero.cost_calculator": "Bereken je AI-kosten",
+  "footer.res_finder": "Tool Finder",
+  "footer.res_calculator": "AI-kostencalculator"
 }

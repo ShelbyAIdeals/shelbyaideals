@@ -277,6 +277,42 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.canva.com',
     category: 'AI Design',
   },
+  {
+    slug: 'appsumo',
+    tool: 'AppSumo',
+    toolSlug: 'appsumo',
+    tagline: 'Lifetime deals on vetted AI and software tools — pay once, use forever.',
+    dealType: 'discount',
+    dealLabel: 'Lifetime Deals',
+    dealPrice: 'Pay once',
+    features: [
+      'Lifetime access — no subscriptions',
+      'New AI tool deals every week',
+      '60-day money-back guarantee',
+      'Vetted, launch-stage software',
+    ],
+    affiliateUrl: 'https://appsumo.8odi.net/NG9YMP',
+    category: 'Deals Marketplace',
+    featured: true,
+  },
+  {
+    slug: 'scalenut',
+    tool: 'Scalenut',
+    toolSlug: 'scalenut',
+    tagline: 'AI SEO content platform — keyword planning, briefs, and articles in one flow.',
+    dealType: 'free-trial',
+    dealLabel: 'Free Trial',
+    dealPrice: 'Try Free',
+    features: [
+      'Keyword clusters & content plans',
+      'SEO-optimized article writer',
+      'NLP terms from top SERP results',
+      'Content briefs for writers',
+    ],
+    affiliateUrl: 'https://scalenut.com/?fpr=shelby-ai',
+    category: 'AI Marketing & SEO',
+    featured: true,
+  },
 ];
 
 /** Resolve affiliate URL through centralized affiliate.ts */
