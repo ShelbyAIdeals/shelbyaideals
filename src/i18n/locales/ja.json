@@ -256,5 +256,6 @@
   "hero.find_tool": "30秒であなたのAIツールを見つける",
   "hero.cost_calculator": "AIコストを計算する",
   "footer.res_finder": "ツールファインダー",
-  "footer.res_calculator": "AIコスト計算ツール"
+  "footer.res_calculator": "AIコスト計算ツール",
+  "footer.res_pricing_index": "AI価格インデックス"
 }

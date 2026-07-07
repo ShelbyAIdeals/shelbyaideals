@@ -256,5 +256,6 @@
   "hero.find_tool": "اعثر على أداة الذكاء الاصطناعي في 30 ثانية",
   "hero.cost_calculator": "احسب تكاليف الذكاء الاصطناعي",
   "footer.res_finder": "الباحث عن الأدوات",
-  "footer.res_calculator": "حاسبة تكاليف الذكاء الاصطناعي"
+  "footer.res_calculator": "حاسبة تكاليف الذكاء الاصطناعي",
+  "footer.res_pricing_index": "مؤشر أسعار الذكاء الاصطناعي"
 }

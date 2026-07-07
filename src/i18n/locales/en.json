@@ -256,5 +256,6 @@
   "hero.find_tool": "Find Your AI Tool in 30s",
   "hero.cost_calculator": "Calculate Your AI Costs",
   "footer.res_finder": "Tool Finder",
-  "footer.res_calculator": "AI Cost Calculator"
+  "footer.res_calculator": "AI Cost Calculator",
+  "footer.res_pricing_index": "AI Pricing Index"
 }

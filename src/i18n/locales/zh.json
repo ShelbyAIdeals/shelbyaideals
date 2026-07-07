@@ -256,5 +256,6 @@
   "hero.find_tool": "30秒找到你的AI工具",
   "hero.cost_calculator": "计算你的AI成本",
   "footer.res_finder": "工具查找器",
-  "footer.res_calculator": "AI成本计算器"
+  "footer.res_calculator": "AI成本计算器",
+  "footer.res_pricing_index": "AI价格指数"
 }

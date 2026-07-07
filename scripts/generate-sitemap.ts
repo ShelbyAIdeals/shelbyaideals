@@ -58,6 +58,7 @@ function buildSitemap(): string {
     { url: '/terms-of-service', priority: '0.3', changefreq: 'yearly' },
     { url: '/deals', priority: '0.8', changefreq: 'weekly' },
     { url: '/finder', priority: '0.8', changefreq: 'monthly' },
+    { url: '/ai-pricing-index', priority: '0.8', changefreq: 'monthly' },
     { url: '/compare', priority: '0.8', changefreq: 'monthly' },
     { url: '/calculator', priority: '0.8', changefreq: 'monthly' },
     { url: '/submit-tool', priority: '0.4', changefreq: 'monthly' },

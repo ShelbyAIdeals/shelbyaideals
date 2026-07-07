@@ -256,5 +256,6 @@
   "hero.find_tool": "30 saniyede yapay zeka aracını bul",
   "hero.cost_calculator": "Yapay zeka maliyetini hesapla",
   "footer.res_finder": "Araç Bulucu",
-  "footer.res_calculator": "Yapay Zeka Maliyet Hesaplayıcı"
+  "footer.res_calculator": "Yapay Zeka Maliyet Hesaplayıcı",
+  "footer.res_pricing_index": "Yapay Zeka Fiyat Endeksi"
 }

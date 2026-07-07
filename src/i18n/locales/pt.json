@@ -256,5 +256,6 @@
   "hero.find_tool": "Encontre sua ferramenta de IA em 30s",
   "hero.cost_calculator": "Calcule seus custos de IA",
   "footer.res_finder": "Localizador de ferramentas",
-  "footer.res_calculator": "Calculadora de custos de IA"
+  "footer.res_calculator": "Calculadora de custos de IA",
+  "footer.res_pricing_index": "Índice de preços de IA"
 }

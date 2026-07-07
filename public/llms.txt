@@ -31,6 +31,7 @@
 - AI Tool Finder (interactive recommender): https://www.shelby-ai.com/finder/
 - Compare AI Tools side by side (interactive): https://www.shelby-ai.com/compare/
 - AI Tool Stack Cost Calculator (interactive): https://www.shelby-ai.com/calculator/
+- AI Tool Pricing Index (original dataset, CC BY 4.0): https://www.shelby-ai.com/ai-pricing-index/
 - How We Review: https://www.shelby-ai.com/how-we-review/
 - About / Author: https://www.shelby-ai.com/author/frank-shelby/
 

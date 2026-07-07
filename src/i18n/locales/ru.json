@@ -256,5 +256,6 @@
   "hero.find_tool": "Найдите свой ИИ-инструмент за 30с",
   "hero.cost_calculator": "Рассчитайте расходы на ИИ",
   "footer.res_finder": "Подбор инструмента",
-  "footer.res_calculator": "Калькулятор расходов на ИИ"
+  "footer.res_calculator": "Калькулятор расходов на ИИ",
+  "footer.res_pricing_index": "Индекс цен ИИ"
 }

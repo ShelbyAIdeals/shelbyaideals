@@ -256,5 +256,6 @@
   "hero.find_tool": "30초 만에 AI 도구 찾기",
   "hero.cost_calculator": "AI 비용 계산하기",
   "footer.res_finder": "도구 찾기",
-  "footer.res_calculator": "AI 비용 계산기"
+  "footer.res_calculator": "AI 비용 계산기",
+  "footer.res_pricing_index": "AI 가격 지수"
 }

@@ -256,5 +256,6 @@
   "hero.find_tool": "30 सेकंड में अपना AI टूल खोजें",
   "hero.cost_calculator": "अपनी AI लागत की गणना करें",
   "footer.res_finder": "टूल फ़ाइंडर",
-  "footer.res_calculator": "AI लागत कैलकुलेटर"
+  "footer.res_calculator": "AI लागत कैलकुलेटर",
+  "footer.res_pricing_index": "AI मूल्य सूचकांक"
 }

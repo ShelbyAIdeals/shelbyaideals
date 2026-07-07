@@ -256,5 +256,6 @@
   "hero.find_tool": "Finde dein KI-Tool in 30s",
   "hero.cost_calculator": "Berechne deine KI-Kosten",
   "footer.res_finder": "Tool-Finder",
-  "footer.res_calculator": "KI-Kostenrechner"
+  "footer.res_calculator": "KI-Kostenrechner",
+  "footer.res_pricing_index": "KI-Preisindex"
 }
