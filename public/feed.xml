@@ -5,8 +5,35 @@
     <link>https://www.shelby-ai.com</link>
     <description>Honest AI tool reviews for creators, freelancers, and small teams.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 May 2026 21:43:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 06:48:08 GMT</lastBuildDate>
     <atom:link href="https://www.shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Open, Edit and Convert a Parquet File Online (No Install)</title>
+      <link>https://www.shelby-ai.com/guides/open-parquet-file-online</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/open-parquet-file-online</guid>
+      <description>Downloaded a dataset and got a .parquet file your spreadsheet refuses to open? Here&apos;s how to inspect, edit, query and convert Parquet in the browser — no Python, no pandas, no upload.</description>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)</title>
+      <link>https://www.shelby-ai.com/guides/read-dmp-file-fix-blue-screen</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/read-dmp-file-fix-blue-screen</guid>
+      <description>Your Windows machine blue-screened mid-render and left a .dmp file you can&apos;t open. Here&apos;s how to decode it in a browser, read the report honestly, and tell a real culprit from a bystander.</description>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>How to Send Large Files Without Uploading Them (2026 Guide)</title>
+      <link>https://www.shelby-ai.com/guides/send-large-files-without-uploading</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/send-large-files-without-uploading</guid>
+      <description>WeTransfer&apos;s free tier caps at 3 GB. Your AI video export is 12 GB. Here&apos;s how peer-to-peer browser transfer moves files of any size with no upload, no account, and no cloud copy.</description>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
     <item>
       <title>How to Use Claude Code (and Claude Design): A Complete 2026 Guide</title>
       <link>https://www.shelby-ai.com/guides/how-to-use-claude-code</link>
@@ -68,7 +95,7 @@
       <description>We tested ChatGPT and Claude on real business tasks — emails, analysis, strategy, customer support, and coding. Here is which AI assistant actually helps small businesses more.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
-      <category>ai-assistants</category>
+      <category>ai-content-productivity</category>
     </item>
     <item>
       <title>Descript vs CapCut: Which Video Editor Is Better for Creators? (2026)</title>
@@ -77,7 +104,7 @@
       <description>We edited the same video in both Descript and CapCut to compare AI features, editing speed, export quality, and pricing. Here is the real breakdown.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
-      <category>ai-video-tools</category>
+      <category>ai-video-audio</category>
     </item>
     <item>
       <title>ElevenLabs vs Murf AI: Which AI Voice Generator Sounds Better? (2026)</title>
@@ -86,7 +113,7 @@
       <description>We generated the same scripts in both ElevenLabs and Murf AI to compare voice quality, naturalness, pricing, and real-world use cases. Here is the detailed verdict.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
-      <category>ai-voice-tools</category>
+      <category>ai-video-audio</category>
     </item>
     <item>
       <title>ElevenLabs vs Murf vs Play.ht: Best AI Voice Generator in 2026</title>
@@ -104,7 +131,7 @@
       <description>We ran identical content briefs through Frase and Surfer SEO to compare research depth, optimization accuracy, and value. Here is the honest breakdown.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
-      <category>seo-tools</category>
+      <category>ai-marketing-seo</category>
     </item>
     <item>
       <title>Pictory vs Lumen5 vs InVideo: Best AI Video Creator for Small Business</title>
@@ -122,7 +149,7 @@
       <description>We tested Pictory and Synthesia side by side for marketing videos, training content, and social clips. Here is which tool wins for each use case.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
-      <category>ai-video-tools</category>
+      <category>ai-video-audio</category>
     </item>
     <item>
       <title>The Complete AI Marketing Stack for Solopreneurs: SEO, Content, Video, and Automation</title>

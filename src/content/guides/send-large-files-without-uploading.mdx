@@ -1,0 +1,181 @@
+---
+title: "How to Send Large Files Without Uploading Them (2026 Guide)"
+slug: send-large-files-without-uploading
+excerpt: "WeTransfer's free tier caps at 3 GB. Your AI video export is 12 GB. Here's how peer-to-peer browser transfer moves files of any size with no upload, no account, and no cloud copy."
+description: "A practical guide to sending large files without uploading them to a cloud service — how browser-to-browser WebRTC transfer works, how to use Pairchute step by step, and when a cloud link is still the better tool."
+category: ai-content-productivity
+type: guide
+author: "Frank Shelby"
+date: "2026-07-31"
+lastUpdated: "2026-07-31"
+featured: false
+keyTakeaways:
+  - "Peer-to-peer browser transfer has no size limit because there is no server — your disk is the ceiling, not a plan tier."
+  - "Pairchute is free with no account: you create an invite link, the other side replies once, and an encrypted WebRTC pipe opens directly between the two browsers."
+  - "The trade-off is presence: both tabs must stay open for the whole transfer, and a dropped connection restarts from zero."
+  - "Use a cloud link instead when the recipient is asleep, on a locked-down corporate network, or when you need the file to sit somewhere for a week."
+recommendedTools:
+  - name: "Pairchute"
+    category: "Peer-to-peer file transfer"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://pairchute.com"
+    description: "Serverless browser-to-browser file transfer over encrypted WebRTC. No size limit, no upload, no account — files stream disk-to-disk between two open tabs."
+  - name: "WeTransfer"
+    category: "Cloud file transfer"
+    pricing: "Free tier: 3 GB per transfer"
+    affiliateUrl: "https://wetransfer.com"
+    description: "The default link-based transfer service. Good when the recipient is offline, but the free tier now caps at 3 GB per transfer with a monthly quota and 3-day expiry."
+  - name: "Google Drive"
+    category: "Cloud storage"
+    pricing: "Free 15 GB, paid tiers beyond"
+    affiliateUrl: "https://drive.google.com"
+    description: "Best when a file needs a permanent home and repeat access rather than a one-time handoff. Storage counts against your account quota."
+  - name: "Croc"
+    category: "Command-line P2P transfer"
+    pricing: "Free (open source)"
+    affiliateUrl: "https://github.com/schollz/croc"
+    description: "Terminal equivalent of the same idea — end-to-end encrypted, code-phrase pairing, relay fallback. For servers and headless machines where no browser is available."
+faq:
+  - question: "Can you send a file larger than 3 GB for free?"
+    answer: "Yes, but not through a standard cloud transfer link. Peer-to-peer browser tools like Pairchute have no size limit at all because nothing is stored on a server — the receiving computer's free disk space is the only ceiling. The catch is that both computers must be online at the same time."
+  - question: "Is peer-to-peer file transfer actually secure?"
+    answer: "The connection is end-to-end encrypted with keys generated on the two devices, and Pairchute shows both sides a matching 6-digit safety code to confirm nobody intercepted the invite. The main risk is not the pipe, it's the invite link — treat it like a password and send it over a channel you trust."
+  - question: "What happens if the connection drops halfway through?"
+    answer: "The transfer fails and the partial file is discarded. There is no server holding partial progress, so it restarts from zero. On flaky mobile tethering, a cloud upload is the safer choice."
+  - question: "Which browsers support disk-streaming receives?"
+    answer: "Chrome and Edge support the File System Access API out of the box, so receives stream straight to disk at any size. Brave needs the flag enabled. Firefox and Safari lack the API, so receives are limited to roughly 512 MB held in memory."
+  - question: "Does the file ever touch a server?"
+    answer: "No. The only network call beyond loading the static page is a single STUN lookup over UDP that reports your network's public address so the two browsers can find each other. File bytes never leave the direct encrypted channel."
+---
+# How to Send Large Files Without Uploading Them (2026 Guide)
+
+AI tools have quietly broken the way most people send files. A five-minute [Runway](/reviews/runway-ml-review) or [Synthesia](/reviews/synthesia-review) export in 4K lands in the multi-gigabyte range. A raw [Descript](/reviews/descript-review) project with all its media is bigger still. Multi-track [ElevenLabs](/reviews/elevenlabs-review) masters, a folder of [Midjourney](/reviews/midjourney-review) upscales at full resolution, a dataset for fine-tuning — none of it fits comfortably in the free tier of a link-based transfer service any more.
+
+WeTransfer's free plan now caps at **3 GB per transfer**, with a monthly quota of 10 transfers or 3 GB combined, and links that expire after 3 days ([source](https://www.transfernow.net/en/wetransfer/limits)). That is a reasonable business decision and a terrible fit for anyone shipping video.
+
+There is a second way to move a file, and it predates the cloud: send it directly. This guide covers how browser-to-browser transfer works, how to do it with **Pairchute**, what it genuinely cannot do, and when you should ignore all of this and just use a cloud link.
+
+## Why This Matters
+
+Every upload-then-download service does the same three things: it copies your file onto someone else's disk, it holds it there, and it charges for the privilege — in money, in account creation, or in a size ceiling. For a one-time handoff between two people who are both at their computers, all three of those are pure overhead.
+
+Direct transfer removes the middle copy entirely. That changes the economics in a specific way worth understanding: **there is no size limit because there is no storage cost to meter.** A service with no servers can afford to say yes to a 200 GB file, because it is not the one carrying it.
+
+It also changes the privacy posture. There is no "we delete your files after 7 days" policy to trust, because there was never a copy to delete.
+
+## What Peer-to-Peer Browser Transfer Actually Is
+
+The technology is **WebRTC data channels** — the same standard that powers browser video calls, used to carry file bytes instead of audio and video. Three pieces do the work:
+
+| Component | Job |
+|---|---|
+| **WebRTC data channels** | The direct encrypted pipe between the two browsers |
+| **Web Crypto API** | Generates the keys, on your device, for end-to-end encryption |
+| **File System Access API** | Lets the receiving browser stream bytes straight to disk instead of buffering in RAM |
+
+That third one is the piece that makes "no size limit" real rather than marketing. Without it, a browser has to hold the whole incoming file in memory, and you are limited to roughly 512 MB. With it, bytes go to disk as they arrive and the file can be as large as the drive.
+
+Pairchute adds two engineering details on top that are worth knowing about:
+
+- **Parallel lanes.** Transfers stripe across multiple encrypted connections at once rather than trickling through a single channel. Each byte is written to disk exactly once — no temp copies, no re-packing.
+- **Verification.** Every block is hash-checked as it arrives, and the complete file is verified against a **Merkle root** before it counts as received. You find out about corruption at the end of the transfer, not the next time you try to open the file.
+
+## Step 1: Open Pairchute in the Right Browser
+
+Go to [pairchute.com](https://pairchute.com). There is nothing to install and no account to create.
+
+Browser choice matters here, and only for the **receiving** side:
+
+| Browser | Receiving behaviour |
+|---|---|
+| Chrome, Edge | Full disk streaming — unlimited size |
+| Brave | Works after enabling the File System Access API flag |
+| Firefox, Safari | No API — receives capped at about 512 MB in memory |
+
+If you are the one sending, use whatever you like. If you are receiving a 40 GB video, tell the other person to open the link in Chrome or Edge. This is the single most common reason a transfer that "should work" doesn't.
+
+## Step 2: Create the Invite
+
+Click to create an invite and you get a link. The important property of that link, stated plainly by the service: **there is no file data inside it.** It carries connection details and keys — the information the two browsers need to find each other and agree on encryption.
+
+That makes the invite behave exactly like a password. Anyone who has it can complete the handshake.
+
+## Step 3: Send the Invite Over a Channel You Trust
+
+Send the link through a private channel — a direct message in a chat app you already use, or read it out in person. Avoid public posts and avoid forwarded email chains, for the same reason you would not post a password there.
+
+Two properties limit the blast radius if you get this wrong:
+
+- **The invite expires after one hour.**
+- **One link out, one reply back, per connection.** It is not a reusable public URL.
+
+## Step 4: Compare the Safety Code
+
+When the recipient clicks the link and sends one reply back, the direct pipe opens — and both screens display a matching **6-digit safety code**.
+
+Compare them. It takes a second, and it is the entire defence against a tampered invite: if the codes differ, someone modified the link in transit and you should abandon the session rather than send anything.
+
+This is the same pattern used by end-to-end encrypted messengers for verifying contacts. Most people skip it. On a sensitive file, don't.
+
+## Step 5: Drag the Files Across
+
+With the pipe open, drag files in. They stream disk-to-disk over the parallel encrypted lanes.
+
+Speed is bounded by physics, not by a plan tier: on a LAN the disks set the pace, and across the internet the ceiling is the **slower side's** upload or download bandwidth. If your correspondent is on a 10 Mbps rural connection, a 12 GB file is going to take hours — no tool changes that, though a cloud service at least lets them walk away from it.
+
+## The Honest Limits
+
+This is where direct transfer stops being magic. Pairchute is unusually upfront about all of these, which is a point in its favour.
+
+**Both computers must be online, at the same time, for the whole transfer.** There is nowhere for the file to wait. If the recipient is in another timezone and asleep, this tool is the wrong tool.
+
+**A transfer runs in one sitting.** Both tabs stay open until the file lands. There is no saved progress, because saving progress would require a server.
+
+**A dropped connection means starting over.** The transfer fails and the partial file is discarded, by design — nothing is left half-written on your disk.
+
+**Strict corporate and carrier NATs can block WebRTC.** Notably, Pairchute has **no relay fallback on purpose**. Many P2P tools quietly reroute through a relay server when a direct connection fails, which means the thing you chose specifically to avoid servers just used one without telling you. Pairchute tells you it failed instead. That is the right call, and it also means it will simply not work on some locked-down office networks.
+
+**The invite exchange is manual.** One link out, one reply back. That is the price of having no signalling server to coordinate the two sides automatically.
+
+## When to Use a Cloud Link Instead
+
+Direct transfer is the wrong choice more often than P2P enthusiasts admit. Use WeTransfer, Drive, or Dropbox when:
+
+- **The recipient isn't available now.** Asynchronous handoff is the entire point of a cloud link.
+- **You're sending to several people.** One upload, many downloads beats repeating a live session per recipient.
+- **The file needs to live somewhere.** A client who will re-download the deliverable next month needs a URL, not a session.
+- **Either side is on an unreliable connection.** Resumable uploads earn their keep on flaky networks.
+- **Corporate IT blocks WebRTC.** No amount of preference changes a firewall rule.
+
+Use direct transfer when both people are at their keyboards, the file is too big for a free tier, and you would rather it not exist on a third party's disk at all.
+
+## Where This Fits an AI Workflow
+
+The practical pattern for anyone producing AI media:
+
+1. **Working files stay peer-to-peer.** Project bundles, raw renders, multi-track masters, and dataset dumps go directly between the two machines that need them. These are large, sensitive, and short-lived — exactly the profile where the cloud round-trip is pure cost.
+2. **Deliverables go to a cloud link.** The final compressed cut that a client will download twice next quarter belongs somewhere with a stable URL.
+3. **Anything with a licence or privacy question stays off third-party storage.** Client footage, unreleased brand assets, and training data with usage restrictions are all easier to reason about when there is no extra copy to account for.
+
+## Frequently Asked Questions
+
+**Is it really free, and what's the catch?**
+Free, and the catch is architectural rather than commercial: a static page with no servers costs almost nothing to host, which is exactly why there is no size limit to sell you. Funding is a voluntary tip jar. The cost you actually pay is the presence requirement — both sides online, both tabs open.
+
+**Where do my files physically go?**
+Straight from one computer to the other over an encrypted WebRTC channel. They are never uploaded anywhere, not even temporarily.
+
+**What can the site see about me?**
+A request for a static page, the same as any website — no analytics, no cookies, no account. After the page loads it makes no further HTTP requests at all, aside from one STUN lookup over UDP to discover your network's public address.
+
+**Can I send a whole folder?**
+Drag multiple files into an open session. Very large numbers of tiny files are less efficient than one archive — zip a big folder first, and you also get a single hash to verify.
+
+**Is this a WeTransfer replacement?**
+For live, one-to-one handoffs of large files, yes, and a strictly better one on size. For asynchronous delivery, one-to-many sharing, or anything that needs a link that still works tomorrow, no. They solve different problems.
+
+## The Bottom Line
+
+The size limit on your file transfer is not a law of physics — it's a billing decision by whoever is storing the copy. Remove the copy and the limit goes with it.
+
+Pairchute is a clean implementation of that idea: free, no account, no relay, encrypted end to end, hash-verified, and honest enough to fail loudly rather than silently route your file through a server. Keep it for live handoffs of the big stuff, keep a cloud link for everything asynchronous, and you have covered both halves of the problem without paying for either.
