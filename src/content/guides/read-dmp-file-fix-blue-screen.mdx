@@ -35,6 +35,16 @@ recommendedTools:
     pricing: "Free"
     affiliateUrl: "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-code-reference2"
     description: "The authoritative meaning of every stop code and its four parameters. Worth reading alongside any automated report."
+  - name: "Pairchute"
+    category: "Peer-to-peer file transfer"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://pairchute.com"
+    description: "Sends a file of any size directly between two browsers with no cloud copy — handy for moving a large MEMORY.DMP to whoever owns the debugger."
+  - name: "Parquetbay"
+    category: "Data file viewer and editor"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://parquetbay.com"
+    description: "Opens, edits and queries Parquet, CSV, JSON, Arrow and Excel in the browser — useful for sifting exported crash or telemetry logs across many machines."
 faq:
   - question: "Where does Windows store .dmp files after a blue screen?"
     answer: "Two places. C:\\Windows\\Minidump holds a small per-crash file of roughly 1 to 3 MB, and Windows keeps every one of them. C:\\Windows\\MEMORY.DMP is a single kernel or complete dump, often hundreds of megabytes, overwritten each crash. The minidumps are the ones to analyse first because the history across several of them is what makes a diagnosis credible."
@@ -113,6 +123,8 @@ The file is parsed server-side and a report comes back with:
 Two practical constraints. The **upload limit is 32 MB**, which fits minidumps easily and rules out most `MEMORY.DMP` files. And support is tiered by format: 64-bit kernel triage dumps (PAGEDU64, type 4) are best supported, user-mode MDMP files work, 32-bit kernel dumps get limited analysis, and complete or automatic dumps are read at header level only.
 
 **A privacy note worth being explicit about.** Unlike a purely client-side tool, this one does upload — the file goes over HTTPS, is parsed in memory, and the bytes are discarded with the response, with no accounts, cookies, analytics or retention. That is a reasonable design, but a kernel dump can contain fragments of whatever happened to be resident in memory when the machine died. Upload dumps from machines you are authorised to troubleshoot, and not a customer's server without asking.
+
+<CTAButton href="https://dumpreader.com" label="Decode Your .dmp File" variant="primary" size="lg" />
 
 ## Step 4: Read the Report Without Fooling Yourself
 
@@ -194,8 +206,24 @@ Suspect attribution failure before suspecting Windows. Look at what else is load
 **Are minidumps enough, or do I need the full dump?**
 Minidumps resolve most consumer and workstation crashes, and their advantage — Windows keeps all of them — usually outweighs the extra detail in a single full dump. Escalate to a complete dump when you need the heap state around the fault.
 
+## Three Free Browser Tools Worth Bookmarking
+
+DumpReader belongs to a small category of tools that solve one unglamorous problem completely — free, no account, no upsell. Two others earn a place in the same bookmark folder:
+
+| Tool | Problem it solves | Full guide |
+|---|---|---|
+| **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | *You're reading it* |
+| **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | [How to send large files without uploading](/guides/send-large-files-without-uploading) |
+| **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | [How to open a Parquet file online](/guides/open-parquet-file-online) |
+
+The practical pairing here: a `MEMORY.DMP` is hundreds of megabytes, over DumpReader's 32 MB ceiling, and too big for a free transfer tier. Pairchute moves it straight to whoever has WinDbg open, with no upload and no size cap.
+
+One honest distinction across the three: **DumpReader does upload** — it parses the dump server-side and discards the bytes with the response, which is why the 32 MB limit exists. **Pairchute and Parquetbay never upload at all**; both work inside the browser tab, verifiable in the Network panel. Different jobs, different privacy models, and worth knowing which is which before you hand over a file that isn't yours.
+
 ## The Bottom Line
 
 A `.dmp` file is not unreadable, it is just unread — the barrier has always been tooling, not difficulty. A browser-based decoder removes that barrier for the common case, hands you the stop code, a confidence-rated lead, the stack and the driver list, and is honest about the fact that a lead is not proof.
 
 Use it to triage. Corroborate across several dumps before you believe any single name. Test the RAM the moment the culprits start varying at random. And keep WinDbg for the cases where being wrong is expensive.
+
+<CTAButton href="https://dumpreader.com" label="Analyse a Crash Dump — Free" variant="primary" size="lg" />

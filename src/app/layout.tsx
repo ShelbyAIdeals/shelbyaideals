@@ -102,8 +102,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <script dangerouslySetInnerHTML={{ __html: 'window.history.scrollRestoration="manual";window.scrollTo(0,0);try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}' }} />
-        {/* GA4 affiliate click tracking via event delegation */}
-        <script dangerouslySetInnerHTML={{ __html: `document.addEventListener("click",function(e){var a=e.target.closest('a[rel*="sponsored"]');if(!a)return;var h=a.getAttribute("href")||"",t=a.textContent.trim()||"";if(typeof gtag==="function"){gtag("event","affiliate_click",{event_category:"affiliate",event_label:t,affiliate_url:h,page_location:window.location.href})}})` }} />
+        {/* GA4 click tracking via event delegation. Tracked affiliate links fire
+            affiliate_click; plain outbound CTAs (data-outbound, no commercial
+            relationship) fire outbound_click so they stay measurable without
+            polluting affiliate revenue metrics. */}
+        <script dangerouslySetInnerHTML={{ __html: `document.addEventListener("click",function(e){var a=e.target.closest('a[rel*="sponsored"],a[data-outbound]');if(!a)return;var h=a.getAttribute("href")||"",t=a.textContent.trim()||"",s=(a.getAttribute("rel")||"").indexOf("sponsored")>-1;if(typeof gtag==="function"){gtag("event",s?"affiliate_click":"outbound_click",{event_category:s?"affiliate":"outbound",event_label:t,affiliate_url:h,page_location:window.location.href})}})` }} />
         {/* Microsoft Clarity heatmaps */}
         <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID||""}")` }} />
         {/* Meta Pixel */}

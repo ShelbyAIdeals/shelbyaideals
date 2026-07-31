@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { isTrackedAffiliateUrl } from '@/lib/affiliate';
 
 interface CTAButtonProps {
   href: string;
@@ -9,6 +10,11 @@ interface CTAButtonProps {
   size?: 'sm' | 'md' | 'lg';
   external?: boolean;
   icon?: ReactNode;
+  /**
+   * Force the affiliate treatment on or off. Omit to auto-detect from the URL,
+   * which is the correct behaviour for every current caller.
+   */
+  sponsored?: boolean;
 }
 
 const sizeClasses = {
@@ -30,6 +36,7 @@ export default function CTAButton({
   size = 'md',
   external = true,
   icon,
+  sponsored,
 }: CTAButtonProps) {
   const className = `${variantClasses[variant]} ${sizeClasses[size]} gap-2`;
 
@@ -42,17 +49,27 @@ export default function CTAButton({
   );
 
   if (external) {
+    // Only real tracked affiliate links get rel="sponsored" and the disclosure
+    // label. Labelling a plain outbound link "Affiliate link" is a false
+    // commercial disclosure, and rel="sponsored" would log a bogus
+    // affiliate_click in GA. Non-sponsored links carry data-outbound so the
+    // delegation handler in layout.tsx can still measure the click.
+    const isSponsored = sponsored ?? isTrackedAffiliateUrl(href);
+
     return (
       <span className="inline-flex flex-col items-start">
         <a
           href={href}
           target="_blank"
-          rel="nofollow sponsored noopener"
+          rel={isSponsored ? 'nofollow sponsored noopener' : 'nofollow noopener noreferrer'}
+          data-outbound={isSponsored ? undefined : '1'}
           className={className}
         >
           {content}
         </a>
-        <span className="mt-1 text-xs text-void-600">Affiliate link</span>
+        {isSponsored && (
+          <span className="mt-1 text-xs text-void-600">Affiliate link</span>
+        )}
       </span>
     );
   }

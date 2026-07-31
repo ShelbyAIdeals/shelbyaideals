@@ -35,6 +35,16 @@ recommendedTools:
     pricing: "Free (open source)"
     affiliateUrl: "https://github.com/schollz/croc"
     description: "Terminal equivalent of the same idea — end-to-end encrypted, code-phrase pairing, relay fallback. For servers and headless machines where no browser is available."
+  - name: "Parquetbay"
+    category: "Data file viewer and editor"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://parquetbay.com"
+    description: "Opens, edits, queries and converts Parquet, CSV, JSON, Arrow and Excel entirely in the browser. Useful when the large file you just received is a dataset rather than a video."
+  - name: "DumpReader"
+    category: "Crash dump analysis"
+    pricing: "Free (donations only)"
+    affiliateUrl: "https://dumpreader.com"
+    description: "Decodes a Windows .dmp crash dump into a readable report without installing WinDbg — for when the machine doing the render is the thing that keeps falling over."
 faq:
   - question: "Can you send a file larger than 3 GB for free?"
     answer: "Yes, but not through a standard cloud transfer link. Peer-to-peer browser tools like Pairchute have no size limit at all because nothing is stored on a server — the receiving computer's free disk space is the only ceiling. The catch is that both computers must be online at the same time."
@@ -123,6 +133,8 @@ With the pipe open, drag files in. They stream disk-to-disk over the parallel en
 
 Speed is bounded by physics, not by a plan tier: on a LAN the disks set the pace, and across the internet the ceiling is the **slower side's** upload or download bandwidth. If your correspondent is on a 10 Mbps rural connection, a 12 GB file is going to take hours — no tool changes that, though a cloud service at least lets them walk away from it.
 
+<CTAButton href="https://pairchute.com" label="Send a File With Pairchute" variant="primary" size="lg" />
+
 ## The Honest Limits
 
 This is where direct transfer stops being magic. Pairchute is unusually upfront about all of these, which is a point in its favour.
@@ -174,8 +186,22 @@ Drag multiple files into an open session. Very large numbers of tiny files are l
 **Is this a WeTransfer replacement?**
 For live, one-to-one handoffs of large files, yes, and a strictly better one on size. For asynchronous delivery, one-to-many sharing, or anything that needs a link that still works tomorrow, no. They solve different problems.
 
+## Three Free Browser Tools Worth Bookmarking
+
+Pairchute belongs to a small category of tools that solve one unglamorous problem completely — free, no account, no upsell. Two others earn a place in the same bookmark folder:
+
+| Tool | Problem it solves | Full guide |
+|---|---|---|
+| **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | *You're reading it* |
+| **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | [How to open a Parquet file online](/guides/open-parquet-file-online) |
+| **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | [How to read a .dmp file](/guides/read-dmp-file-fix-blue-screen) |
+
+One honest distinction worth carrying across all three: **Pairchute and Parquetbay never upload anything** — both do their work inside the browser tab, and you can confirm it in the Network panel. **DumpReader does upload**, parsing the dump server-side and discarding the bytes with the response. That is a reasonable design for the job it does, but it is a different privacy model, and worth knowing before you hand it a dump from a machine that isn't yours.
+
 ## The Bottom Line
 
 The size limit on your file transfer is not a law of physics — it's a billing decision by whoever is storing the copy. Remove the copy and the limit goes with it.
 
 Pairchute is a clean implementation of that idea: free, no account, no relay, encrypted end to end, hash-verified, and honest enough to fail loudly rather than silently route your file through a server. Keep it for live handoffs of the big stuff, keep a cloud link for everything asynchronous, and you have covered both halves of the problem without paying for either.
+
+<CTAButton href="https://pairchute.com" label="Open Pairchute — Free, No Account" variant="primary" size="lg" />

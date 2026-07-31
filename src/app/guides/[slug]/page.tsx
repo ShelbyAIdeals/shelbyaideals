@@ -9,6 +9,7 @@ import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
+import { isTrackedAffiliateUrl } from '@/lib/affiliate';
 import type { GuideMeta } from '@/lib/types';
 
 interface PageProps {
@@ -198,7 +199,12 @@ export default async function GuidePage({ params }: PageProps) {
                       <a
                         href={tool.affiliateUrl}
                         target="_blank"
-                        rel="nofollow sponsored noopener"
+                        rel={
+                          isTrackedAffiliateUrl(tool.affiliateUrl)
+                            ? 'nofollow sponsored noopener'
+                            : 'nofollow noopener noreferrer'
+                        }
+                        data-outbound={isTrackedAffiliateUrl(tool.affiliateUrl) ? undefined : '1'}
                         className="text-xs font-semibold text-void-400 hover:text-void-300 no-underline inline-flex items-center gap-1"
                       >
                         Try It <ArrowRight size={11} />

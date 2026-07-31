@@ -35,6 +35,16 @@ recommendedTools:
     pricing: "Free tier, paid plans above"
     affiliateUrl: "https://julius.ai"
     description: "Chat-based data analysis for when you want charts and narrative answers from a dataset rather than to inspect and reshape the file itself."
+  - name: "Pairchute"
+    category: "Peer-to-peer file transfer"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://pairchute.com"
+    description: "Sends a dataset of any size directly between two browsers with no cloud copy — useful when the Parquet file is too big for a transfer service's free tier."
+  - name: "DumpReader"
+    category: "Crash dump analysis"
+    pricing: "Free (donations only)"
+    affiliateUrl: "https://dumpreader.com"
+    description: "Decodes a Windows .dmp crash dump into a readable report without installing WinDbg — for when the workstation crunching your data keeps blue-screening."
 faq:
   - question: "Why won't Excel open a .parquet file?"
     answer: "Parquet is a columnar binary format, not a row-oriented spreadsheet file. It stores each column separately with its own compression and an embedded schema, which is what makes it fast and small for analytics — and unreadable to a program expecting rows of cells. You need a tool that speaks the format, then export to XLSX or CSV if you want it in a spreadsheet."
@@ -150,6 +160,8 @@ The common conversions have dedicated pages:
 
 A note on the direction most people get wrong: converting **CSV to Parquet** before analysis is often the highest-value thirty seconds in the whole workflow. You get compression, real types, and a schema that stops the next tool from guessing.
 
+<CTAButton href="https://parquetbay.com" label="Open Your Parquet File" variant="primary" size="lg" />
+
 ## The Honest Limits
 
 **Memory is the ceiling.** There is no fixed row cap, but capacity depends on your browser, device memory, the file's encoding, column types, and what you are doing to it. A compressed file needs meaningfully more memory once decoded than its size on disk suggests.
@@ -188,8 +200,24 @@ Same engine. The browser version adds a grid, profiling, a reversible transform 
 **Is Parquet better than CSV?**
 For analytics, in almost every respect: smaller, faster, typed, self-describing. CSV keeps exactly one advantage, and it is a real one — every program on earth can read it. That is why the conversion tools exist in both directions.
 
+## Three Free Browser Tools Worth Bookmarking
+
+Parquetbay belongs to a small category of tools that solve one unglamorous problem completely — free, no account, no upsell. Two others earn a place in the same bookmark folder:
+
+| Tool | Problem it solves | Full guide |
+|---|---|---|
+| **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | *You're reading it* |
+| **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | [How to send large files without uploading](/guides/send-large-files-without-uploading) |
+| **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | [How to read a .dmp file](/guides/read-dmp-file-fix-blue-screen) |
+
+The pairing that comes up most often in practice: a dataset too large to email and too large for a transfer service's free tier. Profile and trim it in Parquetbay, export to compressed Parquet, then hand the result straight to the other machine with Pairchute — no cloud copy at either step.
+
+One honest distinction across the three: **Parquetbay and Pairchute never upload anything**, and you can verify that in the Network panel. **DumpReader does upload**, parsing server-side and discarding the bytes with the response — a different privacy model, worth knowing in advance.
+
 ## The Bottom Line
 
 Parquet became the default format for AI and analytics data, and the tooling never caught up for people who just need to look inside a file. A browser tab with a virtualized grid, column profiling, a reversible edit pipeline and a local DuckDB console closes most of that gap — for free, with no account, and without your dataset leaving the machine.
 
 Use it for triage, inspection, and one-off conversion. Graduate to a local DuckDB install the moment the dataset stops fitting in memory or the job needs to run twice.
+
+<CTAButton href="https://parquetbay.com" label="Open Parquetbay — Free, Nothing Uploaded" variant="primary" size="lg" />
