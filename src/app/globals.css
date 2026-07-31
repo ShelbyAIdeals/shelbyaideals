@@ -613,23 +613,10 @@ body { top: 0 !important; }
 
   /* ── Gradient Text ──────────────────────────────────── */
 
+  /* Deliberately kept: the homepage hero rotator (HeroTextRotator.tsx) is the
+     one place this brand treatment is used. The ember/iris/accent variants were
+     unused and have been removed. */
   .text-gradient-signal {
-    @apply bg-clip-text text-transparent
-      bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500;
-  }
-
-  .text-gradient-ember {
-    @apply bg-clip-text text-transparent
-      bg-gradient-to-r from-ember-300 via-ember-400 to-ember-500;
-  }
-
-  .text-gradient-iris {
-    @apply bg-clip-text text-transparent
-      bg-gradient-to-r from-iris-300 via-iris-400 to-iris-500;
-  }
-
-  /* Legacy alias */
-  .text-gradient-accent {
     @apply bg-clip-text text-transparent
       bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500;
   }
