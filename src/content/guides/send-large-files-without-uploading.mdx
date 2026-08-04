@@ -45,6 +45,11 @@ recommendedTools:
     pricing: "Free (donations only)"
     affiliateUrl: "https://dumpreader.com"
     description: "Decodes a Windows .dmp crash dump into a readable report without installing WinDbg — for when the machine doing the render is the thing that keeps falling over."
+  - name: "CADverter"
+    category: "3D and CAD file converter"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://cadverter.net"
+    description: "Converts STEP, IGES, STL, OBJ, glTF and 30 more 3D formats in the browser tab — useful when the huge file you are about to send is a CAD assembly that the recipient cannot open."
 faq:
   - question: "Can you send a file larger than 3 GB for free?"
     answer: "Yes, but not through a standard cloud transfer link. Peer-to-peer browser tools like Pairchute have no size limit at all because nothing is stored on a server — the receiving computer's free disk space is the only ceiling. The catch is that both computers must be online at the same time."
@@ -195,6 +200,7 @@ Pairchute belongs to a small category of tools that solve one unglamorous proble
 | **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | *You're reading it* |
 | **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | [How to open a Parquet file online](/guides/open-parquet-file-online) |
 | **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | [How to read a .dmp file](/guides/read-dmp-file-fix-blue-screen) |
+| **[CADverter](https://cadverter.net)** | Open and convert STEP, IGES, STL, OBJ and 30 more 3D formats | [How to open a STEP file without CAD software](/guides/open-step-file-without-cad-software) |
 
 One honest distinction worth carrying across all three: **Pairchute and Parquetbay never upload anything** — both do their work inside the browser tab, and you can confirm it in the Network panel. **DumpReader does upload**, parsing the dump server-side and discarding the bytes with the response. That is a reasonable design for the job it does, but it is a different privacy model, and worth knowing before you hand it a dump from a machine that isn't yours.
 

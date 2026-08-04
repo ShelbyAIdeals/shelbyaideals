@@ -302,7 +302,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ---
 
-## Guides (28)
+## Guides (29)
 
 - [AI Client Onboarding Checklist: Shareable Template for Freelancers & Agencies](https://www.shelby-ai.com/guides/ai-client-onboarding/) — A step-by-step AI client onboarding checklist you can copy and share. Covers discovery, tool setup, automation, approvals, and handoff for freelancers, agencies, and consultants.
 - [How to Build a Complete AI Content Workflow (From Idea to Publish)](https://www.shelby-ai.com/guides/ai-content-workflow/) — Discover how to streamline your ai content workflow, from brainstorming ideas to publishing polished articles, using top AI tools and strategies.
@@ -327,6 +327,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - [Is Surfer SEO Worth It? A Small Team's Honest Buying Guide](https://www.shelby-ai.com/guides/is-surfer-seo-worth-it/) — A thorough value analysis of Surfer SEO for small teams and solo operators — pricing, real results, use cases, limitations, and whether cheaper alternatives work just as well.
 - [Is Synthesia Worth It? AI Video for Marketing Teams — Pricing and Verdict](https://www.shelby-ai.com/guides/is-synthesia-worth-it/) — A practical buying guide for Synthesia — the AI avatar video platform. We cover real costs, who gets the most value, limitations, and when to pick an alternative.
 - [How to Open, Edit and Convert a Parquet File Online (No Install)](https://www.shelby-ai.com/guides/open-parquet-file-online/) — Downloaded a dataset and got a .parquet file your spreadsheet refuses to open? Here's how to inspect, edit, query and convert Parquet in the browser — no Python, no pandas, no upload.
+- [How to Open and Convert a STEP File Without CAD Software (2026 Guide)](https://www.shelby-ai.com/guides/open-step-file-without-cad-software/) — A supplier emails you bracket.step. Windows shows a blank icon, SolidWorks costs thousands a year, and every free online converter wants to upload the part first. Here's how to open, view and convert STEP files entirely inside a browser tab.
 - [How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)](https://www.shelby-ai.com/guides/read-dmp-file-fix-blue-screen/) — Your Windows machine blue-screened mid-render and left a .dmp file you can't open. Here's how to decode it in a browser, read the report honestly, and tell a real culprit from a bystander.
 - [How to Repurpose One Blog Post Into 10 Pieces of Content Using AI](https://www.shelby-ai.com/guides/repurpose-content-with-ai/) — Learn how to repurpose content with AI to transform a single blog post into 10 different pieces of content, boosting your productivity and reach.
 - [How to Send Large Files Without Uploading Them (2026 Guide)](https://www.shelby-ai.com/guides/send-large-files-without-uploading/) — WeTransfer's free tier caps at 3 GB. Your AI video export is 12 GB. Here's how peer-to-peer browser transfer moves files of any size with no upload, no account, and no cloud copy.
@@ -346,4 +347,4 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - [7 Best AI Writing Tools for Freelancers in 2026 (Tested & Ranked)](https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers/)
 - [Best Free AI Tools for Solopreneurs (That Are Actually Useful)](https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs/)
 
-Last updated: 2026-07-31
+Last updated: 2026-08-04

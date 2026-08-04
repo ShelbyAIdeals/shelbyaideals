@@ -45,6 +45,11 @@ recommendedTools:
     pricing: "Free (donations only)"
     affiliateUrl: "https://dumpreader.com"
     description: "Decodes a Windows .dmp crash dump into a readable report without installing WinDbg — for when the workstation crunching your data keeps blue-screening."
+  - name: "CADverter"
+    category: "3D and CAD file converter"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://cadverter.net"
+    description: "The same local-only approach applied to 3D and CAD files: opens and converts STEP, IGES, STL, OBJ and glTF in the browser with no upload."
 faq:
   - question: "Why won't Excel open a .parquet file?"
     answer: "Parquet is a columnar binary format, not a row-oriented spreadsheet file. It stores each column separately with its own compression and an embedded schema, which is what makes it fast and small for analytics — and unreadable to a program expecting rows of cells. You need a tool that speaks the format, then export to XLSX or CSV if you want it in a spreadsheet."
@@ -209,6 +214,7 @@ Parquetbay belongs to a small category of tools that solve one unglamorous probl
 | **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | *You're reading it* |
 | **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | [How to send large files without uploading](/guides/send-large-files-without-uploading) |
 | **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | [How to read a .dmp file](/guides/read-dmp-file-fix-blue-screen) |
+| **[CADverter](https://cadverter.net)** | Open and convert STEP, IGES, STL, OBJ and 30 more 3D formats | [How to open a STEP file without CAD software](/guides/open-step-file-without-cad-software) |
 
 The pairing that comes up most often in practice: a dataset too large to email and too large for a transfer service's free tier. Profile and trim it in Parquetbay, export to compressed Parquet, then hand the result straight to the other machine with Pairchute — no cloud copy at either step.
 

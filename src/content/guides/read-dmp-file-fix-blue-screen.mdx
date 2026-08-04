@@ -45,6 +45,11 @@ recommendedTools:
     pricing: "Free (no account, tip jar)"
     affiliateUrl: "https://parquetbay.com"
     description: "Opens, edits and queries Parquet, CSV, JSON, Arrow and Excel in the browser — useful for sifting exported crash or telemetry logs across many machines."
+  - name: "CADverter"
+    category: "3D and CAD file converter"
+    pricing: "Free (no account, tip jar)"
+    affiliateUrl: "https://cadverter.net"
+    description: "Opens and converts STEP, IGES, STL, OBJ and glTF in the browser — handy when the machine that keeps crashing is the CAD workstation."
 faq:
   - question: "Where does Windows store .dmp files after a blue screen?"
     answer: "Two places. C:\\Windows\\Minidump holds a small per-crash file of roughly 1 to 3 MB, and Windows keeps every one of them. C:\\Windows\\MEMORY.DMP is a single kernel or complete dump, often hundreds of megabytes, overwritten each crash. The minidumps are the ones to analyse first because the history across several of them is what makes a diagnosis credible."
@@ -215,6 +220,7 @@ DumpReader belongs to a small category of tools that solve one unglamorous probl
 | **[DumpReader](https://dumpreader.com)** | Decode a Windows `.dmp` crash dump without installing WinDbg | *You're reading it* |
 | **[Pairchute](https://pairchute.com)** | Send a file of any size straight between two browsers, with no cloud copy | [How to send large files without uploading](/guides/send-large-files-without-uploading) |
 | **[Parquetbay](https://parquetbay.com)** | Open, edit, query and convert `.parquet`, CSV, JSON, Arrow and Excel files | [How to open a Parquet file online](/guides/open-parquet-file-online) |
+| **[CADverter](https://cadverter.net)** | Open and convert STEP, IGES, STL, OBJ and 30 more 3D formats | [How to open a STEP file without CAD software](/guides/open-step-file-without-cad-software) |
 
 The practical pairing here: a `MEMORY.DMP` is hundreds of megabytes, over DumpReader's 32 MB ceiling, and too big for a free transfer tier. Pairchute moves it straight to whoever has WinDbg open, with no upload and no size cap.
 
