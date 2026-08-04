@@ -26,6 +26,7 @@
 - Comparisons: https://www.shelby-ai.com/comparisons/
 - Best-Of Lists: https://www.shelby-ai.com/best/
 - Guides: https://www.shelby-ai.com/guides/
+- Free File Tools (browser tools that never upload your file): https://www.shelby-ai.com/free-file-tools/
 - Pricing Guides: https://www.shelby-ai.com/pricing/
 - Deals & Free Trials: https://www.shelby-ai.com/deals/
 - AI Tool Finder (interactive recommender): https://www.shelby-ai.com/finder/

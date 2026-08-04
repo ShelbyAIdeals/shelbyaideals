@@ -1,5 +1,12 @@
 export interface ArticleMeta {
   title: string;
+  /**
+   * Optional shorter title for the SERP only. `title` still renders as the H1, so
+   * it can stay long enough to carry every keyword the page targets while this one
+   * fits the ~60 characters Google actually displays (including the " | ShelbyAI"
+   * template suffix). Omit it whenever `title` already fits.
+   */
+  seoTitle?: string;
   slug: string;
   excerpt: string;
   description?: string;

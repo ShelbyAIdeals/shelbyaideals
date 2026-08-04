@@ -237,6 +237,39 @@ export function isTrackedAffiliateUrl(url: string | undefined | null): boolean {
   return TRACKING_PATTERNS.some((p) => p.test(url));
 }
 
+/** Hostnames of every vendor we have or are pursuing a commercial relationship with. */
+const partnerHostnames: ReadonlySet<string> = new Set(
+  Object.values(affiliateLinks).flatMap((program) => {
+    try {
+      const host = new URL(program.url).hostname.replace(/^www\./, '');
+      return [host];
+    } catch {
+      return [];
+    }
+  })
+);
+
+/**
+ * Detects a purely editorial outbound link: one we get paid nothing for, now or
+ * later. Those should be followed — a nofollow on an unpaid link we chose to cite
+ * passes up the ranking signal Google expects an editorial link to carry, and it
+ * withholds credit from free tools and primary sources we are recommending on merit.
+ *
+ * Anything with a tracking parameter is a paid link. Anything on a vendor hostname
+ * in the affiliate map is commercial even while its program sits "pending" and its
+ * URL is still an untracked homepage, so it stays nofollow until that is resolved.
+ */
+export function isEditorialUrl(url: string | undefined | null): boolean {
+  if (!url || !/^https?:\/\//i.test(url)) return false;
+  if (isTrackedAffiliateUrl(url)) return false;
+
+  try {
+    return !partnerHostnames.has(new URL(url).hostname.replace(/^www\./, ''));
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Resolves an affiliate URL from a display name ("Copy.ai", "Jasper AI", "Make.com")
  * instead of a slug — for content surfaces (best-of frontmatter) that only carry names.

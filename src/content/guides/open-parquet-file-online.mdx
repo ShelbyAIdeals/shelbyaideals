@@ -1,8 +1,9 @@
 ---
 title: "How to Open, Edit and Convert a Parquet File Online (No Install)"
+seoTitle: "How to Open a Parquet File Online (No Install)"
 slug: open-parquet-file-online
 excerpt: "Downloaded a dataset and got a .parquet file your spreadsheet refuses to open? Here's how to inspect, edit, query and convert Parquet in the browser — no Python, no pandas, no upload."
-description: "A practical guide to working with Apache Parquet files without installing anything: what the format is, how to open and edit .parquet in the browser with Parquetbay, running DuckDB SQL locally, and converting to CSV, JSON or Excel."
+description: "Open, edit and convert .parquet files in the browser: what the format is, how to run DuckDB SQL locally, and how to export to CSV, JSON or Excel."
 category: ai-content-productivity
 type: guide
 author: "Frank Shelby"
@@ -204,7 +205,7 @@ Same engine. The browser version adds a grid, profiling, a reversible transform 
 **Is Parquet better than CSV?**
 For analytics, in almost every respect: smaller, faster, typed, self-describing. CSV keeps exactly one advantage, and it is a real one — every program on earth can read it. That is why the conversion tools exist in both directions.
 
-## Three Free Browser Tools Worth Bookmarking
+## Four Free Browser Tools Worth Bookmarking
 
 Parquetbay belongs to a small category of tools that solve one unglamorous problem completely — free, no account, no upsell. Two others earn a place in the same bookmark folder:
 
@@ -217,7 +218,10 @@ Parquetbay belongs to a small category of tools that solve one unglamorous probl
 
 The pairing that comes up most often in practice: a dataset too large to email and too large for a transfer service's free tier. Profile and trim it in Parquetbay, export to compressed Parquet, then hand the result straight to the other machine with Pairchute — no cloud copy at either step.
 
-One honest distinction across the three: **Parquetbay and Pairchute never upload anything**, and you can verify that in the Network panel. **DumpReader does upload**, parsing server-side and discarding the bytes with the response — a different privacy model, worth knowing in advance.
+One honest distinction across the four: **Parquetbay, Pairchute and CADverter never upload anything**, and you can verify that in the Network panel. **DumpReader does upload**, parsing server-side and discarding the bytes with the response — a different privacy model, worth knowing in advance.
+
+
+All four are collected on our [free file tools](/free-file-tools) page.
 
 ## The Bottom Line
 

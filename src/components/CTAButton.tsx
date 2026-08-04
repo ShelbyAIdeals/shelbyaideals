@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { isTrackedAffiliateUrl } from '@/lib/affiliate';
+import { isEditorialUrl, isTrackedAffiliateUrl } from '@/lib/affiliate';
 
 interface CTAButtonProps {
   href: string;
@@ -56,12 +56,20 @@ export default function CTAButton({
     // delegation handler in layout.tsx can still measure the click.
     const isSponsored = sponsored ?? isTrackedAffiliateUrl(href);
 
+    // A CTA pointing at a tool we earn nothing from is an editorial recommendation,
+    // so it is followed. Explicitly marking a link sponsored always keeps nofollow.
+    const rel = isSponsored
+      ? 'nofollow sponsored noopener'
+      : isEditorialUrl(href)
+        ? 'noopener noreferrer'
+        : 'nofollow noopener noreferrer';
+
     return (
       <span className="inline-flex flex-col items-start">
         <a
           href={href}
           target="_blank"
-          rel={isSponsored ? 'nofollow sponsored noopener' : 'nofollow noopener noreferrer'}
+          rel={rel}
           data-outbound={isSponsored ? undefined : '1'}
           className={className}
         >

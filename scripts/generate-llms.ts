@@ -74,6 +74,7 @@ const llms = `# ShelbyAI — Honest AI Tool Reviews
 - Comparisons: ${SITE}/comparisons/
 - Best-Of Lists: ${SITE}/best/
 - Guides: ${SITE}/guides/
+- Free File Tools (browser tools that never upload your file): ${SITE}/free-file-tools/
 - Pricing Guides: ${SITE}/pricing/
 - Deals & Free Trials: ${SITE}/deals/
 - AI Tool Finder (interactive recommender): ${SITE}/finder/

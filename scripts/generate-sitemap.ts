@@ -47,6 +47,7 @@ function buildSitemap(): string {
     { url: '/comparisons', priority: '0.9', changefreq: 'daily' },
     { url: '/best', priority: '0.9', changefreq: 'daily' },
     { url: '/guides', priority: '0.9', changefreq: 'weekly' },
+    { url: '/free-file-tools', priority: '0.8', changefreq: 'monthly' },
     { url: '/alternatives', priority: '0.8', changefreq: 'weekly' },
     { url: '/about', priority: '0.5', changefreq: 'monthly' },
     { url: '/how-we-review', priority: '0.5', changefreq: 'monthly' },

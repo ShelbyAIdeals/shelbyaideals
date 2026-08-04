@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
-import { isTrackedAffiliateUrl } from '@/lib/affiliate';
+import { isEditorialUrl, isTrackedAffiliateUrl } from '@/lib/affiliate';
 import AffiliateDisclosure from './AffiliateDisclosure';
 import CTAButton from './CTAButton';
 import PricingTable from './PricingTable';
@@ -61,12 +61,20 @@ const components = {
       // links, and the GA affiliate_click delegation handler (layout.tsx) only
       // fires on a[rel*="sponsored"] — without it, in-content affiliate clicks
       // (the highest-intent placements) are invisible to analytics.
+      //
+      // Links we earn nothing from are followed: a nofollow on a source we cited or
+      // a free tool we recommended on merit is a signal we did not mean to withhold.
       const isAffiliate = isTrackedAffiliateUrl(props.href);
+      const rel = isAffiliate
+        ? 'noopener nofollow sponsored'
+        : isEditorialUrl(props.href)
+          ? 'noopener noreferrer'
+          : 'noopener noreferrer nofollow';
       return (
         <a
           {...props}
           target="_blank"
-          rel={isAffiliate ? 'noopener nofollow sponsored' : 'noopener noreferrer nofollow'}
+          rel={rel}
           className="text-signal-400 hover:text-signal-300 underline underline-offset-2"
         />
       );

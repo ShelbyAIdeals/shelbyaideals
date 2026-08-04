@@ -11,6 +11,7 @@ import StaggerItem from '@/components/motion/StaggerItem';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import { useTranslation } from '@/i18n/context';
 import { resolveAffiliateUrl } from '@/lib/affiliate';
+import { FILE_TOOLS } from '@/lib/file-tools-data';
 import type { ReviewMeta, ComparisonMeta, GuideMeta, CategoryInfo } from '@/lib/types';
 
 const audienceSegments = [
@@ -308,6 +309,50 @@ export default function HomeContent({
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* 4a. Free file tools — the local-first cluster */}
+      <section className="py-10 sm:py-14">
+        <div className="container-main">
+          <ScrollReveal>
+            <div className="rounded-xl border border-void-700/50 bg-void-900/40 p-6 sm:p-8">
+              <span className="text-xs font-semibold tracking-widest uppercase text-iris-400 mb-2 block">
+                {t('home.file_tools_eyebrow', 'Free, No Account')}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-void-50">
+                {t('home.file_tools_title', 'File Tools That Run in Your Browser')}
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-void-400 leading-relaxed">
+                {t(
+                  'home.file_tools_desc',
+                  'Open a CAD part, query a Parquet dataset, decode a crash dump or send a multi-gigabyte file — no install and no account, and three of the four never upload anything.'
+                )}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {FILE_TOOLS.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={`/guides/${tool.guideSlug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-void-700/50 bg-void-800/60 px-3.5 py-1.5 text-sm text-void-300 no-underline transition-colors hover:border-signal-500/40 hover:text-void-50"
+                  >
+                    {tool.name}
+                    <span className="text-xs text-void-500">{tool.formats[0]}</span>
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                href="/free-file-tools"
+                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-signal-400 no-underline transition-colors hover:text-signal-300"
+              >
+                {t('home.file_tools_cta', 'See all four')} <ArrowRight size={14} />
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

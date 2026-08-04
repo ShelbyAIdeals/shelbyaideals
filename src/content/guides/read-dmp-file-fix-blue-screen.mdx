@@ -1,8 +1,9 @@
 ---
 title: "How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)"
+seoTitle: "How to Read a .dmp File Without WinDbg"
 slug: read-dmp-file-fix-blue-screen
 excerpt: "Your Windows machine blue-screened mid-render and left a .dmp file you can't open. Here's how to decode it in a browser, read the report honestly, and tell a real culprit from a bystander."
-description: "A practical guide to reading Windows crash dumps without installing WinDbg: where .dmp files live, how to decode them online with DumpReader, how to interpret stop codes and stack frames, and the four ways crash reports mislead you."
+description: "Decode a Windows crash dump in the browser: where .dmp files live, how to read stop codes and stack frames, and the four ways a crash report misleads you."
 category: ai-content-productivity
 type: guide
 author: "Frank Shelby"
@@ -210,7 +211,7 @@ Suspect attribution failure before suspecting Windows. Look at what else is load
 **Are minidumps enough, or do I need the full dump?**
 Minidumps resolve most consumer and workstation crashes, and their advantage — Windows keeps all of them — usually outweighs the extra detail in a single full dump. Escalate to a complete dump when you need the heap state around the fault.
 
-## Three Free Browser Tools Worth Bookmarking
+## Four Free Browser Tools Worth Bookmarking
 
 DumpReader belongs to a small category of tools that solve one unglamorous problem completely — free, no account, no upsell. Two others earn a place in the same bookmark folder:
 
@@ -223,7 +224,10 @@ DumpReader belongs to a small category of tools that solve one unglamorous probl
 
 The practical pairing here: a `MEMORY.DMP` is hundreds of megabytes, over DumpReader's 32 MB ceiling, and too big for a free transfer tier. Pairchute moves it straight to whoever has WinDbg open, with no upload and no size cap.
 
-One honest distinction across the three: **DumpReader does upload** — it parses the dump server-side and discards the bytes with the response, which is why the 32 MB limit exists. **Pairchute and Parquetbay never upload at all**; both work inside the browser tab, verifiable in the Network panel. Different jobs, different privacy models, and worth knowing which is which before you hand over a file that isn't yours.
+One honest distinction across the four: **DumpReader does upload** — it parses the dump server-side and discards the bytes with the response, which is why the 32 MB limit exists. **Pairchute, Parquetbay and CADverter never upload at all**; all three work inside the browser tab, verifiable in the Network panel. Different jobs, different privacy models, and worth knowing which is which before you hand over a file that isn't yours.
+
+
+All four are collected on our [free file tools](/free-file-tools) page.
 
 ## The Bottom Line
 

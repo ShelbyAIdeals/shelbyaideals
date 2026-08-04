@@ -9,7 +9,7 @@ import TableOfContents from '@/components/TableOfContents';
 import JsonLd from '@/components/JsonLd';
 import RelatedArticles from '@/components/RelatedArticles';
 import { getArticle, getArticleSlugs, getAllArticles, getAllReviews } from '@/lib/content';
-import { isTrackedAffiliateUrl } from '@/lib/affiliate';
+import { isEditorialUrl, isTrackedAffiliateUrl } from '@/lib/affiliate';
 import type { GuideMeta } from '@/lib/types';
 
 interface PageProps {
@@ -36,7 +36,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 
     return {
-      title: guide.title,
+      // The SERP title is capped near 60 characters including the " | ShelbyAI"
+      // suffix, so a guide may carry a shorter seoTitle; the full title still
+      // renders as the H1. Open Graph has room for the long one.
+      title: guide.seoTitle || guide.title,
       description: metaDescription,
       alternates: {
         canonical: `https://www.shelby-ai.com/guides/${slug}/`,
@@ -202,7 +205,9 @@ export default async function GuidePage({ params }: PageProps) {
                         rel={
                           isTrackedAffiliateUrl(tool.affiliateUrl)
                             ? 'nofollow sponsored noopener'
-                            : 'nofollow noopener noreferrer'
+                            : isEditorialUrl(tool.affiliateUrl)
+                              ? 'noopener noreferrer'
+                              : 'nofollow noopener noreferrer'
                         }
                         data-outbound={isTrackedAffiliateUrl(tool.affiliateUrl) ? undefined : '1'}
                         className="text-xs font-semibold text-void-400 hover:text-void-300 no-underline inline-flex items-center gap-1"
