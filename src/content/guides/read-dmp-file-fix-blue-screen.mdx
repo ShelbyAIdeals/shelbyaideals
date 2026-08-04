@@ -62,7 +62,6 @@ faq:
   - question: "Is it safe to upload a crash dump?"
     answer: "DumpReader parses the file in memory and discards the bytes with the response, keeping no dump content in logs. That said, a dump is a snapshot of kernel memory and can contain fragments of whatever was resident at crash time, so only upload dumps from machines you are authorised to troubleshoot."
 ---
-# How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)
 
 A Windows machine crashes mid-render. You come back to a rebooted desktop, a vague "Windows recovered from an unexpected shutdown" notice, and a file called something like `073126-9281-01.dmp` that nothing on the system will open.
 
