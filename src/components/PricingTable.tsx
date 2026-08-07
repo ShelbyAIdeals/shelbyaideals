@@ -22,12 +22,12 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             key={tier.plan}
             className={`relative flex flex-col rounded-xl border bg-void-900 p-6 ${
               tier.highlighted
-                ? 'border-ember-500/50 shadow-[0_0_30px_rgba(249,115,22,0.15)]'
+                ? 'border-ember-500/50 shadow-[0_0_30px_color-mix(in_srgb,var(--color-ember-500)_15%,transparent)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full badge-ember px-4 py-1 text-xs font-semibold shadow-[0_0_15px_rgba(249,115,22,0.4)]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full badge-ember px-4 py-1 text-xs font-semibold shadow-[0_0_15px_color-mix(in_srgb,var(--color-ember-500)_40%,transparent)]">
                 Most Popular
               </span>
             )}
@@ -78,12 +78,12 @@ export default function PricingTable({ plans = [], toolName }: PricingTableProps
             key={tier.plan}
             className={`relative rounded-xl border bg-void-900 p-5 ${
               tier.highlighted
-                ? 'border-ember-500/50 shadow-[0_0_30px_rgba(249,115,22,0.15)]'
+                ? 'border-ember-500/50 shadow-[0_0_30px_color-mix(in_srgb,var(--color-ember-500)_15%,transparent)]'
                 : 'border-void-700/50'
             }`}
           >
             {tier.highlighted && (
-              <span className="absolute -top-3 left-4 rounded-full badge-ember px-3 py-0.5 text-xs font-semibold shadow-[0_0_15px_rgba(249,115,22,0.4)]">
+              <span className="absolute -top-3 left-4 rounded-full badge-ember px-3 py-0.5 text-xs font-semibold shadow-[0_0_15px_color-mix(in_srgb,var(--color-ember-500)_40%,transparent)]">
                 Most Popular
               </span>
             )}

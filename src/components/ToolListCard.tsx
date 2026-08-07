@@ -99,10 +99,20 @@ export default function ToolListCard({
     ? SOCIAL_CONFIG.filter(({ key }) => socialLinks[key])
     : [];
 
+  // The whole card used to be wrapped in a <Link>, with the social <a> tags and
+  // the FavoriteButton <button> nested inside it. Neither is legal HTML — an
+  // anchor may not contain another anchor or a button — so the browser
+  // re-parented them during parsing and the resulting DOM no longer matched the
+  // server-rendered markup, throwing a hydration error on /reviews and forcing
+  // React to re-render the whole list on the client.
+  //
+  // The card is now a plain <article>, and the title link is stretched across it
+  // with an ::after overlay. The card stays clickable everywhere, the nested
+  // controls sit above the overlay on their own stacking level, and the markup
+  // is valid.
   return (
-    <Link href={`/reviews/${slug}`} className="no-underline block">
       <motion.article
-        className={`flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl border border-void-700/40 bg-void-800/30 hover:border-signal-500/30 hover:bg-void-800/50 transition-all duration-200 cursor-pointer group ${hasAffiliate ? 'border-l-2 border-l-signal-500/30' : ''}`}
+        className={`relative flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl border border-void-700/40 bg-void-800/30 hover:border-signal-500/30 hover:bg-void-800/50 transition-all duration-200 group ${hasAffiliate ? 'border-l-2 border-l-signal-500/30' : ''}`}
         whileHover={{ x: 4 }}
         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
       >
@@ -124,19 +134,27 @@ export default function ToolListCard({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-0.5">
             <h3 className="text-sm sm:text-base font-heading font-bold text-void-50 truncate group-hover:text-signal-400 transition-colors">
-              {tool}
+              {/* Stretched link: the ::after covers the whole card, so the card
+                  remains one big click target without wrapping the markup. */}
+              <Link
+                href={`/reviews/${slug}`}
+                className="no-underline text-inherit after:absolute after:inset-0 after:rounded-xl after:content-['']"
+              >
+                {tool}
+              </Link>
             </h3>
             {isVerified && (
               <BadgeCheck size={15} className="text-signal-400 shrink-0" />
             )}
             {hasAffiliate && (
-              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-ember-500/15 text-ember-400 border border-ember-500/20 shrink-0">
+              <span className="text-2xs font-semibold px-1.5 py-0.5 rounded bg-ember-500/15 text-ember-400 border border-ember-500/20 shrink-0">
                 Recommended
               </span>
             )}
-            {/* Social icons */}
+            {/* Social icons. z-10 keeps them above the title link's
+                stretched ::after overlay so they stay independently clickable. */}
             {activeSocials.length > 0 && (
-              <div className="hidden sm:flex items-center gap-0.5 ml-1">
+              <div className="relative z-10 hidden sm:flex items-center gap-0.5 ml-1">
                 {activeSocials.map(({ key, icon: Icon, label }) => (
                   <a
                     key={key}
@@ -144,7 +162,10 @@ export default function ToolListCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="p-1 rounded text-void-500 hover:text-signal-400 transition-colors"
+                    // Visible box stays p-1 (icon-dense row would blow out
+                    // otherwise); the invisible ::before extends the actual
+                    // tap target to ~44px on each side without moving layout.
+                    className="relative p-1 rounded text-void-500 hover:text-signal-400 transition-colors before:absolute before:-inset-3 before:content-['']"
                     aria-label={`${tool} on ${label}`}
                     title={label}
                   >
@@ -158,11 +179,11 @@ export default function ToolListCard({
             {excerpt}
           </p>
           <div className="flex items-center flex-wrap gap-1.5">
-            <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-signal-500/10 text-signal-400 text-[10px] sm:text-xs font-medium">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-signal-500/10 text-signal-400 text-xs font-medium">
               #{categoryLabel}
             </span>
             {bestFor && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-void-700/50 text-void-300 text-[10px] sm:text-xs">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-void-700/50 text-void-300 text-xs">
                 #{bestFor}
               </span>
             )}
@@ -170,7 +191,7 @@ export default function ToolListCard({
         </div>
 
         {/* Right: favorite + rating + arrow */}
-        <div className="shrink-0 flex items-center gap-2">
+        <div className="relative z-10 shrink-0 flex items-center gap-2">
           <FavoriteButton toolSlug={favSlug} isFavorited={isFavorited} onToggle={onFavoriteToggle} />
           <div className="badge-score w-10 h-10 text-sm">
             {clampedRating.toFixed(1)}
@@ -181,6 +202,5 @@ export default function ToolListCard({
           />
         </div>
       </motion.article>
-    </Link>
   );
 }

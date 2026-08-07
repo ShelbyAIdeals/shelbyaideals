@@ -1,14 +1,43 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/motion/ScrollProgress';
 import MistEffect from '@/components/MistEffect';
-import PageScaler from '@/components/PageScaler';
 import JsonLd from '@/components/JsonLd';
 import Providers from '@/components/Providers';
 import ExitIntentPopup from '@/components/ExitIntentPopup';
 import './globals.css';
+
+/**
+ * These three families used to arrive as a single render-blocking
+ * <link rel="stylesheet"> to fonts.googleapis.com — a third-party round trip
+ * on the critical path of every page. `next/font` subsets them and self-hosts
+ * the files from our own origin at build time, so there is no extra
+ * connection, no external dependency, and no chance of a font swap arriving
+ * after the text has already painted.
+ */
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.shelby-ai.com'),
@@ -83,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0KV9M45SQW"
@@ -93,22 +122,25 @@ export default function RootLayout({
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0KV9M45SQW');`}
         </Script>
         <meta name="impact-site-verification" content="34aa4c6e-1268-44c3-97fb-ef223f74b914" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="min-h-screen flex flex-col">
-        <script dangerouslySetInnerHTML={{ __html: 'window.history.scrollRestoration="manual";window.scrollTo(0,0);try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}' }} />
+        {/* `scrollRestoration="manual"` used to be set here alongside a
+            `scrollTo(0,0)`, but nothing ever restored a position afterwards —
+            so the browser's own restore was switched off and never replaced.
+            Every back-navigation dumped the reader at the top of the article
+            they had just been reading. Left on the default `auto`. */}
+        <script dangerouslySetInnerHTML={{ __html: 'try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}' }} />
         {/* GA4 click tracking via event delegation. Tracked affiliate links fire
             affiliate_click; plain outbound CTAs (data-outbound, no commercial
             relationship) fire outbound_click so they stay measurable without
             polluting affiliate revenue metrics. */}
         <script dangerouslySetInnerHTML={{ __html: `document.addEventListener("click",function(e){var a=e.target.closest('a[rel*="sponsored"],a[data-outbound]');if(!a)return;var h=a.getAttribute("href")||"",t=a.textContent.trim()||"",s=(a.getAttribute("rel")||"").indexOf("sponsored")>-1;if(typeof gtag==="function"){gtag("event",s?"affiliate_click":"outbound_click",{event_category:s?"affiliate":"outbound",event_label:t,affiliate_url:h,page_location:window.location.href})}})` }} />
-        {/* Microsoft Clarity heatmaps */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID||""}")` }} />
+        {/* Microsoft Clarity heatmaps — guarded like the Meta and LinkedIn tags
+            below. Without the guard this still ran with an empty id and
+            requested https://www.clarity.ms/tag/, a 404 on every page view. */}
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <script dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID}")` }} />
+        )}
         {/* Meta Pixel */}
         {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
           <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${process.env.NEXT_PUBLIC_META_PIXEL_ID}');fbq('track','PageView');` }} />
@@ -146,7 +178,14 @@ export default function RootLayout({
           <div className="relative z-[2] isolate flex flex-col min-h-screen">
             <ScrollProgress />
             <Header />
-            <PageScaler>{children}</PageScaler>
+            {/* Was wrapped in <PageScaler>, a client component that applied
+                `font-size: 90%` to every route except the homepage. Tailwind
+                sizes are rem-based so most of the UI ignored it — but anything
+                inheriting its size did not, and `.prose-article p` carries no
+                size class. The net effect was 14.4px body copy on every review
+                and guide, i.e. the reading pages were the smallest type on the
+                site, while the marketing homepage stayed at 16px. */}
+            <div className="flex-1">{children}</div>
             <Footer />
             <ExitIntentPopup />
           </div>

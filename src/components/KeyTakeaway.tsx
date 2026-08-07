@@ -21,7 +21,7 @@ export default function KeyTakeaway({ summary, points = [], heading = 'Key Takea
   return (
     <aside
       className="mb-8 rounded-xl border border-signal-500/25 bg-void-900 p-5 sm:p-6"
-      style={{ boxShadow: '0 0 24px rgba(10,209,200,0.05)' }}
+      style={{ boxShadow: '0 0 24px color-mix(in srgb, var(--color-signal-500) 5%, transparent)' }}
     >
       <div className="flex items-center gap-2 mb-3">
         <Zap size={16} className="text-signal-400 shrink-0" aria-hidden="true" />

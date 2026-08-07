@@ -68,7 +68,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
         <label className="text-sm font-medium text-void-300 mb-2 block">
           {t('review.your_rating', 'Your Rating')}
         </label>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {[1, 2, 3, 4, 5].map((star) => (
             <button
               key={star}
@@ -76,7 +76,7 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
               onClick={() => setRating(star)}
               onMouseEnter={() => setHoverRating(star)}
               onMouseLeave={() => setHoverRating(0)}
-              className="p-0.5 cursor-pointer transition-transform hover:scale-110"
+              className="w-11 h-11 flex items-center justify-center cursor-pointer transition-transform hover:scale-110"
               aria-label={`${star} star${star !== 1 ? 's' : ''}`}
             >
               <Star
@@ -97,26 +97,36 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
 
       {/* Title */}
       <div>
+        <label htmlFor="review-title" className="sr-only">
+          {t('review.title_label', 'Review title')}
+        </label>
         <input
+          id="review-title"
           type="text"
           placeholder={t('review.review_title_placeholder', 'Summarize your experience')}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
           maxLength={200}
-          className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
+          aria-invalid={!!error}
+          aria-describedby={error ? 'review-form-error' : undefined}
+          className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
         />
       </div>
 
       {/* Body */}
       <div>
+        <label htmlFor="review-body" className="sr-only">
+          {t('review.body_label', 'Your review')}
+        </label>
         <textarea
+          id="review-body"
           placeholder={t('review.review_body_placeholder', 'Share your experience with this tool...')}
           value={body}
           onChange={(e) => setBody(e.target.value)}
           maxLength={2000}
           rows={4}
-          className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all resize-none"
         />
         <div className="text-right text-xs text-void-600 mt-1">
           {body.length}/2000
@@ -125,7 +135,11 @@ export default function ReviewForm({ toolSlug, onSubmitted, existingReview }: Re
 
       {/* Error */}
       {error && (
-        <div className="px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+        <div
+          id="review-form-error"
+          role="alert"
+          className="px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400"
+        >
           {error}
         </div>
       )}

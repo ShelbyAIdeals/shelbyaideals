@@ -84,7 +84,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
             <Star
               key={star}
               size={14}
-              className={star <= review.rating ? 'text-amber-400 fill-amber-400' : 'text-void-600'}
+              className={star <= review.rating ? 'text-ember-400 fill-ember-400' : 'text-void-600'}
             />
           ))}
         </div>
@@ -115,7 +115,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
               <button
                 onClick={() => handleVote(false)}
                 className={`flex items-center gap-1 text-xs transition-colors cursor-pointer ${
-                  voted === 'unhelpful' ? 'text-red-400' : 'text-void-500 hover:text-void-300'
+                  voted === 'unhelpful' ? 'text-danger-400' : 'text-void-500 hover:text-void-300'
                 }`}
                 title={t('review.not_helpful', 'Not helpful')}
               >
@@ -138,7 +138,7 @@ export default function UserReviewCard({ review, onDeleted, onEdit }: UserReview
             <button
               onClick={handleDelete}
               disabled={deleting}
-              className="flex items-center gap-1 text-xs text-void-500 hover:text-red-400 transition-colors cursor-pointer disabled:opacity-50"
+              className="flex items-center gap-1 text-xs text-void-500 hover:text-danger-400 transition-colors cursor-pointer disabled:opacity-50"
             >
               <Trash2 size={13} />
               {t('review.delete_review', 'Delete')}

@@ -173,17 +173,21 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
           >
             {/* Search input */}
             <div className="flex items-center gap-3 px-5 py-4 border-b border-void-700/40">
-              <Search size={20} className="text-void-400 shrink-0" />
+              <Search size={20} aria-hidden="true" className="text-void-400 shrink-0" />
+              <label htmlFor="command-palette-input" className="sr-only">
+                Search tools, guides and comparisons
+              </label>
               <input
+                id="command-palette-input"
                 ref={inputRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search tools, guides, comparisons..."
-                className="flex-1 bg-transparent text-void-50 text-base placeholder:text-void-500 outline-none"
+                className="flex-1 bg-transparent text-void-50 text-base placeholder:text-void-500"
               />
-              <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-mono font-medium text-void-500 bg-void-800/80 border border-void-700/50 rounded">
+              <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-2xs font-mono font-medium text-void-500 bg-void-800/80 border border-void-700/50 rounded">
                 ESC
               </kbd>
             </div>
@@ -239,10 +243,10 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
 
             {/* Footer hint */}
             <div className="px-5 py-3 border-t border-void-700/30 flex items-center justify-between">
-              <span className="text-[11px] text-void-500">
+              <span className="text-2xs text-void-500">
                 {query.trim() ? 'Press Enter to search' : 'Type to search or browse links above'}
               </span>
-              <span className="text-[11px] text-void-500">
+              <span className="text-2xs text-void-500">
                 <kbd className="font-mono">ESC</kbd> to close
               </span>
             </div>

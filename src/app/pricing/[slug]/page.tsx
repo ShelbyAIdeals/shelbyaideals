@@ -202,13 +202,13 @@ export default async function PricingDetailPage({ params }: PageProps) {
             before visitors leave, not after 4 screens of plans. */}
         {crossSell && (
           <ScrollReveal>
-            <div className="max-w-3xl mb-12 rounded-xl border border-signal-500/25 bg-void-900 p-6" style={{ boxShadow: '0 0 24px rgba(10,209,200,0.05)' }}>
+            <div className="max-w-3xl mb-12 rounded-xl border border-signal-500/25 bg-void-900 p-6" style={{ boxShadow: '0 0 24px color-mix(in srgb, var(--color-signal-500) 5%, transparent)' }}>
               <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Our tested top pick</span>
               <div className="mt-2 flex flex-wrap items-center gap-3">
                 <h2 className="text-xl font-bold text-void-50 font-heading">{crossSell.name}</h2>
                 {crossSell.rating && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                    <Star size={11} className="fill-amber-300" /> {crossSell.rating.toFixed(1)}/5
+                  <span className="inline-flex items-center gap-1 rounded-full bg-ember-400/10 border border-ember-400/25 px-3 py-0.5 text-xs font-semibold text-ember-300">
+                    <Star size={11} className="fill-ember-300" /> {crossSell.rating.toFixed(1)}/5
                   </span>
                 )}
               </div>
@@ -261,7 +261,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
               <div
                 className={`relative flex flex-col rounded-xl border p-6 h-full transition-all ${
                   plan.highlighted
-                    ? 'border-signal-500/40 bg-void-900/80 shadow-[0_0_30px_rgba(6,182,212,0.08)]'
+                    ? 'border-signal-500/40 bg-void-900/80 shadow-[0_0_30px_color-mix(in_srgb,var(--color-signal-500)_8%,transparent)]'
                     : 'border-void-700/50 bg-void-900/40'
                 }`}
               >
@@ -306,7 +306,7 @@ export default async function PricingDetailPage({ params }: PageProps) {
                 {/* Only disclose "Affiliate link" when the link actually is one —
                     labeling a plain vendor URL as affiliate is misleading. */}
                 {isTrackedAffiliateUrl(plan.affiliateUrl) && (
-                  <span className="mt-1.5 text-center text-xs text-void-600">Affiliate link</span>
+                  <span className="mt-1.5 text-center text-xs text-void-500">Affiliate link</span>
                 )}
               </div>
             </StaggerItem>

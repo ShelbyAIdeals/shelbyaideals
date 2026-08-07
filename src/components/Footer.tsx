@@ -139,9 +139,9 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-16">
             {/* Left — headline + benefits */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-void-50 mb-5">
                 {t('footer.stay_ahead', 'Get the Best AI Tools in Your Inbox')}
-              </h3>
+              </h2>
               <ul className="space-y-3">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-center gap-2.5 text-sm text-void-300">
@@ -171,13 +171,24 @@ export default function Footer() {
               ) : (
                 <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
                   <div className="flex gap-2">
+                    {/* The placeholder was the only label, in void-600 — which
+                        measures 1.9:1 on this surface, so the one hint telling
+                        you what the field wants was also the least readable
+                        text in the footer. `text-base` on mobile stops iOS
+                        Safari zooming the page when the field takes focus. */}
+                    <label htmlFor="footer-newsletter-email" className="sr-only">
+                      {t('newsletter.email_label', 'Email address')}
+                    </label>
                     <input
+                      id="footer-newsletter-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t('newsletter.email_placeholder', 'Enter your email')}
                       required
-                      className="flex-1 min-w-0 px-4 py-3 text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent transition-shadow"
+                      aria-invalid={error ? true : undefined}
+                      aria-describedby={error ? 'footer-newsletter-error' : undefined}
+                      className="flex-1 min-w-0 px-4 py-3 text-base sm:text-sm rounded-lg bg-void-900 border border-void-700/50 text-void-50 placeholder:text-void-500 focus:border-signal-500/70 transition-colors"
                     />
                     <button
                       type="submit"
@@ -194,7 +205,7 @@ export default function Footer() {
                       )}
                     </button>
                   </div>
-                  {error && <p className="text-xs text-red-400">{error}</p>}
+                  {error && <p id="footer-newsletter-error" role="alert" className="text-xs text-danger-400">{error}</p>}
                   <p className="text-xs text-void-500">
                     {t('footer.no_spam', 'Free forever. Unsubscribe anytime. No spam.')}
                   </p>
@@ -212,9 +223,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:gap-14">
           {/* Categories */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.categories', 'Categories')}
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {categoryLinks.map((link) => (
                 <li key={link.href}>
@@ -231,9 +242,9 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.resources', 'Resources')}
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
@@ -250,9 +261,9 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.company', 'Company')}
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -269,9 +280,9 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-signal-400 font-heading uppercase tracking-widest mb-4">
               {t('footer.connect', 'Connect')}
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {connectLinks.map((link) => {
                 const Icon = link.icon;

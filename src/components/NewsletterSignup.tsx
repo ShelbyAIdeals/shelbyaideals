@@ -76,7 +76,7 @@ export default function NewsletterSignup({
         </div>
 
         {submitted ? (
-          <div className="py-2 space-y-2">
+          <div className="py-2 space-y-2" role="status" aria-live="polite">
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full bg-signal-500/20 flex items-center justify-center">
                 <Check size={12} className="text-signal-400" />
@@ -98,19 +98,29 @@ export default function NewsletterSignup({
         ) : (
           <>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+              <label htmlFor="newsletter-inline-email" className="sr-only">
+                {t('newsletter.email_placeholder', 'Enter your email')}
+              </label>
               <input
+                id="newsletter-inline-email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 required
-                className="flex-1 px-3 py-2 text-sm rounded-lg border border-void-700/50 bg-void-900 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
+                aria-invalid={!!error}
+                aria-describedby={error ? 'newsletter-inline-error' : undefined}
+                className="flex-1 px-3 py-2 text-base sm:text-sm rounded-lg border border-void-700/50 bg-void-900 text-void-100 placeholder:text-void-500 focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
               <button type="submit" disabled={loading} className="btn-accent text-sm !px-4 !py-2 gap-1.5">
                 {loading ? <Loader2 size={14} className="animate-spin" /> : <>{t('newsletter.subscribe', 'Subscribe')} <ArrowRight size={14} /></>}
               </button>
             </form>
-            {error && <p className="text-xs text-red-400 mt-2">{error}</p>}
+            {error && (
+              <p id="newsletter-inline-error" role="alert" className="text-xs text-red-400 mt-2">
+                {error}
+              </p>
+            )}
           </>
         )}
       </div>
@@ -161,7 +171,11 @@ export default function NewsletterSignup({
           {/* ── Right column: form ──────────────────────────────── */}
           <div>
             {submitted ? (
-              <div className="bg-void-800 border border-signal-500/20 rounded-xl p-8 text-center space-y-3">
+              <div
+                className="bg-void-800 border border-signal-500/20 rounded-xl p-8 text-center space-y-3"
+                role="status"
+                aria-live="polite"
+              >
                 <div className="w-12 h-12 rounded-full bg-signal-500/15 flex items-center justify-center mx-auto">
                   <Check size={24} className="text-signal-400" />
                 </div>
@@ -184,19 +198,22 @@ export default function NewsletterSignup({
                   <div className="w-10 h-10 rounded-lg bg-ember-500/10 border border-ember-500/15 text-ember-400 flex items-center justify-center shrink-0">
                     <Mail size={20} />
                   </div>
-                  <p className="text-sm font-medium text-void-200">
+                  <label htmlFor="newsletter-section-email" className="text-sm font-medium text-void-200">
                     {t('newsletter.email_placeholder', 'Enter your email')}
-                  </p>
+                  </label>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <input
+                    id="newsletter-section-email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full px-4 py-3 text-sm rounded-lg border border-void-700/50 bg-void-900 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-ember-500/40 focus:border-transparent"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? 'newsletter-section-error' : undefined}
+                    className="w-full px-4 py-3 text-base sm:text-sm rounded-lg border border-void-700/50 bg-void-900 text-void-100 placeholder:text-void-500 focus:ring-2 focus:ring-ember-500/40 focus:border-transparent"
                   />
                   <button
                     type="submit"
@@ -211,7 +228,11 @@ export default function NewsletterSignup({
                   </button>
                 </form>
 
-                {error && <p className="text-xs text-red-400 mt-3">{error}</p>}
+                {error && (
+                  <p id="newsletter-section-error" role="alert" className="text-xs text-red-400 mt-3">
+                    {error}
+                  </p>
+                )}
 
                 <p className="text-xs text-void-500 mt-4 text-center">
                   {t('footer.no_spam', 'No spam, unsubscribe anytime.')}

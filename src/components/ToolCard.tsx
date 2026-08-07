@@ -30,17 +30,25 @@ export default function ToolCard({
   pricingSlug,
 }: ToolCardProps) {
   return (
+    // The hover glow lives in `.card:hover` (globals.css), which is theme-aware.
+    // It used to be duplicated on this element as
+    // `rgba(var(--color-signal-500), 0.12)` — invalid CSS, since that token holds
+    // a hex string and rgba() needs numeric channels, so the browser dropped the
+    // declaration and the glow never rendered at all.
     <motion.div
       className="card group relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center"
-      whileHover={{ y: -4, boxShadow: '0 0 32px rgba(var(--color-signal-500), 0.12)' }}
+      whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
     >
-      {/* Rank badge */}
-      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-extrabold text-void-50 ${
-        rank === 1 ? 'bg-ember-400 shadow-[0_0_15px_rgba(251,146,60,0.4)]' :
-        rank === 2 ? 'bg-void-300 text-void-900 shadow-[0_0_15px_rgba(209,213,219,0.3)]' :
-        rank === 3 ? 'bg-ember-700 shadow-[0_0_15px_rgba(194,65,12,0.3)]' :
-        'bg-signal-500 shadow-[0_0_15px_rgba(var(--color-signal-500),0.4)]'
+      {/* Rank badge — podium reads gold / silver / bronze. Every fill here is
+          light enough that it needs dark type: void-50 on ember-400 measured
+          1.47:1. Bronze is ember-600 rather than ember-700 because ember-700
+          is the one step on the ramp no text colour can clear 4.5:1 against. */}
+      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-extrabold text-void-950 ${
+        rank === 1 ? 'bg-ember-400 shadow-glow-ember' :
+        rank === 2 ? 'bg-void-300' :
+        rank === 3 ? 'bg-ember-600' :
+        'bg-signal-500 shadow-glow-sm'
       }`}>
         {rank}
       </div>

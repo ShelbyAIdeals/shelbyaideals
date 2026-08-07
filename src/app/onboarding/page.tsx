@@ -177,7 +177,7 @@ export default function OnboardingPage() {
       </div>
 
       {error && (
-        <p className="text-sm text-red-400 mt-6 max-w-md text-center">{error}</p>
+        <p className="text-sm text-danger-400 mt-6 max-w-md text-center">{error}</p>
       )}
     </div>
   );

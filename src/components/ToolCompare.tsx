@@ -66,12 +66,26 @@ export default function ToolCompare({ tools }: ToolCompareProps) {
       {chosen.length === 0 ? (
         <p className="text-center text-sm text-void-500">Add at least 2 tools to see them side by side.</p>
       ) : (
-        <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${chosen.length}, minmax(0,1fr))` }}>
+        // Stack to a single column below `sm:` — at 375px, 3 equal columns
+        // crushed pricing/pros/cons text into ~110px slivers. `chosen.length`
+        // only ever changes from client interaction (starts empty on both
+        // server and client render), so this static class lookup is
+        // hydration-safe without needing matchMedia state.
+        <div
+          className={`grid grid-cols-1 gap-4 ${
+            chosen.length >= 3 ? 'sm:grid-cols-3' : chosen.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'
+          }`}
+        >
           {chosen.map((t) => (
             <div key={t.slug} className="rounded-xl border border-void-700/50 bg-void-900/40 p-5 flex flex-col">
               <div className="flex items-start justify-between gap-2 mb-3">
                 <h2 className="text-lg font-bold text-void-50 font-heading">{t.tool}</h2>
-                <button type="button" onClick={() => remove(t.slug)} aria-label={`Remove ${t.tool}`} className="text-void-500 hover:text-ember-400 transition-colors">
+                <button
+                  type="button"
+                  onClick={() => remove(t.slug)}
+                  aria-label={`Remove ${t.tool}`}
+                  className="shrink-0 -mr-2 -mt-1 min-w-11 min-h-11 flex items-center justify-center text-void-500 hover:text-ember-400 transition-colors"
+                >
                   <X size={16} />
                 </button>
               </div>
@@ -81,7 +95,7 @@ export default function ToolCompare({ tools }: ToolCompareProps) {
                   <Star size={10} className="fill-amber-300" /> {t.rating.toFixed(1)}/5
                 </span>
                 {t.isAffiliate && (
-                  <span className="rounded-full bg-signal-500/10 border border-signal-500/20 px-2.5 py-0.5 text-[10px] font-medium text-signal-400 uppercase tracking-wide">Tested</span>
+                  <span className="rounded-full bg-signal-500/10 border border-signal-500/20 px-2.5 py-0.5 text-2xs font-medium text-signal-400 uppercase tracking-wide">Tested</span>
                 )}
               </div>
 
@@ -128,7 +142,7 @@ export default function ToolCompare({ tools }: ToolCompareProps) {
       )}
 
       {chosen.length > 0 && (
-        <p className="mt-6 text-center text-[10px] text-void-600">
+        <p className="mt-6 text-center text-2xs text-void-500">
           Ratings from our hands-on testing. &ldquo;Try&rdquo; links may be affiliate links — they never affect our ratings.
         </p>
       )}

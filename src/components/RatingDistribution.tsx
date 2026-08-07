@@ -29,7 +29,7 @@ export default function RatingDistribution({ reviews, averageRating }: RatingDis
             <Star
               key={star}
               size={14}
-              className={star <= Math.round(averageRating) ? 'text-amber-400 fill-amber-400' : 'text-void-600'}
+              className={star <= Math.round(averageRating) ? 'text-ember-400 fill-ember-400' : 'text-void-600'}
             />
           ))}
         </div>
@@ -47,10 +47,10 @@ export default function RatingDistribution({ reviews, averageRating }: RatingDis
           return (
             <div key={star} className="flex items-center gap-2">
               <span className="text-xs text-void-400 w-4 text-right font-medium">{star}</span>
-              <Star size={12} className="text-amber-400 fill-amber-400 shrink-0" />
+              <Star size={12} className="text-ember-400 fill-ember-400 shrink-0" />
               <div className="flex-1 h-2 bg-void-800 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-amber-400 rounded-full transition-all duration-500"
+                  className="h-full bg-ember-400 rounded-full transition-all duration-500"
                   style={{ width: `${percentage}%` }}
                 />
               </div>

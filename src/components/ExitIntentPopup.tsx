@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { X, ArrowRight, Zap, Download } from 'lucide-react';
 import { trackNewsletterSignup } from '@/lib/analytics';
 
@@ -10,6 +10,10 @@ export default function ExitIntentPopup() {
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const panelRef = useRef<HTMLDivElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   const show = useCallback(() => {
     if (typeof window === 'undefined') return;
@@ -37,6 +41,56 @@ export default function ExitIntentPopup() {
     setVisible(false);
     sessionStorage.setItem('exitPopupDismissed', '1');
   };
+
+  // Move focus into the popup on open, restore it to the trigger on close
+  useEffect(() => {
+    if (visible) {
+      previousFocusRef.current = document.activeElement as HTMLElement | null;
+      const focusTimer = setTimeout(() => emailInputRef.current?.focus(), 80);
+      return () => clearTimeout(focusTimer);
+    }
+    previousFocusRef.current?.focus();
+  }, [visible]);
+
+  // Escape to close, Tab focus trap, body-scroll lock
+  useEffect(() => {
+    if (!visible) return;
+
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        dismiss();
+        return;
+      }
+
+      if (e.key === 'Tab' && panelRef.current) {
+        const focusable = panelRef.current.querySelectorAll<HTMLElement>(
+          'a, button, input, [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKey);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,10 +130,16 @@ export default function ExitIntentPopup() {
       <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={dismiss} />
 
       {/* Modal */}
-      <div className="relative w-full max-w-md bg-void-900 border border-void-700/60 rounded-2xl p-8 shadow-2xl">
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exit-intent-title"
+        className="relative w-full max-w-md bg-void-900 border border-void-700/60 rounded-2xl p-8 shadow-2xl"
+      >
         <button
           onClick={dismiss}
-          className="absolute top-4 right-4 text-void-500 hover:text-void-50 transition-colors cursor-pointer"
+          className="absolute top-2 right-2 w-11 h-11 flex items-center justify-center rounded-lg text-void-500 hover:text-void-50 transition-colors cursor-pointer"
           aria-label="Close"
         >
           <X size={20} />
@@ -90,7 +150,7 @@ export default function ExitIntentPopup() {
             <Zap size={24} className="text-void-950" strokeWidth={2.5} />
           </div>
 
-          <h3 className="text-xl font-heading font-bold text-void-50 mb-2">
+          <h3 id="exit-intent-title" className="text-xl font-heading font-bold text-void-50 mb-2">
             Wait — grab this before you go
           </h3>
           <p className="text-sm text-void-300 mb-6 leading-relaxed">
@@ -98,7 +158,7 @@ export default function ExitIntentPopup() {
           </p>
 
           {subscribed ? (
-            <div className="space-y-3">
+            <div className="space-y-3" role="status" aria-live="polite">
               <p className="text-signal-400 font-semibold">
                 You're in! Here's your cheatsheet:
               </p>
@@ -114,13 +174,20 @@ export default function ExitIntentPopup() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+              <label htmlFor="exit-intent-email" className="sr-only">
+                Email address
+              </label>
               <input
+                id="exit-intent-email"
+                ref={emailInputRef}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@email.com"
                 required
-                className="w-full px-4 py-3 text-sm rounded-lg bg-void-800 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
+                aria-invalid={!!error}
+                aria-describedby={error ? 'exit-intent-error' : undefined}
+                className="w-full px-4 py-3 text-base sm:text-sm rounded-lg bg-void-800 border border-void-700/50 text-void-50 placeholder:text-void-600 focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
               <button
                 type="submit"
@@ -130,7 +197,11 @@ export default function ExitIntentPopup() {
                 {loading ? 'Subscribing...' : 'Get Weekly AI Picks'}
                 {!loading && <ArrowRight size={14} />}
               </button>
-              {error && <p className="text-xs text-red-400">{error}</p>}
+              {error && (
+                <p id="exit-intent-error" role="alert" className="text-xs text-red-400">
+                  {error}
+                </p>
+              )}
               <p className="text-xs text-void-600">No spam. Unsubscribe anytime.</p>
             </form>
           )}

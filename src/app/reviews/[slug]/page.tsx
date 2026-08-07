@@ -43,12 +43,42 @@ function getToolImages(toolSlug: string): { src: string; alt: string }[] {
     images.push({ src: `/images/tools/${toolSlug}/${heroFile}`, alt: `${toolName} dashboard overview` });
   }
 
-  // Add numbered screenshots
-  const screenshots = allFiles.filter((f) => /^screenshot-\d+\.(webp|png|jpe?g)$/i.test(f));
-  screenshots.sort();
-  screenshots.forEach((f, i) => {
-    images.push({ src: `/images/tools/${toolSlug}/${f}`, alt: `${toolName} interface — screenshot ${i + 1}` });
-  });
+  // Add numbered screenshots.
+  //
+  // This used to be a plain `.sort()` over every matching file, which had two
+  // consequences. Most tools ship both `screenshot-1.png` and
+  // `screenshot-1.webp`; both were pushed as separate carousel slides, and
+  // because "png" sorts before "webp" the heavier one rendered first. For
+  // leonardo-ai that meant serving a 2.1 MB PNG in front of the 122 KB WebP
+  // sitting beside it. The plain sort was also lexicographic, so screenshot-10
+  // preceded screenshot-2.
+  //
+  // Group by index, keep one file per index in format preference order, and
+  // order the indices numerically.
+  const FORMAT_RANK = ['.webp', '.jpg', '.jpeg', '.png'];
+  const byIndex = new Map<number, string>();
+
+  for (const file of allFiles) {
+    const match = /^screenshot-(\d+)\.(webp|png|jpe?g)$/i.exec(file);
+    if (!match) continue;
+
+    const index = Number(match[1]);
+    const incumbent = byIndex.get(index);
+    const rank = (f: string) => FORMAT_RANK.indexOf(path.extname(f).toLowerCase());
+
+    if (!incumbent || rank(file) < rank(incumbent)) {
+      byIndex.set(index, file);
+    }
+  }
+
+  [...byIndex.entries()]
+    .sort(([a], [b]) => a - b)
+    .forEach(([, file], i) => {
+      images.push({
+        src: `/images/tools/${toolSlug}/${file}`,
+        alt: `${toolName} interface — screenshot ${i + 1}`,
+      });
+    });
 
   return images;
 }
@@ -247,7 +277,12 @@ export default async function ReviewPage({ params }: PageProps) {
       backLink={{ href: '/reviews', label: 'All Reviews' }}
       sidebar={sidebar}
     >
-      <JsonLd type="review" data={meta} canonicalUrl={`https://www.shelby-ai.com/reviews/${slug}/`} />
+      <JsonLd
+        type="review"
+        data={meta}
+        canonicalUrl={`https://www.shelby-ai.com/reviews/${slug}/`}
+        imageUrl={toolImages[0] ? `https://www.shelby-ai.com${toolImages[0].src}` : undefined}
+      />
       <JsonLd type="breadcrumb" breadcrumbs={breadcrumbs} />
       <JsonLd
         type="faq"
@@ -383,8 +418,8 @@ export default async function ReviewPage({ params }: PageProps) {
           <div className="mt-2 flex flex-wrap items-center gap-3">
             <h2 className="text-xl font-bold text-void-50 font-heading">{crossSell.name}</h2>
             {crossSell.rating && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                <Star size={11} className="fill-amber-300" /> {crossSell.rating.toFixed(1)}/5
+              <span className="inline-flex items-center gap-1 rounded-full bg-ember-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-ember-300">
+                <Star size={11} className="fill-ember-300" /> {crossSell.rating.toFixed(1)}/5
               </span>
             )}
           </div>

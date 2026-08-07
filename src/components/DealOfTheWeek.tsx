@@ -20,7 +20,7 @@ export default function DealOfTheWeek({ toolName, deal, reviewSlug, affiliateUrl
         className="absolute inset-0 rounded-xl pointer-events-none"
         style={{
           background:
-            'linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.3) 25%, rgba(251,191,36,0.5) 50%, rgba(245,158,11,0.3) 75%, transparent 100%)',
+            'linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--color-ember-500) 30%, transparent) 25%, color-mix(in srgb, var(--color-ember-400) 50%, transparent) 50%, color-mix(in srgb, var(--color-ember-500) 30%, transparent) 75%, transparent 100%)',
           backgroundSize: '200% 100%',
           animation: 'shimmer 3s ease-in-out infinite',
           maskImage: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',

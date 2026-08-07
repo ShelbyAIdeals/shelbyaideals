@@ -28,19 +28,32 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         className="relative group aspect-video rounded-xl overflow-hidden border border-void-700/50 bg-void-800 cursor-zoom-in"
         onClick={() => setLightbox(true)}
       >
+        {/* This is the tool screenshot the review's JSON-LD names as the
+            article image, and on most review pages it is the LCP element.
+            It was lazy-loaded, so the browser deferred the one image the page
+            is actually about. The first slide loads eagerly; later slides are
+            only reachable after interaction, so they stay lazy. */}
         <img
           src={images[current].src}
           alt={images[current].alt}
           width={1200}
           height={675}
-          loading="lazy"
+          loading={current === 0 ? 'eager' : 'lazy'}
+          fetchPriority={current === 0 ? 'high' : 'auto'}
+          decoding="async"
           className="w-full h-full object-contain"
         />
 
-        {/* Zoom hint */}
-        <div className="absolute bottom-3 right-3 p-1.5 rounded-lg bg-void-950/70 text-void-300 opacity-0 group-hover:opacity-100 transition-opacity">
-          <ZoomIn size={16} />
-        </div>
+        {/* Zoom affordance. Previously a plain <div>, which left the lightbox
+            openable by mouse only — the wrapper's onClick was the sole trigger. */}
+        <button
+          type="button"
+          onClick={(e) => { e.stopPropagation(); setLightbox(true); }}
+          aria-label="View screenshot full size"
+          className="absolute bottom-3 right-3 w-11 h-11 rounded-lg bg-void-950/70 text-void-300 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 hover:text-void-50 transition-opacity cursor-pointer"
+        >
+          <ZoomIn size={16} aria-hidden="true" />
+        </button>
 
         {images.length > 1 && (
           <>

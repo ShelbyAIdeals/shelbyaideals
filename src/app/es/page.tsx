@@ -55,7 +55,9 @@ const categories = [
 
 export default function SpanishHomePage() {
   return (
-    <main className="min-h-screen">
+    // The root layout hard-codes <html lang="en">, so this entire Spanish page
+    // was being announced to screen readers with English pronunciation rules.
+    <main lang="es" className="min-h-screen">
       <Hreflang path="/" />
 
       {/* Hero */}

@@ -5,9 +5,13 @@
   --color-void-50: #eef1f5;
   --color-void-100: #dce1e9;
   --color-void-200: #c0c8d6;
+  /* 300/400/500 are the three functional text tiers and every one of them has
+     to clear 4.5:1 on the darkest card surface we actually paint (#1e2435).
+     600 and below are decorative only — borders, dividers, disabled glyphs —
+     and must never carry reading text. */
   --color-void-300: #9ca8bc;
-  --color-void-400: #6e7d94;
-  --color-void-500: #556275;
+  --color-void-400: #8f9db2;
+  --color-void-500: #7f8ea6;
   --color-void-600: #3f4a5c;
   --color-void-700: #2d3548;
   --color-void-800: #1e2435;
@@ -64,33 +68,33 @@
   --color-danger-500: #f43f5e;
   --color-danger-600: #e11d48;
 
-  --color-warning-50: #fefbe8;
-  --color-warning-400: #fbbf24;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-
-  --color-info-50: #ecfffe;
-  --color-info-400: #22e2d8;
-  --color-info-500: #0ad1c8;
-  --color-info-600: #06a8a2;
-
-  /* ── Legacy accent aliases (backwards compat during migration) */
-  --color-accent-50: var(--color-signal-50);
-  --color-accent-100: var(--color-signal-100);
-  --color-accent-200: var(--color-signal-200);
-  --color-accent-300: var(--color-signal-300);
-  --color-accent-400: var(--color-signal-400);
-  --color-accent-500: var(--color-signal-500);
-  --color-accent-600: var(--color-signal-600);
-  --color-accent-700: var(--color-signal-700);
-  --color-accent-800: var(--color-signal-800);
-  --color-accent-900: var(--color-signal-900);
-  --color-accent-950: var(--color-signal-950);
+  /* `warning` duplicated ember and `info` duplicated signal, literal-for-literal
+     rather than by reference, so the two families could silently drift apart.
+     Both were unused, as was the whole `accent-*` alias layer — the migration
+     it existed to support is finished. Use ember / signal directly. */
 
   /* ── Typography ──────────────────────────────────────────── */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'Cascadia Code', monospace;
+  /* The families are self-hosted by next/font (see layout.tsx), which exposes
+     each one as a CSS variable rather than a bare family name. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, 'Cascadia Code', monospace;
+
+  /* `text-[10px]` had been hand-written 17 times across 12 files without ever
+     becoming a token. 10px is below the legibility floor for functional text,
+     so the token that replaces it is 11px — the smallest size allowed to carry
+     meaning here. Nothing smaller gets a name, so nothing smaller gets used. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+
+  /* ── Elevation ────────────────────────────────────────────
+     37 distinct shadow strings existed, 86% of them used exactly once. These
+     four are the archetypes they were all approximating. The glow variants
+     carry the brand; `raised` is the neutral lift. */
+  --shadow-glow-sm: 0 0 20px color-mix(in srgb, var(--color-signal-500) 25%, transparent);
+  --shadow-glow-md: 0 0 32px color-mix(in srgb, var(--color-signal-500) 40%, transparent);
+  --shadow-glow-ember: 0 0 20px color-mix(in srgb, var(--color-ember-500) 20%, transparent);
+  --shadow-raised: 0 4px 24px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.2);
 }
 
 /* ── White Mode Overrides ────────────────────────────── */
@@ -100,8 +104,11 @@
   --color-void-50: #141210;
   --color-void-100: #252017;
   --color-void-200: #3a3228;
-  --color-void-300: #4a4035;
-  --color-void-400: #4a3f33;
+  /* 300 and 400 used to be #4a4035 / #4a3f33 — a 5-unit RGB apart, i.e. the
+     same colour twice. Any hierarchy the dark ramp expressed between the two
+     collapsed the moment you flipped to light. Re-spaced to stay monotonic. */
+  --color-void-300: #453b30;
+  --color-void-400: #52483c;
   --color-void-500: #5c5c5c;
   --color-void-600: #c0c0c0;
   --color-void-700: #e0e0e0;
@@ -128,7 +135,9 @@
   --color-ember-200: #fbd573;
   --color-ember-300: #f5b82e;
   --color-ember-400: #d97706;
-  --color-ember-500: #b45309;
+  /* .btn-accent paints void-950 text on this; #b45309 left that pair at
+     4.31:1, and font-semibold doesn't qualify for the large-text exception. */
+  --color-ember-500: #a34a07;
   --color-ember-600: #92400e;
   --color-ember-700: #78350f;
   --color-ember-800: #5c2a0e;
@@ -159,20 +168,6 @@
   --color-danger-500: #be123c;
   --color-danger-600: #9f1239;
 
-  --color-warning-50: #fef9ed;
-  --color-warning-400: #d97706;
-  --color-warning-500: #b45309;
-  --color-warning-600: #92400e;
-
-  --color-info-50: #f0f7f1;
-  --color-info-400: #3d5b40;
-  --color-info-500: #2f4731;
-  --color-info-600: #243824;
-
-  /* Legacy accent overrides */
-  --color-accent-300: var(--color-signal-300);
-  --color-accent-400: var(--color-signal-400);
-  --color-accent-500: var(--color-signal-500);
 }
 
 [data-theme="light"] ::selection {
@@ -188,11 +183,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes staggerReveal {
-  from { opacity: 0; transform: translateY(20px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -201,33 +191,6 @@
 @keyframes glowPulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
-}
-
-@keyframes meshFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -20px) rotate(1deg); }
-  66% { transform: translate(-20px, 15px) rotate(-1deg); }
-}
-
-@keyframes borderGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes slideUnderline {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@keyframes scorePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
 }
 
 /* ── Base Layer ───────────────────────────────────────── */
@@ -239,6 +202,8 @@ body { top: 0 !important; }
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Anchor targets were landing under the fixed header. */
+    scroll-padding-top: 5.5rem;
   }
 
   body {
@@ -265,6 +230,13 @@ body { top: 0 !important; }
     @apply text-signal-400 hover:text-signal-300 transition-colors;
   }
 
+  /* Hover brightens, which is correct on the dark theme. On the light theme
+     the same step washes the link out against beige (3.45:1), so hover has to
+     travel the other way — darker, not lighter. */
+  [data-theme="light"] a:hover {
+    color: var(--color-signal-500);
+  }
+
   * {
     -webkit-user-select: auto;
     user-select: auto;
@@ -272,6 +244,41 @@ body { top: 0 !important; }
 
   ::selection {
     @apply bg-signal-500/30 text-void-50;
+  }
+
+  /* ── Focus ─────────────────────────────────────────────
+     Every focus affordance on the site used to be a translucent signal ring
+     (`ring-signal-500/30` measured 1.93:1 against the input it sat on), which
+     is below the 3:1 WCAG 1.4.11 floor for non-text indicators. A single
+     opaque outline replaces all of them. `outline-offset` keeps it legible
+     even when focus lands on a signal- or ember-filled control. */
+  :focus-visible {
+    outline: 2px solid var(--color-signal-400);
+    outline-offset: 2px;
+  }
+
+  [data-theme="light"] :focus-visible {
+    outline-color: var(--color-signal-500);
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────
+   The site runs a permanent canvas starfield, three infinite hero glows and
+   a 3s headline rotator. None of it was gated. Rather than a blanket
+   `0.01ms !important` kill — which also destroys the state-change feedback
+   people rely on — transitions are kept short and only the looping,
+   ambient, non-informational motion is stopped. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 120ms !important;
   }
 }
 
@@ -475,12 +482,6 @@ body { top: 0 !important; }
       rounded-full bg-signal-500 text-void-950;
   }
 
-  /* Legacy aliases */
-  .badge-accent {
-    @apply inline-flex items-center px-3 py-1 text-xs font-sans font-medium
-      rounded-full bg-signal-500/10 text-signal-400 border border-signal-500/20;
-  }
-
   /* ── Section Backgrounds ────────────────────────────── */
 
   .section-alt {
@@ -502,12 +503,13 @@ body { top: 0 !important; }
 
   /* ── Search Input ───────────────────────────────────── */
 
+  /* No `focus:outline-none` here any more — the base `:focus-visible` outline
+     is the compliant indicator, and suppressing it left only a 2.5:1 ring. */
   .search-input {
     @apply w-full px-5 py-3.5 text-base rounded-xl
       bg-void-900 border border-void-700/60 text-void-100
       placeholder:text-void-500
-      focus:outline-none focus:ring-2 focus:ring-signal-500/40
-      focus:border-signal-500/50 transition-all duration-200;
+      focus:border-signal-500/70 transition-all duration-200;
   }
 
   /* ── Dark Editorial Prose ───────────────────────────── */
@@ -528,6 +530,15 @@ body { top: 0 !important; }
 
   .prose-article ul, .prose-article ol {
     @apply text-void-300 mb-4 pl-6;
+  }
+
+  /* Running text was reaching ~107 characters a line on wide viewports. Tables,
+     figures and embeds keep the full column — only prose is measured. */
+  .prose-article p:not(:has(> img)),
+  .prose-article ul,
+  .prose-article ol,
+  .prose-article blockquote {
+    max-width: 72ch;
   }
 
   .prose-article li {
@@ -627,19 +638,6 @@ body { top: 0 !important; }
     animation: glowPulse 4s ease-in-out infinite;
   }
 
-  .animate-mesh {
-    animation: meshFloat 12s ease-in-out infinite;
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradientShift 4s ease infinite;
-  }
-
-  .animate-score-pulse {
-    animation: scorePulse 2s ease-in-out infinite;
-  }
-
   /* ── Dot Grid Pattern ───────────────────────────────── */
 
   .pattern-dots {
@@ -652,47 +650,8 @@ body { top: 0 !important; }
     opacity: 0.3;
   }
 
-  /* ── Mist Slider ────────────────────────────────────── */
-
-  .mist-slider {
-    @apply appearance-none bg-transparent cursor-pointer;
-    height: 20px;
-  }
-  .mist-slider::-webkit-slider-runnable-track {
-    height: 3px;
-    border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-signal-500), transparent);
-  }
-  .mist-slider::-moz-range-track {
-    height: 3px;
-    border-radius: 9999px;
-    background: linear-gradient(to right, var(--color-signal-500), transparent);
-  }
-  .mist-slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    margin-top: -4.5px;
-    box-shadow: 0 0 6px rgba(10, 209, 200, 0.4);
-  }
-  .mist-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white;
-    border: none;
-    box-shadow: 0 0 6px rgba(10, 209, 200, 0.4);
-  }
-
   /* ── Glassmorphic Header ────────────────────────────── */
 
-  .header-glass {
-    background: rgba(11, 14, 23, 0.7);
-    backdrop-filter: blur(20px) saturate(1.2);
-    -webkit-backdrop-filter: blur(20px) saturate(1.2);
-  }
   .header-glass-solid {
     background: rgba(11, 14, 23, 0.95);
     backdrop-filter: blur(20px) saturate(1.2);
@@ -700,9 +659,6 @@ body { top: 0 !important; }
   }
 
   /* Light mode header backgrounds */
-  [data-theme="light"] .header-glass {
-    background: rgba(245, 237, 221, 0.7);
-  }
   [data-theme="light"] .header-glass-solid {
     background: rgba(245, 237, 221, 0.95);
   }

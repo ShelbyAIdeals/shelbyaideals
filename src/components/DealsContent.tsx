@@ -12,8 +12,8 @@ import type { Deal } from '@/lib/deals-data';
 function DealBadge({ deal }: { deal: Deal }) {
   const colors = {
     'free-trial': 'bg-signal-500/15 text-signal-300 border-signal-500/25',
-    discount: 'bg-green-500/15 text-green-300 border-green-500/25',
-    'free-tier': 'bg-violet-500/15 text-violet-300 border-violet-500/25',
+    discount: 'bg-success-500/15 text-success-400 border-success-500/25',
+    'free-tier': 'bg-iris-500/15 text-iris-300 border-iris-500/25',
   };
 
   return (
@@ -31,7 +31,7 @@ function DealCard({ deal, featured = false, t }: { deal: Deal; featured?: boolea
     <div
       className={`relative flex flex-col h-full rounded-2xl border p-6 transition-all hover:-translate-y-1 hover:shadow-xl ${
         featured
-          ? 'bg-void-900 border-signal-500/30 shadow-[0_0_30px_rgba(5,160,186,0.08)]'
+          ? 'bg-void-900 border-signal-500/30 shadow-[0_0_30px_color-mix(in_srgb,var(--color-signal-600)_8%,transparent)]'
           : 'bg-void-900 border-void-700/60 hover:border-void-600/80'
       }`}
     >
@@ -100,7 +100,7 @@ function DealCard({ deal, featured = false, t }: { deal: Deal; featured?: boolea
             <ArrowRight size={12} />
           </Link>
         )}
-        <span className="text-[10px] text-void-600 text-center">{t('deals.affiliate_link', 'Affiliate link')}</span>
+        <span className="text-2xs text-void-500 text-center">{t('deals.affiliate_link', 'Affiliate link')}</span>
       </div>
     </div>
   );

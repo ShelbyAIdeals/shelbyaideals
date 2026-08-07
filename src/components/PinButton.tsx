@@ -15,7 +15,7 @@ export default function PinButton({ url, imageUrl, description }: PinButtonProps
   return (
     <button
       onClick={handlePin}
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg border border-void-700/50 text-void-400 hover:text-[#E60023] hover:border-[#E60023]/30 transition-colors cursor-pointer"
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 min-h-11 text-sm rounded-lg border border-void-700/50 text-void-400 hover:text-[#E60023] hover:border-[#E60023]/30 transition-colors cursor-pointer"
       aria-label="Save to Pinterest"
     >
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

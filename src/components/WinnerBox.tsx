@@ -17,7 +17,7 @@ export default function WinnerBox({
   return (
     <div
       className="my-8 rounded-xl border border-void-700/50 border-l-4 border-l-ember-500 bg-void-900 p-6"
-      style={{ boxShadow: '0 0 20px rgba(249,115,22,0.1)' }}
+      style={{ boxShadow: '0 0 20px color-mix(in srgb, var(--color-ember-500) 10%, transparent)' }}
     >
       <div className="mb-3 flex items-center gap-2">
         <Trophy size={20} className="text-ember-400" />
@@ -26,9 +26,10 @@ export default function WinnerBox({
         </span>
       </div>
 
-      <h4 className="mb-2 text-2xl font-extrabold text-void-50">
+      {/* Was an h4 sitting directly under the page's h2s, skipping h3. */}
+      <h3 className="mb-2 text-2xl font-extrabold text-void-50">
         {toolName}
-      </h4>
+      </h3>
 
       <p className="mb-5 text-void-400 leading-relaxed">{reason}</p>
 

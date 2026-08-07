@@ -25,7 +25,7 @@ export default function AuthorCard() {
           className="shrink-0 no-underline"
           aria-label={`${AUTHOR.name}'s profile`}
         >
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-signal-500 to-signal-700 text-void-50 font-heading font-bold text-lg sm:text-xl select-none">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-signal-400 to-signal-600 text-void-950 font-heading font-bold text-lg sm:text-xl select-none">
             {AUTHOR.initials}
           </div>
         </Link>

@@ -73,7 +73,11 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
         </div>
 
         {submitted ? (
-          <div className="mt-4 bg-void-800 border border-signal-500/20 rounded-lg p-4">
+          <div
+            className="mt-4 bg-void-800 border border-signal-500/20 rounded-lg p-4"
+            role="status"
+            aria-live="polite"
+          >
             <p className="text-sm font-semibold text-signal-400">
               {t('article.picks_success', "You're in! Check your inbox for this week's picks.")}
             </p>
@@ -81,13 +85,19 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
         ) : (
           <>
             <form onSubmit={handleSubmit} className="mt-4 flex flex-col sm:flex-row gap-2">
+              <label htmlFor="inline-cta-email" className="sr-only">
+                {t('newsletter.email_placeholder', 'Enter your email')}
+              </label>
               <input
+                id="inline-cta-email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('newsletter.email_placeholder', 'Enter your email')}
                 required
-                className="flex-1 px-4 py-2.5 text-sm rounded-lg border border-void-700/50 bg-void-950 text-void-100 placeholder:text-void-500 focus:outline-none focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
+                aria-invalid={!!error}
+                aria-describedby={error ? 'inline-cta-error' : undefined}
+                className="flex-1 px-4 py-2.5 text-base sm:text-sm rounded-lg border border-void-700/50 bg-void-950 text-void-100 placeholder:text-void-500 focus:ring-2 focus:ring-signal-500/40 focus:border-transparent"
               />
               <button
                 type="submit"
@@ -103,7 +113,11 @@ export default function InlineNewsletterCTA({ className }: InlineNewsletterCTAPr
                 )}
               </button>
             </form>
-            {error && <p className="text-xs text-red-400 mt-2">{error}</p>}
+            {error && (
+              <p id="inline-cta-error" role="alert" className="text-xs text-red-400 mt-2">
+                {error}
+              </p>
+            )}
           </>
         )}
       </div>

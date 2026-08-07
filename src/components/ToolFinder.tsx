@@ -112,7 +112,7 @@ export default function ToolFinder({ goals }: ToolFinderProps) {
 
       {/* Result */}
       {pick && goal && budget && (
-        <section className="rounded-2xl border border-signal-500/25 bg-void-900 p-6 sm:p-8" style={{ boxShadow: '0 0 32px rgba(10,209,200,0.06)' }}>
+        <section className="rounded-2xl border border-signal-500/25 bg-void-900 p-6 sm:p-8" style={{ boxShadow: '0 0 32px color-mix(in srgb, var(--color-signal-500) 6%, transparent)' }}>
           <div className="flex items-center justify-between mb-1">
             <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Your match</span>
             <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-xs text-void-400 hover:text-signal-400 transition-colors">
@@ -123,8 +123,8 @@ export default function ToolFinder({ goals }: ToolFinderProps) {
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <h3 className="text-2xl font-bold text-void-50 font-heading">{pick.name}</h3>
             {pick.rating && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                <Star size={11} className="fill-amber-300" /> {pick.rating.toFixed(1)}/5
+              <span className="inline-flex items-center gap-1 rounded-full bg-ember-400/10 border border-ember-400/25 px-3 py-0.5 text-xs font-semibold text-ember-300">
+                <Star size={11} className="fill-ember-300" /> {pick.rating.toFixed(1)}/5
               </span>
             )}
           </div>
@@ -137,7 +137,7 @@ export default function ToolFinder({ goals }: ToolFinderProps) {
           </p>
 
           {overBudgetFallback && (
-            <p className="text-xs text-amber-300/90 mb-4">
+            <p className="text-xs text-ember-300/90 mb-4">
               Nothing in that budget for this goal — here's our top overall pick instead.
             </p>
           )}
@@ -174,7 +174,7 @@ export default function ToolFinder({ goals }: ToolFinderProps) {
                 {runnersUp.map((t) => (
                   <div key={t.name} className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
                     <span className="font-semibold text-void-200 min-w-[7rem]">{t.name}</span>
-                    {t.rating && <span className="text-amber-300/90 text-xs">{t.rating.toFixed(1)}/5</span>}
+                    {t.rating && <span className="text-ember-300/90 text-xs">{t.rating.toFixed(1)}/5</span>}
                     <span className="text-void-500 text-xs">{t.pricing}</span>
                     {t.reviewSlug && (
                       <Link href={`/reviews/${t.reviewSlug}/`} className="text-signal-400 hover:text-signal-300 text-xs no-underline">
@@ -187,7 +187,7 @@ export default function ToolFinder({ goals }: ToolFinderProps) {
             </div>
           )}
 
-          <p className="mt-5 text-[10px] text-void-600">
+          <p className="mt-5 text-2xs text-void-500">
             Recommendations from our hands-on testing. &ldquo;Try&rdquo; links are affiliate links — they never affect our rankings.
           </p>
         </section>

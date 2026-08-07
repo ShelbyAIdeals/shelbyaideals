@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, Sparkles, Shield, Zap, Video, TrendingUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslation } from '@/i18n/context';
 import { useAuth } from '@/lib/auth-context';
 import HeroTextRotator from './motion/HeroTextRotator';
@@ -13,10 +13,20 @@ const trendingTools = [
   'Synthesia', 'Frase', 'Mangools', 'Descript', 'Chatbase', 'Midjourney',
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+/**
+ * Above-the-fold entrance.
+ *
+ * This used to fade from `opacity: 0`, which meant the H1 — the page's LCP
+ * element — was served *invisible* in the static HTML and only appeared once
+ * React had hydrated and framer-motion had run. That is a self-inflicted LCP
+ * penalty on the highest-traffic page on the site.
+ *
+ * Animating transform alone keeps the same rise, but the text is painted (and
+ * therefore counted for LCP) on the very first frame, hydrated or not.
+ */
+const riseUp = {
+  hidden: { y: 24 },
   visible: (delay: number) => ({
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: 'easeOut' as const, delay },
   }),
@@ -33,6 +43,15 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
   const { user, profile } = useAuth();
   const firstName = profile?.first_name;
   const isLoggedIn = !!user && !!firstName;
+  const reduceMotion = useReducedMotion();
+
+  // Three 100-120px-blur glows drifting forever. Ambient and non-informational,
+  // so under `prefers-reduced-motion` they hold still rather than disappear —
+  // the composition keeps its depth, it just stops moving.
+  const drift = (x: number[], y: number[], duration: number, delay = 0) =>
+    reduceMotion
+      ? undefined
+      : { animate: { x, y }, transition: { duration, ease: 'easeInOut' as const, repeat: Infinity, delay } };
 
   const trustPoints = [
     { icon: Shield, text: t('hero.trust_no_sponsored', '31+ tools tested hands-on') },
@@ -49,30 +68,18 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
   return (
     <section className="relative overflow-visible">
       {/* Background glows */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
+      <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
         <motion.div
           className="absolute -top-40 right-0 w-[600px] h-[600px] bg-signal-500/8 rounded-full blur-[120px]"
-          animate={{
-            x: [0, 30, -20, 0],
-            y: [0, -20, 15, 0],
-          }}
-          transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity }}
+          {...drift([0, 30, -20, 0], [0, -20, 15, 0], 14)}
         />
         <motion.div
           className="absolute top-1/3 -left-20 w-[500px] h-[500px] bg-iris-500/6 rounded-full blur-[120px]"
-          animate={{
-            x: [0, -30, 20, 0],
-            y: [0, 20, -15, 0],
-          }}
-          transition={{ duration: 16, ease: 'easeInOut', repeat: Infinity, delay: 2 }}
+          {...drift([0, -30, 20, 0], [0, 20, -15, 0], 16, 2)}
         />
         <motion.div
           className="absolute -bottom-60 right-1/4 w-[400px] h-[400px] bg-ember-500/5 rounded-full blur-[100px]"
-          animate={{
-            x: [0, 20, -15, 0],
-            y: [0, -15, 10, 0],
-          }}
-          transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity, delay: 4 }}
+          {...drift([0, 20, -15, 0], [0, -15, 10, 0], 18, 4)}
         />
       </div>
 
@@ -83,7 +90,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
           <div className="text-center lg:text-left">
             {/* Eyebrow */}
             <motion.div
-              variants={fadeUp}
+              variants={riseUp}
               initial="hidden"
               animate="visible"
               custom={0}
@@ -95,7 +102,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
             {/* Headline */}
             <motion.h1
-              variants={fadeUp}
+              variants={riseUp}
               initial="hidden"
               animate="visible"
               custom={0.1}
@@ -109,7 +116,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
             {/* Subheadline */}
             <motion.p
-              variants={fadeUp}
+              variants={riseUp}
               initial="hidden"
               animate="visible"
               custom={0.2}
@@ -120,19 +127,26 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
             {/* Search Bar */}
             <motion.div
-              variants={fadeUp}
+              variants={riseUp}
               initial="hidden"
               animate="visible"
               custom={0.3}
               className="mt-8 max-w-lg mx-auto lg:mx-0"
             >
-              <form onSubmit={handleSearch} className="relative group z-[2]">
+              <form onSubmit={handleSearch} role="search" className="relative group z-[2]">
+                {/* The placeholder was doing the label's job — it vanishes the
+                    moment you type and is never announced as a name. */}
+                <label htmlFor="hero-search" className="sr-only">
+                  {t('hero.search_label', 'Search AI tools, categories, or comparisons')}
+                </label>
                 <Search
                   size={20}
+                  aria-hidden="true"
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-void-500 group-focus-within:text-signal-400 transition-colors"
                 />
                 <input
-                  type="text"
+                  id="hero-search"
+                  type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder={t('hero.search_placeholder', 'Search tools, categories, or comparisons...')}
@@ -166,7 +180,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
             {/* CTA Buttons */}
             <motion.div
-              variants={fadeUp}
+              variants={riseUp}
               initial="hidden"
               animate="visible"
               custom={0.4}
@@ -189,7 +203,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
           {/* Right: Visual / Trust Elements */}
           <motion.div
-            variants={fadeUp}
+            variants={riseUp}
             initial="hidden"
             animate="visible"
             custom={0.3}
@@ -250,7 +264,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
                   style={{ boxShadow: '0 0 40px rgba(10, 209, 200, 0.1)' }}
                 >
                   <span className="text-lg font-mono font-bold text-signal-400 leading-tight text-center px-1">7–14</span>
-                  <span className="text-[10px] text-void-400 uppercase tracking-wider text-center leading-tight">{t('hero.days_tested', 'Days Tested Per Tool')}</span>
+                  <span className="text-2xs text-void-400 uppercase tracking-wider text-center leading-tight">{t('hero.days_tested', 'Days Tested Per Tool')}</span>
                 </div>
               </motion.div>
 
@@ -266,7 +280,7 @@ export default function Hero({ categoryCounts = {} }: HeroProps) {
 
         {/* Trust Strip */}
         <motion.div
-          variants={fadeUp}
+          variants={riseUp}
           initial="hidden"
           animate="visible"
           custom={0.5}

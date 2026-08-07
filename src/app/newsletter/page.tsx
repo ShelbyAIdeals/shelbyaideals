@@ -64,7 +64,11 @@ export default function NewsletterPage() {
       {/* Signup form */}
       <div className="max-w-lg mx-auto mb-20">
         {status === 'success' ? (
-          <div className="text-center p-8 rounded-2xl border border-signal-500/30 bg-signal-500/5">
+          <div
+            className="text-center p-8 rounded-2xl border border-signal-500/30 bg-signal-500/5"
+            role="status"
+            aria-live="polite"
+          >
             <div className="w-16 h-16 rounded-full bg-signal-500/20 flex items-center justify-center mx-auto mb-4">
               <Sparkles size={28} className="text-signal-400" />
             </div>
@@ -77,13 +81,19 @@ export default function NewsletterPage() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+            <label htmlFor="newsletter-page-email" className="sr-only">
+              {t('newsletter.email_placeholder', 'Enter your email')}
+            </label>
             <input
+              id="newsletter-page-email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t('newsletter.email_placeholder', 'Enter your email')}
               required
-              className="flex-1 px-5 py-4 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all text-base"
+              aria-invalid={status === 'error'}
+              aria-describedby={status === 'error' ? 'newsletter-page-error' : undefined}
+              className="flex-1 px-5 py-4 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all text-base"
             />
             <button
               type="submit"
@@ -97,10 +107,12 @@ export default function NewsletterPage() {
         )}
 
         {status === 'error' && (
-          <p className="mt-3 text-sm text-red-400 text-center">{errorMsg}</p>
+          <p id="newsletter-page-error" role="alert" className="mt-3 text-sm text-red-400 text-center">
+            {errorMsg}
+          </p>
         )}
 
-        <p className="text-xs text-void-600 text-center mt-3">
+        <p className="text-xs text-void-500 text-center mt-3">
           {t('newsletter.no_spam_disclaimer', 'No spam, unsubscribe anytime. We respect your inbox.')}
         </p>
       </div>

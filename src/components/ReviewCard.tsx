@@ -108,7 +108,7 @@ export default function ReviewCard({
 
             {/* Top Pick badge */}
             {hasAffiliate && (
-              <span className="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-ember-500/90 text-white shadow-sm">
+              <span className="absolute top-3 right-3 text-2xs font-semibold px-2 py-0.5 rounded-full bg-ember-500/90 text-void-950 shadow-sm">
                 Top Pick
               </span>
             )}

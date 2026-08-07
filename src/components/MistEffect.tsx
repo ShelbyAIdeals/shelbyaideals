@@ -77,6 +77,12 @@ export default function MistEffect() {
       const light = isLight.current;
 
       // ── Corner lighting glow (dark mode only) ──
+      // These rgba() triples mirror --color-signal-500 / --color-iris-500's dark
+      // values byte-for-byte, but can't be routed through var()/color-mix() the
+      // way a CSS declaration can: Canvas 2D fillStyle strings are parsed with no
+      // element/cascade context, so custom properties never resolve inside them.
+      // Not a light-mode bug in practice either — this whole block is gated on
+      // `!light` and never paints under the light theme.
       if (!light) {
         // Top-right corner glow — cyan/signal tint
         const trGlow = ctx.createRadialGradient(w * 0.85, h * 0.08, 0, w * 0.85, h * 0.08, w * 0.35);
@@ -124,13 +130,35 @@ export default function MistEffect() {
         }
       }
 
-      raf.current = requestAnimationFrame(draw);
+      // Reduced motion still gets the starfield — it just stops twinkling.
+      // Losing the backdrop entirely would change the composition; what people
+      // asking for reduced motion object to is the perpetual movement.
+      if (!reduceMotion.matches) {
+        raf.current = requestAnimationFrame(draw);
+      }
     };
 
-    raf.current = requestAnimationFrame(draw);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // This loop ran forever on every page, in every background tab, recreating
+    // radial gradients per star per frame.
+    const start = () => {
+      cancelAnimationFrame(raf.current);
+      raf.current = requestAnimationFrame(draw);
+    };
+    const stop = () => cancelAnimationFrame(raf.current);
+
+    const onVisibility = () => (document.hidden ? stop() : start());
+    const onMotionPreferenceChange = () => start();
+
+    document.addEventListener('visibilitychange', onVisibility);
+    reduceMotion.addEventListener('change', onMotionPreferenceChange);
+    start();
 
     return () => {
-      cancelAnimationFrame(raf.current);
+      stop();
+      document.removeEventListener('visibilitychange', onVisibility);
+      reduceMotion.removeEventListener('change', onMotionPreferenceChange);
       window.removeEventListener('resize', resize);
       window.removeEventListener('themeChange', onThemeChange);
     };

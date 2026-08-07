@@ -69,8 +69,8 @@ function AlternativeCard({ tool, index, rating }: { tool: AlternativeTool; index
               Best for: {tool.bestFor}
             </span>
             {rating && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                <Star size={10} className="fill-amber-300" />
+              <span className="inline-flex items-center gap-1 rounded-full bg-ember-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-ember-300">
+                <Star size={10} className="fill-ember-300" />
                 {rating.toFixed(1)}/5
               </span>
             )}

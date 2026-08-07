@@ -31,10 +31,10 @@ export default function VerdictBox({
 
   return (
     <div
-      className="rounded-xl border border-iris-500/20 p-6 md:p-8"
+      className="verdict-box md:p-8"
       style={{
         background:
-          'linear-gradient(to right, rgba(46,16,101,0.3), var(--color-void-900), rgba(46,16,101,0.2))',
+          'linear-gradient(to right, color-mix(in srgb, var(--color-iris-950) 30%, transparent), var(--color-void-900), color-mix(in srgb, var(--color-iris-950) 20%, transparent))',
       }}
     >
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-10">

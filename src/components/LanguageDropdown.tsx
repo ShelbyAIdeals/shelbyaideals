@@ -66,10 +66,13 @@ export default function LanguageDropdown() {
         aria-label={t('language.select', 'Language')}
         aria-expanded={open}
         aria-haspopup="listbox"
+        aria-controls="language-listbox"
+        aria-activedescendant={open && focusIndex >= 0 ? `language-option-${LANGUAGES[focusIndex]?.code}` : undefined}
       >
+        {/* alt was the locale code, which the <span> beside it already says. */}
         <img
           src={FLAG_PATHS[locale] ?? FLAG_PATHS.en}
-          alt={locale}
+          alt=""
           className="w-5 h-5 rounded-full object-cover"
           width={20}
           height={20}
@@ -85,6 +88,7 @@ export default function LanguageDropdown() {
       {open && (
         <div
           className="absolute right-0 top-full mt-2 w-56 max-h-80 overflow-y-auto rounded-xl border border-void-700/30 bg-void-900/60 backdrop-blur-2xl shadow-2xl z-50 py-2 animate-[fadeInUp_0.15s_ease-out]"
+          id="language-listbox"
           role="listbox"
           aria-label={t('language.select', 'Language')}
         >
@@ -95,6 +99,10 @@ export default function LanguageDropdown() {
             return (
               <button
                 key={lang.code}
+                /* Arrow keys move a highlight class but never DOM focus, so
+                   without an id to point aria-activedescendant at, a screen
+                   reader announced nothing as you arrowed through the list. */
+                id={`language-option-${lang.code}`}
                 role="option"
                 aria-selected={isActive}
                 onClick={() => {
@@ -112,7 +120,7 @@ export default function LanguageDropdown() {
                 {/* Circular flag */}
                 <img
                   src={FLAG_PATHS[lang.code]}
-                  alt={lang.name}
+                  alt=""
                   className="w-6 h-6 rounded-full object-cover border border-void-700/50 shrink-0"
                   width={24}
                   height={24}

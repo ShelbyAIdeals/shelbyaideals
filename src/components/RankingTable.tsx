@@ -56,7 +56,7 @@ export default function RankingTable({
                       {tool.name}
                     </span>
                     {tool.editorsPick && (
-                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-signal-500/15 text-signal-400 border border-signal-500/25">
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-2xs font-bold bg-signal-500/15 text-signal-400 border border-signal-500/25">
                         <Award size={10} />
                         Pick
                       </span>
@@ -64,7 +64,7 @@ export default function RankingTable({
                   </div>
                 </td>
                 <td className="px-4 py-3">
-                  <span className="flex items-center gap-1 text-amber-400">
+                  <span className="flex items-center gap-1 text-ember-400">
                     <Star size={12} fill="currentColor" />
                     {tool.rating}
                   </span>
@@ -114,12 +114,12 @@ export default function RankingTable({
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-void-50 text-sm">{tool.name}</span>
                 {tool.editorsPick && (
-                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-signal-500/15 text-signal-400">
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-2xs font-bold bg-signal-500/15 text-signal-400">
                     <Award size={10} /> Pick
                   </span>
                 )}
               </div>
-              <span className="flex items-center gap-0.5 text-xs text-amber-400">
+              <span className="flex items-center gap-0.5 text-xs text-ember-400">
                 <Star size={11} fill="currentColor" /> {tool.rating}
               </span>
             </div>

@@ -180,21 +180,32 @@ export default function ProfilePage() {
       {/* Profile header */}
       <div className="flex items-start gap-5 mb-8">
         {/* Avatar with upload overlay */}
-        <div className="relative group cursor-pointer shrink-0" onClick={() => fileInputRef.current?.click()}>
-          {profile?.avatar_url ? (
-            <img src={profile.avatar_url} alt={displayName} className="w-20 h-20 rounded-full object-cover border-2 border-void-600/50" />
-          ) : (
-            <div className="w-20 h-20 rounded-full bg-signal-500/15 border-2 border-signal-500/30 flex items-center justify-center text-2xl font-bold text-signal-400">
-              {initials || <User size={32} />}
-            </div>
-          )}
-          <div className="absolute inset-0 rounded-full bg-void-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            {uploading ? (
-              <div className="w-5 h-5 border-2 border-void-100 border-t-transparent rounded-full animate-spin" />
+        {/* This was a <div onClick>, which made changing your avatar impossible
+            without a mouse — there is no other trigger for the file picker. */}
+        <div className="relative shrink-0">
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            aria-label={uploading ? 'Uploading profile photo' : 'Change profile photo'}
+            className="group relative block rounded-full cursor-pointer"
+          >
+            {profile?.avatar_url ? (
+              <img src={profile.avatar_url} alt="" className="w-20 h-20 rounded-full object-cover border-2 border-void-600/50" />
             ) : (
-              <Camera size={20} className="text-void-100" />
+              <div className="w-20 h-20 rounded-full bg-signal-500/15 border-2 border-signal-500/30 flex items-center justify-center text-2xl font-bold text-signal-400">
+                {initials || <User size={32} aria-hidden="true" />}
+              </div>
             )}
-          </div>
+            {/* Also reveals on :focus-visible, so keyboard users get the same
+                affordance hover users do. */}
+            <span className="absolute inset-0 rounded-full bg-void-950/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity flex items-center justify-center">
+              {uploading ? (
+                <span className="w-5 h-5 border-2 border-void-100 border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <Camera size={20} className="text-void-100" aria-hidden="true" />
+              )}
+            </span>
+          </button>
           <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} />
         </div>
 
@@ -213,29 +224,31 @@ export default function ProfilePage() {
           <button onClick={() => setEditing(!editing)} className="px-4 py-2 text-sm font-medium border border-void-600/50 rounded-lg text-void-300 hover:text-void-100 hover:bg-void-700/40 transition-all cursor-pointer">
             {editing ? t('common.cancel', 'Cancel') : 'Edit Profile'}
           </button>
-          <button onClick={handleSignOut} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer">
+          <button onClick={handleSignOut} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium border border-danger-500/30 rounded-lg text-danger-400 hover:bg-danger-500/10 transition-all cursor-pointer">
             <LogOut size={14} /> Sign Out
           </button>
         </div>
       </div>
 
-      {saveError && <p className="text-sm text-red-400 mb-4">{saveError}</p>}
+      {saveError && <p role="alert" className="text-sm text-danger-400 mb-4">{saveError}</p>}
 
       {/* Edit form */}
       {editing && (
         <div className="p-6 rounded-xl border border-void-700/50 bg-void-800/30 mb-8 space-y-4">
+          {/* These labels were visual only — no htmlFor/id pair — so a screen
+              reader announced three unnamed text fields. */}
           <div>
-            <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.username', 'Username')}</label>
-            <input type="text" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
+            <label htmlFor="profile-username" className="text-xs font-medium text-void-400 mb-1 block">{t('auth.username', 'Username')}</label>
+            <input id="profile-username" type="text" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:border-signal-500/70 transition-all" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.first_name', 'First Name')}</label>
-              <input type="text" value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
+              <label htmlFor="profile-first-name" className="text-xs font-medium text-void-400 mb-1 block">{t('auth.first_name', 'First Name')}</label>
+              <input id="profile-first-name" type="text" value={formData.firstName} onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:border-signal-500/70 transition-all" />
             </div>
             <div>
-              <label className="text-xs font-medium text-void-400 mb-1 block">{t('auth.last_name', 'Last Name')}</label>
-              <input type="text" value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:outline-none focus:border-signal-500/50 transition-all" />
+              <label htmlFor="profile-last-name" className="text-xs font-medium text-void-400 mb-1 block">{t('auth.last_name', 'Last Name')}</label>
+              <input id="profile-last-name" type="text" value={formData.lastName} onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg bg-void-800/60 border border-void-700/50 text-void-100 focus:border-signal-500/70 transition-all" />
             </div>
           </div>
           <button onClick={handleSave} disabled={saving} className="px-6 py-2.5 rounded-lg bg-signal-500 text-void-950 font-bold text-sm hover:bg-signal-400 transition-all cursor-pointer disabled:opacity-50">
@@ -255,7 +268,7 @@ export default function ProfilePage() {
             }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            {tab === 'recommendations' && hasUnseenRecs && <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />}
+            {tab === 'recommendations' && hasUnseenRecs && <span className="w-2 h-2 rounded-full bg-danger-500 shrink-0" />}
           </button>
         ))}
       </div>
@@ -281,22 +294,22 @@ export default function ProfilePage() {
                       </Link>
                       <div className="flex items-center gap-0.5">
                         {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} size={12} className={star <= review.rating ? 'text-amber-400 fill-amber-400' : 'text-void-600'} />
+                          <Star key={star} size={12} className={star <= review.rating ? 'text-ember-400 fill-ember-400' : 'text-void-600'} />
                         ))}
                       </div>
                     </div>
                     <h3 className="text-sm font-medium text-void-100 mb-1">{review.title}</h3>
                     {review.body && <p className="text-sm text-void-400 line-clamp-2">{review.body}</p>}
-                    <p className="text-xs text-void-600 mt-2">{new Date(review.created_at).toLocaleDateString()}</p>
+                    <p className="text-xs text-void-500 mt-2">{new Date(review.created_at).toLocaleDateString()}</p>
                   </div>
                 ))}
               </div>
             )}
           </section>
           <section className="pt-8 border-t border-void-700/30">
-            <h3 className="text-sm font-semibold text-red-400 mb-2">Danger Zone</h3>
+            <h3 className="text-sm font-semibold text-danger-400 mb-2">Danger Zone</h3>
             <p className="text-xs text-void-500 mb-4">Once you delete your account, there is no going back.</p>
-            <button onClick={() => setShowDeleteConfirm(true)} className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer">
+            <button onClick={() => setShowDeleteConfirm(true)} className="flex items-center gap-2 px-4 py-2 text-sm font-medium border border-danger-500/30 rounded-lg text-danger-400 hover:bg-danger-500/10 transition-all cursor-pointer">
               <Trash2 size={14} /> Delete Account
             </button>
           </section>
@@ -315,7 +328,7 @@ export default function ProfilePage() {
             <p className="text-sm text-void-400 mb-6">This will permanently delete your account, reviews, and all data. This cannot be undone.</p>
             <div className="flex gap-3">
               <button onClick={() => { setShowDeleteConfirm(false); setDeleting(false); }} className="flex-1 py-2.5 text-sm font-medium rounded-lg border border-void-600/50 text-void-300 hover:bg-void-700/40 transition-all cursor-pointer">Cancel</button>
-              <button onClick={handleDelete} disabled={deleting} className="flex-1 py-2.5 text-sm font-medium rounded-lg bg-red-500 text-white hover:bg-red-600 disabled:opacity-50 transition-all cursor-pointer">
+              <button onClick={handleDelete} disabled={deleting} className="flex-1 py-2.5 text-sm font-medium rounded-lg bg-danger-500 text-white hover:bg-red-600 disabled:opacity-50 transition-all cursor-pointer">
                 {deleting ? 'Deleting...' : 'Delete Forever'}
               </button>
             </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { X, CheckCircle, Mail } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
@@ -29,6 +29,10 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
+  const panelRef = useRef<HTMLDivElement>(null);
+  const firstFieldRef = useRef<HTMLInputElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   // Reset state on open/close
   useEffect(() => {
     if (isOpen) {
@@ -38,14 +42,53 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
     }
   }, [isOpen, initialMode]);
 
-  // Close on Escape
+  // Move focus into the modal on open, restore it to the trigger on close
+  useEffect(() => {
+    if (isOpen) {
+      previousFocusRef.current = document.activeElement as HTMLElement | null;
+      const focusTimer = setTimeout(() => firstFieldRef.current?.focus(), 80);
+      return () => clearTimeout(focusTimer);
+    }
+    previousFocusRef.current?.focus();
+  }, [isOpen]);
+
+  // Escape to close, Tab focus trap, body-scroll lock
   useEffect(() => {
     if (!isOpen) return;
+
     function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && panelRef.current) {
+        const focusable = panelRef.current.querySelectorAll<HTMLElement>(
+          'a, button, input, [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
+
+    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKey);
-    return () => document.removeEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKey);
+    };
   }, [isOpen, onClose]);
 
   const resetForm = useCallback(() => {
@@ -136,15 +179,21 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
         className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       >
         <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
-        <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center">
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="auth-modal-title"
+          className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center"
+        >
           <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg text-void-400 hover:text-void-200 hover:bg-void-700/40 transition-colors cursor-pointer" aria-label="Close">
             <X size={18} />
           </button>
           <div className="w-14 h-14 rounded-full bg-signal-500/10 flex items-center justify-center mx-auto mb-4">
             <CheckCircle size={28} className="text-signal-400" />
           </div>
-          <h2 className="text-xl font-heading font-bold text-void-50 mb-2">Account Created</h2>
-          <p className="text-sm text-void-400 mb-6">
+          <h2 id="auth-modal-title" className="text-xl font-heading font-bold text-void-50 mb-2">Account Created</h2>
+          <p className="text-sm text-void-400 mb-6" role="status" aria-live="polite">
             Check your email to confirm your account, then come back to sign in. If you don&apos;t see it, check your spam folder.
           </p>
           <button
@@ -164,15 +213,21 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
         className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       >
         <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
-        <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center">
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="auth-modal-title"
+          className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out] p-8 text-center"
+        >
           <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg text-void-400 hover:text-void-200 hover:bg-void-700/40 transition-colors cursor-pointer" aria-label="Close">
             <X size={18} />
           </button>
           <div className="w-14 h-14 rounded-full bg-signal-500/10 flex items-center justify-center mx-auto mb-4">
             <Mail size={28} className="text-signal-400" />
           </div>
-          <h2 className="text-xl font-heading font-bold text-void-50 mb-2">Check Your Email</h2>
-          <p className="text-sm text-void-400 mb-6">
+          <h2 id="auth-modal-title" className="text-xl font-heading font-bold text-void-50 mb-2">Check Your Email</h2>
+          <p className="text-sm text-void-400 mb-6" role="status" aria-live="polite">
             We sent a password reset link to <span className="text-void-200 font-medium">{email}</span>. Click the link in the email to set a new password.
           </p>
           <button
@@ -194,7 +249,13 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
       <div className="absolute inset-0 bg-void-950/80 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out]">
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-modal-title"
+        className="relative w-full max-w-md bg-void-900 border border-void-700/50 rounded-2xl shadow-2xl animate-[fadeInUp_0.2s_ease-out]"
+      >
         {/* Close button */}
         <button
           onClick={onClose}
@@ -206,7 +267,7 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
 
         {/* Header */}
         <div className="px-8 pt-8 pb-4">
-          <h2 className="text-2xl font-heading font-bold text-void-50">
+          <h2 id="auth-modal-title" className="text-2xl font-heading font-bold text-void-50">
             {mode === 'login' && t('auth.sign_in', 'Sign In')}
             {mode === 'signup' && t('auth.sign_up', 'Sign Up')}
             {mode === 'forgot' && 'Reset Password'}
@@ -284,58 +345,94 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
             {/* Sign Up extra fields */}
             {mode === 'signup' && (
               <>
-                <input
-                  type="text"
-                  placeholder={t('auth.username', 'Username')}
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                  minLength={3}
-                  maxLength={30}
-                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
-                />
+                <div>
+                  <label htmlFor="auth-username" className="sr-only">
+                    {t('auth.username', 'Username')}
+                  </label>
+                  <input
+                    id="auth-username"
+                    ref={firstFieldRef}
+                    type="text"
+                    placeholder={t('auth.username', 'Username')}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    minLength={3}
+                    maxLength={30}
+                    className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
+                  />
+                </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <input
-                    type="text"
-                    placeholder={t('auth.first_name', 'First Name')}
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
-                  />
-                  <input
-                    type="text"
-                    placeholder={t('auth.last_name', 'Last Name')}
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
-                  />
+                  <div>
+                    <label htmlFor="auth-first-name" className="sr-only">
+                      {t('auth.first_name', 'First Name')}
+                    </label>
+                    <input
+                      id="auth-first-name"
+                      type="text"
+                      placeholder={t('auth.first_name', 'First Name')}
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="auth-last-name" className="sr-only">
+                      {t('auth.last_name', 'Last Name')}
+                    </label>
+                    <input
+                      id="auth-last-name"
+                      type="text"
+                      placeholder={t('auth.last_name', 'Last Name')}
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
+                    />
+                  </div>
                 </div>
               </>
             )}
 
             {/* Email */}
-            <input
-              type="email"
-              placeholder={t('auth.email', 'Email')}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
-            />
+            <div>
+              <label htmlFor="auth-email" className="sr-only">
+                {t('auth.email', 'Email')}
+              </label>
+              <input
+                id="auth-email"
+                ref={mode !== 'signup' ? firstFieldRef : undefined}
+                type="email"
+                placeholder={t('auth.email', 'Email')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-invalid={!!error}
+                aria-describedby={error ? 'auth-modal-error' : undefined}
+                className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
+              />
+            </div>
 
             {/* Password — not shown for forgot */}
             {mode !== 'forgot' && (
-              <input
-                type="password"
-                placeholder={t('auth.password', 'Password')}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
-              />
+              <div>
+                <label htmlFor="auth-password" className="sr-only">
+                  {t('auth.password', 'Password')}
+                </label>
+                <input
+                  id="auth-password"
+                  type="password"
+                  placeholder={t('auth.password', 'Password')}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  aria-invalid={!!error}
+                  aria-describedby={error ? 'auth-modal-error' : undefined}
+                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
+                />
+              </div>
             )}
           </div>
 
@@ -354,7 +451,11 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }: Au
 
           {/* Error message */}
           {error && (
-            <div className="mt-3 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+            <div
+              id="auth-modal-error"
+              role="alert"
+              className="mt-3 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400"
+            >
               {error}
             </div>
           )}

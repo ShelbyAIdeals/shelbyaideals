@@ -34,7 +34,11 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 animate-[fadeInUp_0.3s_ease-out]">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 animate-[fadeInUp_0.3s_ease-out]"
+      role="status"
+      aria-live="polite"
+    >
       <div className="max-w-xl mx-auto rounded-xl border border-void-700/50 bg-void-900/95 backdrop-blur-md shadow-2xl px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
         <p className="text-sm text-void-300 flex-1">
           We use cookies for analytics to improve your experience.{' '}

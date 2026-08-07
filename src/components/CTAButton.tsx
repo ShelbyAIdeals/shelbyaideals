@@ -17,10 +17,15 @@ interface CTAButtonProps {
   sponsored?: boolean;
 }
 
+// `min-h-11` is 44px — the WCAG 2.5.8 target floor. The `sm` variant measured
+// 36px, and it is the variant used for the affiliate CTA on tool cards, ranking
+// tables and the sticky bar, i.e. the button the whole site exists to get
+// tapped. Enforced as a minimum rather than as padding so the visual density
+// of each size is preserved.
 const sizeClasses = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg',
+  sm: 'px-4 py-2 text-sm min-h-11',
+  md: 'px-6 py-3 text-base min-h-11',
+  lg: 'px-8 py-4 text-lg min-h-12',
 } as const;
 
 const variantClasses = {
@@ -75,8 +80,10 @@ export default function CTAButton({
         >
           {content}
         </a>
+        {/* void-600 is a decorative step — it measured 1.7:1 here. A legally
+            meaningful disclosure has to be readable. */}
         {isSponsored && (
-          <span className="mt-1 text-xs text-void-600">Affiliate link</span>
+          <span className="mt-1 text-xs text-void-500">Affiliate link</span>
         )}
       </span>
     );

@@ -38,11 +38,15 @@ export default function FavoriteButton({ toolSlug, isFavorited, onToggle }: Favo
     setBusy(false);
   };
 
+  const label = favorited ? 'Remove from favorites' : 'Add to favorites';
+
   return (
     <button
       onClick={handleClick}
-      className="p-1.5 rounded-lg hover:bg-void-700/50 transition-all cursor-pointer shrink-0"
-      title={favorited ? 'Remove from favorites' : 'Add to favorites'}
+      className="min-w-11 min-h-11 flex items-center justify-center rounded-lg hover:bg-void-700/50 transition-all cursor-pointer shrink-0"
+      title={label}
+      aria-label={label}
+      aria-pressed={favorited}
     >
       <Heart
         size={16}

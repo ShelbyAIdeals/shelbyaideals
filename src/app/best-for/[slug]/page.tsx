@@ -200,7 +200,7 @@ export default async function BestForPage({ params }: PageProps) {
                   </span>
                   <div className="min-w-0">
                     <span className="text-void-100 font-medium">{tool.name}</span>
-                    <span className="text-void-600 mx-1.5">&mdash;</span>
+                    <span className="text-void-500 mx-1.5">&mdash;</span>
                     <span className="text-void-400 text-xs">{tool.standoutFeature}</span>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default async function BestForPage({ params }: PageProps) {
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-signal-500/15 border border-signal-500/25 text-lg font-bold text-signal-400">
                       {index + 1}
                     </div>
-                    <span className="text-[10px] text-void-500 uppercase tracking-wider font-semibold">
+                    <span className="text-2xs text-void-500 uppercase tracking-wider font-semibold">
                       {index === 0 ? 'Top Pick' : `#${index + 1}`}
                     </span>
                   </div>
@@ -236,8 +236,8 @@ export default async function BestForPage({ params }: PageProps) {
                         {tool.standoutFeature}
                       </span>
                       {ratingFor(tool.reviewSlug) && (
-                        <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/10 border border-amber-400/25 px-3 py-0.5 text-xs font-semibold text-amber-300">
-                          <Star size={10} className="fill-amber-300" />
+                        <span className="inline-flex items-center gap-1 rounded-full bg-ember-400/10 border border-ember-400/25 px-3 py-0.5 text-xs font-semibold text-ember-300">
+                          <Star size={10} className="fill-ember-300" />
                           {ratingFor(tool.reviewSlug)!.toFixed(1)}/5
                         </span>
                       )}
@@ -284,7 +284,7 @@ export default async function BestForPage({ params }: PageProps) {
                         See Pricing
                       </Link>
                     </div>
-                    <span className="mt-1 text-[10px] text-void-600">Affiliate link</span>
+                    <span className="mt-1 text-2xs text-void-500">Affiliate link</span>
                   </div>
                 </div>
               </div>

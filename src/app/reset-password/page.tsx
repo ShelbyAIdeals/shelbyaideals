@@ -65,7 +65,11 @@ export default function ResetPasswordPage() {
     <main className="min-h-[60vh] flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-md">
         {status === 'success' ? (
-          <div className="text-center p-8 rounded-2xl border border-signal-500/30 bg-signal-500/5">
+          <div
+            className="text-center p-8 rounded-2xl border border-signal-500/30 bg-signal-500/5"
+            role="status"
+            aria-live="polite"
+          >
             <div className="w-14 h-14 rounded-full bg-signal-500/10 flex items-center justify-center mx-auto mb-4">
               <CheckCircle size={28} className="text-signal-400" />
             </div>
@@ -94,30 +98,46 @@ export default function ResetPasswordPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
+                <label htmlFor="reset-password-new" className="sr-only">
+                  New password
+                </label>
                 <input
+                  id="reset-password-new"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="New password"
                   required
                   minLength={6}
-                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
+                  aria-invalid={!!error}
+                  aria-describedby={error ? 'reset-password-error' : undefined}
+                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
                 />
               </div>
               <div>
+                <label htmlFor="reset-password-confirm" className="sr-only">
+                  Confirm new password
+                </label>
                 <input
+                  id="reset-password-confirm"
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm new password"
                   required
                   minLength={6}
-                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:outline-none focus:border-signal-500/50 focus:ring-1 focus:ring-signal-500/30 transition-all"
+                  aria-invalid={!!error}
+                  aria-describedby={error ? 'reset-password-error' : undefined}
+                  className="w-full px-4 py-3 rounded-xl bg-void-800/60 border border-void-700/50 text-void-100 placeholder-void-500 focus:border-signal-500/70 transition-all"
                 />
               </div>
 
               {error && (
-                <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400">
+                <div
+                  id="reset-password-error"
+                  role="alert"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400"
+                >
                   <AlertCircle size={16} className="shrink-0" />
                   {error}
                 </div>

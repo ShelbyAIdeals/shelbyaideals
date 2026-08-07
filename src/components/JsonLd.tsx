@@ -37,6 +37,14 @@ interface JsonLdProps {
   data?: ReviewMeta | ArticleMeta | { questions: FAQItem[] } | VideoData | ItemListData | HowToData | CollectionPageData;
   breadcrumbs?: { name: string; url: string }[];
   canonicalUrl?: string;
+  /**
+   * Absolute URL of the image this page actually renders. This component runs
+   * without filesystem access, so it used to guess `screenshot-1.png` — which
+   * pointed structured data at a file the page no longer serves once the
+   * carousel started preferring WebP. Callers that can resolve the real file
+   * (the review route reads the directory at build time) should pass it.
+   */
+  imageUrl?: string;
 }
 
 const AUTHOR_PERSON = {
@@ -69,7 +77,7 @@ const PUBLISHER_ORG = {
  * All data is developer-controlled (not user-generated), so JSON.stringify
  * is safe here — no untrusted input reaches the output.
  */
-export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLdProps) {
+export default function JsonLd({ type, data, breadcrumbs, canonicalUrl, imageUrl: imageUrlProp }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
   if (type === 'website') {
@@ -130,9 +138,10 @@ export default function JsonLd({ type, data, breadcrumbs, canonicalUrl }: JsonLd
   } else if (type === 'review' && data && 'rating' in data) {
     const review = data as ReviewMeta;
     const toolSlug = review.toolSlug || review.slug?.replace('-review', '') || '';
-    const imageUrl = review.featuredImage
-      ? `https://www.shelby-ai.com${review.featuredImage}`
-      : `https://www.shelby-ai.com/images/tools/${toolSlug}/screenshot-1.png`;
+    const imageUrl = imageUrlProp
+      || (review.featuredImage
+        ? `https://www.shelby-ai.com${review.featuredImage}`
+        : `https://www.shelby-ai.com/images/tools/${toolSlug}/screenshot-1.png`);
     schema = {
       '@context': 'https://schema.org',
       '@type': 'Review',

@@ -89,7 +89,7 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
       </div>
 
       {/* Total */}
-      <div className="rounded-2xl border border-signal-500/25 bg-void-900 p-6 sm:p-8 mb-6" style={{ boxShadow: '0 0 32px rgba(10,209,200,0.06)' }}>
+      <div className="rounded-2xl border border-signal-500/25 bg-void-900 p-6 sm:p-8 mb-6" style={{ boxShadow: '0 0 32px color-mix(in srgb, var(--color-signal-500) 6%, transparent)' }}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Your stack ({chosen.length} {chosen.length === 1 ? 'tool' : 'tools'})</span>
@@ -121,7 +121,7 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
                 <span className="text-void-400">Swap <span className="text-void-200 font-medium">{from.tool}</span> →</span>
                 <span className="inline-flex items-center gap-1 font-semibold text-void-50">
                   {to.tool}
-                  <span className="inline-flex items-center gap-1 text-amber-300/90 text-xs"><Star size={10} className="fill-amber-300/90" />{to.rating.toFixed(1)}</span>
+                  <span className="inline-flex items-center gap-1 text-ember-300/90 text-xs"><Star size={10} className="fill-ember-300/90" />{to.rating.toFixed(1)}</span>
                 </span>
                 <span className="text-signal-400 font-semibold">save ~${save}/mo</span>
                 <a href={to.affiliateUrl} target="_blank" rel="nofollow sponsored noopener" className="inline-flex items-center gap-1 text-signal-400 hover:text-signal-300 text-xs no-underline">
@@ -131,7 +131,7 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-[10px] text-void-600">Suggested alternatives are tools we&rsquo;ve tested and rate. &ldquo;Try&rdquo; links may be affiliate links.</p>
+          <p className="mt-4 text-2xs text-void-500">Suggested alternatives are tools we&rsquo;ve tested and rate. &ldquo;Try&rdquo; links may be affiliate links.</p>
         </div>
       )}
 

@@ -36,7 +36,7 @@ export default function CategorySidebar({
         <nav className="flex flex-col gap-1">
           <button
             onClick={() => onCategoryChange('all')}
-            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer text-left ${
+            className={`flex items-center gap-2.5 px-3 py-2 min-h-11 rounded-lg text-sm font-medium transition-all cursor-pointer text-left ${
               activeCategory === 'all'
                 ? 'bg-signal-500/10 border-l-2 border-signal-400 text-signal-400'
                 : 'text-void-400 hover:text-void-200 hover:bg-void-800/50 border-l-2 border-transparent'
@@ -51,7 +51,7 @@ export default function CategorySidebar({
               <button
                 key={cat.slug}
                 onClick={() => onCategoryChange(cat.slug)}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer text-left ${
+                className={`flex items-center gap-2.5 px-3 py-2 min-h-11 rounded-lg text-sm transition-all cursor-pointer text-left ${
                   isActive
                     ? 'bg-signal-500/10 border-l-2 border-signal-400 text-signal-400 font-medium'
                     : 'text-void-400 hover:text-void-200 hover:bg-void-800/50 border-l-2 border-transparent'
@@ -59,7 +59,7 @@ export default function CategorySidebar({
               >
                 <Icon size={14} className="shrink-0" />
                 <span className="truncate">{cat.name}</span>
-                <span className="ml-auto text-[10px] text-void-600 tabular-nums">
+                <span className="ml-auto text-2xs text-void-500 tabular-nums">
                   {cat.articleCount}
                 </span>
               </button>
@@ -73,7 +73,7 @@ export default function CategorySidebar({
         <div className="flex gap-2 min-w-max">
           <button
             onClick={() => onCategoryChange('all')}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+            className={`inline-flex items-center justify-center px-3 py-1.5 min-h-11 rounded-full text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
               activeCategory === 'all'
                 ? 'bg-signal-500/15 text-signal-400 border border-signal-500/30'
                 : 'bg-void-800/50 text-void-400 border border-void-700/40 hover:text-void-200'
@@ -87,7 +87,7 @@ export default function CategorySidebar({
               <button
                 key={cat.slug}
                 onClick={() => onCategoryChange(cat.slug)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+                className={`inline-flex items-center justify-center px-3 py-1.5 min-h-11 rounded-full text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
                   isActive
                     ? 'bg-signal-500/15 text-signal-400 border border-signal-500/30'
                     : 'bg-void-800/50 text-void-400 border border-void-700/40 hover:text-void-200'

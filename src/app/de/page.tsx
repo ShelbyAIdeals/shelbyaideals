@@ -55,7 +55,9 @@ const categories = [
 
 export default function GermanHomePage() {
   return (
-    <main className="min-h-screen">
+    // The root layout hard-codes <html lang="en">, so this entire German page
+    // was being announced to screen readers with English pronunciation rules.
+    <main lang="de" className="min-h-screen">
       <Hreflang path="/" />
 
       {/* Hero */}

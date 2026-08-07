@@ -162,7 +162,7 @@ export default function AboutPage() {
             </p>
             <ol className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-950">
                   1
                 </span>
                 <div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-950">
                   2
                 </span>
                 <div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-950">
                   3
                 </span>
                 <div>
@@ -199,7 +199,7 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-50">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-signal-500 text-xs font-bold text-void-950">
                   4
                 </span>
                 <div>

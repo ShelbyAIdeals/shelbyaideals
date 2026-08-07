@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Search, Zap, Sun, Moon, LogIn } from 'lucide-react';
@@ -31,6 +31,7 @@ export default function Header() {
     open: false,
     mode: 'login',
   });
+  const paletteTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   /* ── Scroll listener for glassmorphic transition ─────────── */
   useEffect(() => {
@@ -49,6 +50,21 @@ export default function Header() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  /* ── Close mobile menu on route change ────────────────────── */
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  /* ── Escape closes the mobile menu ────────────────────────── */
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [mobileOpen]);
+
   /* ── Restore theme from localStorage ──────────────────────── */
   useEffect(() => {
     const saved = localStorage.getItem('theme');
@@ -64,6 +80,9 @@ export default function Header() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
+        // Opened by keyboard, not a button click — clear any stale trigger
+        // ref so closePalette doesn't refocus an unrelated earlier button.
+        paletteTriggerRef.current = null;
         setPaletteOpen((prev) => !prev);
       }
     };
@@ -95,6 +114,16 @@ export default function Header() {
     setAuthModal({ open: true, mode });
     setMobileOpen(false);
   };
+
+  /* ── Command palette: return focus to whichever trigger opened it ── */
+  const openPalette = (e: React.MouseEvent<HTMLButtonElement>) => {
+    paletteTriggerRef.current = e.currentTarget;
+    setPaletteOpen(true);
+  };
+  const closePalette = useCallback(() => {
+    setPaletteOpen(false);
+    paletteTriggerRef.current?.focus();
+  }, []);
 
   return (
     <>
@@ -145,7 +174,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-2">
               {/* Search / Cmd+K */}
               <button
-                onClick={() => setPaletteOpen(true)}
+                onClick={openPalette}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-void-700/50 bg-void-800/40 text-void-400 hover:text-void-200 hover:border-void-600 hover:bg-void-800/70 transition-all cursor-pointer"
                 aria-label={'Search'}
               >
@@ -196,8 +225,8 @@ export default function Header() {
             {/* ── Mobile hamburger ─────────────────────────────── */}
             <div className="flex lg:hidden items-center gap-2">
               <button
-                onClick={() => setPaletteOpen(true)}
-                className="p-2 rounded-lg text-void-200 hover:text-signal-300 hover:bg-void-700/40 transition-colors cursor-pointer"
+                onClick={openPalette}
+                className="w-11 h-11 flex items-center justify-center rounded-lg text-void-200 hover:text-signal-300 hover:bg-void-700/40 transition-colors cursor-pointer"
                 aria-label={'Search'}
               >
                 <Search size={22} />
@@ -206,8 +235,10 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="p-2 rounded-lg text-void-200 hover:bg-void-800 transition-colors cursor-pointer"
+                className="w-11 h-11 flex items-center justify-center rounded-lg text-void-200 hover:bg-void-800 transition-colors cursor-pointer"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-nav"
               >
                 {mobileOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
@@ -216,7 +247,7 @@ export default function Header() {
 
           {/* ── Mobile menu ──────────────────────────────────── */}
           {mobileOpen && (
-            <nav className="lg:hidden pb-4 pt-2 animate-[fadeInUp_0.2s_ease-out]">
+            <nav id="mobile-nav" className="lg:hidden pb-4 pt-2 animate-[fadeInUp_0.2s_ease-out]">
               <ul className="flex flex-col gap-1">
                 {navLinks.map((link) => {
                   const active = isActive(link.href);
@@ -299,7 +330,7 @@ export default function Header() {
       </header>
 
       {/* Command Palette */}
-      <CommandPalette isOpen={paletteOpen} onClose={() => setPaletteOpen(false)} />
+      <CommandPalette isOpen={paletteOpen} onClose={closePalette} />
 
       {/* Auth Modal */}
       <AuthModal

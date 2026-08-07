@@ -35,7 +35,7 @@ export default function QuickVerdict({
   return (
     <div
       className="rounded-xl border border-void-700/60 bg-void-900 p-6"
-      style={{ boxShadow: '0 0 24px rgba(10,209,200,0.04)' }}
+      style={{ boxShadow: '0 0 24px color-mix(in srgb, var(--color-signal-500) 4%, transparent)' }}
     >
       {/* Rating circle */}
       <div className="flex flex-col items-center gap-3 mb-6">
