@@ -34,10 +34,15 @@ export default function DealsPage() {
   const featured = getFeaturedDeals();
   const all = getAllDeals();
   const nonFeatured = all.filter((d) => !d.featured);
+  const lastVerified = all
+    .map((d) => d.dateVerified)
+    .filter((d): d is string => Boolean(d))
+    .sort()
+    .reverse()[0];
 
   return (
     <main className="min-h-screen">
-      <DealsContent featured={featured} nonFeatured={nonFeatured} />
+      <DealsContent featured={featured} nonFeatured={nonFeatured} lastVerified={lastVerified} />
     </main>
   );
 }

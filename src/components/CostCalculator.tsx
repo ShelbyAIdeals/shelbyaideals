@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Star, TrendingDown } from 'lucide-react';
+import { ArrowRight, Star, TrendingDown, Wallet, Users, AlertTriangle } from 'lucide-react';
 import type { ToolSummary } from '@/lib/tool-summary';
 
 interface CostCalculatorProps {
@@ -19,8 +19,42 @@ function labelFor(cat: string): string {
   return CATEGORY_LABELS[cat] ?? 'Other AI Tools';
 }
 
+/**
+ * Budget presets answer the conversational buying prompt directly:
+ * "I have $50/month — which AI tools should I pay for?"
+ */
+const BUDGET_PRESETS = [
+  { label: 'Free only', value: 0 },
+  { label: '$20/mo', value: 20 },
+  { label: '$50/mo', value: 50 },
+  { label: '$100/mo', value: 100 },
+  { label: '$200/mo', value: 200 },
+];
+
+/**
+ * Role presets select a small starter stack from tools we have actually
+ * reviewed (slugs are review slugs; unknown slugs are ignored at runtime so a
+ * renamed review can never break the page). 3-5 tools per role, deliberately —
+ * a preset that ticks 10 boxes is a price list, not a recommendation.
+ */
+const ROLE_PRESETS: { label: string; slugs: string[] }[] = [
+  { label: 'Content writer', slugs: ['chatgpt-review', 'grammarly-review', 'frase-review'] },
+  { label: 'Marketer', slugs: ['jasper-ai-review', 'surfer-seo-review', 'make-review'] },
+  { label: 'Freelancer', slugs: ['chatgpt-review', 'grammarly-review', 'otter-ai-review'] },
+  { label: 'Solopreneur', slugs: ['chatgpt-review', 'make-review', 'mangools-review'] },
+  { label: 'YouTuber', slugs: ['descript-review', 'elevenlabs-review', 'pictory-review'] },
+  { label: 'Podcaster', slugs: ['descript-review', 'otter-ai-review', 'mubert-review'] },
+  { label: 'Ecommerce seller', slugs: ['chatgpt-review', 'pictory-review', 'chatbase-review'] },
+  { label: 'Developer', slugs: ['claude-ai-review', 'chatgpt-review', 'perplexity-review'] },
+  { label: 'Small agency', slugs: ['semrush-review', 'jasper-ai-review', 'otter-ai-review', 'make-review'] },
+];
+
 export default function CostCalculator({ tools }: CostCalculatorProps) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [budget, setBudget] = useState<number | null>(null);
+  const [activeRole, setActiveRole] = useState<string | null>(null);
+
+  const availableSlugs = useMemo(() => new Set(tools.map((t) => t.slug)), [tools]);
 
   const grouped = useMemo(() => {
     const m = new Map<string, ToolSummary[]>();
@@ -35,6 +69,19 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
   const chosen = tools.filter((t) => selected.has(t.slug));
   const monthly = chosen.reduce((sum, t) => sum + t.minPrice, 0);
   const annual = monthly * 12;
+  const overBudget = budget !== null && monthly > budget;
+
+  // Same-category pile-ups are the most common stack mistake: two or three
+  // writing subscriptions doing one job. Flag, don't lecture.
+  const overlaps = useMemo(() => {
+    const byCat = new Map<string, ToolSummary[]>();
+    for (const t of chosen) {
+      const k = labelFor(t.category);
+      if (!byCat.has(k)) byCat.set(k, []);
+      byCat.get(k)!.push(t);
+    }
+    return Array.from(byCat.entries()).filter(([, list]) => list.filter((t) => t.minPrice > 0).length >= 2);
+  }, [chosen]);
 
   // For each selected tool, suggest a cheaper commissionable alternative in the same category.
   const swaps = chosen
@@ -47,6 +94,7 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
     .filter((s): s is { from: ToolSummary; to: ToolSummary; save: number } => Boolean(s));
 
   function toggle(slug: string) {
+    setActiveRole(null);
     setSelected((prev) => {
       const next = new Set(prev);
       next.has(slug) ? next.delete(slug) : next.add(slug);
@@ -54,8 +102,61 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
     });
   }
 
+  function applyRole(label: string, slugs: string[]) {
+    setActiveRole(label);
+    setSelected(new Set(slugs.filter((s) => availableSlugs.has(s))));
+  }
+
   return (
     <div className="max-w-3xl mx-auto">
+      {/* Role presets */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 mb-3">
+          <Users size={15} className="text-signal-400" />
+          <h2 className="text-sm font-semibold text-signal-400 uppercase tracking-wider font-heading">Start from your role</h2>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {ROLE_PRESETS.map((r) => (
+            <button
+              key={r.label}
+              type="button"
+              onClick={() => applyRole(r.label, r.slugs)}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                activeRole === r.label
+                  ? 'border-signal-500/70 bg-signal-500/15 text-signal-300'
+                  : 'border-void-700/60 bg-void-900/40 text-void-300 hover:border-signal-500/40'
+              }`}
+            >
+              {r.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Budget presets */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 mb-3">
+          <Wallet size={15} className="text-signal-400" />
+          <h2 className="text-sm font-semibold text-signal-400 uppercase tracking-wider font-heading">Set a monthly budget</h2>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {BUDGET_PRESETS.map((b) => (
+            <button
+              key={b.label}
+              type="button"
+              onClick={() => setBudget(budget === b.value ? null : b.value)}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                budget === b.value
+                  ? 'border-signal-500/70 bg-signal-500/15 text-signal-300'
+                  : 'border-void-700/60 bg-void-900/40 text-void-300 hover:border-signal-500/40'
+              }`}
+            >
+              {b.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Tool checklist */}
       <div className="space-y-6 mb-8">
         {grouped.map(([cat, list]) => (
@@ -80,7 +181,9 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
                     />
                     <span className="font-medium truncate">{t.tool}</span>
                   </span>
-                  <span className="text-xs text-void-400 shrink-0">{t.minPrice > 0 ? `$${t.minPrice}/mo` : 'Free'}</span>
+                  <span className={`text-xs shrink-0 ${t.minPrice === 0 ? 'text-success-400 font-semibold' : 'text-void-400'}`}>
+                    {t.minPrice > 0 ? `$${t.minPrice}/mo` : 'Free plan'}
+                  </span>
                 </label>
               ))}
             </div>
@@ -94,7 +197,7 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
           <div>
             <span className="text-xs font-semibold text-signal-400 uppercase tracking-wider">Your stack ({chosen.length} {chosen.length === 1 ? 'tool' : 'tools'})</span>
             <div className="mt-1 flex items-baseline gap-2">
-              <span className="text-4xl font-extrabold text-void-50">${monthly}</span>
+              <span className={`text-4xl font-extrabold ${overBudget ? 'text-ember-300' : 'text-void-50'}`}>${monthly}</span>
               <span className="text-void-500">/month</span>
             </div>
           </div>
@@ -103,10 +206,41 @@ export default function CostCalculator({ tools }: CostCalculatorProps) {
             <div className="text-2xl font-bold text-void-200">${annual.toLocaleString()}</div>
           </div>
         </div>
-        {chosen.length === 0 && (
-          <p className="mt-3 text-sm text-void-500">Tick a few tools above to add up your monthly cost.</p>
+        {budget !== null && chosen.length > 0 && (
+          <p className={`mt-3 text-sm ${overBudget ? 'text-ember-300' : 'text-success-400'}`}>
+            {overBudget
+              ? `$${monthly - budget} over your $${budget}/mo budget — check the swaps below or lean on the free plans marked above.`
+              : budget === 0
+                ? monthly === 0
+                  ? 'All free — this stack costs nothing per month.'
+                  : `This stack is not free — it costs $${monthly}/mo.`
+                : `$${budget - monthly} left in your $${budget}/mo budget.`}
+          </p>
         )}
+        {chosen.length === 0 && (
+          <p className="mt-3 text-sm text-void-500">Pick a role above or tick tools to add up your monthly cost.</p>
+        )}
+        <p className="mt-3 text-2xs text-void-500">
+          Prices are each tool&rsquo;s cheapest paid plan from our pricing guides; per-tool verification dates are on the{' '}
+          <Link href="/ai-pricing-index/" className="text-void-400 hover:text-signal-400 no-underline">AI Pricing Index</Link>.
+        </p>
       </div>
+
+      {/* Overlap warnings */}
+      {overlaps.length > 0 && (
+        <div className="rounded-xl border border-ember-400/25 bg-void-900/40 p-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <AlertTriangle size={15} className="text-ember-300" />
+            <h2 className="text-sm font-semibold text-ember-300 uppercase tracking-wider font-heading">Possible overlap</h2>
+          </div>
+          {overlaps.map(([cat, list]) => (
+            <p key={cat} className="text-sm text-void-300">
+              You picked {list.length} paid tools in {cat} ({list.map((t) => t.tool).join(', ')}) — their features overlap
+              heavily, and most stacks only need one.
+            </p>
+          ))}
+        </div>
+      )}
 
       {/* Money-saving swaps */}
       {swaps.length > 0 && (

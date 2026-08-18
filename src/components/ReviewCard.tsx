@@ -113,14 +113,17 @@ export default function ReviewCard({
               </span>
             )}
 
-            {/* Rating */}
-            <motion.div
-              className="badge-score w-10 h-10 text-sm absolute bottom-3 right-3 z-10 shadow-lg"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-            >
-              {clampedRating.toFixed(1)}
-            </motion.div>
+            {/* Rating — research-only profiles have no score, so no badge:
+                a "0.0" chip would read as a scathing verdict we never gave. */}
+            {clampedRating > 0 && (
+              <motion.div
+                className="badge-score w-10 h-10 text-sm absolute bottom-3 right-3 z-10 shadow-lg"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+              >
+                {clampedRating.toFixed(1)}
+              </motion.div>
+            )}
           </div>
 
           {/* Content area */}

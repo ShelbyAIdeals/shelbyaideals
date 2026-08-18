@@ -1,0 +1,118 @@
+---
+title: "n8n Review 2026: The Automation Tool Developers Pick (And Why)"
+seoTitle: "n8n Review 2026: Pricing, Self-Hosting & Limits"
+slug: n8n-review
+excerpt: "n8n is the self-hostable, execution-billed automation platform that AI-agent builders keep choosing over Zapier and Make. This researched profile covers verified pricing, the execution model, and who should not use it."
+category: ai-marketing-seo
+type: review
+author: "Frank Shelby"
+date: "2026-08-18"
+lastUpdated: "2026-08-18"
+researchOnly: true
+tool: "n8n"
+toolSlug: "n8n"
+socialLinks:
+  website: "https://n8n.io"
+  twitter: "https://x.com/n8n_io"
+  youtube: "https://www.youtube.com/@n8n-io"
+  github: "https://github.com/n8n-io/n8n"
+rating: 0
+bestFor: "Technical users and teams building multi-step or AI-agent workflows who want execution-based billing or full self-hosting control."
+notFor: "Nontechnical founders who want a two-step automation working in five minutes — Zapier and Make are gentler starts."
+pricing:
+  - plan: "Community Edition"
+    price: "Free"
+    period: "self-hosted"
+    features: ["Unlimited executions on your hardware", "Full workflow editor", "Open source (200k+ GitHub stars)"]
+    affiliateUrl: "https://n8n.io"
+  - plan: "Starter"
+    price: "€20"
+    period: "/month (billed annually)"
+    features: ["2,500 executions/month", "5 concurrent executions", "Cloud-hosted", "Free trial, no card"]
+    highlighted: true
+    affiliateUrl: "https://n8n.io"
+  - plan: "Pro"
+    price: "€50"
+    period: "/month (billed annually)"
+    features: ["10,000 executions/month", "20 concurrent executions"]
+    affiliateUrl: "https://n8n.io"
+  - plan: "Enterprise"
+    price: "Custom"
+    period: ""
+    features: ["Custom executions", "200+ concurrency", "Self-hosted or cloud", "SSO"]
+    affiliateUrl: "https://n8n.io"
+pros:
+  - "Execution-based billing: a 20-step AI workflow costs the same per run as a 2-step one."
+  - "Free self-hosted Community Edition with no execution limits."
+  - "Native AI/LLM nodes and agent patterns — built for the workflows Zapier retrofits."
+  - "Data stays on your infrastructure when self-hosted — a hard requirement in many EU companies."
+cons:
+  - "Steeper learning curve than Zapier or Make; expressions and JSON are part of daily use."
+  - "Self-hosting shifts uptime, updates, and security onto you."
+  - "Smaller app catalog than Zapier's thousands of integrations (HTTP node covers gaps, but that's more work)."
+verdict: "Based on verified specs and pricing: n8n is the right automation platform for technical users and AI-heavy workflows — per-execution billing plus free self-hosting is a combination neither Zapier nor Make offers. Nontechnical users ship faster on Make (cheapest) or Zapier (easiest)."
+affiliateUrl: "https://n8n.io"
+affiliateLabel: "Try n8n Free"
+---
+
+## Direct Answer
+
+**n8n is the automation platform to pick when your workflows are complex, AI-driven, or need to run on your own servers.** Cloud plans start at €20/month for 2,500 executions (billed annually), and the open-source Community Edition is free to self-host with no execution limits. Its billing model — one execution per workflow run, regardless of step count — is structurally cheaper than Zapier's per-task pricing for multi-step automations. The trade-off is a real learning curve.
+
+*This is a researched profile: facts verified against official sources (pricing checked August 18, 2026). Our hands-on automation test protocol has not run on n8n yet — no ShelbyAI score until it does.*
+
+## What Is n8n?
+
+n8n (by n8n GmbH, Berlin) is a workflow automation platform with a visual node editor, source-available code, and first-class AI tooling: LLM nodes, agent frameworks, memory, and tool-calling are native primitives rather than bolted-on apps. You can run it two ways — n8n's cloud, or self-hosted from the free Community Edition (200k+ stars on GitHub).
+
+Its direct competitors are [Zapier](/comparisons/zapier-vs-make) (largest app catalog, simplest), [Make](/reviews/make-review) (visual builder, cheapest per operation), and newer AI-workflow tools like Gumloop, Relay, Activepieces, and Pipedream.
+
+## The Execution Model Is the Whole Story
+
+Automation platforms meter differently, and it decides who should buy what:
+
+| Platform | Billing unit | Entry paid plan | What a 15-step workflow run costs |
+|---|---|---|---|
+| n8n | 1 execution per run | €20/mo, 2,500 executions | 1 execution |
+| Zapier | 1 task per step | $19.99/mo (annual), 750 tasks | 15 tasks |
+| Make | 1 credit per module | $9/mo (annual), 10,000 credits | ~15 credits |
+
+A 15-step AI agent running 50 times a day consumes ~1,500 n8n executions a month (fits Starter at €20) versus 22,500 Zapier tasks (a much higher tier). For simple 2-step zaps, the advantage evaporates — which is exactly the honest split: complexity favors n8n. Full three-way breakdown: [n8n vs Make vs Zapier](/comparisons/n8n-vs-make-vs-zapier).
+
+## Best For / Not Ideal For
+
+**Best for:**
+
+- Developers and technical operators building multi-step, branching, retry-heavy workflows.
+- AI-agent builders — LLM calls, tool use, and human-in-the-loop steps are native.
+- Companies with data-residency requirements (self-hosted keeps data in-house).
+- Anyone whose Zapier bill grew embarrassing as workflows gained steps.
+
+**Not ideal for:**
+
+- Nontechnical founders wiring "form → CRM → Slack" — [Zapier](/comparisons/zapier-vs-make) gets that live in minutes.
+- Teams unwilling to maintain a server (use n8n cloud, or stay with Make/Zapier).
+- Workflows that live and die by a niche SaaS integration only Zapier has.
+
+## Pricing Reality Check
+
+Verified plans are on our [n8n pricing page](/pricing/n8n): cloud Starter €20/month and Pro €50/month (both billed annually, free trial without a card), Business €667/month for self-hosted commercial features, custom Enterprise with 200+ concurrency. The Community Edition remains free with unlimited executions — your server, your uptime, your responsibility. That free path is n8n's most under-appreciated feature and the reason it dominates technical communities' recommendations.
+
+## Limitations Worth Knowing
+
+- **Learning curve is real.** The visual editor is approachable, but production workflows involve expressions, JSON wrangling, and debugging failed nodes.
+- **Self-hosting is a job.** Updates, backups, queue scaling, and security patches are yours.
+- **App catalog is smaller than Zapier's.** The generic HTTP/webhook nodes cover almost anything, at the cost of reading API docs yourself.
+- **Cloud concurrency is capped by tier** (5 on Starter, 20 on Pro) — relevant for bursty webhook loads.
+
+## Alternatives
+
+- **[Make](/reviews/make-review)** — cheapest per unit of work ($9/month for 10,000 credits), strong visual builder. [Make pricing](/pricing/make-com).
+- **Zapier** — largest integration catalog, easiest start, priciest per task. See [Zapier vs Make](/comparisons/zapier-vs-make).
+- **Gumloop / Relay / Activepieces / Pipedream** — younger AI-workflow platforms; not yet profiled by us.
+
+## Final Recommendation
+
+Choose **n8n** if you are technical and your automations are multi-step or AI-driven — start on the free Community Edition if you can host, or cloud Starter (€20/month) if you cannot. Choose **Make** if you want the lowest cost for straightforward automations. Choose **Zapier** if setup speed and app coverage beat cost for you. The three-way scenario table is in [n8n vs Make vs Zapier](/comparisons/n8n-vs-make-vs-zapier).
+
+*Pricing verified against [n8n.io/pricing](https://n8n.io/pricing/) on August 18, 2026. Hands-on test: pending — this page gains a score when our automation protocol (same workflow built on each platform, measured) runs.*

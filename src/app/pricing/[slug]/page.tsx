@@ -130,12 +130,14 @@ export default async function PricingDetailPage({ params }: PageProps) {
           url: `https://www.shelby-ai.com/pricing/${slug}/`,
           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.shelby-ai.com/pricing/${slug}/` },
           offers: page.plans
-            .filter((p) => p.price !== 'Custom' && p.price !== 'Free')
+            // Only plans with a real numeric list price become Offers — text
+            // values ("Custom", "Tiered", "Free") would otherwise coerce to $0.
+            .filter((p) => /^[$€]\s?\d/.test(p.price))
             .map((p) => ({
               '@type': 'Offer',
               name: p.name,
               price: p.price.replace(/[^0-9.]/g, '') || '0',
-              priceCurrency: 'USD',
+              priceCurrency: page.currency ?? 'USD',
               availability: 'https://schema.org/InStock',
             })),
         }) }}
@@ -163,16 +165,39 @@ export default async function PricingDetailPage({ params }: PageProps) {
               {page.intro}
             </p>
 
-            {/* Trust signals */}
+            {/* Trust signals — verification date and source are what an AI
+                assistant needs to treat these numbers as citable facts. */}
             <div className="flex flex-wrap items-center gap-4 mt-6">
-              <div className="flex items-center gap-2 text-sm text-void-400">
-                <Clock size={14} className="text-signal-500" />
-                <span>Last updated: {page.lastUpdated}</span>
-              </div>
+              {page.pricingVerified ? (
+                <div className="flex items-center gap-2 text-sm text-void-400">
+                  <Clock size={14} className="text-signal-500" />
+                  <span>
+                    Pricing verified: {page.pricingVerified}
+                    {page.pricingSourceUrl && (
+                      <>
+                        {' '}·{' '}
+                        <a
+                          href={page.pricingSourceUrl}
+                          target="_blank"
+                          rel="nofollow noopener"
+                          className="text-void-300 hover:text-signal-400 no-underline"
+                        >
+                          official pricing page
+                        </a>
+                      </>
+                    )}
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2 text-sm text-void-400">
+                  <Clock size={14} className="text-signal-500" />
+                  <span>Last updated: {page.lastUpdated}</span>
+                </div>
+              )}
               {page.freeTrialAvailable && (
                 <div className="flex items-center gap-2 text-sm text-signal-400">
                   <Shield size={14} />
-                  <span>{page.freeTrialDays}-day free trial available</span>
+                  <span>{page.freeTrialDays ? `${page.freeTrialDays}-day free trial available` : 'Free trial available'}</span>
                 </div>
               )}
               {page.moneyBackGuarantee && (
@@ -182,6 +207,12 @@ export default async function PricingDetailPage({ params }: PageProps) {
                 </div>
               )}
             </div>
+            {page.pricingNeedsVerification && (
+              <p className="mt-3 text-sm text-ember-300">
+                Note: these prices come from secondary sources because the vendor&rsquo;s pricing page blocks automated
+                verification — confirm current rates on the official site before purchasing.
+              </p>
+            )}
 
             {page.reviewSlug && (
               <p className="mt-4 text-sm text-void-400">

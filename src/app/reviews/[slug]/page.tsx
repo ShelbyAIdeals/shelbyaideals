@@ -252,15 +252,46 @@ export default async function ReviewPage({ params }: PageProps) {
   );
   const crossSell = !ownToolTracked ? getCrossSell(meta.tool, slug, ratingBySlug) : null;
 
+  // Research-only profiles carry facts, not verdicts: no stars, no "tested"
+  // framing, Article schema instead of Review schema, and an explicit
+  // pending-test notice. The facts box replaces the QuickVerdict card.
+  const researchFacts = meta.researchOnly ? (
+    <div className="rounded-xl border border-void-700/50 bg-void-900/60 p-5">
+      <span className="text-xs font-semibold text-ember-300 uppercase tracking-wider">Researched profile</span>
+      <p className="mt-2 text-sm text-void-300 leading-relaxed">
+        Facts below come from official sources — hands-on testing is pending, so there is no ShelbyAI score yet.
+      </p>
+      {meta.bestFor && (
+        <p className="mt-3 text-sm text-void-200"><span className="font-semibold">Best for:</span> {meta.bestFor}</p>
+      )}
+      {meta.notFor && (
+        <p className="mt-1.5 text-sm text-void-200"><span className="font-semibold">Not ideal for:</span> {meta.notFor}</p>
+      )}
+      <p className="mt-1.5 text-sm text-void-200"><span className="font-semibold">Pricing:</span> {pricingSummary}</p>
+      <a
+        href={meta.affiliateUrl}
+        target="_blank"
+        rel={isTrackedAffiliateUrl(meta.affiliateUrl) ? 'nofollow sponsored noopener' : 'nofollow noopener'}
+        className="mt-4 inline-flex items-center gap-2 rounded-lg bg-signal-500 px-5 py-2.5 text-sm font-semibold text-void-950 no-underline hover:bg-signal-400 transition-colors"
+      >
+        {meta.affiliateLabel} <ArrowRight size={14} />
+      </a>
+    </div>
+  ) : null;
+
   const sidebar = (
     <div className="space-y-8">
-      <QuickVerdict
-        rating={meta.rating}
-        bestFor={meta.bestFor}
-        pricing={pricingSummary}
-        affiliateUrl={meta.affiliateUrl}
-        affiliateLabel={meta.affiliateLabel}
-      />
+      {meta.researchOnly ? (
+        researchFacts
+      ) : (
+        <QuickVerdict
+          rating={meta.rating}
+          bestFor={meta.bestFor}
+          pricing={pricingSummary}
+          affiliateUrl={meta.affiliateUrl}
+          affiliateLabel={meta.affiliateLabel}
+        />
+      )}
       <TableOfContents headings={headings} />
     </div>
   );
@@ -277,8 +308,10 @@ export default async function ReviewPage({ params }: PageProps) {
       backLink={{ href: '/reviews', label: 'All Reviews' }}
       sidebar={sidebar}
     >
+      {/* Review schema asserts we reviewed the product with a rating — a
+          research-only profile is an Article about the product instead. */}
       <JsonLd
-        type="review"
+        type={meta.researchOnly ? 'article' : 'review'}
         data={meta}
         canonicalUrl={`https://www.shelby-ai.com/reviews/${slug}/`}
         imageUrl={toolImages[0] ? `https://www.shelby-ai.com${toolImages[0].src}` : undefined}
@@ -400,15 +433,32 @@ export default async function ReviewPage({ params }: PageProps) {
         </div>
       )}
 
+      {/* Research-only banner — visible statement of what this page is and is not */}
+      {meta.researchOnly && (
+        <div className="mb-8 rounded-xl border border-ember-400/30 bg-void-900/60 p-5">
+          <p className="text-sm text-void-200 leading-relaxed">
+            <span className="font-semibold text-ember-300">Researched profile, not yet hands-on tested.</span>{' '}
+            Every fact on this page (pricing, plans, features) comes from official sources, last checked{' '}
+            {meta.lastUpdated}. We have not run our own test workflow on {meta.tool} yet — when we do, this page gains a
+            score, test results, and a tested date. See{' '}
+            <Link href="/how-we-review" className="text-signal-400 hover:text-signal-300 no-underline">how we review</Link>.
+          </p>
+        </div>
+      )}
+
       {/* Quick Verdict (visible on mobile, hidden on desktop since it's in sidebar) */}
       <div className="lg:hidden mb-8">
-        <QuickVerdict
-          rating={meta.rating}
-          bestFor={meta.bestFor}
-          pricing={pricingSummary}
-          affiliateUrl={meta.affiliateUrl}
-          affiliateLabel={meta.affiliateLabel}
-        />
+        {meta.researchOnly ? (
+          researchFacts
+        ) : (
+          <QuickVerdict
+            rating={meta.rating}
+            bestFor={meta.bestFor}
+            pricing={pricingSummary}
+            affiliateUrl={meta.affiliateUrl}
+            affiliateLabel={meta.affiliateLabel}
+          />
+        )}
       </div>
 
       {/* Commissionable cross-sell — only on reviews whose own tool earns nothing */}
@@ -458,18 +508,28 @@ export default async function ReviewPage({ params }: PageProps) {
         <ProsCons pros={meta.pros} cons={meta.cons} toolSlug={meta.toolSlug || slug.replace('-review', '')} toolName={meta.tool} />
       </div>
 
-      {/* Final Verdict */}
-      <div className="mt-10">
-        <VerdictBox
-          rating={meta.rating}
-          verdict={meta.verdict}
-          bestFor={meta.bestFor}
-          affiliateUrl={meta.affiliateUrl}
-          affiliateLabel={meta.affiliateLabel}
-          toolName={meta.tool}
-          toolSlug={meta.toolSlug || slug.replace('-review', '')}
-        />
-      </div>
+      {/* Final Verdict — or, for research-only profiles, a bottom-line without a score */}
+      {meta.researchOnly ? (
+        <div className="mt-10 rounded-xl border border-void-700/50 bg-void-900/60 p-6">
+          <h2 className="text-lg font-bold text-void-50 mb-2 font-heading">Bottom line (research-based)</h2>
+          <p className="text-sm text-void-300 leading-relaxed">{meta.verdict}</p>
+          <p className="mt-3 text-xs text-void-500">
+            No ShelbyAI score yet — we only score tools after hands-on testing.
+          </p>
+        </div>
+      ) : (
+        <div className="mt-10">
+          <VerdictBox
+            rating={meta.rating}
+            verdict={meta.verdict}
+            bestFor={meta.bestFor}
+            affiliateUrl={meta.affiliateUrl}
+            affiliateLabel={meta.affiliateLabel}
+            toolName={meta.tool}
+            toolSlug={meta.toolSlug || slug.replace('-review', '')}
+          />
+        </div>
+      )}
 
       {/* Related comparisons mentioning this tool */}
       {(() => {
@@ -520,7 +580,7 @@ export default async function ReviewPage({ params }: PageProps) {
           toolName={meta.tool}
           affiliateUrl={meta.affiliateUrl}
           affiliateLabel={meta.affiliateLabel}
-          rating={meta.rating}
+          rating={meta.rating > 0 ? meta.rating : undefined}
         />
       )}
     </ArticleLayout>

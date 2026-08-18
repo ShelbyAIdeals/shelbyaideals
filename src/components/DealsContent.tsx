@@ -67,7 +67,7 @@ function DealCard({ deal, featured = false, t }: { deal: Deal; featured?: boolea
       )}
 
       {/* Features */}
-      <ul className="space-y-2 mb-6">
+      <ul className="space-y-2 mb-4">
         {deal.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2 text-sm text-void-300">
             <Zap size={14} className="text-signal-500 mt-0.5 shrink-0" />
@@ -75,6 +75,34 @@ function DealCard({ deal, featured = false, t }: { deal: Deal; featured?: boolea
           </li>
         ))}
       </ul>
+
+      {/* Offer verification — per-deal, not page-level. A single page date
+          can't tell readers (or AI assistants) whether this offer is live. */}
+      <div className="mb-5 text-xs text-void-500 space-y-0.5">
+        {deal.eligibility && <p>{deal.eligibility}</p>}
+        {deal.dateVerified ? (
+          <p>
+            {t('deals.verified_label', 'Offer verified')} {deal.dateVerified}
+            {deal.sourceUrl && (
+              <>
+                {' '}·{' '}
+                <a
+                  href={deal.sourceUrl}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  className="text-void-400 hover:text-signal-400 no-underline"
+                >
+                  {t('deals.source_label', 'source')}
+                </a>
+              </>
+            )}
+          </p>
+        ) : (
+          <p className="text-ember-300/80">
+            {t('deals.unverified_label', 'Not recently re-verified — confirm on the vendor site')}
+          </p>
+        )}
+      </div>
 
       {/* Actions */}
       <div className="mt-auto flex flex-col gap-2">
@@ -109,9 +137,11 @@ function DealCard({ deal, featured = false, t }: { deal: Deal; featured?: boolea
 interface DealsContentProps {
   featured: Deal[];
   nonFeatured: Deal[];
+  /** Newest per-offer verification date across all deals (YYYY-MM-DD). */
+  lastVerified?: string;
 }
 
-export default function DealsContent({ featured, nonFeatured }: DealsContentProps) {
+export default function DealsContent({ featured, nonFeatured, lastVerified }: DealsContentProps) {
   const { t } = useTranslation();
 
   return (
@@ -121,7 +151,9 @@ export default function DealsContent({ featured, nonFeatured }: DealsContentProp
         <div className="max-w-2xl mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-signal-500/10 border border-signal-500/15 text-signal-400 text-xs font-semibold mb-4">
             <Tag size={14} />
-            {t('deals.updated_date', 'Updated March 2026')}
+            {lastVerified
+              ? `${t('deals.verified_badge', 'Offers verified')} ${lastVerified}`
+              : t('deals.updated_date', 'Updated 2026')}
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-void-50 mb-4 font-heading">
             {t('deals.title', 'AI Tool Deals & Free Trials')}

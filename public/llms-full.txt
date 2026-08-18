@@ -8,7 +8,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ---
 
-## All Reviewed Tools (32)
+## All Reviewed Tools (37)
 
 ### Chatbase
 - Category: ai-marketing-seo
@@ -39,10 +39,18 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-content-productivity
 - Rating: 3.9/5
 - Best For: Freelancers and solopreneurs who need fast marketing copy on a budget
-- Pricing: Free $0, Starter $36//month, Advanced $186//month, Enterprise Custom
+- Pricing: Chat $29//month ($24 annual), Growth $1,000//month (billed yearly), Enterprise Custom
 - Review: https://www.shelby-ai.com/reviews/copy-ai-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/copy-ai/
 - Alternatives: https://www.shelby-ai.com/alternatives/copy-ai/
+
+### Cursor
+- Category: ai-content-productivity
+- Rating: 0/5
+- Best For: Developers who live in an IDE and want agentic editing, repo-wide context, and frontier-model access inside the editor.
+- Pricing: Hobby $0//month, Pro $20//month, Teams $40//user/month
+- Review: https://www.shelby-ai.com/reviews/cursor-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/cursor/
 
 ### Decktopus AI
 - Category: ai-content-productivity
@@ -73,10 +81,26 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-video-audio
 - Rating: 4/5
 - Best For: Creators and developers seeking ultra-realistic AI voiceovers and voice cloning capabilities.
-- Pricing: Free $0, Starter $5//month, Creator $22//month, Pro $99//month
+- Pricing: Free $0//month, Starter $6//month, Creator $22//month (50% off first month), Pro $99//month
 - Review: https://www.shelby-ai.com/reviews/elevenlabs-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/elevenlabs/
 - Alternatives: https://www.shelby-ai.com/alternatives/elevenlabs/
+
+### Fathom
+- Category: ai-content-productivity
+- Rating: 0/5
+- Best For: Individuals who want unlimited free meeting notes, and sales teams that need CRM sync, deal views, and coaching metrics.
+- Pricing: Free $0/forever, Premium $20//month ($16 annual), Team $19//user/month ($15 annual, 2+ users), Business $34//user/month ($25 annual)
+- Review: https://www.shelby-ai.com/reviews/fathom-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/fathom/
+
+### Fireflies.ai
+- Category: ai-content-productivity
+- Rating: 0/5
+- Best For: Teams that want meeting notes flowing automatically into CRMs, Slack, Notion, and task tools — and searchable transcript archives.
+- Pricing: Free $0/forever, Pro $18//month ($10 annual), Business $29//month ($19 annual), Enterprise $39//month (annual only)
+- Review: https://www.shelby-ai.com/reviews/fireflies-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/fireflies/
 
 ### Fliki
 - Category: ai-video-audio
@@ -90,7 +114,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-marketing-seo
 - Rating: 4/5
 - Best For: Content marketers seeking AI-driven content briefs and SERP-optimized articles.
-- Pricing: Free $0, Solo $15//month, Basic $45//month, Team $115//month
+- Pricing: Starter $49//month ($39 annual), Professional $129//month ($103 annual), Scale $299//month ($239 annual)
 - Review: https://www.shelby-ai.com/reviews/frase-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/frase/
 - Alternatives: https://www.shelby-ai.com/alternatives/frase/
@@ -119,6 +143,14 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Pricing: Free (X users) $0, X Premium $8//month, X Premium+ $16//month
 - Review: https://www.shelby-ai.com/reviews/grok-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/grok/
+
+### HeyGen
+- Category: ai-video-audio
+- Rating: 0/5
+- Best For: Marketers and localization teams who need realistic avatar presenter videos and multilingual versions of the same content.
+- Pricing: Free $0//month, Creator $29//month ($24 annual), Pro $49//month, Business $149//month + $20/seat
+- Review: https://www.shelby-ai.com/reviews/heygen-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/heygen/
 
 ### Jasper AI
 - Category: ai-content-productivity
@@ -186,6 +218,14 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Review: https://www.shelby-ai.com/reviews/mubert-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/mubert/
 
+### n8n
+- Category: ai-marketing-seo
+- Rating: 0/5
+- Best For: Technical users and teams building multi-step or AI-agent workflows who want execution-based billing or full self-hosting control.
+- Pricing: Community Edition Free/self-hosted, Starter €20//month (billed annually), Pro €50//month (billed annually), Enterprise Custom
+- Review: https://www.shelby-ai.com/reviews/n8n-review/
+- Pricing Guide: https://www.shelby-ai.com/pricing/n8n/
+
 ### Otter.ai
 - Category: ai-content-productivity
 - Rating: 4/5
@@ -206,7 +246,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-video-audio
 - Rating: 3.5/5
 - Best For: Content repurposers and marketers who need video at scale
-- Pricing: Starter $19//month, Professional $39//month, Teams $99//month
+- Pricing: Starter $29//month ($25 annual), Professional $59//month ($35 annual), Team $199//month ($119 annual)
 - Review: https://www.shelby-ai.com/reviews/pictory-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/pictory/
 - Alternatives: https://www.shelby-ai.com/alternatives/pictory/
@@ -255,7 +295,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-marketing-seo
 - Rating: 4/5
 - Best For: SEO-focused freelancers and content agencies
-- Pricing: Essential $89//month, Scale $129//month, Enterprise $219//month
+- Pricing: Discovery €49//month, Standard €99//month, Pro €182//month, AI Search Analytics €158//month (standalone)
 - Review: https://www.shelby-ai.com/reviews/surfer-seo-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/surfer-seo/
 - Alternatives: https://www.shelby-ai.com/alternatives/surfer-seo/
@@ -264,7 +304,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-video-audio
 - Rating: 3.9/5
 - Best For: Businesses seeking efficient creation of training and marketing videos without traditional filming.
-- Pricing: Free $0, Starter $29//month, Creator $89//month, Enterprise Custom
+- Pricing: Basic (Free) $0//month, Starter $29//month ($18 annual), Creator $89//month ($64 annual), Enterprise Custom
 - Review: https://www.shelby-ai.com/reviews/synthesia-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/synthesia/
 - Alternatives: https://www.shelby-ai.com/alternatives/synthesia/
@@ -273,25 +313,28 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - Category: ai-content-productivity
 - Rating: 3.8/5
 - Best For: Budget-conscious bloggers and small content teams
-- Pricing: Free $0, Individual $16//month, Team $79//month
+- Pricing: Starter $79//month (annual saves $240/yr), Basic $199//month (annual saves $600/yr), Growth $399//month (annual saves $1,200/yr)
 - Review: https://www.shelby-ai.com/reviews/writesonic-review/
 - Pricing Guide: https://www.shelby-ai.com/pricing/writesonic/
 - Alternatives: https://www.shelby-ai.com/alternatives/writesonic/
 
 ---
 
-## Comparisons (17)
+## Comparisons (20)
 
 - [ChatGPT vs Claude for Business: Which AI Assistant Delivers More Value? (2026)](https://www.shelby-ai.com/comparisons/chatgpt-vs-claude-for-business/) — We tested ChatGPT and Claude on real business tasks — emails, analysis, strategy, customer support, and coding. Here is which AI assistant actually helps small businesses more.
 - [ChatGPT vs Jasper vs Claude for Content Writing: Honest Comparison](https://www.shelby-ai.com/comparisons/chatgpt-vs-jasper-vs-claude/) — Comparing ChatGPT, Jasper AI, and Claude for writing reveals strengths in different scenarios. From ease of use to pricing, this analysis covers all aspects of AI writing tools.
+- [Cursor vs Claude Code vs Codex 2026: Which AI Coding Agent Fits You](https://www.shelby-ai.com/comparisons/cursor-vs-claude-code-vs-codex/) — Cursor vs Claude Code vs OpenAI Codex — IDE-native vs terminal-first vs delegated cloud agent. Verified pricing, form-factor differences, and which to pick for solo work, large codebases, and delegated tasks.
 - [Descript vs CapCut: Which Video Editor Is Better for Creators? (2026)](https://www.shelby-ai.com/comparisons/descript-vs-capcut/) — We edited the same video in both Descript and CapCut to compare AI features, editing speed, export quality, and pricing. Here is the real breakdown.
 - [Descript vs Riverside vs CapCut (2026): Which AI Video Editor Wins?](https://www.shelby-ai.com/comparisons/descript-vs-riverside-vs-capcut/) — We compare Descript, Riverside, and CapCut across pricing, AI features, recording quality, and ease of use. See which tool wins for podcasters, social creators, remote interviews, and beginners.
 - [ElevenLabs vs Murf AI: Which AI Voice Generator Sounds Better? (2026)](https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-ai/) — We generated the same scripts in both ElevenLabs and Murf AI to compare voice quality, naturalness, pricing, and real-world use cases. Here is the detailed verdict.
 - [ElevenLabs vs Murf vs Play.ht: Best AI Voice Generator in 2026](https://www.shelby-ai.com/comparisons/elevenlabs-vs-murf-vs-playht/) — Three AI voice generators tested head-to-head. Which one sounds most natural and delivers the best value?
 - [Frase vs Surfer SEO: Which Content Optimization Tool Wins? (2026)](https://www.shelby-ai.com/comparisons/frase-vs-surfer-seo/) — We ran identical content briefs through Frase and Surfer SEO to compare research depth, optimization accuracy, and value. Here is the honest breakdown.
 - [Grammarly vs ProWritingAid vs Hemingway: Best AI Editor for Freelance Writers](https://www.shelby-ai.com/comparisons/grammarly-vs-prowritingaid-vs-hemingway/) — In this comparison of Grammarly, ProWritingAid, and Hemingway, we evaluate which AI editor offers the best tools for freelance writers, focusing on output quality, pricing, and ease of use.
+- [HeyGen vs Synthesia 2026: Which AI Avatar Video Tool to Pick](https://www.shelby-ai.com/comparisons/heygen-vs-synthesia/) — HeyGen vs Synthesia — the two leading AI avatar video generators compared on verified pricing, credit vs minute metering, avatar realism focus, localization, and corporate training workflows.
 - [Jasper vs Copy.ai: Which AI Writer Actually Delivers? (2026 Test)](https://www.shelby-ai.com/comparisons/jasper-vs-copy-ai/) — We tested Jasper and Copy.ai on the exact same briefs — ads, blog posts, emails, and sales copy. Here is who wins and when each tool is better.
 - [Midjourney vs DALL-E vs Leonardo AI: Best AI Image Generator for Marketers](https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo/) — In the battle of Midjourney vs DALL-E vs Leonardo AI, we explore which AI image generator offers the best features for marketers. From pricing to ease of use, we cover all angles.
+- [n8n vs Make vs Zapier 2026: The Automation Decision, Settled](https://www.shelby-ai.com/comparisons/n8n-vs-make-vs-zapier/) — n8n vs Make vs Zapier — execution-based vs credit-based vs task-based pricing, self-hosting, AI workflow support, and exactly which platform fits your technical skill and workflow complexity.
 - [Notion AI vs ClickUp AI vs Monday AI: Best AI Project Management for Small Teams](https://www.shelby-ai.com/comparisons/notion-ai-vs-clickup-vs-monday/) — Notion AI vs ClickUp AI vs Monday AI compared. Find the best AI project management tool for small teams based on features, ease of use, and pricing.
 - [Otter.ai vs Fireflies vs Fathom: Best AI Meeting Assistant](https://www.shelby-ai.com/comparisons/otter-vs-fireflies-vs-fathom/) — In the battle of Otter vs Fireflies vs Fathom, we compare these AI tools to help you choose the best AI meeting notes tool for your needs, covering features, pricing, and more.
 - [Pictory vs Lumen5 vs InVideo: Best AI Video Creator for Small Business](https://www.shelby-ai.com/comparisons/pictory-vs-lumen5-vs-invideo/) — We tested all three AI video creators side by side. Here's which one actually delivers for small business content.
@@ -302,7 +345,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ---
 
-## Guides (29)
+## Guides (30)
 
 - [AI Client Onboarding Checklist: Shareable Template for Freelancers & Agencies](https://www.shelby-ai.com/guides/ai-client-onboarding/) — A step-by-step AI client onboarding checklist you can copy and share. Covers discovery, tool setup, automation, approvals, and handoff for freelancers, agencies, and consultants.
 - [How to Build a Complete AI Content Workflow (From Idea to Publish)](https://www.shelby-ai.com/guides/ai-content-workflow/) — Discover how to streamline your ai content workflow, from brainstorming ideas to publishing polished articles, using top AI tools and strategies.
@@ -315,6 +358,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - [How to Automate Your Marketing with Zapier + AI (Step-by-Step)](https://www.shelby-ai.com/guides/automate-marketing-ai-zapier/) — Discover how to automate marketing with AI using Zapier, saving time and boosting efficiency in your marketing efforts.
 - [Best AI Tools for Agencies in 2026: Content, Video, SEO, and Client Management](https://www.shelby-ai.com/guides/best-ai-tools-for-agencies/) — The definitive guide to AI tools for agency owners — covering content creation, video production, SEO, client management, and automation. Starter and advanced stacks included.
 - [Best AI Voice Generators Under $30/mo: Budget Picks for Creators and Businesses](https://www.shelby-ai.com/guides/best-ai-voice-generators-under-30/) — The best AI voice generators that cost under $30 per month — with real audio quality comparisons, pricing breakdowns, and recommendations by use case.
+- [Best GEO Tools 2026: Tracking Your Brand in AI Search Answers](https://www.shelby-ai.com/guides/best-geo-tools/) — GEO (Generative Engine Optimization) tools track whether ChatGPT, Perplexity, and Google AI Overviews mention your brand. We compare Otterly, Profound, Peec, and the AI-visibility features inside Semrush, Ahrefs, and Surfer — with verified pricing.
 - [How to Use AI for SEO: A Practical Guide for Beginners](https://www.shelby-ai.com/guides/how-to-use-ai-for-seo/) — Learn how to use AI for SEO to enhance your website's visibility with this beginner-friendly guide. Achieve higher rankings and streamline your content strategy efficiently.
 - [How to Use Claude Code (and Claude Design): A Complete 2026 Guide](https://www.shelby-ai.com/guides/how-to-use-claude-code/) — Learn how to use Claude Code, Anthropic's agentic coding tool, plus Claude Design for prototypes. Step-by-step setup, commands, workflows, and pricing for 2026.
 - [How to Use Claude Design: Anthropic's Prompt-to-Prototype Tool (2026)](https://www.shelby-ai.com/guides/how-to-use-claude-design/) — Learn how to use Claude Design, Anthropic's AI tool that turns prompts into prototypes, slides, and mockups. Step-by-step setup, refinement, exports, and pricing.
@@ -347,4 +391,4 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - [7 Best AI Writing Tools for Freelancers in 2026 (Tested & Ranked)](https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers/)
 - [Best Free AI Tools for Solopreneurs (That Are Actually Useful)](https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs/)
 
-Last updated: 2026-08-07
+Last updated: 2026-08-18

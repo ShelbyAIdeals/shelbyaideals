@@ -12,12 +12,12 @@
 
 ## Content Types
 
-- **Reviews** (32): In-depth, hands-on reviews with ratings, pricing, pros/cons, and verdicts
-- **Comparisons** (17): Head-to-head tool comparisons with per-scenario winners
-- **Guides** (29): How-to guides for AI workflows, tools, and use cases
+- **Reviews** (37): In-depth, hands-on reviews with ratings, pricing, pros/cons, and verdicts
+- **Comparisons** (20): Head-to-head tool comparisons with per-scenario winners
+- **Guides** (30): How-to guides for AI workflows, tools, and use cases
 - **Best-Of Lists** (8): Curated ranked lists by category and use case
 - **Alternatives** (15): Alternative tools for popular AI products
-- **Pricing Guides** (31): Detailed pricing breakdowns with plan recommendations
+- **Pricing Guides** (40): Detailed pricing breakdowns with plan recommendations
 
 ## Key Pages
 
@@ -38,6 +38,7 @@
 
 ## Latest Guides
 
+- [Best GEO Tools 2026: Tracking Your Brand in AI Search Answers](https://www.shelby-ai.com/guides/best-geo-tools/)
 - [How to Open and Convert a STEP File Without CAD Software (2026 Guide)](https://www.shelby-ai.com/guides/open-step-file-without-cad-software/)
 - [How to Open, Edit and Convert a Parquet File Online (No Install)](https://www.shelby-ai.com/guides/open-parquet-file-online/)
 - [How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)](https://www.shelby-ai.com/guides/read-dmp-file-fix-blue-screen/)
@@ -45,7 +46,6 @@
 - [How to Use Claude Code (and Claude Design): A Complete 2026 Guide](https://www.shelby-ai.com/guides/how-to-use-claude-code/)
 - [How to Use Claude Design: Anthropic's Prompt-to-Prototype Tool (2026)](https://www.shelby-ai.com/guides/how-to-use-claude-design/)
 - [How to Use the Hermes Agent: A Complete Beginner's Guide (2026)](https://www.shelby-ai.com/guides/how-to-use-hermes-agent/)
-- [How to Use OpenAI Codex: The Complete 2026 Guide](https://www.shelby-ai.com/guides/how-to-use-openai-codex/)
 
 ## Editorial Standards
 
@@ -53,4 +53,4 @@
 - Reviews disclose pricing, who a tool is best for, and who should avoid it.
 - Affiliate links never influence rankings or verdicts (https://www.shelby-ai.com/affiliate-disclosure/).
 
-Last updated: 2026-08-07
+Last updated: 2026-08-18

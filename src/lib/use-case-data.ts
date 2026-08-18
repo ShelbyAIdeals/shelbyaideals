@@ -594,7 +594,7 @@ export const useCaseData: UseCasePage[] = [
       },
       {
         name: 'ElevenLabs', slug: 'elevenlabs', description: 'Studio-grade AI voiceovers and narration in dozens of voices and languages.',
-        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Most natural AI voiceover', reviewSlug: 'elevenlabs-review',
+        pricing: 'Free plan, paid from $6/mo', standoutFeature: 'Most natural AI voiceover', reviewSlug: 'elevenlabs-review',
         affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
         editorialNote: 'For faceless channels or multi-language dubs, ElevenLabs is the most convincing voice we tested. The free tier is enough to trial real videos before paying.',
       },
@@ -635,7 +635,7 @@ export const useCaseData: UseCasePage[] = [
       },
       {
         name: 'ElevenLabs', slug: 'elevenlabs', description: 'AI voices for intros, ads, and dubbing episodes into other languages.',
-        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Natural AI narration & dubbing', reviewSlug: 'elevenlabs-review',
+        pricing: 'Free plan, paid from $6/mo', standoutFeature: 'Natural AI narration & dubbing', reviewSlug: 'elevenlabs-review',
         affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
         editorialNote: 'Great for branded intros/outros and reaching new audiences with dubbed episodes — the most natural voices we tested.',
       },
@@ -711,7 +711,7 @@ export const useCaseData: UseCasePage[] = [
       },
       {
         name: 'ElevenLabs', slug: 'elevenlabs', description: 'Natural AI voiceovers and narration for lessons and slide decks.',
-        pricing: 'Free plan, paid from $5/mo', standoutFeature: 'Most natural AI narration', reviewSlug: 'elevenlabs-review',
+        pricing: 'Free plan, paid from $6/mo', standoutFeature: 'Most natural AI narration', reviewSlug: 'elevenlabs-review',
         affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
         editorialNote: 'For voiceover-driven courses, ElevenLabs sounds the most human and makes updates painless — re-generate a line instead of re-recording.',
       },

@@ -1,0 +1,100 @@
+---
+title: "Cursor Review 2026: The AI Code Editor, Its Limits & Real Costs"
+seoTitle: "Cursor Review 2026: Pricing, Limits & Verdict"
+slug: cursor-review
+excerpt: "Cursor is the AI-native code editor at $20/month. This researched profile covers verified pricing, how the Pro/Pro+/Ultra limits work, and when Claude Code or Copilot fits better."
+category: ai-content-productivity
+type: review
+author: "Frank Shelby"
+date: "2026-08-18"
+lastUpdated: "2026-08-18"
+researchOnly: true
+tool: "Cursor"
+toolSlug: "cursor"
+socialLinks:
+  website: "https://cursor.com"
+  twitter: "https://x.com/cursor_ai"
+  github: "https://github.com/cursor"
+rating: 0
+bestFor: "Developers who live in an IDE and want agentic editing, repo-wide context, and frontier-model access inside the editor."
+notFor: "Terminal-first workflows and delegated long-running tasks — that is Claude Code's shape — or teams only wanting autocomplete, where Copilot is cheaper."
+pricing:
+  - plan: "Hobby"
+    price: "$0"
+    period: "/month"
+    features: ["Limited Agent requests", "Access to Composer", "No credit card required"]
+    affiliateUrl: "https://cursor.com"
+  - plan: "Pro"
+    price: "$20"
+    period: "/month"
+    features: ["Extended Agent limits", "Frontier model access", "MCPs, skills, hooks", "Cloud agents"]
+    highlighted: true
+    affiliateUrl: "https://cursor.com"
+  - plan: "Teams"
+    price: "$40"
+    period: "/user/month"
+    features: ["Central billing & admin", "Agentic code reviews", "Team-wide privacy mode", "SAML/OIDC SSO"]
+    affiliateUrl: "https://cursor.com"
+pros:
+  - "Full IDE (VS Code lineage): AI edits appear as diffs in the editor you already know."
+  - "Agent mode handles multi-file changes with repo context, plus cloud agents for background work."
+  - "Frontier-model access (multiple vendors) behind one $20 subscription."
+  - "MCP, skills, and hooks support makes it extensible into real team workflows."
+cons:
+  - "Included Agent limits are not published as a hard number; heavy use hits them and escalates to usage billing or Pro+/Ultra tiers."
+  - "The 3x/20x tier ladder makes cost prediction hard for agent-heavy developers."
+  - "IDE lock-in: value assumes you work inside Cursor all day."
+verdict: "Based on verified specs and pricing: Cursor Pro at $20/month is the default AI-native IDE for developers who want agentic editing where they work. Terminal-first developers who delegate whole tasks are better matched by Claude Code; autocomplete-only users by Copilot."
+affiliateUrl: "https://cursor.com"
+affiliateLabel: "Try Cursor Free"
+---
+
+## Direct Answer
+
+**Cursor is the leading AI-native code editor: $20/month for the Pro plan, with a free Hobby tier to start.** Its strength is doing agentic, multi-file work inside a familiar VS Code-style IDE with frontier-model access. Its cost model is the caveat — included Agent limits are unpublished, and heavy agent users climb to Pro+ (3x limits) or Ultra (20x limits) or pay usage-based overflow. If your workflow is delegating whole tasks from a terminal, [Claude Code](/guides/how-to-use-claude-code) is the closer fit at the same $20 entry price.
+
+*This is a researched profile: facts verified against official sources (pricing checked August 18, 2026). Our hands-on coding-agent protocol has not run on Cursor yet — no ShelbyAI score until it does.*
+
+## What Is Cursor?
+
+Cursor (by Anysphere) is a code editor forked from the VS Code lineage and rebuilt around AI: inline edits, a codebase-aware chat, Composer for larger structured changes, and an Agent that plans and executes multi-file modifications. It supports MCP servers, skills, hooks, and cloud agents that run work in the background.
+
+Its competitive set in 2026 is: **Claude Code** (Anthropic's terminal-first coding agent), **OpenAI Codex** (delegated cloud coding agent), and **GitHub Copilot** (autocomplete-plus-chat inside your existing editor). These form factors overlap but reward different working styles — see [Cursor vs Claude Code vs Codex](/comparisons/cursor-vs-claude-code-vs-codex).
+
+## Pricing and the Limits Question
+
+Verified plans ([details](/pricing/cursor)): free Hobby with limited Agent requests; Pro at $20/month with "extended" Agent limits plus usage-based billing beyond them; Pro+ and Ultra at 3x and 20x Pro's included Agent usage; Teams at $40/user/month with SSO and team privacy mode; custom Enterprise with pooled usage.
+
+The honest read: **$20/month covers typical daily use; heavy agentic refactoring does not have a predictable flat price.** Cursor does not publish a fixed request quota, which the community regularly flags. If your work is sustained agent sessions across a large repo, budget for Pro+/Ultra or usage overflow — and compare against Claude plans, whose limits are also usage-shaped but bundle Claude Code with chat.
+
+## Best For / Not Ideal For
+
+**Best for:**
+
+- Developers who spend their day in an editor and want AI edits as reviewable diffs.
+- Multi-file refactors and feature work with repo-wide context.
+- Teams wanting admin controls, agentic code review, and SSO ($40/user Teams plan).
+
+**Not ideal for:**
+
+- Terminal-and-CI-centric workflows or "run this task and report back" delegation — Claude Code's home ground.
+- Developers happy with autocomplete and chat only — Copilot costs less.
+- Occasional coders — the free Hobby tier or a chat assistant may be all you need.
+
+## Limitations Worth Knowing
+
+- **Unpublished Agent quotas** make budgeting imprecise; the tier ladder (Pro → Pro+ → Ultra) exists because people hit them.
+- **Editor switch required** if you are not on VS Code already (keybindings/extensions mostly carry over from VS Code).
+- **Team privacy mode matters:** on individual plans, review the current data-handling settings for your codebase's sensitivity.
+
+## Alternatives
+
+- **Claude Code** — terminal-first agent included in Claude paid plans (from $20/month); our guide: [How to use Claude Code](/guides/how-to-use-claude-code).
+- **OpenAI Codex** — delegated cloud coding agent tied to ChatGPT plans; our guide: [How to use Codex](/guides/how-to-use-openai-codex).
+- **GitHub Copilot** — cheapest path to AI-assisted coding inside your current editor (not yet profiled by us).
+
+## Final Recommendation
+
+Choose **Cursor Pro ($20/month)** if the IDE is where you live and you want agentic edits with diffs and repo context. Choose **Claude Code** if you delegate whole tasks from a terminal or CI. Running both is common in professional setups — one for interactive editing, one for delegated work. The scenario-by-scenario table is in [Cursor vs Claude Code vs Codex](/comparisons/cursor-vs-claude-code-vs-codex).
+
+*Pricing verified against [cursor.com/pricing](https://cursor.com/pricing) on August 18, 2026. Hands-on test: pending — this page gains a score when our coding-agent protocol (identical repo tasks across tools, measured) runs.*

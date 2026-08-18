@@ -49,6 +49,11 @@ function parseArticle(dir: string, filename: string) {
   if (dir === 'reviews') {
     data.tool = data.tool ?? '';
     data.rating = typeof data.rating === 'number' ? data.rating : 0;
+    data.researchOnly = data.researchOnly === true;
+    // A research-only profile must never carry a star rating — a nonzero
+    // rating on an untested tool would flow into Review schema, tool
+    // summaries, and cross-sells as if we had tested it.
+    if (data.researchOnly) data.rating = 0;
     data.bestFor = data.bestFor ?? '';
     data.verdict = data.verdict ?? '';
     data.affiliateUrl = data.affiliateUrl ?? '#';

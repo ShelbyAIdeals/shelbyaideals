@@ -22,6 +22,19 @@ export interface Deal {
   reviewSlug?: string;
   category: string;
   featured?: boolean;
+  /**
+   * Date this offer was checked against the vendor's own site (YYYY-MM-DD).
+   * A deals page whose only date is "page updated in March" tells a reader —
+   * and an AI assistant — nothing about whether an individual offer is live.
+   * Deals without this date render with an explicit "not re-verified" note.
+   */
+  dateVerified?: string;
+  /** The vendor page the offer was verified against. */
+  sourceUrl?: string;
+  /** Trial length where the deal is a trial, e.g. "7 days". */
+  trialLength?: string;
+  /** Eligibility constraints, e.g. "New customers only". */
+  eligibility?: string;
 }
 
 export const deals: Deal[] = [
@@ -33,7 +46,7 @@ export const deals: Deal[] = [
     tagline: 'Turn blog posts into branded videos in minutes — no editing skills needed.',
     dealType: 'free-trial',
     dealLabel: 'Free Trial',
-    regularPrice: '$19/mo',
+    regularPrice: '$29/mo ($25 annual)',
     dealPrice: 'Try Free',
     features: [
       'Blog-to-video in one click',
@@ -45,6 +58,8 @@ export const deals: Deal[] = [
     reviewSlug: 'pictory-review',
     category: 'AI Video & Design',
     featured: false,
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://pictory.ai/pricing',
   },
   {
     slug: 'synthesia',
@@ -52,19 +67,22 @@ export const deals: Deal[] = [
     toolSlug: 'synthesia',
     tagline: 'Create AI avatar videos without cameras, actors, or studios.',
     dealType: 'free-tier',
-    dealLabel: 'Free Plan Available',
-    regularPrice: '$29/mo',
+    dealLabel: 'Free Plan (10 min/mo)',
+    regularPrice: '$29/mo ($18 annual)',
     dealPrice: '$0 to start',
     features: [
-      '90+ AI avatars',
+      '10 free video minutes every month',
+      '125+ AI avatars on paid plans',
       'Text-to-video in 120+ languages',
-      'Custom brand kits',
       'No filming required',
     ],
     affiliateUrl: 'https://www.synthesia.io/?via=shelbyai',
     reviewSlug: 'synthesia-review',
     category: 'AI Video & Design',
     featured: true,
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://www.synthesia.io/pricing',
+    eligibility: 'No credit card required for the free plan',
   },
   {
     slug: 'elevenlabs',
@@ -72,18 +90,21 @@ export const deals: Deal[] = [
     toolSlug: 'elevenlabs',
     tagline: 'Ultra-realistic AI voice generation and text-to-speech.',
     dealType: 'free-tier',
-    dealLabel: 'Free Tier Available',
-    regularPrice: '$5/mo',
+    dealLabel: 'Free Tier (10k credits/mo)',
+    regularPrice: '$6/mo',
     dealPrice: '$0 to start',
     features: [
       'Human-quality AI voices',
-      'Voice cloning technology',
-      '29+ languages supported',
-      'API access for developers',
+      'Voice cloning from Starter ($6/mo)',
+      'Full toolset: TTS, STT, music, SFX',
+      'Commercial license on paid plans',
     ],
     affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
     category: 'AI Audio & Voice',
     featured: false,
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://elevenlabs.io/pricing',
+    eligibility: 'Free tier is non-commercial use only',
   },
   {
     slug: 'mangools',
@@ -109,10 +130,10 @@ export const deals: Deal[] = [
     tool: 'Frase',
     toolSlug: 'frase',
     tagline: 'AI content briefs and SERP-optimized writing that actually ranks.',
-    dealType: 'free-tier',
-    dealLabel: 'Free Plan Available',
-    regularPrice: '$15/mo',
-    dealPrice: '$0 to start',
+    dealType: 'free-trial',
+    dealLabel: '7-Day Free Trial',
+    regularPrice: '$49/mo ($39 annual)',
+    dealPrice: 'Try Free for 7 Days',
     features: [
       'AI-driven content briefs',
       'SERP analysis & SEO scoring',
@@ -123,6 +144,10 @@ export const deals: Deal[] = [
     reviewSlug: 'frase-review',
     category: 'AI SEO Tools',
     featured: true,
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://www.frase.io/pricing/',
+    trialLength: '7 days',
+    eligibility: 'No credit card required',
   },
 
   // ── More Deals (Pending/Other Affiliates) ──────────────
@@ -133,7 +158,7 @@ export const deals: Deal[] = [
     tagline: 'Enterprise-grade AI writing for marketing teams at scale.',
     dealType: 'free-trial',
     dealLabel: '7-Day Free Trial',
-    regularPrice: '$69/mo',
+    regularPrice: '$69/mo ($59 annual)',
     dealPrice: 'Try Free for 7 Days',
     features: [
       'Brand voice & knowledge base',
@@ -144,25 +169,31 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.jasper.ai',
     reviewSlug: 'jasper-ai-review',
     category: 'AI Writing Tools',
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://www.jasper.ai/pricing',
+    trialLength: '7 days',
   },
   {
     slug: 'writesonic',
     tool: 'Writesonic',
     toolSlug: 'writesonic',
     tagline: 'Budget AI writer for SEO articles, ads, and social content.',
-    dealType: 'free-tier',
-    dealLabel: 'Free Plan Available',
-    regularPrice: '$16/mo',
-    dealPrice: '$0 to start',
+    dealType: 'free-trial',
+    dealLabel: 'Free Trial (no card)',
+    regularPrice: '$79/mo',
+    dealPrice: 'Try Free',
     features: [
-      'SEO-optimized articles',
-      'AI chat with web search',
+      'SEO article pipeline (15/mo on Starter)',
+      'Site audits included',
       'Brand voice customization',
       '25+ languages',
     ],
     affiliateUrl: 'https://writesonic.com',
     reviewSlug: 'writesonic-review',
     category: 'AI Writing Tools',
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://writesonic.com/pricing',
+    eligibility: 'No credit card needed',
   },
   {
     slug: 'surfer-seo',
@@ -171,12 +202,12 @@ export const deals: Deal[] = [
     tagline: 'Data-driven content optimization to rank higher on Google.',
     dealType: 'free-trial',
     dealLabel: '7-Day Money-Back',
-    regularPrice: '$89/mo',
+    regularPrice: '€49/mo (Discovery)',
     dealPrice: 'Risk-Free Trial',
     features: [
       'Content Editor with NLP scoring',
       'SERP Analyzer & keyword research',
-      'AI writing assistant (Surfer AI)',
+      'AI-visibility tracking (Standard+)',
       'Audit existing content',
     ],
     affiliateUrl: 'https://surferseo.com',
@@ -227,18 +258,20 @@ export const deals: Deal[] = [
     toolSlug: 'descript',
     tagline: 'Edit video and audio by editing text — AI-powered production studio.',
     dealType: 'free-tier',
-    dealLabel: 'Free Plan Available',
-    regularPrice: '$24/mo',
+    dealLabel: 'Free Plan (60 min/mo)',
+    regularPrice: '$24/mo ($16 annual)',
     dealPrice: '$0 to start',
     features: [
       'Edit video by editing text',
       'AI transcription & captions',
       'Screen recording & webcam',
-      'AI voice cloning (Overdub)',
+      '100 one-time AI credits free',
     ],
     affiliateUrl: 'https://www.descript.com',
     reviewSlug: 'descript-review',
     category: 'AI Video & Design',
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://www.descript.com/pricing',
   },
   {
     slug: 'otter-ai',
@@ -247,7 +280,7 @@ export const deals: Deal[] = [
     tagline: 'AI meeting assistant — real-time transcription, notes, and summaries.',
     dealType: 'free-tier',
     dealLabel: 'Free Plan (300 min/mo)',
-    regularPrice: '$8.33/mo',
+    regularPrice: '$8.33/mo (annual)',
     dealPrice: '$0 to start',
     features: [
       'Real-time meeting transcription',
@@ -258,6 +291,8 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://otter.ai',
     reviewSlug: 'otter-ai-review',
     category: 'AI Productivity',
+    dateVerified: '2026-08-18',
+    sourceUrl: 'https://otter.ai/pricing',
   },
   {
     slug: 'canva',

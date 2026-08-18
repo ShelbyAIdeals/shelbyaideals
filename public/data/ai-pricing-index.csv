@@ -1,0 +1,41 @@
+tool,slug,category,currency,entry_paid_price_per_month,popular_plan_price_per_month,has_free_plan,has_free_trial,has_custom_tier,plan_count,pricing_verified,pricing_source_url,last_updated,needs_verification
+Chatbase,chatbase,AI Chat Assistants,USD,19,99,true,false,false,4,,,2026-03-18,false
+ChatGPT,chatgpt,AI Chat Assistants,USD,20,20,true,false,true,5,,,2026-07-07,false
+Claude AI,claude-ai,AI Chat Assistants,USD,20,20,true,false,true,4,,,2026-03-18,false
+Copy.ai,copy-ai,AI Writing & SEO,USD,29,29,false,false,true,4,2026-08-18,https://www.copy.ai/prices,2026-08-18,false
+Creatify,creatify,AI Video,USD,39,99,true,false,true,4,2026-08-18,https://creatify.ai/pricing,2026-08-18,false
+Cursor,cursor,AI Coding,USD,20,20,true,true,true,5,2026-08-18,https://cursor.com/pricing,2026-08-18,false
+Decktopus AI,decktopus-ai,AI Image & Design,USD,9.99,9.99,false,true,false,2,,,2026-03-18,false
+Descript,descript,AI Video,USD,16,24,true,false,false,4,2026-08-18,https://www.descript.com/pricing,2026-08-18,false
+Easy Peasy AI,easy-peasy-ai,AI Writing & SEO,USD,5.99,15.99,true,false,false,3,,,2026-03-18,false
+ElevenLabs,elevenlabs,AI Voice & Audio,USD,6,22,true,false,false,6,2026-08-18,https://elevenlabs.io/pricing,2026-08-18,false
+Fathom,fathom,AI Meetings,USD,19,,true,false,false,4,2026-08-18,https://fathom.ai/pricing,2026-08-18,false
+Fireflies.ai,fireflies,AI Meetings,USD,18,18,true,false,false,4,2026-08-18,https://fireflies.ai/pricing,2026-08-18,false
+Fliki,fliki,AI Video,USD,28,28,true,false,true,4,,,2026-03-18,false
+Frase,frase,AI Writing & SEO,USD,49,129,false,true,true,4,2026-08-18,https://www.frase.io/pricing/,2026-08-18,false
+Gamma,gamma,AI Image & Design,USD,12,12,true,false,false,3,,https://gamma.app/pricing,2026-08-18,true
+Google Gemini,google-gemini,AI Chat Assistants,USD,19.99,19.99,true,true,false,2,,,2026-03-23,false
+Grammarly,grammarly,AI Writing & SEO,USD,12,12,true,false,false,3,,,2026-03-18,false
+Grok,grok,AI Chat Assistants,USD,16,16,true,false,false,2,,,2026-03-18,false
+HeyGen,heygen,AI Video,USD,29,29,true,false,true,5,2026-08-18,https://www.heygen.com/pricing,2026-08-18,false
+Jasper AI,jasper-ai,AI Writing & SEO,USD,69,69,false,true,true,2,2026-08-18,https://www.jasper.ai/pricing,2026-08-18,false
+Julius AI,julius-ai,Productivity & Automation,USD,20,20,true,false,true,3,,,2026-03-18,false
+Leonardo AI,leonardo-ai,AI Image & Design,USD,12,30,true,false,false,4,,,2026-03-18,false
+Make.com,make-com,Productivity & Automation,USD,9,16,true,false,false,4,2026-08-18,https://www.make.com/en/pricing,2026-08-18,false
+Mangools,mangools,AI Writing & SEO,USD,29.9,44.9,false,true,false,4,,,2026-03-18,false
+Midjourney,midjourney,AI Image & Design,USD,10,30,false,false,false,4,,,2026-03-18,false
+Mixo,mixo,AI Image & Design,USD,9,19,false,true,false,3,,,2026-03-18,false
+Mubert,mubert,AI Voice & Audio,USD,14,39,true,false,false,4,,,2026-03-18,false
+n8n,n8n,Productivity & Automation,EUR,20,20,true,true,true,5,2026-08-18,https://n8n.io/pricing/,2026-08-18,false
+Otter.ai,otter-ai,AI Meetings,USD,16.99,16.99,true,false,true,4,2026-08-18,https://otter.ai/pricing,2026-08-18,false
+Otterly.AI,otterly,GEO & AI Visibility,USD,29,29,false,true,true,4,2026-08-18,https://otterly.ai/pricing/,2026-08-18,false
+Perplexity,perplexity,AI Chat Assistants,USD,20,20,true,false,true,3,,,2026-03-18,false
+Pictory,pictory,AI Video,USD,29,59,false,true,true,4,2026-08-18,https://pictory.ai/pricing,2026-08-18,false
+Profound,profound,GEO & AI Visibility,USD,99,399,false,true,true,3,2026-08-18,https://www.tryprofound.com/pricing,2026-08-18,false
+Runway ML,runway-ml,AI Video,USD,12,28,true,true,true,5,,,2026-03-23,false
+Rytr,rytr,AI Writing & SEO,USD,9,29,true,false,false,3,,,2026-03-18,false
+SEMrush,semrush,AI Writing & SEO,USD,139.95,249.95,false,true,false,3,,,2026-03-18,false
+Simplified,simplified,AI Image & Design,USD,9,9,true,false,true,4,,,2026-03-18,false
+Surfer SEO,surfer-seo,AI Writing & SEO,EUR,49,182,false,false,true,5,2026-08-18,https://surferseo.com/pricing/,2026-08-18,false
+Synthesia,synthesia,AI Video,USD,29,29,true,false,true,4,2026-08-18,https://www.synthesia.io/pricing,2026-08-18,false
+Writesonic,writesonic,AI Writing & SEO,USD,79,399,false,true,true,4,2026-08-18,https://writesonic.com/pricing,2026-08-18,false

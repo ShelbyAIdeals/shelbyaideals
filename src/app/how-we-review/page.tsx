@@ -362,6 +362,88 @@ export default function HowWeReviewPage() {
                 </Link>
               </div>
             </section>
+
+            {/* Category-specific protocols — a defensible test is a repeatable
+                one, and repeatable means the same inputs per category. */}
+            <section>
+              <h2 className="text-xl font-bold text-void-100 mb-4">
+                Category-Specific Test Protocols
+              </h2>
+              <p className="mb-6">
+                &ldquo;We tested it&rdquo; means nothing unless the test is the same for every tool in a
+                category. These are the fixed protocols we run (or will run before scoring a tool in
+                that category):
+              </p>
+              <div className="space-y-5">
+                <div>
+                  <h3 className="text-base font-semibold text-void-100 mb-1.5">AI Voice</h3>
+                  <p className="text-sm text-void-400">
+                    Identical scripts through each tool: a 60-second ad read, a 5-minute narration, and a
+                    technical passage with brand names. We compare pronunciation, pacing, emotional delivery,
+                    long-form consistency, the correction burden (retakes needed), and cost per usable minute.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-void-100 mb-1.5">AI Video &amp; Avatars</h3>
+                  <p className="text-sm text-void-400">
+                    The same script and prompt set per tool. We assess realism and lip-sync, consistency across
+                    renders, visible artifacts, rendering time, how much manual editing the output needs, and the
+                    usable-output rate — how many generations we would actually publish.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-void-100 mb-1.5">Automation Platforms</h3>
+                  <p className="text-sm text-void-400">
+                    We build the identical multi-step workflow (trigger → transform → AI step → notify) on each
+                    platform and measure build time, number of steps/operations consumed, debugging experience,
+                    failure behavior, execution cost at 1,000 runs, and maintainability a month later.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-void-100 mb-1.5">AI Coding Tools</h3>
+                  <p className="text-sm text-void-400">
+                    Identical tasks on the same repository: a scoped bug fix, a multi-file refactor, and a
+                    test-covered feature. We measure completion, files modified, errors introduced, human
+                    interventions required, wall-clock time, and plan usage consumed.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-void-100 mb-1.5">SEO &amp; GEO Tools</h3>
+                  <p className="text-sm text-void-400">
+                    The same website, the same article, the same query and prompt set, and the same competitor
+                    list across tools. For GEO monitoring we compare which brand mentions and citations each
+                    tool detects for an identical prompt set over the same period. Ranking outcomes have long
+                    feedback loops, and we say so rather than claim day-one causality.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Researched vs tested — the honesty line the site runs on */}
+            <section>
+              <h2 className="text-xl font-bold text-void-100 mb-4">
+                Researched Profiles vs Hands-On Reviews
+              </h2>
+              <p className="mb-3">
+                Not every tool page on ShelbyAI is a hands-on review, and we label the difference
+                explicitly. A <strong className="text-void-100">hands-on review</strong> carries a
+                score, a tested date, and findings from the protocols above. A{' '}
+                <strong className="text-void-100">researched profile</strong> carries verified facts —
+                pricing, plans, features from official sources with a fact-checked date — but no score
+                and no testing claims, and a visible notice that our test is pending.
+              </p>
+              <p className="text-sm text-void-400">
+                Two dates matter and they are not the same thing: <em>last fact-checked</em> (we
+                re-verified prices and specs against the vendor) and <em>last hands-on tested</em> (we
+                actually ran the tool through its protocol). Pricing pages additionally show a{' '}
+                <em>pricing verified</em> date linked to the vendor source — see the{' '}
+                <Link href="/ai-pricing-index/" className="text-signal-400 hover:text-signal-300 no-underline">
+                  AI Pricing Index
+                </Link>{' '}
+                for every tool&apos;s current verification status. We never publish invented scores,
+                fabricated benchmarks, or placeholder test results.
+              </p>
+            </section>
           </div>
         </div>
       </div>

@@ -36,7 +36,15 @@ export interface SocialLinks {
 export interface ReviewMeta extends ArticleMeta {
   type: 'review';
   tool: string;
-  rating: number; // 0-5 scale
+  rating: number; // 0-5 scale; 0 when researchOnly (no fabricated scores)
+  /**
+   * True for researched tool profiles we have NOT hands-on tested yet.
+   * These pages render without a star rating or "tested" language, use
+   * Article schema instead of Review schema, and carry a visible pending-test
+   * notice. When the tool is actually tested, flip this off, set a real
+   * rating, and add lastTested.
+   */
+  researchOnly?: boolean;
   toolSlug?: string;
   bestFor: string;
   notFor?: string;             // Who should NOT use this tool

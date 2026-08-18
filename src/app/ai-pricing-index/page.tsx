@@ -7,24 +7,29 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 
 const CANONICAL = 'https://www.shelby-ai.com/ai-pricing-index/';
 
+// Tool count is computed from the dataset so the title can never drift from
+// the table the page actually renders (it previously hardcoded "31").
+const TOOL_COUNT = getPricingIndex().toolCount;
+
 export const metadata: Metadata = {
-  title: 'AI Tool Pricing Index 2026: What 31 Popular AI Tools Actually Cost',
+  title: `AI Tool Pricing Index 2026: What ${TOOL_COUNT} Popular AI Tools Actually Cost`,
   description:
-    'Original dataset: we catalogued every public pricing plan of 31 popular AI tools. Median entry price, free-plan share, cost by category — free to cite with attribution.',
+    `Original dataset: every public pricing plan of ${TOOL_COUNT} popular AI tools, with per-tool verification dates. Median entry price, free-plan share, cost by category — free to cite.`,
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: 'AI Tool Pricing Index 2026 — Original Data on 31 AI Tools',
+    title: `AI Tool Pricing Index 2026 — Original Data on ${TOOL_COUNT} AI Tools`,
     description:
-      'Median entry price, free-plan availability, and cost distribution across 31 popular AI tools, from their public pricing pages.',
+      `Median entry price, free-plan availability, and cost distribution across ${TOOL_COUNT} popular AI tools, from their public pricing pages.`,
     type: 'article',
     url: CANONICAL,
     images: [{ url: 'https://www.shelby-ai.com/images/og-thumbnail.png', width: 1200, height: 630 }],
   },
 };
 
-function money(n: number | null): string {
+function money(n: number | null, currency: 'USD' | 'EUR' = 'USD'): string {
   if (n === null) return '—';
-  return Number.isInteger(n) ? `$${n}` : `$${n.toFixed(2)}`;
+  const symbol = currency === 'EUR' ? '€' : '$';
+  return Number.isInteger(n) ? `${symbol}${n}` : `${symbol}${n.toFixed(2)}`;
 }
 
 export default function AiPricingIndexPage() {
@@ -177,8 +182,10 @@ export default function AiPricingIndexPage() {
                     <th className="py-2 pr-4">Tool</th>
                     <th className="py-2 pr-4">Category</th>
                     <th className="py-2 pr-4">Free plan</th>
+                    <th className="py-2 pr-4">Free trial</th>
                     <th className="py-2 pr-4">Entry paid</th>
                     <th className="py-2 pr-4">Popular plan</th>
+                    <th className="py-2 pr-4">Verified</th>
                     <th className="py-2">Details</th>
                   </tr>
                 </thead>
@@ -188,10 +195,26 @@ export default function AiPricingIndexPage() {
                       <td className="py-2.5 pr-4 font-semibold">{r.tool}</td>
                       <td className="py-2.5 pr-4 text-void-400">{r.category}</td>
                       <td className="py-2.5 pr-4">{r.hasFreePlan ? 'Yes' : 'No'}</td>
+                      <td className="py-2.5 pr-4">{r.hasFreeTrial ? 'Yes' : 'No'}</td>
                       <td className="py-2.5 pr-4 text-signal-400 font-semibold">
-                        {r.entryPaidPrice !== null ? `${money(r.entryPaidPrice)}/mo` : '—'}
+                        {r.entryPaidPrice !== null ? `${money(r.entryPaidPrice, r.currency)}/mo` : '—'}
                       </td>
-                      <td className="py-2.5 pr-4">{r.popularPrice !== null ? `${money(r.popularPrice)}/mo` : '—'}</td>
+                      <td className="py-2.5 pr-4">{r.popularPrice !== null ? `${money(r.popularPrice, r.currency)}/mo` : '—'}</td>
+                      <td className="py-2.5 pr-4 text-void-400 whitespace-nowrap">
+                        {r.pricingVerified ? (
+                          r.pricingSourceUrl ? (
+                            <a href={r.pricingSourceUrl} target="_blank" rel="nofollow noopener" className="text-void-300 hover:text-signal-400 no-underline" title="Verified against the vendor's own pricing page">
+                              {r.pricingVerified}
+                            </a>
+                          ) : (
+                            r.pricingVerified
+                          )
+                        ) : r.needsVerification ? (
+                          <span className="text-ember-300" title="Could not be re-verified against the vendor page — may be stale">needs check</span>
+                        ) : (
+                          <span title="Last updated date of our pricing guide; not re-verified against the vendor page since">{r.lastUpdated}*</span>
+                        )}
+                      </td>
                       <td className="py-2.5">
                         <Link href={`/pricing/${r.slug}`} className="text-signal-400 hover:text-signal-300 no-underline inline-flex items-center gap-1">
                           Pricing guide <ArrowRight size={12} />
@@ -201,6 +224,19 @@ export default function AiPricingIndexPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <p className="text-xs text-void-500 mt-3">
+              Dates link to the vendor pricing page the plans were verified against. Dates marked * are the last update of
+              our guide without a fresh vendor-page verification — treat those prices as indicative until re-checked.
+              Euro prices (€) are the vendor&rsquo;s own list currency and are excluded from the USD medians above.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a href="/data/ai-pricing-index.json" className="btn-outline text-xs no-underline" download>
+                Download JSON
+              </a>
+              <a href="/data/ai-pricing-index.csv" className="btn-outline text-xs no-underline" download>
+                Download CSV
+              </a>
             </div>
           </div>
         </ScrollReveal>

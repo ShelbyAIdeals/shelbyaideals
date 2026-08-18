@@ -12,18 +12,30 @@ export type IndexCategory =
   | 'AI Writing & SEO'
   | 'AI Chat Assistants'
   | 'AI Image & Design'
+  | 'AI Meetings'
+  | 'AI Coding'
+  | 'GEO & AI Visibility'
   | 'Productivity & Automation';
 
 /** Explicit slug→category map — hand-classified, no fuzzy matching. */
 const CATEGORY_BY_SLUG: Record<string, IndexCategory> = {
   pictory: 'AI Video',
   synthesia: 'AI Video',
+  heygen: 'AI Video',
+  creatify: 'AI Video',
   fliki: 'AI Video',
   'runway-ml': 'AI Video',
   descript: 'AI Video',
   elevenlabs: 'AI Voice & Audio',
   mubert: 'AI Voice & Audio',
-  'otter-ai': 'AI Voice & Audio',
+  'otter-ai': 'AI Meetings',
+  fathom: 'AI Meetings',
+  fireflies: 'AI Meetings',
+  cursor: 'AI Coding',
+  otterly: 'GEO & AI Visibility',
+  profound: 'GEO & AI Visibility',
+  n8n: 'Productivity & Automation',
+  gamma: 'AI Image & Design',
   'jasper-ai': 'AI Writing & SEO',
   'copy-ai': 'AI Writing & SEO',
   writesonic: 'AI Writing & SEO',
@@ -60,11 +72,19 @@ export interface ToolPricingRow {
   category: IndexCategory;
   hasFreePlan: boolean;
   hasFreeTrial: boolean;
-  entryPaidPrice: number | null; // cheapest paid plan, $/mo
-  popularPrice: number | null; // "Most Popular" (highlighted) plan, $/mo
+  entryPaidPrice: number | null; // cheapest paid plan, per month
+  popularPrice: number | null; // "Most Popular" (highlighted) plan, per month
   hasCustomTier: boolean;
   planCount: number;
   lastUpdated: string;
+  /** ISO 4217-ish display currency of the vendor's list prices. */
+  currency: 'USD' | 'EUR';
+  /** Date the plans were checked against the vendor pricing page, if ever. */
+  pricingVerified: string | null;
+  /** Vendor pricing page used for verification. */
+  pricingSourceUrl: string | null;
+  /** True when the data could not be re-verified and may be stale. */
+  needsVerification: boolean;
 }
 
 export interface CategoryStats {
@@ -93,8 +113,11 @@ export interface PricingIndexStats {
 }
 
 function parsePrice(price: string): number | null {
-  const m = price.match(/\$\s?(\d+(?:\.\d+)?)/);
-  return m ? parseFloat(m[1]) : null;
+  // Vendors now list in USD or EUR (Surfer, n8n switched to €). Parse both;
+  // the row's `currency` field tells the UI which symbol to render. Aggregate
+  // stats stay USD-only so medians never mix currencies.
+  const m = price.match(/[$€]\s?(\d+(?:,\d{3})*(?:\.\d+)?)/);
+  return m ? parseFloat(m[1].replace(/,/g, '')) : null;
 }
 
 function median(values: number[]): number {
@@ -124,16 +147,24 @@ function toRow(page: PricingPage): ToolPricingRow {
     hasCustomTier: page.plans.some((p) => /custom/i.test(p.price)),
     planCount: page.plans.length,
     lastUpdated: page.lastUpdated,
+    currency: page.currency ?? 'USD',
+    pricingVerified: page.pricingVerified ?? null,
+    pricingSourceUrl: page.pricingSourceUrl ?? null,
+    needsVerification: page.pricingNeedsVerification ?? false,
   };
 }
 
 export function getPricingIndex(): PricingIndexStats {
   const rows = pricingData.map(toRow).sort((a, b) => a.tool.localeCompare(b.tool));
-  const entries = rows
+  // Aggregate stats are computed from USD-listed tools only, so a euro-priced
+  // vendor (Surfer, n8n) can never skew a dollar median. Their rows still
+  // appear in the table with their own currency symbol.
+  const usdRows = rows.filter((r) => r.currency === 'USD');
+  const entries = usdRows
     .filter((r) => r.entryPaidPrice !== null)
     .map((r) => ({ tool: r.tool, price: r.entryPaidPrice as number }));
   const entryPrices = entries.map((e) => e.price);
-  const popularPrices = rows
+  const popularPrices = usdRows
     .map((r) => r.popularPrice)
     .filter((n): n is number => n !== null);
 
@@ -148,7 +179,7 @@ export function getPricingIndex(): PricingIndexStats {
   const categories: CategoryStats[] = categoryNames.map((category) => {
     const catRows = rows.filter((r) => r.category === category);
     const catEntries = catRows
-      .filter((r) => r.entryPaidPrice !== null)
+      .filter((r) => r.entryPaidPrice !== null && r.currency === 'USD')
       .map((r) => ({ tool: r.tool, price: r.entryPaidPrice as number }))
       .sort((a, b) => a.price - b.price);
     return {

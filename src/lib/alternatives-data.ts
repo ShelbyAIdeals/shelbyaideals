@@ -549,7 +549,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'Is Frase better than Surfer SEO?',
         answer:
-          'Frase is better for content research and brief creation at a lower price point (from $15/mo vs $89/mo). Surfer SEO is stronger for on-page optimization scoring and has a larger NLP database. Choose Frase for research-heavy workflows, Surfer for optimization-heavy ones.',
+          'Frase is better for content research and brief creation; Surfer SEO is stronger for on-page optimization scoring and has a larger NLP database. Since Frase repriced in 2026 they cost about the same at entry ($49/mo vs €49/mo, verified August 2026), so choose Frase for research-heavy workflows and Surfer for optimization-heavy ones.',
       },
       {
         question: 'Can I migrate from Surfer SEO to another tool?',
@@ -559,7 +559,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the cheapest Surfer SEO alternative?',
         answer:
-          'Frase at $15/mo is the cheapest full-featured Surfer alternative. NeuronWriter at $23/mo offers the most similar feature set at a lower price. Both include SERP analysis, NLP recommendations, and content optimization scoring.',
+          'NeuronWriter at $23/mo offers the most similar feature set at a lower price and is now the budget pick — Frase repriced to $49/mo ($39 annual) in 2026 and no longer undercuts Surfer meaningfully. Both include SERP analysis, NLP recommendations, and content optimization scoring.',
       },
       {
         question: 'Do I need Surfer SEO if I already use Semrush?',
@@ -594,22 +594,24 @@ export const alternativesData: AlternativesPage[] = [
         name: 'Frase',
         slug: 'frase',
         description:
-          'Frase combines content research, outlining, and optimization in one workflow. It is faster for creating briefs and outlines than Surfer and more affordable for small teams.',
-        pricing: 'From $15/mo',
+          'Frase combines content research, outlining, and optimization in one workflow. It is faster for creating briefs and outlines than Surfer; since its 2026 repricing it costs about the same at entry.',
+        pricing: '$49/mo ($39 annual, verified 2026-08-18)',
         bestFor: 'Content research & briefs',
+        reviewSlug: 'frase-review',
         url: 'https://www.frase.io/?via=shelby-ai',
         pros: [
-          'Fraction of Surfer price at $15/mo',
           'Superior content research and brief creation',
           'All-in-one research, outline, and optimize workflow',
           'AI writing included',
+          '7-day free trial without a credit card',
         ],
         cons: [
           'Smaller NLP database than Surfer',
           'Content editor is less polished',
+          'No longer meaningfully cheaper than Surfer after the 2026 repricing',
         ],
         whySwitch:
-          'Switch to Frase if content research and brief creation matter more than pure optimization scoring. It covers 80% of Surfer capability at a fraction of the price.',
+          'Switch to Frase if content research and brief creation matter more than pure optimization scoring — the brief-to-draft workflow is still the fastest in the category, even though the old price advantage is gone.',
       },
       {
         name: 'MarketMuse',
@@ -1149,12 +1151,17 @@ export const alternativesData: AlternativesPage[] = [
       'ElevenLabs set the bar for realistic AI voice generation, but its credit-based pricing can add up fast for heavy users. Whether you need more affordable voice cloning, multilingual support, or a tool that bundles voice with video creation, these alternatives each bring something compelling to the table.',
     reviewSlug: 'elevenlabs-review',
     whyLookForAlternatives:
-      'ElevenLabs credit-based pricing burns through budget fast for heavy users, especially for long-form content like audiobooks or podcasts. While its voice quality is top-tier, some users need more affordable options, bundled video creation, or enterprise features like custom brand voices and team management that ElevenLabs pricing makes prohibitive at scale.',
+      'ElevenLabs credit-based pricing burns through budget fast for heavy users, especially for long-form content like audiobooks or podcasts — in current Reddit discussions, cost and long-form credit usage are the recurring complaints, not voice quality. While its output remains top-tier, some users need more affordable options, bundled video creation, or enterprise features like custom brand voices and team management that ElevenLabs pricing makes prohibitive at scale.',
     faqs: [
+      {
+        question: 'How much does ElevenLabs actually cost in 2026?',
+        answer:
+          'Verified against elevenlabs.io in August 2026: the free plan includes 10k credits/month (non-commercial), Starter is $6/month with 30k credits and a commercial license, Creator $22/month with 121k credits, and Pro $99/month with 600k credits. Annual billing gives two months free. Long-form audio consumes credits fastest — that, not the sticker price, is what drives users to alternatives.',
+      },
       {
         question: 'What is the best free alternative to ElevenLabs?',
         answer:
-          'Speechify offers a free plan with decent AI voices for text-to-speech reading. Fliki has a free tier that includes both voice and video creation. For developers, Google Cloud Text-to-Speech offers a free tier with WaveNet voices.',
+          'Speechify offers a free plan with decent AI voices for text-to-speech reading. Fliki has a free tier that includes both voice and video creation. For developers, Google Cloud Text-to-Speech offers a free tier with WaveNet voices. Note that ElevenLabs itself has a genuine free tier (10k credits/month) if non-commercial use is enough.',
       },
       {
         question: 'Is Play.ht better than ElevenLabs?',
@@ -1322,20 +1329,20 @@ export const alternativesData: AlternativesPage[] = [
     description:
       'Need a Synthesia alternative? We compared the top AI avatar and video generation platforms. Find the best tool for training videos, presentations, and more.',
     intro:
-      'Synthesia pioneered AI avatar videos for business, but its pricing puts it out of reach for many creators and small teams. Whether you need cheaper AI avatars, more creative control, or a tool that focuses on a specific video type, these alternatives deliver professional results without the Synthesia price tag.',
+      'Synthesia pioneered AI avatar videos for business, and in 2026 its entry pricing is no longer the barrier it was — a real free plan (10 minutes/month) and an $18/month annual Starter exist. People switch today for different reasons: avatar realism, marketing-style video, translation depth, or stock-footage formats. These alternatives each solve one of those jobs better.',
     reviewSlug: 'synthesia-review',
     whyLookForAlternatives:
-      'Synthesia pricing puts it out of reach for many solo creators and small teams, especially when higher-quality avatars require premium plans. The AI avatars, while professional, can still feel uncanny for some audiences. Some users also need features Synthesia lacks, like video translation, interactive training elements, or stock-footage-based videos instead of avatars.',
+      'The common reasons users seek Synthesia alternatives in 2026: yearly minute pools (120 minutes/year on Starter) run out fast for regular publishers, the avatars are tuned for corporate training rather than marketing-style content, and some audiences still find presenter avatars uncanny — while competitors like HeyGen push realism harder. Users who need stock-footage videos, interactive training elements, or deeper localization also outgrow it.',
     faqs: [
       {
         question: 'What is the best free alternative to Synthesia?',
         answer:
-          'HeyGen offers a free plan with access to AI avatars and basic video creation. InVideo also has a free tier for template-based video generation. Elai.io provides a free plan with limited avatar video minutes.',
+          'HeyGen offers a recurring free plan (3 one-minute videos per month). InVideo has a free tier for template-based video generation, and Elai.io provides limited free avatar minutes. Note that Synthesia itself now includes 10 free video minutes every month — verify whether an alternative free tier actually beats that for your volume.',
       },
       {
         question: 'Is HeyGen better than Synthesia?',
         answer:
-          'HeyGen offers similar AI avatar quality at a generally lower price with additional features like video translation and real-time avatar streaming. Synthesia has a larger avatar library and stronger enterprise features. HeyGen is the better value for most creators.',
+          'They now cost nearly the same ($29/month each; $24 vs $18 annual, verified August 2026), so it is a workflow choice: HeyGen leads on avatar realism, photo avatars, and lip-synced translation across 175+ languages; Synthesia leads on structured corporate training and centralized video management. Our full breakdown: shelby-ai.com/comparisons/heygen-vs-synthesia.',
       },
       {
         question: 'Can I migrate from Synthesia to another platform?',
@@ -1345,7 +1352,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the cheapest Synthesia alternative?',
         answer:
-          'InVideo at $15/mo and Pictory at $19/mo are the cheapest alternatives, though they use stock footage instead of avatars. For AI avatar videos specifically, Elai.io at $23/mo and HeyGen at $24/mo are the most affordable.',
+          'For stock-footage video instead of avatars, InVideo (from $15/mo) and Pictory (from $25/mo annual) are the budget picks. For AI avatar video specifically, HeyGen Creator at $24/month annual is the closest like-for-like — cheaper options exist (Elai.io) but with smaller avatar libraries.',
       },
       {
         question: 'Which Synthesia alternative is best for training videos?',
@@ -1358,9 +1365,10 @@ export const alternativesData: AlternativesPage[] = [
         name: 'HeyGen',
         slug: 'heygen',
         description:
-          'HeyGen is the closest Synthesia competitor with 100+ AI avatars, custom avatar creation, and video translation. It offers real-time avatar streaming and generally more affordable pricing for similar features.',
-        pricing: 'Free plan, Creator from $24/mo',
+          'HeyGen is the closest Synthesia competitor, with the category benchmark for avatar realism, unlimited photo avatars from $29/month, and lip-synced video translation across 175+ languages. Pricing verified August 2026.',
+        pricing: 'Free plan, Creator $29/mo ($24 annual)',
         bestFor: 'AI avatars & video translation',
+        reviewSlug: 'heygen-review',
         url: 'https://heygen.com',
         pros: [
           'Free plan available',
@@ -1402,8 +1410,8 @@ export const alternativesData: AlternativesPage[] = [
         name: 'Pictory',
         slug: 'pictory',
         description:
-          'Pictory takes a different approach by turning text and blog posts into videos using stock footage and AI narration. It is more affordable than Synthesia and better suited for content marketing videos.',
-        pricing: 'Starter from $19/mo',
+          'Pictory takes a different approach by turning text and blog posts into videos using stock footage and AI narration. It is better suited for content marketing videos than presenter-style avatar content.',
+        pricing: 'Starter $29/mo ($25 annual)',
         bestFor: 'Text-to-video content marketing',
         reviewSlug: 'pictory-review',
         url: 'https://pictory.ai?ref=fran26',
@@ -2022,7 +2030,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'Is Surfer SEO better than Frase?',
         answer:
-          'Surfer SEO is better for dedicated on-page optimization with deeper NLP signals and real-time content scoring. Frase is better for content research and brief creation at a lower price. Surfer costs $89/mo vs Frase $15/mo, so Frase is the better value for smaller teams.',
+          'Surfer SEO is better for dedicated on-page optimization with deeper NLP signals and real-time content scoring. Frase is better for content research and brief creation. On price they converged in 2026 — Frase $49/mo ($39 annual) vs Surfer €49/mo entry — so pick by workflow, not budget.',
       },
       {
         question: 'Can I migrate from Frase to another tool?',
@@ -2032,7 +2040,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the cheapest Frase alternative?',
         answer:
-          'Writesonic at $20/mo includes SEO features alongside AI writing. NeuronWriter at $23/mo offers the closest feature match to Frase. Both are affordable alternatives, though Frase itself at $15/mo is already one of the cheapest SEO content tools.',
+          'NeuronWriter at $23/mo offers the closest feature match to Frase at the lowest price. Writesonic moved upmarket in 2026 (now from $79/mo as an SEO article pipeline), and Frase itself now starts at $49/mo ($39 annual) — the budget tier of this category belongs to NeuronWriter today.',
       },
       {
         question: 'Which Frase alternative is best for content strategy?',
@@ -2387,7 +2395,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the cheapest Mangools alternative?',
         answer:
-          'Ubersuggest at $12/mo (or a lifetime deal) is cheaper than Mangools. Frase at $15/mo offers content optimization at a lower price. Mangools at $29.90/mo is already one of the most affordable SEO tools, so cheaper alternatives trade features for savings.',
+          'Ubersuggest at $12/mo (or a lifetime deal) is cheaper than Mangools. Mangools at $29.90/mo is already one of the most affordable SEO tools, so cheaper alternatives trade features for savings. (Frase, once the budget content-optimization pick, now starts at $49/mo.)',
       },
       {
         question: 'Which Mangools alternative is best for growing businesses?',
@@ -2490,7 +2498,7 @@ export const alternativesData: AlternativesPage[] = [
         slug: 'frase',
         description:
           'Frase focuses on content research and SEO optimization, complementing Mangools keyword research with SERP analysis and AI-powered content briefs. It is ideal for content-focused SEO workflows.',
-        pricing: 'Solo from $15/mo',
+        pricing: '$49/mo ($39 annual)',
         bestFor: 'Content research & SEO writing',
         reviewSlug: 'frase-review',
         url: 'https://www.frase.io/?via=shelby-ai',
@@ -2498,7 +2506,7 @@ export const alternativesData: AlternativesPage[] = [
           'Content research Mangools lacks',
           'AI-powered content briefs',
           'SERP analysis for optimization',
-          'Affordable at $15/mo',
+          '7-day free trial without a card',
         ],
         cons: [
           'No keyword research tool',

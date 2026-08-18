@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx scripts/generate-reviews-json.ts && tsx scripts/generate-llms.ts && next build",
+    "build": "tsx scripts/generate-reviews-json.ts && tsx scripts/generate-pricing-index-data.ts && tsx scripts/generate-llms.ts && next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "tsx scripts/generate-article.ts",

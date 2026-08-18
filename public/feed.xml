@@ -5,8 +5,89 @@
     <link>https://www.shelby-ai.com</link>
     <description>Honest AI tool reviews for creators, freelancers, and small teams.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 19:25:54 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 14:13:41 GMT</lastBuildDate>
     <atom:link href="https://www.shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cursor Review 2026: The AI Code Editor, Its Limits &amp; Real Costs</title>
+      <link>https://www.shelby-ai.com/reviews/cursor-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/cursor-review</guid>
+      <description>Cursor is the AI-native code editor at $20/month. This researched profile covers verified pricing, how the Pro/Pro+/Ultra limits work, and when Claude Code or Copilot fits better.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>Fathom Review 2026: The Free AI Notetaker That Undercuts Everyone</title>
+      <link>https://www.shelby-ai.com/reviews/fathom-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/fathom-review</guid>
+      <description>Fathom offers unlimited free meeting recordings and AI summaries — a free plan Otter and Fireflies don&apos;t match. This researched profile covers verified pricing, bot-free recording, and who actually needs the paid tiers.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>Fireflies.ai Review 2026: The Integration-First Meeting AI</title>
+      <link>https://www.shelby-ai.com/reviews/fireflies-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/fireflies-review</guid>
+      <description>Fireflies.ai pairs unlimited transcription with the deepest integration catalog in meeting AI. This researched profile covers verified pricing, the storage-cap catch, and when Fathom or Otter fits better.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>HeyGen Review 2026: Avatar Video, Credits &amp; Who It&apos;s Actually For</title>
+      <link>https://www.shelby-ai.com/reviews/heygen-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/heygen-review</guid>
+      <description>HeyGen is the leading AI avatar video generator for marketing and localization. This researched profile covers verified pricing, the credit system, avatar model differences, and when Synthesia is the better pick.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-video-audio</category>
+    </item>
+    <item>
+      <title>n8n Review 2026: The Automation Tool Developers Pick (And Why)</title>
+      <link>https://www.shelby-ai.com/reviews/n8n-review</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/reviews/n8n-review</guid>
+      <description>n8n is the self-hostable, execution-billed automation platform that AI-agent builders keep choosing over Zapier and Make. This researched profile covers verified pricing, the execution model, and who should not use it.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-marketing-seo</category>
+    </item>
+    <item>
+      <title>Cursor vs Claude Code vs Codex 2026: Which AI Coding Agent Fits You</title>
+      <link>https://www.shelby-ai.com/comparisons/cursor-vs-claude-code-vs-codex</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/cursor-vs-claude-code-vs-codex</guid>
+      <description>Cursor vs Claude Code vs OpenAI Codex — IDE-native vs terminal-first vs delegated cloud agent. Verified pricing, form-factor differences, and which to pick for solo work, large codebases, and delegated tasks.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>HeyGen vs Synthesia 2026: Which AI Avatar Video Tool to Pick</title>
+      <link>https://www.shelby-ai.com/comparisons/heygen-vs-synthesia</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/heygen-vs-synthesia</guid>
+      <description>HeyGen vs Synthesia — the two leading AI avatar video generators compared on verified pricing, credit vs minute metering, avatar realism focus, localization, and corporate training workflows.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-video-audio</category>
+    </item>
+    <item>
+      <title>n8n vs Make vs Zapier 2026: The Automation Decision, Settled</title>
+      <link>https://www.shelby-ai.com/comparisons/n8n-vs-make-vs-zapier</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/n8n-vs-make-vs-zapier</guid>
+      <description>n8n vs Make vs Zapier — execution-based vs credit-based vs task-based pricing, self-hosting, AI workflow support, and exactly which platform fits your technical skill and workflow complexity.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-marketing-seo</category>
+    </item>
+    <item>
+      <title>Best GEO Tools 2026: Tracking Your Brand in AI Search Answers</title>
+      <link>https://www.shelby-ai.com/guides/best-geo-tools</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/best-geo-tools</guid>
+      <description>GEO (Generative Engine Optimization) tools track whether ChatGPT, Perplexity, and Google AI Overviews mention your brand. We compare Otterly, Profound, Peec, and the AI-visibility features inside Semrush, Ahrefs, and Surfer — with verified pricing.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-marketing-seo</category>
+    </item>
     <item>
       <title>How to Open and Convert a STEP File Without CAD Software (2026 Guide)</title>
       <link>https://www.shelby-ai.com/guides/open-step-file-without-cad-software</link>
@@ -713,7 +794,7 @@
       <title>Surfer SEO Review 2026: The Content Optimization Tool Freelancers Actually Need</title>
       <link>https://www.shelby-ai.com/reviews/surfer-seo-review</link>
       <guid isPermaLink="true">https://www.shelby-ai.com/reviews/surfer-seo-review</guid>
-      <description>We used Surfer SEO to optimize 20 articles over 90 days. Here is whether the $89/mo price tag is justified for freelancers and small content sites.</description>
+      <description>We used Surfer SEO to optimize 20 articles over 90 days. Here is whether the subscription (now from €49/mo) is justified for freelancers and small content sites.</description>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
       <category>ai-marketing-seo</category>
@@ -728,10 +809,10 @@
       <category>ai-video-audio</category>
     </item>
     <item>
-      <title>Writesonic Review 2026: Best Budget AI Writer for Small Teams?</title>
+      <title>Writesonic Review 2026: Still Worth It After the Big Repricing?</title>
       <link>https://www.shelby-ai.com/reviews/writesonic-review</link>
       <guid isPermaLink="true">https://www.shelby-ai.com/reviews/writesonic-review</guid>
-      <description>At $16/mo, Writesonic is one of the cheapest serious AI writers. We tested it for 30 days on real content to find out if budget pricing means budget quality.</description>
+      <description>We tested Writesonic for 30 days when it was the budget AI writer. In 2026 it repriced to $79/mo as an SEO article platform — here is what our testing still tells you, and who the new pricing actually fits.</description>
       <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
       <category>ai-content-productivity</category>
