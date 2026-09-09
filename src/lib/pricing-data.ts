@@ -1067,7 +1067,7 @@ export const pricingData: PricingPage[] = [
     reviewSlug: 'chatbase-review',
     freeTrialAvailable: false,
     valueAnalysis:
-      'Chatbase is worth it if you need a custom AI chatbot trained on your own data. The Hobby plan at $19/mo gives you 2,000 messages and GPT-4 access, which is enough for a small business website handling 50-70 customer interactions per day. For high-traffic sites, the Standard plan at $99/mo with 10,000 messages is the sweet spot.',
+      'Chatbase is worth it if you need a custom AI chatbot trained on your own data. The Hobby plan at $19/mo gives you 2,000 messages and frontier OpenAI model access, which is enough for a small business website handling 50-70 customer interactions per day. For high-traffic sites, the Standard plan at $99/mo with 10,000 messages is the sweet spot.',
     annualVsMonthly:
       'Chatbase offers monthly billing on all plans with no annual commitment required. The free plan with 20 messages per month lets you test the chatbot quality before upgrading, though it is too limited for any production use.',
     perUnitBreakdown:
@@ -1098,7 +1098,7 @@ export const pricingData: PricingPage[] = [
           '2,000 message credits/month',
           '2 chatbots',
           '11M characters training data',
-          'GPT-4 access',
+          'Frontier OpenAI model access',
           'Remove Chatbase branding',
           'API access',
         ],
@@ -1163,7 +1163,7 @@ export const pricingData: PricingPage[] = [
     perUnitBreakdown:
       'On the Standard plan at $30/mo with 15 fast hours (roughly 900 images), each image costs about $0.03. A custom illustration from a freelancer costs $50-200. Even a single stock photo subscription like Shutterstock starts at $29/mo for just 10 images — Midjourney delivers 90x more images at the same price.',
     competitorComparison:
-      'Midjourney Standard ($30/mo) produces the highest-quality AI images in the industry. DALL-E 3 is included free with ChatGPT Plus ($20/mo) but offers less artistic control. Leonardo AI Artisan ($30/mo) matches the price and offers more customization with model training. Stable Diffusion is free but requires technical setup and your own GPU.',
+      'Midjourney Standard ($30/mo) produces the highest-quality AI images in the industry. GPT Image 2 (which replaced DALL-E in May 2026) is included with ChatGPT Plus ($20/mo) but offers less artistic control. Leonardo AI Artisan ($30/mo) matches the price and offers more customization with model training. Stable Diffusion is free but requires technical setup and your own GPU.',
     plans: [
       {
         name: 'Basic',
@@ -1388,22 +1388,24 @@ export const pricingData: PricingPage[] = [
   {
     slug: 'chatgpt',
     tool: 'ChatGPT',
-    title: 'ChatGPT Pricing 2026: Free vs Plus vs Pro vs Team vs Enterprise',
+    title: 'ChatGPT Pricing 2026: Free vs Go vs Plus vs Pro vs Business',
     description:
-      'Complete ChatGPT pricing guide for 2026. Compare Free, Plus, Pro, Team, and Enterprise plans. Find the best OpenAI plan for your AI needs and budget.',
+      'Complete ChatGPT pricing guide for 2026. Compare Free, Go, Plus, Pro, Business, and Enterprise plans, and which GPT-5.6 and GPT-6 models each one unlocks.',
     intro:
       'ChatGPT by OpenAI is the most widely used AI assistant in the world. Pricing ranges from free to the $200/month Pro tier and enterprise-grade plans, with each tier unlocking more capable models and higher usage limits. Here is exactly what each plan offers.',
-    lastUpdated: '2026-07-07',
+    lastUpdated: '2026-09-09',
+    pricingVerified: '2026-09-09',
+    pricingSourceUrl: 'https://openai.com/chatgpt/pricing/',
     reviewSlug: 'chatgpt-review',
     freeTrialAvailable: false,
     valueAnalysis:
-      'ChatGPT Free is powerful enough for casual use, but Plus at $20/mo is essential for professionals. Full GPT-4o access, DALL-E image generation, and higher usage limits eliminate the frustrating wait times and model downgrades free users experience. If you use AI daily for writing, coding, or analysis, Plus pays for itself within the first week.',
+      'ChatGPT Free is powerful enough for casual use, but Plus at $20/mo is essential for professionals. GPT-5.6 Sol as the default model, ChatGPT Images 2.0, and higher usage limits eliminate the frustrating wait times and model downgrades free users experience. If you use AI daily for writing, coding, or analysis, Plus pays for itself within the first week.',
     annualVsMonthly:
       'ChatGPT Plus is billed monthly at $20/mo with no annual discount. Team is $25/user/mo on annual billing ($30/user/mo monthly). The generous free plan lets you evaluate the platform thoroughly before upgrading.',
     perUnitBreakdown:
       'At $20/mo for Plus, ChatGPT costs about $0.67/day. If it saves you 30 minutes of research, writing, or coding per day — valued at $15-40 based on average professional hourly rates — the tool delivers a 20-60x return on investment daily.',
     competitorComparison:
-      'ChatGPT Plus ($20/mo) is the same price as Claude Pro ($20/mo) and comparable to Google Gemini Advanced ($19.99/mo). ChatGPT has the largest ecosystem with custom GPTs, plugins, and DALL-E integration. Claude excels at long-form writing and coding. Gemini integrates deeply with Google Workspace. Perplexity Pro ($20/mo) is better for research with source citations.',
+      'ChatGPT Plus ($20/mo) is the same price as Claude Pro ($20/mo) and comparable to Google AI Pro ($19.99/mo). ChatGPT has the largest ecosystem with custom GPTs, plugins, and ChatGPT Images 2.0 built in. Claude excels at long-form writing and coding. Gemini integrates deeply with Google Workspace. Perplexity Pro ($20/mo) is better for research with source citations.',
     plans: [
       {
         name: 'Free',
@@ -1411,12 +1413,12 @@ export const pricingData: PricingPage[] = [
         period: '/month',
         description: 'For casual users exploring AI assistance.',
         features: [
-          'Access to GPT-4o mini',
-          'Limited GPT-4o access',
+          'GPT-5.6 Luna',
           'Standard response speed',
           'Web browsing',
           'Limited file uploads',
           'Access to GPT Store',
+          'Carries ads as of February 2026',
         ],
         affiliateUrl: 'https://chat.openai.com',
       },
@@ -1426,9 +1428,9 @@ export const pricingData: PricingPage[] = [
         period: '/month',
         description: 'For individuals who need full AI capabilities.',
         features: [
-          'Full GPT-4o access',
-          'GPT-4o mini unlimited',
-          'DALL-E image generation',
+          'GPT-5.6 Sol as the default model',
+          'GPT-5.6 Terra and Luna also selectable',
+          'ChatGPT Images 2.0 (GPT Image 2)',
           'Advanced data analysis',
           'Custom GPTs',
           'Higher usage limits',
@@ -1443,8 +1445,8 @@ export const pricingData: PricingPage[] = [
         description: 'For power users who need unlimited access to the best models.',
         features: [
           'Everything in Plus',
-          'Unlimited access to top models',
-          'Extended reasoning (o1 pro mode)',
+          'GPT-6 Pro (Astra) - 200 messages/week',
+          'Highest limits on the GPT-5.6 family',
           'Higher limits on video & voice',
           'Priority access to new features',
           'Best for heavy daily AI workloads',
@@ -1452,10 +1454,10 @@ export const pricingData: PricingPage[] = [
         affiliateUrl: 'https://chat.openai.com',
       },
       {
-        name: 'Team',
+        name: 'Business',
         price: '$25',
         period: '/month per user (billed annually)',
-        description: 'For teams that need shared workspaces and admin controls.',
+        description: 'For teams that need shared workspaces and admin controls. A Business Premium seat (around $100-125/user) adds GPT-6 Astra at 50 messages/week.',
         features: [
           'Everything in Plus',
           'Higher message limits',
@@ -1472,8 +1474,8 @@ export const pricingData: PricingPage[] = [
         period: 'contact sales',
         description: 'For organizations needing enterprise security and scale.',
         features: [
-          'Everything in Team',
-          'Unlimited GPT-4o access',
+          'Everything in Business',
+          'Admin-configurable GPT-6 Astra access',
           'Expanded context windows',
           'SSO & SCIM',
           'Admin analytics',
@@ -1483,10 +1485,10 @@ export const pricingData: PricingPage[] = [
       },
     ],
     faqs: [
-      { question: 'Is ChatGPT free?', answer: 'Yes. The free plan includes access to GPT-4o mini and limited GPT-4o usage. It is powerful enough for casual use but power users will hit limits quickly.' },
-      { question: 'Is ChatGPT Plus worth $20/month?', answer: 'If you use ChatGPT daily for work, Plus is absolutely worth it. You get full GPT-4o access, DALL-E image generation, and significantly higher usage limits that eliminate the wait times free users experience.' },
-      { question: 'What is the difference between Plus and Team?', answer: 'Team ($25/user/month) adds shared workspaces, admin controls, and guarantees that your data is not used to train OpenAI models. Plus is for individuals, Team is for organizations.' },
-      { question: 'What is ChatGPT Pro and who is it for?', answer: 'ChatGPT Pro costs $200/month and gives effectively unlimited access to OpenAI\'s best models, including extended "pro mode" reasoning. It only makes sense for heavy daily users — researchers, developers, and professionals who hit Plus limits constantly. Most people are better served by Plus at $20/month.' },
+      { question: 'Is ChatGPT free?', answer: 'Yes. The free plan runs GPT-5.6 Luna, the fastest and cheapest tier of the current model family, and carries ads as of February 2026. It is powerful enough for casual use but power users will hit limits quickly. There is also an $8/month Go tier below Plus.' },
+      { question: 'Is ChatGPT Plus worth $20/month?', answer: 'If you use ChatGPT daily for work, Plus is absolutely worth it. It makes GPT-5.6 Sol the default model, includes ChatGPT Images 2.0 for image generation, and raises usage limits enough to eliminate the wait times free users experience.' },
+      { question: 'What is the difference between Plus and Business?', answer: 'Business (from $25/user/month) adds shared workspaces, admin controls, and guarantees that your data is not used to train OpenAI models. Plus is for individuals, Business is for organizations. A Business Premium seat adds GPT-6 Astra access at 50 messages per week.' },
+      { question: 'What is ChatGPT Pro and who is it for?', answer: 'ChatGPT Pro costs $200/month and adds GPT-6 Pro (the consumer name for GPT-6 Astra, released 4 September 2026) capped at 200 messages per week, on top of the highest limits on OpenAI\'s best models, including extended "pro mode" reasoning. It only makes sense for heavy daily users — researchers, developers, and professionals who hit Plus limits constantly. Most people are better served by Plus at $20/month.' },
       { question: 'Does ChatGPT Enterprise have a minimum seat count?', answer: 'Yes, Enterprise typically requires a minimum commitment. Contact OpenAI sales for specific pricing based on your organization size and needs.' },
     ],
   },
@@ -1495,22 +1497,24 @@ export const pricingData: PricingPage[] = [
   {
     slug: 'claude-ai',
     tool: 'Claude AI',
-    title: 'Claude AI Pricing 2026: Free vs Pro vs Team vs Enterprise',
+    title: 'Claude AI Pricing 2026: Free vs Pro vs Max vs Team vs Enterprise',
     description:
-      'Complete Claude AI pricing guide for 2026. Compare Free, Pro, Team, and Enterprise plans from Anthropic. Find the best Claude plan for your AI workflow.',
+      'Complete Claude AI pricing guide for 2026. Compare Free, Pro, Max, Team, and Enterprise plans from Anthropic, and which models (Sonnet 5, Opus 5, Fable 5.1) each one unlocks.',
     intro:
       'Claude by Anthropic is known for its long context window, natural writing style, and strong reasoning capabilities. Pricing is straightforward with plans for individuals and teams. Here is what each tier costs and what you get.',
-    lastUpdated: '2026-03-18',
+    lastUpdated: '2026-09-09',
+    pricingVerified: '2026-09-09',
+    pricingSourceUrl: 'https://claude.ai/upgrade',
     reviewSlug: 'claude-ai-review',
     freeTrialAvailable: false,
     valueAnalysis:
-      'Claude Pro at $20/mo is excellent value for writers, developers, and analysts. The 5x usage increase over Free, access to Claude Opus (the most capable model), and extended thinking mode make it the strongest AI assistant for long-form reasoning tasks. If you write, code, or analyze data daily, the upgrade is a clear win over the limited free tier.',
+      'Claude Pro at $20/mo is excellent value for writers, developers, and analysts. It unlocks Claude Opus 5 and Claude Fable 5.1 (Anthropic most capable model, released 1 September 2026), plus Claude Code and Claude Cowork on the same usage allowance. If you write, code, or analyze data daily, the upgrade is a clear win over the limited free tier.',
     annualVsMonthly:
-      'Claude Pro is billed monthly at $20/mo with no annual option for individuals. Team is $25/user/mo on annual billing ($30/user/mo monthly). The free plan with limited daily messages lets you test Claude quality before committing.',
+      'Claude Pro is billed monthly at $20/mo, or about $17/mo billed annually. Max sits above it at $100/mo, with a $200/mo tier for the heaviest users. Team is $25/user/mo on annual billing ($30/user/mo monthly). The free plan with limited daily messages lets you test Claude quality before committing.',
     perUnitBreakdown:
       'At $20/mo for Pro, Claude costs roughly $0.67/day. Claude excels at tasks requiring deep reasoning — if it replaces even one hour of research or editing per week (valued at $30-75), you recover the monthly cost in the first session.',
     competitorComparison:
-      'Claude Pro ($20/mo) matches ChatGPT Plus ($20/mo) in price but differs in strengths. Claude has a larger context window (200K tokens vs 128K), better long-form writing, and superior coding assistance. ChatGPT offers DALL-E image generation and a larger plugin ecosystem. Google Gemini Advanced ($19.99/mo) includes 2 TB of Google One storage as a bonus.',
+      'Claude Pro ($20/mo) matches ChatGPT Plus ($20/mo) in price but differs in strengths. Context windows are now at parity (Claude 1M, the GPT-5.6 family 1.05M), so the differences are elsewhere: Claude is stronger on long-form writing and coding, while ChatGPT offers image generation via ChatGPT Images 2.0 and a larger plugin ecosystem. Google AI Pro ($19.99/mo) bundles expanded Google storage.',
     plans: [
       {
         name: 'Free',
@@ -1518,9 +1522,9 @@ export const pricingData: PricingPage[] = [
         period: '/month',
         description: 'For trying Claude with basic usage limits.',
         features: [
-          'Access to Claude Sonnet',
+          'Claude Sonnet 5',
           'Limited daily messages',
-          'Basic file uploads',
+          'File uploads and code execution',
           'Web search',
           'Standard response speed',
         ],
@@ -1532,14 +1536,27 @@ export const pricingData: PricingPage[] = [
         period: '/month',
         description: 'For individuals who need full access to Claude capabilities.',
         features: [
-          'Access to Claude Opus and Sonnet',
+          'Claude Opus 5, Sonnet 5 and Fable 5.1',
           '5x more usage than Free',
-          'Extended thinking mode',
-          'Priority access during high traffic',
+          'Adaptive thinking with effort levels',
+          'Claude Code and Claude Cowork included',
           'Projects for organized workflows',
           'Early access to new features',
         ],
         highlighted: true,
+        affiliateUrl: 'https://claude.ai',
+      },
+      {
+        name: 'Max',
+        price: '$100',
+        period: '/month ($200/mo for the 20x tier)',
+        description: 'Same models as Pro with a far larger usage allowance. Aimed at people running Claude Code all day.',
+        features: [
+          'Everything in Pro',
+          '5x to 20x the Pro usage allowance',
+          'Claude Opus 5 as the Claude Code default',
+          'Highest priority during peak traffic',
+        ],
         affiliateUrl: 'https://claude.ai',
       },
       {
@@ -1574,10 +1591,10 @@ export const pricingData: PricingPage[] = [
       },
     ],
     faqs: [
-      { question: 'Is Claude AI free?', answer: 'Yes, Claude offers a free plan with access to Claude Sonnet. You get limited daily messages, which is enough for occasional use but not for heavy workloads.' },
-      { question: 'Is Claude Pro worth $20/month?', answer: 'If you rely on AI for writing, analysis, or coding, Claude Pro is excellent value. The 5x usage increase, access to Claude Opus, and extended thinking mode make it worthwhile for daily users.' },
-      { question: 'How does Claude compare to ChatGPT?', answer: 'Claude excels at long-form writing, nuanced analysis, and coding tasks. ChatGPT has a larger plugin ecosystem and DALL-E integration. Both are $20/month for their Pro/Plus plans.' },
-      { question: 'What is Claude extended thinking?', answer: 'Extended thinking allows Claude to reason step-by-step before answering complex questions. It produces more thorough, accurate responses for math, logic, and analysis tasks. Available on Pro and above.' },
+      { question: 'Is Claude AI free?', answer: 'Yes, Claude offers a free plan running Claude Sonnet 5, including file uploads and code execution. You get limited daily messages, which is enough for occasional use but not for heavy workloads.' },
+      { question: 'Is Claude Pro worth $20/month?', answer: 'If you rely on AI for writing, analysis, or coding, Claude Pro is excellent value. The 5x usage increase, access to Claude Opus 5 and Claude Fable 5.1, and Claude Code and Cowork on the same allowance make it worthwhile for daily users. Step up to Max ($100-$200/mo) only if you are hitting Pro limits regularly.' },
+      { question: 'How does Claude compare to ChatGPT?', answer: 'Claude excels at long-form writing, nuanced analysis, and coding tasks. ChatGPT has a larger plugin ecosystem and built-in image generation via ChatGPT Images 2.0. Both are $20/month for their Pro/Plus plans, and both now carry roughly a million tokens of context.' },
+      { question: 'What is Claude extended thinking?', answer: 'Current Claude models use adaptive thinking, which is always on: the model decides how much to reason rather than working to a fixed token budget. Depth is controlled by effort levels (low through max). It produces more thorough, accurate responses for math, logic, and analysis tasks.' },
     ],
   },
 
@@ -1804,7 +1821,7 @@ export const pricingData: PricingPage[] = [
           'Unlimited words',
           'Unlimited AI images',
           'Everything in Basic',
-          'GPT-4 access',
+          'Frontier OpenAI model access',
           'API access',
           'Priority rendering',
         ],
@@ -2319,7 +2336,7 @@ export const pricingData: PricingPage[] = [
     reviewSlug: 'perplexity-review',
     freeTrialAvailable: false,
     valueAnalysis:
-      'Perplexity Pro at $20/mo is the best investment for researchers, journalists, and knowledge workers. The 300+ Pro searches per day with GPT-4o, Claude, and Sonar access provide sourced, cited answers that eliminate hours of manual Googling. If you do research daily, Pro saves 30-60 minutes per day in information gathering and fact-checking.',
+      'Perplexity Pro at $20/mo is the best investment for researchers, journalists, and knowledge workers. The 300+ Pro searches per day, routed to frontier OpenAI, Claude and Sonar models, provide sourced, cited answers that eliminate hours of manual Googling. If you do research daily, Pro saves 30-60 minutes per day in information gathering and fact-checking.',
     annualVsMonthly:
       'Perplexity Pro is $20/mo with monthly billing and $200/year with annual billing — saving $40/year. The free plan with 5 Pro searches per day and unlimited Quick searches lets you experience the difference in quality before committing.',
     perUnitBreakdown:
@@ -2348,7 +2365,7 @@ export const pricingData: PricingPage[] = [
         description: 'For researchers and professionals who need advanced AI search.',
         features: [
           '300+ Pro searches/day',
-          'GPT-4o, Claude, and Sonar access',
+          'Frontier OpenAI, Claude and Sonar models',
           'File and image analysis',
           'API access ($5 credits/month)',
           'Dedicated Pro model',
@@ -2375,7 +2392,7 @@ export const pricingData: PricingPage[] = [
     ],
     faqs: [
       { question: 'Is Perplexity free?', answer: 'Yes. Perplexity offers unlimited Quick searches and 5 Pro searches per day on the free plan. Quick searches are fast but less detailed; Pro searches use more powerful AI models.' },
-      { question: 'Is Perplexity Pro worth $20/month?', answer: 'If you do daily research or need cited, detailed answers, Perplexity Pro is excellent value. The 300+ Pro searches per day with GPT-4o and Claude models make it a powerful research tool.' },
+      { question: 'Is Perplexity Pro worth $20/month?', answer: 'If you do daily research or need cited, detailed answers, Perplexity Pro is excellent value. The 300+ Pro searches per day, routed to frontier OpenAI and Claude models, make it a powerful research tool.' },
       { question: 'How does Perplexity compare to Google?', answer: 'Perplexity provides direct, sourced answers instead of a list of links. It is faster for research questions but less useful for navigational queries. Many users combine both.' },
       { question: 'Can I use Perplexity for academic research?', answer: 'Yes. Perplexity excels at research because every answer includes source citations. Pro users can upload papers and get AI-powered analysis. It is popular among academics and journalists.' },
     ],
@@ -2385,23 +2402,25 @@ export const pricingData: PricingPage[] = [
   {
     slug: 'google-gemini',
     tool: 'Google Gemini',
-    title: 'Google Gemini Pricing 2026: Free vs Gemini Advanced (Google One AI Premium)',
+    title: 'Google Gemini Pricing 2026: Free vs Google AI Pro ($19.99/mo)',
     description:
-      'Google Gemini pricing for 2026: Free tier vs Gemini Advanced at $19.99/mo via Google One AI Premium. Includes 2 TB storage, Workspace AI, and how it compares to ChatGPT Plus and Claude Pro.',
+      'Google Gemini pricing for 2026: the free Flash tier vs Google AI Pro at $19.99/mo with Gemini 3.1 Pro. Storage, Workspace AI, and how it compares to ChatGPT Plus and Claude Pro.',
     intro:
-      'Google Gemini (formerly Bard) offers a free AI assistant and a paid upgrade called Gemini Advanced, available through Google One AI Premium at $19.99/mo. The paid plan bundles the most capable Gemini model with 2 TB of Google One storage. Here is exactly what each tier includes and how pricing compares to ChatGPT Plus and Claude Pro.',
-    lastUpdated: '2026-03-23',
+      'Google Gemini (formerly Bard) offers a free AI assistant running the Flash model line (Gemini 3.8 Flash as of September 2026) and a paid upgrade, Google AI Pro, at $19.99/mo. The paid plan bundles Gemini 3.1 Pro and its 1M-token context window with 2 TB of Google One storage. Google removed Pro models from the free tier on 1 April 2026. Here is exactly what each tier includes and how pricing compares to ChatGPT Plus and Claude Pro.',
+    lastUpdated: '2026-09-09',
+    pricingNeedsVerification: true,
+    pricingSourceUrl: 'https://gemini.google.com/subscriptions',
     reviewSlug: 'google-gemini-review',
     freeTrialAvailable: true,
     freeTrialDays: 30,
     valueAnalysis:
-      'Google Gemini Advanced at $19.99/mo is a strong value if you already live in the Google ecosystem. The bundled 2 TB of Google One storage (normally $9.99/mo alone) means you are effectively paying $10/mo for Gemini Ultra access. If you use Gmail, Docs, and Sheets daily, the deep AI integration is something ChatGPT and Claude cannot match.',
+      'Google AI Pro at $19.99/mo is a strong value if you already live in the Google ecosystem. The bundled 2 TB of Google One storage (normally $9.99/mo alone) means you are effectively paying $10/mo for Gemini 3.1 Pro access. If you use Gmail, Docs, and Sheets daily, the deep AI integration is something ChatGPT and Claude cannot match.',
     annualVsMonthly:
-      'Google One AI Premium is $19.99/mo with monthly billing and no annual discount. The 1-month free trial lets you test Gemini Advanced extensively — use it to evaluate AI integration in Gmail, Docs, and Sheets before committing.',
+      'Google One AI Premium is $19.99/mo with monthly billing and no annual discount. The 1-month free trial lets you test Google AI Pro extensively — use it to evaluate AI integration in Gmail, Docs, and Sheets before committing.',
     perUnitBreakdown:
-      'At $19.99/mo for Gemini Advanced with 2 TB storage included, the effective AI cost is about $10/mo (since Google One 2 TB alone is $9.99/mo). That makes Gemini the cheapest premium AI assistant when you factor in the storage benefit — roughly $0.33/day for the AI features.',
+      'At $19.99/mo for Google AI Pro with 2 TB storage included, the effective AI cost is about $10/mo (since Google One 2 TB alone is $9.99/mo). That makes Gemini the cheapest premium AI assistant when you factor in the storage benefit — roughly $0.33/day for the AI features.',
     competitorComparison:
-      'Google Gemini Advanced ($19.99/mo) is priced similarly to ChatGPT Plus ($20/mo) and Claude Pro ($20/mo). The unique advantage is the 2 TB Google One storage and deep Google Workspace integration. ChatGPT has a broader plugin ecosystem and DALL-E. Claude has a larger context window and stronger reasoning. Gemini wins for Google-centric workflows.',
+      'Google AI Pro ($19.99/mo) is priced similarly to ChatGPT Plus ($20/mo) and Claude Pro ($20/mo). The unique advantage is the 2 TB Google One storage and deep Google Workspace integration. ChatGPT has a broader plugin ecosystem and built-in image generation. Claude is stronger on long-form reasoning. All three now carry roughly a million tokens of context, so that is no longer a differentiator. Gemini wins for Google-centric workflows.',
     plans: [
       {
         name: 'Free',
@@ -2409,7 +2428,7 @@ export const pricingData: PricingPage[] = [
         period: '/month',
         description: 'For basic AI assistance with Google integration.',
         features: [
-          'Gemini (standard model)',
+          'Gemini 3.8 Flash',
           'Google Search integration',
           'Image generation',
           'Gmail & Docs integration',
@@ -2418,12 +2437,12 @@ export const pricingData: PricingPage[] = [
         affiliateUrl: 'https://gemini.google.com',
       },
       {
-        name: 'Google One AI Premium',
+        name: 'Google AI Pro',
         price: '$19.99',
         period: '/month',
-        description: 'For users wanting the most capable Gemini model and Google One benefits.',
+        description: 'For users wanting the Pro-tier Gemini model and Google One benefits.',
         features: [
-          'Gemini Advanced (Gemini Ultra)',
+          'Gemini 3.1 Pro (1M-token context)',
           'Everything in Free',
           '2 TB Google One storage',
           'Gemini in Gmail, Docs, Sheets',
@@ -2435,11 +2454,11 @@ export const pricingData: PricingPage[] = [
       },
     ],
     faqs: [
-      { question: 'Is Google Gemini free?', answer: 'Yes. The standard Gemini model is free for everyone with a Google account. It includes Google Search integration, image generation, and basic AI assistance.' },
-      { question: 'What is Gemini Advanced?', answer: 'Gemini Advanced uses the most capable Gemini Ultra model. It is available through Google One AI Premium at $19.99/month and includes 2 TB of Google One storage as a bonus.' },
-      { question: 'Is Gemini Advanced worth it vs ChatGPT Plus?', answer: 'Both are priced at roughly $20/month. Gemini Advanced integrates deeply with Google Workspace (Gmail, Docs, Sheets). ChatGPT Plus has a broader ecosystem with plugins and custom GPTs. Choose based on your workflow.' },
-      { question: 'Does Gemini Advanced include a free trial?', answer: 'Yes, Google typically offers a 1-month free trial of Google One AI Premium, which includes Gemini Advanced. Check the Gemini website for current trial availability.' },
-      { question: 'What is the difference between Google Bard and Google Gemini?', answer: 'Google Bard was renamed to Google Gemini in early 2024. Gemini is the same AI assistant, now with newer models (Gemini Ultra for Advanced users) and deeper Google Workspace integration. If you are searching for "Bard pricing," the current product is called Gemini.' },
+      { question: 'Is Google Gemini free?', answer: 'Yes. The Flash model line — Gemini 3.8 Flash as of September 2026 — is free for everyone with a Google account. It includes Google Search integration, image generation, and basic AI assistance. Note that Google removed Pro models from the free tier on 1 April 2026.' },
+      { question: 'What is Google AI Pro?', answer: 'Google AI Pro is the $19.99/month paid tier, formerly branded Gemini Advanced / Google One AI Premium. It runs Gemini 3.1 Pro with a 1M-token context window and includes 2 TB of Google One storage. Google also sells a higher AI Ultra tier above it.' },
+      { question: 'Is Google AI Pro worth it vs ChatGPT Plus?', answer: 'Both are priced at roughly $20/month. Google AI Pro integrates deeply with Google Workspace (Gmail, Docs, Sheets). ChatGPT Plus has a broader ecosystem with plugins and custom GPTs. Choose based on your workflow.' },
+      { question: 'Does Google AI Pro include a free trial?', answer: 'Yes, Google typically offers a 1-month free trial of its paid Gemini tier. Check the Gemini website for current trial availability.' },
+      { question: 'What is the difference between Google Bard and Google Gemini?', answer: 'Google Bard was renamed to Google Gemini in early 2024. Gemini is the same AI assistant, now with newer models (Gemini 3.8 Flash on the free tier, Gemini 3.1 Pro on Google AI Pro) and deeper Google Workspace integration. If you are searching for "Bard pricing," the current product is called Gemini.' },
     ],
   },
 

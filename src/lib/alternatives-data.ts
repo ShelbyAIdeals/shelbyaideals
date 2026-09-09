@@ -64,7 +64,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the best free alternative to Jasper AI?',
         answer:
-          'ChatGPT offers the most capable free tier for AI writing. Its free plan gives you access to GPT-4o mini for blog posts, marketing copy, and creative writing. Rytr also offers a generous free plan with 10,000 characters per month and 40+ templates.',
+          'ChatGPT offers the most capable free tier for AI writing. Its free plan gives you access to GPT-5.6 Luna for blog posts, marketing copy, and creative writing. Rytr also offers a generous free plan with 10,000 characters per month and 40+ templates.',
       },
       {
         question: 'Is Copy.ai better than Jasper AI?',
@@ -137,13 +137,13 @@ export const alternativesData: AlternativesPage[] = [
         name: 'ChatGPT (OpenAI)',
         slug: 'chatgpt',
         description:
-          'ChatGPT is the most versatile AI writing tool available. With custom GPTs, plugins, and GPT-4o, it handles everything from blog posts to code to creative writing with unmatched flexibility.',
+          'ChatGPT is the most versatile AI writing tool available. With custom GPTs, plugins, and the GPT-5.6 family, it handles everything from blog posts to code to creative writing with unmatched flexibility.',
         pricing: 'Free tier, Plus $20/mo',
         bestFor: 'General-purpose AI writing',
         url: 'https://chat.openai.com',
         pros: [
           'Most versatile AI tool available',
-          'Free tier with GPT-4o mini',
+          'Free tier with GPT-5.6 Luna',
           'Custom GPTs for specialized workflows',
           'Constantly improving with new features',
         ],
@@ -153,7 +153,7 @@ export const alternativesData: AlternativesPage[] = [
           'No built-in SEO scoring',
         ],
         whySwitch:
-          'Switch to ChatGPT if you want maximum flexibility at a lower cost. Custom GPTs can replicate most Jasper templates, and GPT-4o produces excellent writing across all formats.',
+          'Switch to ChatGPT if you want maximum flexibility at a lower cost. Custom GPTs can replicate most Jasper templates, and the current GPT-5.6 models produce excellent writing across all formats.',
       },
       {
         name: 'Claude (Anthropic)',
@@ -238,7 +238,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the best free alternative to Copy.ai?',
         answer:
-          'ChatGPT offers the strongest free alternative for AI copywriting. Its free tier includes GPT-4o mini, which handles ad copy, email sequences, and social media posts well. Rytr also provides a free plan with 10,000 characters/month and 40+ marketing templates.',
+          'ChatGPT offers the strongest free alternative for AI copywriting. Its free tier includes GPT-5.6 Luna, which handles ad copy, email sequences, and social media posts well. Rytr also provides a free plan with 10,000 characters/month and 40+ marketing templates.',
       },
       {
         question: 'Is Jasper AI better than Copy.ai?',
@@ -311,7 +311,7 @@ export const alternativesData: AlternativesPage[] = [
         name: 'ChatGPT (OpenAI)',
         slug: 'chatgpt',
         description:
-          'ChatGPT with GPT-4o is incredibly versatile for copywriting. Custom instructions let you define brand voice, and it handles everything from ad copy to email sequences with minimal prompting.',
+          'ChatGPT with the GPT-5.6 family is incredibly versatile for copywriting. Custom instructions let you define brand voice, and it handles everything from ad copy to email sequences with minimal prompting.',
         pricing: 'Free tier, Plus $20/mo',
         bestFor: 'Flexible, general-purpose writing',
         url: 'https://chat.openai.com',
@@ -391,7 +391,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the best free alternative to Writesonic?',
         answer:
-          'ChatGPT offers the most capable free alternative with GPT-4o mini for writing tasks. Rytr provides a free plan with 10,000 characters/month and 40+ templates. Both handle the same core writing tasks Writesonic covers.',
+          'ChatGPT offers the most capable free alternative, with GPT-5.6 Luna on the free tier for writing tasks. Rytr provides a free plan with 10,000 characters/month and 40+ templates. Both handle the same core writing tasks Writesonic covers.',
       },
       {
         question: 'Is Koala better than Writesonic for SEO?',
@@ -1515,17 +1515,17 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the best free alternative to Midjourney?',
         answer:
-          'Stable Diffusion is completely free when run locally and offers unlimited generation with no credits. Leonardo AI offers 150 free tokens per day. DALL-E 3 is accessible through ChatGPT free tier with limited usage. Ideogram also has a generous free tier.',
+          'Stable Diffusion is completely free when run locally and offers unlimited generation with no credits. Leonardo AI offers 150 free tokens per day. GPT Image 2 is accessible through the ChatGPT free tier with limited usage. Ideogram also has a generous free tier.',
       },
       {
-        question: 'Is DALL-E 3 better than Midjourney?',
+        question: 'Is GPT Image 2 better than Midjourney?',
         answer:
-          'DALL-E 3 is better at following complex text prompts accurately and renders text within images more reliably. Midjourney generally produces more aesthetically stylized images with better artistic quality. Choose DALL-E 3 for accuracy, Midjourney for artistic style.',
+          'GPT Image 2, which replaced DALL-E in May 2026, is better at following complex text prompts accurately and renders text within images more reliably. Midjourney generally produces more aesthetically stylized images with better artistic quality. Choose GPT Image 2 for accuracy, Midjourney for artistic style.',
       },
       {
         question: 'Can I use Midjourney alternatives for commercial work?',
         answer:
-          'Adobe Firefly is the safest choice for commercial work, trained entirely on licensed content. DALL-E 3 and Leonardo AI both include commercial usage rights on paid plans. Stable Diffusion is open-source with no usage restrictions.',
+          'Adobe Firefly is the safest choice for commercial work, trained entirely on licensed content. Leonardo AI includes commercial usage rights on paid plans, though its free tier does not. For GPT Image 2, check the current OpenAI terms before publishing. Stable Diffusion is open-source with no usage restrictions.',
       },
       {
         question: 'What is the cheapest Midjourney alternative?',
@@ -1563,13 +1563,13 @@ export const alternativesData: AlternativesPage[] = [
           'Switch to Leonardo AI if you want a proper web interface with custom model training. It excels at game assets and concept art and offers a free tier Midjourney lacks.',
       },
       {
-        name: 'DALL-E 3 (OpenAI)',
+        name: 'GPT Image 2 (OpenAI)',
         slug: 'dall-e-3',
         description:
-          'DALL-E 3 is integrated directly into ChatGPT, making it the easiest AI image generator to use. It excels at following complex text prompts accurately and handles text rendering better than Midjourney.',
-        pricing: 'Included with ChatGPT Plus ($20/mo)',
+          'GPT Image 2 is OpenAI replacement for DALL-E, which was retired in May 2026. It is integrated directly into ChatGPT, making it the easiest AI image generator to use, and it handles text rendering in images better than Midjourney.',
+        pricing: 'Included with every paid ChatGPT plan (from $8/mo Go)',
         bestFor: 'Prompt accuracy & text in images',
-        url: 'https://openai.com/dall-e-3',
+        url: 'https://chat.openai.com',
         pros: [
           'Best prompt accuracy in the market',
           'Text rendering that actually works',
@@ -1578,11 +1578,11 @@ export const alternativesData: AlternativesPage[] = [
         ],
         cons: [
           'Less artistic style variety than Midjourney',
-          'Requires ChatGPT Plus subscription',
+          'Free tier is limited and carries ads',
           'Slower generation speed',
         ],
         whySwitch:
-          'Switch to DALL-E 3 if you need accurate prompt interpretation and text rendering in images. Its ChatGPT integration makes iterative refinement effortless through natural conversation.',
+          'Switch to GPT Image 2 if you need accurate prompt interpretation and readable text inside images. The ChatGPT integration makes iterative refinement effortless, and you pay nothing extra if you already subscribe.',
       },
       {
         name: 'Stable Diffusion',
@@ -1692,7 +1692,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the best free alternative to ChatGPT?',
         answer:
-          'Google Gemini offers a strong free tier with web search integration. Claude free tier excels at writing quality and long documents. Perplexity free tier is best for research with cited sources. Microsoft Copilot provides free GPT-4 access with Bing search.',
+          'Google Gemini offers a strong free tier with web search integration. Claude free tier excels at writing quality and long documents. Perplexity free tier is best for research with cited sources. Microsoft Copilot provides free access to frontier OpenAI models with Bing search.',
       },
       {
         question: 'Is Claude better than ChatGPT?',
@@ -1707,7 +1707,7 @@ export const alternativesData: AlternativesPage[] = [
       {
         question: 'What is the cheapest ChatGPT alternative?',
         answer:
-          'Grok is included with X Premium at $8/mo, making it the cheapest paid option. Microsoft Copilot is completely free with GPT-4 access. Google Gemini, Claude, and Perplexity all offer capable free tiers.',
+          'Grok is included with X Premium at $8/mo, making it the cheapest paid option. Microsoft Copilot is completely free and runs frontier OpenAI models. Google Gemini, Claude, and Perplexity all offer capable free tiers.',
       },
       {
         question: 'Which ChatGPT alternative is best for research?',
@@ -1812,12 +1812,12 @@ export const alternativesData: AlternativesPage[] = [
         name: 'Copilot (Microsoft)',
         slug: 'copilot',
         description:
-          'Microsoft Copilot integrates GPT-4 with Bing search, Microsoft 365, and Edge browser. It offers free GPT-4 access and is the best option for users already in the Microsoft ecosystem.',
+          'Microsoft Copilot integrates frontier OpenAI models with Bing search, Microsoft 365, and the Edge browser. It offers free access and is the best option for users already in the Microsoft ecosystem.',
         pricing: 'Free, Copilot Pro $20/mo',
         bestFor: 'Microsoft 365 integration',
         url: 'https://copilot.microsoft.com',
         pros: [
-          'Free GPT-4 access',
+          'Free frontier-model access',
           'Microsoft 365 deep integration',
           'Bing search built in',
           'Edge browser integration',
@@ -1828,7 +1828,7 @@ export const alternativesData: AlternativesPage[] = [
           'Conversation limits on free tier',
         ],
         whySwitch:
-          'Switch to Microsoft Copilot if you want free GPT-4 access or work primarily in Microsoft 365. Its integration with Word, Excel, and Outlook adds AI directly into your workflow.',
+          'Switch to Microsoft Copilot if you want free frontier-model access or work primarily in Microsoft 365. Its integration with Word, Excel, and Outlook adds AI directly into your workflow.',
       },
     ],
   },

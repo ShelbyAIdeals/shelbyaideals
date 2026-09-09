@@ -1,0 +1,215 @@
+---
+title: "GPT Image 2 vs GPT Image 2.5 (Flare & Sunburst): What Actually Changed"
+seoTitle: "GPT Image 2 vs GPT Image 2.5: Flare & Sunburst Compared"
+slug: gpt-image-2-vs-gpt-image-2-5
+excerpt: "OpenAI shipped GPT Image 2.5 on 8 September 2026 as two API models — Flare for speed, Sunburst for precision — at the same token rates as GPT Image 2. Here is what genuinely changed, and the pricing detail the 'same price' headlines are glossing over."
+description: "GPT Image 2 vs GPT Image 2.5 compared: the Flare and Sunburst split, identical token rates but new xhigh and max quality tiers, 4K resolution limits, transparent backgrounds, multi-turn editing, and why 'same price' does not mean same cost per image."
+keywords: ["gpt image 2 vs gpt image 2.5", "gpt image 2.5", "gpt-image-2.5-flare", "gpt-image-2.5-sunburst", "chatgpt images 2.5", "gpt image 2.5 pricing", "openai image model comparison", "gpt image 2.5 api"]
+category: ai-video-audio
+type: comparison
+author: "Frank Shelby"
+date: "2026-09-09"
+lastUpdated: "2026-09-09"
+featured: true
+tools:
+  - "GPT Image 2"
+  - "GPT Image 2.5 Flare"
+  - "GPT Image 2.5 Sunburst"
+winners:
+  - scenario: "Best for High-Volume Generation"
+    winner: "GPT Image 2.5 Flare"
+    reason: "Up to 50% lower latency than GPT Image 2 at the same token rates, with claimed 2-4x throughput. This is the new default for most work."
+  - scenario: "Best for Precision Editing"
+    winner: "GPT Image 2.5 Sunburst"
+    reason: "Makes targeted edits to the requested region instead of re-rendering the whole image, and holds unrelated areas stable across multiple edit turns."
+  - scenario: "Best Proven Track Record"
+    winner: "GPT Image 2"
+    reason: "Ranks first on Artificial Analysis's text-to-image arena and top-two on editing. Neither 2.5 model has appeared on an independent leaderboard yet."
+  - scenario: "Best for Predictable Per-Image Cost"
+    winner: "GPT Image 2"
+    reason: "Its per-image costs are measured and public: roughly $0.006 low, $0.05 medium and $0.21 high at 1024x1024. The 2.5 models were unmeasured at launch."
+  - scenario: "Best for Transparent Backgrounds and Large Canvases"
+    winner: "GPT Image 2.5 Flare"
+    reason: "Transparent PNG output is documented as standard rather than a preview flag, and the resolution ceiling runs to 3,840px on the long edge."
+affiliateUrls:
+  "GPT Image 2": "https://platform.openai.com"
+  "GPT Image 2.5 Flare": "https://platform.openai.com"
+  "GPT Image 2.5 Sunburst": "https://platform.openai.com"
+---
+
+<AffiliateDisclosure />
+
+OpenAI released **ChatGPT Images 2.5** on **8 September 2026**, less than five months after GPT Image 2 arrived in April. The headline everyone ran was "same price, sharper edits". That is broadly true and slightly misleading, and the gap between those two things is worth about half your image budget.
+
+The bigger structural change is that **GPT Image 2.5 is not one model**. It ships on the API as two: `gpt-image-2.5-flare` and `gpt-image-2.5-sunburst`. OpenAI split the generation by workload rather than by capability tier — which means "upgrading" now involves a routing decision you did not have to make before.
+
+---
+
+## 1. Quick Verdict: Who Wins?
+
+| Scenario | Winner | Why |
+|---|---|---|
+| Best for High-Volume Generation | **GPT Image 2.5 Flare** | Up to 50% lower latency at the same token rates |
+| Best for Precision Editing | **GPT Image 2.5 Sunburst** | Edits the requested region instead of re-rendering the image |
+| Best Proven Track Record | **GPT Image 2** | Still #1 on the independent text-to-image arena; 2.5 is unranked |
+| Best for Predictable Per-Image Cost | **GPT Image 2** | Measured per-image costs; 2.5's were unpublished at launch |
+| Best for Transparency & Large Canvases | **GPT Image 2.5 Flare** | Transparent PNG as standard, up to 3,840px on the long edge |
+
+**The short version:** if you generate images through ChatGPT, you have already been upgraded and there is nothing to decide. If you call the API, move high-volume work to **Flare**, move editing workflows to **Sunburst**, and measure your actual per-image cost before you migrate everything — because the token rate staying flat is not the same as your bill staying flat.
+
+---
+
+## 2. The lineage, briefly
+
+OpenAI's image line has moved fast, and knowing where 2.5 sits explains what it is trying to fix:
+
+| Model | Released | What it changed |
+|---|---|---|
+| GPT Image 1 | March 2025 | Autoregressive generation, image-to-image, strong instruction following |
+| GPT Image 1 Mini | October 2025 | 80% cheaper via the API |
+| GPT Image 1.5 | December 2025 | Fixed premature cropping and warm colour bias; up to 4x faster; 20% cheaper |
+| **GPT Image 2** | **April 2026** | Introduced a reasoning model into the generation process |
+| **GPT Image 2.5** | **8 September 2026** | Split into Flare and Sunburst; latency, editing precision, resolution |
+
+Worth noting the context: **DALL-E 2 and DALL-E 3 were retired on 12 May 2026.** OpenAI has shown it will discontinue image models rather than keep them running indefinitely, which is relevant if you are deciding whether to stay on GPT Image 2. See our [Midjourney vs GPT Image 2 vs Leonardo AI comparison](/comparisons/midjourney-vs-dalle-vs-leonardo) for how this line stacks up against dedicated image tools.
+
+---
+
+## 3. Flare vs Sunburst: the split
+
+This is the part that matters most for developers, because it changes your architecture rather than just your model string.
+
+### GPT Image 2.5 Flare — `gpt-image-2.5-flare`
+
+The fast default. OpenAI positions it for **creator and social content, product experiences, visual search, rapid prototyping, brand assets, and high-volume generation**.
+
+The claim is **up to 50% lower latency than GPT Image 2** with higher quality output, and reported throughput gains of 2-4x. For anything user-facing where someone is waiting on a spinner, that is the meaningful number — not the quality delta.
+
+### GPT Image 2.5 Sunburst — `gpt-image-2.5-sunburst`
+
+The precision model, and **deliberately slower**. Built for **production campaign creative, polished product imagery, marketing collateral, and design tools where brand accuracy is the point**.
+
+The distinguishing behaviour is what it does *not* do. GPT Image 2 tends to re-render an image when you ask for an edit; Sunburst makes targeted changes to the requested region and leaves the rest alone. Across a multi-turn editing session — "make the sky darker", then "now change the logo colour" — that is the difference between an iterative workflow and a slot machine.
+
+### Choosing between them
+
+| Your workload | Use |
+|---|---|
+| User-facing generation with someone waiting | **Flare** |
+| Bulk generation at volume | **Flare** |
+| Anything you would call "the default" | **Flare** |
+| Multi-turn editing where earlier work must survive | **Sunburst** |
+| Client or campaign creative under brand scrutiny | **Sunburst** |
+| Design tooling where edit precision is the product | **Sunburst** |
+
+---
+
+## 4. Pricing: same rates, not necessarily the same bill
+
+Both GPT Image 2 and both GPT Image 2.5 models share identical published token rates:
+
+| Token type | Rate per million |
+|---|---|
+| Image input | $8.00 |
+| Image output | $30.00 |
+| Text input | $5.00 |
+| Cached input | Discounted — check OpenAI's current pricing page |
+
+*Verified 9 September 2026. Reported cached-input rates varied between sources at launch, so confirm that figure against OpenAI's own pricing page before budgeting.*
+
+**Here is the catch the "same price" headlines skip.** Image models bill by output tokens, and output tokens scale with resolution and quality. GPT Image 2 offered three quality tiers. GPT Image 2.5 offers **five**:
+
+| Model | Quality tiers |
+|---|---|
+| GPT Image 2 | low, medium, high |
+| GPT Image 2.5 | **auto** (default), low, medium, high, **xhigh**, **max** |
+
+GPT Image 2's per-image costs at 1024x1024 are measured and public: roughly **$0.006 at low, $0.05 at medium, and $0.21 at high**. That is a **35x spread** across three tiers. Two new tiers now sit *above* the most expensive of those, and per-image costs for the 2.5 models were not published at launch.
+
+So: the rate card is flat, the default is `auto`, and the ceiling moved up. If you migrate without pinning a quality parameter and measuring, your per-image cost can rise while the price per million tokens stays exactly the same. **Set the quality tier explicitly and measure a sample batch before you switch production traffic.**
+
+---
+
+## 5. What else is new in 2.5
+
+### Resolution and aspect ratios
+
+| Constraint | GPT Image 2.5 |
+|---|---|
+| Max edge length | 3,840 px |
+| Max landscape | 3,840 x 2,160 |
+| Max portrait | 2,160 x 3,840 |
+| Dimensions | Multiples of 16 |
+| Aspect ratio range | 3:1 ultra-wide to 1:3 ultra-tall |
+| Pixel range | 655,360 to 8,294,400 (~8 MP) |
+
+The 3:1 and 1:3 extremes are genuinely useful for marketers: web banners, hero strips, and vertical social formats no longer need cropping from a square.
+
+### Transparent backgrounds
+
+The `background` parameter takes `auto`, `opaque` or `transparent` for PNG output, **documented as standard on 2.5**. On GPT Image 2 transparency arrived later as a preview flag. If you produce logos, product cut-outs, or overlay assets, this alone may justify the move.
+
+### Multi-turn editing
+
+Both 2.5 models support conversational multi-turn editing through the Responses API, with better stability across successive edits and better preservation of areas you did not ask to change. This is the practical expression of the Sunburst design goal, and it applies to Flare too.
+
+### In ChatGPT
+
+ChatGPT Images 2.5 is rolling out across **ChatGPT, ChatGPT Work, and Codex** on desktop, mobile and web, with four consumer-facing additions:
+
+- **Sketch** — draw a rough shape by hand and use it as a reference
+- **Template creation** — reusable layouts for repeat formats
+- **Image annotation** — mark up an image to direct an edit
+- **Shareable prompts** — hand a working prompt to someone else
+
+For scale context, OpenAI reports more than **3 billion images** generated across ChatGPT Images and the GPT-Image API models.
+
+---
+
+## 6. Head-to-head
+
+| Feature | GPT Image 2 | GPT Image 2.5 Flare | GPT Image 2.5 Sunburst |
+|---|---|---|---|
+| Released | 21 April 2026 | 8 September 2026 | 8 September 2026 |
+| Model ID | `gpt-image-2` | `gpt-image-2.5-flare` | `gpt-image-2.5-sunburst` |
+| Built for | General use | Speed and volume | Editing precision |
+| Latency vs GPT Image 2 | Baseline | **Up to 50% lower** | Higher (by design) |
+| Quality tiers | 3 | 5 | 5 |
+| Max resolution | 2K native, 4K in beta | 3,840px long edge | 3,840px long edge |
+| Transparent PNG | Preview flag | **Standard** | **Standard** |
+| Editing behaviour | Tends to re-render | Targeted | **Targeted, most precise** |
+| Independent benchmark | **#1 text-to-image arena** | Not yet ranked | Not yet ranked |
+| Per-image cost | Measured and public | Unmeasured at launch | Unmeasured at launch |
+
+---
+
+## 7. The honest caveats
+
+**Every 2.5 performance claim is vendor-reported.** The 50% latency reduction, the throughput multiples, the editing precision — all of it comes from OpenAI. Neither Flare nor Sunburst had appeared on an independent leaderboard at the time of writing.
+
+**GPT Image 2 is the one with a verified result.** It ranks first on Artificial Analysis's text-to-image arena and top-two on image editing. That is a real, externally measured position, and 2.5 has not yet been tested against it by anyone but OpenAI.
+
+**Per-image economics are unknown.** Flat token rates plus two new higher quality tiers plus an `auto` default is exactly the shape that produces a surprise invoice. Measure, do not assume.
+
+**OpenAI retires image models.** DALL-E 2 and 3 were discontinued in May 2026. GPT Image 2 has not been announced as deprecated, but "still available today" is not a long-term architectural commitment. If you are building something durable, plan for the migration you will eventually have to do.
+
+---
+
+## 8. Who should switch, and when
+
+**If you use ChatGPT rather than the API:** nothing to do. Images 2.5 is rolling out to you, and Sketch, templates and annotation are straightforward wins.
+
+**If you generate at volume through the API:** move to **Flare**. Same token rate, materially lower latency, better output. Pin the quality parameter, run a sample batch, and compare cost per image against your GPT Image 2 baseline before you cut over fully.
+
+**If your product is editing rather than generating:** **Sunburst** is the reason 2.5 exists. Targeted regional edits and multi-turn stability are a categorically different workflow from re-rendering and hoping.
+
+**If you have a tuned, measured GPT Image 2 pipeline that works:** you are allowed to wait. Your per-image costs are known, your quality is externally validated, and the independent benchmarks for 2.5 will exist in a few weeks. There is no urgency premium here.
+
+## Related reading
+
+- [Midjourney vs GPT Image 2 vs Leonardo AI](/comparisons/midjourney-vs-dalle-vs-leonardo) — how OpenAI's image line compares to dedicated image tools
+- [GPT-6 Astra Explained](/guides/gpt-6-astra-guide) — OpenAI's frontier text model, released four days before Images 2.5
+- [GPT-5.6 Sol, Terra and Luna](/guides/gpt-5-6-sol-terra-luna-guide) — the tiered model family Images 2.5 sits alongside
+- [ChatGPT Review](/reviews/chatgpt-review) — the consumer product, its plans, and what image generation each one includes
+
+*Specifications, pricing and benchmark positions were verified on 9 September 2026 against OpenAI's launch materials and independent trackers. GPT Image 2.5 launched one day before this comparison was written — treat vendor performance claims as unconfirmed until independent benchmarks land, and check OpenAI's own pricing page before budgeting.*

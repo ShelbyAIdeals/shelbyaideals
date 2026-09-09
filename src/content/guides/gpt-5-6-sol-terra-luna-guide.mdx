@@ -1,0 +1,218 @@
+---
+title: "GPT-5.6 Sol, Terra and Luna: Which OpenAI Tier Should You Actually Pay For?"
+seoTitle: "GPT-5.6 Sol vs Terra vs Luna: Pricing & Which to Use"
+slug: gpt-5-6-sol-terra-luna-guide
+excerpt: "OpenAI's GPT-5.6 family split one model into three tiers — Sol, Terra and Luna — spanning a 25x price range. Then a July price cut changed the maths. Here is the verified pricing, what each tier is genuinely good at, and why the cheapest tier is not always the cheapest choice."
+description: "GPT-5.6 Sol, Terra and Luna explained: current API pricing after the 30 July 2026 cut, the 272K long-context surcharge, benchmark pass rates, ChatGPT plan access, and how to pick a tier by cost per completed task rather than cost per token."
+keywords: ["gpt-5.6", "gpt-5.6 sol", "gpt-5.6 terra", "gpt-5.6 luna", "gpt 5.6 sol terra luna", "gpt-5.6 pricing", "gpt-5.6 sol vs terra", "openai model tiers"]
+category: ai-content-productivity
+type: guide
+author: "Frank Shelby"
+date: "2026-09-09"
+lastUpdated: "2026-09-09"
+featured: true
+keyTakeaways:
+  - "GPT-5.6 reached general availability on 9 July 2026 as three tiers rather than one model: Sol (flagship), Terra (balanced everyday work) and Luna (fast and cheap). The number is the generation; the name is a durable capability tier that can be updated on its own cadence."
+  - "Current API rates per million tokens: Sol $5 in / $30 out, Terra $2 / $12, Luna $0.20 / $1.20. A price cut on 30 July 2026 took 80% off Luna and 20% off Terra while leaving Sol untouched, stretching the gap between cheapest and dearest tier from roughly 5x to 25x."
+  - "All three share a 1,050,000-token context window, a 128K output ceiling and a 16 February 2026 knowledge cutoff — so you can move between tiers without re-architecting your prompts."
+  - "Cross 272,000 input tokens and the whole request is re-billed at 2x input and 1.5x output. That cliff applies to every tier."
+  - "Cheapest per token is not cheapest per finished job. In one long-horizon coding benchmark Sol passed 63.7% of tasks using 20,968 output tokens on average, while Terra passed 40.7% using 55,594 — leaving Sol cheaper per resolved task even at six times Terra's output rate."
+recommendedTools:
+  - name: "OpenAI API — GPT-5.6 Luna"
+    category: "AI Model (high volume)"
+    pricing: "$0.20 / $1.20 per million tokens"
+    affiliateUrl: "https://platform.openai.com"
+    description: "The tier that changed most in the 30 July cut. At $0.20 per million input tokens it is the obvious default for classification, tagging, routing and any high-throughput job where latency is visible to the user."
+  - name: "OpenAI API — GPT-5.6 Terra"
+    category: "AI Model (balanced)"
+    pricing: "$2 / $12 per million tokens"
+    affiliateUrl: "https://platform.openai.com"
+    description: "The everyday workhorse: customer support automation, document analysis, internal tools, content generation at scale. Competitive with the previous generation's flagship at a fraction of the price."
+  - name: "OpenAI API — GPT-5.6 Sol"
+    category: "AI Model (frontier)"
+    pricing: "$5 / $30 per million tokens"
+    affiliateUrl: "https://platform.openai.com"
+    description: "For complex reasoning chains, long-horizon coding and security research. Superseded as OpenAI's flagship by GPT-6 Astra in September 2026, which makes it the value option for hard work."
+  - name: "ChatGPT Plus"
+    category: "AI Assistant"
+    pricing: "$20/mo"
+    affiliateUrl: "https://chat.openai.com"
+    description: "The consumer route into the GPT-5.6 family. Free and Go plans get Luna; eligible paid plans get Sol as the default experience."
+faq:
+  - question: "What are GPT-5.6 Sol, Terra and Luna?"
+    answer: "They are three tiers of the same model generation, released together by OpenAI on 9 July 2026 after a limited preview announced on 26 June. Sol is the frontier tier for the hardest problems — complex coding, long-horizon agents, security research. Terra is the balanced everyday tier for high-volume business work such as customer support, internal tools and document analysis. Luna is the fastest and cheapest tier, aimed at summarisation, drafting and routine automation. Under OpenAI's naming convention the number identifies the generation and the name identifies a capability tier that can advance on its own schedule."
+  - question: "How much do GPT-5.6 Sol, Terra and Luna cost?"
+    answer: "Per million tokens on the standard API tier: Sol is $5 input and $30 output, Terra is $2 and $12, and Luna is $0.20 and $1.20. Cached input costs a tenth of the standard input rate on every tier. Batch and Flex processing runs at half price, Fast mode at double, and regional endpoints add roughly 10%."
+  - question: "Did GPT-5.6 get cheaper?"
+    answer: "Two of the three tiers did. On 30 July 2026, roughly three weeks after launch, OpenAI cut Luna by 80% (from $1/$6 to $0.20/$1.20) and Terra by 20% (from $2.50/$15 to $2/$12). Sol did not move. OpenAI attributed the reductions to efficiency gains made during GPT-5.6's own development, including the model optimising production code. The practical effect is that the spread between the cheapest and most expensive tier widened from about 5x to about 25x, so tier choice matters far more than it did at launch."
+  - question: "Is GPT-5.6 Sol still OpenAI's best model?"
+    answer: "No. GPT-6 Astra replaced it as the flagship on 4 September 2026 at $10 input and $50 output — double Sol's rate. That does not make Sol obsolete; it makes it the mid-priced option for hard work. If Astra's premium is not returning value on your workload, Sol is the sensible step down before you drop all the way to Terra."
+  - question: "Which tier should I use?"
+    answer: "Start by asking what failure costs. For classification, routing, tagging and short summaries where a wrong answer is cheap to catch, use Luna. For customer-facing support replies, document analysis and content at scale, use Terra. For multi-file code changes, long agent runs and anything where a subtly wrong answer is expensive, use Sol. Then measure cost per completed task rather than cost per token — the cheap tier stops being cheap the moment it needs three attempts."
+  - question: "What is the 272K token pricing cliff?"
+    answer: "Every GPT-5.6 tier has a 1,050,000-token context window, but standard pricing only applies up to 272,000 input tokens. Above that line the entire request — not just the excess — is billed at 2x the input rate and 1.5x the output rate. A 280K-token request therefore costs roughly double a 270K one. If you routinely feed large document sets, it is worth chunking deliberately around that boundary."
+  - question: "Do all three tiers have the same context window and knowledge cutoff?"
+    answer: "Yes. All three share a 1,050,000-token context window, a 128,000-token maximum output, and a 16 February 2026 knowledge cutoff. They accept text and image input and return text. That uniformity is deliberate — it means you can route a request to a different tier without changing your prompts or your retrieval strategy."
+---
+
+Most model releases give you one thing to evaluate. **GPT-5.6 gave you three.**
+
+OpenAI announced a limited preview on 26 June 2026 and made the family generally available on **9 July**: **Sol**, **Terra** and **Luna** — one generation, three capability tiers, spanning a price range that is now roughly **25x** from top to bottom.
+
+Then, three weeks later, OpenAI cut two of the three prices and left the third alone. That single decision changed which tier is the right default for most work, and a lot of the coverage written in July has not caught up.
+
+This guide has the current numbers, what each tier is actually for, and the one calculation that should decide your choice — which is not the one most people run.
+
+## The naming convention, briefly
+
+This is the release where OpenAI stopped shipping model names that told you nothing.
+
+Under the new scheme, **the number is the generation and the name is the tier**. GPT-5.6 is the generation. Sol, Terra and Luna are durable capability tiers that can each advance on their own cadence — so a future Terra can improve without waiting for a whole-family version bump.
+
+It is a better system than "4o versus o1 versus 4.1", and it survives contact with the next release: when **GPT-6 Astra** arrived in September 2026, it slotted in above Sol rather than replacing the naming logic.
+
+## The three tiers
+
+| Tier | Built for | Typical work |
+| --- | --- | --- |
+| **Sol** | Frontier reasoning and long-horizon agentic work | Complex multi-file coding, security research, long document analysis, anything where being subtly wrong is expensive |
+| **Terra** | Balanced everyday work | Customer support automation, internal tools, document analysis, content generation and editing at scale |
+| **Luna** | Speed and volume | Summarisation, drafting, classification, routing, routine automation where response time is visible to the user |
+
+OpenAI's own positioning for Terra at launch was that it matched GPT-5.5 — the previous generation's flagship — at roughly half the cost. That framing is the useful one: **each tier is roughly a generation's worth of capability cheaper than the one above it.**
+
+## Shared specifications
+
+The tiers differ in capability and price, not in shape:
+
+| Property | Sol, Terra and Luna |
+| --- | --- |
+| Context window | 1,050,000 tokens |
+| Max output | 128,000 tokens |
+| Input modalities | Text, image |
+| Output modalities | Text |
+| Knowledge cutoff | 16 February 2026 |
+| Reasoning effort | Adjustable |
+| Tool calling | Supported |
+| General availability | 9 July 2026 |
+
+This uniformity is the underrated feature. Because context, output ceiling and cutoff are identical across tiers, **you can route a request to a cheaper tier without touching your prompts or your retrieval design.** Tier selection becomes a runtime decision rather than an architectural one — which is exactly what you want if you are trying to control costs on a live product.
+
+## Pricing, after the cut
+
+| Tier | Input | Cached input | Cache writes | Output |
+| --- | --- | --- | --- | --- |
+| **Sol** | $5.00 | $0.50 | $6.25 | $30.00 |
+| **Terra** | $2.00 | $0.20 | $2.50 | $12.00 |
+| **Luna** | $0.20 | $0.02 | $0.25 | $1.20 |
+
+*Per million tokens, standard service tier. Verified 9 September 2026.*
+
+### What changed on 30 July
+
+| Tier | Launch price | Current price | Change |
+| --- | --- | --- | --- |
+| Sol | $5 / $30 | $5 / $30 | Unchanged |
+| Terra | $2.50 / $15 | $2 / $12 | **-20%** |
+| Luna | $1 / $6 | $0.20 / $1.20 | **-80%** |
+
+OpenAI attributed the cuts to efficiency gains made during GPT-5.6's own development — including the model rewriting and optimising production code and improving token generation.
+
+The consequence matters more than the cause. At launch the spread between Luna and Sol was about 5x. After the cut it is about **25x**. Tier selection went from a modest optimisation to the single largest cost lever you have, and any cost analysis written before 30 July is using numbers that no longer exist.
+
+### Service tier multipliers
+
+These stack on the list rates above:
+
+| Mode | Multiplier |
+| --- | --- |
+| Batch / Flex | **0.5x** |
+| Standard | 1x |
+| Fast mode | 2x |
+| Regional endpoints | +10% |
+
+Batch at half price is the easiest saving in the table and the one most teams forget. If your work is not latency-sensitive — overnight generation, bulk classification, evaluation runs — you are paying double for nothing.
+
+### The 272K cliff
+
+Every tier carries a 1.05M context window, but standard pricing only holds up to **272,000 input tokens**. Above that line the **entire request** re-bills at 2x input and 1.5x output.
+
+In practice:
+
+| Tier | Standard (≤272K) | Long context (>272K) |
+| --- | --- | --- |
+| Sol | $5 / $30 | $10 / $45 |
+| Terra | $2 / $12 | $4 / $18 |
+| Luna | $0.20 / $1.20 | $0.40 / $1.80 |
+
+A 280,000-token request costs about double a 270,000-token one. If you are feeding large document sets, chunk deliberately around that boundary rather than discovering it on an invoice.
+
+## The calculation that should decide your tier
+
+Here is where most tier comparisons go wrong. They compare **price per token**, when the number that matters is **cost per completed task**.
+
+An independent long-horizon coding benchmark ran both Sol and Terra across 100+ tasks:
+
+| Metric | Sol | Terra |
+| --- | --- | --- |
+| Task pass rate | **63.7%** | 40.7% |
+| Average output tokens | **20,968** | 55,594 |
+| Code review actionable passes | **69.7%** (+7.4 pts vs baseline) | 52.5% (-8.6 pts) |
+
+Terra used **2.7x more output tokens** to reach a **lower** pass rate. Run the arithmetic at current post-cut prices:
+
+- **Sol:** 20,968 output tokens × $30/M = $0.63 per attempt; at a 63.7% pass rate that is **~$0.99 per resolved task**
+- **Terra:** 55,594 output tokens × $12/M = $0.67 per attempt; at a 40.7% pass rate that is **~$1.64 per resolved task**
+
+**Sol is roughly 40% cheaper per finished job**, despite costing 2.5x more per output token. The July price cut narrowed that gap — at Terra's old $15 output rate the figure was about $2.05 per resolved task — but it did not close it.
+
+The lesson generalises beyond this one benchmark: a weaker model on a task it cannot reliably finish will talk more, retry more, and cost more. **Cheap per token is not cheap per outcome.** The place Luna and Terra genuinely win is work where the pass rate is near-identical across tiers — classification, extraction, routing, short summaries — and there the 25x price gap is close to free money.
+
+## Getting it in ChatGPT
+
+| Plan | What you get |
+| --- | --- |
+| Free | GPT-5.6 Luna |
+| Go | GPT-5.6 Luna |
+| Plus ($20/mo) | Sol as the default experience for eligible paid users |
+| Pro ($200/mo) | Sol, plus GPT-6 Pro (Astra) at 200 messages/week |
+| Business / Enterprise | Sol; Astra access varies by tier and admin settings |
+
+Worth noting for anyone comparing subscriptions: the free tier of ChatGPT now runs Luna, a model that costs OpenAI $0.20 per million input tokens to serve. That is the economic reason free access got more generous — not generosity.
+
+## Where GPT-5.6 sits now
+
+**GPT-6 Astra** replaced Sol as OpenAI's flagship on 4 September 2026 at $10 input and $50 output. That reshuffles the whole ladder rather than retiring anything:
+
+| Model | Input / output per 1M | Position |
+| --- | --- | --- |
+| GPT-6 Astra | $10 / $50 | Frontier — hardest work, highest cost |
+| GPT-5.6 Sol | $5 / $30 | Strong reasoning at half Astra's price |
+| GPT-5.6 Terra | $2 / $12 | Everyday business work |
+| GPT-5.6 Luna | $0.20 / $1.20 | High volume, latency-sensitive |
+
+Sol is now the sensible middle of OpenAI's range rather than its ceiling — which is usually when a model becomes interesting to buy. If Astra's premium is not measurably returning value on your workload, Sol is the step down to try before you drop to Terra.
+
+For a cross-vendor view, **Claude Sonnet 5** at $2/$10 sits almost exactly on Terra's price point, and **Claude Fable 5.1** at $10/$50 matches Astra's. The tiers line up closely enough across vendors that price is rarely the deciding factor — your own evaluation set is.
+
+## Practical recommendations
+
+**Default to Luna** for anything high-volume where you can verify the output cheaply — classification, tagging, routing, extraction, first-pass drafting. At $0.20 per million input tokens the cost is close to a rounding error.
+
+**Default to Terra** for customer-facing text, support replies, document analysis and content at scale. It is the tier most business workloads should sit on.
+
+**Reach for Sol** when the task is long, multi-step, or expensive to get wrong — and measure cost per completed task, not per request, before you decide it is too expensive.
+
+**Always check Batch.** Half price for the same model, for any work that can wait.
+
+**Watch the 272K line.** It is the most common source of surprise invoices in this family.
+
+## Related reading
+
+- [GPT-6 Astra Explained](/guides/gpt-6-astra-guide) — the model that replaced Sol at the top of the range
+- [Claude Fable 5.1 Explained](/guides/claude-fable-5-1-guide) — Anthropic's competing frontier model
+- [How to Use OpenAI Codex](/guides/how-to-use-openai-codex) — OpenAI's agentic coding system
+- [ChatGPT Review](/reviews/chatgpt-review) — our full review of the consumer product and its plans
+- [AI Tool Pricing Index](/ai-pricing-index) — our verified, regularly re-checked pricing dataset
+
+*Pricing, specifications and benchmark figures were verified on 9 September 2026 against OpenAI's published materials and independent trackers. Model pricing in this family has already changed once since launch — check OpenAI's own pricing page before budgeting against these numbers.*

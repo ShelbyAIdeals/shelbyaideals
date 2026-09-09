@@ -58,7 +58,7 @@ export const deals: Deal[] = [
     reviewSlug: 'pictory-review',
     category: 'AI Video & Design',
     featured: false,
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://pictory.ai/pricing',
   },
   {
@@ -80,7 +80,7 @@ export const deals: Deal[] = [
     reviewSlug: 'synthesia-review',
     category: 'AI Video & Design',
     featured: true,
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://www.synthesia.io/pricing',
     eligibility: 'No credit card required for the free plan',
   },
@@ -102,7 +102,7 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://try.elevenlabs.io/3vu715wo9f9y',
     category: 'AI Audio & Voice',
     featured: false,
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://elevenlabs.io/pricing',
     eligibility: 'Free tier is non-commercial use only',
   },
@@ -124,6 +124,10 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://mangools.com#a69b085f86aee0888864a82a9',
     category: 'AI SEO Tools',
     featured: true,
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://mangools.com/plans-and-pricing',
+    trialLength: '10 days',
+    eligibility: 'No credit card required; 48-hour money-back guarantee on paid plans',
   },
   {
     slug: 'frase',
@@ -144,7 +148,7 @@ export const deals: Deal[] = [
     reviewSlug: 'frase-review',
     category: 'AI SEO Tools',
     featured: true,
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://www.frase.io/pricing/',
     trialLength: '7 days',
     eligibility: 'No credit card required',
@@ -169,7 +173,7 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.jasper.ai',
     reviewSlug: 'jasper-ai-review',
     category: 'AI Writing Tools',
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://www.jasper.ai/pricing',
     trialLength: '7 days',
   },
@@ -191,7 +195,7 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://writesonic.com',
     reviewSlug: 'writesonic-review',
     category: 'AI Writing Tools',
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://writesonic.com/pricing',
     eligibility: 'No credit card needed',
   },
@@ -213,6 +217,10 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://surferseo.com',
     reviewSlug: 'surfer-seo-review',
     category: 'AI SEO Tools',
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://surferseo.com/pricing/',
+    eligibility:
+      'Surfer replaced its free trial with a 7-day money-back guarantee: you pay up front and request a refund within 7 days. Excludes add-ons, overage fees, renewals, and per-article Surfer AI charges.',
   },
   {
     slug: 'semrush',
@@ -232,6 +240,11 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.semrush.com',
     reviewSlug: 'semrush-review',
     category: 'AI SEO Tools',
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://www.semrush.com/prices/',
+    trialLength: '7 days',
+    eligibility:
+      'Price shown is the classic SEO Pro plan. Semrush also sells "Semrush One" bundles (SEO plus AI visibility) from $199/mo.',
   },
   {
     slug: 'grammarly',
@@ -251,6 +264,9 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.grammarly.com',
     reviewSlug: 'grammarly-review',
     category: 'AI Writing Tools',
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://www.grammarly.com/plans',
+    eligibility: 'Free plan is permanent, no card required. Paid tier is now named Pro.',
   },
   {
     slug: 'descript',
@@ -270,7 +286,7 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://www.descript.com',
     reviewSlug: 'descript-review',
     category: 'AI Video & Design',
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://www.descript.com/pricing',
   },
   {
@@ -291,7 +307,7 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://otter.ai',
     reviewSlug: 'otter-ai-review',
     category: 'AI Productivity',
-    dateVerified: '2026-08-18',
+    dateVerified: '2026-09-09',
     sourceUrl: 'https://otter.ai/pricing',
   },
   {
@@ -301,7 +317,7 @@ export const deals: Deal[] = [
     tagline: 'Design anything — social posts, presentations, and more with AI magic.',
     dealType: 'free-tier',
     dealLabel: 'Free Forever Plan',
-    regularPrice: '$15/mo',
+    regularPrice: '$18/mo Pro ($144/yr)',
     dealPrice: '$0 to start',
     features: [
       'AI image generation (Magic Media)',
@@ -311,6 +327,10 @@ export const deals: Deal[] = [
     ],
     affiliateUrl: 'https://www.canva.com',
     category: 'AI Design',
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://www.canva.com/pricing/',
+    eligibility:
+      'Free plan is permanent, no card required. Canva Pro rose to $18/mo; Business is $25/user/mo.',
   },
   {
     slug: 'appsumo',
@@ -329,6 +349,10 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://appsumo.8odi.net/NG9YMP',
     category: 'Deals Marketplace',
     featured: true,
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://help.appsumo.com/article/32-refund-faq',
+    eligibility:
+      '60-day money-back guarantee on most Marketplace products; digital books and some products are excluded or carry shorter windows.',
   },
   {
     slug: 'scalenut',
@@ -336,8 +360,9 @@ export const deals: Deal[] = [
     toolSlug: 'scalenut',
     tagline: 'AI SEO content platform — keyword planning, briefs, and articles in one flow.',
     dealType: 'free-trial',
-    dealLabel: 'Free Trial',
-    dealPrice: 'Try Free',
+    dealLabel: '7-Day Free Trial',
+    regularPrice: '$59/mo (Starter)',
+    dealPrice: 'Try Free for 7 Days',
     features: [
       'Keyword clusters & content plans',
       'SEO-optimized article writer',
@@ -347,6 +372,11 @@ export const deals: Deal[] = [
     affiliateUrl: 'https://scalenut.com/?fpr=shelby-ai',
     category: 'AI Marketing & SEO',
     featured: true,
+    dateVerified: '2026-09-09',
+    sourceUrl: 'https://scalenut.com/pricing',
+    trialLength: '7 days',
+    eligibility:
+      'Annual billing was discounted to $24/mo on Starter under a limited-time 60% offer at time of checking — confirm it is still running before you buy.',
   },
 ];
 

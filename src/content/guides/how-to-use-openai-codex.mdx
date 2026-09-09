@@ -6,7 +6,7 @@ category: ai-content-productivity
 type: guide
 author: "Frank Shelby"
 date: "2026-05-23"
-lastUpdated: "2026-05-23"
+lastUpdated: "2026-09-09"
 featured: true
 featuredImage: "/images/guides/how-to-use-openai-codex.webp"
 recommendedTools:
@@ -14,7 +14,7 @@ recommendedTools:
     category: "AI Coding Agent"
     pricing: "Included with ChatGPT Plus $20/mo"
     affiliateUrl: "https://openai.com/codex/"
-    description: "OpenAI's agentic coding system across terminal, IDE, web, and mobile, powered by the GPT-5.5 model family."
+    description: "OpenAI's agentic coding system across terminal, IDE, web, and mobile. GPT-6 Astra became the bundled default on 4 September 2026."
   - name: "ChatGPT"
     category: "AI Assistant"
     pricing: "Free -- $200/mo"
@@ -46,7 +46,7 @@ This guide explains **how to use OpenAI Codex** from a standing start — the fo
 
 ## Why This Matters
 
-Codex is bundled into ChatGPT plans rather than sold separately, which means tens of millions of people already have access and do not realize it. By early 2026 OpenAI reported Codex passing two to three million weekly active users, and the underlying model has been upgraded relentlessly — from the original `codex-1` (May 2025) through the GPT-5-Codex line to **GPT-5.5**, released in late April 2026 and now the recommended default.
+Codex is bundled into ChatGPT plans rather than sold separately, which means tens of millions of people already have access and do not realize it. By early 2026 OpenAI reported Codex passing two to three million weekly active users, and the underlying model has been upgraded relentlessly — from the original `codex-1` (May 2025) through the GPT-5-Codex line and GPT-5.5 (April 2026), to **GPT-5.6 Sol** (the default from 9 July 2026) and then **GPT-6 Astra**, which became the bundled default on 4 September 2026 when no model is explicitly configured.
 
 The practical upshot for creators and small teams: you can offload entire chunks of engineering work. The cloud agent runs tasks in isolated sandboxes — you can queue several at once and let them work in parallel while you do something else, then review the pull requests they open. That "assign work and walk away" model is genuinely new, and it is why understanding Codex pays off whether you are shipping a product or just automating your own repos.
 
@@ -179,7 +179,7 @@ The most productive pattern is hybrid: kick off a long task in the cloud, keep e
 
 ### Use the Right Model for the Job
 
-GPT-5.5 is the recommended default, but for fast, interactive editing you can drop to a lower-latency variant via `/model`. Reasoning effort (low/medium/high) is also adjustable — higher effort for gnarly problems, lower for routine edits.
+**GPT-6 Astra** is the bundled default since 4 September 2026. For fast, interactive editing you can drop to a lower-latency, cheaper model via `/model` — the GPT-5.6 tiers (Sol, Terra, Luna) all remain selectable, and Luna in particular is built for low-latency work. Reasoning effort is also adjustable: higher effort for gnarly problems, lower for routine edits. Dropping a tier is a much bigger cost lever than any prompt change — see our guides to [GPT-6 Astra](/guides/gpt-6-astra-guide) and [GPT-5.6 Sol, Terra and Luna](/guides/gpt-5-6-sol-terra-luna-guide).
 
 ### Mind Your Plan's Limits
 
@@ -209,7 +209,7 @@ Codex is included in your ChatGPT plan, so there is no separate fee. The Free ti
 
 ### What model powers Codex in 2026?
 
-As of May 2026 the recommended default is **GPT-5.5** (with a GPT-5.5 Pro option), released in late April 2026. Earlier Codex-tuned models like GPT-5.3-Codex and GPT-5.4 remain selectable, and a low-latency "Spark" variant exists for real-time interactive coding.
+As of September 2026 the bundled default is **GPT-6 Astra**, which took that slot on 4 September. Before it, **GPT-5.6 Sol** was the default coding model from 9 July 2026, and GPT-5.5 before that. The GPT-5.6 tiers — Sol, Terra and Luna — remain selectable via `/model`, and dropping to a cheaper tier for routine edits is the simplest way to control cost.
 
 ### Is Codex safe to run on my real codebase?
 

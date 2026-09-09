@@ -5,8 +5,44 @@
     <link>https://www.shelby-ai.com</link>
     <description>Honest AI tool reviews for creators, freelancers, and small teams.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Aug 2026 14:13:41 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 07:00:04 GMT</lastBuildDate>
     <atom:link href="https://www.shelby-ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT Image 2 vs GPT Image 2.5 (Flare &amp; Sunburst): What Actually Changed</title>
+      <link>https://www.shelby-ai.com/comparisons/gpt-image-2-vs-gpt-image-2-5</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/gpt-image-2-vs-gpt-image-2-5</guid>
+      <description>OpenAI shipped GPT Image 2.5 on 8 September 2026 as two API models — Flare for speed, Sunburst for precision — at the same token rates as GPT Image 2. Here is what genuinely changed, and the pricing detail the &apos;same price&apos; headlines are glossing over.</description>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-video-audio</category>
+    </item>
+    <item>
+      <title>Claude Fable 5.1 Explained: Pricing, Benchmarks, and When It&apos;s Worth Paying For</title>
+      <link>https://www.shelby-ai.com/guides/claude-fable-5-1-guide</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/claude-fable-5-1-guide</guid>
+      <description>Anthropic&apos;s Claude Fable 5.1 launched 1 September 2026 as its most capable model — $10/$50 per million tokens, a 1M context window, and cache reads cut 75%. Here is what actually changed, what it costs in practice, and when Claude Opus 5 at half the price is the better buy.</description>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>GPT-5.6 Sol, Terra and Luna: Which OpenAI Tier Should You Actually Pay For?</title>
+      <link>https://www.shelby-ai.com/guides/gpt-5-6-sol-terra-luna-guide</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/gpt-5-6-sol-terra-luna-guide</guid>
+      <description>OpenAI&apos;s GPT-5.6 family split one model into three tiers — Sol, Terra and Luna — spanning a 25x price range. Then a July price cut changed the maths. Here is the verified pricing, what each tier is genuinely good at, and why the cheapest tier is not always the cheapest choice.</description>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
+    <item>
+      <title>GPT-6 Astra Explained: Pricing, Benchmarks, and What OpenAI Left Out</title>
+      <link>https://www.shelby-ai.com/guides/gpt-6-astra-guide</link>
+      <guid isPermaLink="true">https://www.shelby-ai.com/guides/gpt-6-astra-guide</guid>
+      <description>OpenAI shipped GPT-6 Astra on 4 September 2026 at $10/$50 per million tokens — double the input and output rates of GPT-5.6 Sol, with a 1.05M context window and a saturated ARC-AGI-3 score. Here is the verified pricing, the benchmarks with their caveats, and the one row OpenAI left out of its own announcement.</description>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+      <author>Frank Shelby</author>
+      <category>ai-content-productivity</category>
+    </item>
     <item>
       <title>Cursor Review 2026: The AI Code Editor, Its Limits &amp; Real Costs</title>
       <link>https://www.shelby-ai.com/reviews/cursor-review</link>
@@ -575,10 +611,10 @@
       <category>ai-content-productivity</category>
     </item>
     <item>
-      <title>Midjourney vs DALL-E vs Leonardo AI: Best AI Image Generator for Marketers</title>
+      <title>Midjourney vs GPT Image 2 vs Leonardo AI: Best AI Image Generator for Marketers (2026)</title>
       <link>https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</link>
       <guid isPermaLink="true">https://www.shelby-ai.com/comparisons/midjourney-vs-dalle-vs-leonardo</guid>
-      <description>In the battle of Midjourney vs DALL-E vs Leonardo AI, we explore which AI image generator offers the best features for marketers. From pricing to ease of use, we cover all angles.</description>
+      <description>DALL-E was retired in May 2026 and replaced by GPT Image 2 inside ChatGPT. Here is how the three image generators marketers actually use now — Midjourney, GPT Image 2 and Leonardo AI — compare on price, output and licensing.</description>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
       <author>Frank Shelby</author>
       <category>ai-video-audio</category>

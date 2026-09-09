@@ -2,12 +2,12 @@
   "name": "ShelbyAI — AI Tool Pricing Index",
   "url": "https://www.shelby-ai.com/ai-pricing-index/",
   "license": "CC BY 4.0 — credit \"ShelbyAI — AI Tool Pricing Index\" with a link",
-  "generated": "2026-08-18",
-  "newestDataDate": "2026-08-18",
+  "generated": "2026-09-09",
+  "newestDataDate": "2026-09-09",
   "notes": "entryPaidPrice and popularPrice are per month in the currency field. pricingVerified is the date the plans were checked against the vendor pricing page (pricingSourceUrl); rows without it carry only our guide’s lastUpdated date and should be treated as indicative.",
   "stats": {
     "toolCount": 40,
-    "planCount": 151,
+    "planCount": 152,
     "medianEntryPriceUsd": 19.494999999999997,
     "averageEntryPriceUsd": 27.18,
     "medianPopularPriceUsd": 28,
@@ -42,10 +42,10 @@
       "popularPrice": 20,
       "hasCustomTier": true,
       "planCount": 5,
-      "lastUpdated": "2026-07-07",
+      "lastUpdated": "2026-09-09",
       "currency": "USD",
-      "pricingVerified": null,
-      "pricingSourceUrl": null,
+      "pricingVerified": "2026-09-09",
+      "pricingSourceUrl": "https://openai.com/chatgpt/pricing/",
       "needsVerification": false
     },
     {
@@ -57,11 +57,11 @@
       "entryPaidPrice": 20,
       "popularPrice": 20,
       "hasCustomTier": true,
-      "planCount": 4,
-      "lastUpdated": "2026-03-18",
+      "planCount": 5,
+      "lastUpdated": "2026-09-09",
       "currency": "USD",
-      "pricingVerified": null,
-      "pricingSourceUrl": null,
+      "pricingVerified": "2026-09-09",
+      "pricingSourceUrl": "https://claude.ai/upgrade",
       "needsVerification": false
     },
     {
@@ -266,11 +266,11 @@
       "popularPrice": 19.99,
       "hasCustomTier": false,
       "planCount": 2,
-      "lastUpdated": "2026-03-23",
+      "lastUpdated": "2026-09-09",
       "currency": "USD",
       "pricingVerified": null,
-      "pricingSourceUrl": null,
-      "needsVerification": false
+      "pricingSourceUrl": "https://gemini.google.com/subscriptions",
+      "needsVerification": true
     },
     {
       "slug": "grammarly",

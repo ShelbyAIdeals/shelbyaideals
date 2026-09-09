@@ -98,7 +98,7 @@
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-03-17",
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-09-09",
     "lastTested": "2026-03-15",
     "featured": false,
     "tool": "ChatGPT",
@@ -123,9 +123,20 @@
         "price": "$0",
         "period": "",
         "features": [
-          "GPT-4o mini",
-          "Limited GPT-4o",
+          "GPT-5.6 Luna",
+          "ChatGPT Images 2.0",
           "Basic features"
+        ],
+        "affiliateUrl": "https://chat.openai.com"
+      },
+      {
+        "plan": "Go",
+        "price": "$8",
+        "period": "/month",
+        "features": [
+          "GPT-5.6 Luna",
+          "Higher message limits",
+          "Budget entry tier"
         ],
         "affiliateUrl": "https://chat.openai.com"
       },
@@ -134,8 +145,8 @@
         "price": "$20",
         "period": "/month",
         "features": [
-          "Full GPT-4o access",
-          "DALL-E 3",
+          "GPT-5.6 Sol as default",
+          "ChatGPT Images 2.0",
           "Advanced Data Analysis",
           "Custom GPTs"
         ],
@@ -147,16 +158,16 @@
         "price": "$200",
         "period": "/month",
         "features": [
-          "Unlimited GPT-4o",
-          "o1 pro mode",
+          "GPT-5.6 Sol",
+          "GPT-6 Pro (Astra) — 200 messages/week",
           "Research tools",
           "Priority access"
         ],
         "affiliateUrl": "https://chat.openai.com"
       },
       {
-        "plan": "Team",
-        "price": "$30",
+        "plan": "Business",
+        "price": "$25",
         "period": "/user/month",
         "features": [
           "Everything in Plus",
@@ -182,7 +193,7 @@
     "affiliateLabel": "Try ChatGPT Free",
     "researchOnly": false,
     "youtubeUrl": null,
-    "readingTime": "6 min read"
+    "readingTime": "7 min read"
   },
   {
     "title": "Claude AI Review 2026: The Thoughtful Alternative to ChatGPT",
@@ -192,7 +203,7 @@
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-03-17",
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-09-09",
     "lastTested": "2026-03-15",
     "featured": false,
     "tool": "Claude AI",
@@ -215,7 +226,7 @@
         "price": "$0",
         "period": "",
         "features": [
-          "Claude Sonnet",
+          "Claude Sonnet 5",
           "Basic features",
           "Limited messages"
         ],
@@ -226,17 +237,28 @@
         "price": "$20",
         "period": "/month",
         "features": [
-          "Claude Opus 4",
-          "Extended thinking",
-          "Projects",
-          "Priority access"
+          "Claude Opus 5",
+          "Claude Fable 5.1",
+          "Claude Code & Cowork",
+          "Projects"
         ],
         "highlighted": true,
         "affiliateUrl": "https://claude.ai"
       },
       {
+        "plan": "Max",
+        "price": "$100",
+        "period": "/month",
+        "features": [
+          "Everything in Pro",
+          "5x-20x usage limits",
+          "$200 tier for heaviest use"
+        ],
+        "affiliateUrl": "https://claude.ai"
+      },
+      {
         "plan": "Team",
-        "price": "$30",
+        "price": "$25",
         "period": "/user/month",
         "features": [
           "Everything in Pro",
@@ -273,7 +295,7 @@
     "affiliateLabel": "Try Claude AI Free",
     "researchOnly": false,
     "youtubeUrl": null,
-    "readingTime": "6 min read"
+    "readingTime": "7 min read"
   },
   {
     "title": "Copy.ai Review 2026: Can It Replace a Freelance Copywriter?",
@@ -1142,7 +1164,7 @@
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-03-17",
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-09-09",
     "lastTested": "2026-03-15",
     "featured": false,
     "tool": "Google Gemini",
@@ -1165,19 +1187,19 @@
         "price": "$0",
         "period": "",
         "features": [
-          "Gemini 2.0 Flash",
+          "Gemini 3.8 Flash",
           "Google integration",
           "Basic features"
         ],
         "affiliateUrl": "https://gemini.google.com"
       },
       {
-        "plan": "Advanced",
+        "plan": "Google AI Pro",
         "price": "$19.99",
         "period": "/month",
         "features": [
-          "Gemini Ultra",
-          "1TB Google storage",
+          "Gemini 3.1 Pro (1M context)",
+          "Expanded Google storage",
           "Gems (custom chatbots)",
           "Deep Research"
         ],
@@ -1644,7 +1666,7 @@
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-03-17",
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-09-09",
     "lastTested": "2026-03-15",
     "featured": false,
     "tool": "Leonardo AI",
@@ -1712,7 +1734,7 @@
     "pros": [
       "Generous free tier with daily tokens.",
       "Fine-tuning capabilities for custom image generation.",
-      "Affordable pricing compared to Midjourney and DALL-E 3.",
+      "Affordable pricing compared to Midjourney, and a real free tier unlike Midjourney.",
       "Engaged community with a vibrant gallery of shared creations."
     ],
     "cons": [
@@ -1921,7 +1943,7 @@
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-03-17",
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-09-09",
     "lastTested": "2026-03-15",
     "featured": false,
     "tool": "Midjourney",
@@ -2004,7 +2026,7 @@
     "affiliateLabel": "Try Midjourney Free",
     "researchOnly": false,
     "youtubeUrl": null,
-    "readingTime": "6 min read"
+    "readingTime": "7 min read"
   },
   {
     "title": "Mixo Review 2026: Launch a Website in 30 Seconds with AI",
@@ -2392,7 +2414,7 @@
         "period": "/month",
         "features": [
           "600+ Pro searches/day",
-          "GPT-4o & Claude access",
+          "Frontier OpenAI & Claude models",
           "File upload & analysis",
           "API access"
         ],
@@ -2403,7 +2425,7 @@
     "pros": [
       "Automatically cites sources for increased trustworthiness.",
       "Supports large-scale research with over 600 Pro searches daily.",
-      "Integrates advanced AI models like GPT-4o and Claude.",
+      "Routes queries to frontier models from OpenAI and Anthropic.",
       "Offers file upload and analysis, expanding its utility beyond standard search."
     ],
     "cons": [

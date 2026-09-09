@@ -1,7 +1,7 @@
 tool,slug,category,currency,entry_paid_price_per_month,popular_plan_price_per_month,has_free_plan,has_free_trial,has_custom_tier,plan_count,pricing_verified,pricing_source_url,last_updated,needs_verification
 Chatbase,chatbase,AI Chat Assistants,USD,19,99,true,false,false,4,,,2026-03-18,false
-ChatGPT,chatgpt,AI Chat Assistants,USD,20,20,true,false,true,5,,,2026-07-07,false
-Claude AI,claude-ai,AI Chat Assistants,USD,20,20,true,false,true,4,,,2026-03-18,false
+ChatGPT,chatgpt,AI Chat Assistants,USD,20,20,true,false,true,5,2026-09-09,https://openai.com/chatgpt/pricing/,2026-09-09,false
+Claude AI,claude-ai,AI Chat Assistants,USD,20,20,true,false,true,5,2026-09-09,https://claude.ai/upgrade,2026-09-09,false
 Copy.ai,copy-ai,AI Writing & SEO,USD,29,29,false,false,true,4,2026-08-18,https://www.copy.ai/prices,2026-08-18,false
 Creatify,creatify,AI Video,USD,39,99,true,false,true,4,2026-08-18,https://creatify.ai/pricing,2026-08-18,false
 Cursor,cursor,AI Coding,USD,20,20,true,true,true,5,2026-08-18,https://cursor.com/pricing,2026-08-18,false
@@ -14,7 +14,7 @@ Fireflies.ai,fireflies,AI Meetings,USD,18,18,true,false,false,4,2026-08-18,https
 Fliki,fliki,AI Video,USD,28,28,true,false,true,4,,,2026-03-18,false
 Frase,frase,AI Writing & SEO,USD,49,129,false,true,true,4,2026-08-18,https://www.frase.io/pricing/,2026-08-18,false
 Gamma,gamma,AI Image & Design,USD,12,12,true,false,false,3,,https://gamma.app/pricing,2026-08-18,true
-Google Gemini,google-gemini,AI Chat Assistants,USD,19.99,19.99,true,true,false,2,,,2026-03-23,false
+Google Gemini,google-gemini,AI Chat Assistants,USD,19.99,19.99,true,true,false,2,,https://gemini.google.com/subscriptions,2026-09-09,true
 Grammarly,grammarly,AI Writing & SEO,USD,12,12,true,false,false,3,,,2026-03-18,false
 Grok,grok,AI Chat Assistants,USD,16,16,true,false,false,2,,,2026-03-18,false
 HeyGen,heygen,AI Video,USD,29,29,true,false,true,5,2026-08-18,https://www.heygen.com/pricing,2026-08-18,false

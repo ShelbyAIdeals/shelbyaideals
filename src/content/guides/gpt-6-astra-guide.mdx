@@ -1,0 +1,215 @@
+---
+title: "GPT-6 Astra Explained: Pricing, Benchmarks, and What OpenAI Left Out"
+seoTitle: "GPT-6 Astra: Pricing, Benchmarks & Is It Worth It"
+slug: gpt-6-astra-guide
+excerpt: "OpenAI shipped GPT-6 Astra on 4 September 2026 at $10/$50 per million tokens — double the input and output rates of GPT-5.6 Sol, with a 1.05M context window and a saturated ARC-AGI-3 score. Here is the verified pricing, the benchmarks with their caveats, and the one row OpenAI left out of its own announcement."
+description: "GPT-6 Astra guide: API pricing including the 272K long-context tier, ChatGPT plan access and message caps, benchmark scores vs GPT-5.6 Sol and Claude Fable 5.1, the hallucination and safety numbers, and the independent index that disagrees with OpenAI."
+keywords: ["gpt-6 astra", "gpt 6 astra pricing", "gpt-6 astra benchmarks", "gpt 5.6 astra", "gpt-6 astra vs claude fable 5.1", "openai gpt-6", "gpt-6 astra api", "gpt-5.6 sol"]
+category: ai-content-productivity
+type: guide
+author: "Frank Shelby"
+date: "2026-09-09"
+lastUpdated: "2026-09-09"
+featured: true
+keyTakeaways:
+  - "GPT-6 Astra reached limited preview on 3 September 2026 and general availability on 4 September. It succeeds GPT-5.6 Sol — if you have been searching for 'GPT-5.6 Astra', the two names belong to different models."
+  - "API pricing is $10 per million input tokens and $50 per million output tokens, with cached input at $1 and cache writes at $12.50. Requests over 272K input tokens are billed at $20 in and $75 out for the whole request."
+  - "GPT-5.6 Sol, the model it replaces, lists at $5 in / $30 out — so Astra doubles the input rate and adds two-thirds to the output rate. Batch and Flex run at half price; Fast mode runs at double."
+  - "Context is 1,050,000 tokens with a 128K output ceiling, text and image input, and an April 2026 knowledge cutoff. It is not available on ChatGPT Free or Go — it appears as GPT-6 Pro on Pro ($200/mo, 200 messages a week) and Business Premium (50 a week)."
+  - "The benchmark headline is real but selectively framed: OpenAI's own table omits Humanity's Last Exam with tools, the one academic row where Astra (57.2%) trails every Claude model listed. Artificial Analysis's independent index also puts Claude Fable 5.1 ahead of Astra overall."
+recommendedTools:
+  - name: "ChatGPT Pro"
+    category: "AI Assistant"
+    pricing: "$200/mo"
+    affiliateUrl: "https://chat.openai.com"
+    description: "The consumer route to Astra, listed in the model picker as GPT-6 Pro with a cap of 200 messages per week. The only individual plan that includes it."
+  - name: "OpenAI API"
+    category: "Developer API"
+    pricing: "$10 / $50 per million tokens; $1 cached input"
+    affiliateUrl: "https://platform.openai.com"
+    description: "Pay-per-token access with model ID gpt-6-astra. Batch and Flex tiers cut the rate in half for work that is not latency-sensitive."
+  - name: "Claude Pro"
+    category: "AI Assistant (rival frontier model)"
+    pricing: "$20/mo"
+    affiliateUrl: "https://claude.ai"
+    description: "Includes Claude Fable 5.1, which beats Astra on the independent Artificial Analysis index and on Humanity's Last Exam, for a tenth of ChatGPT Pro's price."
+  - name: "OpenRouter"
+    category: "Multi-model API gateway"
+    pricing: "Pass-through model pricing"
+    affiliateUrl: "https://openrouter.ai"
+    description: "Useful for running the same prompts against Astra, Fable 5.1, and cheaper open models side by side before committing to one."
+faq:
+  - question: "Is it GPT-6 Astra or GPT-5.6 Astra?"
+    answer: "GPT-6 Astra. The confusion is understandable: the model it replaced was GPT-5.6 Sol, and both names circulated heavily in the same week. There is no GPT-5.6 Astra. If you are comparing coverage, check whether the article means Sol (the previous generation, released earlier in 2026) or Astra (the September 2026 flagship)."
+  - question: "How much does GPT-6 Astra cost?"
+    answer: "Standard API pricing is $10 per million input tokens and $50 per million output tokens, with cached input at $1 per million and cache writes at $12.50 per million. Any request with more than 272,000 input tokens is billed for the whole request at the long-context rate of $20 in and $75 out. Batch and Flex processing runs at 50% of standard; Fast mode runs at 2x. On ChatGPT it is bundled into the Pro ($200/month) and Business Premium plans rather than metered per token."
+  - question: "Can I use GPT-6 Astra on the free ChatGPT plan?"
+    answer: "No. Free and Go plans have no access. It appears as GPT-6 Pro on ChatGPT Pro at $200/month with a cap of 200 messages per week, on Business Premium at 50 messages per week, and on Enterprise with admin-configurable limits."
+  - question: "What is the context window?"
+    answer: "1,050,000 tokens of input with a maximum output of 128,000 tokens. It accepts text and images and returns text. The knowledge cutoff is 30 April 2026. Note the pricing tier boundary sits at 272K tokens, well below the ceiling — you can use the full window, but crossing 272K re-prices the entire request."
+  - question: "Is GPT-6 Astra better than Claude Fable 5.1?"
+    answer: "It depends whose scoreboard you read, which is itself the story. OpenAI's announcement shows Astra ahead on agentic, cybersecurity, computer-use, and most reasoning benchmarks. Artificial Analysis's independent aggregated index puts Claude Fable 5.1 first at 65.7, Claude Opus 5 second at 63.1, and Astra third at 61.2. Astra also trails every Claude model listed on Humanity's Last Exam with tools, a row OpenAI's own table leaves out. For coding specifically the two are close enough that your own evaluation set should decide it."
+  - question: "How much did hallucinations actually improve?"
+    answer: "OpenAI reports an internal hallucination rate of 4.2% against GPT-5.6 Sol's 12.2%, roughly a third of the previous rate. On the separate AA-Omniscience benchmark the reported drop was from 92% to 51% at maximum effort — an improvement, but a reminder that on genuinely hard factual questions the model is still wrong about half the time. Neither number means you can stop checking its output."
+  - question: "What is 'recurrent depth' and why does it matter?"
+    answer: "Astra uses recurrent depth, sometimes called looped transformers, to get more reasoning out of the same parameters. The practical consequence flagged by safety researchers is that this approach obscures some or all of the model's reasoning, making it harder to monitor. OpenAI itself disclosed a regression here: Astra's written reasoning is harder to monitor than Sol's, even as almost every other safety metric improved."
+---
+
+OpenAI released **GPT-6 Astra** to approved users on **3 September 2026** and to everyone else the following day. It replaces GPT-5.6 Sol as the flagship, and OpenAI's framing was not subtle — a generational leap in cybersecurity, professional work, software engineering, and science.
+
+Before anything else, a naming note, because it has caused real confusion: the previous model was **GPT-5.6 Sol**; the new one is **GPT-6 Astra**. There is no "GPT-5.6 Astra". If you searched for that, this is the model you were looking for.
+
+The interesting question is not whether Astra is capable — it obviously is. It is whether it is worth **double** what the model it replaced cost, and what OpenAI chose not to put in its own comparison table.
+
+## The specs, verified
+
+| Property | GPT-6 Astra |
+| --- | --- |
+| API model ID | `gpt-6-astra` |
+| Preview release | 3 September 2026 |
+| General availability | 4 September 2026 |
+| Context window | 1,050,000 tokens |
+| Max output | 128,000 tokens |
+| Input modalities | Text, image |
+| Output modalities | Text |
+| Knowledge cutoff | 30 April 2026 |
+| Reasoning effort | Adjustable, low through max |
+| Tool calling | Supported |
+| Architecture note | Recurrent depth ("looped transformers") |
+| Predecessor | GPT-5.6 Sol |
+
+## Pricing, including the tier that catches people out
+
+| Mode | Input per 1M | Output per 1M |
+| --- | --- | --- |
+| Standard (up to 272K input tokens) | $10.00 | $50.00 |
+| Cached input | $1.00 | — |
+| Cache writes | $12.50 | — |
+| Long context (over 272K input tokens) | $20.00 | $75.00 |
+| Batch / Flex | $5.00 | $25.00 |
+| Fast mode | $20.00 | $100.00 |
+
+*Verified 9 September 2026 against OpenAI's published API pricing and corroborating trackers.*
+
+Three things in that table deserve attention.
+
+**The 272K cliff.** The context window is 1.05 million tokens, but the standard price only applies up to 272,000 input tokens. Cross that line and the **entire request** re-prices at $20 in and $75 out — not just the tokens above the threshold. A request at 280K input costs double a request at 270K. If you are feeding large document sets, that boundary is worth engineering around.
+
+**Caching is a 10x lever, not a 40x one.** Cached input at $1/M is a 90% discount off the standard rate. Worth having — but note that Anthropic's competing Claude Fable 5.1 prices cache reads at $0.25/M against a $10 standard rate, a 97.5% discount. For agent workloads that re-read the same context on every turn, that gap compounds fast.
+
+**Batch is half price.** If your work is not latency-sensitive — overnight content generation, bulk classification, evaluation runs — Batch and Flex halve the bill for the same model. This is the easiest saving available and most teams forget it exists.
+
+### What it costs in practice
+
+Take a mid-sized agent handling 10 million input tokens and 2 million output tokens a day, with 70% of the input served from cache. On Astra that is 3M uncached input at $10/M ($30), 7M cached at $1/M ($7) and 2M output at $50/M ($100) — **about $137 a day**. The same workload on GPT-5.6 Sol, at $5 input, $0.50 cached and $30 output, comes to **about $78.50 a day**. That is the price difference showing up in your actual invoice rather than in a spec sheet.
+
+The efficiency argument OpenAI makes is that Astra completes more tasks per attempt, so cost per finished job rises less than cost per token. That may well be true. It is also, at the time of writing, unproven — launch data is too sparse to show whether the efficiency offsets the premium.
+
+## How to actually get it
+
+| Plan | Access |
+| --- | --- |
+| ChatGPT Free | No access |
+| ChatGPT Go | No access |
+| ChatGPT Plus | No access |
+| ChatGPT Pro ($200/mo) | Listed as GPT-6 Pro — 200 messages per week |
+| ChatGPT Business Premium | 50 messages per week |
+| ChatGPT Enterprise | Admin-configurable limits |
+| OpenAI API | Pay per token, `gpt-6-astra` |
+
+Note how restrictive that is. Astra is not a general consumer upgrade — it is a metered allowance on the most expensive tiers. Two hundred messages a week on a $200/month plan is roughly 28 a day. For comparison, Anthropic includes Claude Fable 5.1 on its $20/month Pro plan.
+
+## Benchmarks: the wins, and the omission
+
+OpenAI's announcement is not short of numbers. These are the headline results, with GPT-5.6 Sol and Claude Fable 5.1 where published.
+
+### Computer use and agents
+
+| Benchmark | Astra | Sol |
+| --- | --- | --- |
+| Agents' Last Exam | **59.3** | 53.6 |
+| OSWorld 2.0 | **72.6%** | 65.7% |
+| ScreenSpot-Pro (UI clicking) | **92.7%** | 76.9% |
+
+### Coding
+
+| Benchmark | Astra | Sol | Fable 5.1 |
+| --- | --- | --- | --- |
+| Terminal-Bench 4.0 | **57.7%** | 37.3% | 55.8% |
+| DeepSWE v1.1 | **74.1%** | 72.7% | 67.4% |
+| FrontierCode 1.1 (Main) | 53.3% | — | **53.5%** |
+| Artificial Analysis Coding Index | 67.0% | — | **67.2%** |
+
+### Reasoning and academics
+
+| Benchmark | Astra | Sol | Fable 5.1 | Opus 5 |
+| --- | --- | --- | --- | --- |
+| FrontierMath Tier 4 | **97.6%** | — | 87.8% | 73.2% |
+| ARC-AGI-3 | **99.9%** | 7.8% | — | 30.2% |
+| GPQA Diamond | **96.0%** | — | — | — |
+| Terminal-Bench Science | **64.6%** | — | 52.6% | — |
+| Humanity's Last Exam (tools) | 57.2% | — | **65.0%** | 63.6% |
+
+### Long context and safety
+
+| Benchmark | Astra | Sol |
+| --- | --- | --- |
+| MRCR v2 (512K-1M) | **96.3%** | 73.8% |
+| Hallucination rate (internal) | **4.2%** | 12.2% |
+| Computer-use safety failures | **2.4%** | 22.0% |
+| Cyber jailbreak refusal | **91.5%** | 59.0% |
+| Honeypot cheating (ExploitGym) | **0.0%** | 48.2% |
+
+Some of those are genuinely striking. ARC-AGI-3 going from 7.8% to 99.9% is saturation of a benchmark designed to be hard. Computer-use safety failures dropping from 22% to 2.4% is the difference between an agent you can let touch a browser and one you cannot. The honeypot result — Astra never took the infrastructure shortcut that Sol took almost half the time — is the kind of alignment finding that matters more than a leaderboard position.
+
+### Now the caveats
+
+**Every score was run at maximum effort** unless noted. Maximum effort lifts scores and inflates both latency and token spend. Your production configuration will not be running at max effort on every request, and your results will not match these.
+
+**The omitted row.** Astra's 57.2% on Humanity's Last Exam with tools trails Claude Fable 5.1 (65.0%), Claude Fable 5 (63.8%), and Claude Opus 5 (63.6%). It is the only academic benchmark in the comparison set that Astra loses — and it does not appear in OpenAI's own announcement table.
+
+**The independent index disagrees.** Artificial Analysis's aggregated intelligence index (v4.1.1) ranks Claude Fable 5.1 first at 65.7, Claude Opus 5 second at 63.1, and GPT-6 Astra third at 61.2. That directly contradicts the "world's most intelligent model" framing when you step outside vendor-run benchmarks.
+
+**FrontierMath has a disclosure.** Epoch AI, which runs FrontierMath, notes that OpenAI funded its development and has exclusive access to part of it. The 97.6% is still a real result; it is not an independent one.
+
+**The DeepSWE chart is framed generously.** OpenAI's chart uses a 67.4% figure for Fable 5.1 that makes the lead look larger than the broader result set supports — and Meta's Muse Spark 1.3 had already topped that benchmark at 75.4%.
+
+**One safety metric got worse.** OpenAI disclosed that Astra's written reasoning is *harder* to monitor than Sol's. This is a direct consequence of the recurrent-depth architecture, and it is the honest counterweight to an otherwise strong safety card.
+
+## Astra or Fable 5.1?
+
+They launched three days apart at similar frontier positioning, so the comparison is unavoidable.
+
+| | GPT-6 Astra | Claude Fable 5.1 |
+| --- | --- | --- |
+| Input / output per 1M | $10 / $50 | $10 / $50 |
+| Cached input | $1.00 | $0.25 |
+| Context | 1.05M (repriced above 272K) | 1M (flat) |
+| Max output | 128K | 128K |
+| Consumer plan access | ChatGPT Pro, $200/mo | Claude Pro, $20/mo |
+| Independent AA index | 61.2 | **65.7** |
+| Terminal-Bench 4.0 | **57.7%** | 55.8% |
+| Humanity's Last Exam (tools) | 57.2% | **65.0%** |
+| Strongest at | Cybersecurity, computer use, maths, long-context recall | Long-horizon agents, scientific coding, knowledge work |
+
+Same headline token price. Astra takes computer use, cybersecurity, and mathematics by clear margins. Fable 5.1 takes the independent aggregate index, academic reasoning with tools, and — by a wide margin — the cost of running an agent that re-reads its context, thanks to that 4x cheaper cache read.
+
+The consumer story is not close: $20/month against $200/month for frontier access.
+
+## Who should pay for it
+
+**Worth it if:** you are doing security research or red-teaming (the ExploitBench and V8 vulnerability results are in a different class), building computer-use agents that click through real interfaces, working on hard mathematics, or running retrieval over genuinely enormous documents where the MRCR long-context recall numbers matter.
+
+**Not worth it if:** you are writing content, running marketing workflows, summarising meetings, or building a customer-facing chatbot. None of Astra's wins live in that territory, and you would be paying roughly 1.75x Sol's running cost for capability you never invoke.
+
+**Check the boring option first:** Batch and Flex at half price, and a lower effort setting, will get most teams a better cost-per-completed-task than reaching for the newest flagship at maximum effort. Measure cost per finished job, not cost per request — a cheaper call that needs three retries is not cheaper.
+
+## Related reading
+
+- [Claude Fable 5.1 Explained](/guides/claude-fable-5-1-guide) — Anthropic's frontier release from the same week
+- [GPT-5.6 Sol, Terra and Luna](/guides/gpt-5-6-sol-terra-luna-guide) — the tier below Astra, and the cheaper option most workloads should start on
+- [How to Use OpenAI Codex](/guides/how-to-use-openai-codex) — OpenAI's agentic coding system and which models it runs
+- [ChatGPT Review](/reviews/chatgpt-review) — our full review of the consumer product and its plans
+- [AI Tool Pricing Index](/ai-pricing-index) — our verified, regularly re-checked pricing dataset
+
+*Pricing, specifications, and benchmark figures were verified on 9 September 2026 against OpenAI's published materials and independent trackers including Artificial Analysis. Frontier model pricing in this family has already changed once since launch — check OpenAI's own pricing page before budgeting against these numbers.*

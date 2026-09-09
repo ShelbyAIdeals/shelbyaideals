@@ -8,7 +8,7 @@ category: ai-content-productivity
 type: comparison
 author: "Frank Shelby"
 date: "2026-03-18"
-lastUpdated: "2026-03-18"
+lastUpdated: "2026-09-09"
 featured: false
 featuredImage: "/images/comparisons/chatgpt-vs-claude-for-business.webp"
 tools:
@@ -17,19 +17,19 @@ tools:
 winners:
   - scenario: "Best for Long Document Analysis"
     winner: "Claude"
-    reason: "200K token context window handles full contracts, reports, and datasets without chunking. ChatGPT's 128K window is smaller."
+    reason: "Both assistants now carry roughly 1M tokens of context, so window size is no longer the differentiator. Claude's edge on dense material is fewer confident wrong answers."
   - scenario: "Best for Quick Marketing Tasks"
     winner: "ChatGPT"
-    reason: "GPT-4o is faster for ad copy, social posts, and email drafts. The response speed advantage matters for high-volume tasks."
+    reason: "The GPT-5.6 family, and Luna in particular, is faster for ad copy, social posts, and email drafts. The response speed advantage matters for high-volume tasks."
   - scenario: "Best for Careful Business Writing"
     winner: "Claude"
     reason: "More nuanced tone, fewer hallucinations on factual claims, and better at following complex formatting instructions."
   - scenario: "Best Ecosystem & Integrations"
     winner: "ChatGPT"
-    reason: "GPT Store, plugins, DALL-E integration, and wider third-party API support give ChatGPT a larger feature surface."
+    reason: "GPT Store, plugins, ChatGPT Images 2.0, and wider third-party API support give ChatGPT a larger feature surface."
   - scenario: "Best for Data Analysis & Spreadsheets"
     winner: "ChatGPT"
-    reason: "Code Interpreter handles file uploads, runs Python on data, and generates charts natively. Claude can analyze but not execute code in-browser."
+    reason: "Code Interpreter remains the more mature surface for uploaded spreadsheets and charting, though Claude closed most of this gap in 2026 with its own code execution and file creation."
 affiliateUrls:
   ChatGPT: "https://chat.openai.com"
   Claude: "https://claude.ai"
@@ -41,11 +41,13 @@ affiliateUrls:
 
 | Scenario | Winner | Why |
 |---|---|---|
-| Best for Long Document Analysis | **Claude** | 200K context window handles entire contracts and reports without splitting |
+| Best for Long Document Analysis | **Claude** | Context is at parity (~1M both); Claude flags ambiguity instead of glossing over it |
 | Best for Quick Marketing Tasks | **ChatGPT** | Faster response times for high-volume ad copy, emails, and social posts |
 | Best for Careful Business Writing | **Claude** | More nuanced tone, fewer factual hallucinations, better instruction following |
-| Best Ecosystem & Integrations | **ChatGPT** | GPT Store, plugins, DALL-E, Code Interpreter, wider API ecosystem |
-| Best for Data Analysis & Spreadsheets | **ChatGPT** | Code Interpreter runs Python on uploaded files and generates charts |
+| Best Ecosystem & Integrations | **ChatGPT** | GPT Store, plugins, ChatGPT Images 2.0, Code Interpreter, wider API ecosystem |
+| Best for Data Analysis & Spreadsheets | **ChatGPT** | Code Interpreter is still the more mature surface, but Claude now runs code and builds files too |
+
+> **Updated 9 September 2026.** Two things changed since this comparison was first tested in March 2026, and both narrowed the gap. Context windows converged — ChatGPT now runs the GPT-5.6 family at roughly 1.05M tokens and Claude runs Opus 5 and Fable 5.1 at 1M, so the old 128K-versus-200K split no longer exists. And Claude gained code execution and file creation (Excel, Word, PowerPoint, PDF) for all plan tiers, closing most of the data-analysis gap. The tested sections below are marked where the original result was caused by a limit that has since been removed.
 
 Both ChatGPT and Claude are capable AI assistants for business use. The honest answer is that **either tool will save you hours per week** on writing, analysis, brainstorming, and communication tasks. But they have different strengths, and choosing the right one depends on what your business actually does day to day.
 
@@ -55,29 +57,29 @@ The short version: **ChatGPT is the Swiss Army knife** with more integrations, f
 
 ## ChatGPT: What It Brings to Business
 
-[ChatGPT](https://chat.openai.com) is the market leader in AI assistants, and for small businesses, its biggest advantage is **breadth**. The Plus plan ($20/month) gives you access to GPT-4o, DALL-E image generation, Code Interpreter for data analysis, web browsing, and the GPT Store where you can find specialized assistants for everything from legal drafting to financial modeling.
+[ChatGPT](https://chat.openai.com) is the market leader in AI assistants, and for small businesses, its biggest advantage is **breadth**. The Plus plan ($20/month) makes **GPT-5.6 Sol** the default model and adds ChatGPT Images 2.0 for image generation, Code Interpreter for data analysis, web browsing, and the GPT Store where you can find specialized assistants for everything from legal drafting to financial modeling.
 
-For a small business owner, this translates to a single subscription that handles multiple roles. Need a social media graphic? DALL-E generates it. Need to analyze a spreadsheet of sales data? Code Interpreter runs the numbers and produces charts. Need to draft a contract amendment? GPT-4o writes it. The **breadth of capability within one subscription** is ChatGPT's strongest selling point for resource-constrained businesses.
+For a small business owner, this translates to a single subscription that handles multiple roles. Need a social media graphic? ChatGPT Images 2.0 generates it. Need to analyze a spreadsheet of sales data? Code Interpreter runs the numbers and produces charts. Need to draft a contract amendment? Sol writes it. The **breadth of capability within one subscription** is ChatGPT's strongest selling point for resource-constrained businesses.
 
 ChatGPT's **response speed is noticeably faster** than Claude's for most tasks, especially short-form content. When you are generating 20 email subject lines, 5 ad variations, and a social media calendar in one sitting, the speed difference compounds. For high-volume marketing tasks, ChatGPT feels more productive.
 
 The **GPT Store and custom GPTs** let you build specialized assistants for your business. A real estate agency can create a GPT trained on their listing descriptions and client communication style. An e-commerce store can build one trained on their product catalog for customer support drafting. The customization potential is significant for businesses with repetitive, domain-specific tasks.
 
-**Weaknesses for business use:** ChatGPT has a well-documented tendency to hallucinate facts — it will confidently state incorrect information, which is dangerous in business contexts like contracts, compliance, and financial analysis. It also struggles with very long documents. The 128K token context window is large, but for businesses dealing with lengthy contracts, regulatory documents, or extensive datasets, it still requires splitting content.
+**Weaknesses for business use:** ChatGPT has a well-documented tendency to hallucinate facts — it will confidently state incorrect information, which is dangerous in business contexts like contracts, compliance, and financial analysis. The long-document weakness noted in our March 2026 testing has since been fixed: the GPT-5.6 family carries a 1,050,000-token context window, so contracts, regulatory documents, and large datasets no longer need splitting. (On the API, note that requests above 272K input tokens are re-billed at a higher rate — that ceiling does not apply to ChatGPT subscriptions.)
 
 ---
 
 ## Claude: What It Brings to Business
 
-[Claude](https://claude.ai) by Anthropic has positioned itself as the **safer, more thoughtful AI assistant**. Its Pro plan ($20/month) gives you access to Claude 3.5 Sonnet (the primary model) and Claude 3 Opus (the reasoning-heavy model), with a focus on accuracy, nuance, and instruction following.
+[Claude](https://claude.ai) by Anthropic has positioned itself as the **safer, more thoughtful AI assistant**. Its Pro plan ($20/month) gives you **Claude Opus 5** — Anthropic's recommended default — and **Claude Fable 5.1**, its most capable model as of 1 September 2026, with a focus on accuracy, nuance, and instruction following. The free tier runs Claude Sonnet 5.
 
 For small businesses, Claude's biggest advantage is **reliability in professional contexts**. When you ask Claude to draft a client proposal, it tends to produce more nuanced, contextually appropriate language than ChatGPT. When you ask it to analyze a contract, it is more likely to flag ambiguous clauses rather than glossing over them. This "carefulness" matters when the stakes are real — a misinterpreted contract clause or a confidently wrong financial figure can cost more than any subscription saves.
 
-The **200K token context window** is Claude's standout technical advantage. You can paste an entire 80-page contract, a full quarterly report, or a complete employee handbook, and Claude processes it as a single document. No chunking, no summarization, no lost context between sections. For businesses that work with long documents regularly — legal, consulting, finance, real estate — this is a genuine workflow improvement.
+The **1M token context window** means you can paste an entire 80-page contract, a full quarterly report, or a complete employee handbook and Claude processes it as a single document. No chunking, no summarisation, no lost context between sections. This used to be Claude's standout technical advantage; as of 2026 ChatGPT matches it, so treat long-document handling as table stakes rather than a reason to choose one over the other.
 
 Claude also excels at **following complex instructions**. If you give it a detailed style guide, a specific output format, or multi-step instructions with conditional logic, Claude adheres more consistently than ChatGPT. For businesses that need standardized outputs — templated reports, formatted proposals, structured data extraction — this consistency reduces editing time.
 
-**Weaknesses for business use:** Claude lacks ChatGPT's ecosystem breadth. No image generation, no code execution in-browser, no plugin store. Web browsing is more limited. If you need an all-in-one tool, Claude requires supplementing with other services. It is also slower on average — the response generation takes a beat longer, which matters for high-volume production tasks.
+**Weaknesses for business use:** Claude still lacks ChatGPT's ecosystem breadth — no image generation and no plugin store, and web browsing is more limited. The code-execution gap has closed: Claude now runs code and creates Excel, Word, PowerPoint and PDF files on every plan tier including Free. If you need image generation in the same subscription, Claude still requires supplementing with other services. It is also slower on average — the response generation takes a beat longer, which matters for high-volume production tasks.
 
 ---
 
@@ -101,25 +103,30 @@ ChatGPT produced five charts, a regression analysis, and a written summary with 
 
 **For any business task that involves numbers, spreadsheets, or visual data,** ChatGPT's Code Interpreter is a significant advantage.
 
+> **September 2026 update:** this test predates Claude's code execution and file creation features, which are now available on every plan tier including Free. Claude can accept CSV and XLSX uploads, run analysis on them, generate charts, and produce downloadable .xlsx, .docx, .pptx and .pdf files. ChatGPT's Code Interpreter remains the more mature surface, but the "Claude cannot run code" limitation described above no longer holds.
+
 ### Document Processing
 
 We tested both tools with a 45-page commercial lease agreement and asked them to: (1) summarize key terms, (2) flag potentially unfavorable clauses, and (3) list all deadlines and dates.
 
-**Claude handled the full document in a single pass** thanks to the 200K context window. The summary was thorough, the flagged clauses included specific page and section references, and the deadline extraction was complete. It also noted two clauses that were ambiguously worded and explained why they could be problematic.
+**Claude handled the full document in a single pass** thanks to its much larger context window at the time. The summary was thorough, the flagged clauses included specific page and section references, and the deadline extraction was complete. It also noted two clauses that were ambiguously worded and explained why they could be problematic.
 
 **ChatGPT required the document to be split** into sections due to the shorter context window. When processed in chunks, it missed two cross-references between sections (because those sections were in different chunks) and the deadline extraction was missing three dates that appeared in later sections.
 
-**Winner: Claude, especially for legal, consulting, and financial businesses** that regularly work with long documents.
+**Winner at the time of testing: Claude, especially for legal, consulting, and financial businesses** that regularly work with long documents.
+
+> **September 2026 update:** ChatGPT's failure here was caused purely by the old 128K context limit. The GPT-5.6 family now carries 1,050,000 tokens, so a 45-page lease fits in a single pass on both tools and the chunking errors described above would not recur. Treat this section as a record of the March 2026 state, not current guidance — on long documents the two are now at parity on capacity, and the remaining difference is judgement rather than capacity.
 
 ### Features Comparison
 
 | Feature | ChatGPT Plus ($20/mo) | Claude Pro ($20/mo) |
 |---|---|---|
-| Primary Model | GPT-4o | Claude 3.5 Sonnet |
-| Context Window | 128K tokens | 200K tokens |
-| Image Generation | DALL-E 3 integrated | No |
-| Code Execution | Code Interpreter (Python) | No in-browser execution |
-| File Upload & Analysis | PDF, CSV, Excel, images | Text and PDF (limited) |
+| Primary Model | GPT-5.6 Sol | Claude Opus 5 (Fable 5.1 selectable) |
+| Context Window | 1,050,000 tokens | 1,000,000 tokens |
+| Image Generation | ChatGPT Images 2.0 | No |
+| Code Execution | Code Interpreter (Python) | Yes — code execution on all tiers |
+| File Creation | Yes | Yes — .xlsx, .docx, .pptx, .pdf |
+| File Upload & Analysis | PDF, CSV, Excel, images | PDF, CSV, Excel, images |
 | Web Browsing | Yes | Limited |
 | Custom Assistants | GPT Store + custom GPTs | Projects feature |
 | Plugin Ecosystem | Extensive | None |
@@ -130,14 +137,16 @@ We tested both tools with a 45-page commercial lease agreement and asked them to
 
 | Plan | ChatGPT | Claude |
 |---|---|---|
-| Free | GPT-4o mini, limited usage | Claude 3.5 Sonnet, limited usage |
+| Free | GPT-5.6 Luna, limited usage | Claude Sonnet 5, limited usage |
+| Budget tier | Go, $8/month | — |
 | Plus/Pro | $20/month | $20/month |
-| Team | $25/month per seat (annual) | $25/month per seat (annual) |
+| Heavy use | Pro, $200/month (adds GPT-6 Pro) | Max, $100-$200/month |
+| Team/Business | From $25/month per seat | From $25/month per seat |
 | Enterprise | Custom | Custom |
 
-**The pricing is identical at every tier.** This makes the decision purely about capability fit, not budget. Both tools offer free tiers adequate for evaluation, and both charge the same $20/month for full access.
+**The pricing is identical at the $20 tier that most small businesses buy.** This makes the core decision about capability fit rather than budget — though the ladders now differ at the edges: ChatGPT added an $8 Go tier below Plus, and Claude's $100 Max tier sits between ChatGPT's $20 Plus and $200 Pro. Both tools offer free tiers adequate for evaluation, and both charge the same $20/month for full access.
 
-The API pricing differs if you are building AI into your products: OpenAI's GPT-4o API is generally cheaper per token for short interactions, while Anthropic's Claude API is more cost-effective for long-context tasks.
+The API pricing differs if you are building AI into your products. OpenAI's GPT-5.6 family spans $0.20/$1.20 per million tokens on Luna up to $5/$30 on Sol; Anthropic's runs $2/$10 on Sonnet 5, $5/$25 on Opus 5, and $10/$50 on Fable 5.1. For agent workloads that re-read the same context on every turn, Anthropic's $0.25 cache-read rate on Fable 5.1 is the cheapest in the group. See our guides to [GPT-5.6 Sol, Terra and Luna](/guides/gpt-5-6-sol-terra-luna-guide) and [Claude Fable 5.1](/guides/claude-fable-5-1-guide) for the full breakdown.
 
 ### Reliability & Safety
 
@@ -181,7 +190,7 @@ Claude is the better pick if you match two or more of these:
 
 **For most small businesses,** both tools justify their $20/month subscription many times over. The time saved on writing, analysis, and communication tasks alone makes either one a good investment.
 
-**If you had to pick one:** [ChatGPT](https://chat.openai.com) is the safer default choice for general small business use. The broader feature set — Code Interpreter, DALL-E, plugins, custom GPTs — covers more use cases under one roof. You will not hit a wall where you need a feature that does not exist.
+**If you had to pick one:** [ChatGPT](https://chat.openai.com) is the safer default choice for general small business use. The broader feature set — Code Interpreter, ChatGPT Images 2.0, plugins, custom GPTs — covers more use cases under one roof. You will not hit a wall where you need a feature that does not exist.
 
 **If your business is document-heavy or communication-sensitive:** [Claude](https://claude.ai) is the stronger specialist. The longer context window, more reliable business writing, and lower hallucination rate matter when you are dealing with contracts, client communications, and compliance. You will need separate tools for image generation and data visualization, but the core AI assistant will be more reliable for high-stakes work.
 

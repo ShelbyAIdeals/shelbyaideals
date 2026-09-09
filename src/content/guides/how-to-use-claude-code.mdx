@@ -6,7 +6,7 @@ category: ai-content-productivity
 type: guide
 author: "Frank Shelby"
 date: "2026-05-23"
-lastUpdated: "2026-05-23"
+lastUpdated: "2026-09-09"
 featured: true
 featuredImage: "/images/guides/how-to-use-claude-code.webp"
 recommendedTools:
@@ -46,7 +46,7 @@ This guide walks you through the whole thing: installing it, authenticating, the
 
 ## Why This Matters
 
-The way software gets built changed fast over the last year. Anthropic shipped Claude Code from beta to a mature 2.x product across 2025, and by 2026 it runs in your terminal, your IDE, a desktop app, and the browser at claude.ai/code. The default model for most users is now **Claude Opus 4.7**, with **Sonnet 4.6** and **Haiku 4.5** available for cheaper, faster work.
+The way software gets built changed fast over the last year. Anthropic shipped Claude Code from beta to a mature 2.x product across 2025, and by 2026 it runs in your terminal, your IDE, a desktop app, and the browser at claude.ai/code. As of September 2026 the defaults are **Claude Sonnet 5** on Free and Pro and **Claude Opus 5** on Max, with **Claude Haiku 4.5** available for cheap, fast work. **Claude Fable 5.1** — Anthropic's most capable model, released 1 September 2026 — is not the default on any plan; select it explicitly with `/model fable` or by launching `claude --model fable`. See our [Claude Fable 5.1 guide](/guides/claude-fable-5-1-guide) for when that is worth doing.
 
 For freelancers, indie developers, and small teams, this is a genuine force multiplier. Tedious work that used to eat an afternoon — writing tests, fixing lint errors, refactoring a tangled module, wiring up an API — can be handed off in a sentence. You stay in the role of director: you describe what you want, review the plan, and approve the changes. That is the shift worth understanding, whether you write code every day or just want to ship a side project. If you are new to the Claude ecosystem, our [Claude AI review](/reviews/claude-ai-review) covers the underlying assistant in more depth.
 
@@ -173,7 +173,7 @@ Useful slash commands inside a session include `/model` (switch between Opus, So
 
 ## Step 6: Pair It With Claude Design
 
-In April 2026, Anthropic launched **Claude Design** at **claude.ai/design** — and it is the natural front end for Claude Code. Powered by Claude Opus 4.7, it is a chat-plus-canvas tool: you describe what you want on the left, and a working design renders on the right. (For the full walkthrough of the design side, see our dedicated guide on [how to use Claude Design](/guides/how-to-use-claude-design).)
+In April 2026, Anthropic launched **Claude Design** at **claude.ai/design** — and it is the natural front end for Claude Code. It is a chat-plus-canvas tool: you describe what you want on the left, and a working design renders on the right. (For the full walkthrough of the design side, see our dedicated guide on [how to use Claude Design](/guides/how-to-use-claude-design).)
 
 Here is the workflow that makes the pair powerful:
 
@@ -196,7 +196,7 @@ What it is *not* is a hands-off magic button. The best operators stay in the loo
 
 ### Match the Model to the Task
 
-Opus 4.7 is the most capable but also the most expensive in token terms. Use `/model` to drop to Sonnet 4.6 or Haiku 4.5 for routine work, and save Opus for genuinely hard problems. This is the single biggest lever on cost.
+Fable 5.1 is the most capable but also the most expensive in token terms, at $10 per million input tokens and $50 per million output. Opus 5 costs half that ($5/$25), Sonnet 5 a fifth ($2/$10). Use `/model` to drop to Sonnet 5 or Haiku 4.5 for routine work and save the top tier for genuinely hard problems. This is the single biggest lever on cost — bigger than any prompt trick.
 
 ### Watch Your Usage
 
@@ -226,7 +226,7 @@ We do not earn commissions on these tools — they are recommended purely becaus
 
 ### How much does Claude Code cost?
 
-Claude Code is included with any paid Claude plan: **Pro at $20/mo** ($17/mo billed annually), **Max from $100/mo**, and **Max 20x at $200/mo** for heavy users. There is no separate Claude Code subscription — it draws from the same usage allowance as Claude chat. You can also bill against API credits (Opus 4.7 runs about $5 per million input tokens and $25 per million output tokens) by setting an API key.
+Claude Code is included with any paid Claude plan: **Pro at $20/mo** ($17/mo billed annually), **Max from $100/mo**, and **Max 20x at $200/mo** for heavy users. There is no separate Claude Code subscription — it draws from the same usage allowance as Claude chat. You can also bill against API credits by setting an API key — Opus 5 runs $5 per million input tokens and $25 per million output, Sonnet 5 is $2/$10, and Fable 5.1 is $10/$50.
 
 ### Do I need to be a professional developer?
 

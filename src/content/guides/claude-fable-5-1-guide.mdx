@@ -1,0 +1,191 @@
+---
+title: "Claude Fable 5.1 Explained: Pricing, Benchmarks, and When It's Worth Paying For"
+seoTitle: "Claude Fable 5.1: Pricing, Benchmarks & Who It's For"
+slug: claude-fable-5-1-guide
+excerpt: "Anthropic's Claude Fable 5.1 launched 1 September 2026 as its most capable model — $10/$50 per million tokens, a 1M context window, and cache reads cut 75%. Here is what actually changed, what it costs in practice, and when Claude Opus 5 at half the price is the better buy."
+description: "Claude Fable 5.1 guide: verified API pricing ($10 in / $50 out, $0.25 cache reads), benchmark scores vs Fable 5 and Opus 5, effort levels, the 1M context window, the new refusal behaviour, and which plans include it."
+keywords: ["claude fable 5.1", "fable 5.1 pricing", "claude fable 5.1 review", "anthropic fable 5.1", "claude fable 5.1 vs opus 5", "claude-fable-5-1", "fable 5.1 benchmarks", "claude mythos 5.1"]
+category: ai-content-productivity
+type: guide
+author: "Frank Shelby"
+date: "2026-09-09"
+lastUpdated: "2026-09-09"
+featured: true
+keyTakeaways:
+  - "Claude Fable 5.1 launched 1 September 2026 as Anthropic's most capable widely released model, aimed at long-horizon coding, agents, and enterprise knowledge work — not at everyday chat."
+  - "API pricing is $10 per million input tokens and $50 per million output tokens, unchanged from Fable 5. The saving comes from cache reads dropping 75% to $0.25/M, which Anthropic says works out to roughly 25% cheaper on typical workloads and up to 45% on agentic ones."
+  - "It is twice the price of Claude Opus 5 ($5/$25). For most marketing, writing, and research work, Opus 5 is the correct default and Fable 5.1 is overkill."
+  - "Context window is 1M tokens with 128K max output, adaptive thinking is always on, and depth is controlled by five effort levels (low, medium, high, xhigh, max) rather than a token budget."
+  - "The catch the launch posts skip: refusal rates are materially higher than on previous Claude models. Anthropic cut false positives sharply in biology and cybersecurity, but if you build on the API you must handle a refusal stop reason as a normal response path."
+recommendedTools:
+  - name: "Claude Pro"
+    category: "AI Assistant"
+    pricing: "$20/mo ($17/mo billed annually)"
+    affiliateUrl: "https://claude.ai"
+    description: "The cheapest plan that includes Fable 5.1 access alongside Claude Code and Claude Cowork. Usage is metered against a shared allowance rather than sold per token."
+  - name: "Claude Max"
+    category: "AI Assistant (heavy use)"
+    pricing: "From $100/mo; $200/mo for the 20x tier"
+    affiliateUrl: "https://claude.ai"
+    description: "For people running Fable 5.1 in Claude Code all day. Same models, much larger usage allowance than Pro."
+  - name: "Claude API"
+    category: "Developer API"
+    pricing: "$10 / $50 per million tokens; $0.25 cache reads"
+    affiliateUrl: "https://www.anthropic.com/api"
+    description: "Pay-per-token access using the model ID claude-fable-5-1. Prompt caching is the single biggest cost lever on this model."
+  - name: "Claude Opus 5"
+    category: "AI Model (cheaper alternative)"
+    pricing: "$5 / $25 per million tokens"
+    affiliateUrl: "https://www.anthropic.com/api"
+    description: "Half the price of Fable 5.1 and enough for most content, marketing, and analysis work. Benchmark it against your own tasks before paying the Fable premium."
+faq:
+  - question: "What is Claude Fable 5.1?"
+    answer: "Claude Fable 5.1 is Anthropic's frontier AI model, released on 1 September 2026. It is built for ambitious coding projects that span a whole codebase, agents that run for hours across many tools, and enterprise knowledge work over dense documents. It sits above the Claude Opus family in capability and price, and it replaces Claude Fable 5 in the same tier at the same per-token rate."
+  - question: "How much does Claude Fable 5.1 cost?"
+    answer: "On the Claude API it is $10 per million input tokens and $50 per million output tokens, with cached input reads at $0.25 per million — a 75% cut from Fable 5. Anthropic estimates that works out to about 25% cheaper than Fable 5 for typical workloads and up to 45% cheaper for heavily agentic work, because agents re-read the same cached context constantly. On consumer plans it is included with Claude Pro ($20/month), Max, Team, and Enterprise at no extra per-token charge."
+  - question: "What is the difference between Claude Fable 5.1 and Claude Mythos 5.1?"
+    answer: "They are the same model with different safeguards. Fable 5.1 is generally available. Mythos 5.1 is restricted to organisations in trusted access programmes designed to support cybersecurity and life-sciences work, where the standard blocking classifiers would get in the way of legitimate research."
+  - question: "Is Claude Fable 5.1 better than Claude Opus 5?"
+    answer: "On capability, yes — it beats Opus 5 across coding, agentic, and reasoning benchmarks, and the gap is largest on long-running agent tasks. On value, not usually. Fable 5.1 costs twice as much per token, and on several agentic benchmarks the gap is only two to four points. For marketing copy, SEO content, research summaries, and routine analysis, Opus 5 is the sensible default."
+  - question: "Should I use Claude Fable 5.1 for writing blog posts?"
+    answer: "Almost certainly not. It is priced for problems where being wrong is expensive — multi-hour agent runs, whole-codebase refactors, dense financial or scientific documents. Blog drafts, ad copy, and social posts do not get twice as good for twice the price. Use Claude Sonnet 5 or Opus 5, and spend the difference on editing."
+  - question: "What does the higher refusal rate mean in practice?"
+    answer: "Fable 5.1 ships with blocking classifiers for dual-use content in cybersecurity and the life sciences. When one triggers, the API returns a normal HTTP 200 response with a stop reason of refusal rather than an error. Anthropic reports 60% fewer false positives in cybersecurity and 85% fewer for benign biology and medical queries than the previous generation, but overall refusal rates are still higher than on earlier Claude models. If you are building on the API, treat a refusal as a primary response path, not an edge case."
+  - question: "What is the context window and knowledge cutoff?"
+    answer: "One million tokens of context, up to 128,000 tokens of output, and a training knowledge cutoff of June 2026. It accepts text and images as input and returns text."
+---
+
+On **1 September 2026**, Anthropic released **Claude Fable 5.1** — its most capable widely available model, and the successor to Claude Fable 5 in the same price tier. Alongside it came **Claude Mythos 5.1**, the same model with a different safeguard configuration, restricted to trusted-access programmes.
+
+If you have been reading launch coverage, you will have seen two claims repeated: that it is the best model in the world for coding, and that it is about 25% cheaper than its predecessor. Both are defensible. Neither tells you whether you should be paying for it.
+
+This guide covers what changed, what it actually costs on a real workload, and — the part the announcements skip — the three practical gotchas that will bite you if you build on it.
+
+## What Claude Fable 5.1 is for
+
+Anthropic is unusually specific about the target here, and it is worth taking them at their word. Fable 5.1 is built for:
+
+- **Software projects that span an entire codebase**, not single-file edits
+- **Long-horizon agents** — multi-hour jobs running across many tools inside an agent harness
+- **Enterprise knowledge work** over dense material: filings, charts, technical diagrams
+
+That is a narrow target. It is explicitly *not* positioned as a better chat assistant, and if your use case is "write me a landing page", you are not the customer for this model.
+
+The headline capability claim is about judgement rather than raw scores. Anthropic says Fable 5.1 gives better judgement on ambiguous work and produces fewer confident wrong answers, and that it avoids the shortcuts that lead to poorer-quality work. In agent terms that means it is more likely to fix a root cause than to patch a symptom and declare victory — which matters enormously when a model is running unsupervised for two hours.
+
+## The specs, verified
+
+| Property | Claude Fable 5.1 |
+| --- | --- |
+| API model ID | `claude-fable-5-1` |
+| Launch date | 1 September 2026 |
+| Context window | 1,000,000 tokens |
+| Max output | 128,000 tokens |
+| Input modalities | Text, image |
+| Output modalities | Text |
+| Knowledge cutoff | June 2026 |
+| Thinking | Always on (adaptive); cannot be disabled |
+| Effort levels | low, medium, high, xhigh, max |
+| Default effort | `high` in Claude Code; `medium` in Claude Cowork and claude.ai |
+| Prompt caching | Yes — 5-minute and 1-hour cache lifetimes |
+
+Two of those rows deserve a sentence each.
+
+**Thinking is always on.** There is no "turn off reasoning to save money" switch. You control depth with the five effort levels instead. This is a genuine change from earlier Claude models where a thinking token budget was the lever, and it is the single most common source of migration errors — sending an old-style thinking budget returns a 400 error.
+
+**Effort is the cost dial.** Anthropic's own claim is that Fable 5.1 at low or medium effort achieves results similar to or better than Fable 5 at its normal settings, at much lower cost. If you are moving from Fable 5, the right first experiment is not "same effort, better model" — it is "lower effort, same quality, smaller bill".
+
+## Pricing: the cache read is the whole story
+
+| Token type | Price per million | Change vs Fable 5 |
+| --- | --- | --- |
+| Input | $10.00 | Unchanged |
+| Output | $50.00 | Unchanged |
+| Cache reads | $0.25 | **75% cheaper** |
+
+*Prices are Anthropic first-party API rates, verified 9 September 2026. Amazon Bedrock and Google Vertex AI are partner-operated and carry their own pricing.*
+
+The per-token headline numbers did not move at all. The saving is entirely in cache reads, which is why Anthropic quotes two different discount figures: **around 25% for typical workloads, up to 45% for highly agentic work**.
+
+That difference is not marketing spin — it is arithmetic. A chat request sends a prompt once and gets an answer. An agent sends the same system prompt, the same tool definitions, and a growing conversation history on *every single turn*, dozens of times per task. Almost all of those tokens are cache reads. Cut cache reads by 75% and an agent's bill falls off a cliff; cut them for a one-shot summarisation request and almost nothing happens.
+
+**The practical implication:** if you are not using prompt caching, you are paying Fable 5.1's premium price and receiving none of its price improvement. Check the cached-read figure your API responses report. If it stays at zero across repeated requests that share a system prompt, something in your prefix is changing between calls — a timestamp, a request ID, an unsorted set of JSON keys — and you are burning money.
+
+### What it costs on a real workload
+
+Take a mid-sized agent doing 10 million input tokens and 2 million output tokens a day, with 70% of the input served from cache:
+
+- 3M uncached input at $10/M = **$30**
+- 7M cached input at $0.25/M = **$1.75**
+- 2M output at $50/M = **$100**
+- **Total: roughly $132 a day**
+
+Run the same workload with no caching at all and the input side alone jumps from $31.75 to $100. Output dominates either way, which points at the other lever: effort. Lower effort produces fewer, more consolidated tool calls and less preamble — and output tokens are where the money is.
+
+## Benchmarks: real gains, honestly reported
+
+| Benchmark | Fable 5.1 | Fable 5 | Opus 5 |
+| --- | --- | --- | --- |
+| Terminal-Bench-Science 0.1 | **52.6%** | 24.7% | 29.0% |
+| Terminal-Bench 4.0 (agentic coding) | **55.8%** | 42.0% | 52.3% |
+| Humanity's Last Exam (no tools) | **60.9%** | 57.8% | 56.6% |
+| CursorBench 3.2.0 | **73.4%** | 70.5% | 70.0% |
+| OSWorld 2.0 (partial credit) | **77.9%** | 72.9% | 75.4% |
+| OSWorld 2.0 (strict) | **41.7%** | 36.1% | 39.6% |
+
+The Terminal-Bench-Science jump — 24.7% to 52.6%, more than doubling — is the number that justifies the scientific-research framing. Anthropic backs it with concrete claims: protein binders designed with roughly a 50% hit rate against a typical 10-15%, Venus elevation maps at 300m resolution, and deep-learning models optimised up to 2.5x faster with 30-60% GPU cost reductions.
+
+Note what the agentic coding numbers say about the Opus comparison, though. On Terminal-Bench 4.0, Opus 5 scores 52.3% against Fable 5.1's 55.8%. That is a 3.5-point gap for a 2x price difference. On strict OSWorld it is 39.6% against 41.7%. Fable 5.1 wins every row — but on several of them, not by enough to obviously justify double the token cost. **Benchmark your own workload before defaulting to it.**
+
+## The three gotchas
+
+### 1. A refusal is a normal response, not an error
+
+Fable 5.1 runs blocking classifiers for dual-use content in cybersecurity and the life sciences. When one fires, you do not get an exception. You get **HTTP 200 with a `refusal` stop reason** and a category explaining why.
+
+Anthropic's own documentation states plainly that refusal rates on this model are materially higher than on previous Claude models. The trade is that false positives fell sharply — 60% fewer in cybersecurity, 85% fewer for benign biology and medical queries — so legitimate work gets through more often than a blunt filter would allow. But if your code assumes a successful response always contains text, it will silently produce empty output.
+
+One billing detail worth knowing: refusals caught before inference begins are not billed. Refusals that happen mid-stream are billed for the tokens generated before the block.
+
+### 2. Prompts written for older models often make it worse
+
+This is counter-intuitive and it catches teams out. Prompts tuned for previous Claude generations tend to be highly prescriptive — step-by-step instructions, explicit "think about X then Y" scaffolding, heavy formatting rules. On Fable 5.1 that prescription *reduces* output quality, because the model's own planning is better than the plan you are forcing on it.
+
+If you migrate a prompt library across and quality drops, the model is not the problem. Strip the scaffolding, give it the full task specification up front, and let it plan.
+
+### 3. Single requests can run for many minutes
+
+A hard task at high effort is not a two-second round trip. Plan for it: use streaming, set generous timeouts, and give users a progress affordance. A request that appears to hang for four minutes and then returns an excellent answer is still a broken user experience if your interface shows a spinner and nothing else.
+
+## Where you actually get it
+
+| Surface | Access |
+| --- | --- |
+| claude.ai | Pro, Max, Team, and Enterprise plans |
+| Claude Code | Included with paid Claude plans; default effort `high` |
+| Claude Cowork | Included with paid Claude plans; default effort `medium` |
+| Claude API | Pay per token, model ID `claude-fable-5-1` |
+| Amazon Bedrock | Generally available (partner pricing) |
+| Google Cloud, Microsoft Azure | Generally available (partner pricing) |
+
+For most readers of this site, the answer is simply: **it is in your $20 Claude Pro subscription.** You do not need to think about token pricing at all unless you are building software on the API. The pricing section above matters if you are a developer; if you are a marketer or a business owner, the relevant question is just which model to pick in the dropdown.
+
+One enterprise-facing constraint is worth flagging: Fable 5.1 requires 30-day data retention and is not available under zero data retention unless Anthropic expressly authorises it. If your organisation has a hard zero-retention policy, API requests will fail validation. Anthropic offers Enterprise Frontier Safeguards for customer-controlled infrastructure as the route around this — but that is a conversation with sales, not a config flag.
+
+## Should you use it?
+
+**Yes, if:** you run coding agents for hours at a time, you work with very large codebases or document sets, you are doing scientific or engineering work where a subtly wrong answer costs real money, or you already pay for Claude Pro and simply want the best model in the picker.
+
+**No, if:** you are writing marketing content, drafting emails, summarising meetings, or doing anything where Claude Sonnet 5 already produces work you ship without heavy editing. The capability difference is real, but it is concentrated in exactly the tasks most people never do.
+
+**Test first, if:** you are on Claude Opus 5 via the API and wondering whether to upgrade. Run your actual workload on both. Opus 5 is half the price and lands within a few points of Fable 5.1 on several agentic benchmarks. The upgrade pays for itself on hard problems and wastes money on easy ones — and only your own evaluation set can tell you which you have.
+
+## Related reading
+
+- [How to Use Claude Code](/guides/how-to-use-claude-code) — the agentic coding tool where Fable 5.1 does its best work
+- [How to Use Claude Design](/guides/how-to-use-claude-design) — Anthropic's prompt-to-prototype design surface
+- [GPT-6 Astra Explained](/guides/gpt-6-astra-guide) — OpenAI's frontier release from the same week, and how the two compare
+- [GPT-5.6 Sol, Terra and Luna](/guides/gpt-5-6-sol-terra-luna-guide) — OpenAI's three-tier family and where each tier makes sense
+- [AI Tool Pricing Index](/ai-pricing-index) — our verified, regularly re-checked pricing dataset
+
+*Model specifications, pricing, and benchmark figures in this guide were verified against Anthropic's published documentation and the Amazon Bedrock model card on 9 September 2026. Frontier model pricing changes frequently — check the vendor's own pricing page before budgeting against these numbers.*

@@ -13,8 +13,8 @@
 ## Content Types
 
 - **Reviews** (37): In-depth, hands-on reviews with ratings, pricing, pros/cons, and verdicts
-- **Comparisons** (20): Head-to-head tool comparisons with per-scenario winners
-- **Guides** (30): How-to guides for AI workflows, tools, and use cases
+- **Comparisons** (21): Head-to-head tool comparisons with per-scenario winners
+- **Guides** (33): How-to guides for AI workflows, tools, and use cases
 - **Best-Of Lists** (8): Curated ranked lists by category and use case
 - **Alternatives** (15): Alternative tools for popular AI products
 - **Pricing Guides** (40): Detailed pricing breakdowns with plan recommendations
@@ -38,14 +38,14 @@
 
 ## Latest Guides
 
+- [Claude Fable 5.1 Explained: Pricing, Benchmarks, and When It's Worth Paying For](https://www.shelby-ai.com/guides/claude-fable-5-1-guide/)
+- [GPT-5.6 Sol, Terra and Luna: Which OpenAI Tier Should You Actually Pay For?](https://www.shelby-ai.com/guides/gpt-5-6-sol-terra-luna-guide/)
+- [GPT-6 Astra Explained: Pricing, Benchmarks, and What OpenAI Left Out](https://www.shelby-ai.com/guides/gpt-6-astra-guide/)
 - [Best GEO Tools 2026: Tracking Your Brand in AI Search Answers](https://www.shelby-ai.com/guides/best-geo-tools/)
 - [How to Open and Convert a STEP File Without CAD Software (2026 Guide)](https://www.shelby-ai.com/guides/open-step-file-without-cad-software/)
 - [How to Open, Edit and Convert a Parquet File Online (No Install)](https://www.shelby-ai.com/guides/open-parquet-file-online/)
 - [How to Read a .dmp File and Diagnose a Blue Screen (Without WinDbg)](https://www.shelby-ai.com/guides/read-dmp-file-fix-blue-screen/)
 - [How to Send Large Files Without Uploading Them (2026 Guide)](https://www.shelby-ai.com/guides/send-large-files-without-uploading/)
-- [How to Use Claude Code (and Claude Design): A Complete 2026 Guide](https://www.shelby-ai.com/guides/how-to-use-claude-code/)
-- [How to Use Claude Design: Anthropic's Prompt-to-Prototype Tool (2026)](https://www.shelby-ai.com/guides/how-to-use-claude-design/)
-- [How to Use the Hermes Agent: A Complete Beginner's Guide (2026)](https://www.shelby-ai.com/guides/how-to-use-hermes-agent/)
 
 ## Editorial Standards
 
@@ -53,4 +53,4 @@
 - Reviews disclose pricing, who a tool is best for, and who should avoid it.
 - Affiliate links never influence rankings or verdicts (https://www.shelby-ai.com/affiliate-disclosure/).
 
-Last updated: 2026-08-18
+Last updated: 2026-09-09
