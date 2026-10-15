@@ -108,7 +108,10 @@ const reviewBlocks = reviews
     const d = r.data;
     const lines = [`### ${d.tool || d.title}`];
     if (d.category) lines.push(`- Category: ${d.category}`);
-    if (typeof d.rating === 'number') lines.push(`- Rating: ${d.rating}/5`);
+    // Research-only profiles carry rating 0, which means "not scored", not a
+    // zero score; printing "0/5" would tell a model the opposite.
+    if (d.researchOnly === true) lines.push('- Rating: not scored (researched profile, no hands-on test)');
+    else if (typeof d.rating === 'number') lines.push(`- Rating: ${d.rating}/5`);
     if (d.bestFor) lines.push(`- Best For: ${d.bestFor}`);
     const ps = priceSummary(d);
     if (ps) lines.push(`- Pricing: ${ps}`);

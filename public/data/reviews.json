@@ -2535,95 +2535,99 @@
     "readingTime": "24 min read"
   },
   {
-    "title": "Portrait Union Review 2026: AI Portrait Studio for Pets, Couples & Family",
+    "title": "Portrait Union 2026: AI Pet & Family Portraits, Pricing and Prints",
+    "seoTitle": "Portrait Union 2026: Pricing, 12 Styles & Canvas Prints",
     "slug": "portrait-union-review",
-    "excerpt": "In our Portrait Union review, we test how this AI portrait studio turns phone photos of pets and family into nine hand-tuned art styles — and print them.",
+    "excerpt": "A facts-only profile of Portrait Union, an AI portrait and photo-restoration studio owned by ShelbyAI's publisher: twelve styles, one free preview a day, a €4.99 digital file and canvas prints from €69.99. No score, because we do not rate our own product.",
     "category": "ai-video-audio",
     "type": "review",
     "author": "Frank Shelby",
     "date": "2026-05-17",
-    "lastUpdated": "2026-05-17",
-    "lastTested": "2026-05-17",
+    "lastUpdated": "2026-10-15",
+    "researchOnly": true,
     "featured": false,
     "tool": "Portrait Union",
     "toolSlug": "portrait-union",
     "toolLogo": "/logos/portrait-union.png",
     "socialLinks": {
-      "website": "https://portraitunion.com"
+      "website": "https://www.portraitunion.com",
+      "youtube": "https://www.youtube.com/@portraitunion",
+      "instagram": "https://www.instagram.com/portraitunion/",
+      "tiktok": "https://www.tiktok.com/@portraitunion"
     },
-    "rating": 4.1,
-    "bestFor": "Pet owners, couples, and families who want gallery-grade art portraits from an ordinary phone photo — with the option to order prints.",
-    "notFor": "Power users who need a general-purpose image generator with flexible dimensions, an API, or high-volume batch output.",
-    "testType": "Hands-on review",
+    "rating": 0,
+    "bestFor": "Pet owners, couples and families who want a painted portrait from one ordinary photo, and anyone with an old print to restore in colour, with the option of a canvas print.",
+    "notFor": "Anyone who wants a general-purpose image generator, prompt control, an API, custom aspect ratios for portraits, or a hand-painted original.",
     "pricing": [
       {
         "plan": "Free preview",
-        "price": "$0",
-        "period": "",
+        "price": "€0",
+        "period": "one preview a day",
         "features": [
-          "1 preview, no account",
-          "All 9 styles selectable",
-          "Watermarked output"
+          "One photo in one style",
+          "Watermarked, 400 px of detail",
+          "No account",
+          "Private link for 48 hours"
         ],
-        "affiliateUrl": "https://portraitunion.com"
+        "affiliateUrl": "https://www.portraitunion.com"
       },
       {
-        "plan": "Starter",
-        "price": "€9.99",
-        "period": " one-time",
+        "plan": "Digital file",
+        "price": "€4.99",
+        "period": "one-off",
         "features": [
-          "1 HD portrait download",
-          "2 AI previews",
-          "Commercial license",
-          "Credits never expire"
-        ],
-        "affiliateUrl": "https://portraitunion.com"
-      },
-      {
-        "plan": "Creator",
-        "price": "€19.99",
-        "period": " one-time",
-        "features": [
-          "3 HD downloads",
-          "6 AI previews",
-          "~33% cheaper per portrait",
-          "Commercial license"
+          "2048 × 2560 px JPEG (portraits)",
+          "Watermark-free",
+          "Personal and commercial use",
+          "Same price for restorations"
         ],
         "highlighted": true,
-        "affiliateUrl": "https://portraitunion.com"
+        "affiliateUrl": "https://www.portraitunion.com"
       },
       {
-        "plan": "Studio",
-        "price": "€29.99",
-        "period": " one-time",
+        "plan": "Gallery canvas",
+        "price": "from €69.99",
+        "period": "one-off",
         "features": [
-          "5 HD downloads",
-          "10 AI previews",
-          "~40% cheaper per portrait",
-          "Custom style requests"
+          "20×25, 40×50 or 60×75 cm for portraits",
+          "Shipping to 35 countries included",
+          "Digital file included",
+          "Printed by Gelato"
         ],
-        "affiliateUrl": "https://portraitunion.com"
+        "affiliateUrl": "https://www.portraitunion.com"
+      },
+      {
+        "plan": "Framed canvas",
+        "price": "from €129.99",
+        "period": "one-off",
+        "features": [
+          "20×25 or 40×50 cm for portraits",
+          "Black, dark brown or natural wood frame",
+          "Shipping included",
+          "Digital file included"
+        ],
+        "affiliateUrl": "https://www.portraitunion.com"
       }
     ],
     "pros": [
-      "Nine distinct, hand-tuned style pipelines — not one filter recolored nine ways.",
-      "Strong identity preservation, including pet fur patterns and up to six subjects in one composition.",
-      "No subscription, no dark patterns: one-time packs, credits never expire, failed generations are auto-refunded.",
-      "Free preview with no account required — genuinely low-friction to try.",
-      "End-to-end: print-grade 4096×5120 output plus Gelato print fulfillment with free worldwide shipping."
+      "Free watermarked preview of your own photo before any payment, with no account or email.",
+      "Twelve styles, and pets keep their own four-legged bodies, breed and markings rather than a template animal.",
+      "Every price is a one-off purchase: no subscription, no credit packs, no account.",
+      "Old-photo restoration and colourisation alongside the portraits, at the same €4.99 file price.",
+      "Canvas prints with shipping included to 35 countries, produced by Gelato near the delivery address."
     ],
     "cons": [
-      "Only nine styles today; Baroque, Cyberpunk, Watercolor, and Pixar are still roadmap items.",
-      "Single fixed 4:5 aspect ratio and one resolution tier — no landscape or custom dimensions.",
-      "Narrow by design: portraits of people and pets only, not a general-purpose image tool.",
-      "Newer brand with a smaller track record and community than Midjourney or Leonardo AI."
+      "One free preview per visitor per day, so choosing the photo and style carefully matters.",
+      "Painted portraits come only at 4:5, so they print only at the 4:5 sizes.",
+      "Made by an image model, not painted by hand; the site says so on every page.",
+      "No account means the private preview link is the only way back to a result, and it closes after 48 hours.",
+      "A young brand with little public track record yet."
     ],
-    "verdict": "Portrait Union does one thing — turn a phone photo into a framed-worthy portrait — and does it with unusual polish and honest pricing. It is the right pick for pet, couple, and family portraits where identity must survive the style transfer, and for buyers who want a print, not just a file. It is the wrong pick if you need a flexible, general-purpose image generator.",
-    "affiliateUrl": "https://portraitunion.com",
-    "affiliateLabel": "Try Portrait Union Free",
-    "researchOnly": false,
+    "verdict": "Portrait Union is a narrow, consumer-only studio: one photo in, a painted portrait or a restored photograph out, with a free watermarked preview first and one-off prices from €4.99. ShelbyAI's publisher owns it, so this page gives the facts and no score; judge the free preview of your own photo rather than our opinion.",
+    "affiliateUrl": "https://www.portraitunion.com",
+    "affiliateLabel": "See a free preview",
     "youtubeUrl": null,
-    "readingTime": "11 min read"
+    "readingTime": "5 min read"
   },
   {
     "title": "Runway ML Review 2026: Is It Worth Paying For? (Hands-On Verdict)",

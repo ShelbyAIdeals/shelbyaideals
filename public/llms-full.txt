@@ -46,7 +46,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### Cursor
 - Category: ai-content-productivity
-- Rating: 0/5
+- Rating: not scored (researched profile, no hands-on test)
 - Best For: Developers who live in an IDE and want agentic editing, repo-wide context, and frontier-model access inside the editor.
 - Pricing: Hobby $0//month, Pro $20//month, Teams $40//user/month
 - Review: https://www.shelby-ai.com/reviews/cursor-review/
@@ -88,7 +88,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### Fathom
 - Category: ai-content-productivity
-- Rating: 0/5
+- Rating: not scored (researched profile, no hands-on test)
 - Best For: Individuals who want unlimited free meeting notes, and sales teams that need CRM sync, deal views, and coaching metrics.
 - Pricing: Free $0/forever, Premium $20//month ($16 annual), Team $19//user/month ($15 annual, 2+ users), Business $34//user/month ($25 annual)
 - Review: https://www.shelby-ai.com/reviews/fathom-review/
@@ -96,7 +96,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### Fireflies.ai
 - Category: ai-content-productivity
-- Rating: 0/5
+- Rating: not scored (researched profile, no hands-on test)
 - Best For: Teams that want meeting notes flowing automatically into CRMs, Slack, Notion, and task tools — and searchable transcript archives.
 - Pricing: Free $0/forever, Pro $18//month ($10 annual), Business $29//month ($19 annual), Enterprise $39//month (annual only)
 - Review: https://www.shelby-ai.com/reviews/fireflies-review/
@@ -146,7 +146,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### HeyGen
 - Category: ai-video-audio
-- Rating: 0/5
+- Rating: not scored (researched profile, no hands-on test)
 - Best For: Marketers and localization teams who need realistic avatar presenter videos and multilingual versions of the same content.
 - Pricing: Free $0//month, Creator $29//month ($24 annual), Pro $49//month, Business $149//month + $20/seat
 - Review: https://www.shelby-ai.com/reviews/heygen-review/
@@ -220,7 +220,7 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### n8n
 - Category: ai-marketing-seo
-- Rating: 0/5
+- Rating: not scored (researched profile, no hands-on test)
 - Best For: Technical users and teams building multi-step or AI-agent workflows who want execution-based billing or full self-hosting control.
 - Pricing: Community Edition Free/self-hosted, Starter €20//month (billed annually), Pro €50//month (billed annually), Enterprise Custom
 - Review: https://www.shelby-ai.com/reviews/n8n-review/
@@ -253,9 +253,9 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 
 ### Portrait Union
 - Category: ai-design-tools
-- Rating: 4.1/5
-- Best For: Pet owners, couples, and families who want gallery-grade art portraits from an ordinary phone photo — with the option to order prints.
-- Pricing: Free preview $0, Starter €9.99/ one-time, Creator €19.99/ one-time, Studio €29.99/ one-time
+- Rating: not scored (researched profile, no hands-on test)
+- Best For: Pet owners, couples and families who want a painted portrait from one ordinary photo, and anyone with an old print to restore in colour, with the option of a canvas print.
+- Pricing: Free preview €0/one preview a day, Digital file €4.99/one-off, Gallery canvas from €69.99/one-off, Framed canvas from €129.99/one-off
 - Review: https://www.shelby-ai.com/reviews/portrait-union-review/
 
 ### Runway ML
@@ -395,4 +395,4 @@ ShelbyAI is an independent AI tool review site for creators, freelancers, and sm
 - [7 Best AI Writing Tools for Freelancers in 2026 (Tested & Ranked)](https://www.shelby-ai.com/best/best-ai-writing-tools-freelancers/)
 - [Best Free AI Tools for Solopreneurs (That Are Actually Useful)](https://www.shelby-ai.com/best/best-free-ai-tools-solopreneurs/)
 
-Last updated: 2026-09-09
+Last updated: 2026-10-15
